@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración — Fran Morishita</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ███ LOGIN ███ -->
+  <div class="login" id="loginView">
+    <form class="login__card" id="loginForm">
+      <div class="login__logo">FRAN<span>MORISHITA</span></div>
+      <h1>Panel de administración</h1>
+      <p>Edita tu página, revisa tus leads y publica cambios.</p>
+      <label for="loginEmail">Correo electrónico</label>
+      <input type="email" id="loginEmail" autocomplete="username" required />
+      <label for="loginPass">Contraseña</label>
+      <input type="password" id="loginPass" autocomplete="current-password" required />
+      <button type="submit" class="btn btn--gold" id="loginBtn">Entrar</button>
+      <p class="login__error" id="loginError" hidden></p>
+    </form>
+  </div>
+
+  <!-- ███ APP ███ -->
+  <div class="app" id="appView" hidden>
+    <header class="topbar">
+      <div class="topbar__brand">FRAN<span>MORISHITA</span> <em>admin</em></div>
+      <div class="topbar__status">
+        <span class="autosave" id="autosaveInfo"></span>
+        <span class="chip" id="statusChip">—</span>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn btn--ghost btn--small" id="btnDescartar" title="Volver a la última versión publicada">Descartar cambios</button>
+        <a class="btn btn--ghost btn--small" href="/" target="_blank" rel="noopener">Ver sitio ↗</a>
+        <button class="btn btn--gold btn--small" id="btnPublicar">Publicar cambios</button>
+        <button class="iconbtn" id="btnPass" title="Cambiar contraseña">🔑</button>
+        <button class="iconbtn" id="btnSalir" title="Cerrar sesión">⏻</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar"></nav>
+
+      <main class="editor" id="editorWrap">
+        <div id="editor"></div>
+      </main>
+
+      <section class="preview" id="previewWrap">
+        <div class="preview__bar">
+          <span>Vista previa en vivo</span>
+          <div class="preview__devices">
+            <button class="devbtn active" data-w="100%" title="Escritorio">🖥️</button>
+            <button class="devbtn" data-w="390px" title="Móvil">📱</button>
+          </div>
+          <button class="iconbtn" id="btnReload" title="Recargar vista previa">⟳</button>
+        </div>
+        <div class="preview__frame-wrap">
+          <iframe id="previewFrame" src="/?preview=1" title="Vista previa del sitio"></iframe>
+        </div>
+      </section>
+
+      <!-- Vista de leads (sustituye al editor + preview) -->
+      <main class="leads" id="leadsView" hidden>
+        <div class="leads__head">
+          <div>
+            <h2>📥 Leads capturados</h2>
+            <p id="leadsCount">—</p>
+          </div>
+          <div class="leads__tools">
+            <input type="search" id="leadsSearch" placeholder="Buscar por nombre, email, giro..." />
+            <button class="btn btn--ghost btn--small" id="btnLeadsRefresh">Actualizar</button>
+            <button class="btn btn--gold btn--small" id="btnLeadsCSV">Exportar CSV</button>
+          </div>
+        </div>
+        <div class="leads__table-wrap">
+          <table class="leads__table">
+            <thead>
+              <tr>
+                <th>Fecha</th><th>Nombre</th><th>WhatsApp</th><th>Email</th>
+                <th>Giro</th><th>Facturación</th><th>Mensaje</th><th>Campaña</th>
+              </tr>
+            </thead>
+            <tbody id="leadsBody"></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <button class="btn btn--gold preview-toggle" id="btnPreviewToggle" hidden>👁 Vista previa</button>
+  </div>
+
+  <div class="toasts" id="toasts"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="content-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

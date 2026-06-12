@@ -33,7 +33,14 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Oculto hasta que el content-loader pinte; a los 3s se muestra pase lo que pase */
+  opacity: 0;
+  animation: bodySafety 0s 3s forwards;
 }
+
+@keyframes bodySafety { to { opacity: 1; } }
+
+body.contenido-listo { opacity: 1; animation: none; }
 
 .container {
   width: min(1180px, 92%);
