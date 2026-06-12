@@ -6,9 +6,27 @@ Landing page de alta conversión para los servicios de consultoría de crecimien
 
 | Archivo | Descripción |
 |---|---|
-| `index.html` | Estructura y copy de todas las secciones |
+| `index.html` | Estructura de todas las secciones de la landing |
 | `styles.css` | Sistema de diseño (dark premium + dorado), animaciones y responsive |
 | `script.js` | Animaciones de scroll, contadores, menú móvil y formulario de leads |
+| `content-config.js` | Contenido por defecto del sitio + constantes de Supabase (compartido) |
+| `content-loader.js` | Carga el contenido publicado desde Supabase y lo pinta en la página |
+| `admin.html` / `admin.css` / `admin.js` | Panel de administración en `/admin` |
+| `vercel.json` | URLs limpias en Vercel (`/admin`) |
+
+## Panel de administración (`/admin`)
+
+Panel protegido con login (Supabase Auth, registros públicos desactivados) para editar todo el sitio sin tocar código:
+
+- **Edición total**: textos, títulos, botones, emojis, iconos, colores, foto de Fran, número de WhatsApp, opciones del formulario y metadatos SEO.
+- **Listas dinámicas**: agregar, eliminar y reordenar servicios, dolores, pasos del método, nichos, estadísticas y preguntas del FAQ.
+- **Secciones ocultables**: cada sección tiene interruptor de visibilidad.
+- **Vista previa en vivo**: iframe del sitio que se actualiza al instante mientras escribes (modo escritorio y móvil).
+- **Borrador vs. publicado**: los cambios se autoguardan como borrador (tabla `site_config`, fila `draft`); el sitio en vivo solo cambia al pulsar **Publicar** (fila `published`). "Descartar cambios" vuelve a la última versión publicada.
+- **Leads**: tabla con todos los leads capturados, buscador y exportación a CSV.
+- **Imágenes**: se suben al bucket público `sitio` de Supabase Storage.
+
+El contenido publicado lo lee la landing al cargar (con timeout de 2.5s y fallback al contenido por defecto de `content-config.js`).
 
 ## Secciones
 

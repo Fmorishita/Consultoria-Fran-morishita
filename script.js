@@ -1,33 +1,8 @@
 /* ============================================================
    FRAN MORISHITA — Interacciones de la landing page
+   El content-loader llama a initOnce() tras el primer render y a
+   initDynamic() después de cada repintado (modo preview).
    ============================================================ */
-
-// ---------- Navegación: fondo al hacer scroll ----------
-const nav = document.getElementById("nav");
-
-const onScroll = () => {
-  nav.classList.toggle("scrolled", window.scrollY > 40);
-};
-window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
-
-// ---------- Menú móvil ----------
-const burger = document.getElementById("navBurger");
-const navLinks = document.getElementById("navLinks");
-
-burger.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  burger.classList.toggle("open", open);
-  document.body.style.overflow = open ? "hidden" : "";
-});
-
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    burger.classList.remove("open");
-    document.body.style.overflow = "";
-  });
-});
 
 // ---------- Animaciones de aparición al hacer scroll ----------
 const revealObserver = new IntersectionObserver(
@@ -41,8 +16,6 @@ const revealObserver = new IntersectionObserver(
   },
   { threshold: 0.18, rootMargin: "0px 0px -40px 0px" }
 );
-
-document.querySelectorAll(".reveal, .method__step").forEach((el) => revealObserver.observe(el));
 
 // ---------- Contadores animados ----------
 const animateCounter = (el) => {
@@ -72,110 +45,148 @@ const counterObserver = new IntersectionObserver(
   { threshold: 0.6 }
 );
 
-document.querySelectorAll(".counter").forEach((el) => counterObserver.observe(el));
-
-// ---------- Efecto de luz que sigue el cursor en las tarjetas de servicio ----------
-document.querySelectorAll(".service").forEach((card) => {
-  card.addEventListener("pointermove", (e) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-    card.style.setProperty("--my", `${e.clientY - rect.top}px`);
+// Engancha animaciones a los elementos presentes (se llama tras cada render)
+window.initDynamic = () => {
+  document.querySelectorAll(".reveal:not([data-anim]), .method__step:not([data-anim])").forEach((el) => {
+    el.setAttribute("data-anim", "1");
+    revealObserver.observe(el);
   });
-});
-
-// ---------- Formulario de leads ----------
-// Cada lead se guarda en Supabase (con los UTM de la campaña que lo trajo)
-// y además se abre WhatsApp con el mensaje pre-armado.
-const WHATSAPP_NUMBER = "5216462563006";
-const SUPABASE_URL = "https://lpdqksuvccsocntditik.supabase.co";
-// Clave publicable: es segura en el navegador; RLS solo permite insertar.
-const SUPABASE_KEY = "sb_publishable_q-ncqoltgj0ceLiPu8GD4Q_TJUBtT6W";
-
-const form = document.getElementById("leadForm");
-const successMsg = document.getElementById("formSuccess");
-
-const getUTMs = () => {
-  const params = new URLSearchParams(window.location.search);
-  const utms = {};
-  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
-    if (params.get(key)) utms[key] = params.get(key);
+  document.querySelectorAll(".counter:not([data-anim])").forEach((el) => {
+    el.setAttribute("data-anim", "1");
+    counterObserver.observe(el);
   });
-  return utms;
 };
 
-const guardarLead = async (data) => {
-  try {
-    await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        nombre: data.get("nombre"),
-        telefono: data.get("telefono"),
-        email: data.get("email"),
-        giro: data.get("giro"),
-        facturacion: data.get("facturacion"),
-        mensaje: data.get("mensaje") || null,
-        pagina: window.location.pathname,
-        ...getUTMs(),
-      }),
+// ---------- Inicialización única (tras el primer render) ----------
+window.initOnce = () => {
+  // Navegación: fondo al hacer scroll
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Menú móvil
+  const burger = document.getElementById("navBurger");
+  const navLinks = document.getElementById("navLinks");
+
+  burger.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    burger.classList.toggle("open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      burger.classList.remove("open");
+      document.body.style.overflow = "";
     });
-  } catch (err) {
-    // Si Supabase falla, el lead igual llega por WhatsApp.
-    console.error("No se pudo guardar el lead:", err);
-  }
-};
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  let valid = true;
-  form.querySelectorAll("[required]").forEach((field) => {
-    const empty = !field.value.trim();
-    field.classList.toggle("error", empty);
-    if (empty) valid = false;
   });
 
-  const email = form.email;
-  if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-    email.classList.add("error");
-    valid = false;
+  // Luz que sigue el cursor en las tarjetas de servicio (delegado: sobrevive repintados)
+  const servicesGrid = document.querySelector(".services__grid");
+  if (servicesGrid) {
+    servicesGrid.addEventListener("pointermove", (e) => {
+      const card = e.target.closest(".service");
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--my", `${e.clientY - rect.top}px`);
+    });
   }
 
-  if (!valid) return;
+  // ---------- Formulario de leads ----------
+  // Cada lead se guarda en Supabase (con los UTM de la campaña que lo trajo)
+  // y además se abre WhatsApp con el mensaje pre-armado.
+  const form = document.getElementById("leadForm");
+  const successMsg = document.getElementById("formSuccess");
 
-  const data = new FormData(form);
+  const getUTMs = () => {
+    const params = new URLSearchParams(window.location.search);
+    const utms = {};
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
+      if (params.get(key)) utms[key] = params.get(key);
+    });
+    return utms;
+  };
 
-  await guardarLead(data);
+  const guardarLead = async (data) => {
+    try {
+      await fetch(`${SITE_SUPABASE_URL}/rest/v1/leads`, {
+        method: "POST",
+        headers: {
+          apikey: SITE_SUPABASE_KEY,
+          Authorization: `Bearer ${SITE_SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre: data.get("nombre"),
+          telefono: data.get("telefono"),
+          email: data.get("email"),
+          giro: data.get("giro"),
+          facturacion: data.get("facturacion"),
+          mensaje: data.get("mensaje") || null,
+          pagina: window.location.pathname,
+          ...getUTMs(),
+        }),
+      });
+    } catch (err) {
+      // Si Supabase falla, el lead igual llega por WhatsApp.
+      console.error("No se pudo guardar el lead:", err);
+    }
+  };
 
-  const mensaje = [
-    "Hola Fran, quiero agendar una sesión de diagnóstico.",
-    `Nombre: ${data.get("nombre")}`,
-    `WhatsApp: ${data.get("telefono")}`,
-    `Email: ${data.get("email")}`,
-    `Giro: ${data.get("giro")}`,
-    `Facturación mensual: ${data.get("facturacion")}`,
-    data.get("mensaje") ? `Reto principal: ${data.get("mensaje")}` : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  window.open(
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`,
-    "_blank"
-  );
+    let valid = true;
+    form.querySelectorAll("[required]").forEach((field) => {
+      const empty = !field.value.trim();
+      field.classList.toggle("error", empty);
+      if (empty) valid = false;
+    });
 
-  successMsg.hidden = false;
-  form.reset();
-});
+    const email = form.email;
+    if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+      email.classList.add("error");
+      valid = false;
+    }
 
-// Quitar marca de error al escribir
-form.querySelectorAll("input, select, textarea").forEach((field) => {
-  field.addEventListener("input", () => field.classList.remove("error"));
-});
+    if (!valid) return;
 
-// ---------- Año dinámico en el footer ----------
-document.getElementById("year").textContent = new Date().getFullYear();
+    const data = new FormData(form);
+
+    await guardarLead(data);
+
+    const numero = window.SITE_CONTENT?.general?.whatsapp || "5216462563006";
+    const mensaje = [
+      "Hola Fran, quiero agendar una sesión de diagnóstico.",
+      `Nombre: ${data.get("nombre")}`,
+      `WhatsApp: ${data.get("telefono")}`,
+      `Email: ${data.get("email")}`,
+      `Giro: ${data.get("giro")}`,
+      `Facturación mensual: ${data.get("facturacion")}`,
+      data.get("mensaje") ? `Reto principal: ${data.get("mensaje")}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+
+    successMsg.hidden = false;
+    form.reset();
+  });
+
+  // Quitar marca de error al escribir
+  form.querySelectorAll("input, select, textarea").forEach((field) => {
+    field.addEventListener("input", () => field.classList.remove("error"));
+  });
+
+  // Año dinámico en el footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  window.initDynamic();
+};
+
+// Si el content-loader terminó antes de que este archivo cargara, inicializar ya.
+if (window.__necesitaInit) window.initOnce();
