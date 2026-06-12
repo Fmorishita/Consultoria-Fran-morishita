@@ -84,15 +84,52 @@ document.querySelectorAll(".service").forEach((card) => {
 });
 
 // ---------- Formulario de leads ----------
-// Por defecto envía el lead a WhatsApp con un mensaje pre-armado.
-// Para conectar un backend (Formspree, Make, CRM, etc.) reemplaza
-// la lógica dentro de submit por un fetch() a tu endpoint.
-const WHATSAPP_NUMBER = "521XXXXXXXXXX"; // ← Reemplazar por el número real
+// Cada lead se guarda en Supabase (con los UTM de la campaña que lo trajo)
+// y además se abre WhatsApp con el mensaje pre-armado.
+const WHATSAPP_NUMBER = "5216462563006";
+const SUPABASE_URL = "https://lpdqksuvccsocntditik.supabase.co";
+// Clave publicable: es segura en el navegador; RLS solo permite insertar.
+const SUPABASE_KEY = "sb_publishable_q-ncqoltgj0ceLiPu8GD4Q_TJUBtT6W";
 
 const form = document.getElementById("leadForm");
 const successMsg = document.getElementById("formSuccess");
 
-form.addEventListener("submit", (e) => {
+const getUTMs = () => {
+  const params = new URLSearchParams(window.location.search);
+  const utms = {};
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
+    if (params.get(key)) utms[key] = params.get(key);
+  });
+  return utms;
+};
+
+const guardarLead = async (data) => {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nombre: data.get("nombre"),
+        telefono: data.get("telefono"),
+        email: data.get("email"),
+        giro: data.get("giro"),
+        facturacion: data.get("facturacion"),
+        mensaje: data.get("mensaje") || null,
+        pagina: window.location.pathname,
+        ...getUTMs(),
+      }),
+    });
+  } catch (err) {
+    // Si Supabase falla, el lead igual llega por WhatsApp.
+    console.error("No se pudo guardar el lead:", err);
+  }
+};
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   let valid = true;
@@ -111,6 +148,9 @@ form.addEventListener("submit", (e) => {
   if (!valid) return;
 
   const data = new FormData(form);
+
+  await guardarLead(data);
+
   const mensaje = [
     "Hola Fran, quiero agendar una sesión de diagnóstico.",
     `Nombre: ${data.get("nombre")}`,

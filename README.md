@@ -24,12 +24,19 @@ Landing page de alta conversión para los servicios de consultoría de crecimien
 10. **Contacto** — formulario de captura de leads + urgencia
 11. **Footer** + botón flotante de WhatsApp
 
-## Antes de publicar
+## Captura de leads
 
-- [ ] **WhatsApp**: reemplaza `521XXXXXXXXXX` por el número real en `script.js` (constante `WHATSAPP_NUMBER`) y en el enlace del botón flotante en `index.html`.
+Cada envío del formulario hace dos cosas:
+
+1. **Guarda el lead en Supabase** (tabla `public.leads` del proyecto "Consultoria fran morishita") con los campos del formulario más los parámetros UTM de la URL (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`) para saber de qué campaña vino cada lead.
+2. **Abre WhatsApp** (+52 646 256 3006) con un mensaje pre-armado con los datos del prospecto.
+
+La tabla tiene RLS activado: la clave publicable del sitio **solo puede insertar**; los leads únicamente se pueden leer desde el dashboard de Supabase (Table Editor → `leads`).
+
+## Pendientes opcionales
+
 - [ ] **Foto de Fran**: en la sección "Sobre Fran" de `index.html` hay un placeholder `FM`; sustitúyelo por `<img src="assets/fran.jpg" alt="Fran Morishita" />`.
-- [ ] **Formulario**: por defecto el formulario abre WhatsApp con los datos del lead. Para enviarlo a un CRM, Formspree o Make/Zapier, reemplaza la lógica de envío en `script.js`.
-- [ ] **Dominio y analítica**: agrega tu píxel de Meta y Google Analytics antes de correr pauta.
+- [ ] **Analítica**: agrega tu píxel de Meta y Google Analytics antes de correr pauta.
 
 ## Cómo verlo en local
 
