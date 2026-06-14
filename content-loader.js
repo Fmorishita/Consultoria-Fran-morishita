@@ -47,6 +47,39 @@
     return "";
   }
 
+  /* Inserta el widget de Calendly. El div SIEMPRE lleva data-url para que el
+     auto-init de Calendly no falle al escanearlo. Si la librería ya está
+     cargada (p. ej. al cambiar la URL en la vista previa) reinicia el widget. */
+  function renderCalendly(url) {
+    const cont = document.querySelector("#contactoCalendly");
+    if (!cont) return;
+    if (!url) {
+      cont.dataset.url = "";
+      cont.innerHTML = '<div class="contact__cal-ph">Configura tu link de Calendly en el panel de administración.</div>';
+      return;
+    }
+    if (cont.dataset.url === url) return; // ya montado con esta URL
+    cont.dataset.url = url;
+    cont.innerHTML = `<div class="calendly-inline-widget" data-url="${esc(url)}" style="min-width:320px;height:700px;"></div>`;
+    const widget = cont.firstElementChild;
+
+    if (window.Calendly) {
+      window.Calendly.initInlineWidget({ url, parentElement: widget });
+      return;
+    }
+    if (!document.getElementById("calendly-widget-js")) {
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "https://assets.calendly.com/assets/external/widget.css";
+      document.head.appendChild(css);
+      const s = document.createElement("script");
+      s.id = "calendly-widget-js";
+      s.src = "https://assets.calendly.com/assets/external/widget.js";
+      s.async = true;
+      document.head.appendChild(s); // su auto-init monta el widget con data-url
+    }
+  }
+
   const tituloHTML = (s) =>
     `${s.titulo || ""}${s.tituloDestacado ? ` <span class="text-gradient">${s.tituloDestacado}</span>` : ""}`;
 
@@ -69,10 +102,6 @@
     document.querySelectorAll(".nav__logo").forEach((el) => {
       el.innerHTML = `${esc(g.logo1)}<span>${esc(g.logo2)}</span>`;
     });
-
-    /* WhatsApp flotante */
-    const wa = $(".whatsapp-float");
-    if (wa) wa.href = `https://wa.me/${g.whatsapp}?text=${encodeURIComponent(g.mensajeWhatsappFloat)}`;
 
     /* Nav */
     const navCta = $('.nav__links a[href="#contacto"]');
@@ -228,32 +257,14 @@
       )
       .join("");
 
-    /* Contacto */
+    /* Contacto + Calendly */
     const ct = cfg.contacto;
     $("#contacto .section__tag").textContent = ct.tag;
     $("#contacto h2").innerHTML = tituloHTML(ct);
     $(".contact__copy > p").innerHTML = ct.texto;
     $(".contact__bullets").innerHTML = ct.bullets.map((b) => `<li>${esc(b)}</li>`).join("");
     $(".contact__urgency").innerHTML = ct.urgencia;
-    const f = ct.form;
-    $('label[for="nombre"]').textContent = f.etiquetaNombre;
-    $('label[for="telefono"]').textContent = f.etiquetaTelefono;
-    $('label[for="email"]').textContent = f.etiquetaEmail;
-    $('label[for="giro"]').textContent = f.etiquetaGiro;
-    $('label[for="facturacion"]').textContent = f.etiquetaFacturacion;
-    $('label[for="mensaje"]').textContent = f.etiquetaMensaje;
-    const fillSelect = (sel, opciones, placeholder) => {
-      const el = $(sel);
-      el.innerHTML =
-        `<option value="" disabled selected>${esc(placeholder)}</option>` +
-        opciones.map((o) => `<option>${esc(o)}</option>`).join("");
-    };
-    fillSelect("#giro", f.giroOpciones, "Selecciona una opción");
-    fillSelect("#facturacion", f.facturacionOpciones, "Selecciona un rango");
-    $("#leadForm button[type=submit]").innerHTML =
-      `${esc(f.boton)} <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-    $(".form__note").textContent = f.nota;
-    $("#formSuccess").textContent = f.exito;
+    renderCalendly(ct.calendlyUrl);
 
     /* Footer */
     $(".footer__brand p").textContent = cfg.footer.descripcion;

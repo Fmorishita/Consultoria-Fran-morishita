@@ -95,95 +95,12 @@ window.initOnce = () => {
     });
   }
 
-  // ---------- Formulario de leads ----------
-  // Cada lead se guarda en Supabase (con los UTM de la campaña que lo trajo)
-  // y además se abre WhatsApp con el mensaje pre-armado.
-  const form = document.getElementById("leadForm");
-  const successMsg = document.getElementById("formSuccess");
-
-  const getUTMs = () => {
-    const params = new URLSearchParams(window.location.search);
-    const utms = {};
-    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
-      if (params.get(key)) utms[key] = params.get(key);
-    });
-    return utms;
-  };
-
-  const guardarLead = async (data) => {
-    try {
-      await fetch(`${SITE_SUPABASE_URL}/rest/v1/leads`, {
-        method: "POST",
-        headers: {
-          apikey: SITE_SUPABASE_KEY,
-          Authorization: `Bearer ${SITE_SUPABASE_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nombre: data.get("nombre"),
-          telefono: data.get("telefono"),
-          email: data.get("email"),
-          giro: data.get("giro"),
-          facturacion: data.get("facturacion"),
-          mensaje: data.get("mensaje") || null,
-          pagina: window.location.pathname,
-          ...getUTMs(),
-        }),
-      });
-    } catch (err) {
-      // Si Supabase falla, el lead igual llega por WhatsApp.
-      console.error("No se pudo guardar el lead:", err);
-    }
-  };
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    let valid = true;
-    form.querySelectorAll("[required]").forEach((field) => {
-      const empty = !field.value.trim();
-      field.classList.toggle("error", empty);
-      if (empty) valid = false;
-    });
-
-    const email = form.email;
-    if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      email.classList.add("error");
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    const data = new FormData(form);
-
-    await guardarLead(data);
-
-    const numero = window.SITE_CONTENT?.general?.whatsapp || "5216462563006";
-    const mensaje = [
-      "Hola Fran, quiero agendar una sesión de diagnóstico.",
-      `Nombre: ${data.get("nombre")}`,
-      `WhatsApp: ${data.get("telefono")}`,
-      `Email: ${data.get("email")}`,
-      `Giro: ${data.get("giro")}`,
-      `Facturación mensual: ${data.get("facturacion")}`,
-      data.get("mensaje") ? `Reto principal: ${data.get("mensaje")}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
-
-    successMsg.hidden = false;
-    form.reset();
-  });
-
-  // Quitar marca de error al escribir
-  form.querySelectorAll("input, select, textarea").forEach((field) => {
-    field.addEventListener("input", () => field.classList.remove("error"));
-  });
+  // El contacto ahora es un widget de Calendly (lo monta content-loader),
+  // así que ya no hay formulario propio que manejar aquí.
 
   // Año dinámico en el footer
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
   window.initDynamic();
 };
