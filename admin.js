@@ -76,36 +76,37 @@ function optimizarImagen(file) {
 }
 
 /* Sube un blob al bucket público "sitio" usando el token de la sesión.
-   Lo hacemos con fetch manual (no con sb.storage.upload) porque el cliente
+   Lo hacemos con XHR manual (no con sb.storage.upload) porque el cliente
    de Storage no adjunta bien el token de usuario con las claves publicables,
-   y la subida saldría como anónima (error de permisos RLS). */
-async function subirImagen(ruta, blob) {
+   y la subida saldría como anónima (error de permisos RLS). XHR además da
+   progreso de subida, útil para videos pesados.
+   Sin x-upsert: cada archivo tiene nombre único (timestamp), así que nunca
+   colisiona y evitamos exigir política de UPDATE en Storage. */
+async function subirArchivo(ruta, blob, onProgress) {
   const { data } = await sb.auth.getSession();
   const token = data?.session?.access_token;
   if (!token) throw new Error("jwt: sesión no disponible");
-  const res = await fetch(
-    `${SITE_SUPABASE_URL}/storage/v1/object/sitio/${ruta}`,
-    {
-      method: "POST",
-      // Sin x-upsert: cada archivo tiene nombre único (timestamp), así que
-      // nunca colisiona y evitamos exigir política de UPDATE en Storage.
-      headers: {
-        apikey: SITE_SUPABASE_KEY,
-        Authorization: `Bearer ${token}`,
-        "Content-Type": blob.type || "application/octet-stream",
-      },
-      body: blob,
-    }
-  );
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`${res.status}: ${txt}`);
-  }
-  return `${SITE_SUPABASE_URL}/storage/v1/object/public/sitio/${ruta}`;
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", `${SITE_SUPABASE_URL}/storage/v1/object/sitio/${ruta}`);
+    xhr.setRequestHeader("apikey", SITE_SUPABASE_KEY);
+    xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    xhr.setRequestHeader("Content-Type", blob.type || "application/octet-stream");
+    xhr.upload.onprogress = (e) => {
+      if (e.lengthComputable && onProgress) onProgress(e.loaded / e.total);
+    };
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300)
+        resolve(`${SITE_SUPABASE_URL}/storage/v1/object/public/sitio/${ruta}`);
+      else reject(new Error(`${xhr.status}: ${xhr.responseText}`));
+    };
+    xhr.onerror = () => reject(new Error("Error de red al subir el archivo"));
+    xhr.send(blob);
+  });
 }
 
 /* ---------- Esquema del editor ---------- */
-const T = { texto: "texto", area: "textarea", html: "html", numero: "numero", color: "color", select: "select", imagen: "imagen", listaTexto: "lista-texto", parrafos: "parrafos" };
+const T = { texto: "texto", area: "textarea", html: "html", numero: "numero", color: "color", select: "select", imagen: "imagen", video: "video", listaTexto: "lista-texto", parrafos: "parrafos" };
 
 const AYUDA_HTML = "Puedes usar <br> para salto de línea y <strong>texto</strong> para negritas doradas.";
 
@@ -267,6 +268,46 @@ const SCHEMA = [
       { path: "sobreFran.tarjetaFlotante2Titulo", etiqueta: "Tarjeta flotante 2 — número", tipo: T.texto },
       { path: "sobreFran.tarjetaFlotante2Texto", etiqueta: "Tarjeta flotante 2 — texto", tipo: T.texto },
     ],
+  },
+  {
+    id: "testimonios", icono: "⭐", nombre: "Testimonios",
+    desc: "Video sobre ti, foto con Gus Marcos y testimonios de clientes.",
+    scroll: "#testimonios", visible: "testimonios.visible",
+    campos: [
+      { path: "testimonios.tag", etiqueta: "Etiqueta de sección", tipo: T.texto },
+      { path: "testimonios.titulo", etiqueta: "Título", tipo: T.html, ayuda: AYUDA_HTML },
+      { path: "testimonios.tituloDestacado", etiqueta: "Título — parte dorada", tipo: T.texto },
+      { path: "testimonios.subtitulo", etiqueta: "Subtítulo", tipo: T.area },
+      { path: "testimonios.videoTitulo", etiqueta: "Título del video", tipo: T.texto },
+      {
+        path: "testimonios.videoEmbed",
+        etiqueta: "Link de YouTube o Vimeo (recomendado)",
+        tipo: T.texto,
+        ayuda: "La forma recomendada: sube tu video a YouTube (puede ser “oculto”) y pega aquí el link. Es gratis, rápido y no consume tu almacenamiento. Si pones un link aquí, tiene prioridad sobre el archivo subido.",
+      },
+      {
+        path: "testimonios.videoArchivo",
+        etiqueta: "…o sube el archivo de video (máx 50 MB)",
+        tipo: T.video,
+        ayuda: "Alternativa si no quieres usar YouTube. Para videos de más de 50 MB usa el link de YouTube de arriba.",
+      },
+      {
+        path: "testimonios.videoPoster",
+        etiqueta: "Imagen de portada del video (opcional)",
+        tipo: T.imagen,
+        ayuda: "Se muestra antes de darle play (solo para video subido como archivo).",
+      },
+    ],
+    lista: {
+      path: "testimonios.tarjetas", nombre: "Testimonios y colaboraciones",
+      plantilla: { foto: "", nombre: "Nombre del cliente", rol: "Empresa o ciudad", texto: "Lo que dijo sobre trabajar contigo." },
+      campos: [
+        { sub: "foto", etiqueta: "Foto", tipo: T.imagen },
+        { sub: "nombre", etiqueta: "Nombre", tipo: T.texto },
+        { sub: "rol", etiqueta: "Rol / empresa / ciudad", tipo: T.texto },
+        { sub: "texto", etiqueta: "Testimonio o descripción", tipo: T.area },
+      ],
+    },
   },
   {
     id: "comparativa", icono: "⚖️", nombre: "Comparativa",
@@ -627,7 +668,7 @@ function renderCampo(campo, contexto = draft, prefijo = "") {
             const ext = blob.type === "image/svg+xml" ? "svg" : "jpg";
             const base = (file.name.replace(/\.[^.]+$/, "") || "imagen").replace(/[^a-zA-Z0-9\-_]/g, "_").slice(0, 40);
             const ruta = `imagenes/${Date.now()}-${base}.${ext}`;
-            const publicUrl = await subirImagen(ruta, blob);
+            const publicUrl = await subirArchivo(ruta, blob);
             setPath(draft, path, publicUrl);
             render();
             alCambiar();
@@ -642,6 +683,75 @@ function renderCampo(campo, contexto = draft, prefijo = "") {
               toast("No se pudo subir la imagen: " + (msg || "error desconocido"), "error");
             }
             aviso.hidden = true;
+            inputFile.value = "";
+          }
+        });
+        div.querySelector(".btn--peligro")?.addEventListener("click", () => {
+          setPath(draft, path, "");
+          render();
+          alCambiar();
+        });
+      };
+      render();
+      break;
+    }
+    case T.video: {
+      div.className = "campo campo--video";
+      const MAX_MB = 50;
+      const render = () => {
+        const url = getPath(draft, path);
+        div.innerHTML = `${etiqueta}
+          <div class="video-preview">${
+            url
+              ? `<video src="${escAttr(url)}" controls preload="metadata"></video>`
+              : "Sin video subido"
+          }</div>
+          <div class="img-acciones">
+            <label class="btn btn--ghost btn--small" style="cursor:pointer">📤 Subir video<input type="file" accept="video/*" hidden /></label>
+            ${url ? '<button type="button" class="btn btn--ghost btn--small btn--peligro">Quitar</button>' : ""}
+          </div>
+          <div class="progreso" hidden><div class="progreso__barra"></div><span class="progreso__txt"></span></div>${ayuda}`;
+        const inputFile = div.querySelector("input[type=file]");
+        inputFile.addEventListener("change", async (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          if (!file.type.startsWith("video/")) {
+            inputFile.value = "";
+            return toast("Ese archivo no es un video.", "error");
+          }
+          if (file.size > MAX_MB * 1024 * 1024) {
+            inputFile.value = "";
+            return toast(
+              `El video pesa ${(file.size / 1024 / 1024).toFixed(0)} MB y el máximo es ${MAX_MB} MB. Para videos más pesados, sube el video a YouTube y pega el link arriba.`,
+              "error"
+            );
+          }
+          const prog = div.querySelector(".progreso");
+          const barra = div.querySelector(".progreso__barra");
+          const txt = div.querySelector(".progreso__txt");
+          prog.hidden = false;
+          try {
+            const ext = (file.name.match(/\.[a-zA-Z0-9]+$/) || [".mp4"])[0];
+            const base = (file.name.replace(/\.[^.]+$/, "") || "video").replace(/[^a-zA-Z0-9\-_]/g, "_").slice(0, 40);
+            const ruta = `videos/${Date.now()}-${base}${ext}`;
+            const publicUrl = await subirArchivo(ruta, file, (p) => {
+              barra.style.width = `${Math.round(p * 100)}%`;
+              txt.textContent = `${Math.round(p * 100)}%`;
+            });
+            setPath(draft, path, publicUrl);
+            render();
+            alCambiar();
+            toast("Video subido y guardado ✓", "ok");
+          } catch (err) {
+            const msg = (err && err.message) || "";
+            if (/row-level security|Unauthorized|jwt|JWT|401/.test(msg)) {
+              toast("Tu sesión expiró. Cierra sesión y vuelve a entrar para subir el video.", "error");
+            } else if (/exceeded|413|too large|payload/i.test(msg)) {
+              toast(`El video supera el límite de ${MAX_MB} MB. Súbelo a YouTube y pega el link arriba.`, "error");
+            } else {
+              toast("No se pudo subir el video: " + (msg || "error desconocido"), "error");
+            }
+            prog.hidden = true;
             inputFile.value = "";
           }
         });

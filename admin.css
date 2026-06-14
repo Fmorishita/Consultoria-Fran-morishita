@@ -389,6 +389,41 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 
 .campo--imagen .subiendo { color: var(--gold-light); font-size: 0.78rem; }
 
+/* Campo de video */
+.campo--video .video-preview {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+  min-height: 90px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.campo--video .video-preview video { width: 100%; max-height: 240px; display: block; background: #000; }
+
+.campo--video .progreso {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.campo--video .progreso__barra {
+  height: 8px;
+  width: 0;
+  flex: 1;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+  border-radius: 100px;
+  transition: width 0.2s ease;
+}
+
+.campo--video .progreso__txt { font-size: 0.78rem; color: var(--gold-light); min-width: 34px; }
+
 /* Listas de elementos */
 .lista-items { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 0.7rem; }
 
