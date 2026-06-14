@@ -113,14 +113,12 @@ const AYUDA_HTML = "Puedes usar <br> para salto de línea y <strong>texto</stron
 const SCHEMA = [
   {
     id: "general", icono: "🧭", nombre: "General",
-    desc: "Marca, WhatsApp y datos para buscadores.",
+    desc: "Marca y datos para buscadores.",
     scroll: "#inicio",
     campos: [
       { path: "general.logo1", etiqueta: "Logo — primera palabra (blanca)", tipo: T.texto },
       { path: "general.logo2", etiqueta: "Logo — segunda palabra (dorada)", tipo: T.texto },
       { path: "general.botonNav", etiqueta: "Botón del menú superior", tipo: T.texto },
-      { path: "general.whatsapp", etiqueta: "Número de WhatsApp", tipo: T.texto, ayuda: "Formato: 521 + 10 dígitos, sin espacios. Ej: 5216462563006" },
-      { path: "general.mensajeWhatsappFloat", etiqueta: "Mensaje pre-escrito del botón flotante", tipo: T.area },
       { path: "general.metaTitulo", etiqueta: "Título en Google / pestaña del navegador", tipo: T.texto },
       { path: "general.metaDescripcion", etiqueta: "Descripción en Google", tipo: T.area },
     ],
@@ -341,8 +339,8 @@ const SCHEMA = [
     },
   },
   {
-    id: "contacto", icono: "✉️", nombre: "Contacto",
-    desc: "Tu formulario de captura de leads.",
+    id: "contacto", icono: "✉️", nombre: "Contacto / Calendly",
+    desc: "Sección final donde el visitante agenda una llamada por Calendly.",
     scroll: "#contacto",
     campos: [
       { path: "contacto.tag", etiqueta: "Etiqueta de sección", tipo: T.texto },
@@ -351,17 +349,12 @@ const SCHEMA = [
       { path: "contacto.texto", etiqueta: "Texto", tipo: T.html },
       { path: "contacto.bullets", etiqueta: "Beneficios (✓)", tipo: T.listaTexto, ayuda: "Uno por línea." },
       { path: "contacto.urgencia", etiqueta: "Mensaje de urgencia", tipo: T.html },
-      { path: "contacto.form.etiquetaNombre", etiqueta: "Etiqueta — nombre", tipo: T.texto },
-      { path: "contacto.form.etiquetaTelefono", etiqueta: "Etiqueta — WhatsApp", tipo: T.texto },
-      { path: "contacto.form.etiquetaEmail", etiqueta: "Etiqueta — correo", tipo: T.texto },
-      { path: "contacto.form.etiquetaGiro", etiqueta: "Etiqueta — giro", tipo: T.texto },
-      { path: "contacto.form.giroOpciones", etiqueta: "Opciones de giro", tipo: T.listaTexto, ayuda: "Una por línea." },
-      { path: "contacto.form.etiquetaFacturacion", etiqueta: "Etiqueta — facturación", tipo: T.texto },
-      { path: "contacto.form.facturacionOpciones", etiqueta: "Opciones de facturación", tipo: T.listaTexto, ayuda: "Una por línea." },
-      { path: "contacto.form.etiquetaMensaje", etiqueta: "Etiqueta — mensaje", tipo: T.texto },
-      { path: "contacto.form.boton", etiqueta: "Botón de envío", tipo: T.texto },
-      { path: "contacto.form.nota", etiqueta: "Nota de privacidad", tipo: T.texto },
-      { path: "contacto.form.exito", etiqueta: "Mensaje de éxito", tipo: T.texto },
+      {
+        path: "contacto.calendlyUrl",
+        etiqueta: "Link de tu evento de Calendly",
+        tipo: T.texto,
+        ayuda: "Ej: https://calendly.com/franmorishita/30min — Las preguntas al lead (nombre, WhatsApp, email, giro, problema, web/redes) se configuran DENTRO de Calendly, en las preguntas del invitado de tu evento. Así no se piden dos veces.",
+      },
     ],
   },
   {
@@ -378,6 +371,28 @@ const SCHEMA = [
 /* ============================================================
    AUTENTICACIÓN
    ============================================================ */
+let emailActual = "";
+let cerrandoSesion = false;
+
+const esErrorAuth = (error) =>
+  !!error &&
+  /jwt|JWT|token|expired|401|403|row-level security|Unauthorized|not authenticated|invalid claim/i.test(
+    `${error.message || ""} ${error.code || ""} ${error.status || ""}`
+  );
+
+/* Garantiza que haya una sesión válida; refresca si está por expirar.
+   Devuelve false si la sesión ya no sirve (hay que reconectar). */
+async function asegurarSesion() {
+  const { data } = await sb.auth.getSession();
+  const session = data?.session;
+  if (!session) return false;
+  if (session.expires_at && session.expires_at * 1000 - Date.now() < 120000) {
+    const { data: ref, error } = await sb.auth.refreshSession();
+    if (error || !ref?.session) return false;
+  }
+  return true;
+}
+
 $("#loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const btn = $("#loginBtn");
@@ -399,6 +414,7 @@ $("#loginForm").addEventListener("submit", async (e) => {
 });
 
 $("#btnSalir")?.addEventListener("click", async () => {
+  cerrandoSesion = true;
   await sb.auth.signOut();
   window.location.reload();
 });
@@ -409,7 +425,45 @@ $("#btnPass")?.addEventListener("click", async () => {
   if (nueva.length < 8) return toast("La contraseña debe tener al menos 8 caracteres.", "error");
   const { error } = await sb.auth.updateUser({ password: nueva });
   if (error) return toast("No se pudo cambiar: " + error.message, "error");
-  toast("Contraseña actualizada ✓", "ok");
+  toast("Contraseña actualizada ✓. Tu sesión sigue activa aquí.", "ok");
+});
+
+/* ---------- Reconexión cuando la sesión expira ---------- */
+function mostrarReconectar() {
+  const vista = $("#reconectarView");
+  if (!vista.hidden) return; // ya visible
+  vista.hidden = false;
+  $("#recPass").value = "";
+  $("#recPass").focus();
+  $("#autosaveInfo").textContent = "⚠ Reconecta para guardar";
+}
+
+$("#reconectarForm")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = $("#recBtn");
+  btn.disabled = true;
+  btn.textContent = "Reconectando...";
+  $("#recError").hidden = true;
+  const { error } = await sb.auth.signInWithPassword({
+    email: emailActual,
+    password: $("#recPass").value,
+  });
+  btn.disabled = false;
+  btn.textContent = "Reconectar y guardar";
+  if (error) {
+    $("#recError").textContent = "Contraseña incorrecta. Intenta de nuevo.";
+    $("#recError").hidden = false;
+    return;
+  }
+  $("#reconectarView").hidden = true;
+  toast("Reconectado ✓ Guardando tus cambios…", "ok");
+  await guardarBorradorAhora(); // persiste lo que estaba pendiente
+});
+
+$("#recSalir")?.addEventListener("click", async () => {
+  cerrandoSesion = true;
+  await sb.auth.signOut();
+  window.location.reload();
 });
 
 /* ============================================================
@@ -424,15 +478,47 @@ async function cargarConfig() {
   actualizarChip();
 }
 
+/* Hace el guardado real del borrador, con reintento tras refrescar la
+   sesión y, si de plano expiró, pide reconectar sin perder los cambios. */
+async function guardarBorradorAhora() {
+  if (!draft) return;
+  $("#autosaveInfo").textContent = "Guardando…";
+  if (!(await asegurarSesion())) {
+    mostrarReconectar();
+    return;
+  }
+  let { error } = await sb.from("site_config").upsert({ key: "draft", content: draft });
+  if (error && esErrorAuth(error)) {
+    await sb.auth.refreshSession();
+    ({ error } = await sb.from("site_config").upsert({ key: "draft", content: draft }));
+  }
+  if (!error) {
+    $("#autosaveInfo").textContent = "Borrador guardado ✓";
+  } else if (esErrorAuth(error)) {
+    mostrarReconectar();
+  } else {
+    $("#autosaveInfo").textContent = "⚠ No se pudo guardar";
+    toast("Error al guardar el borrador: " + error.message, "error");
+  }
+}
+
 function guardarBorrador() {
   clearTimeout(timerGuardado);
   $("#autosaveInfo").textContent = "Guardando…";
-  timerGuardado = setTimeout(async () => {
-    const { error } = await sb.from("site_config").upsert({ key: "draft", content: draft });
-    $("#autosaveInfo").textContent = error ? "⚠ No se pudo guardar" : "Borrador guardado ✓";
-    if (error) toast("Error al guardar el borrador: " + error.message, "error");
-  }, 900);
+  timerGuardado = setTimeout(guardarBorradorAhora, 700);
 }
+
+/* Guarda de inmediato lo pendiente (al salir de un campo o cerrar pestaña). */
+function flushGuardado() {
+  if (timerGuardado) {
+    clearTimeout(timerGuardado);
+    timerGuardado = null;
+    guardarBorradorAhora();
+  }
+}
+window.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") flushGuardado();
+});
 
 function actualizarChip() {
   const chip = $("#statusChip");
@@ -454,8 +540,17 @@ function alCambiar() {
 
 $("#btnPublicar").addEventListener("click", async () => {
   if (!confirm("¿Publicar los cambios? El sitio en vivo se actualizará al instante.")) return;
-  const { error } = await sb.from("site_config").upsert({ key: "published", content: draft });
-  if (error) return toast("Error al publicar: " + error.message, "error");
+  flushGuardado();
+  if (!(await asegurarSesion())) return mostrarReconectar();
+  let { error } = await sb.from("site_config").upsert({ key: "published", content: draft });
+  if (error && esErrorAuth(error)) {
+    await sb.auth.refreshSession();
+    ({ error } = await sb.from("site_config").upsert({ key: "published", content: draft }));
+  }
+  if (error) {
+    if (esErrorAuth(error)) return mostrarReconectar();
+    return toast("Error al publicar: " + error.message, "error");
+  }
   published = clonar(draft);
   actualizarChip();
   toast("🚀 Cambios publicados. Tu sitio ya está actualizado.", "ok");
@@ -463,6 +558,7 @@ $("#btnPublicar").addEventListener("click", async () => {
 
 $("#btnDescartar").addEventListener("click", async () => {
   if (!confirm("¿Descartar el borrador y volver a la última versión publicada?")) return;
+  if (!(await asegurarSesion())) return mostrarReconectar();
   draft = clonar(published || DEFAULT_CONTENT);
   await sb.from("site_config").upsert({ key: "draft", content: draft });
   renderEditor();
@@ -675,8 +771,8 @@ function renderCampo(campo, contexto = draft, prefijo = "") {
             toast("Imagen subida y guardada ✓", "ok");
           } catch (err) {
             const msg = (err && err.message) || "";
-            if (/row-level security|Unauthorized|jwt|JWT|401/.test(msg)) {
-              toast("Tu sesión expiró. Cierra sesión y vuelve a entrar para subir la imagen.", "error");
+            if (esErrorAuth(err)) {
+              mostrarReconectar();
             } else if (/exceeded|size|413|too large/i.test(msg)) {
               toast("La imagen es demasiado grande incluso optimizada. Usa uno menos pesado.", "error");
             } else {
@@ -744,8 +840,8 @@ function renderCampo(campo, contexto = draft, prefijo = "") {
             toast("Video subido y guardado ✓", "ok");
           } catch (err) {
             const msg = (err && err.message) || "";
-            if (/row-level security|Unauthorized|jwt|JWT|401/.test(msg)) {
-              toast("Tu sesión expiró. Cierra sesión y vuelve a entrar para subir el video.", "error");
+            if (esErrorAuth(err)) {
+              mostrarReconectar();
             } else if (/exceeded|413|too large|payload/i.test(msg)) {
               toast(`El video supera el límite de ${MAX_MB} MB. Súbelo a YouTube y pega el link arriba.`, "error");
             } else {
@@ -765,6 +861,10 @@ function renderCampo(campo, contexto = draft, prefijo = "") {
       break;
     }
   }
+  // Al salir de cualquier campo, guardar de inmediato lo pendiente.
+  div.querySelectorAll("input, textarea, select").forEach((el) =>
+    el.addEventListener("blur", flushGuardado)
+  );
   return div;
 }
 
@@ -928,8 +1028,11 @@ $("#btnLeadsCSV").addEventListener("click", () => {
    ============================================================ */
 async function iniciarApp() {
   $("#loginView").style.display = "none";
+  $("#reconectarView").hidden = true;
   $("#appView").hidden = false;
   if (window.innerWidth <= 1100) $("#btnPreviewToggle").hidden = false;
+  const { data: sd } = await sb.auth.getSession();
+  emailActual = sd?.session?.user?.email || emailActual;
   await cargarConfig();
   renderSidebar();
   renderEditor();
@@ -940,6 +1043,11 @@ async function iniciarApp() {
   const { data } = await sb.auth.getSession();
   if (data?.session) iniciarApp();
   sb.auth.onAuthStateChange((evento) => {
-    if (evento === "SIGNED_OUT") window.location.reload();
+    // Si la sesión cae sola (token no renovable) NO recargamos para no perder
+    // el borrador en memoria: mostramos el aviso de reconexión.
+    if (evento === "SIGNED_OUT") {
+      if (cerrandoSesion) window.location.reload();
+      else if (!$("#appView").hidden) mostrarReconectar();
+    }
   });
 })();

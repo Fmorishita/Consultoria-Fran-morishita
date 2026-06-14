@@ -291,35 +291,20 @@ const DEFAULT_CONTENT = {
   contacto: {
     visible: true,
     tag: "Da el primer paso",
-    titulo: "Agenda tu sesión de<br>",
-    tituloDestacado: "diagnóstico estratégico",
+    titulo: "Agenda una sesión de<br>",
+    tituloDestacado: "descubrimiento de 30 min",
     texto:
-      "En esta sesión analizamos tu negocio y te decimos con claridad dónde están tus oportunidades de crecimiento más grandes. Sin compromiso, sin rodeos.",
+      "Una videollamada de 30 minutos para conocer tu negocio y ver si podemos trabajar juntos. Sin compromiso y sin venderte nada: solo claridad sobre tu mayor oportunidad de crecimiento.",
     bullets: [
-      "Diagnóstico inicial de tu embudo de ventas",
-      "Oportunidades concretas para multiplicar facturación",
-      "Plan de acción claro para tu caso específico",
+      "Conocemos tu negocio, tus números y tus objetivos",
+      "Detectamos tu oportunidad de crecimiento más grande",
+      "Definimos si somos el equipo correcto para ti",
     ],
     urgencia:
-      "⚡ Fran trabaja con un número limitado de clientes a la vez para garantizar profundidad en cada caso.",
-    form: {
-      etiquetaNombre: "Nombre completo *",
-      etiquetaTelefono: "WhatsApp *",
-      etiquetaEmail: "Correo electrónico *",
-      etiquetaGiro: "Giro de tu negocio *",
-      etiquetaFacturacion: "Facturación mensual *",
-      etiquetaMensaje: "¿Cuál es tu reto principal?",
-      giroOpciones: ["Real Estate", "E-commerce", "Gastronomía", "Otro"],
-      facturacionOpciones: [
-        "Menos de $100 mil MXN",
-        "$100 mil – $500 mil MXN",
-        "$500 mil – $1 millón MXN",
-        "Más de $1 millón MXN",
-      ],
-      boton: "Agendar mi sesión de diagnóstico",
-      nota: "Tus datos están seguros. Solo los usamos para contactarte sobre tu sesión.",
-      exito: "✅ ¡Listo! Recibimos tu información. Te contactaremos muy pronto por WhatsApp.",
-    },
+      "⚡ Cupos limitados: Fran toma pocas llamadas al mes para dar profundidad a cada caso.",
+    // Link de tu evento de Calendly. Las preguntas (nombre, WhatsApp, giro,
+    // problema, web/redes) se configuran dentro de Calendly, no aquí.
+    calendlyUrl: "https://calendly.com/franmorishita/30min?hide_gdpr_banner=1",
   },
 
   footer: {

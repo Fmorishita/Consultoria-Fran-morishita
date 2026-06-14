@@ -27,6 +27,20 @@
     </form>
   </div>
 
+  <!-- ███ RECONEXIÓN (sesión expirada) ███ -->
+  <div class="login reconectar" id="reconectarView" hidden>
+    <form class="login__card" id="reconectarForm">
+      <div class="login__logo">FRAN<span>MORISHITA</span></div>
+      <h1>🔒 Tu sesión expiró</h1>
+      <p>Vuelve a escribir tu contraseña para seguir guardando. <strong>No perdiste tus cambios</strong>: se guardan en cuanto reconectes.</p>
+      <label for="recPass">Contraseña</label>
+      <input type="password" id="recPass" autocomplete="current-password" required />
+      <button type="submit" class="btn btn--gold" id="recBtn">Reconectar y guardar</button>
+      <button type="button" class="btn btn--ghost" id="recSalir" style="margin-top:.6rem;width:100%">Salir</button>
+      <p class="login__error" id="recError" hidden></p>
+    </form>
+  </div>
+
   <!-- ███ APP ███ -->
   <div class="app" id="appView" hidden>
     <header class="topbar">

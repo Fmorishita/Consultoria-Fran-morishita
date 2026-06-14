@@ -151,6 +151,20 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   text-align: center;
 }
 
+/* Overlay de reconexión por sesión expirada.
+   El [hidden] necesita !important porque .login fija display:grid. */
+.reconectar {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(5, 7, 11, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.reconectar[hidden] { display: none !important; }
+
+.reconectar .login__card { border-color: rgba(232, 179, 75, 0.45); }
+
 /* ---------- Estructura de la app ---------- */
 .app { display: flex; flex-direction: column; height: 100vh; }
 
