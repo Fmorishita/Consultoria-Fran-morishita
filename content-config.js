@@ -237,6 +237,28 @@ const DEFAULT_CONTENT = {
     ],
   },
 
+  testimonios: {
+    visible: true,
+    tag: "Testimonios y colaboraciones",
+    titulo: "Resultados reales,<br>",
+    tituloDestacado: "no promesas.",
+    subtitulo:
+      "Empresarios y dueños de negocio que han trabajado de la mano con Fran y con quienes ha colaborado.",
+    // Video destacado. Pega un link de YouTube/Vimeo (recomendado) o sube un archivo.
+    videoTitulo: "Conoce a Fran en 2 minutos",
+    videoEmbed: "",
+    videoArchivo: "",
+    videoPoster: "",
+    tarjetas: [
+      {
+        foto: "",
+        nombre: "Gus Marcos",
+        rol: "Empresario reconocido · Monterrey",
+        texto: "Colaboración con Gustavo “Gus” Marcos, referente del emprendimiento en México, en estrategias de crecimiento y marketing.",
+      },
+    ],
+  },
+
   faq: {
     visible: true,
     tag: "Preguntas frecuentes",

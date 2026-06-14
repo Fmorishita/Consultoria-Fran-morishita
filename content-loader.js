@@ -34,6 +34,19 @@
 
   const ESTILOS_NICHO = { azul: "realestate", dorado: "ecommerce", rojo: "gastro" };
 
+  /* Convierte un link de YouTube o Vimeo en su URL de inserción (embed).
+     Devuelve "" si no reconoce el formato (entonces no se muestra video). */
+  function embedDeVideo(url) {
+    if (!url) return "";
+    url = String(url).trim();
+    let m;
+    if ((m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/)))
+      return `https://www.youtube-nocookie.com/embed/${m[1]}?rel=0`;
+    if ((m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/)))
+      return `https://player.vimeo.com/video/${m[1]}`;
+    return "";
+  }
+
   const tituloHTML = (s) =>
     `${s.titulo || ""}${s.tituloDestacado ? ` <span class="text-gradient">${s.tituloDestacado}</span>` : ""}`;
 
@@ -159,6 +172,53 @@
     $(".why__col--us").innerHTML =
       `<h3>${esc(cmp.buenaTitulo)}</h3><ul>${cmp.buenaItems.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
 
+    /* Testimonios */
+    const tst = cfg.testimonios;
+    setHead("#testimonios .section__head", tst);
+    const videoWrap = $("#testimoniosVideo");
+    const embedUrl = embedDeVideo(tst.videoEmbed);
+    if (tst.videoArchivo) {
+      videoWrap.hidden = false;
+      videoWrap.innerHTML = `
+        ${tst.videoTitulo ? `<h3 class="testimonials__video-title">${esc(tst.videoTitulo)}</h3>` : ""}
+        <div class="testimonials__player">
+          <video controls preload="metadata" playsinline ${tst.videoPoster ? `poster="${esc(tst.videoPoster)}"` : ""}>
+            <source src="${esc(tst.videoArchivo)}" />
+          </video>
+        </div>`;
+    } else if (embedUrl) {
+      videoWrap.hidden = false;
+      videoWrap.innerHTML = `
+        ${tst.videoTitulo ? `<h3 class="testimonials__video-title">${esc(tst.videoTitulo)}</h3>` : ""}
+        <div class="testimonials__player testimonials__player--embed">
+          <iframe src="${esc(embedUrl)}" title="${esc(tst.videoTitulo || "Video")}" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>`;
+    } else {
+      videoWrap.hidden = true;
+      videoWrap.innerHTML = "";
+    }
+    const grid = $("#testimoniosGrid");
+    grid.innerHTML = (tst.tarjetas || [])
+      .map(
+        (t) => `<article class="testimonial reveal">
+          <div class="testimonial__media">${
+            t.foto
+              ? `<img src="${esc(t.foto)}" alt="${esc(t.nombre)}" loading="lazy" />`
+              : `<div class="testimonial__media-ph">${esc((t.nombre || "·").slice(0, 1))}</div>`
+          }</div>
+          <div class="testimonial__body">
+            ${t.texto ? `<p class="testimonial__quote">${esc(t.texto)}</p>` : ""}
+            <div class="testimonial__person">
+              <strong>${esc(t.nombre)}</strong>
+              ${t.rol ? `<span>${esc(t.rol)}</span>` : ""}
+            </div>
+          </div>
+        </article>`
+      )
+      .join("");
+
     /* FAQ */
     setHead("#faq .section__head", cfg.faq);
     $(".faq__list").innerHTML = cfg.faq.items
@@ -203,7 +263,7 @@
     const SECCIONES = {
       marquesina: ".marquee", problema: "#dolor", servicios: "#servicios",
       metodo: "#metodo", nichos: "#nichos", sobreFran: "#sobre-fran",
-      comparativa: ".why", faq: "#faq",
+      testimonios: "#testimonios", comparativa: ".why", faq: "#faq",
     };
     for (const [key, sel] of Object.entries(SECCIONES)) {
       const visible = cfg[key].visible !== false;
