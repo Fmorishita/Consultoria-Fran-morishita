@@ -37,6 +37,73 @@ const toast = (msg, tipo = "") => {
 
 const escAttr = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
+/* Redimensiona y comprime una imagen en el navegador antes de subirla.
+   Devuelve un Blob JPEG ligero (máx 1600px de lado, calidad 0.85).
+   Los SVG se suben tal cual porque no tiene sentido rasterizarlos. */
+function optimizarImagen(file) {
+  return new Promise((resolve, reject) => {
+    if (file.type === "image/svg+xml") return resolve(file);
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const MAX = 1600;
+      let { width, height } = img;
+      if (width > MAX || height > MAX) {
+        const escala = MAX / Math.max(width, height);
+        width = Math.round(width * escala);
+        height = Math.round(height * escala);
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff"; // fondo blanco para PNG con transparencia
+      ctx.fillRect(0, 0, width, height);
+      ctx.drawImage(img, 0, 0, width, height);
+      canvas.toBlob(
+        (blob) => (blob ? resolve(blob) : reject(new Error("No se pudo procesar la imagen"))),
+        "image/jpeg",
+        0.85
+      );
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("No se pudo leer la imagen"));
+    };
+    img.src = url;
+  });
+}
+
+/* Sube un blob al bucket público "sitio" usando el token de la sesión.
+   Lo hacemos con fetch manual (no con sb.storage.upload) porque el cliente
+   de Storage no adjunta bien el token de usuario con las claves publicables,
+   y la subida saldría como anónima (error de permisos RLS). */
+async function subirImagen(ruta, blob) {
+  const { data } = await sb.auth.getSession();
+  const token = data?.session?.access_token;
+  if (!token) throw new Error("jwt: sesión no disponible");
+  const res = await fetch(
+    `${SITE_SUPABASE_URL}/storage/v1/object/sitio/${ruta}`,
+    {
+      method: "POST",
+      // Sin x-upsert: cada archivo tiene nombre único (timestamp), así que
+      // nunca colisiona y evitamos exigir política de UPDATE en Storage.
+      headers: {
+        apikey: SITE_SUPABASE_KEY,
+        Authorization: `Bearer ${token}`,
+        "Content-Type": blob.type || "application/octet-stream",
+      },
+      body: blob,
+    }
+  );
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`${res.status}: ${txt}`);
+  }
+  return `${SITE_SUPABASE_URL}/storage/v1/object/public/sitio/${ruta}`;
+}
+
 /* ---------- Esquema del editor ---------- */
 const T = { texto: "texto", area: "textarea", html: "html", numero: "numero", color: "color", select: "select", imagen: "imagen", listaTexto: "lista-texto", parrafos: "parrafos" };
 
@@ -542,20 +609,41 @@ function renderCampo(campo, contexto = draft, prefijo = "") {
             ${url ? '<button type="button" class="btn btn--ghost btn--small btn--peligro">Quitar</button>' : ""}
           </div>
           <span class="subiendo" hidden>Subiendo imagen…</span>${ayuda}`;
-        div.querySelector("input[type=file]").addEventListener("change", async (e) => {
+        const inputFile = div.querySelector("input[type=file]");
+        inputFile.addEventListener("change", async (e) => {
           const file = e.target.files[0];
           if (!file) return;
+          if (!file.type.startsWith("image/")) {
+            inputFile.value = "";
+            return toast("Ese archivo no es una imagen.", "error");
+          }
           const aviso = div.querySelector(".subiendo");
           aviso.hidden = false;
-          const ruta = `imagenes/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_")}`;
-          const { error } = await sb.storage.from("sitio").upload(ruta, file, { upsert: true });
-          aviso.hidden = true;
-          if (error) return toast("Error al subir la imagen: " + error.message, "error");
-          const { data } = sb.storage.from("sitio").getPublicUrl(ruta);
-          setPath(draft, path, data.publicUrl);
-          render();
-          alCambiar();
-          toast("Imagen subida ✓", "ok");
+          aviso.textContent = "Optimizando imagen…";
+          try {
+            // 1) Comprimir/redimensionar en el navegador (rápido y evita límites de tamaño)
+            const blob = await optimizarImagen(file);
+            aviso.textContent = "Subiendo imagen…";
+            const ext = blob.type === "image/svg+xml" ? "svg" : "jpg";
+            const base = (file.name.replace(/\.[^.]+$/, "") || "imagen").replace(/[^a-zA-Z0-9\-_]/g, "_").slice(0, 40);
+            const ruta = `imagenes/${Date.now()}-${base}.${ext}`;
+            const publicUrl = await subirImagen(ruta, blob);
+            setPath(draft, path, publicUrl);
+            render();
+            alCambiar();
+            toast("Imagen subida y guardada ✓", "ok");
+          } catch (err) {
+            const msg = (err && err.message) || "";
+            if (/row-level security|Unauthorized|jwt|JWT|401/.test(msg)) {
+              toast("Tu sesión expiró. Cierra sesión y vuelve a entrar para subir la imagen.", "error");
+            } else if (/exceeded|size|413|too large/i.test(msg)) {
+              toast("La imagen es demasiado grande incluso optimizada. Usa uno menos pesado.", "error");
+            } else {
+              toast("No se pudo subir la imagen: " + (msg || "error desconocido"), "error");
+            }
+            aviso.hidden = true;
+            inputFile.value = "";
+          }
         });
         div.querySelector(".btn--peligro")?.addEventListener("click", () => {
           setPath(draft, path, "");
