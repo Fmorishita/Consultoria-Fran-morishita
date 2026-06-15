@@ -32,7 +32,7 @@
   const svgIcono = (nombre) =>
     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONOS[nombre] || ICONOS.estrella}</svg>`;
 
-  const ESTILOS_NICHO = { azul: "realestate", dorado: "ecommerce", rojo: "gastro" };
+  const ESTILOS_NICHO = { azul: "realestate", verde: "b2b", dorado: "ecommerce", rojo: "gastro" };
 
   /* Convierte un link de YouTube o Vimeo en su URL de inserción (embed).
      Devuelve "" si no reconoce el formato (entonces no se muestra video). */

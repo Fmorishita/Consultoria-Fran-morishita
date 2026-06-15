@@ -240,7 +240,7 @@ const SCHEMA = [
       plantilla: { emoji: "⭐", estilo: "dorado", titulo: "Nuevo nicho", texto: "Descripción.", puntos: ["Beneficio 1", "Beneficio 2"] },
       campos: [
         { sub: "emoji", etiqueta: "Emoji grande", tipo: T.texto },
-        { sub: "estilo", etiqueta: "Color de fondo", tipo: T.select, opciones: ["azul", "dorado", "rojo"] },
+        { sub: "estilo", etiqueta: "Color de fondo", tipo: T.select, opciones: ["azul", "verde", "dorado", "rojo"] },
         { sub: "titulo", etiqueta: "Título", tipo: T.texto },
         { sub: "texto", etiqueta: "Texto", tipo: T.area },
         { sub: "puntos", etiqueta: "Beneficios (uno por línea)", tipo: T.listaTexto },

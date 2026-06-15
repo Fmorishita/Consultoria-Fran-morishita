@@ -422,13 +422,18 @@ strong { color: var(--text); font-weight: 600; }
 }
 
 /* ---------- Sección dolor ---------- */
+/* Flexbox centrado: en computadora caben 3 por fila, así 5 tarjetas
+   quedan 3 arriba y 2 abajo centradas (en vez de 4 + 1 suelta). */
 .pain__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.4rem;
 }
 
 .pain__card {
+  flex: 1 1 300px;
+  max-width: 380px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -543,8 +548,16 @@ strong { color: var(--text); font-weight: 600; }
 /* ---------- Nichos ---------- */
 .niches__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.6rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 1000px) {
+  .niches__grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+
+@media (max-width: 560px) {
+  .niches__grid { grid-template-columns: 1fr; }
 }
 
 .niche {
@@ -570,6 +583,7 @@ strong { color: var(--text); font-weight: 600; }
 }
 
 .niche__visual--realestate { background: linear-gradient(135deg, #1d2840, #11161f); }
+.niche__visual--b2b { background: linear-gradient(135deg, #16302a, #11161f); }
 .niche__visual--ecommerce { background: linear-gradient(135deg, #2e2310, #11161f); }
 .niche__visual--gastro { background: linear-gradient(135deg, #2f1a1a, #11161f); }
 
@@ -1138,6 +1152,7 @@ textarea { resize: vertical; }
 .pain__grid .reveal:nth-child(4), .services__grid .reveal:nth-child(4),
 .method__steps .reveal:nth-child(4), .faq__list .reveal:nth-child(4) { transition-delay: 0.3s; }
 
+.pain__grid .reveal:nth-child(5),
 .services__grid .reveal:nth-child(5), .faq__list .reveal:nth-child(5) { transition-delay: 0.4s; }
 .services__grid .reveal:nth-child(6) { transition-delay: 0.5s; }
 
