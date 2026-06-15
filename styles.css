@@ -422,13 +422,18 @@ strong { color: var(--text); font-weight: 600; }
 }
 
 /* ---------- Sección dolor ---------- */
+/* Flexbox centrado: en computadora caben 3 por fila, así 5 tarjetas
+   quedan 3 arriba y 2 abajo centradas (en vez de 4 + 1 suelta). */
 .pain__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.4rem;
 }
 
 .pain__card {
+  flex: 1 1 300px;
+  max-width: 380px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
