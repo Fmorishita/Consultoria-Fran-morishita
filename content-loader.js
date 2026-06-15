@@ -174,7 +174,9 @@
     $(".niches__grid").innerHTML = cfg.nichos.tarjetas
       .map(
         (n) => `<article class="niche reveal">
-          <div class="niche__visual niche__visual--${ESTILOS_NICHO[n.estilo] || "realestate"}">${esc(n.emoji)}</div>
+          <div class="niche__visual niche__visual--${ESTILOS_NICHO[n.estilo] || "realestate"}">${
+            n.foto ? `<img src="${esc(n.foto)}" alt="${esc(n.titulo)}" loading="lazy" />` : esc(n.emoji)
+          }</div>
           <div class="niche__body"><h3>${esc(n.titulo)}</h3><p>${esc(n.texto)}</p>
           <ul>${n.puntos.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div></article>`
       )

@@ -575,11 +575,21 @@ strong { color: var(--text); font-weight: 600; }
 }
 
 .niche__visual {
-  height: 150px;
+  height: 170px;
   display: grid;
   place-items: center;
   font-size: 3.4rem;
   position: relative;
+  overflow: hidden;
+}
+
+/* Imagen opcional del nicho (cubre el área y atenúa con un degradado abajo) */
+.niche__visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .niche__visual--realestate { background: linear-gradient(135deg, #1d2840, #11161f); }
@@ -805,13 +815,18 @@ strong { color: var(--text); font-weight: 600; }
   height: 100%;
 }
 
+/* Flex centrado con ancho máximo: así una sola tarjeta no se estira a todo
+   el ancho (la foto ya no sale gigante en computadora). */
 .testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 
 .testimonial {
+  flex: 1 1 280px;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   background: var(--surface);
@@ -838,6 +853,7 @@ strong { color: var(--text); font-weight: 600; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%; /* favorece las caras en fotos de personas */
 }
 
 .testimonial__media-ph {

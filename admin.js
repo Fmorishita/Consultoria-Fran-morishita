@@ -237,9 +237,10 @@ const SCHEMA = [
     ],
     lista: {
       path: "nichos.tarjetas", nombre: "Tarjetas de nicho",
-      plantilla: { emoji: "⭐", estilo: "dorado", titulo: "Nuevo nicho", texto: "Descripción.", puntos: ["Beneficio 1", "Beneficio 2"] },
+      plantilla: { emoji: "⭐", foto: "", estilo: "dorado", titulo: "Nuevo nicho", texto: "Descripción.", puntos: ["Beneficio 1", "Beneficio 2"] },
       campos: [
-        { sub: "emoji", etiqueta: "Emoji grande", tipo: T.texto },
+        { sub: "foto", etiqueta: "Imagen del nicho (opcional)", tipo: T.imagen, ayuda: "Si subes una imagen, reemplaza al emoji. Ideal horizontal." },
+        { sub: "emoji", etiqueta: "Emoji (si no hay imagen)", tipo: T.texto },
         { sub: "estilo", etiqueta: "Color de fondo", tipo: T.select, opciones: ["azul", "verde", "dorado", "rojo"] },
         { sub: "titulo", etiqueta: "Título", tipo: T.texto },
         { sub: "texto", etiqueta: "Texto", tipo: T.area },

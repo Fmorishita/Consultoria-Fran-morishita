@@ -16,7 +16,7 @@ const DEFAULT_CONTENT = {
       "Consulting de growth para dueños y CEOs. Más de $100 MDP facturados y +10 años escalando negocios de Real Estate, B2B, E-commerce y Gastronomía con marketing digital, IA y sales systems.",
     logo1: "FRAN",
     logo2: "MORISHITA",
-    botonNav: "Agenda tu call",
+    botonNav: "Agenda tu free call",
     whatsapp: "5216462563006",
     mensajeWhatsappFloat: "Hola Fran, quiero agendar una sesión de diagnóstico",
     colorDorado: "#e8b34b",
@@ -164,6 +164,7 @@ const DEFAULT_CONTENT = {
     tarjetas: [
       {
         emoji: "🏢",
+        foto: "",
         estilo: "azul",
         titulo: "Real Estate",
         texto: "Sistemas de captación de buyers e inversionistas calificados para desarrollos, brokers e inmobiliarias. Menos visitas curiosas, más closings.",
@@ -175,6 +176,7 @@ const DEFAULT_CONTENT = {
       },
       {
         emoji: "💼",
+        foto: "",
         estilo: "verde",
         titulo: "B2B / Corporativo",
         texto: "Para empresas que le venden a otras empresas: construimos un pipeline predecible de leads calificados y un sales process que cierra deals de alto ticket.",
@@ -186,6 +188,7 @@ const DEFAULT_CONTENT = {
       },
       {
         emoji: "🛒",
+        foto: "",
         estilo: "dorado",
         titulo: "E-commerce",
         texto: "Scaling de tiendas online con paid ads rentable, optimización de conversión y estrategias de recompra que elevan el value de cada cliente.",
@@ -197,6 +200,7 @@ const DEFAULT_CONTENT = {
       },
       {
         emoji: "🍽️",
+        foto: "",
         estilo: "rojo",
         titulo: "Gastronomía",
         texto: "Restaurantes y marcas gastronómicas full todos los días: posicionamiento local, campañas que generan tráfico y sistemas de loyalty que hacen volver.",
