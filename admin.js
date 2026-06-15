@@ -178,9 +178,10 @@ const SCHEMA = [
     ],
     lista: {
       path: "problema.tarjetas", nombre: "Tarjetas de dolor",
-      plantilla: { icono: "💡", titulo: "Nuevo dolor", texto: "Descripción del problema." },
+      plantilla: { icono: "💡", foto: "", titulo: "Nuevo dolor", texto: "Descripción del problema." },
       campos: [
-        { sub: "icono", etiqueta: "Emoji", tipo: T.texto },
+        { sub: "foto", etiqueta: "Imagen (opcional)", tipo: T.imagen, ayuda: "Si subes una imagen, reemplaza al emoji." },
+        { sub: "icono", etiqueta: "Emoji (si no hay imagen)", tipo: T.texto },
         { sub: "titulo", etiqueta: "Título", tipo: T.texto },
         { sub: "texto", etiqueta: "Texto", tipo: T.area },
       ],
@@ -198,9 +199,10 @@ const SCHEMA = [
     ],
     lista: {
       path: "servicios.tarjetas", nombre: "Tarjetas de servicios",
-      plantilla: { icono: "estrella", titulo: "Nuevo servicio", texto: "Descripción del servicio." },
+      plantilla: { icono: "estrella", foto: "", titulo: "Nuevo servicio", texto: "Descripción del servicio." },
       campos: [
-        { sub: "icono", etiqueta: "Icono", tipo: T.select, opciones: ["monitor", "enviar", "grafica", "ia", "equipo", "global", "estrella", "escudo", "rayo", "corazon", "dinero", "calendario"] },
+        { sub: "foto", etiqueta: "Imagen (opcional)", tipo: T.imagen, ayuda: "Si subes una imagen, reemplaza al icono." },
+        { sub: "icono", etiqueta: "Icono (si no hay imagen)", tipo: T.select, opciones: ["monitor", "enviar", "grafica", "ia", "equipo", "global", "estrella", "escudo", "rayo", "corazon", "dinero", "calendario"] },
         { sub: "titulo", etiqueta: "Título", tipo: T.texto },
         { sub: "texto", etiqueta: "Texto", tipo: T.area },
       ],
