@@ -449,6 +449,25 @@ strong { color: var(--text); font-weight: 600; }
 
 .pain__icon { font-size: 2rem; margin-bottom: 1rem; }
 
+/* Imagen opcional de la tarjeta (banner que reemplaza al emoji) */
+.pain__foto {
+  position: relative;
+  margin: -2rem -1.7rem 1.4rem;
+  height: 170px;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.pain__foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.pain__foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, var(--surface));
+  pointer-events: none;
+}
+
 .pain__card h3 { font-size: 1.12rem; margin-bottom: 0.7rem; }
 
 .pain__card p { color: var(--text-muted); font-size: 0.95rem; }
@@ -504,6 +523,26 @@ strong { color: var(--text); font-weight: 600; }
 }
 
 .service__icon svg { width: 26px; height: 26px; }
+
+/* Imagen opcional del servicio (banner que reemplaza al icono) */
+.service__foto {
+  position: relative;
+  z-index: 1;
+  margin: -2.3rem -2rem 1.4rem;
+  height: 170px;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.service__foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.service__foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, var(--surface));
+  pointer-events: none;
+}
 
 .service h3 { font-size: 1.22rem; margin-bottom: 0.8rem; }
 

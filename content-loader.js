@@ -141,7 +141,11 @@
     $(".pain__grid").innerHTML = cfg.problema.tarjetas
       .map(
         (t) => `<div class="pain__card reveal">
-          <div class="pain__icon">${esc(t.icono)}</div>
+          ${
+            t.foto
+              ? `<div class="pain__foto"><img src="${esc(t.foto)}" alt="${esc(t.titulo)}" loading="lazy" /></div>`
+              : `<div class="pain__icon">${esc(t.icono)}</div>`
+          }
           <h3>${esc(t.titulo)}</h3><p>${esc(t.texto)}</p></div>`
       )
       .join("");
@@ -153,7 +157,11 @@
     $(".services__grid").innerHTML = cfg.servicios.tarjetas
       .map(
         (t) => `<article class="service reveal">
-          <div class="service__icon">${svgIcono(t.icono)}</div>
+          ${
+            t.foto
+              ? `<div class="service__foto"><img src="${esc(t.foto)}" alt="${esc(t.titulo)}" loading="lazy" /></div>`
+              : `<div class="service__icon">${svgIcono(t.icono)}</div>`
+          }
           <h3>${esc(t.titulo)}</h3><p>${esc(t.texto)}</p></article>`
       )
       .join("");

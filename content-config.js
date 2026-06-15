@@ -58,26 +58,31 @@ const DEFAULT_CONTENT = {
     tarjetas: [
       {
         icono: "👍",
+        foto: "",
         titulo: "Le pagas a una agency que solo te da likes",
         texto: "Hacen posts bonitos que juntan likes y followers, pero al final del mes no se traducen en clientes nuevos ni en más revenue.",
       },
       {
         icono: "📉",
+        foto: "",
         titulo: "Inviertes en ads y no ves un ROI claro",
         texto: "Quemas budget en anuncios sin una estrategia que convierta clicks en clientes que pagan.",
       },
       {
         icono: "🕳️",
+        foto: "",
         titulo: "Tus leads se pierden en el camino",
         texto: "Sin CRM ni follow-up sistematizado, cada lead que se enfría es money que dejaste on the table.",
       },
       {
         icono: "🎲",
+        foto: "",
         titulo: "Tus ventas dependen de la suerte",
         texto: "Un mes bueno, tres malos. No tienes un sistema predecible que genere demand todos los días.",
       },
       {
         icono: "⏳",
+        foto: "",
         titulo: "Eres el bottleneck de tu negocio",
         texto: "Todo pasa por ti. Sin procesos ni automation, crecer significa trabajar más horas, no facturar más.",
       },
@@ -97,31 +102,37 @@ const DEFAULT_CONTENT = {
     tarjetas: [
       {
         icono: "monitor",
+        foto: "",
         titulo: "Páginas web de alta conversión",
         texto: "Sites y landing pages diseñadas con un solo goal: convertir visitantes en clientes. Diseño premium, speed y copy persuasivo.",
       },
       {
         icono: "enviar",
+        foto: "",
         titulo: "Meta Ads que sí venden",
         texto: "Campañas en Facebook e Instagram con estrategia de funnel completo: creativos que detienen el scroll y optimización constante del ROI.",
       },
       {
         icono: "grafica",
+        foto: "",
         titulo: "Scaling de negocios",
         texto: "Análisis profundo de tu operación para encontrar las palancas que multiplican revenue: oferta, pricing, funnel, team y procesos.",
       },
       {
         icono: "ia",
+        foto: "",
         titulo: "Inteligencia artificial aplicada",
         texto: "Agentes de IA que atienden, califican y dan follow-up a tus leads 24/7. Automation que vende mientras tú duermes.",
       },
       {
         icono: "equipo",
+        foto: "",
         titulo: "CRM y sales systems",
         texto: "Implementamos el sistema que ordena tu pipeline: cada lead con follow-up, cada vendedor con proceso, cada venta medida.",
       },
       {
         icono: "global",
+        foto: "",
         titulo: "Marketing digital integral",
         texto: "Estrategia 360°: branding, contenido, paid ads y conversión trabajando juntos para construir una máquina de demand constante.",
       },
