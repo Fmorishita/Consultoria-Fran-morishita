@@ -612,6 +612,8 @@ function scrollPreviewA(selector) {
 function renderSidebar() {
   const nav = $("#sidebar");
   nav.innerHTML =
+    `<button class="sidebar__item ${seccionActiva === "orden" ? "active" : ""}" data-id="orden"><span>🔀</span> Orden de secciones</button>
+     <div class="sidebar__sep"></div>` +
     SCHEMA.map(
       (s) => `<button class="sidebar__item ${s.id === seccionActiva ? "active" : ""}" data-id="${s.id}">
         <span>${s.icono}</span> ${s.nombre}</button>`
@@ -625,6 +627,11 @@ function renderSidebar() {
       renderSidebar();
       if (seccionActiva === "leads") {
         mostrarLeads();
+      } else if (seccionActiva === "orden") {
+        $("#leadsView").hidden = true;
+        $("#editorWrap").style.display = "";
+        $("#previewWrap").style.display = "";
+        renderOrden();
       } else {
         $("#leadsView").hidden = true;
         $("#editorWrap").style.display = "";
@@ -634,6 +641,49 @@ function renderSidebar() {
         if (s?.scroll) scrollPreviewA(s.scroll);
       }
     });
+  });
+}
+
+/* Etiquetas amigables de las secciones reordenables (tomadas del SCHEMA). */
+const SECCIONES_ORDENABLES = ["problema", "nichos", "sobreFran", "metodo", "servicios", "testimonios", "contacto", "comparativa", "faq"];
+
+/* Vista para reordenar las secciones del sitio (↑ ↓). */
+function renderOrden() {
+  const cont = $("#editor");
+  if (!Array.isArray(draft.orden)) draft.orden = [...SECCIONES_ORDENABLES];
+  // Asegura que estén todas (por si el guardado es viejo)
+  SECCIONES_ORDENABLES.forEach((k) => { if (!draft.orden.includes(k)) draft.orden.push(k); });
+  draft.orden = draft.orden.filter((k) => SECCIONES_ORDENABLES.includes(k));
+
+  const info = (id) => {
+    const s = SCHEMA.find((x) => x.id === id);
+    return s ? { icono: s.icono, nombre: s.nombre } : { icono: "▫️", nombre: id };
+  };
+
+  cont.innerHTML = `<h2 class="seccion-titulo">🔀 Orden de secciones</h2>
+    <p class="seccion-desc">Arregla el orden con las flechas. La portada (hero) y el pie de página quedan fijos. Los cambios se ven al instante en la vista previa.</p>
+    <div class="orden-lista"></div>`;
+  const lista = cont.querySelector(".orden-lista");
+
+  draft.orden.forEach((id, i) => {
+    const { icono, nombre } = info(id);
+    const row = document.createElement("div");
+    row.className = "orden-item";
+    row.innerHTML = `
+      <span class="orden-pos">${i + 1}</span>
+      <span class="orden-nombre">${icono} ${nombre}</span>
+      <button class="mini" data-acc="subir" title="Subir" ${i === 0 ? "disabled" : ""}>↑</button>
+      <button class="mini" data-acc="bajar" title="Bajar" ${i === draft.orden.length - 1 ? "disabled" : ""}>↓</button>`;
+    row.querySelectorAll(".mini").forEach((b) =>
+      b.addEventListener("click", () => {
+        const arr = draft.orden;
+        if (b.dataset.acc === "subir" && i > 0) [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+        if (b.dataset.acc === "bajar" && i < arr.length - 1) [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]];
+        renderOrden();
+        alCambiar();
+      })
+    );
+    lista.appendChild(row);
   });
 }
 

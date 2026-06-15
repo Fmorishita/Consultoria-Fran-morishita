@@ -438,6 +438,50 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 
 .campo--video .progreso__txt { font-size: 0.78rem; color: var(--gold-light); min-width: 34px; }
 
+/* Reordenador de secciones */
+.orden-lista { display: flex; flex-direction: column; gap: 0.55rem; }
+
+.orden-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 0.7rem 0.9rem;
+}
+
+.orden-pos {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: rgba(232, 179, 75, 0.12);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.orden-nombre { flex: 1; font-size: 0.9rem; font-weight: 500; }
+
+.orden-item .mini {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.orden-item .mini:hover:not(:disabled) { background: rgba(255, 255, 255, 0.08); border-color: var(--gold); }
+.orden-item .mini:disabled { opacity: 0.3; cursor: default; }
+
 /* Listas de elementos */
 .lista-items { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 0.7rem; }
 

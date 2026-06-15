@@ -10,6 +10,10 @@ const SITE_SUPABASE_KEY = "sb_publishable_q-ncqoltgj0ceLiPu8GD4Q_TJUBtT6W";
 /* Contenido por defecto del sitio. Si no hay nada publicado en Supabase
    (o no se puede leer), la página se muestra con estos valores. */
 const DEFAULT_CONTENT = {
+  // Orden de las secciones del sitio (editable desde el panel).
+  // Hero, marquesina y footer quedan fijos; estas son las reordenables.
+  orden: ["problema", "servicios", "metodo", "nichos", "sobreFran", "testimonios", "contacto", "comparativa", "faq"],
+
   general: {
     metaTitulo: "Fran Morishita — Business Consulting que Multiplica tu Facturación",
     metaDescripcion:

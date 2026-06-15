@@ -298,6 +298,23 @@
       }
     }
 
+    /* Orden de las secciones (las reordena justo antes del footer según cfg.orden) */
+    const ORDEN_SEL = {
+      problema: "#dolor", nichos: "#nichos", sobreFran: "#sobre-fran", metodo: "#metodo",
+      servicios: "#servicios", testimonios: "#testimonios", contacto: "#contacto",
+      comparativa: ".why", faq: "#faq",
+    };
+    const footerEl = document.querySelector(".footer");
+    if (footerEl) {
+      const orden = Array.isArray(cfg.orden) ? cfg.orden : [];
+      // Orden efectivo: lo guardado + cualquier sección que falte (para no perderla)
+      const efectivo = [...orden, ...Object.keys(ORDEN_SEL).filter((k) => !orden.includes(k))];
+      efectivo.forEach((key) => {
+        const el = document.querySelector(ORDEN_SEL[key] || "");
+        if (el) footerEl.parentNode.insertBefore(el, footerEl);
+      });
+    }
+
     /* Re-inicializar animaciones sobre los elementos recién creados */
     if (window.initDynamic) window.initDynamic();
   }
