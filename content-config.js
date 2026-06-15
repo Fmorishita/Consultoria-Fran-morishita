@@ -57,6 +57,11 @@ const DEFAULT_CONTENT = {
       "La mayoría de las empresas no tienen un problema de producto. Tienen un problema de <strong>sistema de ventas</strong>.",
     tarjetas: [
       {
+        icono: "👍",
+        titulo: "Le pagas a una agencia que solo te da likes",
+        texto: "Hacen publicaciones bonitas que juntan likes y seguidores, pero al final del mes no se traducen en clientes nuevos ni en más facturación.",
+      },
+      {
         icono: "📉",
         titulo: "Inviertes en publicidad y no ves retorno claro",
         texto: "Quemas presupuesto en anuncios sin una estrategia que convierta clics en clientes que pagan.",
@@ -78,7 +83,7 @@ const DEFAULT_CONTENT = {
       },
     ],
     puente:
-      "Si marcaste aunque sea una, no necesitas otra agencia que te venda humo.<br><strong>Necesitas un consultor que ya construyó lo que tú quieres construir.</strong>",
+      "Si te hace sentido alguno de estos puntos, no necesitas otra agencia que te venda humo.<br><strong>Necesitas un consultor que ya construyó lo que tú quieres construir.</strong>",
     puenteBoton: "Hablemos de tu caso",
   },
 

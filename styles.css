@@ -1138,6 +1138,7 @@ textarea { resize: vertical; }
 .pain__grid .reveal:nth-child(4), .services__grid .reveal:nth-child(4),
 .method__steps .reveal:nth-child(4), .faq__list .reveal:nth-child(4) { transition-delay: 0.3s; }
 
+.pain__grid .reveal:nth-child(5),
 .services__grid .reveal:nth-child(5), .faq__list .reveal:nth-child(5) { transition-delay: 0.4s; }
 .services__grid .reveal:nth-child(6) { transition-delay: 0.5s; }
 
