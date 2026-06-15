@@ -12,7 +12,7 @@ const SITE_SUPABASE_KEY = "sb_publishable_q-ncqoltgj0ceLiPu8GD4Q_TJUBtT6W";
 const DEFAULT_CONTENT = {
   // Orden de las secciones del sitio (editable desde el panel).
   // Hero, marquesina y footer quedan fijos; estas son las reordenables.
-  orden: ["problema", "nichos", "sobreFran", "metodo", "servicios", "testimonios", "contacto", "comparativa", "faq"],
+  orden: ["problema", "servicios", "metodo", "nichos", "sobreFran", "testimonios", "contacto", "comparativa", "faq"],
 
   general: {
     metaTitulo: "Fran Morishita — Business Consulting que Multiplica tu Facturación",
