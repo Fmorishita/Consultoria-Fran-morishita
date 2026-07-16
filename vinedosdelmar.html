@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viñedos del Mar — Propuesta de Sistema de Crecimiento Comercial | Fran Morishita</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="vinedosdelmar.css" />
+</head>
+<body>
+
+  <!-- ███ CANDADO — documentos confidenciales ███ -->
+  <div class="gate" id="gate">
+    <div class="gate__card">
+      <div class="gate__mark">森下 <span>FRAN MORISHITA</span></div>
+      <div class="gate__lock">🔒</div>
+      <h1>Documentos confidenciales</h1>
+      <p>Esta propuesta fue preparada para Fincamex — Dirección Comercial. Ingresa la contraseña que te compartió Fran para verla.</p>
+      <form id="gateForm">
+        <input type="password" id="gatePass" placeholder="Contraseña" autocomplete="off" required />
+        <button type="submit">Ver la propuesta →</button>
+      </form>
+      <p class="gate__error" id="gateError" hidden>Contraseña incorrecta. Intenta de nuevo.</p>
+    </div>
+  </div>
+
+  <!-- ███ CONTENIDO ███ -->
+  <div class="doc" id="doc" hidden>
+
+    <header class="dochead">
+      <div class="container dochead__inner">
+        <div class="dochead__mark">森下 <span>FRAN MORISHITA</span></div>
+        <span class="dochead__tag">Propuesta comercial · Confidencial</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow reveal">Sistema de Crecimiento Comercial</span>
+        <h1 class="reveal">Viñedos del Mar</h1>
+        <p class="hero__sub reveal">De 1 a 10 ventas mensuales — branding, demanda digital, contenido, CRM con IA y medios. Plan anual.</p>
+
+        <div class="hero__meta reveal">
+          <div>
+            <span class="hero__meta-label">Preparado para</span>
+            <strong>Fincamex — Dirección Comercial</strong>
+            <span>Viñedos del Mar Residencial · Ensenada, B.C.</span>
+          </div>
+          <div>
+            <span class="hero__meta-label">Preparado por</span>
+            <strong>Fran Morishita</strong>
+            <span>Consultoría estratégica · marketing inmobiliario · IA aplicada a ventas</span>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stats__item">
+            <strong>100+</strong>
+            <span>unidades terminadas listas para escriturar</span>
+          </div>
+          <div class="stats__item">
+            <strong>$4.85M</strong>
+            <span>ticket promedio MXN por unidad</span>
+          </div>
+          <div class="stats__item">
+            <strong>1 → 10</strong>
+            <span>ventas/mes: ritmo actual vs. meta</span>
+          </div>
+          <div class="stats__item">
+            <strong>40/mes</strong>
+            <span>absorción histórica ya comprobada</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ███ NAV DE DOCUMENTOS ███ -->
+    <nav class="docnav">
+      <div class="container docnav__inner" id="docnavInner"></div>
+    </nav>
+
+    <!-- ███ DOCUMENTOS (se generan por JS a partir de DOCS) ███ -->
+    <main class="container docs" id="docsWrap"></main>
+
+    <section class="closing">
+      <div class="container">
+        <blockquote class="reveal">“El mercado ya demostró que compra 40 unidades al mes. Este plan solo le pide 10 — con sistema.”</blockquote>
+        <p class="closing__author reveal">Fran Morishita · Consultor Estratégico — Marketing Inmobiliario &amp; IA aplicada a Ventas</p>
+        <a class="closing__cta reveal" id="waLink" href="#" target="_blank" rel="noopener">¿Preguntas sobre la propuesta? Escríbeme por WhatsApp →</a>
+      </div>
+    </section>
+
+    <footer class="docfoot">
+      <div class="container">
+        <span>Documento confidencial · Julio 2026</span>
+        <span>© <span id="year"></span> Fran Morishita</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="vinedosdelmar.js"></script>
+</body>
+</html>
