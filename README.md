@@ -51,6 +51,17 @@ Cada envío del formulario hace dos cosas:
 
 La tabla tiene RLS activado: la clave publicable del sitio **solo puede insertar**; los leads únicamente se pueden leer desde el dashboard de Supabase (Table Editor → `leads`).
 
+## Páginas de propuesta para clientes
+
+Además de la landing principal, el sitio puede alojar páginas dedicadas de propuesta comercial para clientes específicos — páginas de una sola sección (`/nombrecliente.html`, servida como `/nombrecliente` gracias a `cleanUrls`), con `noindex` y sin enlace desde el nav principal, para compartir por WhatsApp/email.
+
+**Ejemplo: `/vinedosdelmar`** — propuesta de Sistema de Crecimiento Comercial para Fincamex / Viñedos del Mar.
+- `vinedosdelmar.html` / `.css` / `.js`: página autocontenida con su propio sistema de diseño (paleta crema/navy/dorado/vino, tipografía Cormorant Garamond + Inter — ver variables `:root` en el CSS).
+- `docs/`: PDFs descargables enlazados desde la página (ej. `docs/Lista_Precios_Vinedos_del_Mar.pdf`). Para agregar uno nuevo, súbelo a esta carpeta con el nombre exacto que referencia el `href` del botón correspondiente.
+- Sin candado por defecto (pensada para revisión rápida desde el celular); si el contenido lo amerita, se le puede agregar un candado de sesión como el usado anteriormente en esta misma página.
+
+Para crear una página de este tipo para otro cliente, pide que se genere siguiendo el mismo patrón.
+
 ## Pendientes opcionales
 
 - [ ] **Foto de Fran**: en la sección "Sobre Fran" de `index.html` hay un placeholder `FM`; sustitúyelo por `<img src="assets/fran.jpg" alt="Fran Morishita" />`.
