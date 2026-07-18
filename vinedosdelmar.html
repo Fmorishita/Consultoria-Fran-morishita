@@ -3,103 +3,504 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viñedos del Mar — Propuesta de Sistema de Crecimiento Comercial | Fran Morishita</title>
+  <title>Viñedos del Mar — Sistema de Crecimiento Comercial | Fran Morishita</title>
   <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Propuesta de Sistema de Crecimiento Comercial para Viñedos del Mar Residencial — preparada para Fincamex por Fran Morishita." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="vinedosdelmar.css" />
 </head>
 <body>
 
-  <!-- ███ CANDADO — documentos confidenciales ███ -->
-  <div class="gate" id="gate">
-    <div class="gate__card">
-      <div class="gate__mark">森下 <span>FRAN MORISHITA</span></div>
-      <div class="gate__lock">🔒</div>
-      <h1>Documentos confidenciales</h1>
-      <p>Esta propuesta fue preparada para Fincamex — Dirección Comercial. Ingresa la contraseña que te compartió Fran para verla.</p>
-      <form id="gateForm">
-        <input type="password" id="gatePass" placeholder="Contraseña" autocomplete="off" required />
-        <button type="submit">Ver la propuesta →</button>
-      </form>
-      <p class="gate__error" id="gateError" hidden>Contraseña incorrecta. Intenta de nuevo.</p>
+  <!-- ███ NAV ███ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="mark">森下<span>FRAN MORISHITA</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#sistema">Sistema</a>
+        <a href="#inversion">Inversión</a>
+        <a href="#contacto" class="nav__cta">Contacto</a>
+      </nav>
+      <button class="nav__burger" id="navBurger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     </div>
-  </div>
+  </header>
 
-  <!-- ███ CONTENIDO ███ -->
-  <div class="doc" id="doc" hidden>
-
-    <header class="dochead">
-      <div class="container dochead__inner">
-        <div class="dochead__mark">森下 <span>FRAN MORISHITA</span></div>
-        <span class="dochead__tag">Propuesta comercial · Confidencial</span>
+  <!-- ███ 1 · HERO ███ -->
+  <section class="hero" id="top">
+    <!-- TODO: reemplazar con foto real del desarrollo (fachada, alberca o vista al mar) -->
+    <div class="hero__texture" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <span class="kicker reveal">Sistema de Crecimiento Comercial</span>
+      <h1 class="reveal">Viñedos del Mar</h1>
+      <p class="hero__sub reveal">De 0 a 10 ventas mensuales · Plan a 6 meses</p>
+      <p class="hero__meta reveal">
+        Preparada para <strong>Rodrigo</strong> — Dirección Comercial Nacional, Fincamex
+        <span class="hero__meta-sep">·</span>
+        Preparada por <strong>Fran Morishita</strong> — Dirección Estratégica de Marketing Inmobiliario &amp; IA aplicada a Ventas
+      </p>
+      <div class="hero__cta reveal">
+        <a class="btn btn--primary" href="/docs/Propuesta_Final_Vinedos_del_Mar.pdf" target="_blank" rel="noopener">Ver propuesta completa (PDF)</a>
+        <a class="btn btn--ghost" href="https://wa.me/5216462563006?text=Hola%20Fran%2C%20soy%20Rodrigo%20de%20Fincamex.%20Quiero%20agendar%20una%20reuni%C3%B3n%20sobre%20la%20propuesta%20de%20Vi%C3%B1edos%20del%20Mar." target="_blank" rel="noopener">Agendar reunión</a>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="hero">
-      <div class="container">
-        <span class="eyebrow reveal">Sistema de Crecimiento Comercial</span>
-        <h1 class="reveal">Viñedos del Mar</h1>
-        <p class="hero__sub reveal">De 1 a 10 ventas mensuales — branding, demanda digital, contenido, CRM con IA y medios. Plan anual.</p>
+  <!-- ███ 2 · SITUACIÓN ACTUAL ███ -->
+  <section class="section" id="diagnostico">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Situación Actual</span>
+        <h2>El producto está validado.<br />El sistema para venderlo no existe.</h2>
+        <div class="rule"></div>
+      </div>
 
-        <div class="hero__meta reveal">
-          <div>
-            <span class="hero__meta-label">Preparado para</span>
-            <strong>Fincamex — Dirección Comercial</strong>
-            <span>Viñedos del Mar Residencial · Ensenada, B.C.</span>
-          </div>
-          <div>
-            <span class="hero__meta-label">Preparado por</span>
-            <strong>Fran Morishita</strong>
-            <span>Consultoría estratégica · marketing inmobiliario · IA aplicada a ventas</span>
-          </div>
+      <div class="stats stats--4 reveal">
+        <div class="stat"><strong>118</strong><span>unidades terminadas listas para escriturar</span></div>
+        <div class="stat"><strong>$4.85M</strong><span>ticket promedio MXN ($3.6–5.2M por prototipo)</span></div>
+        <div class="stat"><strong>0</strong><span>ventas en los últimos 6 meses, con cancelaciones recientes</span></div>
+        <div class="stat"><strong>40/mes</strong><span>absorción histórica ya demostrada por el mercado</span></div>
+      </div>
+
+      <p class="prose reveal">Viñedos del Mar es un desarrollo premium ya construido, ya habitado y ya validado por el mercado: llegó a absorber ~40 unidades por mes. Hoy el ritmo es cero. El mercado inmobiliario del noroeste atraviesa una contracción real — colocación hipotecaria a la baja y "desperfilamiento" del comprador de $3–6 MDP — pero eso no explica por sí solo el estancamiento: no hay sistema comercial que capture al comprador que sí sigue ahí.</p>
+    </div>
+  </section>
+
+  <!-- ███ 3 · PUNTOS DE DOLOR ███ -->
+  <section class="section section--alt" id="dolor">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Los puntos de dolor más fuertes</span>
+        <h2>Seis dolores que hoy le cuestan ventas al proyecto</h2>
+        <div class="rule"></div>
+      </div>
+
+      <ol class="numlist reveal">
+        <li><span class="numlist__n">1</span><div><strong>Leads insuficientes y sin filtrar.</strong> ~13 leads por asesor al mes, mezclando curiosos con compradores reales.</div></li>
+        <li><span class="numlist__n">2</span><div><strong>Velocidad de respuesta.</strong> El lead que escribe de noche o fin de semana se enfría antes del primer contacto humano.</div></li>
+        <li><span class="numlist__n">3</span><div><strong>Publicidad que no diferencia.</strong> Un mensaje genérico para compradores completamente distintos.</div></li>
+        <li><span class="numlist__n">4</span><div><strong>Sin medición hasta la venta.</strong> Nadie sabe cuánto cuesta un lead calificado ni una escritura por canal.</div></li>
+        <li><span class="numlist__n">5</span><div><strong>La base de 35,000 clientes Fincamex sin explotar.</strong> Cero email, cero referidos, cero reviews.</div></li>
+        <li><span class="numlist__n">6</span><div><strong>Sin evergreen propio.</strong> Cuando se apaga la pauta, todo cae a cero.</div></li>
+      </ol>
+
+      <div class="callout reveal">Los seis dolores comparten origen: cada pieza opera suelta. La solución no es arreglar piezas — es conectarlas en un sistema.</div>
+    </div>
+  </section>
+
+  <!-- ███ 4 · LO QUE VAMOS A LOGRAR ███ -->
+  <section class="section" id="resultado">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Lo que vamos a lograr</span>
+        <h2>En 6 meses: de cero a un régimen de 10 ventas al mes</h2>
+        <div class="rule"></div>
+      </div>
+
+      <ol class="numlist reveal">
+        <li><span class="numlist__n">1</span><div>~1,000 leads mensuales calificándose solos con IA respondiendo 24/7 en español e inglés.</div></li>
+        <li><span class="numlist__n">2</span><div>Dos motores de venta en paralelo: inventario terminado + preventa desde $3.6M.</div></li>
+        <li><span class="numlist__n">3</span><div>Un canal de venta que hoy no existe: presentaciones por videollamada con cierre remoto.</div></li>
+        <li><span class="numlist__n">4</span><div>La base de 35,000 clientes activada por primera vez.</div></li>
+        <li><span class="numlist__n">5</span><div>Marca premium consistente en cada punto de contacto, con rebranding corriendo en paralelo.</div></li>
+        <li><span class="numlist__n">6</span><div>Medición total: cada peso rastreado del anuncio a la escritura.</div></li>
+      </ol>
+
+      <div class="highlight reveal">
+        <span>Proyección conservadora del semestre</span>
+        <strong>~39 unidades vendidas ≈ $175 MDP escriturados</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 5 · COSTO DE OPORTUNIDAD ███ -->
+  <section class="section section--navy" id="costo">
+    <div class="container">
+      <div class="head head--onnavy reveal">
+        <span class="kicker">Costo de Oportunidad</span>
+        <h2>Cada mes sin sistema tiene un precio medible</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="stats stats--3 reveal">
+        <div class="stat stat--onnavy"><strong>~$572M</strong><span>inventario terminado inmovilizado (118 × $4.85M)</span></div>
+        <div class="stat stat--onnavy"><strong>~$48.5M</strong><span>por mes de absorción no capturada</span></div>
+        <div class="stat stat--onnavy"><strong>$1.6M</strong><span>al día en ventas que el ritmo actual deja sobre la mesa</span></div>
+      </div>
+
+      <blockquote class="pull-quote reveal">“El inventario no está esperando compradores.<br />Está esperando un sistema que los traiga.”</blockquote>
+    </div>
+  </section>
+
+  <!-- ███ 6 · LAS PRIORIDADES ███ -->
+  <section class="section" id="prioridades">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Las Prioridades</span>
+        <h2>Por dónde empezamos</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="priorities reveal">
+        <div class="priority"><span class="priority__tag">Prioridad 1</span><h3>Absorber las 118 unidades terminadas</h3></div>
+        <div class="priority"><span class="priority__tag">Prioridad 2</span><h3>Instalar la venta digital por videollamada</h3></div>
+        <div class="priority"><span class="priority__tag">Prioridad 3</span><h3>Encender el evergreen (base de 35,000)</h3></div>
+        <div class="priority"><span class="priority__tag">Prioridad 4</span><h3>Sello de autoridad y rebranding, en paralelo</h3></div>
+        <div class="priority"><span class="priority__tag">Prioridad 5</span><h3>Expansión con datos (canales experimentales desde mes 3)</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 7 · EL SISTEMA ███ -->
+  <section class="section section--alt" id="sistema">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">El Sistema Propuesto</span>
+        <h2>Siete módulos. Un solo responsable.</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="modules reveal">
+        <div class="module"><h3>Branding &amp; sello de autoridad</h3><p>Viñedos del Mar protagonista; Fincamex como endoso de respaldo.</p></div>
+        <div class="module"><h3>Contenido de venta caliente/tibio</h3><p>Producción continua por buyer persona para alimentar cada etapa del embudo.</p></div>
+        <div class="module"><h3>Paid media — dos motores</h3><p>Campañas separadas para inventario terminado y preventa, cada una con su propio presupuesto.</p></div>
+        <div class="module"><h3>CRM + Agentes de IA</h3><p>Toda la demanda en una sola plataforma, calificada y agendada en minutos.</p></div>
+        <div class="module"><h3>Venta digital por videollamada</h3><p>El showroom que viaja: cierre remoto para el comprador de Mexicali y San Diego.</p></div>
+        <div class="module"><h3>Evergreen</h3><p>La base de 35,000 clientes reactivada: referidos, reviews y campañas propias.</p></div>
+        <div class="module"><h3>Eventos &amp; experiencias</h3><p>Encuentros de alta conversión que el digital frío no puede replicar.</p></div>
+        <div class="module module--wine">
+          <span class="module__badge">En paralelo</span>
+          <h3>Pilar corporativo Fincamex</h3>
+          <p>Rebranding: estrategia de posicionamiento, identidad visual evolutiva y arquitectura de marca para toda la desarrolladora.</p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="stats reveal">
-          <div class="stats__item">
-            <strong>100+</strong>
-            <span>unidades terminadas listas para escriturar</span>
-          </div>
-          <div class="stats__item">
-            <strong>$4.85M</strong>
-            <span>ticket promedio MXN por unidad</span>
-          </div>
-          <div class="stats__item">
-            <strong>1 → 10</strong>
-            <span>ventas/mes: ritmo actual vs. meta</span>
-          </div>
-          <div class="stats__item">
-            <strong>40/mes</strong>
-            <span>absorción histórica ya comprobada</span>
-          </div>
+  <!-- ███ 8 · DOS MOTORES + DISTRIBUCIÓN GEOGRÁFICA ███ -->
+  <section class="section" id="canales">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Dos Motores, Dos Presupuestos</span>
+        <h2>Dos productos, dos presupuestos, dos formas de medir</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="motors reveal">
+        <div class="motor">
+          <span class="motor__pct">60%</span>
+          <span class="motor__label">Motor A · Inventario terminado</span>
+          <p class="motor__tag">“Ya existe. Entrega inmediata.”</p>
+          <p>Las 118 unidades terminadas.</p>
+        </div>
+        <div class="motor">
+          <span class="motor__pct">40%</span>
+          <span class="motor__label">Motor B · Preventa desde $3.6M</span>
+          <p class="motor__tag">“Precio de lanzamiento.”</p>
+          <p>Fases nuevas con escalera de precios.</p>
         </div>
       </div>
-    </section>
 
-    <!-- ███ NAV DE DOCUMENTOS ███ -->
-    <nav class="docnav">
-      <div class="container docnav__inner" id="docnavInner"></div>
-    </nav>
-
-    <!-- ███ DOCUMENTOS (se generan por JS a partir de DOCS) ███ -->
-    <main class="container docs" id="docsWrap"></main>
-
-    <section class="closing">
-      <div class="container">
-        <blockquote class="reveal">“El mercado ya demostró que compra 40 unidades al mes. Este plan solo le pide 10 — con sistema.”</blockquote>
-        <p class="closing__author reveal">Fran Morishita · Consultor Estratégico — Marketing Inmobiliario &amp; IA aplicada a Ventas</p>
-        <a class="closing__cta reveal" id="waLink" href="#" target="_blank" rel="noopener">¿Preguntas sobre la propuesta? Escríbeme por WhatsApp →</a>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>Plaza</th><th>Motor A (60%)</th><th>Motor B (40%)</th></tr></thead>
+          <tbody>
+            <tr><td>Mexicali</td><td>50%</td><td>40%</td></tr>
+            <tr><td>Tijuana</td><td>25%</td><td>30%</td></tr>
+            <tr><td>San Diego / SoCal</td><td>20%</td><td>20%</td></tr>
+            <tr><td>Ensenada</td><td>5%</td><td>10%</td></tr>
+          </tbody>
+        </table>
       </div>
-    </section>
 
-    <footer class="docfoot">
-      <div class="container">
-        <span>Documento confidencial · Julio 2026</span>
-        <span>© <span id="year"></span> Fran Morishita</span>
+      <div class="callout reveal">Arranque agresivo recomendado: $250,000/mes desde el mes 1 — sin escalamiento gradual.</div>
+    </div>
+  </section>
+
+  <!-- ███ 9 · LA FÓRMULA INVERSA ███ -->
+  <section class="section section--alt" id="formula">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">La Fórmula Inversa</span>
+        <h2>De la meta hacia atrás: la proyección a 6 meses</h2>
+        <div class="rule"></div>
       </div>
-    </footer>
-  </div>
+
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>Mes</th><th>Motor A</th><th>Motor B</th><th>Total</th><th>Qué pasa</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>1</td><td>1</td><td>2</td><td>Pixel aprendiendo</td></tr>
+            <tr><td>2</td><td>2</td><td>2</td><td>4</td><td>Se escala lo ganador</td></tr>
+            <tr><td>3</td><td>4</td><td>2</td><td>6</td><td>Inventario prioriza</td></tr>
+            <tr><td>4</td><td>5</td><td>3</td><td>8</td><td>Régimen acercándose</td></tr>
+            <tr><td>5</td><td>5</td><td>4</td><td>9</td><td>Checkpoint de revisión</td></tr>
+            <tr><td>6</td><td>6</td><td>4</td><td>10</td><td>Régimen sostenido</td></tr>
+            <tr class="table-total"><td>Total</td><td>23</td><td>16</td><td>39</td><td>≈ $175 MDP</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 10 · VENTA DIGITAL ███ -->
+  <section class="section" id="venta-digital">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Venta Digital</span>
+        <h2>El showroom que viaja a Mexicali y San Diego</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="flow reveal">
+        <div class="flow__step">Anuncio con precio</div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step">Landing por persona</div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step">IA califica por WhatsApp</div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step">Videollamada de 30 min</div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step">Apartado en línea o visita física</div>
+      </div>
+
+      <div class="kpis reveal">
+        <div class="kpi">Show-rate <strong>≥65%</strong></div>
+        <div class="kpi">Videollamada → visita <strong>≥40%</strong></div>
+        <div class="kpi">Apartado directo <strong>5–10%</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 11 · CRM + EVERGREEN ███ -->
+  <section class="section section--alt" id="crm">
+    <div class="container">
+      <div class="twocol reveal">
+        <div>
+          <h3>CRM + Agentes de IA</h3>
+          <p>Plataforma centralizada para toda la demanda del proyecto: agente de WhatsApp respondiendo 24/7, agente de llamadas para seguimiento, y un pipeline visible desde el primer contacto hasta la escritura.</p>
+        </div>
+        <div>
+          <h3>El Evergreen</h3>
+          <p>Reactivación de la base histórica de 35,000 clientes Fincamex, programa de referidos y gestión de reviews — demanda propia que no depende de la pauta encendida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 12 · TIMELINE DE EJECUCIÓN ███ -->
+  <section class="section" id="timeline">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Timeline de Ejecución</span>
+        <h2>Cinco fases, de la firma a la mejora continua</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="tl"><span class="tl__n">1</span><h3>Levantamiento</h3><span class="tl__when">Semana 1</span></div>
+        <div class="tl"><span class="tl__n">2</span><h3>Creación</h3><span class="tl__when">Semanas 2–4</span></div>
+        <div class="tl"><span class="tl__n">3</span><h3>Ejecución</h3><span class="tl__when">Mes 1 en adelante</span></div>
+        <div class="tl"><span class="tl__n">4</span><h3>Análisis de resultados</h3><span class="tl__when">Mensual</span></div>
+        <div class="tl"><span class="tl__n">5</span><h3>Optimización</h3><span class="tl__when">Continua</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 13 · INVERSIÓN ███ -->
+  <section class="section section--alt" id="inversion">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Inversión</span>
+        <h2>Un mismo sistema. Dos formas de ejecutarlo.</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="plans reveal">
+        <div class="plan plan--featured">
+          <span class="plan__badge">Recomendado</span>
+          <h3>Consultoría + Ejecución</h3>
+          <p>Dirigimos y ejecutamos todo con nuestro propio equipo.</p>
+        </div>
+        <div class="plan">
+          <h3>Solo Consultoría <em>−30%</em></h3>
+          <p>Dirigimos y capacitamos; su equipo interno ejecuta bajo nuestra supervisión.</p>
+        </div>
+      </div>
+
+      <h4 class="subhead reveal">Pagos únicos</h4>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>Concepto</th><th>Incluye</th><th>Ejecución</th><th>Consult. −30%</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Diagnóstico e Implementación</td>
+              <td>Auditoría, tracking, arquitectura de campañas por los dos motores, estructura de CRM, playbooks base</td>
+              <td>$45,000</td><td>$31,500</td>
+            </tr>
+            <tr>
+              <td>Metodología de Venta Digital</td>
+              <td>Diseño del flujo, guiones por persona, playbook, 4 sesiones de capacitación, certificación del equipo</td>
+              <td>$120,000</td><td>$84,000</td>
+            </tr>
+            <tr class="table-total"><td>Subtotal</td><td></td><td>$165,000</td><td>$115,500</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="subhead reveal">Operación mensual</h4>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>Concepto</th><th>Incluye</th><th>Ejecución</th><th>Consult. −30%</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Dirección Estratégica</td>
+              <td>Sesión semanal, dirección de campañas y creatividad, reporte ejecutivo mensual</td>
+              <td>$50,000</td><td>$35,000</td>
+            </tr>
+            <tr>
+              <td>Rebranding Fincamex</td>
+              <td>Estrategia, identidad evolutiva, arquitectura de marca, manual y rollout — en mensualidades</td>
+              <td>$47,000</td><td>$33,000</td>
+            </tr>
+            <tr>
+              <td>Gestión de Paid Media</td>
+              <td>Meta, Google, YouTube, TikTok, LinkedIn — optimización diaria</td>
+              <td>$70,000</td><td>$49,000</td>
+            </tr>
+            <tr>
+              <td>Producción Audiovisual</td>
+              <td>Reels, fotografía, drone, testimoniales</td>
+              <td>$40,000</td><td>$28,000</td>
+            </tr>
+            <tr>
+              <td>Edición &amp; Creativos</td>
+              <td>6–8 videos/mes, variantes de hooks</td>
+              <td>$25,000</td><td>$17,500</td>
+            </tr>
+            <tr>
+              <td>CRM + Agentes de IA</td>
+              <td>Plataforma centralizada, agentes WhatsApp/llamadas, evergreen</td>
+              <td>$30,000</td><td>$21,000</td>
+            </tr>
+            <tr class="table-total"><td>Subtotal</td><td></td><td>$262,000</td><td>$183,500</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap table-wrap--summary reveal">
+        <table>
+          <thead><tr><th>Concepto</th><th>Ejecución</th><th>Consultoría −30%</th></tr></thead>
+          <tbody>
+            <tr><td>Pago único</td><td>$165,000</td><td>$115,500</td></tr>
+            <tr><td>Pago mensual</td><td>$262,000</td><td>$183,500</td></tr>
+            <tr class="table-total table-total--lg"><td>Total (6 meses)</td><td>$1,737,000 + IVA</td><td>$1,216,500 + IVA</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout reveal">
+        <strong>Bono por resultados.</strong> 1% del valor de cada venta escriturada (Consultoría + Ejecución) — 0.5% en Solo Consultoría. Un bróker externo cobra 3–4% por venta sin dejar ningún sistema instalado.
+      </div>
+
+      <div class="inversion__cta reveal">
+        <a class="btn btn--primary" href="/docs/Lista_Precios_Vinedos_del_Mar.pdf" target="_blank" rel="noopener">Descargar propuesta económica completa (PDF)</a>
+        <p class="finenote">No incluye pauta publicitaria digital ni radio, pagadas directamente por El Cliente en sus propias cuentas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 14 · ALCANCES ███ -->
+  <section class="section" id="alcances">
+    <div class="container">
+      <div class="head reveal">
+        <span class="kicker">Alcances</span>
+        <h2>Qué incluye y qué no incluye la propuesta</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="scope reveal">
+        <div class="scope__col">
+          <h3 class="scope__title scope__title--ok">Incluye</h3>
+          <ul>
+            <li>Diagnóstico y auditoría completa de cuentas y tracking</li>
+            <li>Arquitectura de campañas para los dos motores (inventario + preventa)</li>
+            <li>Diseño e implementación de CRM y agentes de IA (WhatsApp 24/7, llamadas)</li>
+            <li>Metodología y capacitación certificada del equipo comercial en venta digital</li>
+            <li>Dirección estratégica semanal con reporte ejecutivo mensual</li>
+            <li>Rebranding y arquitectura de marca de Fincamex, con manual de identidad</li>
+            <li>Gestión diaria de paid media en Meta, Google, YouTube, TikTok y LinkedIn</li>
+            <li>Producción audiovisual mensual (reels, fotografía, drone, testimoniales)</li>
+            <li>Edición de 6–8 videos publicitarios al mes con variantes A/B</li>
+            <li>Programa evergreen: reactivación de la base histórica, referidos y reviews</li>
+          </ul>
+        </div>
+        <div class="scope__col">
+          <h3 class="scope__title scope__title--no">No incluye</h3>
+          <ul>
+            <li>Pauta publicitaria digital ni radio — se paga directamente por El Cliente en sus propias cuentas y plataformas</li>
+            <li class="scope__missing">[FALTA DATO — agrega aquí otros conceptos fuera de alcance: p. ej. gastos notariales, comisiones a terceros, licencias de software externas]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ 15 · CTA FINAL ███ -->
+  <section class="section section--navy" id="contacto">
+    <div class="container">
+      <div class="head head--onnavy reveal">
+        <span class="kicker">Siguiente Paso</span>
+        <h2>De la propuesta al arranque</h2>
+        <div class="rule"></div>
+      </div>
+
+      <ol class="numlist numlist--onnavy reveal">
+        <li><span class="numlist__n">1</span><div>Reunión de alineación</div></li>
+        <li><span class="numlist__n">2</span><div>Firma y kickoff</div></li>
+        <li><span class="numlist__n">3</span><div>Sistema operando en 30 días</div></li>
+        <li><span class="numlist__n">4</span><div>Primera junta de resultados</div></li>
+        <li><span class="numlist__n">5</span><div>Checkpoint semestral</div></li>
+      </ol>
+
+      <blockquote class="pull-quote reveal">“El mercado ya compró Viñedos del Mar a un ritmo de 40 unidades por mes.<br />Nuestro trabajo es reconstruir el sistema que lo hizo posible.”</blockquote>
+
+      <div class="finalcta reveal">
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://wa.me/5216462563006?text=Hola%20Fran%2C%20soy%20Rodrigo%20de%20Fincamex.%20Quiero%20agendar%20una%20reuni%C3%B3n%20sobre%20la%20propuesta%20de%20Vi%C3%B1edos%20del%20Mar." target="_blank" rel="noopener">Agendar reunión por WhatsApp</a>
+          <a class="btn btn--ghost btn--onnavy" href="/docs/Propuesta_Final_Vinedos_del_Mar.pdf" target="_blank" rel="noopener">Descargar propuesta completa (PDF)</a>
+        </div>
+        <p class="signature">Fran Morishita · Dirección Estratégica de Marketing Inmobiliario &amp; IA aplicada a Ventas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ███ FOOTER — DOCUMENTOS ███ -->
+  <footer class="foot">
+    <div class="container">
+      <div class="foot__docs reveal">
+        <a class="doccard" href="/docs/Propuesta_Final_Vinedos_del_Mar.pdf" target="_blank" rel="noopener">
+          <span class="doccard__icon">📄</span>
+          <span>
+            <strong>Propuesta Completa</strong>
+            <em>PDF</em>
+          </span>
+        </a>
+        <a class="doccard" href="/docs/Lista_Precios_Vinedos_del_Mar.pdf" target="_blank" rel="noopener">
+          <span class="doccard__icon">📄</span>
+          <span>
+            <strong>Propuesta Económica</strong>
+            <em>PDF</em>
+          </span>
+        </a>
+      </div>
+      <div class="foot__bottom">
+        <span class="mark">森下<span>FRAN MORISHITA</span></span>
+        <span>CONFIDENCIAL · JULIO 2026</span>
+      </div>
+    </div>
+  </footer>
 
   <script src="vinedosdelmar.js"></script>
 </body>
