@@ -317,7 +317,8 @@ hr{ border:0; border-top:1px solid var(--line); margin:0; }
 .hero-media::after{
   content:''; position:absolute; inset:0;
   background:
-    linear-gradient(180deg, rgba(6,26,24,.62) 0%, rgba(6,26,24,.18) 34%, rgba(6,26,24,.55) 72%, rgba(6,26,24,.86) 100%);
+    linear-gradient(180deg, rgba(6,26,24,.58) 0%, rgba(6,26,24,.30) 28%, rgba(6,26,24,.60) 62%, rgba(6,26,24,.88) 100%),
+    linear-gradient(90deg, rgba(6,26,24,.42) 0%, rgba(6,26,24,.04) 68%);
 }
 
 /* Photo-less fallback: layered coastal gradient */
@@ -707,3 +708,11 @@ hr{ border:0; border-top:1px solid var(--line); margin:0; }
 @media (max-width:1023px){
   body.has-mobile-bar .footer-bottom{ padding-bottom:calc(78px + env(safe-area-inset-bottom)); }
 }
+
+/* Hero con fotografía: el dorado del eyebrow pierde contraste contra el
+   cielo, y el texto necesita un velo mínimo para leerse sobre cualquier
+   zona clara de la imagen. */
+.hero .eyebrow{ color:rgba(248,244,236,.9); }
+.hero .eyebrow::before{ opacity:.55; }
+.hero-content{ text-shadow:0 1px 20px rgba(6,26,24,.4); }
+.hero-content .btn{ text-shadow:none; }

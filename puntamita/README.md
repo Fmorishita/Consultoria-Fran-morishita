@@ -1,6 +1,8 @@
 # Punta Mita Homes — sitio web
 
-Sitio bilingüe (ES/EN) de captación para **Punta Mita Homes | Luxury Real Estate** — la práctica de real estate de lujo de **Jaime Valdés** ([@soyjaimevaldes](https://www.instagram.com/soyjaimevaldes)) en Punta Mita, Playa Destiladeras y Nuevo Vallarta.
+Sitio bilingüe (ES/EN) de captación para **Punta Mita Homes | Luxury Real Estate** — la práctica de real estate de lujo de **Jaime Valdés** ([@soyjaimevaldes](https://www.instagram.com/soyjaimevaldes), cuenta verificada, +56 mil seguidores) en Punta Mita, Playa Destiladeras y Nuevo Vallarta.
+
+El posicionamiento del sitio es el suyo, no uno inventado: *"ayudo a familias a comprar su segunda casa"* y **biofilia** — la tesis de que una casa se elige por cómo se vive, no por cómo se ve en el render. La biofilia tiene sección propia en la home porque es su diferenciador declarado y ningún competidor de la zona lo usa.
 
 Es un **proyecto autocontenido**: no depende de nada del sitio de consultoría que vive en la raíz de este repositorio. Para moverlo a su propio repo y dominio basta con copiar esta carpeta.
 
@@ -16,17 +18,33 @@ Cuatro cosas, todas en `js/data.js` salvo la última:
 |---|---|---|---|
 | 1 | **Número de WhatsApp** | `SITE.whatsapp` | Sin él se usa el link corto del perfil de IG, que **no admite mensaje pre-llenado**: el lead llega sin sus respuestas. Con el número, Jaime recibe nombre, objetivo, zona, presupuesto y tiempos en el primer mensaje. Formato: solo dígitos con lada país, p. ej. `523221234567`. |
 | 2 | **Correo** | `SITE.email` | Mientras esté vacío, el enlace de correo se oculta solo (no queda roto). |
-| 3 | **Fotos** | `photos: []` de cada propiedad | Hoy cada ficha muestra un degradado con la leyenda "Fotografía por cargar". Funciona y se ve intencional, pero las fotos reales son lo que más va a mover la conversión. |
+| 3 | **Más fotos** | `photos: []` de cada propiedad | Hay tres fotos reales en `assets/` recuperadas de sus publicaciones (ver abajo), pero son recortes de capturas de Instagram. Los originales en alta resolución, y galerías propias por proyecto, es lo que más va a mover la conversión. El Tigre todavía no tiene ninguna. |
 | 4 | **Supabase** | `SITE.supabase` | Sin configurar, el formulario **no pierde el lead**: igual abre WhatsApp. Con Supabase además queda el histórico con UTMs para medir campañas. Ver `supabase.sql`. |
 
 ---
 
+## Fotografías
+
+Tres imágenes salieron de sus propias publicaciones y están recortadas para quitar la interfaz de Instagram:
+
+| Archivo | Qué es | Dónde se usa |
+|---|---|---|
+| `assets/destiladeras-alberca.jpg` | Alberca de borde infinito con el árbol, Playa Destiladeras. Es la foto de perfil de @puntamita.homes | Fondo del hero y fichas de Naya y Nayama |
+| `assets/punta-mita-interior.jpg` | Sala abierta a la alberca y al Pacífico. Del post *"¿Para qué comprar una casa en Punta Mita?"* | Sección "¿Para qué comprar una casa en Punta Mita?" |
+| `assets/jaime.jpg` | Retrato de Jaime | Sección "Con quién estás hablando" |
+
+Son recortes de capturas de pantalla, así que su resolución está limitada. **Conviene sustituirlas por los originales** en cuanto Jaime los pase. Cada una está asignada a la zona que le corresponde según la publicación de la que salió, así que si se cambian hay que respetar esa atribución.
+
 ## Verificar con Jaime
 
-Dos cosas se tomaron de las publicaciones de Instagram y conviene confirmarlas antes de que el sitio salga a pauta:
+Cuatro cosas se tomaron de las publicaciones de Instagram y conviene confirmarlas antes de que el sitio salga a pauta:
 
 - **El reparto Naya / Nayama.** Las publicaciones dicen que Naya y Nayama son dos proyectos frente al mar de One Development en Playa Destiladeras, y que el conjunto son *"solo 11 residencias y 17 departamentos"*. El sitio asigna las 11 residencias a Naya y los 17 departamentos a Nayama, que es la lectura natural — pero no está confirmado cuál es cuál.
 - **Las 2 residencias disponibles.** Viene del post *"Nos quedan solo 2 residencias disponibles"*. Es un dato que caduca: hay que actualizarlo o quitarlo (`remaining` en `js/data.js`).
+- **El Tigre.** La publicación lo muestra como una **casa** en obra en Nuevo Vallarta, marcada como nuevo listing. Faltan recámaras, metros, precio y fecha de entrega.
+- **MAENA.** Aparece en un chaleco suyo en un post etiquetado en Punta de Mita. Parece ser otro desarrollo que representa; no se incluyó en el sitio porque no hay información suficiente. Si lo comercializa, vale la pena agregarlo.
+
+También quedó fuera **@soyhuichol**, su otra cuenta, porque no hay contexto sobre qué es. Si tiene que ver con el negocio, se puede enlazar desde el footer.
 
 No hay ni un precio inventado en el sitio. Los proyectos se presentan bajo el modelo **Colección Privada** (precio bajo solicitud), que es el que ya usa el perfil de Instagram con *"Request our Private Collection"*.
 

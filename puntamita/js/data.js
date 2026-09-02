@@ -10,7 +10,11 @@ const SITE = {
   agent:      'Jaime Valdés',
   agentHandle:'@soyjaimevaldes',
   agentUrl:   'https://www.instagram.com/soyjaimevaldes',
-  agentRole:  { es: 'Luxury Real Estate · Riviera Nayarit', en: 'Luxury Real Estate · Riviera Nayarit' },
+  agentRole:  { es: 'Agente de bienes raíces · Punta Mita', en: 'Real estate agent · Punta Mita' },
+  agentPromise:{ es: 'Ayudo a familias a comprar su segunda casa', en: 'Helping families buy second homes' },
+  agentPhoto: 'assets/jaime.jpg',
+  agentFollowers: '56 mil',   // @soyjaimevaldes, actualizar de vez en cuando
+  agentVerified: true,
   brand:      'Punta Mita Homes',
   brandFull:  'Punta Mita Homes | Luxury Real Estate',
   instagram:  'https://www.instagram.com/puntamita.homes',
@@ -176,7 +180,7 @@ const PROPERTIES = [
       es:['Frente a Playa Destiladeras','Alberca de borde infinito sobre el mar','Áreas de descanso y jardines frente al océano','Solo 11 residencias en todo el proyecto','Entrega inmediata','45 minutos del aeropuerto de Puerto Vallarta'],
       en:['On Playa Destiladeras','Infinity-edge pool over the ocean','Lounge areas and gardens facing the water','Only 11 residences in the entire project','Immediate delivery','45 minutes from Puerto Vallarta airport']
     },
-    photos:[]
+    photos:['assets/destiladeras-alberca.jpg']
   },
   {
     id:'nayama', status:'preventa', featured:true, isNew:true,
@@ -200,11 +204,11 @@ const PROPERTIES = [
       es:['Frente a Playa Destiladeras','Alberca de borde infinito sobre el mar','Áreas comunes frente al océano','Solo 17 departamentos','Esquema de preventa','45 minutos del aeropuerto de Puerto Vallarta'],
       en:['On Playa Destiladeras','Infinity-edge pool over the ocean','Common areas facing the water','Only 17 apartments','Pre-sale terms','45 minutes from Puerto Vallarta airport']
     },
-    photos:[]
+    photos:['assets/destiladeras-alberca.jpg']
   },
   {
     id:'el-tigre', status:'venta', featured:true, isNew:true,
-    zone:'nuevo-vallarta', type:'condo',
+    zone:'nuevo-vallarta', type:'casa',
     priceOnRequest:true,
     title:{ es:'El Tigre · Nuevo Vallarta', en:'El Tigre · Nuevo Vallarta' },
     headline:{
