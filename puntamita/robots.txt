@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /gracias
+Disallow: /gracias.html
+
+Sitemap: https://puntamitahomes.com/sitemap.xml
