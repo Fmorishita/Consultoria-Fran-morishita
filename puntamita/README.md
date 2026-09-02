@@ -172,7 +172,13 @@ python3 -m http.server 8000
 
 Es 100% estático: Vercel, Netlify, Cloudflare Pages o GitHub Pages.
 
-En Vercel, `vercel.json` ya trae URLs limpias (`/propiedades` en vez de `/propiedades.html`), cabeceras de seguridad y caché larga para estáticos. Si se publica en un dominio distinto a `puntamitahomes.com`, actualiza `SITE.siteUrl`, `robots.txt` y `sitemap.xml`.
+`vercel.json` trae URLs limpias (`/propiedades` en vez de `/propiedades.html`), cabeceras de seguridad y caché larga para estáticos.
+
+> **Ojo:** Vercel solo lee el `vercel.json` de la **raíz** del proyecto. Mientras esta carpeta viva dentro del repo de consultoría, el `puntamita/vercel.json` está **inerte** y manda el de la raíz. El sitio funciona igual — el CSP de la raíz ya permite Google Fonts y Supabase, que es todo lo que necesita — pero no recibe la caché inmutable de estáticos. Este archivo entra en vigor en cuanto la carpeta sea su propio proyecto de Vercel, que es el destino previsto.
+
+Los enlaces internos usan la extensión `.html`, así que el sitio funciona con o sin `cleanUrls`.
+
+Si se publica en un dominio distinto a `puntamitahomes.com`, actualiza `SITE.siteUrl`, `robots.txt` y `sitemap.xml`.
 
 Antes de correr pauta, agrega el píxel de Meta y Google Analytics. Si los agregas, hay que permitirlos en la cabecera `Content-Security-Policy` de `vercel.json`.
 
