@@ -3,4 +3,4 @@ Allow: /
 Disallow: /gracias
 Disallow: /gracias.html
 
-Sitemap: https://puntamitahomes.com/sitemap.xml
+Sitemap: https://puntamitahomes.vercel.app/sitemap.xml

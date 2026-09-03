@@ -2,45 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://puntamitahomes.com/</loc>
+    <loc>https://puntamitahomes.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.com/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.vercel.app/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.vercel.app/?lang=en"/>
   </url>
   <url>
-    <loc>https://puntamitahomes.com/propiedades</loc>
+    <loc>https://puntamitahomes.vercel.app/propiedades</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.com/propiedades?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.com/propiedades?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.vercel.app/propiedades?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.vercel.app/propiedades?lang=en"/>
   </url>
   <url>
-    <loc>https://puntamitahomes.com/propiedad</loc>
+    <loc>https://puntamitahomes.vercel.app/propiedad</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.com/propiedad?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.com/propiedad?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.vercel.app/propiedad?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.vercel.app/propiedad?lang=en"/>
   </url>
   <url>
-    <loc>https://puntamitahomes.com/zonas</loc>
+    <loc>https://puntamitahomes.vercel.app/zonas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.com/zonas?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.com/zonas?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.vercel.app/zonas?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.vercel.app/zonas?lang=en"/>
   </url>
   <url>
-    <loc>https://puntamitahomes.com/guia-compra</loc>
+    <loc>https://puntamitahomes.vercel.app/guia-compra</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.com/guia-compra?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.com/guia-compra?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.vercel.app/guia-compra?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.vercel.app/guia-compra?lang=en"/>
   </url>
   <url>
-    <loc>https://puntamitahomes.com/contacto</loc>
+    <loc>https://puntamitahomes.vercel.app/contacto</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.com/contacto?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.com/contacto?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://puntamitahomes.vercel.app/contacto?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puntamitahomes.vercel.app/contacto?lang=en"/>
   </url>
 </urlset>

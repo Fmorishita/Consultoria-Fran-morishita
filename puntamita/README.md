@@ -10,6 +10,23 @@ Sin build, sin dependencias, sin framework. HTML, CSS y JS planos.
 
 ---
 
+## Identidad visual
+
+La paleta sale del logotipo, no al revés. Los dos colores de marca son los que trae el monograma:
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--sea` | `#545E69` | Pizarra del logotipo |
+| `--deep` | `#3E4751` | Fondo de secciones oscuras |
+| `--sun` | `#2E3640` | Acción primaria (se invierte a crema sobre fondo oscuro) |
+| `--foam` | `#C9BFAE` | Arena clara: acentos sobre oscuro |
+| `--brass` | `#6E6252` | Arena profunda: eyebrows sobre claro |
+| `--bone` | `#F7F4EF` | Fondo de página |
+
+Todos los valores de texto están elegidos para cumplir **WCAG AA** sobre su fondo previsto; el contraste va anotado en el comentario de cada token en `css/styles.css`. Hay una auditoría automatizada que mide el contraste real renderizado — ver "Verificación" abajo.
+
+El monograma vive en `assets/logo.png` con fondo transparente. Sobre el hero se aclara con un filtro CSS (`.brand-mark`) y recupera su color en cuanto la nav se vuelve sólida.
+
 ## ⚠️ Antes de publicar
 
 Cuatro cosas, todas en `js/data.js` salvo la última:
@@ -34,6 +51,14 @@ Tres imágenes salieron de sus propias publicaciones y están recortadas para qu
 | `assets/jaime.jpg` | Retrato de Jaime | Sección "Con quién estás hablando" |
 
 Son recortes de capturas de pantalla, así que su resolución está limitada. **Conviene sustituirlas por los originales** en cuanto Jaime los pase. Cada una está asignada a la zona que le corresponde según la publicación de la que salió, así que si se cambian hay que respetar esa atribución.
+
+### Imágenes ilustrativas (`assets/stock-*.jpg`)
+
+Ocho fotografías de Unsplash (licencia libre, uso comercial permitido) dan cuerpo a las secciones editoriales: fondos de subhero, bandas a sangre y cinco de las seis tarjetas de zona.
+
+**No se usa ninguna en la galería de una propiedad, y no debe usarse.** Una foto en la ficha de un listado es una afirmación sobre esa propiedad concreta; en una sección editorial es solo ambiente. El pie de página lo dice explícitamente ("Algunas imágenes de zona son ilustrativas y no corresponden a una propiedad en particular").
+
+Se sustituyen borrando el archivo y apuntando `photo:` de la zona en `js/data.js` a la imagen real.
 
 ## Verificar con Jaime
 
@@ -160,6 +185,12 @@ Si Supabase falla o no está configurado, el lead **igual llega a WhatsApp**. Se
 
 ---
 
+## Verificación
+
+Además de las pruebas de flujo, hay una auditoría de accesibilidad que corre en Chromium sin interfaz a **320, 390 y 430 px** sobre las siete páginas y mide, para cada nodo de texto, el contraste real ya compuesto (resolviendo transparencias contra el fondo efectivo). También detecta desbordamiento horizontal y áreas táctiles por debajo de 30 px.
+
+Fue lo que encontró el fallo de visibilidad más grave: el panel claro del calificador vive dentro de una sección `.bg-deep`, y heredaba de ella `color:var(--bone)`, así que quedaba texto crema sobre panel crema. El texto sobre fotografía se excluye del cálculo automático (no es medible de forma fiable) y se revisa a ojo.
+
 ## Verlo en local
 
 ```bash
@@ -178,7 +209,7 @@ Es 100% estático: Vercel, Netlify, Cloudflare Pages o GitHub Pages.
 
 Los enlaces internos usan la extensión `.html`, así que el sitio funciona con o sin `cleanUrls`.
 
-Si se publica en un dominio distinto a `puntamitahomes.com`, actualiza `SITE.siteUrl`, `robots.txt` y `sitemap.xml`.
+El sitio apunta a **`puntamitahomes.vercel.app`**. Si cambia el dominio, hay que actualizar `SITE.siteUrl` en `js/data.js`, `robots.txt` y `sitemap.xml`.
 
 Antes de correr pauta, agrega el píxel de Meta y Google Analytics. Si los agregas, hay que permitirlos en la cabecera `Content-Security-Policy` de `vercel.json`.
 

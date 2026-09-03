@@ -121,11 +121,13 @@
     return '' +
       '<a class="pcard" href="propiedades.html?zone=' + encodeURIComponent(z.id) + '">' +
         '<div class="pcard-media" style="aspect-ratio:3/2">' +
-          '<div class="ph ' + z.ph + '"><span class="ph-mark">' + esc(z.name) + '</span></div>' +
+          (z.photo
+            ? '<img src="' + esc(z.photo) + '" alt="' + esc(z.name) + '" loading="lazy" decoding="async">'
+            : '<div class="ph ' + z.ph + '"><span class="ph-mark">' + esc(z.name) + '</span></div>') +
+          '<div class="pcard-scrim"><span class="pcard-overtitle">' + esc(z.name) + '</span></div>' +
         '</div>' +
         '<div class="pcard-body">' +
           '<span class="pcard-zone">' + esc(t(z.tagline)) + '</span>' +
-          '<h3 class="pcard-title">' + esc(z.name) + '</h3>' +
           '<p class="small muted">' + esc(t(z.blurb)) + '</p>' +
           (detailed && hl.length ? '<div class="amenities" style="margin-top:4px">' + hl.map(function (h) {
             return '<div class="amenity" style="font-size:.85rem">' + ICON.check + '<span>' + esc(h) + '</span></div>';

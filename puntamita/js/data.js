@@ -32,7 +32,7 @@ const SITE = {
   email:      '',            // ⚠️ PENDIENTE
   calendly:   '',            // opcional
 
-  siteUrl:    'https://puntamitahomes.com',
+  siteUrl:    'https://puntamitahomes.vercel.app',
 
   /* Supabase — captura de leads. Vacío = el formulario cae con gracia
      a solo-WhatsApp sin perder el prospecto. */
@@ -57,7 +57,8 @@ const ZONES = [
       en:['Playa Destiladeras','Beachfront residences','45 min from PVR airport','Immediate delivery or pre-sale']
     },
     range:{ es:'Colección privada', en:'Private collection' },
-    ph:'ph-2'
+    ph:'ph-2',
+    photo:'assets/destiladeras-alberca.jpg'
   },
   {
     id:'punta-mita',
@@ -72,7 +73,8 @@ const ZONES = [
       en:['24/7 gated access','2 Jack Nicklaus courses','Four Seasons & St. Regis','Private Beach & Golf Clubs']
     },
     range:{ es:'Colección privada', en:'Private collection' },
-    ph:'ph-1'
+    ph:'ph-1',
+    photo:'assets/stock-villa-pool.jpg'
   },
   {
     id:'nuevo-vallarta',
@@ -87,7 +89,8 @@ const ZONES = [
       en:['El Tigre golf course','Marina and services','Minutes from the airport','Gated communities']
     },
     range:{ es:'Colección privada', en:'Private collection' },
-    ph:'ph-4'
+    ph:'ph-4',
+    photo:'assets/stock-resort-alberca.jpg'
   },
   {
     id:'litibu',
@@ -102,7 +105,8 @@ const ZONES = [
       en:['Greg Norman course','New builds and pre-sales','Resort-grade amenities','5 min from Punta de Mita']
     },
     range:{ es:'Colección privada', en:'Private collection' },
-    ph:'ph-6'
+    ph:'ph-6',
+    photo:'assets/stock-villa-palmeras.jpg'
   },
   {
     id:'sayulita',
@@ -117,7 +121,8 @@ const ZONES = [
       en:['High rental occupancy','Pueblo Mágico','Limited inventory','International demand']
     },
     range:{ es:'Colección privada', en:'Private collection' },
-    ph:'ph-3'
+    ph:'ph-3',
+    photo:'assets/stock-atardecer-palmeras.jpg'
   },
   {
     id:'san-pancho',
@@ -132,7 +137,8 @@ const ZONES = [
       en:['Lower density','Established expat community','Wide beach','Five minutes from Sayulita']
     },
     range:{ es:'Colección privada', en:'Private collection' },
-    ph:'ph-5'
+    ph:'ph-5',
+    photo:'assets/stock-zona-tropical.jpg'
   }
 ];
 
