@@ -815,3 +815,37 @@ hr{ border:0; border-top:1px solid var(--line); margin:0; }
   pointer-events:none;
 }
 .subhero.on-bone2::after{ background:linear-gradient(180deg, rgba(238,233,225,0) 0%, var(--bone-2) 100%); }
+
+/* En el subhero el velo terminaba en .88 justo donde arranca el fundido
+   a crema, y la rampa oscuro→crema en 120px se veía como un corte.
+   Se aclara el tramo final; la parte alta, donde va el título, no cambia. */
+.subhero .hero-media::after{
+  background:
+    linear-gradient(180deg, rgba(26,31,38,.62) 0%, rgba(26,31,38,.46) 42%, rgba(26,31,38,.34) 100%),
+    linear-gradient(90deg, rgba(26,31,38,.40) 0%, rgba(26,31,38,.04) 70%);
+}
+.subhero::after{ height:150px; }
+
+/* La nav transparente se apoya sobre fotografías de brillo impredecible
+   (una pared blanca detrás dejaba el logotipo casi ilegible). Un velo
+   propio, corto y en degradado, garantiza el contraste sin oscurecer la
+   imagen completa. Desaparece cuando la nav se vuelve sólida. */
+.nav::before{
+  content:''; position:absolute; inset:0 0 auto 0; height:150%;
+  background:linear-gradient(180deg, rgba(26,31,38,.72) 0%, rgba(26,31,38,.38) 55%, rgba(26,31,38,0) 100%);
+  pointer-events:none; opacity:1; transition:opacity .4s var(--ease);
+}
+.nav.is-solid::before{ opacity:0; }
+.nav-inner{ position:relative; z-index:1; }
+
+/* El título del subhero necesita más cuerpo de velo que el pie. */
+.subhero .hero-media::after{
+  background:
+    linear-gradient(180deg, rgba(26,31,38,.60) 0%, rgba(26,31,38,.56) 55%, rgba(26,31,38,.34) 100%),
+    linear-gradient(90deg, rgba(26,31,38,.46) 0%, rgba(26,31,38,.06) 72%);
+}
+
+/* Igual que en el hero: un velo de texto mínimo asegura la separación
+   sobre cualquier zona clara de la fotografía sin apagar la imagen. */
+.subhero .container{ text-shadow:0 1px 16px rgba(26,31,38,.55); }
+.subhero .btn,.subhero .chip{ text-shadow:none; }
