@@ -40,7 +40,11 @@
     remaining: { es: 'disponibles', en: 'available' },
     developer: { es: 'Desarrollador', en: 'Developer' },
     beach:     { es: 'Playa', en: 'Beach' },
-    collection:{ es: 'Solicitar la Colección Privada', en: 'Request the Private Collection' }
+    collection:{ es: 'Solicitar la Colección Privada', en: 'Request the Private Collection' },
+    photos:    { es: 'fotos', en: 'photos' },
+    ref:       { es: 'Referencia', en: 'Reference' },
+    refNote:   { es: 'Las tomas marcadas como referencia ilustran el nivel del proyecto; no son fotografía de la unidad. Las definitivas se entregan con la Colección Privada.',
+                 en: 'Shots marked as reference illustrate the level of the project; they are not photography of the unit itself. Final images come with the Private Collection.' }
   };
 
   var ICON = {
@@ -52,12 +56,18 @@
   };
 
   /* ---------- Media (foto real o placeholder generado) ---------- */
-  function media(p, cls) {
+  function media(p) {
     var photo = p.photos && p.photos.length ? p.photos[0] : null;
-    if (photo) {
-      return '<img src="' + esc(photo) + '" alt="' + esc(t(p.title)) + '" loading="lazy" decoding="async">';
+    if (!photo) return '<div class="ph ' + PMH.phClass(p.id) + '"><span class="ph-mark">' + esc(t(L.photoSoon)) + '</span></div>';
+    var extra = '';
+    if (p.photos.length > 1) {
+      extra += '<span class="pcard-count">' + p.photos.length + ' ' + esc(t(L.photos)) + '</span>';
     }
-    return '<div class="ph ' + PMH.phClass(p.id) + '"><span class="ph-mark">' + esc(t(L.photoSoon)) + '</span></div>';
+    /* Si la portada no es del proyecto, se dice en la propia imagen. */
+    if (typeof p.refFrom === 'number' && p.refFrom === 0) {
+      extra += '<span class="pcard-ref">' + esc(t(L.ref)) + '</span>';
+    }
+    return '<img src="' + esc(photo) + '" alt="' + esc(t(p.title)) + '" loading="lazy" decoding="async">' + extra;
   }
 
   function badges(p) {
@@ -79,7 +89,8 @@
     /* Proyectos cuyo desglose por unidad todavía no es público */
     if (!out.length) {
       if (p.units)    out.push('<span class="spec">' + ICON.area + p.units + ' ' + esc(t(L.units)) + '</span>');
-      if (p.beach)    out.push('<span class="spec">' + ICON.lot + esc(p.beach) + '</span>');
+      var lugar = p.beach || p.landmark;
+      if (lugar)      out.push('<span class="spec">' + ICON.lot + esc(lugar) + '</span>');
       if (p.delivery) out.push('<span class="spec">' + ICON.check + esc(t(p.delivery)) + '</span>');
     }
     return '<div class="specs">' + out.join('') + '</div>';
@@ -331,6 +342,47 @@
     apply();
   }
 
+
+  /* ---------- Lightbox de la galería ---------- */
+  function initLightbox(photos, title) {
+    var root = document.querySelector('[data-detail]');
+    if (!root || !photos.length) return;
+    var box = document.createElement('div');
+    box.className = 'lb'; box.hidden = true;
+    box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
+    box.innerHTML =
+      '<button class="lb-close" aria-label="Cerrar">&times;</button>' +
+      '<button class="lb-nav lb-prev" aria-label="Anterior">&#8249;</button>' +
+      '<figure class="lb-stage"><img alt=""><figcaption class="lb-cap"></figcaption></figure>' +
+      '<button class="lb-nav lb-next" aria-label="Siguiente">&#8250;</button>';
+    document.body.appendChild(box);
+
+    var img = box.querySelector('img'), cap = box.querySelector('.lb-cap'), at = 0;
+    function show(i) {
+      at = (i + photos.length) % photos.length;
+      img.src = photos[at];
+      img.alt = title + ' — ' + (at + 1);
+      cap.textContent = (at + 1) + ' / ' + photos.length;
+    }
+    function open(i) { show(i); box.hidden = false; document.body.classList.add('is-locked'); box.querySelector('.lb-close').focus(); }
+    function close() { box.hidden = true; document.body.classList.remove('is-locked'); }
+
+    root.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-lb]');
+      if (b) { e.preventDefault(); open(parseInt(b.dataset.lb, 10)); }
+    });
+    box.querySelector('.lb-close').addEventListener('click', close);
+    box.querySelector('.lb-prev').addEventListener('click', function () { show(at - 1); });
+    box.querySelector('.lb-next').addEventListener('click', function () { show(at + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(at - 1);
+      if (e.key === 'ArrowRight') show(at + 1);
+    });
+  }
+
   /* ---------- Ficha de propiedad ---------- */
   function initDetail() {
     var root = document.querySelector('[data-detail]');
@@ -361,9 +413,15 @@
       if (!photos.length) {
         return '<div class="gallery"><div class="gallery-item"><div class="ph ' + PMH.phClass(p.id) + '"><span class="ph-mark">' + esc(t(L.photoSoon)) + '</span></div></div></div>';
       }
-      return '<div class="gallery">' + photos.slice(0, 5).map(function (src, i) {
-        return '<div class="gallery-item"><img src="' + esc(src) + '" alt="' + esc(t(p.title)) + ' — ' + (i + 1) + '" loading="' + (i ? 'lazy' : 'eager') + '" decoding="async"></div>';
+      var ref = typeof p.refFrom === 'number' ? p.refFrom : photos.length;
+      var html = '<div class="gallery">' + photos.slice(0, 5).map(function (src, i) {
+        return '<button type="button" class="gallery-item" data-lb="' + i + '" aria-label="' + esc(t(p.title)) + ' — ' + (i + 1) + '">' +
+                 '<img src="' + esc(src) + '" alt="' + esc(t(p.title)) + ' — ' + (i + 1) + '" loading="' + (i ? 'lazy' : 'eager') + '" decoding="async">' +
+                 (i >= ref ? '<span class="pcard-ref">' + esc(t(L.ref)) + '</span>' : '') +
+               '</button>';
       }).join('') + '</div>';
+      if (ref < photos.length) html += '<p class="note" style="margin-top:12px">' + esc(t(L.refNote)) + '</p>';
+      return html;
     }
 
     function facts() {
@@ -376,6 +434,7 @@
       if (p.parking)  rows.push([lang === 'en' ? 'Parking' : 'Estacionamiento', p.parking]);
       if (p.units)     rows.push([lang === 'en' ? 'Units' : 'Unidades', p.units + (p.remaining ? ' (' + p.remaining + ' ' + t(L.remaining) + ')' : '')]);
       if (p.beach)     rows.push([t(L.beach), p.beach]);
+      if (p.landmark)  rows.push([lang === 'en' ? 'Setting' : 'Entorno', p.landmark]);
       if (p.developer) rows.push([t(L.developer), p.developer]);
       if (p.delivery) rows.push([t(L.delivery), t(p.delivery)]);
       else if (p.year) rows.push([lang === 'en' ? 'Year built' : 'Año', p.year]);
@@ -478,6 +537,7 @@
       '</section>';
 
     renderGrids();
+    initLightbox(p.photos || [], t(p.title));
   }
 
   function boot() {
