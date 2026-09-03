@@ -234,8 +234,57 @@ const PROPERTIES = [
   }
 ];
 
+
+/* ============================================================
+   TESTIMONIOS
+   ------------------------------------------------------------
+   ⚠️ Los tres de abajo son EJEMPLOS, escritos para ver cómo se
+   integra la sección. NO son clientes reales.
+
+   Mientras TESTIMONIALS_DEMO sea true, cada tarjeta se marca
+   visiblemente como ejemplo y la sección lleva una nota. En
+   cuanto entren testimonios reales, sustituye el arreglo y pon
+   la bandera en false — nada más hay que tocar.
+   ============================================================ */
+const TESTIMONIALS_DEMO = true;
+
+const TESTIMONIALS = [
+  {
+    id:'t1', demo:true, initials:'AM',
+    name:'Alejandra M.',
+    place:{ es:'Monterrey, N.L.', en:'Monterrey, Mexico' },
+    context:{ es:'Segunda casa · Playa Destiladeras', en:'Second home · Playa Destiladeras' },
+    quote:{
+      es:'Llevábamos dos años viendo cosas por internet sin decidirnos. Jaime nos armó una lista de cuatro y en un día las caminamos todas. Nos dijo cuál no nos convenía y por qué — eso fue lo que nos hizo confiar.',
+      en:'We spent two years looking online without deciding. Jaime put together a shortlist of four and we walked all of them in a single day. He told us which one was not right for us and why — that is what made us trust him.'
+    }
+  },
+  {
+    id:'t2', demo:true, initials:'DR',
+    name:'David R.',
+    place:{ es:'San Diego, California', en:'San Diego, California' },
+    context:{ es:'Inversión con renta · Punta de Mita', en:'Income property · Punta de Mita' },
+    quote:{
+      es:'Lo que más me sirvió fue el desglose de costos de cierre por escrito antes de dar el anticipo. Nadie me lo había dado así. El fideicomiso salió exactamente en lo que me dijo.',
+      en:'What helped most was getting the closing-cost breakdown in writing before I put down the deposit. Nobody had given it to me that way. The bank trust came in at exactly what he quoted.'
+    }
+  },
+  {
+    id:'t3', demo:true, initials:'CS',
+    name:'Carmen y Sergio',
+    place:{ es:'Ciudad de México', en:'Mexico City' },
+    context:{ es:'Mudanza definitiva · Punta Mita', en:'Full-time move · Punta Mita' },
+    quote:{
+      es:'Nos mudamos con dos niños, así que nos importaba la escuela, el médico y los vecinos, no solo la casa. Jaime nos enseñó el pueblo antes que las propiedades. Llevamos tres años aquí.',
+      en:'We moved with two kids, so what mattered was the school, the doctor and the neighbours, not just the house. Jaime showed us the town before he showed us any property. We have been here three years.'
+    }
+  }
+];
+
 /* Exponer en window para las páginas que no usan módulos */
 window.SITE = SITE;
 window.ZONES = ZONES;
 window.TYPES = TYPES;
 window.PROPERTIES = PROPERTIES;
+window.TESTIMONIALS = TESTIMONIALS;
+window.TESTIMONIALS_DEMO = TESTIMONIALS_DEMO;

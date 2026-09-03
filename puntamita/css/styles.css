@@ -849,3 +849,51 @@ hr{ border:0; border-top:1px solid var(--line); margin:0; }
    sobre cualquier zona clara de la fotografía sin apagar la imagen. */
 .subhero .container{ text-shadow:0 1px 16px rgba(26,31,38,.55); }
 .subhero .btn,.subhero .chip{ text-shadow:none; }
+
+/* ============================================================
+   22. Testimonios
+   ============================================================ */
+.tcard{
+  position:relative; margin:0; padding:30px 26px 26px;
+  background:var(--white); border:1px solid var(--line-soft);
+  display:flex; flex-direction:column; gap:18px; height:100%;
+  transition:box-shadow .5s var(--ease-out), transform .5s var(--ease-out);
+}
+.tcard:hover{ transform:translateY(-4px); box-shadow:var(--sh-2); }
+.tcard-mark{ width:28px; height:21px; color:var(--sand); flex:none; }
+.tcard-quote{
+  margin:0; font-family:var(--display); font-size:1.08rem; line-height:1.52;
+  color:var(--ink-2); letter-spacing:-.005em; flex:1;
+}
+@media (min-width:900px){ .tcard-quote{ font-size:1.14rem; } }
+.tcard-foot{ display:flex; align-items:center; gap:13px; padding-top:16px; border-top:1px solid var(--line-soft); }
+.tcard-avatar{
+  flex:none; width:44px; height:44px; border-radius:50%;
+  background:var(--deep); color:var(--bone);
+  display:grid; place-items:center;
+  font-size:.82rem; font-weight:600; letter-spacing:.06em;
+}
+.tcard-who{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.tcard-name{ font-weight:600; font-size:.94rem; color:var(--ink); }
+.tcard-meta{ font-size:.79rem; color:var(--muted); line-height:1.4; }
+.tcard-demo{
+  position:absolute; top:14px; right:14px;
+  font-size:.6rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--brass); background:var(--bone-2);
+  padding:5px 9px; border-radius:2px;
+}
+
+/* ============================================================
+   23. Iconos de apoyo
+   La home carga mucho texto: un icono por punto da un ancla
+   visual y rompe el bloque sin añadir ruido.
+   ============================================================ */
+.ico{
+  width:46px; height:46px; flex:none; border-radius:50%;
+  border:1px solid var(--line); display:grid; place-items:center;
+  color:var(--brass); background:var(--white);
+  transition:border-color .4s var(--ease), color .4s var(--ease);
+}
+.ico svg{ width:22px; height:22px; }
+.bg-deep .ico,.band .ico{ border-color:var(--line-invert); color:var(--foam); background:transparent; }
+.bg-bone2 .ico{ background:var(--bone); }

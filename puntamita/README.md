@@ -47,10 +47,11 @@ Tres imágenes salieron de sus propias publicaciones y están recortadas para qu
 | Archivo | Qué es | Dónde se usa |
 |---|---|---|
 | `assets/destiladeras-alberca.jpg` | Alberca de borde infinito con el árbol, Playa Destiladeras. Es la foto de perfil de @puntamita.homes | Fondo del hero y fichas de Naya y Nayama |
-| `assets/punta-mita-interior.jpg` | Sala abierta a la alberca y al Pacífico. Del post *"¿Para qué comprar una casa en Punta Mita?"* | Sección "¿Para qué comprar una casa en Punta Mita?" |
 | `assets/jaime.jpg` | Retrato de Jaime | Sección "Con quién estás hablando" |
 
-Son recortes de capturas de pantalla, así que su resolución está limitada. **Conviene sustituirlas por los originales** en cuanto Jaime los pase. Cada una está asignada a la zona que le corresponde según la publicación de la que salió, así que si se cambian hay que respetar esa atribución.
+`jaime.jpg` viene de un original en buena resolución. La captura de la sala que se usaba antes en "¿Para qué comprar una casa en Punta Mita?" se retiró: era un recorte de pantalla de baja calidad y se sustituyó por `stock-casa-abierta.jpg`.
+
+`destiladeras-alberca.jpg` sí sigue siendo un recorte de captura, así que **conviene sustituirla por el original** en cuanto Jaime lo pase. Cada una está asignada a la zona que le corresponde según la publicación de la que salió, así que si se cambian hay que respetar esa atribución.
 
 ### Imágenes ilustrativas (`assets/stock-*.jpg`)
 
@@ -87,7 +88,7 @@ No hay ni un precio inventado en el sitio. Los proyectos se presentan bajo el mo
 | `contacto.html` | Calificador a pantalla completa |
 | `gracias.html` | Página de gracias, distinta según la calificación del lead (`noindex`) |
 | `css/styles.css` | Sistema de diseño completo, mobile-first |
-| `js/data.js` | **Configuración, zonas y propiedades. El único archivo que se edita para publicar inventario.** |
+| `js/data.js` | **Configuración, zonas, propiedades y testimonios. El único archivo que se edita para publicar contenido.** |
 | `js/app.js` | Motor bilingüe, navegación, animaciones, formato, WhatsApp, UTMs |
 | `js/properties.js` | Tarjetas, catálogo, filtros y ficha de propiedad |
 | `js/lead-form.js` | Calificador multi-paso, scoring y envío |
@@ -95,6 +96,38 @@ No hay ni un precio inventado en el sitio. Los proyectos se presentan bajo el mo
 | `vercel.json` | URLs limpias, cabeceras de seguridad y caché |
 
 ---
+
+## Testimonios
+
+Los tres que trae el sitio son **ejemplos**, escritos para ver cómo se integra la sección. No son clientes reales, y el sitio lo dice: mientras `TESTIMONIALS_DEMO` sea `true` cada tarjeta lleva una etiqueta *Ejemplo* y bajo la rejilla aparece una nota aclarándolo.
+
+Para publicar los reales, en `js/data.js`:
+
+```js
+const TESTIMONIALS_DEMO = false;      // apaga etiquetas y nota
+
+const TESTIMONIALS = [
+  {
+    id:'t1',
+    initials:'AM',                     // el avatar son las iniciales
+    name:'Alejandra M.',
+    place:  { es:'Monterrey, N.L.', en:'Monterrey, Mexico' },
+    context:{ es:'Segunda casa · Playa Destiladeras', en:'Second home · Playa Destiladeras' },
+    quote:  { es:'…', en:'…' }
+  },
+  // …
+];
+```
+
+Puedes poner los que quieras: la rejilla es de tres columnas en escritorio y se apila sola. Si un testimonio solo existe en español, repite el texto en `en` — es preferible a dejarlo vacío.
+
+Un apunte que vale la pena conservar: **no publiques testimonios inventados con la bandera en `false`**. Un testimonio es una afirmación sobre una persona real y sobre el servicio; presentarlo como genuino cuando no lo es engaña a quien está por gastar cientos de miles de dólares. Por eso la bandera existe.
+
+## Iconografía
+
+La home cargaba demasiado texto seguido. Cada punto de los bloques *pilares*, *biofilia*, *caso de inversión* y *lo que se revisa* lleva ahora un icono de línea que sirve de ancla visual.
+
+Los iconos son SVG en línea definidos en el diccionario `I` del generador, con trazo de 1.5 y `currentColor`, así que heredan el color del contexto: arena profunda sobre fondo claro, arena clara sobre fondo oscuro. La clase `.ico` los envuelve en un círculo de 46 px.
 
 ## Cargar propiedades reales
 
