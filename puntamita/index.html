@@ -66,9 +66,9 @@
       <a class="btn btn-outline-light btn-lg" href="propiedades.html" data-en="See the residences">Ver las residencias</a>
     </div>
     <div class="hero-proof">
-      <div class="proof-cell"><span class="proof-n">45 min</span><span class="proof-l" data-en="From Puerto Vallarta airport">Del aeropuerto de Puerto Vallarta</span></div>
-      <div class="proof-cell"><span class="proof-n">28</span><span class="proof-l" data-en="Beachfront residences and apartments at Destiladeras">Residencias y departamentos frente al mar en Destiladeras</span></div>
-      <div class="proof-cell"><span class="proof-n">2</span><span class="proof-l" data-en="Residences still available at Naya">Residencias todavía disponibles en Naya</span></div>
+      <div class="proof-cell"><span class="proof-n" data-count>45 min</span><span class="proof-l" data-en="From Puerto Vallarta airport">Del aeropuerto de Puerto Vallarta</span></div>
+      <div class="proof-cell"><span class="proof-n" data-count>28</span><span class="proof-l" data-en="Beachfront residences and apartments at Destiladeras">Residencias y departamentos frente al mar en Destiladeras</span></div>
+      <div class="proof-cell"><span class="proof-n" data-count>2</span><span class="proof-l" data-en="Residences still available at Naya">Residencias todavía disponibles en Naya</span></div>
       <div class="proof-cell"><span class="proof-n">50 <span style="font-size:.55em" data-en="yrs">años</span></span><span class="proof-l" data-en="Renewable bank trust for foreign buyers">De fideicomiso, renovable</span></div>
     </div>
   </div>
@@ -265,7 +265,27 @@
   </div>
 </section>
 
-<section class="section" id="rigor">
+<section class="section" id="inspiracion">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-en="Reference">Inspiración</span>
+      <h2 class="display-2" data-en="The standard this coast is built to">El estándar al que se construye en esta costa</h2>
+      <p class="lede" data-en="Reference images of the category — open plans, infinity edges, the ocean as the fourth wall. They illustrate the level, not a specific listing.">
+        Imágenes de referencia de la categoría — planta abierta, borde infinito, el mar como cuarta pared. Ilustran el nivel, no una propiedad en particular.
+      </p>
+    </div>
+    <div class="gal reveal">
+      <figure class="gal-item"><img src="assets/stock-gal-villa-blanca.jpg" alt="Villa contemporánea abierta a la alberca" loading="lazy" decoding="async"><figcaption class="gal-cap" data-en="Open plan">Planta abierta</figcaption></figure>
+      <figure class="gal-item"><img src="assets/stock-gal-infinity.jpg" alt="Alberca de borde infinito sobre el mar" loading="lazy" decoding="async"><figcaption class="gal-cap" data-en="Infinity edge">Borde infinito</figcaption></figure>
+      <figure class="gal-item"><img src="assets/stock-gal-verde.jpg" alt="Arquitectura integrada a la vegetación" loading="lazy" decoding="async"><figcaption class="gal-cap" data-en="Built into the green">Integrada al verde</figcaption></figure>
+      <figure class="gal-item"><img src="assets/stock-gal-estancia.jpg" alt="Estancia que se abre por completo al exterior" loading="lazy" decoding="async"><figcaption class="gal-cap" data-en="Indoor becomes outdoor">Adentro y afuera</figcaption></figure>
+      <figure class="gal-item"><img src="assets/stock-gal-buganvilia.jpg" alt="Terraza con buganvilia sobre el Pacífico" loading="lazy" decoding="async"><figcaption class="gal-cap" data-en="The ocean as the fourth wall">El mar de cuarta pared</figcaption></figure>
+      <figure class="gal-item"><img src="assets/stock-villa-pool.jpg" alt="Villa contemporánea con alberca frente al mar" loading="lazy" decoding="async"><figcaption class="gal-cap" data-en="Contemporary volume">Volumen contemporáneo</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-bone2 grain" id="rigor">
   <div class="container">
     <div class="split is-wide">
       <div class="stack stack-16 reveal">
@@ -346,7 +366,7 @@
 <section class="section bg-deep grain" id="calificador">
   <div class="container">
     <div class="split is-wide" style="align-items:start">
-      <div class="stack stack-16 reveal" style="position:sticky;top:110px">
+      <div class="stack stack-16 reveal sticky-col">
         <span class="eyebrow" data-en="Two minutes">Dos minutos</span>
         <h2 class="display-2" data-en="Request the Private Collection">Solicita la Colección Privada</h2>
         <p class="lede" data-en="Eight questions. What comes back is the selection that matches your answers &mdash; with availability, unit plans, current pricing and payment terms.">
@@ -548,6 +568,7 @@
   <script src="js/app.js"></script>
   <script src="js/properties.js"></script>
   <script src="js/lead-form.js"></script>
+  <script src="js/motion.js"></script>
   <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>

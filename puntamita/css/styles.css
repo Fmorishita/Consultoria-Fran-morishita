@@ -509,7 +509,8 @@ hr{ border:0; border-top:1px solid var(--line); margin:0; }
 .amenity{ display:flex; align-items:flex-start; gap:10px; font-size:.92rem; color:var(--ink-2); padding-block:3px; }
 .amenity svg{ width:16px; height:16px; margin-top:4px; flex:none; color:var(--sea); }
 
-.sticky-cta{ position:sticky; top:96px; }
+.sticky-cta{ position:static; }
+@media (min-width:900px){ .sticky-cta{ position:sticky; top:96px; } }
 
 /* ---------- 12. Steps / process ---------- */
 .steps{ display:grid; gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
@@ -897,3 +898,105 @@ hr{ border:0; border-top:1px solid var(--line); margin:0; }
 .ico svg{ width:22px; height:22px; }
 .bg-deep .ico,.band .ico{ border-color:var(--line-invert); color:var(--foam); background:transparent; }
 .bg-bone2 .ico{ background:var(--bone); }
+
+/* ============================================================
+   24. Columna fija — solo en escritorio
+   En una sola columna, un elemento sticky se queda pinado y, por ser
+   posicionado, se pinta ENCIMA del contenido en flujo que sube: el
+   texto de la izquierda se veía a través del formulario. Solo pega
+   cuando de verdad hay dos columnas.
+   ============================================================ */
+.sticky-col{ position:static; }
+@media (min-width:900px){ .sticky-col{ position:sticky; top:110px; } }
+
+/* El panel del calificador crea su propio contexto por encima del
+   contenido en flujo, para que nada se le transparente detrás. */
+.qz{ position:relative; z-index:1; background:var(--bone-2); }
+
+/* ============================================================
+   25. Movimiento
+   Una sola curva para todo el sitio. Lento y sin rebote: el lujo
+   se lee en la calma, no en la energía.
+   ============================================================ */
+
+/* --- Titulares palabra por palabra --- */
+.is-words .wd{
+  display:inline-block; overflow:hidden; vertical-align:top;
+  padding-bottom:.14em; margin-bottom:-.14em;
+}
+.is-words .wd > i{
+  display:inline-block; font-style:inherit;
+  transform:translateY(115%);
+  transition:transform 1.05s var(--ease-out);
+}
+.is-words.is-in .wd > i{ transform:none; }
+
+/* --- Imágenes: se descubren de abajo hacia arriba --- */
+.rv-img{
+  clip-path:inset(0 0 100% 0);
+  transform:scale(1.06);
+  transition:clip-path 1.25s var(--ease-out), transform 1.5s var(--ease-out);
+}
+.rv-img.is-in{ clip-path:inset(0 0 0 0); transform:none; }
+.band-media img.rv-img.is-in.has-parallax{ transform:translate3d(0,0,0) scale(1.12); }
+.band-media img{ will-change:transform; }
+
+/* --- Cifras del hero --- */
+.proof-n{ font-variant-numeric:tabular-nums; }
+
+@media (prefers-reduced-motion:reduce){
+  .is-words .wd > i{ transform:none !important; transition:none; }
+  .rv-img{ clip-path:none !important; transform:none !important; transition:none; }
+}
+
+/* ============================================================
+   26. Acabado high-end
+   ============================================================ */
+
+/* Filete con rombo: separador de marca, no una línea cualquiera. */
+.rule-mark{
+  display:flex; align-items:center; gap:14px; color:var(--sand);
+}
+.rule-mark::before,.rule-mark::after{ content:''; height:1px; background:currentColor; flex:1; opacity:.6; }
+.rule-mark i{ width:5px; height:5px; background:currentColor; transform:rotate(45deg); flex:none; }
+
+/* Las fichas ganan un filete de arena que barre bajo el título. */
+.pcard-title{ position:relative; display:inline-block; padding-bottom:3px; }
+.pcard-title::after{
+  content:''; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:var(--brass); transform:scaleX(0); transform-origin:left;
+  transition:transform .7s var(--ease-out);
+}
+.pcard:hover .pcard-title::after{ transform:scaleX(1); }
+.pcard-media img{ transition:transform 1.4s var(--ease-out), filter 1.4s var(--ease-out); }
+.pcard:hover .pcard-media img{ transform:scale(1.06); }
+
+/* La flecha de los botones avanza al pasar el cursor. */
+.btn svg{ transition:transform .5s var(--ease-out); }
+.btn:hover svg{ transform:translateX(4px); }
+
+/* ============================================================
+   27. Galería de estilo de vida
+   ============================================================ */
+/* Seis piezas en tres columnas: la primera ocupa 2x2 y el resto llena
+   las cinco celdas que quedan, así la retícula cierra exacta sin huecos. */
+.gal{ display:grid; gap:10px; grid-template-columns:repeat(2,1fr); }
+.gal-item{ position:relative; overflow:hidden; background:var(--sand); aspect-ratio:1; }
+.gal-item:nth-child(1){ grid-column:span 2; aspect-ratio:4/3; }
+@media (min-width:900px){
+  .gal{ grid-template-columns:repeat(3,1fr); grid-auto-rows:232px; gap:14px; }
+  .gal-item{ aspect-ratio:auto; height:100%; }
+  .gal-item:nth-child(1){ grid-column:span 2; grid-row:span 2; aspect-ratio:auto; }
+}
+.gal-item img{ width:100%; height:100%; object-fit:cover; transition:transform 1.6s var(--ease-out); }
+.gal-item:hover img{ transform:scale(1.05); }
+.gal-cap{
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  padding:40px 16px 14px;
+  background:linear-gradient(180deg, rgba(26,31,38,0), rgba(26,31,38,.78));
+  font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+  color:var(--bone); opacity:0; transform:translateY(6px);
+  transition:opacity .5s var(--ease), transform .5s var(--ease);
+}
+.gal-item:hover .gal-cap,.gal-item:focus-within .gal-cap{ opacity:1; transform:none; }
+@media (hover:none){ .gal-cap{ opacity:1; transform:none; } }

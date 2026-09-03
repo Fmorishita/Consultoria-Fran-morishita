@@ -123,6 +123,17 @@ Puedes poner los que quieras: la rejilla es de tres columnas en escritorio y se 
 
 Un apunte que vale la pena conservar: **no publiques testimonios inventados con la bandera en `false`**. Un testimonio es una afirmación sobre una persona real y sobre el servicio; presentarlo como genuino cuando no lo es engaña a quien está por gastar cientos de miles de dólares. Por eso la bandera existe.
 
+## Movimiento
+
+`js/motion.js` define cuatro gestos, todos con la misma curva y todos apagados por completo bajo `prefers-reduced-motion`:
+
+1. **Titulares palabra por palabra.** Cada `display-1/2/3` se parte en palabras que suben desde detrás de su propia caja. El retraso se calcula **por línea**, no por palabra, para que cada renglón entre como una unidad en vez de como una cascada de letras. El corte se rehace al cambiar de idioma, porque el motor bilingüe reemplaza el `innerHTML`.
+2. **Imágenes que se descubren.** Un barrido de `clip-path` de abajo hacia arriba mientras la imagen se asienta desde una escala ligeramente mayor.
+3. **Paralaje** suave en las bandas a sangre. La imagen va a `scale(1.12)` para tener margen de recorrido; `.band` la recorta, así que no genera scroll horizontal — verificado a 320, 390 y 430 px recorriendo la página completa.
+4. **Conteo** en las tres primeras cifras del hero.
+
+El contenido que pinta el JS (fichas, zonas, testimonios, galería) se vuelve a registrar con un `rescan()`.
+
 ## Iconografía
 
 La home cargaba demasiado texto seguido. Cada punto de los bloques *pilares*, *biofilia*, *caso de inversión* y *lo que se revisa* lleva ahora un icono de línea que sirve de ancla visual.
