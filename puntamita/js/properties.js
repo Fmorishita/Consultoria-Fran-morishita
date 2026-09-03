@@ -147,6 +147,42 @@
     });
   }
 
+
+  /* ---------- Testimonios ---------- */
+  var TL = {
+    demo:   { es: 'Ejemplo', en: 'Sample' },
+    note:   { es: 'Testimonios de ejemplo, para mostrar el formato. Se sustituyen por los reales antes de publicar.',
+              en: 'Sample testimonials, shown to illustrate the format. They get replaced with real ones before launch.' }
+  };
+
+  function testimonialCard(item) {
+    var demo = window.TESTIMONIALS_DEMO && item.demo;
+    return '' +
+      '<figure class="tcard">' +
+        (demo ? '<span class="tcard-demo">' + esc(t(TL.demo)) + '</span>' : '') +
+        '<svg class="tcard-mark" viewBox="0 0 32 24" aria-hidden="true"><path d="M13 24V13.6C13 6.4 8.9 1.6 1.6 0L0 3.4c4.5 1.2 6.8 4 6.9 8.2H0V24h13zm19 0V13.6C32 6.4 27.9 1.6 20.6 0L19 3.4c4.5 1.2 6.8 4 6.9 8.2H19V24h13z" fill="currentColor"/></svg>' +
+        '<blockquote class="tcard-quote">' + esc(t(item.quote)) + '</blockquote>' +
+        '<figcaption class="tcard-foot">' +
+          '<span class="tcard-avatar" aria-hidden="true">' + esc(item.initials) + '</span>' +
+          '<span class="tcard-who">' +
+            '<span class="tcard-name">' + esc(item.name) + '</span>' +
+            '<span class="tcard-meta">' + esc(t(item.place)) + ' · ' + esc(t(item.context)) + '</span>' +
+          '</span>' +
+        '</figcaption>' +
+      '</figure>';
+  }
+
+  function renderTestimonials() {
+    document.querySelectorAll('[data-testimonials]').forEach(function (el) {
+      var list = window.TESTIMONIALS || [];
+      el.innerHTML = list.map(testimonialCard).join('');
+    });
+    document.querySelectorAll('[data-testimonials-note]').forEach(function (el) {
+      el.hidden = !window.TESTIMONIALS_DEMO;
+      if (window.TESTIMONIALS_DEMO) el.textContent = t(TL.note);
+    });
+  }
+
   /* ---------- Grids simples (home) ---------- */
   function renderGrids() {
     document.querySelectorAll('[data-grid]').forEach(function (el) {
@@ -448,11 +484,13 @@
     if (!window.PMH || !window.PROPERTIES) return;
     renderGrids();
     renderZones();
+    renderTestimonials();
     initCatalog();
     initDetail();
     document.addEventListener('langchange', function () {
       renderGrids();
       renderZones();
+      renderTestimonials();
       if (document.querySelector('[data-detail]')) initDetail();
     });
   }
