@@ -58,7 +58,7 @@ const ZONES = [
     },
     range:{ es:'Colección privada', en:'Private collection' },
     ph:'ph-2',
-    photo:'assets/destiladeras-alberca.jpg'
+    photo:'assets/stock-vegetacion-mar.jpg'
   },
   {
     id:'punta-mita',
@@ -186,7 +186,13 @@ const PROPERTIES = [
       es:['Frente a Playa Destiladeras','Alberca de borde infinito sobre el mar','Áreas de descanso y jardines frente al océano','Solo 11 residencias en todo el proyecto','Entrega inmediata','45 minutos del aeropuerto de Puerto Vallarta'],
       en:['On Playa Destiladeras','Infinity-edge pool over the ocean','Lounge areas and gardens facing the water','Only 11 residences in the entire project','Immediate delivery','45 minutes from Puerto Vallarta airport']
     },
-    photos:['assets/destiladeras-alberca.jpg']
+    refFrom:1,
+    photos:[
+      'assets/destiladeras-alberca.jpg',
+      'assets/stock-gal-villa-blanca.jpg',
+      'assets/stock-gal-estancia.jpg',
+      'assets/stock-gal-infinity.jpg'
+    ]
   },
   {
     id:'nayama', status:'preventa', featured:true, isNew:true,
@@ -210,12 +216,20 @@ const PROPERTIES = [
       es:['Frente a Playa Destiladeras','Alberca de borde infinito sobre el mar','Áreas comunes frente al océano','Solo 17 departamentos','Esquema de preventa','45 minutos del aeropuerto de Puerto Vallarta'],
       en:['On Playa Destiladeras','Infinity-edge pool over the ocean','Common areas facing the water','Only 17 apartments','Pre-sale terms','45 minutes from Puerto Vallarta airport']
     },
-    photos:['assets/destiladeras-alberca.jpg']
+    refFrom:0,
+    photos:[
+      'assets/stock-casa-abierta.jpg',
+      'assets/stock-arquitectura-agua.jpg',
+      'assets/stock-biofilia-mar.jpg',
+      'assets/stock-gal-buganvilia.jpg'
+    ]
   },
   {
     id:'el-tigre', status:'venta', featured:true, isNew:true,
     zone:'nuevo-vallarta', type:'casa',
     priceOnRequest:true,
+    landmark:'Campo de golf El Tigre',
+    delivery:{ es:'En construcción', en:'Under construction' },
     title:{ es:'El Tigre · Nuevo Vallarta', en:'El Tigre · Nuevo Vallarta' },
     headline:{
       es:'Golf, marina y la conexión más rápida al aeropuerto.',
@@ -230,7 +244,13 @@ const PROPERTIES = [
       es:['Campo de golf El Tigre','Marina de Nuevo Vallarta','Comunidad cerrada','A minutos del aeropuerto','Servicios consolidados todo el año'],
       en:['El Tigre golf course','Nuevo Vallarta marina','Gated community','Minutes from the airport','Established year-round services']
     },
-    photos:[]
+    refFrom:0,
+    photos:[
+      'assets/stock-gal-verde.jpg',
+      'assets/stock-villa-pool.jpg',
+      'assets/stock-resort-alberca.jpg',
+      'assets/stock-villa-palmeras.jpg'
+    ]
   }
 ];
 

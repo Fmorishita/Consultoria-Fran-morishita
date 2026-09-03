@@ -40,6 +40,22 @@ Cuatro cosas, todas en `js/data.js` salvo la última:
 
 ---
 
+## Fotografías de las propiedades
+
+Cada proyecto lleva su propia galería de cuatro tomas en `photos[]`. El campo **`refFrom`** dice a partir de qué índice las imágenes son de referencia y no del proyecto:
+
+```js
+photos:['assets/destiladeras-alberca.jpg',  // 0 — real, del propio proyecto
+        'assets/stock-gal-villa-blanca.jpg',
+        'assets/stock-gal-estancia.jpg',
+        'assets/stock-gal-infinity.jpg'],
+refFrom:1                                    // de la 1 en adelante, referencia
+```
+
+Con eso el sitio se marca solo: la portada de la ficha muestra un sello *Referencia* si la primera toma no es del proyecto, cada imagen de la galería lleva el suyo, y bajo el mosaico aparece la nota explicándolo. Al cargar la fotografía real de cada unidad basta subir `refFrom` — cuando todas sean reales, se pone igual al número de fotos o se borra el campo.
+
+Esto existe por la misma razón que la bandera de los testimonios: una foto en un listado es una afirmación sobre **esa** propiedad. Alguien que va a gastar cientos de miles de dólares tiene que poder distinguir la unidad real de una imagen que solo ilustra el nivel.
+
 ## Fotografías
 
 Tres imágenes salieron de sus propias publicaciones y están recortadas para quitar la interfaz de Instagram:
