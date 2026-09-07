@@ -181,5 +181,19 @@ Mexicali*.
 Next.js 16 con App Router, TypeScript y Tailwind 4. Todas las páginas son
 estáticas: `next build` genera 25 rutas prerenderizadas.
 
-En Vercel es un **proyecto propio** con *Root Directory* = `bajajetskis`. La
-raíz de este repositorio es un sitio estático distinto y no comparte build.
+En Vercel es un **proyecto propio**, ya creado y enlazado a este repositorio:
+
+| | |
+|---|---|
+| Proyecto | `bajajetskis` |
+| Root Directory | `bajajetskis` |
+| Framework | Next.js (autodetectado) |
+| Rama de producción | `main` |
+
+Cada push despliega: a la rama de un PR genera una *preview*, y a `main`
+publica producción. La raíz de este repositorio y `puntamita/` son proyectos
+distintos, con su propio build; los tres conviven sin pisarse.
+
+Mientras `bajajetskis/` no esté en `main`, un despliegue de producción falla
+porque el *Root Directory* todavía no existe ahí. Se resuelve solo al mezclar
+el PR.
