@@ -27,7 +27,9 @@ export function PageHeader({
     >
       <div
         aria-hidden="true"
-        className={`plan-grid absolute inset-0 -z-10 ${isBlue ? 'opacity-40' : 'opacity-70'}`}
+        // Muy tenue: en una página interior la retícula sitúa, no compite con
+        // el texto. La versión audaz del hero se gasta una sola vez.
+        className={`plan-grid absolute inset-0 -z-10 ${isBlue ? 'opacity-30' : 'opacity-40'}`}
       />
       <Isotipo
         variant={isBlue ? 'blanco' : 'azul'}
