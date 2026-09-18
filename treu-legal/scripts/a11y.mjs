@@ -50,6 +50,29 @@ const EXTRA_COOKIE = process.env.PREVIEW_COOKIE || '';
  */
 const SPKI = process.env.PROXY_CA_SPKI || '';
 
+/**
+ * Espera a que la página esté lista para auditar: hoja de estilos aplicada y
+ * tipografías cargadas. Sin esto, axe mide alturas y contrastes del HTML sin
+ * estilar y produce falsos positivos (`target-size`, `color-contrast`).
+ */
+async function ready(page) {
+  await page
+    .waitForFunction(
+      () => {
+        if (document.readyState === 'loading') return false;
+        const sheets = Array.from(document.styleSheets);
+        if (!sheets.length) return false;
+        const probe = document.querySelector('header a, main a, body');
+        return Boolean(probe && getComputedStyle(probe).fontFamily.includes('Archivo'));
+      },
+      null,
+      { timeout: 30000 },
+    )
+    .catch(() => {});
+  await page.evaluate(() => document.fonts?.ready).catch(() => {});
+  await page.waitForTimeout(300);
+}
+
 const browser = await chromium.launch({
   executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined,
   args: ['--no-sandbox', ...(SPKI ? [`--ignore-certificate-errors-spki-list=${SPKI}`] : [])],
@@ -73,7 +96,7 @@ for (const width of [390, 1440]) {
 
   for (const route of ROUTES) {
     await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await page.waitForTimeout(250);
+    await ready(page);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
       .analyze();
@@ -94,8 +117,9 @@ for (const width of [390, 1440]) {
   // El menú móvil también se audita abierto.
   if (width === 390) {
     await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
+    await ready(page);
     await page.getByRole('button', { name: /Abrir menú/i }).click();
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(400);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
       .analyze();
@@ -119,6 +143,12 @@ for (const width of [390, 1440]) {
   let known = 0;
   for (const route of KNOWN_LIMITATION) {
     await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    // El HTML inicial de estas 404 es mínimo y el cliente completa el árbol.
+    // Hay que esperar a la hidratación para auditar lo que ve el usuario.
+    await page
+      .waitForFunction(() => Boolean(document.querySelector('main h1')), null, { timeout: 25000 })
+      .catch(() => console.log(`    aviso: ${route} no completó la hidratación`));
+    await ready(page);
     const res = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
     known += res.violations.length;
     console.log(`  ${route}: ${res.violations.length} (${res.violations.map((v) => v.id).join(', ') || 'ninguna'})`);

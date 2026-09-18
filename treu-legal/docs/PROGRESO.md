@@ -76,6 +76,7 @@ en inglés con su hub, 2 legales, 404, sitemap, robots, RSS e imagen OG.
 | Scroll horizontal entre 320 y 1440 px | **ninguno** |
 | Errores de consola | ninguno propio |
 | Lighthouse móvil (local) | Rend. 91–97 · Acces. **100** · B. prácticas 96 * · SEO **100** |
+| Typecheck (`tsc --noEmit`) | limpio |
 | CLS | **0,000** |
 | TBT | 54–88 ms |
 | Peso de la home en móvil | **597 KB** |
@@ -146,6 +147,16 @@ Vercel Analytics, que no existen fuera de Vercel. Ver
     concretas (variable `PROXY_CA_SPKI`). No se desactiva la verificación.
 15. **Playwright usa el Chromium preinstalado** (`/opt/pw-browsers/chromium`)
     vía `executablePath`; el build que espera el paquete no está descargado.
+16. **Medir sólo en local esconde defectos.** La 404 de una ruta dinámica se
+    servía sin el layout raíz, y eso sólo apareció al auditar el preview ya
+    desplegado. Conviene pasar axe y Lighthouse contra el preview, no sólo
+    contra `next start`.
+17. **El proyecto de Vercel se creó sin preset de framework** y servía sólo los
+    archivos de `public/`: todas las rutas daban 404 pese a que el build de
+    Next.js terminaba bien. Se fija en `vercel.json` para no depender del panel.
+18. **Vercel Web Analytics hay que activarlo en el panel.** Hasta entonces el
+    script `/_vercel/insights/…` responde 404 y Lighthouse baja las buenas
+    prácticas a 96.
 
 ---
 

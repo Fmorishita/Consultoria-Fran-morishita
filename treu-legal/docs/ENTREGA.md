@@ -68,25 +68,25 @@ honesta:
 
 | Página | Métrica | Antes | Después (build) | Después (preview) |
 | --- | --- | --: | --: | --: |
-| `/` | Rendimiento | 59 | **91** | 68 |
+| `/` | Rendimiento | 59 | **91** | 71 |
 | | Accesibilidad | 93 | **100** | **100** |
 | | Buenas prácticas | 100 | 96 * | 96 * |
 | | SEO | 92 | **100** | 58 † |
-| | LCP | 21,3 s | 3,5 s ‡ | 5,6 s |
+| | LCP | 21,3 s | 3,5 s ‡ | 5,4 s |
 | | CLS | 0,000 | **0,000** | **0,000** |
-| | TBT | 68 ms | **59 ms** | 130 ms |
+| | TBT | 68 ms | **59 ms** | 99 ms |
 | | Peso | 4 775 KB | **597 KB** | 609 KB |
-| `/strategic-legal-session/` | Rendimiento | 64 | **94** | 77 |
+| `/strategic-legal-session/` | Rendimiento | 64 | **94** | 76 |
 | | Accesibilidad | 94 | **100** | **100** |
-| | LCP | 13,4 s | 3,0 s ‡ | 4,9 s |
+| | LCP | 13,4 s | 3,0 s ‡ | 5,1 s |
 | | Peso | 2 977 KB | **516 KB** | 530 KB |
-| `/areas-de-practica/corporate-business-law/` | Rendimiento | 62 | **93** | 87 |
+| `/areas-de-practica/corporate-business-law/` | Rendimiento | 62 | **93** | 71 |
 | | Accesibilidad | 91 | **100** | **100** |
-| | LCP | 6,6 s | 3,0 s ‡ | 3,4 s |
-| | TBT | 99 ms | 88 ms | **0 ms** |
-| `/insights/` | Rendimiento | 79 | **97** | 79 |
+| | LCP | 6,6 s | 3,0 s ‡ | 5,2 s |
+| | TBT | 99 ms | 88 ms | 124 ms |
+| `/insights/` | Rendimiento | 79 | **97** | 80 |
 | | Accesibilidad | 93 | **100** | **100** |
-| | LCP | 4,1 s | 2,5 s ‡ | 4,9 s |
+| | LCP | 4,1 s | 2,5 s ‡ | 4,8 s |
 
 #### Por qué el preview puntúa más bajo, y qué hay que hacer
 
@@ -121,7 +121,13 @@ Con throttling **real** sobre el mismo build (4× CPU y 4G lento, vía CDP):
 
 La diferencia de rendimiento entre las columnas «build» y «preview» es latencia
 de red del entorno de medición, no del código: el peso servido es prácticamente
-idéntico (597 KB frente a 609 KB) y el servidor responde en 100 ms.
+idéntico (597 KB frente a 609 KB), el servidor responde en 100 ms y el CLS es
+0,000 en ambas. El preview se midió desde un contenedor que sale por un proxy,
+así que **el número que vale es el que se obtenga desde una máquina normal**.
+
+Cuando el sitio esté en el dominio propio, conviene volver a medir con
+[PageSpeed Insights](https://pagespeed.web.dev/): es la referencia que usa
+Google y mide desde su propia infraestructura.
 
 ### Definición de terminado
 
