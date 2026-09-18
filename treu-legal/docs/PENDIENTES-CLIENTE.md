@@ -21,20 +21,16 @@ las coordenadas.
 
 ## Alto impacto
 
-### 1. Confirmar la identidad del retrato de `/la-firma/`
+### 1. ~~Confirmar la identidad del retrato de `/la-firma/`~~ — confirmado
 
-El sitio actual publica un retrato en blanco y negro dentro de la sección
-«Perfil profesional». Por contexto parece ser el fundador, pero **el despacho
-no lo ha confirmado**, así que el sitio nuevo:
+El despacho confirmó que el retrato en blanco y negro de «Perfil profesional»
+es de Marco Polo Hernández Alvarado. El texto alternativo ya lo dice así.
 
-- lo conserva exactamente en la misma posición que hoy;
-- **no** lo usa en la home ni en ningún sitio donde afirmar que es el fundador
-  sería una afirmación nueva;
-- le pone un texto alternativo que no asegura la identidad de la persona.
-
-Basta una confirmación por escrito para poder usarlo como retrato del fundador
-en la home, en `/strategic-legal-session/` y en la imagen OG. **Es el cambio de
-una sola línea con más impacto de esta lista.**
+Sigue **sin usarse en la home, en `/strategic-legal-session/` ni en la imagen
+OG**: esas ubicaciones necesitan un recorte propio del mismo retrato (o una
+toma nueva) y ese archivo no existe todavía en `treu-legal/public/img/`. En
+cuanto el despacho lo entregue —basta el mismo retrato recortado a esas
+proporciones— se añade en un paso.
 
 ### 2. Sesión fotográfica profesional del fundador y de la oficina en Ensenada
 

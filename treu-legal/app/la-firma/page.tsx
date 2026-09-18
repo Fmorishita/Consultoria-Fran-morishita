@@ -98,8 +98,8 @@ export default function Page() {
       )}
 
       {/* Perfil profesional. El retrato se conserva en la misma posición que
-          hoy ocupa en el sitio. Su alt no afirma identidad: la confirmación
-          del despacho está pendiente (docs/PENDIENTES-CLIENTE.md). */}
+          hoy ocupa en el sitio. El despacho confirmó que es Marco Polo
+          Hernández Alvarado (docs/PENDIENTES-CLIENTE.md). */}
       <Section title="Perfil profesional" tone="paper" id="perfil">
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
           <div className="prose-treu">
@@ -134,7 +134,7 @@ export default function Page() {
                   src="/img/retrato-la-firma-800.webp"
                   srcSet="/img/retrato-la-firma-480.webp 480w, /img/retrato-la-firma-800.webp 800w"
                   sizes="(min-width: 1024px) 24rem, 100vw"
-                  alt="Retrato en blanco y negro publicado en la página La Firma de Treu Legal & Business."
+                  alt={`Retrato de ${founder.name}, fundador y Principal Counsel de Treu Legal & Business.`}
                   width={800}
                   height={533}
                   loading="lazy"

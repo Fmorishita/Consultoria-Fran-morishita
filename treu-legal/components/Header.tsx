@@ -167,7 +167,12 @@ export function Header() {
           role="dialog"
           aria-modal="true"
           aria-label={ui.mainNav}
-          className="fixed inset-x-0 bottom-0 top-16 z-50 overflow-y-auto overscroll-contain bg-white lg:hidden"
+          /* Alto explícito, no `bottom-0`: el `backdrop-blur` del <header>
+             lo convierte en el bloque de referencia de este panel fijo (es
+             descendiente suyo), así que `top` y `bottom` se resolvían contra
+             los ~64px del header, no contra el viewport, y la altura
+             resultante colapsaba a 0. */
+          className="fixed inset-x-0 top-16 z-50 h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-white lg:hidden"
         >
           <div className="shell flex min-h-full flex-col py-6">
             <nav aria-label={ui.mainNav}>
