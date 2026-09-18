@@ -62,8 +62,10 @@ async function ready(page) {
         if (document.readyState === 'loading') return false;
         const sheets = Array.from(document.styleSheets);
         if (!sheets.length) return false;
+        // next/font genera un nombre de familia propio, en minúsculas.
         const probe = document.querySelector('header a, main a, body');
-        return Boolean(probe && getComputedStyle(probe).fontFamily.includes('Archivo'));
+        if (!probe) return false;
+        return getComputedStyle(probe).fontFamily.toLowerCase().includes('archivo');
       },
       null,
       { timeout: 30000 },
@@ -72,6 +74,19 @@ async function ready(page) {
   await page.evaluate(() => document.fonts?.ready).catch(() => {});
   await page.waitForTimeout(300);
 }
+
+/**
+ * Chrome que Vercel inyecta en los previews protegidos (barra de herramientas
+ * y capa de comentarios). No forma parte del sitio, así que se excluye: de lo
+ * contrario axe informa de fallos de su interfaz como si fueran nuestros.
+ */
+const VERCEL_CHROME = [
+  ['vercel-live-feedback'],
+  ['[data-vercel-toolbar]'],
+  ['#vercel-toolbar'],
+  ['vercel-toolbar'],
+  ['[data-testid="vercel-toolbar"]'],
+];
 
 const browser = await chromium.launch({
   executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined,
@@ -99,6 +114,8 @@ for (const width of [390, 1440]) {
     await ready(page);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
+      // El toolbar que Vercel inyecta en los previews no es parte del sitio.
+      .exclude(VERCEL_CHROME)
       .analyze();
 
     const violations = results.violations;
@@ -122,6 +139,7 @@ for (const width of [390, 1440]) {
     await page.waitForTimeout(400);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
+      .exclude(VERCEL_CHROME)
       .analyze();
     if (results.violations.length) {
       all.push({ route: '/ (menú móvil abierto)', width, violations: results.violations });
@@ -149,7 +167,10 @@ for (const width of [390, 1440]) {
       .waitForFunction(() => Boolean(document.querySelector('main h1')), null, { timeout: 25000 })
       .catch(() => console.log(`    aviso: ${route} no completó la hidratación`));
     await ready(page);
-    const res = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    const res = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+      .exclude(VERCEL_CHROME)
+      .analyze();
     known += res.violations.length;
     console.log(`  ${route}: ${res.violations.length} (${res.violations.map((v) => v.id).join(', ') || 'ninguna'})`);
   }
