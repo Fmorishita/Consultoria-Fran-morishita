@@ -10,6 +10,8 @@ export default function robots(): MetadataRoute.Robots {
       ? [{ userAgent: '*', allow: '/' }]
       : [{ userAgent: '*', disallow: '/' }],
     sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    // `host` se omite a propósito: es una directiva no estándar y, con una URL
+    // completa en lugar de un nombre de host, los validadores la marcan como
+    // inválida.
   };
 }

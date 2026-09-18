@@ -159,9 +159,15 @@ const ROUTES = (process.env.VERIFY_ROUTES || [
   '/condiciones-de-uso/',
 ].join(',')).split(',');
 
+/**
+ * Si la sesión sale por un proxy que re-termina TLS, se confía exactamente en
+ * sus CA por su huella SPKI. No se desactiva la verificación de certificados.
+ */
+const SPKI = process.env.PROXY_CA_SPKI || '';
+
 const browser = await chromium.launch({
   executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined,
-  args: ['--no-sandbox'],
+  args: ['--no-sandbox', ...(SPKI ? [`--ignore-certificate-errors-spki-list=${SPKI}`] : [])],
 });
 const page = await browser.newPage();
 await page.route('**/_vercel/**', (r) => r.abort());

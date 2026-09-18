@@ -30,6 +30,14 @@ type Params = { segment: string };
 const isLegal = (slug: string) => LEGAL.find((l) => l.slug === slug);
 const isLanding = (slug: string) => esLandings.some((l) => l.slug === slug);
 
+/**
+ * El conjunto de rutas es cerrado: esLandings y los textos legales.
+ * Con `dynamicParams = false`, cualquier otro slug cae en la 404 global de
+ * Next.js, que sí aplica el layout raíz. Un `notFound()` lanzado desde una
+ * ruta dinámica sirve una carcasa sin `lang`, sin `<main>` y sin `<h1>`.
+ */
+export const dynamicParams = false;
+
 export function generateStaticParams(): Params[] {
   return [
     ...esLandings.map((l) => ({ segment: l.slug })),

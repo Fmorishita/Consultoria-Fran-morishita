@@ -10,7 +10,12 @@ import { getAuthor, getPosts } from '@/lib/wordpress';
 import { founder } from '@/content/facts';
 
 export const revalidate = 900;
-export const dynamicParams = true;
+/**
+ * Conjunto cerrado: el único autor del sitio. Cambia en raras ocasiones y un despliegue lo
+ * recoge. Cerrarlo hace que cualquier otra ruta caiga en la 404 global de
+ * Next.js, que sí aplica el layout raíz.
+ */
+export const dynamicParams = false;
 
 const PER_PAGE = 12;
 

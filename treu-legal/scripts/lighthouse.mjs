@@ -7,6 +7,9 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const BASE = process.env.LH_BASE || 'http://127.0.0.1:3100';
+/** Cookie de acceso y huellas SPKI, para medir un preview protegido de Vercel. */
+const COOKIE = process.env.LH_COOKIE || '';
+const SPKI = process.env.PROXY_CA_SPKI || '';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const OUT = path.join(ROOT, 'docs/_lighthouse');
 const ROUTES = (process.env.LH_ROUTES || '/,/strategic-legal-session/,/areas-de-practica/corporate-business-law/,/insights/').split(',');
@@ -17,6 +20,9 @@ const rows = [];
 for (const route of ROUTES) {
   const name = route === '/' ? 'home' : route.replace(/^\/|\/$/g, '').replace(/\//g, '__');
   const file = path.join(OUT, `${name}.json`);
+  const flags = ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage', SPKI ? `--ignore-certificate-errors-spki-list=${SPKI}` : '']
+    .filter(Boolean)
+    .join(' ');
   try {
     execFileSync(
       'npx',
@@ -30,7 +36,8 @@ for (const route of ROUTES) {
         '--screenEmulation.mobile',
         '--throttling-method=simulate',
         '--only-categories=performance,accessibility,best-practices,seo',
-        `--chrome-flags=--headless=new --no-sandbox --disable-dev-shm-usage`,
+        `--chrome-flags=${flags}`,
+        ...(COOKIE ? [`--extra-headers=${JSON.stringify({ Cookie: COOKIE })}`] : []),
       ],
       { stdio: ['ignore', 'ignore', 'pipe'], env: { ...process.env, CHROME_PATH: '/opt/pw-browsers/chromium' }, timeout: 180000 },
     );

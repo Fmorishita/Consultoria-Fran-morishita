@@ -15,7 +15,15 @@ import { getAllPostSlugs, getAuthor, getPostBySlug, getRelatedPosts } from '@/li
 import { ui } from '@/content/microcopy';
 
 export const revalidate = 900;
-/** Un artículo nuevo se sirve aunque no estuviera en el build. */
+/**
+ * Un artículo nuevo se sirve aunque no estuviera en el build: lo exige el
+ * requisito de que un Insight publicado en WordPress aparezca solo.
+ *
+ * Contrapartida conocida: para un slug que no existe, el `notFound()` ocurre
+ * cuando Next ya emitió el shell, así que esa 404 concreta se sirve sin el
+ * layout raíz. Afecta sólo a URLs que nunca existieron y no están enlazadas.
+ * Ver docs/ENTREGA.md.
+ */
 export const dynamicParams = true;
 
 /**
@@ -42,7 +50,10 @@ export async function generateStaticParams(): Promise<Params[]> {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { segment: year, month, day, post: slug } = await params;
   const post = await getPostBySlug(slug);
-  if (!post) return {};
+  // La comprobación va aquí, antes de que empiece el render: un `notFound()`
+  // lanzado desde la página, con el shell ya emitido, sirve una carcasa de
+  // error sin el layout raíz (sin `lang`, sin `<main>` y sin `<h1>`).
+  if (!post || post.path !== `/${year}/${month}/${day}/${slug}/`) notFound();
   return {
     ...pageMetadata({
       title: post.title,

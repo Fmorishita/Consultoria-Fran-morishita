@@ -12,6 +12,14 @@ import { bodyBlocks, getPage, leadParagraph } from '@/content/pages';
 
 type Params = { slug: string };
 
+/**
+ * El conjunto de rutas es cerrado: las 6 áreas de práctica.
+ * Con `dynamicParams = false`, cualquier otro slug cae en la 404 global de
+ * Next.js, que sí aplica el layout raíz. Un `notFound()` lanzado desde una
+ * ruta dinámica sirve una carcasa sin `lang`, sin `<main>` y sin `<h1>`.
+ */
+export const dynamicParams = false;
+
 export function generateStaticParams(): Params[] {
   return practiceAreas.map((a) => ({ slug: a.slug }));
 }

@@ -6,6 +6,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const BASE = process.env.CHECK_BASE || 'http://127.0.0.1:3100';
+/** Cookie de acceso, para comprobar un preview protegido de Vercel. */
+const COOKIE = process.env.CHECK_COOKIE || '';
 const SRC = path.resolve(import.meta.dirname, '../content/_source');
 
 const read = (f) => JSON.parse(fs.readFileSync(path.join(SRC, f), 'utf8'));
@@ -32,7 +34,10 @@ const results = { ok: 0, redirect: 0, bad: [] };
 
 for (const url of unique) {
   try {
-    const res = await fetch(BASE + url, { redirect: 'manual' });
+    const res = await fetch(BASE + url, {
+      redirect: 'manual',
+      headers: COOKIE ? { Cookie: COOKIE } : undefined,
+    });
     if (res.status === 200) results.ok++;
     else if (res.status === 301 || res.status === 308) results.redirect++;
     else results.bad.push(`${res.status} ${url}`);

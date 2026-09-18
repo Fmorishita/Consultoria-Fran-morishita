@@ -15,9 +15,18 @@ const FULL = process.env.SHOT_FULL !== '0';
 fs.mkdirSync(OUT, { recursive: true });
 // Usa el Chromium preinstalado del entorno en lugar de descargar otro.
 const EXECUTABLE = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium';
+/** Cookie de acceso, para auditar un preview protegido de Vercel. */
+const EXTRA_COOKIE = process.env.PREVIEW_COOKIE || '';
+
+/**
+ * Si la sesión sale por un proxy que re-termina TLS, se confía exactamente en
+ * sus CA por su huella SPKI. No se desactiva la verificación de certificados.
+ */
+const SPKI = process.env.PROXY_CA_SPKI || '';
+
 const browser = await chromium.launch({
   executablePath: fs.existsSync(EXECUTABLE) ? EXECUTABLE : undefined,
-  args: ['--no-sandbox', '--disable-dev-shm-usage'],
+  args: ['--no-sandbox', '--disable-dev-shm-usage', ...(SPKI ? [`--ignore-certificate-errors-spki-list=${SPKI}`] : [])],
 });
 
 for (const width of WIDTHS) {

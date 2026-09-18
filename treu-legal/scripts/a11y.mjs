@@ -33,9 +33,26 @@ const ROUTES = [
   '/ruta-que-no-existe/',
 ];
 
+/**
+ * Casos aparte: 404 de una ruta dinámica cuyo valor no existe. Next.js resuelve
+ * el `notFound()` con el shell ya emitido y sirve una carcasa sin el layout
+ * raíz, así que estas tres URLs salen sin `lang`, sin `<main>` y sin `<h1>`.
+ * Se auditan y se informan por separado para no ocultarlo. Ver docs/ENTREGA.md.
+ */
+const KNOWN_LIMITATION = ['/2026/01/01/slug-que-no-existe/', '/category/no-existe/', '/author/no-existe/'];
+
+/** Cookie de acceso, para auditar un preview protegido de Vercel. */
+const EXTRA_COOKIE = process.env.PREVIEW_COOKIE || '';
+
+/**
+ * Si la sesión sale por un proxy que re-termina TLS, se confía exactamente en
+ * sus CA por su huella SPKI. No se desactiva la verificación de certificados.
+ */
+const SPKI = process.env.PROXY_CA_SPKI || '';
+
 const browser = await chromium.launch({
   executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined,
-  args: ['--no-sandbox'],
+  args: ['--no-sandbox', ...(SPKI ? [`--ignore-certificate-errors-spki-list=${SPKI}`] : [])],
 });
 
 const all = [];
@@ -46,6 +63,11 @@ for (const width of [390, 1440]) {
     isMobile: width < 700,
     hasTouch: width < 700,
   });
+  if (EXTRA_COOKIE) {
+    const { hostname } = new URL(BASE);
+    const [name, ...rest] = EXTRA_COOKIE.split('=');
+    await ctx.addCookies([{ name, value: rest.join('='), domain: hostname, path: '/' }]);
+  }
   const page = await ctx.newPage();
   await page.route('**/_vercel/**', (r) => r.abort());
 
@@ -89,10 +111,28 @@ for (const width of [390, 1440]) {
   await ctx.close();
 }
 
+// Limitación conocida de Next.js, auditada aparte.
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true });
+  const page = await ctx.newPage();
+  await page.route('**/_vercel/**', (r) => r.abort());
+  let known = 0;
+  for (const route of KNOWN_LIMITATION) {
+    await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    const res = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    known += res.violations.length;
+    console.log(`  ${route}: ${res.violations.length} (${res.violations.map((v) => v.id).join(', ') || 'ninguna'})`);
+  }
+  console.log(`Violaciones en el caso conocido de 404 dinámica: ${known}`);
+  await ctx.close();
+}
+
 await browser.close();
 
 const total = all.reduce((n, r) => n + r.violations.length, 0);
-console.log(`\nViolaciones totales: ${total}`);
+console.log(`\nViolaciones en las plantillas del sitio: ${total}`);
+
+
 
 fs.mkdirSync(path.join(ROOT, 'docs'), { recursive: true });
 fs.writeFileSync(

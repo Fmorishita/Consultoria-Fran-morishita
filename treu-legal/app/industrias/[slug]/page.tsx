@@ -10,5 +10,12 @@ const { generateStaticParams, generateMetadata, Page } = collectionDetail({
   items: industries,
 });
 
+/**
+ * El conjunto de rutas es cerrado: las 4 industrias. Con `dynamicParams = false`,
+ * cualquier otro slug cae en la 404 global de Next.js, que sí aplica el
+ * layout raíz.
+ */
+export const dynamicParams = false;
+
 export { generateStaticParams, generateMetadata };
 export default Page;
