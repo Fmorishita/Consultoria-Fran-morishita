@@ -207,6 +207,20 @@ emitir el shell en rutas bajo demanda.
 
 ## 3. Configuración pendiente
 
+### El despliegue de «Production» del proyecto de Vercel falla, y es correcto
+
+En el panel de Vercel, el proyecto `treu-legal-solutions` muestra en rojo su
+despliegue de producción. No es un fallo del sitio: el proyecto tiene como
+*Root Directory* la carpeta `treu-legal/`, que sólo existe en la rama de este
+trabajo. Cuando Vercel intenta construir la rama `main` del repositorio —que es
+el sitio de consultoría, otro proyecto distinto— no encuentra esa carpeta y se
+detiene.
+
+Es justo lo que debe pasar mientras el proyecto viva prestado en este
+repositorio: **sólo se publican previews**, nunca una producción. Se resuelve
+solo al mover el proyecto a su propio repositorio, tal como explica
+[`UBICACION.md`](../UBICACION.md).
+
 ### Supabase
 
 1. Crear el proyecto y ejecutar [`supabase/solicitudes.sql`](../supabase/solicitudes.sql).
