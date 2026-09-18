@@ -1,0 +1,238 @@
+{
+ "id": 1223,
+ "slug": "legal-products",
+ "path": "/legal-products/",
+ "source": "https://treulegal.solutions/legal-products/",
+ "title": "Legal Products",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Legal Products - Soluciones Jurídicas Estructuradas para Empresas | Treu Legal & Business",
+  "description": "Productos jurídicos con alcance definido y entregables tangibles para empresas en México: constitución, auditoría legal, sistema laboral, arquitectura contractual, diagnóstico corporativo y entrada a México.",
+  "ogTitle": "Legal Products - Soluciones Jurídicas Estructuradas para Empresas | Treu Legal & Business",
+  "ogDescription": "Productos jurídicos con alcance definido y entregables tangibles para empresas en México: constitución, auditoría legal, sistema laboral, arquitectura contractual, diagnóstico corporativo y entrada a México.",
+  "canonical": "https://treulegal.solutions/legal-products/"
+ },
+ "blocks": [
+  {
+   "type": "paragraph",
+   "text": "Los Legal Products de Treu Legal & Business son la respuesta a un problema que la mayoría de los empresarios ha tenido con los servicios legales: no saber exactamente qué van a recibir, cuánto va a costar ni cuándo va a estar listo."
+  },
+  {
+   "type": "paragraph",
+   "text": "Cada producto está diseñado con alcance específico, entregables concretos y honorarios estructurados. Son proyectos con criterio jurídico aplicado a la realidad operativa de cada empresa, no simples trámites."
+  },
+  {
+   "type": "paragraph",
+   "text": "Tienen un punto de entrada, un resultado y un próximo paso natural."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "NIVEL 2 | FOUNDATIONAL SERVICE"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Business Launch Package"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una empresa constituida con la estructura correcta para su etapa, acuerdos entre socios que previenen conflictos y contratos base para iniciar operaciones protegidos desde el primer día."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Selección y constitución de figura societaria",
+    "Pacto de socios con mecanismos de gobernanza y salida",
+    "Contratos base: laboral, comercial, NDA"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "NIVEL 2 | FOUNDATIONAL SERVICE"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Corporate Health Check™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diagnóstico integral del estado jurídico de su empresa: estructura corporativa, contratos, cumplimiento laboral y exposición regulatoria. El reporte que le dice exactamente dónde está el riesgo."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Revisión de estructura societaria y pacto de socios",
+    "Análisis de contratos comerciales principales",
+    "Diagnóstico laboral y regulatorio"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "NIVEL 2 | FOUNDATIONAL SERVICE"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "HR Legal System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Sistema integral de arquitectura laboral empresarial. Contratos, políticas internas, protocolos de terminación y cumplimiento NOM, diseñados para el modelo de negocio específico del cliente."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Contratos laborales por perfil de puesto",
+    "Reglamento Interior de Trabajo y Manual del Empleado",
+    "Protocolos de terminación y cumplimiento NOM"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "NIVEL 2 | FOUNDATIONAL SERVICE"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Contract Architecture™"
+  },
+  {
+   "type": "paragraph",
+   "text": "El set completo de contratos diseñados para el modelo de negocio de la empresa. No formatos genéricos: instrumentos calibrados para los riesgos específicos de cada industria y relación comercial."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Contratos de servicios y compraventa",
+    "NDA y acuerdos de no competencia",
+    "Contratos de distribución o agencia según modelo"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "NIVEL 3 | STRATEGICAL SERVICE • FLAGSHIP"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Corporate Risk & Structure System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "El servicio insignia del despacho. Diagnóstico profundo, diseño de arquitectura jurídica integral y plan de implementación para empresas que necesitan reconstruir o rediseñar su estructura con precisión."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Corporate Risk Report completo",
+    "Governance Blueprint con borrador de pacto de socios",
+    "Legal Implementation Plan detallado"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "NIVEL 3 | STRATEGICAL SERVICE"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Cross-Border Entry Package"
+  },
+  {
+   "type": "paragraph",
+   "text": "La estructura legal mínima necesaria para operar en México desde el primer día: entidad constituida, arquitectura laboral inicial, marco contractual base y brief regulatorio del sector."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Análisis y constitución de entidad mexicana",
+    "Cumplimiento RNIE y regulatorio sectorial",
+    "Contratos intercompany y laborales iniciales"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "COMO PROGRESAN NUESTROS CLIENTES"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "La lógica detrás de los Legal Products"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los Legal Products están diseñados para acompañar a la empresa en cada etapa de su desarrollo. No todos los productos son para todas las empresas al mismo tiempo. El punto de entrada correcto depende del momento del negocio."
+  },
+  {
+   "type": "paragraph",
+   "text": "Cada proyecto está diseñado para resolver una necesidad y revelar la siguiente. El despacho acompaña esa progresión de forma explícita, no espera a que el cliente lo pida."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "DESPUÉS DEL PROYECTO"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Asesoría Continua: de proyecto a relación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los Legal Products resuelven una necesidad específica en un plazo definido, pero las empresas en operación generan necesidades jurídicas de forma continua: contratos que revisar, decisiones corporativas que documentar, situaciones laborales que resolver y cambios regulatorios que atender."
+  },
+  {
+   "type": "paragraph",
+   "text": "Para esas empresas, Treu Legal & Business ofrece tres modalidades de asesoría continua:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Outside General Counsel"
+  },
+  {
+   "type": "paragraph",
+   "text": "Departamento jurídico externo para empresas que requieren presencia legal continua: consultas incluidas, revisión contractual, acompañamiento en decisiones corporativas y reunión mensual de revisión estratégica."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "HR Legal Advisor"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría laboral continua para empresas con plantilla activa: acompañamiento en contrataciones y terminaciones, actualización normativa, alertas de cambios legislativos laborales y revisión trimestral de cumplimiento."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Corporate Secretary Service"
+  },
+  {
+   "type": "paragraph",
+   "text": "Mantenimiento del cumplimiento corporativo continuo: documentación de asambleas, actualización de libros corporativos, acuerdos societarios de gestión ordinaria y archivo digital corporativo activo."
+  },
+  {
+   "type": "paragraph",
+   "text": "¿No sabe cuál es el producto adecuado para su empresa?"
+  },
+  {
+   "type": "paragraph",
+   "text": "La Strategic Legal Session de 60 minutos le da la respuesta con criterio aplicado a su situación específica."
+  }
+ ]
+}

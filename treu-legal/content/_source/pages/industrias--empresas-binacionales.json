@@ -1,0 +1,449 @@
+{
+ "id": 1900,
+ "slug": "industrias--empresas-binacionales",
+ "path": "/industrias/empresas-binacionales/",
+ "source": "https://treulegal.solutions/industrias/empresas-binacionales/",
+ "title": "Empresas Binacionales",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Asesoría Legal para Empresas Binacionales México–EE.UU. | Treu Legal & Business",
+  "description": "Estructuración jurídica para empresas que operan entre México y California. Inversión extranjera, nearshoring, cumplimiento binacional y coordinación legal en ambas jurisdicciones.",
+  "ogTitle": "Asesoría Legal para Empresas Binacionales México–EE.UU. | Treu Legal & Business",
+  "ogDescription": "Estructuración jurídica para empresas que operan entre México y California. Inversión extranjera, nearshoring, cumplimiento binacional y coordinación legal en ambas jurisdicciones.",
+  "canonical": "https://treulegal.solutions/industrias/empresas-binacionales/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Asesoría Jurídica para Empresas que Operan entre México y California"
+  },
+  {
+   "type": "paragraph",
+   "text": "Baja California no es solo el estado fronterizo con mayor flujo de inversión extranjera directa manufacturera de México. Es también el punto de entrada al mercado mexicano para cientos de empresas de California que buscan aprovechar las ventajas del USMCA, reducir costos operativos mediante nearshoring o desarrollar proyectos inmobiliarios y turísticos en la región."
+  },
+  {
+   "type": "paragraph",
+   "text": "Para todas estas empresas, la pregunta no es si necesitan asesoría jurídica. Es encontrar un asesor que entienda las dos jurisdicciones: que conozca el derecho mexicano con la profundidad técnica que requiere operar en México, pero que también comprenda la operativa empresarial del lado californiano y sepa cómo construir estructuras que funcionen en ambos contextos."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business opera desde Ensenada con ese perfil. El contenido del despacho en inglés no es cosmético: refleja la capacidad real de asesorar a clientes angloparlantes con el mismo nivel técnico que a clientes en español."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Dos perfiles de cliente"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Empresa de California entrando a México"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Estructura corporativa para subsidiaria mexicana",
+    "Registro RNIE",
+    "Cumplimiento LFT para empleados en México",
+    "Contratos intercompany",
+    "Brief regulatorio sectorial",
+    "Cumplimiento PLD si aplica",
+    "Coordinación entre asesor de California y despacho en México"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Empresa mexicana con operaciones o clientes en EE.UU."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Contratos en inglés con validez en ambas jurisdicciones",
+    "Estructuras de distribución o agencia en California",
+    "Protección de propiedad intelectual en EE.UU.",
+    "Exposición FCPA",
+    "Coordinación con counsel californiano para transacciones mixtas",
+    "CCPA/CPRA si recolectan datos de residentes de California"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Por qué el nearshoring importa en Baja California?"
+  },
+  {
+   "type": "paragraph",
+   "text": "El nearshoring en Baja California no es una tendencia emergente, es una realidad industrial consolidada que se ha acelerado desde 2021 con el reordenamiento de cadenas de suministro post-pandemia y las tensiones comerciales entre EE.UU. y China."
+  },
+  {
+   "type": "paragraph",
+   "text": "Las empresas que reubican o expanden operaciones a la región necesitan una estructura jurídica que opere desde el primer día: entidad constituida correctamente bajo la ley mexicana, contratos laborales diseñados conforme a la LFT, cumplimiento con el régimen IMMEX si aplica y marcos contractuales con clientes y proveedores que funcionen en el contexto binacional del corredor."
+  },
+  {
+   "type": "paragraph",
+   "text": "El costo de ignorar la estructura jurídica en la fase de entrada no es evidente de inmediato, se hace visible meses después, cuando la empresa tiene empleados sin contratos conformes, proveedores sin REPSE verificado y una estructura corporativa que no permite las operaciones intercompany que requería desde el inicio."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Servicios"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Análisis y Selección de Estructura de Entrada"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis comparativo de las alternativas de estructura jurídica para la entrada al mercado mexicano: subsidiaria mexicana, sucursal, representación, joint venture con socio local o adquisición de empresa existente. Para cada opción: implicaciones corporativas, laborales, fiscales y operativas, con recomendación argumentada."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Constitución de Entidad Mexicana"
+  },
+  {
+   "type": "paragraph",
+   "text": "Constitución de la subsidiaria u otro vehículo jurídico seleccionado, incluyendo gestión notarial, inscripción en el RPPC, obtención de RFC ante el SAT y coordinación del proceso de registro ante el RNIE para inversión extranjera."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Compliance RNIE"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría completa sobre el Registro Nacional de Inversiones Extranjeras: cuándo se activa la obligación de registro (todo porcentaje de capital extranjero, sin umbral mínimo), qué reportes periódicos requiere, cómo se mantiene actualizado y qué consecuencias genera el incumplimiento sobre la validez de los actos corporativos."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Arquitectura Laboral para Operaciones en México"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño de la estructura laboral para los empleados en México: contratos por perfil de puesto, Reglamento Interior de Trabajo, manual del empleado y protocolos de terminación. Particularidades del régimen laboral mexicano explicadas en términos operativos."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contratos Intercompany y Comerciales Internacionales"
+  },
+  {
+   "type": "paragraph",
+   "text": "Elaboración de contratos entre la entidad mexicana y la entidad extranjera (servicios, licencia de marca o préstamo intragrupo) y contratos con clientes y proveedores en ambas jurisdicciones. Atención a los aspectos de precios de transferencia que los contratos intercompany deben reflejar, en coordinación con el asesor fiscal del cliente."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Coordinación Binacional con Firmas de California"
+  },
+  {
+   "type": "paragraph",
+   "text": "Coordinación con el abogado de California del cliente para asuntos que requieren asesoría en derecho estadounidense: transacciones mixtas, due diligence con componentes en ambas jurisdicciones, contratos con efectos en ambos sistemas. Treu actúa como el interlocutor en México y coordina la estrategia legal integral."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Cumplimiento Regulatorio Sectorial"
+  },
+  {
+   "type": "paragraph",
+   "text": "Brief regulatorio del sector del cliente en México: obligaciones específicas de su industria, permisos y autorizaciones requeridos, restricciones sectoriales a la inversión extranjera si aplican y obligaciones de cumplimiento PLD si la actividad califica como vulnerable bajo la LFPIORPI."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "La diferencia del posicionamiento geográfico"
+  },
+  {
+   "type": "paragraph",
+   "text": "Pocos despachos en Baja California tienen presencia digital en inglés de nivel institucional, capacidad real de asesoría cross-border integrada y comprensión del contexto empresarial del cliente californiano. La mayoría de los despachos locales conocen el derecho mexicano, pero no hablan el idioma comercial del cliente de San Diego o Los Ángeles."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business ha construido ese posicionamiento conscientemente: el sitio en inglés, la formación del Fundador en FinTech Law por Duke University y empresa familiar por ESADE Business and Law School, y más de 17 años de práctica en operaciones corporativas con componente de inversión extranjera en Baja California."
+  },
+  {
+   "type": "paragraph",
+   "text": "El resultado es un despacho que puede ser el primer interlocutor de una empresa californiana cuando evalúa entrar a México — y el asesor de confianza que la acompaña después de que entra."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Productos Legales para empresas binacionales"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Cross-Border Entry Package"
+  },
+  {
+   "type": "paragraph",
+   "text": "La estructura legal mínima necesaria para operar en México desde el primer día: entidad constituida, arquitectura laboral inicial, marco contractual base y brief regulatorio del sector."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Corporate Risk & Structure System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para empresas ya operando en México que necesitan un diagnóstico integral de su estructura corporativa, laboral y contractual, con plan de implementación."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contract Architecture™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño de contratos en inglés o bilingües para relaciones comerciales entre México y California."
+  },
+  {
+   "type": "paragraph",
+   "text": "Ver todos los Legal Products"
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Quiere saber dónde está la exposición legal real de su empresa?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce también:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cross-Border Advisory",
+    "Corporate & Business Law",
+    "Compliance & Risk Prevention"
+   ]
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-78.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Las capitulaciones que nadie firma",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Las capitulaciones que nadie firma"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-76.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El abogado que cobró con acciones",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El abogado que cobró con acciones"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-64.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El testamento no firma la nómina del jornalero",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El testamento no firma la nómina del jornalero"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-59.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El due diligence real es sobre usted",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El due diligence real es sobre usted"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-55.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Su renta industrial descansa sobre la estructura de su contrato",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Su renta industrial descansa sobre la estructura de su contrato"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-50.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Puede desarrollar sin comprar el terreno primero. Lo que cambia es con quién queda comprometido después.",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Puede desarrollar sin comprar el terreno primero. Lo que cambia es con quién queda comprometido después."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-47.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El día en que el maestro de obra que fundó la empresa deja de ser suficiente",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El día en que el maestro de obra que fundó la empresa deja de ser suficiente"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-45.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El padre que puso el capital, el hijo que opera todo y las acciones que nadie ha resuelto",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El padre que puso el capital, el hijo que opera todo y las acciones que nadie ha resuelto"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-46.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Dos constructoras que se conocen de toda la vida no garantizan un consorcio que funcione",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Dos constructoras que se conocen de toda la vida no garantizan un consorcio que funcione"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-41.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "La constructora de Baja California que quiere competir con las foráneas necesita algo más que buenas referencias",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "La constructora de Baja California que quiere competir con las foráneas necesita algo más que buenas referencias"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-35.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El Valle tiene tres modelos laborales en un mismo proyecto y casi ninguno está bien documentado",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El Valle tiene tres modelos laborales en un mismo proyecto y casi ninguno está bien documentado"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-32.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El inversionista extranjero en tu proyecto del Valle es una estructura que tienes que sostener, no es solo capital",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El inversionista extranjero en tu proyecto del Valle es una estructura que tienes que sostener, no es solo capital"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-31.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "La región que más está creciendo en Baja California todavía se estructura como hace veinte años",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "La región que más está creciendo en Baja California todavía se estructura como hace veinte años"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-28.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Valle de Guadalupe: cuando el éxito expone la fragilidad del origen",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Valle de Guadalupe: cuando el éxito expone la fragilidad del origen"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/brown-and-white-modern-expert-legal-services-presentation.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "REPSE y SIROC en la obra: la subcontratación que parece ayuda y es una exposición legal",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "REPSE y SIROC en la obra: la subcontratación que parece ayuda y es una exposición legal"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-27.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Ensenada vive su mejor momento económico en una década. Su estructura legal empresarial no se ha enterado.",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Ensenada vive su mejor momento económico en una década. Su estructura legal empresarial no se ha enterado."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/05/Brown-and-White-Modern-Expert-Legal-Services-Presentation-8.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El nearshoring está en Baja California. La pregunta es si tu empresa está lista legalmente.",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El nearshoring está en Baja California. La pregunta es si tu empresa está lista legalmente."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/05/Brown-and-White-Modern-Expert-Legal-Services-Presentation-7.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El contrato agroindustrial transfronterizo: por qué el productor de Baja California casi siempre firma en desventaja y cómo equilibrarlo",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El contrato agroindustrial transfronterizo: por qué el productor de Baja California casi siempre firma en desventaja y cómo equilibrarlo"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/05/Brown-and-White-Modern-Expert-Legal-Services-Presentation-6.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Arrendar una nave industrial en Baja California: lo que el inversionista californiano necesita entender y lo que el desarrollador mexicano no puede dejar al azar",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Arrendar una nave industrial en Baja California: lo que el inversionista californiano necesita entender y lo que el desarrollador mexicano no puede dejar al azar"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/05/36.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Invertir en México desde California: tres supuestos que los empresarios estadounidenses tienen equivocados sobre cómo se estructura una operación aquí",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Invertir en México desde California: tres supuestos que los empresarios estadounidenses tienen equivocados sobre cómo se estructura una operación aquí"
+  }
+ ]
+}

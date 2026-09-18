@@ -1,0 +1,38 @@
+{
+ "id": 2591,
+ "slug": "insights--guia-arquitectura-contractual-inmobiliaria-mexico",
+ "path": "/insights/guia-arquitectura-contractual-inmobiliaria-mexico/",
+ "source": "https://treulegal.solutions/insights/guia-arquitectura-contractual-inmobiliaria-mexico/",
+ "title": "Arquitectura Contractual para Desarrolladoras y Constructoras 2026",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Arquitectura Contractual para Proyectos Inmobiliarios en México | Treu Legal & Business",
+  "description": "Los contratos de un proyecto inmobiliario determinan quién responde ante cada riesgo. Diagnóstico de 6 bloques: adquisición de suelo, contratos de obra, compradores, inversión, permisos y disputas.",
+  "ogTitle": "Arquitectura Contractual para Proyectos Inmobiliarios en México | Treu Legal & Business",
+  "ogDescription": "Los contratos de un proyecto inmobiliario determinan quién responde ante cada riesgo. Diagnóstico de 6 bloques: adquisición de suelo, contratos de obra, compradores, inversión, permisos y disputas.",
+  "ogImage": "https://treulegal.solutions/wp-content/uploads/2026/04/Arquitectura-Contractual-Constructoras-Desarrolladoras-Treu-Legal-Business-Abril-2026.png",
+  "canonical": "https://treulegal.solutions/insights/guia-arquitectura-contractual-inmobiliaria-mexico/"
+ },
+ "blocks": [
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/04/Arquitectura-Contractual-Constructoras-Desarrolladoras-Treu-Legal-Business-Abril-2026.png?fit=1190%2C1683&amp;ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Los contratos que nadie revisa hasta que hay un problema"
+  },
+  {
+   "type": "heading",
+   "level": 5,
+   "text": "Arquitectura Contractual para Constructoras y Desarrolladoras Inmobiliarias"
+  },
+  {
+   "type": "paragraph",
+   "text": "Todo proyecto inmobiliario, independientemente de su escala, involucra al menos seis tipos de documentos cuya calidad determina el perfil de riesgo de la operación completa."
+  }
+ ]
+}

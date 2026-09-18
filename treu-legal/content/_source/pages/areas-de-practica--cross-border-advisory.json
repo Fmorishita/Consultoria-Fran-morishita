@@ -1,0 +1,191 @@
+{
+ "id": 1895,
+ "slug": "areas-de-practica--cross-border-advisory",
+ "path": "/areas-de-practica/cross-border-advisory/",
+ "source": "https://treulegal.solutions/areas-de-practica/cross-border-advisory/",
+ "title": "Cross-Border Advisory",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Cross-Border Advisory México–California • Asesoría Jurídica Binacional | Treu Legal & Business",
+  "description": "Asesoría jurídica para empresas que operan entre México y California. Estructuración para inversión extranjera, nearshoring, contratos internacionales y cumplimiento binacional.",
+  "ogTitle": "Cross-Border Advisory México–California • Asesoría Jurídica Binacional | Treu Legal & Business",
+  "ogDescription": "Asesoría jurídica para empresas que operan entre México y California. Estructuración para inversión extranjera, nearshoring, contratos internacionales y cumplimiento binacional.",
+  "canonical": "https://treulegal.solutions/areas-de-practica/cross-border-advisory/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Asesoría Jurídica para el Corredor México–California"
+  },
+  {
+   "type": "paragraph",
+   "text": "Baja California concentra el mayor flujo de inversión extranjera directa manufacturera de México, el desarrollo acelerado del corredor industrial Tijuana–Ensenada y una comunidad empresarial binacional que opera simultáneamente en ambas jurisdicciones."
+  },
+  {
+   "type": "paragraph",
+   "text": "Sin embargo, la mayoría de los despachos locales no tiene capacidad real de asesoría cross-border: conocen el derecho mexicano, pero no comprenden la operativa empresarial del lado californiano. Y los despachos de California que asesoran en materia de negocios en México conocen el contexto de sus clientes, pero raramente tienen comprensión profunda del derecho mexicano aplicado."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business cierra ese vacío desde Ensenada. Ubicados en el punto de entrada natural al mercado bajacaliforniano, asesoramos a empresas en la estructuración de sus operaciones con una perspectiva que integra las necesidades del negocio en ambos lados de la frontera."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Los dos lados del asesoramiento:"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "México"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Estructuración Corporativa",
+    "Registro RNIE",
+    "Cumplimiento LFT",
+    "Régimen de Subcontratación",
+    "Obligaciones PLD",
+    "LFPDPPP",
+    "Contratos en español",
+    "Régimen IMMEX",
+    "Normatividad sectorial Baja California"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "California / EE.UU."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Coordinación con firmas de California",
+    "FCPA exposure",
+    "CCPA/CPRA compliance",
+    "Contratos bajo ley de California",
+    "Estructuras de inversión desde EE.UU.",
+    "Due diligence para entrada a México."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Servicios"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Estructuración para Inversión Extranjera en México"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis de la estructura óptima para la inversión de un sujeto extranjero en México: subsidiaria vs. sucursal vs. representación; selección de figura societaria; diseño de estructura de capital; cumplimiento de obligaciones ante el RNIE y análisis de restricciones sectoriales aplicables."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Constitución de Subsidiarias Mexicanas"
+  },
+  {
+   "type": "paragraph",
+   "text": "Constitución de entidades mexicanas para empresas de EE.UU. u otros países que establezcan operaciones en México. Gestión del proceso ante notaría, RPPC, SAT y RNIE. Diseño de gobierno corporativo desde el inicio."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Asesoría en Nearshoring"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estructuración jurídica integral para empresas que reubican o expanden operaciones de manufactura o servicios a Baja California: estructura corporativa, arquitectura laboral inicial, marco contractual con proveedores y clientes, y cumplimiento regulatorio sectorial."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contratos Comerciales Internacionales"
+  },
+  {
+   "type": "paragraph",
+   "text": "Elaboración de contratos comerciales para relaciones entre partes en México y EE.UU.: contratos de compraventa internacional, acuerdos de distribución, contratos de manufactura, acuerdos de servicios y NDA con validez en ambas jurisdicciones."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Coordinación Binacional con Firmas de California"
+  },
+  {
+   "type": "paragraph",
+   "text": "Coordinación con firmas de California para asuntos que requieren asesoría en derecho estadounidense. Treu actúa como interlocutor en México y coordina la estrategia legal integral con el asesor de California del cliente."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Cumplimiento RNIE"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría sobre obligaciones de registro y reporteo ante el Registro Nacional de Inversiones Extranjeras. El RNIE se activa ante cualquier porcentaje de capital extranjero, no existe umbral mínimo. El incumplimiento tiene consecuencias sobre la validez de los actos y el acceso a servicios gubernamentales."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Protección de Activos para Inversionistas Extranjeros"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño de estructuras de protección de activos para inversionistas extranjeros con bienes o derechos en México: fideicomisos, estructuras corporativas de tenencia y mecanismos de protección ante cambios societarios o disputas."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "¿Por qué la ubicación importa?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Pocos despachos de la región tienen presencia digital sólida en inglés, capacidad técnica real para asesorar en cross-border de manera integral y comprensión del contexto empresarial del cliente californiano."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business ha construido ese posicionamiento conscientemente: el contenido en inglés del sitio, la formación del Fundador en FinTech Law (Duke University) y empresa familiar (ESADE Business and Law School), así como más de 18 años de práctica en operaciones corporativas con componente de inversión extranjera en Baja California."
+  },
+  {
+   "type": "paragraph",
+   "text": "El resultado es un despacho que habla el mismo idioma que el cliente de California, en sentido literal y en sentido estratégico."
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Está estructurando operaciones entre México y California?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce otras áreas:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Corporate & Business Law",
+    "Compliance & Risk Prevention",
+    "Labor & Employment Strategy"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Legal Products relacionados:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "LP-06 Cross-Border Entry Package",
+    "LP-05 Corporate Risk & Structure System",
+    "LP-04 Contract Architecture"
+   ]
+  }
+ ]
+}

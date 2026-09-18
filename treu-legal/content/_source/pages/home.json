@@ -1,0 +1,672 @@
+{
+ "id": 13,
+ "slug": "home",
+ "path": "/",
+ "source": "https://treulegal.solutions/",
+ "title": "Legal Intelligence for Business | Corporate Lawyer in Mexico",
+ "extractedVia": "html",
+ "meta": {
+  "title": "Legal Intelligence for Business | Corporate Lawyer in Mexico - Treu Legal & Business",
+  "ogTitle": "Legal Intelligence for Business | Corporate Lawyer in Mexico - Treu Legal & Business",
+  "ogDescription": "Corporate legal advisory por companies operating in Mexico. Corporate structuring, commercial contracts and business legal strategy",
+  "canonical": "https://treulegal.solutions/"
+ },
+ "blocks": [
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Nuevo-logotipo-reforzador-azul-2-e1785220897758.png?fit=1246%2C470&amp;ssl=1",
+   "alt": "Treu Legal & Business"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-29-1024x576.png",
+   "alt": "Treu Legal & Business"
+  },
+  {
+   "type": "heading",
+   "level": 1,
+   "text": "LEGAL INTELLIGENCE FOR BUSINESS"
+  },
+  {
+   "type": "paragraph",
+   "text": "Arquitectura jurídica empresarial y prevención de contingencias legales para empresas que requieren más que asesoría legal tradicional: necesitan estructura jurídica sólida para operar, crecer y proteger sus intereses"
+  },
+  {
+   "type": "paragraph",
+   "text": "Nuestro Enfoque"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿POR QUÉ TREU LEGAL & BUSINESS?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Somos una firma boutique enfocada en arquitectura jurídica empresarial estratégica, diseñada para empresas que requieren algo más que representación legal tradicional"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "CONSULTORÍA JURÍDICA CORPORATIVA"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "ENTENDIMIENTO OPERATIVO DE NEGOCIOS"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "PREVENCIÓN DE RIESGOS LEGALES"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "VISIÓN CROSS-BORDER MÉXICO-EE.UU."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "ÁREAS DE PRÁCTICA"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/11.png?w=1024",
+   "alt": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "CORPORATE & BUSINESS LAW"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estructuración corporativa y contratos comerciales"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/12.png?w=1024",
+   "alt": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "COMPLIANCE & RISK PREVENTION"
+  },
+  {
+   "type": "paragraph",
+   "text": "Prevención de riesgos regulatorios y corporativos"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/13.png?w=1024",
+   "alt": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "LABOR & EMPLOYMENT STRATEGY"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cumplimiento laboral y estrategias empresariales"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/04/Brown-and-White-Modern-Expert-Legal-Services-Presentation-6-1024x576.png",
+   "alt": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "CORPORATE GOVERNANCE & FAMILY BUSINESS"
+  },
+  {
+   "type": "paragraph",
+   "text": "Gobierno corporativo e institucionalización de empresas familiares"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/14.png?w=1024",
+   "alt": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "CROSS-BORDER ADVISORY"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría para empresas que operan entre México y Estados Unidos"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/15.png?w=1024",
+   "alt": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "LITIGATION STRATEGY & CORPORATE DISPUTES"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estrategias de resolución de controversias"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "INDUSTRIAS QUE ASESORAMOS"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "DESARROLLO INMOBILIARIO"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estructuración legal de proyectos, due diligence inmobiliario y contratos para desarrollos inmobiliarios, con acompañamiento en operaciones de financiamiento"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c28ac1979e2.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c287b0efae8.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "CONSTRUCIÓN E INFRAESTRUCTURA"
+  },
+  {
+   "type": "paragraph",
+   "text": "Optimización y creación de sistemas profesionales de contratación a nivel de obra alineados a prácticas internacionales, contratos de subcontratación profesionales y gestión de riesgos contractuales"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "COMERCIO, SERVICIOS Y MANUFACTURA"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cumplimiento laboral a través de la profesionalización de sistemas de contratación laboral, contratos comerciales complejos, cumplimiento normativo para la prevención de riesgos legales y estructura corporativa"
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/04/Brown-and-White-Modern-Expert-Legal-Services-Presentation-8.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "image",
+   "src": "https://treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c2919e44f46.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "EMPRESAS BINACIONALES"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría legal para emprendedores y empresas extranjeras que requieren operar en México con estructuras sólidas y simplificando su proceso de constitución y consolidación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Brought to you by the creators of"
+  },
+  {
+   "type": "image",
+   "src": "https://s0.wp.com/wp-content/themes/premium/startace/assets/images/startace_brand_1.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "image",
+   "src": "https://s0.wp.com/wp-content/themes/premium/startace/assets/images/startace_brand_2.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "image",
+   "src": "https://s0.wp.com/wp-content/themes/premium/startace/assets/images/startace_brand_3.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "image",
+   "src": "https://s0.wp.com/wp-content/themes/premium/startace/assets/images/startace_brand_4.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "image",
+   "src": "https://s0.wp.com/wp-content/themes/premium/startace/assets/images/startace_brand_5.png",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "LEGAL PRODUCTS"
+  },
+  {
+   "type": "paragraph",
+   "text": "Servicios jurídicos estructurados diseñados para solucionar necesidades estratégicas en las empresas"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "BUSINESS LAUNCH PACKAGE"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una empresa legalmente constituida con la estructura correcta para su etapa, acuerdos de socios que previenen conflictos y contratos base para iniciar operaciones"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "CORPORATE HEALTH CHECK™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Auditoría legal preventiva diseñada para empresas que requieren un diagnóstico general del estado de su arquitectura jurídica más esencial"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "HR LEGAL SYSTEM™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Sistema integral de arquitectura laboral empresarial completa, documentada y conforme, para eliminar exposición a contingencias laborales"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "CONTRACT ARCHITECTURE™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño de la arquitectura contractual de la empresa. Un set de contratos diseñados para su modelo de negocio, su industria y sus riesgos particulares"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "CORPORATE RISK & STRUCTURE SYSTEM (CRSS)™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diagnosticamos, diseñamos y trazamos el plan de implementación para adoptar la estructura jurídica que necesita su empresa para operar con certeza, proteger socios y escalar sin que lo legal se convierta en obstáculo"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "CROSS-BORDER ENTRY PACKAGE"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estructura legal mínima necesaria para operara en México con certeza jurídica desde el primer día: entidad constituida, estructura laboral inicial, marco contractual básico y brief regulatorio del sector con normativa RNIE"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "INSIGHTS"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis y comentarios sobre temas legales que impactan a empresas que operan en México"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-78.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Las capitulaciones que nadie firma",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Las capitulaciones que nadie firma"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-76.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El abogado que cobró con acciones",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El abogado que cobró con acciones"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-74.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Repartir por partes iguales no es repartir con justicia",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Repartir por partes iguales no es repartir con justicia"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-72.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Ser dueño no es lo mismo que dirigir",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Ser dueño no es lo mismo que dirigir"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-70.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "La viuda hereda el restaurante, el yerno gerente se va",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "La viuda hereda el restaurante, el yerno gerente se va"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-68.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El patrimonio que depende del apellido en la cédula",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El patrimonio que depende del apellido en la cédula"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-65.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Cuando el hijo que sabe operar el negocio hereda lo mismo que el que nunca vino",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Cuando el hijo que sabe operar el negocio hereda lo mismo que el que nunca vino"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/09/Brown-and-White-Modern-Expert-Legal-Services-Presentation-64.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El testamento no firma la nómina del jornalero",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El testamento no firma la nómina del jornalero"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-60.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Los tres círculos que nadie le explicó: por qué el testamento solo resuelve una tercera parte del problema",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Los tres círculos que nadie le explicó: por qué el testamento solo resuelve una tercera parte del problema"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-59.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El due diligence real es sobre usted",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El due diligence real es sobre usted"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-58.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Naves llenas no es lo mismo que portafolio vendible",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Naves llenas no es lo mismo que portafolio vendible"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-56.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "La factibilidad no es suministro. Due diligence de infraestructura en la frontera.",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "La factibilidad no es suministro. Due diligence de infraestructura en la frontera."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-55.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Su renta industrial descansa sobre la estructura de su contrato",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Su renta industrial descansa sobre la estructura de su contrato"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-53.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El permiso “en trámite” no es un permiso",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El permiso “en trámite” no es un permiso"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-52.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Su notaría hizo lo que la ley le exige para poder escriturar. Eso no es un due diligence inmobiliario.",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Su notaría hizo lo que la ley le exige para poder escriturar. Eso no es un due diligence inmobiliario."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-51.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Lo que el fideicomiso permite pactar que ninguna sociedad permite",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Lo que el fideicomiso permite pactar que ninguna sociedad permite"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-50.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Puede desarrollar sin comprar el terreno primero. Lo que cambia es con quién queda comprometido después.",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Puede desarrollar sin comprar el terreno primero. Lo que cambia es con quién queda comprometido después."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-47.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El día en que el maestro de obra que fundó la empresa deja de ser suficiente",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El día en que el maestro de obra que fundó la empresa deja de ser suficiente"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-45.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El padre que puso el capital, el hijo que opera todo y las acciones que nadie ha resuelto",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El padre que puso el capital, el hijo que opera todo y las acciones que nadie ha resuelto"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/08/Brown-and-White-Modern-Expert-Legal-Services-Presentation-46.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Dos constructoras que se conocen de toda la vida no garantizan un consorcio que funcione",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Dos constructoras que se conocen de toda la vida no garantizan un consorcio que funcione"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-44.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El precio alzado que parecía una buena noticia hasta que subió el acero",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El precio alzado que parecía una buena noticia hasta que subió el acero"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-43.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "FIDIC, BIM y las certificaciones que un desarrollador institucional espera ver antes de leer tu propuesta",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "FIDIC, BIM y las certificaciones que un desarrollador institucional espera ver antes de leer tu propuesta"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-41.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "La constructora de Baja California que quiere competir con las foráneas necesita algo más que buenas referencias",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "La constructora de Baja California que quiere competir con las foráneas necesita algo más que buenas referencias"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-42.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Seis preguntas que todo inversionista en el Valle debería poder responder sobre su propio proyecto",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Seis preguntas que todo inversionista en el Valle debería poder responder sobre su propio proyecto"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-35.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El Valle tiene tres modelos laborales en un mismo proyecto y casi ninguno está bien documentado",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El Valle tiene tres modelos laborales en un mismo proyecto y casi ninguno está bien documentado"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-34.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Gobierno familiar en el viñedo: cuando los socios del proyecto también son primos",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Gobierno familiar en el viñedo: cuando los socios del proyecto también son primos"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-33.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Actividades Vulnerables en el Valle de Guadalupe: cuando el sector vitivinícola y hotelero califican sin saberlo",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Actividades Vulnerables en el Valle de Guadalupe: cuando el sector vitivinícola y hotelero califican sin saberlo"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-32.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "El inversionista extranjero en tu proyecto del Valle es una estructura que tienes que sostener, no es solo capital",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "El inversionista extranjero en tu proyecto del Valle es una estructura que tienes que sostener, no es solo capital"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-31.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "La región que más está creciendo en Baja California todavía se estructura como hace veinte años",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "La región que más está creciendo en Baja California todavía se estructura como hace veinte años"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Brown-and-White-Modern-Expert-Legal-Services-Presentation-28.png?fit=1024%2C576&amp;ssl=1",
+   "alt": "Valle de Guadalupe: cuando el éxito expone la fragilidad del origen",
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Valle de Guadalupe: cuando el éxito expone la fragilidad del origen"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Insights"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Sep 17, 2026 Las capitulaciones que nadie firma",
+    "Sep 15, 2026 El abogado que cobró con acciones",
+    "Sep 14, 2026 Repartir por partes iguales no es repartir con justicia"
+   ]
+  }
+ ]
+}

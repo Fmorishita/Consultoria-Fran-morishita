@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shell: 76rem;
+    --header-h: 4rem;
+  }
+
+  * { min-width: 0; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* El ancla no queda tapada por el header fijo. */
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+
+  body {
+    @apply bg-white text-ink font-sans text-step-0 antialiased;
+    /* Deja sitio a la barra inferior fija en móvil. */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  h1, h2, h3, h4 { @apply font-sans font-semibold text-balance; letter-spacing: -0.015em; }
+
+  /* Foco visible y consistente en todo el sitio. */
+  :focus-visible {
+    outline: 2px solid theme('colors.blue.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Áreas táctiles mínimas de 44x44 px. */
+  a, button, summary, [role='button'] { touch-action: manipulation; }
+
+  ::selection { background: theme('colors.blue.DEFAULT'); color: white; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Contenedor maestro. 16px de margen lateral en móvil. */
+  .shell { @apply mx-auto w-full max-w-shell px-gutter sm:px-6 lg:px-8; }
+
+  /* --- Lenguaje de plano arquitectónico ------------------------------- */
+
+  /* Retícula de construcción: trazos finos, nunca protagonista. */
+  .plan-grid {
+    background-image:
+      linear-gradient(to right, rgb(15 76 129 / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(15 76 129 / 0.07) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+  }
+
+  /* Cota: la línea con remates que mide una distancia en un plano. */
+  .cota {
+    @apply relative inline-flex items-center gap-2 text-step--1 text-blue;
+  }
+  .cota::before,
+  .cota::after {
+    content: '';
+    @apply h-2.5 w-px bg-blue/50;
+  }
+
+  /* Filete de sección: el trazo que abre cada bloque. */
+  .rule-blue { @apply h-px w-12 origin-left bg-blue; }
+
+  /* --- Prosa ---------------------------------------------------------- */
+
+  .prose-treu { @apply max-w-prose font-serif text-step-1 text-ink/90; }
+  .prose-treu > * + * { @apply mt-5; }
+  .prose-treu h2 {
+    @apply mt-12 font-sans text-step-3 font-semibold text-ink;
+  }
+  .prose-treu h3 { @apply mt-9 font-sans text-step-2 font-semibold text-ink; }
+  .prose-treu h4 { @apply mt-7 font-sans text-step-1 font-semibold text-ink; }
+  .prose-treu ul { @apply space-y-2.5 pl-0; }
+  .prose-treu ul > li {
+    @apply relative pl-6;
+  }
+  /* Viñeta: un trazo de cota, no un punto. */
+  .prose-treu ul > li::before {
+    content: '';
+    @apply absolute left-0 top-[0.7em] h-px w-3 bg-blue;
+  }
+  .prose-treu ol { @apply list-decimal space-y-2.5 pl-6; }
+  .prose-treu a { @apply text-blue underline decoration-blue/35 underline-offset-2 hover:decoration-blue; }
+  .prose-treu strong { @apply font-semibold text-ink; }
+  .prose-treu blockquote {
+    @apply border-l-2 border-blue pl-5 italic text-ink;
+  }
+
+  /* --- Botones -------------------------------------------------------- */
+
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 px-5 py-3
+           text-step-0 font-semibold leading-none transition-colors duration-200;
+  }
+  .btn-primary { @apply btn bg-blue text-white hover:bg-blue-deep; }
+  .btn-secondary {
+    @apply btn border border-line bg-white text-ink hover:border-blue hover:text-blue;
+  }
+  .btn-ghost { @apply btn text-blue hover:bg-blue/[0.06]; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  /* Respeta el área segura inferior en iOS. */
+  .pb-safe { padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); }
+}
+
+@layer components {
+  /* Estilos de lectura del artículo: cuerpo de 18px y ritmo vertical amplio. */
+  .prose-article {
+    @apply text-step-1;
+  }
+  .prose-article > * + * { @apply mt-6; }
+  .prose-article h2 { @apply mt-14 scroll-mt-24 text-step-3; }
+  .prose-article h3 { @apply mt-10 text-step-2; }
+  .prose-article img,
+  .prose-article figure { @apply my-8 h-auto w-full border border-line; }
+  .prose-article figure img { @apply my-0 border-0; }
+  .prose-article figcaption { @apply mt-2 font-sans text-step--1 text-slate; }
+  .prose-article table {
+    @apply my-8 w-full border-collapse border border-line font-sans text-step--1;
+  }
+  .prose-article th,
+  .prose-article td { @apply border border-line px-3 py-2 text-left align-top; }
+  .prose-article th { @apply bg-paper font-semibold; }
+  .prose-article hr { @apply my-10 border-line; }
+}

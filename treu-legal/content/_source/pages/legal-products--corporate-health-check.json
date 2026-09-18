@@ -1,0 +1,267 @@
+{
+ "id": 1902,
+ "slug": "legal-products--corporate-health-check",
+ "path": "/legal-products/corporate-health-check/",
+ "source": "https://treulegal.solutions/legal-products/corporate-health-check/",
+ "title": "Corporate Health Check",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Corporate Health Check™ — Diagnóstico Jurídico Preventivo para Empresas | Treu Legal & Business",
+  "description": "Diagnóstico integral del estado jurídico de su empresa: estructura corporativa, contratos, cumplimiento laboral y exposición regulatoria. El reporte que le dice exactamente dónde está el riesgo.",
+  "ogTitle": "Corporate Health Check™ — Diagnóstico Jurídico Preventivo para Empresas | Treu Legal & Business",
+  "ogDescription": "Diagnóstico integral del estado jurídico de su empresa: estructura corporativa, contratos, cumplimiento laboral y exposición regulatoria. El reporte que le dice exactamente dónde está el riesgo.",
+  "canonical": "https://treulegal.solutions/legal-products/corporate-health-check/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué obtiene?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una imagen completa y objetiva del estado jurídico actual de su empresa: qué riesgos tiene, cuáles son críticos, cuáles pueden gestionarse gradualmente y qué acciones concretas debe tomar para estar protegido."
+  },
+  {
+   "type": "paragraph",
+   "text": "El entregable central es el Legal Risk Report que consolida el diagnóstico, el mapa de riesgos clasificado por urgencia y las recomendaciones concretas de implementación. No es un reporte académico: es un documento que el empresario puede llevar a una reunión de directivos y usar para tomar decisiones."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Las cuatro preguntas que responde"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "¿Mi empresa está correctamente estructurada?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estatutos, escritura constitutiva, libros societarios, poderes vigentes, distribución de partes y pacto de socios. La mayoría de las empresas en Baja California tienen al menos una vulnerabilidad estructural significativa que sus dueños desconocen."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "¿Mis contratos comerciales me protegen?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Revisión de los contratos principales: clientes, proveedores, distribuidores y alianzas. El objetivo es identificar cláusulas deficientes, ausentes o que exponen a la empresa frente a terceros."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "¿Estoy en cumplimiento laboral?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Contratos individuales, Reglamento Interior de Trabajo, cumplimiento con NOM laborales, registros ante IMSS e INFONAVIT y exposición a litigio laboral latente."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "¿Tengo exposición regulatoria no gestionada?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis de las obligaciones regulatorias aplicables: PLD bajo la LFPIORPI si la actividad es vulnerable, protección de datos personales bajo la LFPDPPP y regulaciones sectoriales específicas del giro del cliente."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Componentes del Diagnóstico"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente a"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Corporate Structure Review"
+  },
+  {
+   "type": "paragraph",
+   "text": "Revisión de la estructura societaria completa: escritura constitutiva, estatutos, libros corporativos, poderes notariales vigentes, pacto de socios y evaluación de la protección patrimonial real de los socios."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente B"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contract Architecture Review"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diagnóstico de los contratos comerciales principales: hasta 5 contratos con clientes, proveedores y aliados. Identifica exposición; no produce contratos corregidos (eso corresponde al Contract Architecture™ como proyecto independiente)."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente C"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Labor & Employment Compliance Audit"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diagnóstico del cumplimiento laboral: contratos de trabajo, Reglamento Interior de Trabajo, cumplimiento NOM, obligaciones ante IMSS e INFONAVIT, y esquemas de subcontratación vigentes."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente D"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Regulatory & Compliance Review"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis de obligaciones regulatorias aplicables: PLD, protección de datos personales, obligaciones sectoriales específicas y nivel de preparación para inspecciones gubernamentales."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "ENTREGABLE"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Legal Risk Report"
+  },
+  {
+   "type": "paragraph",
+   "text": "Informe extenso con diagnóstico por componente, mapa de riesgos clasificado por urgencia e impacto, así como recomendaciones de acción con orientación de prioridad. Entregado en sesión de presentación de resultados."
+  },
+  {
+   "type": "paragraph",
+   "text": "El Corporate Health Check™ diagnostica. El Corporate Risk & Structure System™ diseña y guía implementación."
+  },
+  {
+   "type": "paragraph",
+   "text": "Al finalizar el Corporate Health Check™, el cliente tiene un reporte completo con mapa de riesgos y esquema general de acción priorizado. Los contratos corregidos, el pacto de socios rediseñado y el gobierno corporativo implementado son trabajo del CRSS y de proyectos independientes."
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando el Corporate Health Check™ deriva directamente en la contratación del CRSS dentro de los 60 días siguientes a la entrega del reporte, el 50% del honorario del Health Check se acredita al honorario del CRSS."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Cuándo es el momento correcto para un Corporate Health Check™?"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Antes de recibir inversión externa o incorporar un nuevo socio"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cuando la empresa ha crecido significativamente desde su constitución"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Antes de un proceso de venta o transacción corporativa"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Ante cambios en el liderazgo directivo"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Como práctica preventiva periódica cada 2 a 3 años en empresas medianas"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cuando se detectan señales de riesgo: conflictos laborales recurrentes, contratos disputados o presión de proveedores o clientes sobre términos contractuales"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué sigue después del Corporate Health Check™?"
+  },
+  {
+   "type": "paragraph",
+   "text": "El Legal Risk Report casi siempre revela necesidades que derivan en proyectos específicos. El camino más frecuente:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Corporate Risk & Structure System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando el reporte revela que la arquitectura completa necesita ser rediseñada (con acreditación del 50% del honorario del Corporate Health Check)"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "HR Legal System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando el diagnóstico laboral revela deficiencias estructurales"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contract Architecture™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando los contratos requieren rediseño integral"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Outside General Counsel"
+  },
+  {
+   "type": "paragraph",
+   "text": "Como siguiente paso natural para empresas que quieren presencia legal continua después del diagnóstico"
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Sabe realmente en qué estado jurídico está su empresa?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce también:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Corporate Risk & Structure System™",
+    "HR Legal System™",
+    "Contract Architecture™"
+   ]
+  }
+ ]
+}

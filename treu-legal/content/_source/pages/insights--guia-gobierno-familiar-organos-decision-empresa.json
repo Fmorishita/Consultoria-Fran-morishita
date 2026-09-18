@@ -1,0 +1,37 @@
+{
+ "id": 2897,
+ "slug": "insights--guia-gobierno-familiar-organos-decision-empresa",
+ "path": "/insights/guia-gobierno-familiar-organos-decision-empresa/",
+ "source": "https://treulegal.solutions/insights/guia-gobierno-familiar-organos-decision-empresa/",
+ "title": "Guía Gobierno Familiar y Órganos de Decisión para Empresas Familiares",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Gobierno Familiar y Órganos de Decisión en Empresas Familiares",
+  "description": "Las empresas familiares no fracasan por falta de talento. Fracasan porque las decisiones importantes no tienen una estructura que las sostenga. Diagnóstico de gobierno familiar en 12 preguntas.",
+  "ogTitle": "Gobierno Familiar y Órganos de Decisión en Empresas Familiares",
+  "ogDescription": "Las empresas familiares no fracasan por falta de talento. Fracasan porque las decisiones importantes no tienen una estructura que las sostenga. Diagnóstico de gobierno familiar en 12 preguntas.",
+  "ogImage": "https://treulegal.solutions/wp-content/uploads/2026/06/Guia-Gobierno-Familiar-y-Organos-de-Decision-Treu-Legal-Business-Abril-2026.png",
+  "canonical": "https://treulegal.solutions/insights/guia-gobierno-familiar-organos-decision-empresa/"
+ },
+ "blocks": [
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/06/Guia-Gobierno-Familiar-y-Organos-de-Decision-Treu-Legal-Business-Abril-2026.png?fit=1190%2C1683&amp;ssl=1",
+   "alt": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Gobierno Familiar y Órganos de Decisión"
+  },
+  {
+   "type": "heading",
+   "level": 5,
+   "text": "Diagnóstico y Orientación para Fundadores, Sucesores y Familias Empresarias que están rediseñando la forma en que se toman las decisiones en su empresa"
+  },
+  {
+   "type": "paragraph",
+   "text": "El momento ideal para construir un gobierno corporativo sólido es antes de que ninguna de estas cosas haya ocurrido: antes de que haya conflicto entre herederos, antes de que el fundador enferme, antes de que entre un socio externo que exija reglas profesionales y antes de que la empresa crezca hasta un punto en que las decisiones informales ya no sean sostenibles. El segundo momento correcto es ahora."
+  }
+ ]
+}

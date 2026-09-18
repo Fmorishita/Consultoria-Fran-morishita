@@ -1,0 +1,158 @@
+{
+ "id": 1890,
+ "slug": "areas-de-practica--labor-employment",
+ "path": "/areas-de-practica/labor-employment/",
+ "source": "https://treulegal.solutions/areas-de-practica/labor-employment/",
+ "title": "Labor & Employment Strategy",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Labor & Employment Strategy - Arquitectura Laboral Empresarial | Treu Legal & Business",
+  "description": "Contratos laborales, cumplimiento normativo, estrategias de terminación y prevención de contingencias laborales para empresas en México. Treu Legal & Business.",
+  "ogTitle": "Labor & Employment Strategy - Arquitectura Laboral Empresarial | Treu Legal & Business",
+  "ogDescription": "Contratos laborales, cumplimiento normativo, estrategias de terminación y prevención de contingencias laborales para empresas en México. Treu Legal & Business.",
+  "canonical": "https://treulegal.solutions/areas-de-practica/labor-employment/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Arquitectura Laboral Empresarial: más que cumplimiento, estructura"
+  },
+  {
+   "type": "paragraph",
+   "text": "El área de práctica laboral en Treu Legal & Business no es litigio laboral masivo. Es arquitectura laboral empresarial: el diseño de sistemas de contratación, políticas internas y protocolos de terminación que eliminan la exposición de la empresa a contingencias antes de que éstas se materialicen."
+  },
+  {
+   "type": "paragraph",
+   "text": "La distinción no es menor. Cambia completamente la posición del despacho frente a nuestros clientes y el tipo de relación que se construye. Un despacho que litiga depende de que el conflicto exista; un despacho que diseña arquitectura laboral trabaja para que el conflicto nunca llegue."
+  },
+  {
+   "type": "paragraph",
+   "text": "En los últimos cinco años, tres reformas laborales modificaron de forma estructural las obligaciones de los empleadores mexicanos: la reforma de subcontratación de 2021, la reforma de vacaciones de 2023 y la regulación del trabajo por reducción de jornada en proceso de implementación. Cada una de estas reformas genera contingencias reales en empresas que operan exactamente como lo hacían antes de que entraran en vigor. Una empresa que no ha revisado su arquitectura laboral desde 2020 tiene, con alta probabilidad, exposición activa en al menos dos de estos frentes."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Servicios"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Diseño de Contratos Laborales"
+  },
+  {
+   "type": "paragraph",
+   "text": "Elaboración de contratos laborales por perfil de puesto: contratos operativos, ejecutivos, de confianza, por obra determinada y por tiempo determinado. Diseñados conforme a la LFT, las NOM aplicables y el perfil de riesgo de cada posición. No son formatos genéricos; son documentos diseñados para el modelo de negocio específico del cliente."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Reglamento Interior de Trabajo"
+  },
+  {
+   "type": "paragraph",
+   "text": "Elaboración o actualización del Reglamento Interior de Trabajo conforme a la Ley Federal del Trabajo y las NOM aplicables. Incluye políticas de conducta, normas de asistencia, uso de tecnología de la empresa, procedimientos disciplinarios y protocolos de queja."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Manual del Empleado"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño del manual del empleado que comunica las políticas de la empresa de forma clara y accesible: beneficios, conducta esperada, canales de comunicación interna y políticas operativas. Instrumento de gestión interna y respaldo documental en procedimientos disciplinarios."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Auditoría Laboral Preventiva"
+  },
+  {
+   "type": "paragraph",
+   "text": "Revisión sistemática de la arquitectura laboral existente: contratos vigentes, estructura de nómina, integración del salario, documentación de terminaciones anteriores, cumplimiento de NOM y estado de obligaciones ante el IMSS e INFONAVIT. Produce un diagnóstico con mapa de contingencias y plan de corrección priorizado."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Estrategias y Protocolos de Terminación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño de protocolos de terminación laboral por tipo de separación: rescisión justificada, terminación sin causa, renuncia voluntaria y acuerdo mutuo. Incluye formatos de finiquito, cartas de rescisión, cálculo de liquidación y documentación de soporte para cada escenario."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Cumplimiento NOM Laboral"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría en la implementación de las NOM laborales aplicables: NOM-019 (comisiones seguridad e higiene), NOM-030 (medidas de seguridad y prevención de accidentes), NOM-035 (factores de riesgo psicosocial) y NOM-037 (teletrabajo). Diagnóstico, diseño de protocolos y documentación de cumplimiento."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Compliance en Subcontratación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Revisión y corrección de esquemas de subcontratación conforme a la reforma de 2021. Verificación del REPSE de proveedores, actualización contractual, implementación de verificaciones cuatrimestrales y diseño de mecanismos de protección frente a responsabilidad solidaria."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Litigio Laboral Estratégico"
+  },
+  {
+   "type": "paragraph",
+   "text": "Representación en procedimientos ante los Centros de Conciliación Laboral y Tribunales del Trabajo para conflictos de alta complejidad o valor estratégico. El litigio laboral en Treu no es servicio de volumen: es intervención quirúrgica en casos donde la estrategia procesal requiere visión de negocio integrada."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "El diferenciador: prevención sobre reacción"
+  },
+  {
+   "type": "paragraph",
+   "text": "El diferenciador de Treu en el área laboral es la visión preventiva y el lenguaje de negocio. No hablamos de «defender a la empresa en un juicio laboral»; hablamos de que el juicio nunca llegue a ocurrir porque la arquitectura contractual es correcta."
+  },
+  {
+   "type": "paragraph",
+   "text": "Este reposicionamiento transforma al despacho de proveedor de servicios legales a asesor estratégico de recursos humanos. El cliente no llama cuando tiene un problema; llama para asegurarse de que el problema no llegue."
+  },
+  {
+   "type": "paragraph",
+   "text": "En el contexto de Baja California, con la complejidad laboral que introduce la manufactura, el nearshoring, el salario mínimo diferenciado de la Zona Libre de la Frontera Norte y la supervisión intensificada de la STPS; esta distinción tiene impacto directo sobre la estabilidad operativa de la empresa."
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Conoce el estado real de la arquitectura laboral de su empresa?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce otras áreas:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Compliance & Risk Prevention",
+    "Corporate & Business Law",
+    "Cross-Border Advisory"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Legal Products relacionados:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "LP-03 HR Legal System",
+    "LP-02 Corporate Health Check",
+    "LP-05 Corporate Risk & Structure System"
+   ]
+  }
+ ]
+}

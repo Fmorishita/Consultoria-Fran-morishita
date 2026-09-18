@@ -1,0 +1,22 @@
+node_modules
+.next
+out
+.env
+.env.local
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+/test-results
+/playwright-report
+
+# Capturas e informes que se regeneran con los scripts de QA.
+/docs/_capturas/*.png
+/docs/_lighthouse
+/docs/_a11y.json
+
+# Volcados crudos de la extracción: pesan 21 MB y se regeneran con
+# `npm run extract`. Lo que sí se versiona es el contenido estructurado
+# (content/_source/pages/) y las respuestas consolidadas de la API, que son
+# la fuente de verdad de `npm run verify:content`.
+/content/_source/meta
+/content/_source/html

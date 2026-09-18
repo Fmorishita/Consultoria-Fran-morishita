@@ -1,0 +1,203 @@
+{
+ "id": 1904,
+ "slug": "legal-products--contract-architecture",
+ "path": "/legal-products/contract-architecture/",
+ "source": "https://treulegal.solutions/legal-products/contract-architecture/",
+ "title": "Contract Architecture",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Contract Architecture™ - Diseño de Arquitectura Contractual para Empresas | Treu Legal & Business",
+  "description": "Diseño del set completo de contratos para el modelo de negocio de su empresa: servicios, compraventa, distribución, NDAs y acuerdos de no competencia. Contratos para su industria, no formatos genéricos.",
+  "ogTitle": "Contract Architecture™ - Diseño de Arquitectura Contractual para Empresas | Treu Legal & Business",
+  "ogDescription": "Diseño del set completo de contratos para el modelo de negocio de su empresa: servicios, compraventa, distribución, NDAs y acuerdos de no competencia. Contratos para su industria, no formatos genéricos.",
+  "canonical": "https://treulegal.solutions/legal-products/contract-architecture/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué obtiene?"
+  },
+  {
+   "type": "paragraph",
+   "text": "La empresa deja de improvisar contratos o usar formatos genéricos descargados de internet o generados por herramientas de inteligencia artificial masiva. Recibe un set de instrumentos diseñados específicamente para su modelo de negocio, sus clientes y sus proveedores, con cláusulas que reflejan su realidad operativa y la protegen ante los riesgos específicos de su industria."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "El costo de los contratos genéricos"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los contratos descargados de internet o generados sin criterio jurídico aplicado al modelo de negocio generan costos concretos y frecuentes:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cláusulas de responsabilidad que no limitan correctamente la exposición de la empresa ante incumplimientos de clientes o proveedores"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Ausencia de mecanismos de resolución de controversias que obliguen a litigar cuando una negociación habría resuelto el conflicto más rápido"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Propiedad intelectual mal asignada: trabajo desarrollado para un cliente que puede ser reclamado por el colaborador que lo ejecutó"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Condiciones de terminación que no contemplan los supuestos reales del negocio y generan disputas en cada desvinculación"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "NDA que no son ejecutables porque no definen correctamente qué información es confidencial ni cuáles son las consecuencias del incumplimiento"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Componentes del producto"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente a"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contrato de obra o de prestación de servicios"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para empresas que venden obras o prestan servicios. Incluye definición de alcance, entregables, forma de pago, propiedad intelectual sobre el trabajo entregado, limitación de responsabilidad, confidencialidad y condiciones de terminación."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente B"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contrato de compraventa"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para empresas que comercializan bienes. Incluye especificaciones, precio, condiciones de entrega, garantías, mecanismos de reclamación por defectos y condiciones de resolución del contrato."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente C"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Acuerdo de confidencialidad (NDA)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Versiones unilateral y bilateral. Definición precisa de la información protegida, duración, excepciones, obligaciones del receptor y consecuencias del incumplimiento. Ejecutable bajo la legislación mexicana."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente D"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Acuerdo de no competencia y no solicitud"
+  },
+  {
+   "type": "paragraph",
+   "text": "Restricciones para colaboradores, socios comerciales y ex-empleados clave. Diseñados dentro de los límites de ejecutabilidad bajo el derecho mexicano, que tiene restricciones específicas en esta materia que los formatos importados de Estados Unidos no contemplan."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente E"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contrato de distribución o agencia comercial"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando el modelo de negocio lo requiere: condiciones de la relación con distribuidores o agentes, territorio, exclusividad, comisiones, inventarios y terminación. Diseñado para el modelo específico del cliente."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente F"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Condiciones generales de contratación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para empresas con volumen de transacciones o con presencia en sitio web: condiciones generales que regulan la relación con clientes en masa, incluyendo limitaciones de responsabilidad y mecanismos de aceptación."
+  },
+  {
+   "type": "paragraph",
+   "text": "Para clientes con operaciones entre México y California, el Contract Architecture™ puede incluir versiones en inglés o versiones bilingües de los contratos clave. Este alcance se cotiza con ajuste según el número de contratos con versión bilingüe y su complejidad. Los contratos diseñados originalmente en inglés se cotizan en el rango superior del producto."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué sigue después del Contract Architecture™?"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Corporate Health Check™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los contratos están listos; ¿qué otras áreas requieren revisión en la estructura de la empresa?"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Outside General Counsel"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para empresas que quieren revisión continua de nuevos contratos y actualización del set según la evolución del negocio"
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Sus contratos están diseñados para proteger su modelo de negocio o son formatos adaptados?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce también:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Corporate Health Check™",
+    "Corporate Risk & Structure System™",
+    "Cross-Border Advisory"
+   ]
+  }
+ ]
+}

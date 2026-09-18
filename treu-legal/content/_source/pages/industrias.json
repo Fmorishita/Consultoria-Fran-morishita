@@ -1,0 +1,134 @@
+{
+ "id": 1221,
+ "slug": "industrias",
+ "path": "/industrias/",
+ "source": "https://treulegal.solutions/industrias/",
+ "title": "Industrias",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Industrias que Asesoramos | Treu Legal & Business",
+  "description": "Asesoría jurídica especializada para desarrollo inmobiliario, construcción e infraestructura, manufactura y comercio, y empresas binacionales en Baja California y México.",
+  "ogTitle": "Industrias que Asesoramos | Treu Legal & Business",
+  "ogDescription": "Asesoría jurídica especializada para desarrollo inmobiliario, construcción e infraestructura, manufactura y comercio, y empresas binacionales en Baja California y México.",
+  "ogImage": "https://treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c28ac1979e2.png",
+  "canonical": "https://treulegal.solutions/industrias/"
+ },
+ "blocks": [
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business asesora empresas en sectores donde la estructura jurídica y contractual tiene impacto directo sobre la estabilidad operativa del negocio. Cada industria tiene su propio perfil de riesgo legal, sus obligaciones regulatorias específicas y las estructuras contractuales que mejor protegen sus intereses."
+  },
+  {
+   "type": "paragraph",
+   "text": "Nuestro trabajo no es aplicar soluciones genéricas, es diseñar respuestas jurídicas que correspondan a la realidad operativa de cada sector."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c28ac1979e2.png?ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Desarrollo Inmobiliario"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estructuración legal de proyectos, due diligence de títulos, contratos de desarrollo e inversión, así como acompañamiento en operaciones de financiamiento inmobiliario."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c287b0efae8.png?ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Construcción e Infraestructura"
+  },
+  {
+   "type": "paragraph",
+   "text": "Sistemas contractuales para obra, subcontratación conforme a la reforma de 2021, gestión de riesgos contractuales y arquitectura laboral para proyectos de construcción."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/04/Brown-and-White-Modern-Expert-Legal-Services-Presentation-8.png?ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Comercio, Servicios y Manufactura"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cumplimiento laboral a través de sistemas de contratación profesionalizados, contratos comerciales complejos, cumplimiento normativo y estructura corporativa para empresas en operación y crecimiento."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c2919e44f46.png?ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Empresas Binacionales"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría jurídica para empresas que operan entre México y California: estructuración corporativa para inversión extranjera, nearshoring, cumplimiento binacional y coordinación con asesores en EE.UU."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "ENFOQUE SECTORIAL"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Por qué el conocimiento de la industria cambia la calidad de la asesoría?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Un abogado que entiende cómo funciona una constructora diseña contratos de obra diferentes a los que elaboraría sin ese conocimiento: anticipa los conflictos frecuentes del sector, incluye los mecanismos de protección que la práctica indica que se necesitan y habla el mismo idioma que el director de obra."
+  },
+  {
+   "type": "paragraph",
+   "text": "Lo mismo ocurre con el desarrollo inmobiliario, la manufactura o las operaciones binacionales. El conocimiento sectorial no sustituye al conocimiento jurídico, lo potencia."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "SOLUCIONES JURÍDICAS POR INDUSTRIA"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Legal Products para cada Sector"
+  },
+  {
+   "type": "paragraph",
+   "text": "Nuestros productos jurídicos están diseñados para resolver necesidades específicas de empresas en operación:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "LP-01 Business Launch Package | para empresas que inician con la estructura correcta",
+    "LP-03 HR Legal System | para empresas que necesitan arquitectura laboral sólida",
+    "LP-04 Contract Architecture | para empresas que requieren contratos diseñados para su industria",
+    "LP-05 Corporate Risk & Structure System | diagnóstico y diseño para empresas en crecimiento",
+    "LP-06 Cross-Border Entry Package | para empresas extranjeras que entran al mercado mexicano",
+    "Ver todos los Legal Products"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Opera en alguno de estos sectores y requiere asesoría jurídica especializada?"
+  }
+ ]
+}

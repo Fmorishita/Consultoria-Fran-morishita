@@ -1,0 +1,66 @@
+[
+ {
+  "file": "valle-de-guadalupe-640.avif",
+  "bytes": 24324
+ },
+ {
+  "file": "valle-de-guadalupe-640.webp",
+  "bytes": 60580
+ },
+ {
+  "file": "valle-de-guadalupe-1024.avif",
+  "bytes": 76127
+ },
+ {
+  "file": "valle-de-guadalupe-1024.webp",
+  "bytes": 174884
+ },
+ {
+  "file": "valle-de-guadalupe-1600.avif",
+  "bytes": 205512
+ },
+ {
+  "name": "valle-de-guadalupe",
+  "intrinsic": "1920x875"
+ },
+ {
+  "file": "tijuana-san-diego-iss-640.avif",
+  "bytes": 22940
+ },
+ {
+  "file": "tijuana-san-diego-iss-640.webp",
+  "bytes": 52132
+ },
+ {
+  "file": "tijuana-san-diego-iss-1024.avif",
+  "bytes": 63439
+ },
+ {
+  "file": "tijuana-san-diego-iss-1024.webp",
+  "bytes": 147272
+ },
+ {
+  "name": "tijuana-san-diego-iss",
+  "intrinsic": "1920x1278"
+ },
+ {
+  "file": "retrato-la-firma-480.avif",
+  "bytes": 3943
+ },
+ {
+  "file": "retrato-la-firma-480.webp",
+  "bytes": 6450
+ },
+ {
+  "file": "retrato-la-firma-800.avif",
+  "bytes": 7230
+ },
+ {
+  "file": "retrato-la-firma-800.webp",
+  "bytes": 12464
+ },
+ {
+  "name": "retrato-la-firma",
+  "intrinsic": "1536x1024"
+ }
+]
