@@ -48,7 +48,8 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     payload.consentimiento = form.consentimiento.checked ? 'on' : '';
 
     try {
-      const res = await fetch('/api/contacto', {
+      // Con barra final: `trailingSlash` redirige el POST y añade un salto.
+      const res = await fetch('/api/contacto/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

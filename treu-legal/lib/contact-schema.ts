@@ -23,8 +23,12 @@ export const contactSchema = z.object({
     .union([z.boolean(), z.literal('on')])
     .transform((v) => v === true || v === 'on')
     .refine((v) => v, 'Es necesario aceptar el tratamiento de datos para enviar la solicitud.'),
-  /** Trampa para bots: debe llegar vacía. */
-  referencia: z.string().max(0).optional().default(''),
+  /**
+   * Trampa para bots. No se valida aquí a propósito: si se rechazara con un
+   * error de validación, la respuesta delataría cuál es el campo trampa. El
+   * endpoint comprueba que llegue vacía y, si no, acepta en silencio.
+   */
+  referencia: z.string().max(200).optional().default(''),
   /** Página desde la que se envió, para saber qué convierte. */
   origen: z.string().max(200).optional().default(''),
 });
