@@ -82,12 +82,11 @@ for (const f of ['microcopy.ts', 'facts.ts', 'site.ts', 'form.ts', 'corrections.
 const changes = path.join(ROOT, 'docs/CAMBIOS-DE-CONTENIDO.md');
 if (fs.existsSync(changes)) corpus.push(norm(fs.readFileSync(changes, 'utf8')));
 
-// Textos maquetados a mano en las plantillas, que citan literalmente al sitio.
-for (const dir of ['app', 'components']) {
-  walk(path.join(ROOT, dir), (file) => {
-    if (/\.(tsx|ts)$/.test(file)) corpus.push(norm(fs.readFileSync(file, 'utf8')));
-  });
-}
+// Nota deliberada: NI `app/` NI `components/` forman parte del corpus.
+// Incluirlos validaría automáticamente cualquier texto escrito a mano en una
+// plantilla, que es justo lo que esta comprobación debe detectar. Todo texto
+// literal citado en una plantilla tiene que existir en `content/_source/`,
+// en `content/` o en CAMBIOS-DE-CONTENIDO.md.
 
 const HAYSTACK = corpus.join('\n');
 

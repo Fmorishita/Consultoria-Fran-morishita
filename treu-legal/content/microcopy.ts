@@ -31,6 +31,14 @@ export const ui = {
   linkCopied: 'Enlace copiado',
   share: 'Compartir',
 
+  // Enlaces de sección
+  viewAllAreas: 'Ver todas las áreas de práctica',
+  viewSessionDetail: 'Ver la Strategic Legal Session en detalle',
+  viewFirm: 'Conocer La Firma',
+  viewAllInsights: 'Ver todos los Insights',
+  directChannels: 'Canales directos',
+  requiredFieldsNote: 'Los campos marcados como obligatorios son necesarios para atender la solicitud.',
+
   // Secciones
   practiceAreas: 'Áreas de práctica',
   industries: 'Industrias',

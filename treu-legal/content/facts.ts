@@ -50,6 +50,20 @@ export const founder = {
     'Su práctica se centra en asesoría jurídica corporativa para empresas, con especialización en estructuración corporativa, estrategia laboral empresarial y gestión de riesgos regulatorios en México.',
   crossBorder:
     'Asesora regularmente a empresas en los sectores de construcción e infraestructura, manufactura, desarrollo inmobiliario y operaciones internacionales, con particular enfoque en el entorno empresarial transfronterizo México–California, acompañando a las empresas en la construcción de estructuras jurídicas sólidas, la prevención de contingencias legales y la gestión estratégica de disputas',
+  /**
+   * Fragmentos literales del perfil de /la-firma/, para las franjas de
+   * confianza. No son paráfrasis: son subcadenas exactas de `experience`.
+   */
+  highlights: [
+    { label: 'Trayectoria', value: 'más de 18 años de experiencia en práctica jurídica de alto nivel' },
+    {
+      label: 'Formación notarial',
+      value: '15 años de formación notarial corporativa en la Notaría Pública No. 1 de Ensenada',
+    },
+    { label: 'Formación', value: 'UABC · ESADE · OMPI · Duke University' },
+    { label: 'Visión', value: 'el entorno empresarial transfronterizo México–California' },
+  ],
+
   /** Credenciales como texto. Sin logos de instituciones (regla 6). */
   credentials: [
     { program: 'Licenciatura en Derecho', institution: 'Universidad Autónoma de Baja California' },

@@ -8,7 +8,7 @@ el contenido extraído del sitio actual (`content/_source/`), en
 
 - Fecha: 2026-09-18
 - Rutas analizadas: 30
-- Fragmentos de texto comprobados: 2302
+- Fragmentos de texto comprobados: 2298
 - **Textos sin fuente: 0**
 
 Resultado: **cero textos sin fuente**.

@@ -12,6 +12,7 @@ export const textCorrections: { from: string; to: string; reason: string }[] = [
   { from: 'necesaria para operara', to: 'necesaria para operar', reason: 'Errata de conjugación.' },
   { from: 'para empresas, son especialización', to: 'para empresas, con especialización', reason: 'Errata: "son" por "con".' },
   { from: 'aliados estratégicos de las empresas..', to: 'aliados estratégicos de las empresas.', reason: 'Punto duplicado.' },
+  { from: 'Quienes somos', to: 'Quiénes somos', reason: 'Falta la tilde del interrogativo indirecto.' },
   {
     from: 'Litigation Strategy & Corporate Disputes',
     to: 'Strategic Litigation & Dispute Resolution',

@@ -1,0 +1,176 @@
+{
+ "date": "2026-09-18T09:28:07.159Z",
+ "rows": [
+  {
+   "id": "cooley",
+   "country": "EE.UU.",
+   "url": "https://www.cooley.com",
+   "perf": 14,
+   "a11y": 96,
+   "bp": 73,
+   "seo": 100,
+   "lcp": 15948.138500000005,
+   "bytes": 2335871,
+   "requests": 75,
+   "blocked": false,
+   "viewport": {
+    "h1": "Counsel, \n\n\t\t\t\tbeyond\n\n\t\t\t\tconvention.",
+    "ctasEnPrimerPantallazo": 16,
+    "textoEnPrimerPantallazo": [
+     "Counsel, \n\n\t\t\t\tbeyond\n\n\t\t\t\tconvention.",
+     "Cooley Named an Official Legal Services Provider Of LA28 Olympic and Paralympic Games",
+     "Cooley Launches GO Public With OpenAI"
+    ],
+    "tieneTelefono": true,
+    "tieneWhatsapp": false,
+    "idiomas": []
+   }
+  },
+  {
+   "id": "wsgr",
+   "country": "EE.UU.",
+   "url": "https://www.wsgr.com",
+   "perf": 40,
+   "a11y": 85,
+   "bp": 96,
+   "seo": 75,
+   "lcp": 22353.581,
+   "bytes": 4265117,
+   "requests": 59,
+   "blocked": false,
+   "viewport": {
+    "h1": "www.wsgr.com",
+    "ctasEnPrimerPantallazo": 2,
+    "textoEnPrimerPantallazo": [
+     "www.wsgr.com",
+     "Performing security verification",
+     "This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot."
+    ],
+    "tieneTelefono": false,
+    "tieneWhatsapp": false,
+    "idiomas": []
+   }
+  },
+  {
+   "id": "fenwick",
+   "country": "EE.UU.",
+   "url": "https://www.fenwick.com",
+   "perf": 42,
+   "a11y": 85,
+   "bp": 73,
+   "seo": 92,
+   "lcp": 7227.749999999999,
+   "bytes": 1200049,
+   "requests": 49,
+   "blocked": false,
+   "viewport": {
+    "h1": "Purpose-Built for\nTech & Life Sciences",
+    "ctasEnPrimerPantallazo": 16,
+    "textoEnPrimerPantallazo": [
+     "Main navigation",
+     "Purpose-Built for\nTech & Life Sciences"
+    ],
+    "tieneTelefono": false,
+    "tieneWhatsapp": false,
+    "idiomas": []
+   }
+  },
+  {
+   "id": "vonwobeser",
+   "country": "México",
+   "url": "https://www.vonwobeser.com",
+   "perf": 83,
+   "a11y": 100,
+   "bp": 96,
+   "seo": 100,
+   "lcp": 4162.162,
+   "bytes": 623652,
+   "requests": 23,
+   "blocked": false,
+   "viewport": {
+    "h1": "Von Wobeser y Sierra — Firma de abogados líder en México",
+    "ctasEnPrimerPantallazo": 10,
+    "textoEnPrimerPantallazo": [
+     "Von Wobeser y Sierra — Firma de abogados líder en México",
+     "Noticias",
+     "Tu privacidad, tu decisión"
+    ],
+    "tieneTelefono": true,
+    "tieneWhatsapp": false,
+    "idiomas": [
+     "es-MX",
+     "en",
+     "x-default"
+    ]
+   }
+  },
+  {
+   "id": "galicia",
+   "country": "México",
+   "url": "https://www.galicia.com.mx",
+   "perf": 54,
+   "a11y": 58,
+   "bp": 92,
+   "seo": 73,
+   "lcp": 8519.652199999999,
+   "bytes": 10653500,
+   "requests": 72,
+   "blocked": false,
+   "viewport": {
+    "h1": null,
+    "ctasEnPrimerPantallazo": 3,
+    "textoEnPrimerPantallazo": [],
+    "tieneTelefono": false,
+    "tieneWhatsapp": false,
+    "idiomas": []
+   }
+  },
+  {
+   "id": "ritch",
+   "country": "México",
+   "url": "https://www.ritch.com.mx",
+   "perf": 38,
+   "a11y": 82,
+   "bp": 96,
+   "seo": 85,
+   "lcp": 6492.715499999998,
+   "bytes": 1432801,
+   "requests": 59,
+   "blocked": false,
+   "viewport": {
+    "h1": null,
+    "ctasEnPrimerPantallazo": 8,
+    "textoEnPrimerPantallazo": [],
+    "tieneTelefono": true,
+    "tieneWhatsapp": false,
+    "idiomas": [
+     "es",
+     "en",
+     "x-default"
+    ]
+   }
+  },
+  {
+   "id": "creel",
+   "country": "México",
+   "url": "https://www.creel.mx",
+   "perf": null,
+   "a11y": null,
+   "bp": null,
+   "seo": null,
+   "lcp": null,
+   "bytes": null,
+   "requests": null,
+   "blocked": true,
+   "error": "Runtime error encountered: Lighthouse was unable to reliably load the page you requested. Make sure you are testing the correct URL and that the serve",
+   "viewport": {
+    "h1": null,
+    "ctasEnPrimerPantallazo": 0,
+    "textoEnPrimerPantallazo": [],
+    "tieneTelefono": false,
+    "tieneWhatsapp": false,
+    "idiomas": []
+   }
+  }
+ ]
+}

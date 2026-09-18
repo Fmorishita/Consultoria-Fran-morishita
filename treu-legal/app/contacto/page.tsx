@@ -7,6 +7,7 @@ import { TrackedLink } from '@/components/TrackedLink';
 import { breadcrumbSchema, pageMetadata } from '@/lib/seo';
 import { contact, firm, session, whatsappUrl } from '@/content/facts';
 import { getPage } from '@/content/pages';
+import { ui } from '@/content/microcopy';
 
 const PATH = '/contacto/';
 
@@ -29,9 +30,10 @@ export default function Page() {
 
   return (
     <>
+      {/* La entradilla es la frase literal de /strategic-legal-session/. */}
       <PageHeader
         title="Contacto"
-        lead="Complete el formulario de solicitud de sesión. Recibirá respuesta en menos de 24 horas hábiles."
+        lead="Complete el formulario. Recibirá respuesta en menos de 24 horas hábiles para confirmar disponibilidad y coordinar el horario."
         trail={trail}
       />
 
@@ -40,7 +42,7 @@ export default function Page() {
           {/* Canales directos, visibles sin scroll en móvil. */}
           <div>
             <div aria-hidden="true" className="h-px w-12 bg-blue" />
-            <h2 className="mt-5 text-step-3">Canales directos</h2>
+            <h2 className="mt-5 text-step-3">{ui.directChannels}</h2>
             <ul className="mt-6 divide-y divide-line border-y border-line">
               <li>
                 <TrackedLink
@@ -116,28 +118,28 @@ export default function Page() {
               </li>
             </ul>
 
+            {/* Descripción literal de la sesión, tal como la publica su página. */}
             <div className="mt-8 border border-line bg-paper p-5">
-              <p className="text-step--1 leading-relaxed text-slate">
-                Si lo que necesita es una sesión de trabajo con el Principal Counsel, la{' '}
-                <TrackedLink
-                  href={session.path}
-                  event="cta_click"
-                  location="contacto_nota"
-                  className="font-medium text-blue underline underline-offset-2"
-                >
-                  {session.name}
-                </TrackedLink>{' '}
-                dura {session.duration} y su honorario es {session.price.toLowerCase()}, acreditable al
-                proyecto.
+              <h3 className="text-step-1 font-semibold">{session.name}</h3>
+              <p className="mt-2 text-step--1 leading-relaxed text-slate">
+                Sesión de trabajo de 60 minutos con el Principal Counsel del despacho para analizar la
+                situación jurídica de su empresa con criterio aplicado a su realidad operativa
+                específica.
               </p>
+              <TrackedLink
+                href={session.path}
+                event="cta_click"
+                location="contacto_nota"
+                className="mt-3 inline-flex min-h-[44px] items-center text-step--1 font-semibold text-blue underline underline-offset-4"
+              >
+                {ui.viewSessionDetail}
+              </TrackedLink>
             </div>
           </div>
 
           <div id="formulario" className="scroll-mt-24 border border-line bg-white p-6 sm:p-8">
             <h2 className="text-step-3">Solicitud de sesión</h2>
-            <p className="mt-2 text-step--1 text-slate">
-              Los campos marcados como obligatorios son necesarios para atender la solicitud.
-            </p>
+            <p className="mt-2 text-step--1 text-slate">{ui.requiredFieldsNote}</p>
             <div className="mt-6">
               <ContactForm />
             </div>

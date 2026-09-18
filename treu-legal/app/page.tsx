@@ -58,11 +58,11 @@ export default async function HomePage() {
       {/* Franja de confianza: hechos reales que hoy viven enterrados en subpáginas. */}
       <section className="border-b border-line bg-paper">
         <div className="shell py-10">
+          {/* Fragmentos literales del perfil de /la-firma/. Ver content/facts.ts. */}
           <dl className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
-            <TrustFact label="Trayectoria" value="Más de 18 años de práctica jurídica de alto nivel" />
-            <TrustFact label="Formación notarial" value="15 años en la Notaría Pública No. 1 de Ensenada" />
-            <TrustFact label="Formación" value="UABC · ESADE · OMPI · Duke University" />
-            <TrustFact label="Visión" value="Entorno empresarial transfronterizo México–California" />
+            {founder.highlights.map((h) => (
+              <TrustFact key={h.label} label={h.label} value={h.value} />
+            ))}
           </dl>
         </div>
       </section>
@@ -84,7 +84,7 @@ export default async function HomePage() {
       <Section title={ui.practiceAreas} tone="paper">
         <CardGrid items={practiceAreas} basePath="/areas-de-practica/" />
         <div className="mt-8">
-          <SectionLink href="/areas-de-practica/">Ver todas las áreas de práctica</SectionLink>
+          <SectionLink href="/areas-de-practica/">{ui.viewAllAreas}</SectionLink>
         </div>
       </Section>
 
@@ -99,7 +99,7 @@ export default async function HomePage() {
       {/* Cómo funciona la sesión: la estructura 15/30/15 es una secuencia real. */}
       <Section
         eyebrow="Estructura"
-        title="Cómo funciona la Strategic Legal Session"
+        title="Qué ocurre en los 60 minutos"
         lead="La sesión tiene una estructura definida. No improvisa. Cada bloque de tiempo tiene un propósito específico."
       >
         <ol className="mt-12 grid gap-px border border-line bg-line lg:grid-cols-3">
@@ -125,7 +125,7 @@ export default async function HomePage() {
           <TrustFact label="Respuesta" value={session.response} />
         </dl>
         <div className="mt-8">
-          <SectionLink href={session.path}>Ver la Strategic Legal Session en detalle</SectionLink>
+          <SectionLink href={session.path}>{ui.viewSessionDetail}</SectionLink>
         </div>
       </Section>
 
@@ -151,7 +151,7 @@ export default async function HomePage() {
               ))}
             </ul>
             <p>
-              <Link href="/la-firma/">Conocer La Firma</Link>
+              <Link href="/la-firma/">{ui.viewFirm}</Link>
             </p>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default async function HomePage() {
         <Section title={HOME.insightsTitle} lead={HOME.insightsLead}>
           <PostGrid posts={posts} />
           <div className="mt-8">
-            <SectionLink href="/insights/">Ver todos los Insights</SectionLink>
+            <SectionLink href="/insights/">{ui.viewAllInsights}</SectionLink>
           </div>
         </Section>
       )}
