@@ -16,7 +16,7 @@ export const ui = {
 
   // Acciones
   session: 'Strategic Legal Session',
-  sessionShort: 'Sesión',
+  sessionShort: 'Agendar sesión',
   call: 'Llamar',
   whatsapp: 'WhatsApp',
   writeWhatsapp: 'Escribir por WhatsApp',
@@ -56,6 +56,12 @@ export const ui = {
   search: 'Buscar',
   noResults: 'No hay artículos que coincidan con esa búsqueda.',
   readingTime: 'min de lectura',
+  /** Sección de compromiso con el cliente. Copy neutro, sin afirmar nada que
+      el sitio no publique: los datos que la acompañan salen de facts.ts. */
+  commitmentTitle: 'Quien nos contrata, primero',
+  commitmentWho: 'Con quién habla',
+  commitmentResponse: 'Tiempo de respuesta',
+  commitmentWhere: 'Dónde',
   /** Sólo para lector de pantalla: sitúa cada fase de la sesión en la secuencia. */
   sessionPhase: (n: number, total: number) => `fase ${n} de ${total}`,
   publishedOn: 'Publicado el',

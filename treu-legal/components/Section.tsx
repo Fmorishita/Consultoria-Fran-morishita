@@ -33,10 +33,13 @@ export function Section({
     <section id={id} className={`${tones[tone]} ${className}`}>
       <div className="shell py-section">
         {(eyebrow || title || lead) && (
-          <header className="max-w-prose">
+          // Centrada. Antes iba pegada al margen izquierdo con todo el ancho
+          // libre a la derecha, y esa asimetría es lo que hacía que la página
+          // se leyera desordenada. El filete también se centra.
+          <header className="mx-auto max-w-prose text-center aparece">
             <div
               aria-hidden="true"
-              className={`h-px w-12 ${tone === 'blue' ? 'bg-white/50' : 'bg-blue'}`}
+              className={`mx-auto h-px w-12 ${tone === 'blue' ? 'bg-white/50' : 'bg-blue'}`}
             />
             {eyebrow && (
               <p className={`mt-5 text-step--1 ${tone === 'blue' ? 'text-white/70' : 'text-slate'}`}>
@@ -48,7 +51,7 @@ export function Section({
             )}
             {lead && (
               <p
-                className={`mt-4 text-step-1 leading-relaxed ${
+                className={`mx-auto mt-4 max-w-prose text-step-1 leading-relaxed ${
                   tone === 'blue' ? 'text-white/80' : 'text-slate'
                 }`}
               >

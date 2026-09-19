@@ -8,10 +8,10 @@ import { ui } from '@/content/microcopy';
  * Hero de la home. Único momento audaz del sitio.
  *
  * La composición es un plano: a la izquierda, el panel de marca con la
- * retícula de construcción y las cotas; a la derecha, una fotografía real del
- * Valle de Guadalupe cuyas hileras de viñedo son, de hecho, una retícula. El
- * concepto de arquitectura jurídica aparece en el propio paisaje de Baja
- * California, no en un adorno.
+ * retícula de construcción y las cotas; a la derecha, el exoesqueleto de
+ * hormigón de un edificio: la estructura que lo sostiene en pie. Es la
+ * metáfora literal de «arquitectura jurídica empresarial», que es lo que vende
+ * el despacho. Antes había un viñedo, que no decía nada del negocio.
  *
  * Separar el texto de la fotografía en paneles garantiza el contraste AA sin
  * tener que apagar la imagen hasta hacerla invisible.
@@ -67,16 +67,16 @@ export function Hero({ tagline, proposition }: { tagline: string; proposition: s
           <picture>
             <source
               type="image/avif"
-              srcSet="/img/valle-de-guadalupe-640.avif 640w, /img/valle-de-guadalupe-1024.avif 1024w, /img/valle-de-guadalupe-1600.avif 1600w"
+              srcSet="/img/hero-estructura-640.avif 640w, /img/hero-estructura-1024.avif 1024w, /img/hero-estructura-1600.avif 1600w"
               sizes="(min-width: 1024px) 46vw, 100vw"
             />
             <img
-              src="/img/valle-de-guadalupe-1024.webp"
-              srcSet="/img/valle-de-guadalupe-640.webp 640w, /img/valle-de-guadalupe-1024.webp 1024w, /img/valle-de-guadalupe-1600.webp 1600w"
+              src="/img/hero-estructura-1024.webp"
+              srcSet="/img/hero-estructura-640.webp 640w, /img/hero-estructura-1024.webp 1024w, /img/hero-estructura-1600.webp 1600w"
               sizes="(min-width: 1024px) 46vw, 100vw"
-              alt="Hileras de viñedo del Valle de Guadalupe, en Ensenada, Baja California, trazadas en líneas paralelas sobre la ladera."
+              alt="Estructura de hormigón que forma el esqueleto exterior de un edificio, con sus tirantes cruzados recortados contra el cielo."
               width={1600}
-              height={729}
+              height={2400}
               fetchPriority="high"
               decoding="async"
               className="h-full w-full object-cover"

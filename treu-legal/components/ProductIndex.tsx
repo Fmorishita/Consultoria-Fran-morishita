@@ -20,17 +20,17 @@ type Product = {
  */
 export function ProductIndex({ items }: { items: readonly Product[] }) {
   return (
-    <ul className="mt-12 border-t border-line">
+    <ul className="mt-12 border-t border-line aparece-escalonado">
       {items.map((p) => (
         <li key={p.slug} className="border-b border-line">
           <Link
             href={`/legal-products/${p.slug}/`}
-            className="group grid gap-x-10 gap-y-2 py-6 transition-colors hover:bg-paper focus-visible:bg-paper lg:grid-cols-[1.1fr_1.4fr] lg:items-baseline lg:py-7"
+            className="group grid gap-x-10 gap-y-2 py-6 text-center transition-colors hover:bg-paper focus-visible:bg-paper lg:grid-cols-[1.1fr_1.4fr] lg:items-baseline lg:py-7 lg:text-left"
           >
             <h3 className="text-step-3 leading-tight text-ink transition-colors group-hover:text-blue">
               {p.name}
             </h3>
-            <p className="max-w-prose text-step--1 leading-relaxed text-slate">{p.blurb}</p>
+            <p className="mx-auto max-w-prose text-step--1 leading-relaxed text-slate lg:mx-0">{p.blurb}</p>
           </Link>
         </li>
       ))}

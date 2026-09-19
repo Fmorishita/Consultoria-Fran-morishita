@@ -139,3 +139,69 @@
   .prose-article th { @apply bg-paper font-semibold; }
   .prose-article hr { @apply my-10 border-line; }
 }
+
+/*
+ * Movimiento al hacer scroll.
+ *
+ * Con animaciones dirigidas por scroll de CSS (`animation-timeline: view()`),
+ * no con JavaScript: no añade ni un byte al bundle ni trabajo al hilo
+ * principal. Donde el navegador no las soporta simplemente no ocurren y el
+ * contenido se ve completo desde el primer momento, que es el comportamiento
+ * correcto: la animación es un adorno, nunca un requisito para leer.
+ *
+ * Todo el bloque cuelga de `prefers-reduced-motion: no-preference`, así que
+ * quien pide menos movimiento no recibe ninguno.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /* Sólo desplazamiento, nunca opacidad.
+       Una entrada con fundido deja el texto a opacidad parcial mientras dura,
+       y ahí el contraste real cae por debajo del mínimo: la auditoría lo
+       detectó en /strategic-legal-session/. Animando únicamente la posición,
+       el texto es legible en todo momento y el movimiento se conserva. */
+    @keyframes treu-aparece {
+      from { transform: translateY(1.75rem); }
+      to { transform: none; }
+    }
+
+    /* Bloques que entran al aparecer en pantalla. */
+    .aparece {
+      animation: treu-aparece linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 25%;
+    }
+
+    /* Escalonado dentro de una rejilla: cada pieza entra un poco después que
+       la anterior en lugar de montarse todas a la vez. */
+    .aparece-escalonado > * {
+      animation: treu-aparece linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+
+    @keyframes treu-fondo-lento {
+      from { transform: scale(1.12) translateY(-1.5%); }
+      to { transform: scale(1.12) translateY(1.5%); }
+    }
+
+    /* Paralaje contenido en las imágenes de fondo de las fichas: se mueven algo
+       menos que la página, lo justo para dar profundidad sin marear. El
+       `scale` evita que el desplazamiento descubra un borde vacío. */
+    .fondo-lento {
+      animation: treu-fondo-lento linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    @keyframes treu-progreso { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* Línea de avance de lectura bajo la cabecera. */
+    .barra-progreso {
+      animation: treu-progreso linear both;
+      animation-timeline: scroll(root block);
+      transform-origin: 0 50%;
+    }
+  }
+}

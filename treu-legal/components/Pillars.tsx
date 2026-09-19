@@ -9,7 +9,7 @@
  */
 export function Pillars({ items }: { items: readonly string[] }) {
   return (
-    <ul className="mt-12 grid gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-0">
+    <ul className="mt-12 grid gap-y-8 text-center aparece-escalonado sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-0">
       {items.map((pillar, i) => (
         <li
           key={pillar}

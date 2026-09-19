@@ -5,6 +5,7 @@ import { AreaMosaic } from '@/components/AreaMosaic';
 import { ProductIndex } from '@/components/ProductIndex';
 import { Pillars } from '@/components/Pillars';
 import { SessionTimeline } from '@/components/SessionTimeline';
+import { ClientCommitment } from '@/components/ClientCommitment';
 import { IndustryRows } from '@/components/IndustryRows';
 import { SessionCta } from '@/components/SessionCta';
 import { PostGrid } from '@/components/PostCard';
@@ -105,6 +106,8 @@ export default async function HomePage() {
           <SectionLink href={session.path}>{ui.viewSessionDetail}</SectionLink>
         </div>
       </Section>
+
+      <ClientCommitment />
 
       {/* El fundador. Extractos literales de /la-firma/. */}
       <Section tone="paper">

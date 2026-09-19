@@ -159,6 +159,13 @@ export function Header() {
         </div>
       </div>
 
+      {/* Línea de avance de lectura. Puramente decorativa —el navegador ya
+          tiene su barra de scroll—, así que va oculta a lectores de pantalla.
+          Sólo se dibuja donde hay animaciones por scroll en CSS. */}
+      <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-0.5 overflow-hidden">
+        <div className="barra-progreso h-full w-full origin-left scale-x-0 bg-blue" />
+      </div>
+
       {/* Menú móvil a pantalla completa */}
       {openMenu && (
         <div

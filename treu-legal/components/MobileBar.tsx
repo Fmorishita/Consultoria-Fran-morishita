@@ -8,7 +8,11 @@ import { ui } from '@/content/microcopy';
 import { track } from '@/lib/analytics';
 
 /**
- * Barra inferior fija en móvil: Sesión, WhatsApp y Llamar.
+ * Barra inferior fija en móvil: agendar sesión, WhatsApp y llamar.
+ *
+ * El botón principal dice «Agendar sesión», no sólo «Sesión»: la palabra suelta
+ * no decía qué hacía el botón. Se le da más ancho de la rejilla para que quepa
+ * en una línea.
  * Se oculta cuando el formulario está en pantalla para no taparlo.
  */
 export function MobileBar() {
@@ -34,7 +38,7 @@ export function MobileBar() {
       }`}
       style={{ paddingBottom: 'max(0px, env(safe-area-inset-bottom))' }}
     >
-      <div className="grid grid-cols-[1.6fr_1fr_1fr] items-stretch">
+      <div className="grid grid-cols-[2fr_1fr_1fr] items-stretch">
         <Link
           href={session.path}
           tabIndex={hidden ? -1 : undefined}

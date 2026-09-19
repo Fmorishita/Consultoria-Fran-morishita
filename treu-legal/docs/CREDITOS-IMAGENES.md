@@ -139,3 +139,36 @@ Sin licencia de terceros: SVG escrito para este proyecto.
 | Source Serif 4 | SIL Open Font License 1.1 | Adobe, vía Google Fonts |
 
 Autohospedadas en `app/fonts/`, subconjunto latino.
+
+## Fotografía de licencia libre (Pexels)
+
+El cliente pidió expresamente fotografía que refleje mejor cada texto, «más que
+replicar las fotos de la web actual». Esto **no** rompe la regla de cero
+invención: esa regla gobierna los hechos —cifras, nombres, servicios, precios,
+plazos—, no la fotografía de contexto. Ninguna de estas imágenes afirma nada
+sobre el despacho: no son sus oficinas, ni su equipo, ni sus clientes.
+
+Licencia Pexels: uso comercial permitido, sin atribución obligatoria. Se
+acredita igualmente. Se reproduce con `npm run imagenes:libres`.
+
+| Archivo | Pexels | Uso | Por qué |
+| --- | --- | --- | --- |
+| `hero-estructura-*` | 7915703 | Hero de la home | El exoesqueleto de hormigón que sostiene un edificio: la metáfora literal de «arquitectura jurídica empresarial». Sustituye a un viñedo que no decía nada del negocio |
+| `industria-empresas-binacionales-*` | 33384789 | Empresas Binacionales | Fila de carga esperando en un cruce fronterizo. Sustituye a un puente genérico que además recortaba mal |
+| `industria-comercio-servicios-manufactura-*` | 34221997 | Comercio, Servicios y Manufactura | Línea de producción moderna, en vez de una nave vacía |
+
+## Testimonios: por qué no hay
+
+El cliente pidió una sección de testimonios. La sección existe («Quien nos
+contrata, primero») y dice que quien contrata es lo primero, pero **no lleva
+citas de clientes inventadas**.
+
+Un testimonio fabricado en el sitio de un despacho es una afirmación falsa
+dirigida a alguien que está decidiendo a quién confiar un asunto legal, y la
+publicidad de servicios jurídicos no admite endosos simulados. En su lugar la
+sección se sostiene con hechos que el sitio ya publica y que el cliente puede
+verificar: con quién habla, cuánto escucha el despacho antes de opinar y en
+cuánto tiempo responde.
+
+En cuanto el despacho aporte testimonios reales con autorización por escrito,
+entran en esa misma sección sin tocar el resto.

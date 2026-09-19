@@ -31,20 +31,20 @@ const SPANS = [2, 1, 1, 2, 2, 1] as const;
 
 export function AreaMosaic({ items }: { items: readonly Area[] }) {
   return (
-    <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="mt-12 grid gap-4 aparece-escalonado sm:grid-cols-2 lg:grid-cols-3">
       {items.map((area, i) => {
         const wide = (SPANS[i] ?? 1) === 2;
         return (
           <li key={area.slug} className={wide ? 'lg:col-span-2' : ''}>
             <Link
               href={`/areas-de-practica/${area.slug}/`}
-              className="group relative isolate flex h-full min-h-[15rem] flex-col justify-end overflow-hidden bg-ink p-6 text-white transition-[transform,box-shadow] duration-300 ease-plan hover:-translate-y-0.5 hover:shadow-[0_24px_48px_-28px_rgb(11_27_43/0.55)] focus-visible:-translate-y-0.5 active:translate-y-0 sm:p-7"
+              className="group relative isolate flex h-full min-h-[17rem] flex-col items-center justify-end overflow-hidden bg-ink p-6 text-center text-white transition-[transform,box-shadow] duration-300 ease-plan hover:-translate-y-0.5 hover:shadow-[0_24px_48px_-28px_rgb(11_27_43/0.55)] focus-visible:-translate-y-0.5 active:translate-y-0 sm:p-7"
             >
               {area.image && (
                 <SectionImage
                   name={area.image}
                   sizes={wide ? '(min-width: 1024px) 66vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'}
-                  className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 ease-plan group-hover:scale-[1.05]"
+                  className="fondo-lento absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 ease-plan"
                 />
               )}
               {/* Degradado propio, no un velo plano: sin él el texto blanco se
@@ -54,7 +54,7 @@ export function AreaMosaic({ items }: { items: readonly Area[] }) {
                 className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/10"
               />
               <h3 className={`${wide ? 'text-step-3' : 'text-step-2'} leading-tight`}>{area.name}</h3>
-              <p className="mt-2 max-w-prose text-step--1 leading-relaxed text-white/75">{area.blurb}</p>
+              <p className="mx-auto mt-2 max-w-prose text-step--1 leading-relaxed text-white/80">{area.blurb}</p>
             </Link>
           </li>
         );

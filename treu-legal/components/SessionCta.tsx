@@ -16,7 +16,7 @@ export function SessionCta({ location, className = '' }: { location: string; cla
           <div>
             <div aria-hidden="true" className="h-px w-12 bg-white/50" />
             <h2 className="mt-5 text-step-4">{session.name}</h2>
-            <p className="mt-4 max-w-prose text-step-1 leading-relaxed text-white/80">
+            <p className="mx-auto mt-4 max-w-prose text-step-1 leading-relaxed text-white/80">
               Sesión de trabajo de 60 minutos con el Principal Counsel del despacho para analizar la
               situación jurídica de su empresa con criterio aplicado a su realidad operativa específica.
             </p>
