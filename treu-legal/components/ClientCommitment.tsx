@@ -17,6 +17,15 @@ import { ui } from '@/content/microcopy';
  * despacho antes de opinar y en cuánto tiempo responde. Es más creíble que
  * cualquier cita anónima.
  *
+ * Colocación de la imagen: en móvil va justo después del título, no al final
+ * de la sección. Con el texto+datos primero y la imagen al fondo, quedaba a
+ * un renglón del retrato del Fundador de la sección siguiente —dos
+ * fotografías en blanco y negro pegadas una a otra— y el cliente lo señaló
+ * como confuso. El orden se controla con `order` por punto de quiebre: tres
+ * bloques (título, imagen, cuerpo) en vez de dos, para poder intercalar la
+ * imagen entre ellos en móvil y, en escritorio, dejarla ocupando toda la
+ * columna derecha como antes.
+ *
  * `image` es opcional: sin archivo la sección se compone a una sola columna
  * centrada, sin hueco ni marcador visible.
  */
@@ -33,39 +42,22 @@ export function ClientCommitment({ image }: { image?: string }) {
   return (
     <section className="bg-blue-deep text-white">
       <div className="shell py-section">
-        <div className={`grid items-center gap-12 ${image ? 'lg:grid-cols-2 lg:gap-16' : ''}`}>
-          <div className={`aparece text-center ${image ? 'lg:text-left' : 'mx-auto max-w-3xl'}`}>
+        <div
+          className={`grid gap-x-16 gap-y-8 ${
+            image ? 'lg:grid-cols-2 lg:items-center' : ''
+          }`}
+        >
+          {/* Título. Primer bloque siempre, en móvil y en escritorio. */}
+          <div className={`aparece order-1 text-center ${image ? 'lg:col-start-1 lg:row-start-1 lg:text-left' : 'mx-auto max-w-3xl'}`}>
             <div
               aria-hidden="true"
               className={`h-px w-12 bg-white/50 ${image ? 'mx-auto lg:mx-0' : 'mx-auto'}`}
             />
             <h2 className="mt-5 text-step-4 leading-tight">{ui.commitmentTitle}</h2>
-            <p
-              className={`mt-5 max-w-prose text-step-1 leading-relaxed text-white/85 ${
-                image ? 'mx-auto lg:mx-0' : 'mx-auto'
-              }`}
-            >
-              {escucha}
-            </p>
-
-            <dl
-              className={`mt-10 grid gap-x-8 gap-y-6 border-t border-white/20 pt-8 sm:grid-cols-3 ${
-                image ? '' : 'mx-auto max-w-3xl'
-              }`}
-            >
-              {pruebas.map((p) => (
-                <div key={p.label}>
-                  <dt className="text-[0.6875rem] uppercase tracking-[0.12em] text-white/60">
-                    {p.label}
-                  </dt>
-                  <dd className="mt-1.5 text-step--1 font-medium leading-snug text-white">{p.value}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           {image && (
-            <div className="aparece overflow-hidden">
+            <div className="aparece order-2 overflow-hidden lg:col-start-2 lg:row-span-2 lg:row-start-1">
               <picture>
                 <source
                   type="image/avif"
@@ -86,6 +78,30 @@ export function ClientCommitment({ image }: { image?: string }) {
               </picture>
             </div>
           )}
+
+          {/* Cuerpo: párrafo y datos. Tercer bloque, después de la imagen en
+              móvil; en escritorio vuelve a la columna izquierda, bajo el
+              título. */}
+          <div className={`order-3 text-center ${image ? 'lg:col-start-1 lg:row-start-2 lg:text-left' : 'mx-auto max-w-3xl'}`}>
+            <p className={`max-w-prose text-step-1 leading-relaxed text-white/85 ${image ? 'mx-auto lg:mx-0' : 'mx-auto'}`}>
+              {escucha}
+            </p>
+
+            <dl
+              className={`mt-10 grid gap-x-8 gap-y-6 border-t border-white/20 pt-8 sm:grid-cols-3 ${
+                image ? '' : 'mx-auto max-w-3xl'
+              }`}
+            >
+              {pruebas.map((p) => (
+                <div key={p.label}>
+                  <dt className="text-[0.6875rem] uppercase tracking-[0.12em] text-white/60">
+                    {p.label}
+                  </dt>
+                  <dd className="mt-1.5 text-step--1 font-medium leading-snug text-white">{p.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </div>
     </section>
