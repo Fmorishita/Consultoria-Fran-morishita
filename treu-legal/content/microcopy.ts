@@ -65,9 +65,11 @@ export const ui = {
   /** Describe lo que se ve, sin afirmar que sean clientes ni reuniones reales
       del despacho: eso sería una afirmación que nadie ha confirmado. */
   commitmentImageAlt:
-    'Tres personas de negocios cierran un acuerdo con un apretón de manos alrededor de una mesa de juntas.',
+    'Marco Polo Hernández Alvarado estrecha la mano de un empresario en una mesa de juntas.',
   sessionImageAlt:
-    'Reunión de trabajo alrededor de una mesa de juntas frente a una pantalla con un plan de trabajo por etapas.',
+    'Marco Polo Hernández Alvarado expone un plan de trabajo por etapas ante un grupo en una sala de juntas.',
+  heroImageAlt:
+    'Marco Polo Hernández Alvarado dirige una sesión de trabajo frente a un plan por etapas en una sala de juntas.',
   /** Sólo para lector de pantalla: sitúa cada fase de la sesión en la secuencia. */
   sessionPhase: (n: number, total: number) => `fase ${n} de ${total}`,
   publishedOn: 'Publicado el',

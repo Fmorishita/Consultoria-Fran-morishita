@@ -74,7 +74,7 @@ export default function Page() {
         >
           <ul className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {allPrinciples.map((p) => (
-              <li key={p.title} className="bg-white p-6">
+              <li key={p.title} className="bg-white p-6 text-center">
                 <h3 className="text-step-1 font-semibold leading-snug text-ink">{p.title}</h3>
                 {p.body.map((t) => (
                   <p key={t} className="mt-3 text-step--1 leading-relaxed text-slate">

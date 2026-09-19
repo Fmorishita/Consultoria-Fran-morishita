@@ -76,7 +76,32 @@
 
   /* --- Prosa ---------------------------------------------------------- */
 
-  .prose-treu { @apply max-w-prose font-serif text-step-1 text-ink/90; }
+  /*
+   * Prosa justificada y centrada en su contenedor.
+   *
+   * El cliente pidió dos veces que el texto no quedara cargado a la izquierda
+   * con el margen derecho vacío. `mx-auto` centra la columna de lectura y
+   * `text-align: justify` alinea ambos márgenes.
+   *
+   * `hyphens: auto` es obligatorio aquí: justificar sin partir palabras abre
+   * ríos de espacio en blanco entre palabras, y en español, con palabras
+   * largas, el efecto es peor que no justificar. El documento declara
+   * lang="es-MX", así que el navegador parte según las reglas del idioma.
+   *
+   * En pantallas estrechas se vuelve a alinear a la izquierda: con menos
+   * caracteres por línea, justificar deforma el espaciado.
+   */
+  .prose-treu {
+    @apply mx-auto max-w-prose font-serif text-step-1 text-ink/90;
+    text-align: left;
+    hyphens: auto;
+  }
+  @media (min-width: 640px) {
+    .prose-treu { text-align: justify; }
+    .prose-treu h2,
+    .prose-treu h3,
+    .prose-treu h4 { text-align: left; }
+  }
   .prose-treu > * + * { @apply mt-5; }
   .prose-treu h2 {
     @apply mt-12 font-sans text-step-3 font-semibold text-ink;
@@ -123,6 +148,13 @@
   /* Estilos de lectura del artículo: cuerpo de 18px y ritmo vertical amplio. */
   .prose-article {
     @apply text-step-1;
+  }
+  .prose-article {
+    @apply mx-auto;
+    hyphens: auto;
+  }
+  @media (min-width: 640px) {
+    .prose-article > p { text-align: justify; }
   }
   .prose-article > * + * { @apply mt-6; }
   .prose-article h2 { @apply mt-14 scroll-mt-24 text-step-3; }

@@ -8,10 +8,14 @@ import { ui } from '@/content/microcopy';
  * Hero de la home. Único momento audaz del sitio.
  *
  * La composición es un plano: a la izquierda, el panel de marca con la
- * retícula de construcción y las cotas; a la derecha, el exoesqueleto de
- * hormigón de un edificio: la estructura que lo sostiene en pie. Es la
- * metáfora literal de «arquitectura jurídica empresarial», que es lo que vende
- * el despacho. Antes había un viñedo, que no decía nada del negocio.
+ * retícula de construcción y las cotas; a la derecha, el Fundador dirigiendo
+ * una sesión de trabajo. Se probaron antes un viñedo (no decía nada del
+ * negocio) y una estructura de hormigón (era la metáfora correcta, pero el
+ * cliente la leyó como fría). Una persona trabajando con un plan delante es lo
+ * que transmite el profesionalismo que se vende.
+ *
+ * El encuadre se fija en el tercio izquierdo porque ahí está él: centrado, el
+ * recorte vertical del panel lo dejaba fuera.
  *
  * Separar el texto de la fotografía en paneles garantiza el contraste AA sin
  * tener que apagar la imagen hasta hacerla invisible.
@@ -67,19 +71,19 @@ export function Hero({ tagline, proposition }: { tagline: string; proposition: s
           <picture>
             <source
               type="image/avif"
-              srcSet="/img/hero-estructura-640.avif 640w, /img/hero-estructura-1024.avif 1024w, /img/hero-estructura-1600.avif 1600w"
+              srcSet="/img/plan-de-trabajo-640.avif 640w, /img/plan-de-trabajo-1024.avif 1024w"
               sizes="(min-width: 1024px) 46vw, 100vw"
             />
             <img
-              src="/img/hero-estructura-1024.webp"
-              srcSet="/img/hero-estructura-640.webp 640w, /img/hero-estructura-1024.webp 1024w, /img/hero-estructura-1600.webp 1600w"
+              src="/img/plan-de-trabajo-1024.webp"
+              srcSet="/img/plan-de-trabajo-640.webp 640w, /img/plan-de-trabajo-1024.webp 1024w"
               sizes="(min-width: 1024px) 46vw, 100vw"
-              alt="Estructura de hormigón que forma el esqueleto exterior de un edificio, con sus tirantes cruzados recortados contra el cielo."
-              width={1600}
-              height={2400}
+              alt={ui.heroImageAlt}
+              width={1536}
+              height={1024}
               fetchPriority="high"
               decoding="async"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-[38%_center] lg:object-[42%_center]"
             />
           </picture>
           {/* La retícula continúa sobre la fotografía: une los dos paneles. */}
