@@ -1,0 +1,223 @@
+{
+ "id": 1906,
+ "slug": "legal-products--cross-border-entry-package",
+ "path": "/legal-products/cross-border-entry-package/",
+ "source": "https://treulegal.solutions/legal-products/cross-border-entry-package/",
+ "title": "Cross-Border Entry Package",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Cross-Border Entry Package - Estructura Legal para Operar en México | Treu Legal & Business",
+  "description": "La estructura legal mínima para que una empresa extranjera opere en México desde el primer día: entidad constituida, arquitectura laboral inicial, marco contractual base y brief regulatorio.",
+  "ogTitle": "Cross-Border Entry Package - Estructura Legal para Operar en México | Treu Legal & Business",
+  "ogDescription": "La estructura legal mínima para que una empresa extranjera opere en México desde el primer día: entidad constituida, arquitectura laboral inicial, marco contractual base y brief regulatorio.",
+  "canonical": "https://treulegal.solutions/legal-products/cross-border-entry-package/"
+ },
+ "blocks": [
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Este paquete está diseñado para empresas extranjeras, principalmente de California y Estados Unidos, que están estableciendo operaciones en México. La distinción respecto del Business Launch Package es la jurisdicción del capital: cualquier participación extranjera, independientemente de su magnitud, activa obligaciones ante el Registro Nacional de Inversiones Extranjeras (RNIE) y puede activar restricciones sectoriales que requieren análisis previo."
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "This package is designed for foreign companies, primarily from California and the United States, establishing operations in Mexico. Unlike the Business Launch Package (for Mexican-capital companies), any foreign participation in the equity structure triggers mandatory registration with Mexico’s Foreign Investment Registry (RNIE) and may activate sector-specific restrictions requiring prior analysis. The distinction applies regardless of the percentage of foreign ownership."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué obtiene?"
+  },
+  {
+   "type": "paragraph",
+   "text": "La empresa extranjera cuenta con la estructura legal mínima necesaria para operar en México: entidad constituida correctamente bajo la ley mexicana, cumplimiento ante el RNIE, contratos laborales iniciales para los primeros empleados en México, compliance básico de PLD y protección de datos si aplica, contratos intercompany con la entidad extranjera y un brief regulatorio del sector que detalla las obligaciones principales para el giro específico del cliente en México."
+  },
+  {
+   "type": "paragraph",
+   "text": "La coordinación fiscal (régimen fiscal de la entidad mexicana, obligaciones periódicas y estructura por precios de transferencia) es responsabilidad del asesor fiscal del cliente. Treu coordina con ese asesor para asegurar coherencia entre estructura legal y fiscal, sin absorber honorarios de terceros."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Por qué la estructura importa desde el inicio?"
+  },
+  {
+   "type": "paragraph",
+   "text": "El costo de ignorar la estructura jurídica en la fase de entrada no es evidente de inmediato, se hace visible meses después, cuando la empresa tiene empleados en México sin contratos conformes a la LFT, proveedores de servicios sin REPSE verificado, una entidad que no está inscrita ante el RNIE y una estructura intercompany que el asesor fiscal no puede defender ante el SAT porque los contratos que la sustentan no existen."
+  },
+  {
+   "type": "paragraph",
+   "text": "Resolver esos problemas después de que la empresa ya opera cuesta entre tres y diez veces más que haberlos estructurado correctamente desde el inicio."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Componentes"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente a"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Análisis de estructura de entrada"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis de la estructura óptima para la inversión extranjera en México: subsidiaria mexicana, sucursal, representación o joint venture con socio local. Para cada opción: implicaciones corporativas, laborales, fiscales y operativas, con recomendación argumentada y documentada."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente B"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Constitución de la entidad mexicana"
+  },
+  {
+   "type": "paragraph",
+   "text": "Constitución del vehículo jurídico seleccionado: gestión notarial, inscripción en el RPPC, obtención de RFC ante el SAT y cumplimiento de obligaciones iniciales ante el RNIE. Treu gestiona y acompaña el proceso; los tiempos de notaría, el RPPC, el SAT y el RNIE son externos al control del despacho."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente C"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Cumplimiento RNIE"
+  },
+  {
+   "type": "paragraph",
+   "text": "Registro inicial ante el Registro Nacional de Inversiones Extranjeras y asesoría sobre las obligaciones de reporte periódico. El RNIE no tiene umbral mínimo de capital: toda participación extranjera, cualquiera que sea su porcentaje, obliga al registro."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente D"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Arquitectura laboral inicial"
+  },
+  {
+   "type": "paragraph",
+   "text": "Contratos de trabajo para los primeros empleados en México, diseñados conforme a la LFT. Incluye la explicación operativa del régimen laboral mexicano, las diferencias con el marco laboral de California son significativas y deben entenderse desde el inicio."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente E"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Compliance básico"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis de aplicabilidad de la LFPIORPI (PLD) para el sector del cliente y diseño del compliance mínimo requerido si la actividad es vulnerable. Revisión de obligaciones bajo la LFPDPPP para protección de datos personales de los empleados y clientes en México."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente F"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contratos intercompany"
+  },
+  {
+   "type": "paragraph",
+   "text": "Contratos entre la entidad mexicana y la entidad extranjera para las operaciones que los requieran: contratos de servicios intragrupo, licencia de marca o préstamo intragrupo. Diseñados en coordinación con el asesor fiscal del cliente para que la estructura jurídica sea consistente con la estructura de precios de transferencia."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente G"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Brief regulatorio sectorial"
+  },
+  {
+   "type": "paragraph",
+   "text": "Resumen de las principales obligaciones legales en México para el sector específico del cliente: permisos requeridos, normatividad sectorial aplicable, restricciones a la inversión extranjera si existe, y calendarios de cumplimiento relevantes."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Entregables"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los contratos elaborados por el despacho se entregan en español e inglés. El expediente incluye todos los documentos en versiones definitivas y editables, con instructivo de uso. Los documentos notariales y oficiales son expedidos en español."
+  },
+  {
+   "type": "paragraph",
+   "text": "Este producto aplica cuando el capital, el control o la operación principal del negocio tiene origen o nexo extranjero. Si todos los socios son personas físicas o morales mexicanas y el negocio opera exclusivamente en México, el producto adecuado es el Business Launch Package (LP-01). La distinción no depende del tamaño de la inversión; depende de la jurisdicción del capital y de la estructura operativa real del negocio."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué sigue después del Cross-Border Entry Package?"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Outside General Counsel"
+  },
+  {
+   "type": "paragraph",
+   "text": "La empresa ya opera en México; necesita presencia legal continua para las decisiones del negocio en curso"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "HR Legal System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Si la plantilla crece y requiere una arquitectura laboral completa más allá de los contratos iniciales"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Corporate Risk & Structure System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando la empresa ya tiene operación establecida y necesita una revisión integral de su arquitectura jurídica"
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Está estableciendo operaciones en México y necesita la estructura jurídica correcta desde el inicio?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce también:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cross-Border Advisory",
+    "Empresas Binacionales",
+    "Doing Business in Mexico: Legal Advisory for Foreign Companies",
+    "Corporate Lawyer in Mexico"
+   ]
+  }
+ ]
+}

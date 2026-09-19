@@ -1,0 +1,590 @@
+{
+ "id": 93,
+ "slug": "condiciones-de-uso",
+ "path": "/condiciones-de-uso/",
+ "source": "https://treulegal.solutions/condiciones-de-uso/",
+ "title": "Condiciones de uso",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Condiciones de uso - Treu Legal & Business",
+  "ogTitle": "Condiciones de uso - Treu Legal & Business",
+  "ogDescription": "Documento: Condiciones de Uso del Sitio Web · Versión: 4.0 · Fecha de emisión: Abril de 2026 · Sustituye a: Versión 3.0 (1 de febrero de 2025) Responsable: Treu Legal & Business · Sitio web: treulegal.solutions · Contacto legal: privacidad@treulegal.solutions 1 Aceptación y Alcance El presente documento establece los términos y condiciones de […]",
+  "canonical": "https://treulegal.solutions/condiciones-de-uso/"
+ },
+ "blocks": [
+  {
+   "type": "paragraph",
+   "text": "Documento: Condiciones de Uso del Sitio Web · Versión: 4.0 · Fecha de emisión: Abril de 2026 · Sustituye a: Versión 3.0 (1 de febrero de 2025) Responsable: Treu Legal & Business · Sitio web: treulegal.solutions · Contacto legal: privacidad@treulegal.solutions"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1 Aceptación y Alcance"
+  },
+  {
+   "type": "paragraph",
+   "text": "El presente documento establece los términos y condiciones de uso (las \"Condiciones\") que rigen el acceso, navegación, descarga de materiales y cualquier forma de interacción con el sitio web treulegal.solutions (el \"Sitio\"), operado por Treu Legal & Business."
+  },
+  {
+   "type": "paragraph",
+   "text": "El acceso, navegación o uso del Sitio por cualquier persona (el \"Usuario\") constituye aceptación expresa, plena y sin reservas de estas Condiciones, así como del Aviso y Política de Privacidad de la firma, que forma parte integrante de este documento."
+  },
+  {
+   "type": "paragraph",
+   "text": "Si el Usuario no está de acuerdo con estas Condiciones en su totalidad, deberá abstenerse de acceder o usar el Sitio. El uso continuado del Sitio tras la publicación de modificaciones a estas Condiciones implica aceptación de las versiones actualizadas."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2 Identidad del Responsable"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business es la denominación comercial bajo la cual ejerce profesionalmente sus servicios jurídicos y de consultoría empresarial Marco Polo Hernández Alvarado, abogado con cédula profesional expedida por la Dirección General de Profesiones de la Secretaría de Educación Pública, con domicilio para notificaciones en la ciudad de Ensenada, Baja California, México, correo electrónico info@treulegal.solutions, y portal de internet treulegal.solutions."
+  },
+  {
+   "type": "paragraph",
+   "text": "La práctica del despacho comprende las siguientes áreas de especialización:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Derecho corporativo y de negocios",
+    "Gobierno corporativo y empresa familiar",
+    "Estrategia laboral y cumplimiento normativo",
+    "Compliance y prevención de riesgos",
+    "Asesoría cross-border México–California",
+    "Resolución estratégica de controversias"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "El despacho presta servicios principalmente a clientes empresariales (B2B) y clientes sofisticados en México y en el corredor transfronterizo Baja California–California, incluyendo operaciones con componente internacional."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3 Naturaleza del Sitio y Ausencia de Relación Profesional"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "3.1 Carácter informativo del contenido"
+  },
+  {
+   "type": "paragraph",
+   "text": "El contenido publicado en el Sitio, incluyendo artículos, análisis jurídicos, guías, checklists, materiales descargables (lead magnets), notas regulatorias y cualquier otro material editorial, tiene exclusivamente carácter:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Informativo y educativo",
+    "Comercial y de posicionamiento profesional",
+    "De divulgación jurídica general"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "En ningún caso el contenido del Sitio constituye asesoría legal, opinión jurídica vinculante ni recomendación profesional aplicable a situaciones específicas. El contenido se produce para audiencias empresariales generales y no considera las circunstancias particulares de ningún Usuario."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "3.2 Inexistencia de relación abogado-cliente"
+  },
+  {
+   "type": "paragraph",
+   "text": "El acceso, navegación, consulta, descarga de materiales, envío de formularios, comunicaciones electrónicas o cualquier otra forma de interacción con el Sitio o con Treu Legal & Business a través del mismo NO crea, bajo ninguna circunstancia, una relación abogado-cliente ni genera obligación profesional alguna de parte del despacho."
+  },
+  {
+   "type": "paragraph",
+   "text": "El envío de un formulario de contacto, de una solicitud de sesión o de cualquier consulta no escrita constituye únicamente una solicitud de comunicación y no implica compromiso de representación ni de asesoría por parte del despacho."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "3.3 Condiciones para el nacimiento de una relación profesional"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una relación profesional entre Treu Legal & Business y el Usuario únicamente se entenderá existente cuando concurran todas las siguientes condiciones de manera simultánea:"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Firma de un contrato formal de prestación de servicios profesionales (engagement letter) entre el despacho y el cliente",
+    "Aceptación expresa y por escrito de dicho contrato por parte de Treu Legal & Business",
+    "Confirmación de análisis de conflicto de intereses con resultado favorable",
+    "Pago efectivo del anticipo de honorarios pactado en el contrato de servicios"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "La ausencia de cualquiera de estas condiciones implica que no existe relación profesional, con independencia de las comunicaciones o consultas previas que se hayan producido."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "3.4 Exclusión de confianza (no reliance)"
+  },
+  {
+   "type": "paragraph",
+   "text": "El Usuario reconoce expresamente que:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "No debe fundamentar decisiones legales, comerciales o estratégicas en el contenido del Sitio sin obtener previamente asesoría jurídica personalizada de un profesional competente",
+    "El uso de cualquier información del Sitio para la toma de decisiones es bajo responsabilidad exclusiva del Usuario",
+    "La divulgación jurídica general no sustituye la asesoría legal aplicada a la situación específica del Usuario"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4 Alcance Territorial y Limitaciones Cross-Border"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los servicios jurídicos de Treu Legal & Business se prestan conforme a la legislación mexicana vigente y desde la perspectiva del derecho mexicano."
+  },
+  {
+   "type": "paragraph",
+   "text": "En este sentido, el despacho:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "No ejerce derecho extranjero, incluyendo el derecho de los Estados Unidos de América o de cualquier estado de la Unión Americana",
+    "No está autorizado para practicar derecho en California, Texas ni en ninguna otra jurisdicción fuera de México",
+    "No emite opiniones legales bajo legislación extranjera"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Las referencias a operaciones transfronterizas, nearshoring, cumplimiento binacional o aspectos legales de California que aparezcan en el Sitio reflejan la perspectiva del derecho mexicano aplicada a ese contexto operativo. No constituyen asesoría en derecho californiano ni estadounidense. Cualquier asunto que requiera asesoría bajo legislación extranjera deberá atenderse con profesionales autorizados en dicha jurisdicción."
+  },
+  {
+   "type": "paragraph",
+   "text": "El Usuario reconoce que Treu Legal & Business puede coordinar con firmas de otras jurisdicciones para asuntos con componente internacional, sin que ello implique que el despacho ejerce o asume responsabilidad bajo la legislación extranjera de que se trate."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5 Materiales Descargables"
+  },
+  {
+   "type": "paragraph",
+   "text": "El Sitio pone a disposición del Usuario materiales descargables de carácter informativo y educativo, incluyendo checklists, guías prácticas, análisis regulatorios y otros recursos (los \"Materiales\")."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "5.1 Licencia de uso personal"
+  },
+  {
+   "type": "paragraph",
+   "text": "La descarga de cualquier Material otorga al Usuario una licencia no exclusiva, intransferible, revocable y limitada para su uso personal o interno dentro de la organización del Usuario. Esta licencia no incluye:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Reproducción total o parcial para distribución a terceros",
+    "Publicación, difusión o transmisión por cualquier medio",
+    "Uso comercial o para la prestación de servicios de asesoría a terceros",
+    "Incorporación en productos, servicios o materiales de capacitación propios",
+    "Modificación, traducción o creación de obras derivadas para distribución"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "5.2 Carácter de los Materiales"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los Materiales son instrumentos de divulgación jurídica general. No constituyen asesoría legal personalizada ni deben utilizarse como sustituto de la misma. Las condiciones regulatorias cambian; el Usuario es responsable de verificar la vigencia de la información antes de aplicarla."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "5.3 Datos personales para descarga"
+  },
+  {
+   "type": "paragraph",
+   "text": "El acceso a algunos Materiales requiere que el Usuario proporcione datos personales a través de un formulario de descarga. El tratamiento de esos datos se rige exclusivamente por el Aviso y Política de Privacidad de Treu Legal & Business."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6 Formularios y Envío de Información"
+  },
+  {
+   "type": "paragraph",
+   "text": "El Sitio incluye formularios de contacto, solicitud de sesión y descarga de materiales. Al completar y enviar cualquier formulario, el Usuario:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Garantiza que la información proporcionada es exacta y actualizada",
+    "Acepta que dicha información sea tratada conforme al Aviso y Política de Privacidad",
+    "Reconoce que el envío del formulario no genera relación profesional ni compromiso de representación por parte del despacho",
+    "Acepta que Treu Legal & Business pueda comunicarse con él para atender su solicitud o dar seguimiento al contacto establecido"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "El Usuario no debe incluir en ningún formulario información confidencial que requiera protección jurídica activa, en tanto no exista una relación profesional formalmente establecida conforme a la cláusula 3.3 de estas Condiciones."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "7 Acceso y Uso del Sitio"
+  },
+  {
+   "type": "paragraph",
+   "text": "El acceso al Sitio es gratuito, temporal y revocable. Treu Legal & Business se reserva el derecho de:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Modificar, suspender, restringir o eliminar el Sitio o cualquier parte de su contenido, sin previo aviso y sin responsabilidad alguna",
+    "Denegar el acceso a cualquier Usuario, en cualquier momento y por cualquier motivo, incluyendo el incumplimiento de estas Condiciones",
+    "Interrumpir el servicio por razones técnicas, de mantenimiento o de seguridad"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "El Usuario se obliga a hacer un uso lícito del Sitio y se abstiene de:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Realizar accesos no autorizados a sistemas, servidores o bases de datos del Sitio",
+    "Introducir o transmitir virus, malware o cualquier código dañino",
+    "Interferir con la operación normal del Sitio o de sus infraestructuras tecnológicas",
+    "Ejecutar ataques de denegación de servicio (DoS/DDoS) o cualquier otro ataque informático",
+    "Extraer datos de forma automatizada mediante robots, scrapers u otras herramientas de extracción masiva de información, incluyendo aquellas basadas en inteligencia artificial",
+    "Suplantar la identidad del despacho, del Fundador o de cualquier persona vinculada a Treu Legal & Business"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "El incumplimiento de estas obligaciones podrá derivar en la cancelación inmediata del acceso, así como en el ejercicio de las acciones legales civiles y penales que correspondan."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "8 Propiedad Intelectual"
+  },
+  {
+   "type": "paragraph",
+   "text": "Todo el contenido publicado en el Sitio constituye propiedad intelectual protegida de Treu Legal & Business o de sus titulares, según corresponda. Esto incluye, de manera enunciativa pero no limitativa:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Textos, artículos, análisis jurídicos, opiniones, guías y materiales editoriales",
+    "Frameworks, metodologías, estructuras de servicio y modelos de arquitectura jurídica",
+    "Materiales descargables, checklists y recursos educativos",
+    "Diseño gráfico, branding, logotipos, imagotipos y sistema de identidad visual",
+    "Arquitectura del sitio, código fuente y bases de datos",
+    "Compilaciones de información y bases de contenido editorial"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "8.1 Prohibiciones absolutas"
+  },
+  {
+   "type": "paragraph",
+   "text": "Sin autorización previa, expresa y por escrito de Treu Legal & Business, queda estrictamente prohibido:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Copiar, reproducir o distribuir el contenido del Sitio, total o parcialmente, por cualquier medio",
+    "Reutilizar frameworks, metodologías o estructuras para prestar servicios a terceros",
+    "Explotar comercialmente cualquier contenido del Sitio",
+    "Crear obras derivadas basadas en el contenido del Sitio",
+    "Utilizar el contenido para capacitar modelos de inteligencia artificial, alimentar sistemas de aprendizaje automático o construir productos tecnológicos derivados",
+    "Extraer información de forma sistemática mediante herramientas automatizadas, incluyendo crawlers, scrapers o agentes de IA",
+    "Atribuir falsamente a Treu Legal & Business contenido que no haya sido publicado por el despacho"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "8.2 Know-how propietario"
+  },
+  {
+   "type": "paragraph",
+   "text": "El Usuario reconoce que el contenido del Sitio refleja know-how propietario, experiencia profesional acumulada y ventaja competitiva del despacho. Su uso indebido podrá dar lugar al ejercicio de acciones civiles, penales y cautelares, incluyendo reclamación de daños y perjuicios."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "8.3 Marca y denominación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las denominaciones Treu, Treu Legal & Business, el imagotipo de la cabeza de león y el tagline Legal Intelligence for Business, así como sus variaciones, son signos distintivos del despacho. Su uso no autorizado queda expresamente prohibido y podrá dar lugar a las acciones correspondientes ante el Instituto Mexicano de la Propiedad Industrial (IMPI)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "9 Limitación de Responsabilidad"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "9.1 Exclusión general"
+  },
+  {
+   "type": "paragraph",
+   "text": "En la máxima medida permitida por la ley aplicable, Treu Legal & Business no será responsable por:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Daños directos, indirectos, incidentales, especiales o consecuenciales derivados del acceso o uso del Sitio",
+    "Pérdida de utilidades, ingresos, oportunidades de negocio, datos o reputación",
+    "Decisiones tomadas con base en la información publicada en el Sitio",
+    "Errores, inexactitudes u omisiones en el contenido, incluyendo cambios regulatorios posteriores a la publicación",
+    "Interrupciones, fallas técnicas o indisponibilidad del Sitio",
+    "Ataques cibernéticos, accesos no autorizados por terceros o intrusiones en los sistemas del Sitio que escapen al control del despacho",
+    "El contenido de sitios externos a los que el Sitio pudiera enlazar"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "9.2 Límite cuantitativo"
+  },
+  {
+   "type": "paragraph",
+   "text": "En cualquier caso, la responsabilidad total de Treu Legal & Business — si llegara a determinarse por autoridad competente — se limitará estrictamente al monto efectivamente pagado por el Usuario por servicios contratados con el despacho, si los hubiera. Si no existe contrato de servicios vigente, la responsabilidad máxima será de $0.00 (cero pesos moneda nacional)."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "9.3 Ausencia de garantías"
+  },
+  {
+   "type": "paragraph",
+   "text": "El Sitio y su contenido se proporcionan en el estado en que se encuentran (as is) y conforme a disponibilidad, sin garantías de:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Exactitud, completitud o actualización permanente del contenido",
+    "Confiabilidad para propósitos específicos del Usuario",
+    "Disponibilidad continua e ininterrumpida del Sitio",
+    "Ausencia de errores técnicos o de contenido",
+    "Adecuación del contenido general a la situación particular de ningún Usuario"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "10 Privacidad y Protección de Datos"
+  },
+  {
+   "type": "paragraph",
+   "text": "El tratamiento de datos personales que el Usuario proporcione a través del Sitio — ya sea mediante formularios, descargas de materiales, solicitudes de sesión o cualquier otro mecanismo de interacción — se rige exclusivamente por el Aviso y Política de Privacidad de Treu Legal & Business, elaborado conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP, DOF 20 de marzo de 2025) y demás normativa aplicable."
+  },
+  {
+   "type": "paragraph",
+   "text": "El Aviso de Privacidad forma parte integrante de estas Condiciones y su aceptación se entiende incorporada a la aceptación del presente documento."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "11 Enlaces a Sitios de Terceros"
+  },
+  {
+   "type": "paragraph",
+   "text": "El Sitio puede incluir enlaces a sitios web externos. Treu Legal & Business:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "No controla el contenido, disponibilidad ni prácticas de dichos sitios",
+    "No garantiza la exactitud ni licitud de su contenido",
+    "No asume responsabilidad alguna derivada del acceso o uso de sitios externos",
+    "No emite juicio sobre la calidad de los servicios o productos que terceros ofrezcan"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "La inclusión de un enlace no implica patrocinio, respaldo ni afiliación entre Treu Legal & Business y el sitio enlazado."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "12 Modificaciones"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business podrá modificar el contenido del Sitio, su arquitectura y estas Condiciones en cualquier momento, sin obligación de previo aviso al Usuario."
+  },
+  {
+   "type": "paragraph",
+   "text": "Las modificaciones a estas Condiciones entrarán en vigor desde el momento de su publicación en el Sitio, con la actualización de la fecha de última modificación indicada al inicio del documento. El uso continuado del Sitio tras la publicación de cambios implica aceptación de las Condiciones actualizadas."
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando las modificaciones afecten derechos sustanciales de los Usuarios que hayan proporcionado sus datos personales a través del Sitio, se notificará conforme a lo establecido en el Aviso y Política de Privacidad."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "13 Cesión"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business podrá ceder o transferir los derechos y obligaciones derivados de estas Condiciones, total o parcialmente, en los siguientes supuestos:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cambio de denominación comercial, restructuración o transformación de la práctica profesional del Fundador",
+    "Incorporación de nuevos socios o modificación de la estructura del despacho",
+    "Transmisión de la plataforma digital del Sitio a un tercero autorizado"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "En cualquier caso, las obligaciones adquiridas frente a los Usuarios que hayan contratado servicios permanecerán vigentes conforme a los contratos de servicios suscritos."
+  },
+  {
+   "type": "paragraph",
+   "text": "El Usuario no podrá ceder ni transferir sus derechos u obligaciones bajo estas Condiciones sin el consentimiento previo y por escrito de Treu Legal & Business."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "14 Ley Aplicable y Resolución de Controversias"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "14.1 Ley aplicable"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estas Condiciones se rigen e interpretan de conformidad con las leyes vigentes en los Estados Unidos Mexicanos, incluyendo el Código de Comercio, el Código Civil Federal y demás legislación federal aplicable."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "14.2 Arbitraje como mecanismo principal"
+  },
+  {
+   "type": "paragraph",
+   "text": "Toda controversia, disputa o reclamación que surja de o en relación con estas Condiciones, incluyendo su interpretación, incumplimiento, terminación o nulidad, será resuelta definitivamente mediante arbitraje privado, conforme a las siguientes reglas:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Ley aplicable al procedimiento: Código de Comercio de los Estados Unidos Mexicanos, en lo relativo a arbitraje comercial",
+    "Sede del arbitraje: Ensenada, Baja California, México",
+    "Idioma: español",
+    "Árbitro: árbitro único designado de común acuerdo entre las partes, con especialización en materia mercantil o civil",
+    "Carácter del laudo: definitivo, vinculante e inapelable, salvo los recursos permitidos por la ley"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Las partes renuncian expresamente a cualquier recurso ordinario contra el laudo arbitral, en los términos permitidos por la legislación aplicable."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "14.3 Jurisdicción supletoria"
+  },
+  {
+   "type": "paragraph",
+   "text": "En caso de que el mecanismo arbitral resulte inoperante, inválido o inaplicable a una controversia específica, las partes se someten a la jurisdicción exclusiva de los tribunales competentes de la ciudad de Ensenada, Baja California, México, renunciando expresamente a cualquier otro fuero que pudiera corresponderles por razón de sus domicilios presentes o futuros."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "15 Divisibilidad y No Renuncia"
+  },
+  {
+   "type": "paragraph",
+   "text": "Si alguna disposición de estas Condiciones fuera declarada inválida, nula o inaplicable por autoridad competente, dicha declaración no afectará la validez ni la ejecutabilidad del resto de las Condiciones, que continuarán vigentes en su totalidad."
+  },
+  {
+   "type": "paragraph",
+   "text": "La falta de ejercicio o el ejercicio tardío de cualquier derecho previsto en estas Condiciones por parte de Treu Legal & Business no constituirá renuncia a dicho derecho, ni impedirá su ejercicio posterior."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "16 Documento Completo"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estas Condiciones, junto con el Aviso y Política de Privacidad de Treu Legal & Business, constituyen el acuerdo completo entre el Usuario y el despacho en relación con el uso del Sitio y sustituyen cualquier acuerdo o entendimiento previo sobre la misma materia."
+  },
+  {
+   "type": "paragraph",
+   "text": "En caso de contradicción entre estas Condiciones y el Aviso de Privacidad, prevalecerá el Aviso de Privacidad en materia de datos personales, y estas Condiciones en todo lo demás."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "— Reconocimiento del Usuario"
+  },
+  {
+   "type": "paragraph",
+   "text": "Al acceder o usar el Sitio, el Usuario reconoce que:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Ha tenido oportunidad de leer estas Condiciones en su integridad",
+    "Comprende su contenido y las obligaciones que implican",
+    "Acepta su carácter vinculante en los términos aquí establecidos",
+    "Reconoce que el uso del Sitio no genera relación profesional con Treu Legal & Business salvo bajo las condiciones expresamente establecidas en la cláusula 3.3",
+    "Asume los riesgos derivados del uso de información general de carácter jurídico sin asesoría profesional personalizada"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para consultas sobre estas Condiciones de Uso:"
+  },
+  {
+   "type": "paragraph",
+   "text": "Correo electrónico: privacidad@treulegal.solutions Sitio web: treulegal.solutions Ensenada, Baja California, México"
+  },
+  {
+   "type": "paragraph",
+   "text": "Versión 4.0 · Abril de 2026 · Sustituye Versión 3.0 (1 de febrero de 2025)"
+  }
+ ]
+}

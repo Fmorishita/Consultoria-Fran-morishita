@@ -1,0 +1,60 @@
+{
+ "id": 234,
+ "slug": "contacto",
+ "path": "/contacto/",
+ "source": "https://treulegal.solutions/contacto/",
+ "title": "Contacto",
+ "extractedVia": "html",
+ "meta": {
+  "title": "Contacto - Treu Legal & Business",
+  "ogTitle": "Contacto - Treu Legal & Business",
+  "canonical": "https://treulegal.solutions/contacto/"
+ },
+ "blocks": [
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/07/Nuevo-logotipo-reforzador-azul-2-e1785220897758.png?fit=1246%2C470&amp;ssl=1",
+   "alt": "Treu Legal & Business"
+  },
+  {
+   "type": "heading",
+   "level": 1,
+   "text": "Contacto"
+  },
+  {
+   "type": "paragraph",
+   "text": "← Atrás"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "Gracias"
+  },
+  {
+   "type": "paragraph",
+   "text": "← Atrás"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "Gracias"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "LinkedIn",
+    "Twitter",
+    "Facebook",
+    "Correo electrónico"
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Oficinas"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,525 @@
+{
+ "id": 82,
+ "slug": "privacidad",
+ "path": "/privacidad/",
+ "source": "https://treulegal.solutions/privacidad/",
+ "title": "Aviso y Política de privacidad",
+ "extractedVia": "api",
+ "meta": {},
+ "blocks": [
+  {
+   "type": "paragraph",
+   "text": "Documento: Aviso y Política de Privacidad · Versión: 5.1 · Fecha de versión: Abril de 2025"
+  },
+  {
+   "type": "paragraph",
+   "text": "Alineada con: Nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares (DOF 20 de marzo de 2025)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Incluye: Addendum para Residentes de California (CCPA/CPRA)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Responsable: Marco Polo Hernández Alvarado · Treu Legal & Business · Contacto: privacidad@treulegal.solutions · treulegal.solutions"
+  },
+  {
+   "type": "paragraph",
+   "text": "Primera versión: 6 de julio de 2011 · Versión anterior: v5.0 (Abril de 2025)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "I Identidad y Domicilio del Responsable"
+  },
+  {
+   "type": "paragraph",
+   "text": "Marco Polo Hernández Alvarado, persona física que ejerce servicios jurídicos y de consultoría empresarial bajo la denominación comercial Treu Legal & Business, con domicilio para notificaciones en la ciudad de Ensenada, Baja California, México, correo electrónico: privacidad@treulegal.solutions, portal de internet: treulegal.solutions, es el responsable del uso y protección de sus datos personales en términos de la Nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares (DOF 20 de marzo de 2025) y demás normativa aplicable."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "II Datos Personales que se Tratan"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para las finalidades descritas en este aviso, Treu Legal & Business trata las siguientes categorías de datos personales:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Datos de identificación: nombre completo, CURP, RFC, número y tipo de identificación oficial.",
+    "Datos de contacto: domicilio, número de teléfono, correo electrónico.",
+    "Datos laborales y profesionales: cargo, empresa o institución, actividad económica, sector de industria.",
+    "Datos patrimoniales y financieros: información sobre bienes, estructuras societarias, estados financieros, datos bancarios para facturación.",
+    "Datos de prospectos (etapa precontractual): nombre, correo electrónico, empresa y descripción general del asunto, recabados a través de formularios web, descarga de materiales informativos o contacto por redes sociales. El aviso de privacidad se pone a disposición del titular en el momento en que se recaban estos datos."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Datos personales sensibles"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuando la naturaleza del servicio lo requiera (incluyendo asuntos de derecho laboral, migratorio, societario con implicaciones personales o cualquier otro que involucre aspectos de la esfera íntima del titular) el responsable podrá tratar datos sensibles, entendiéndose por tales, de manera enunciativa mas no limitativa: información sobre el estado de salud, origen racial o étnico, situación migratoria, creencias religiosas, filosóficas o morales, opiniones políticas, preferencia sexual o información genética. Para el tratamiento de datos sensibles se recabará el consentimiento expreso del titular por escrito, conforme al artículo 9 de la NLFPDPPP."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "III Finalidades del Tratamiento"
+  },
+  {
+   "type": "paragraph",
+   "text": "La siguiente tabla identifica todas las finalidades del tratamiento, distinguiendo cuáles son necesarias para la prestación del servicio (y por tanto no requieren consentimiento adicional) y cuáles son voluntarias (y requieren consentimiento o ausencia de oposición), conforme al artículo 14 de la NLFPDPPP."
+  },
+  {
+   "type": "paragraph",
+   "text": "Si no desea que sus datos sean tratados para las finalidades voluntarias, puede manifestarlo en cualquier momento enviando un correo a privacidad@treulegal.solutions con el asunto: \"Oposición finalidades voluntarias\" e indicando su nombre completo y la finalidad específica sobre la que ejerce su oposición. Su negativa no afectará la prestación del servicio contratado."
+  },
+  {
+   "type": "paragraph",
+   "text": "Conforme a la NLFPDPPP 2025: si el responsable requiriera tratar sus datos para una finalidad distinta a las señaladas en este aviso, solicitará nuevamente su consentimiento, independientemente de si la nueva finalidad fuera compatible con las aquí descritas."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "IV Derechos ARCO y Mecanismos de Limitación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Como titular de datos personales, usted tiene los siguientes derechos, cuyo ejercicio puede solicitar en cualquier momento:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Acceso: conocer qué datos personales tiene el responsable, para qué finalidades los utiliza y las condiciones de uso.",
+    "Rectificación: corregir datos inexactos, desactualizados o incompletos.",
+    "Cancelación: solicitar la eliminación de sus datos de archivos, registros, expedientes y sistemas del responsable, cuando considere que no están siendo tratados adecuadamente, salvo que exista obligación legal de conservación.",
+    "Oposición: oponerse al tratamiento de sus datos para finalidades específicas, incluyendo tratamientos automatizados que afecten significativamente sus intereses, derechos o libertades sin intervención humana."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Procedimiento para ejercer sus derechos ARCO"
+  },
+  {
+   "type": "paragraph",
+   "text": "Envíe solicitud por escrito a privacidad@treulegal.solutions incluyendo: (a) nombre completo y copia de identificación oficial vigente; (b) en caso de representación, instrumento que acredite la personalidad del representante; (c) correo electrónico para recibir respuesta; (d) descripción clara del derecho que ejerce y los datos sobre los que recae; (e) en solicitudes de Rectificación, documentación que soporte la corrección."
+  },
+  {
+   "type": "paragraph",
+   "text": "Para proteger su privacidad y mantener la seguridad de su información, tomaremos medidas razonables para verificar su identidad antes de otorgarle acceso a su información personal o dar cumplimiento a su solicitud. Según el tipo de relación jurídica que usted tenga con nosotros, podríamos solicitarle que verifique información que probablemente ya tengamos registrada, como su correo electrónico y demás datos proporcionados previamente."
+  },
+  {
+   "type": "paragraph",
+   "text": "El responsable resolverá en un plazo de 20 días hábiles contados desde la recepción de la solicitud completa. En caso de procedencia, la acción se ejecutará dentro de los 15 días hábiles siguientes. Los documentos solicitados en ejercicio del derecho de Acceso se entregarán en formato digital sin costo; la reproducción en formato impreso causa únicamente el costo real de impresión. El ejercicio de los derechos ARCO es gratuito, salvo solicitudes reiteradas dentro de doce meses."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Limitación de uso o divulgación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para limitar el uso de sus datos para finalidades voluntarias específicas, envíe solicitud por escrito a privacidad@treulegal.solutions incluyendo: (a) nombre completo y copia de identificación oficial vigente; (b) en caso de representación, instrumento que acredite la personalidad del representante; (c) correo electrónico para recibir respuesta; (d) descripción clara indicando la finalidad concreta. El responsable atenderá su solicitud en el mismo plazo que las solicitudes ARCO."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Revocación del consentimiento"
+  },
+  {
+   "type": "paragraph",
+   "text": "Puede revocar en cualquier momento el consentimiento para el tratamiento de sus datos con finalidades voluntarias enviando solicitud por escrito a privacidad@treulegal.solutions incluyendo: (a) nombre completo y copia de identificación oficial vigente; (b) en caso de representación, instrumento que acredite la personalidad del representante; (c) correo electrónico para recibir respuesta. La revocación no afecta el tratamiento necesario para cumplir obligaciones legales ni para ejecutar el contrato de servicios vigente."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "V Política de Cookies"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Qué son las cookies"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las cookies son archivos de texto que los sitios web almacenan en el dispositivo del usuario para recordar preferencias, analizar el comportamiento de navegación y mejorar la experiencia de uso."
+  },
+  {
+   "type": "paragraph",
+   "text": "Las cookies técnicas son necesarias para el funcionamiento del sitio y no pueden desactivarse. Las cookies analíticas son opcionales; puede rechazarlas accediendo al panel de gestión de cookies del sitio o configurando su navegador. Google Analytics opera bajo la política de privacidad de Google; el responsable ha activado la anonimización de IP."
+  },
+  {
+   "type": "paragraph",
+   "text": "Puede gestionar las cookies a través de su navegador web. La mayoría de los navegadores le indicarán cómo dejar de aceptar nuevas cookies, cómo ser notificado cuando reciba una nueva cookie y cómo desactivar las existentes. Tenga en cuenta que, si deshabilita las cookies técnicas, es posible que no pueda aprovechar todas las funcionalidades del sitio."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "VI Período de Conservación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los datos se conservan durante el tiempo necesario para las finalidades descritas y, en todo caso, durante los plazos mínimos legales:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cinco años para efectos fiscales (Código Fiscal de la Federación)",
+    "Diez años para información relacionada con actividades vulnerables (LFPIORPI)",
+    "El plazo de prescripción de acciones aplicable a la relación jurídica de que se trate"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Transcurridos dichos plazos, los datos serán bloqueados y posteriormente eliminados de forma segura conforme al protocolo de disposición final del despacho."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "VII Transferencias Internacionales y Encargados Externos"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business utiliza herramientas tecnológicas que pueden implicar el procesamiento de datos en servidores fuera de México. Estos proveedores actúan como encargados del tratamiento, no como terceros, y operan bajo instrucciones del responsable y con obligaciones contractuales de confidencialidad y seguridad equivalentes."
+  },
+  {
+   "type": "paragraph",
+   "text": "Al proporcionar sus datos y aceptar este aviso de privacidad, el titular otorga su consentimiento expreso para la transferencia internacional a los encargados descritos. Dichos proveedores no están autorizados a utilizar los datos para sus propios fines."
+  },
+  {
+   "type": "paragraph",
+   "text": "De igual manera, de conformidad con la NLFPDPPP, podemos transferir información sobre usted, aun sin requerir de su consentimiento, entre otros, en los siguientes casos:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Si la transferencia está ordenada en algún instrumento legal",
+    "A entidades de certificación de comprobantes fiscales, para emitir los comprobantes por sus pagos",
+    "Si estamos obligados a hacerlo por mandamiento judicial o de procuración de justicia",
+    "En respuesta a solicitudes de autoridades gubernamentales",
+    "Para establecer o defender nuestros derechos legales o para hacer cumplir nuestro contrato de servicios y condiciones de uso",
+    "Cuando creamos que la transferencia es necesaria para prevenir daños físicos o pérdidas financieras",
+    "Cuando estimemos que sea necesaria una investigación por la probable comisión de conductas ilegales o violaciones a nuestro contrato de servicios",
+    "En otros casos en los que hayamos obtenido su consentimiento expreso"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "VIII Sitios de Terceros"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para su comodidad, nuestro sitio web puede contener enlaces a otros servicios en línea o permitirle conectarse con sitios de terceros, funciones, complementos, herramientas, widgets, plataformas de redes sociales o aplicaciones como LinkedIn y otros (identificados en lo sucesivo como \"Sitios de Terceros\"). Estos Sitios de Terceros operan de manera independiente de Treu Legal & Business, por lo que los avisos y sus prácticas de privacidad, incluidos los detalles sobre la información personal que pueden recopilar sobre usted, están sujetos a los avisos y las políticas de privacidad de esos terceros."
+  },
+  {
+   "type": "paragraph",
+   "text": "Sus interacciones con esos Sitios de Terceros, así como sus derechos y obligaciones al acceder y usarlos, no están regidos por la presente Política de Privacidad de Treu Legal & Business, sino que estarán regidos por los términos y políticas de esos Sitios de Terceros."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "IX Medidas de Seguridad"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business implementa medidas técnicas, administrativas y físicas proporcionales a la sensibilidad de los datos que gestiona. La naturaleza de nuestra actividad nos lleva a adoptar un estándar superior al promedio del sector servicios."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Medidas técnicas"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Almacenamiento en nube con cifrado en reposo (AES-256 o equivalente) y en tránsito (TLS 1.2+)",
+    "Acceso al CRM y base de conocimiento mediante autenticación de doble factor (2FA)",
+    "Contraseñas gestionadas mediante gestor institucional",
+    "Copias de seguridad periódicas con versiones históricas",
+    "Sitio web con certificado SSL activo (HTTPS)"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Medidas administrativas"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Todos los colaboradores firman acuerdo de confidencialidad antes de acceder a cualquier expediente",
+    "Acceso restringido por asunto: cada colaborador accede únicamente a los expedientes asignados",
+    "El Fundador es el único con acceso completo a todos los expedientes y a la base de conocimiento",
+    "Protocolo de salida: revocación inmediata de accesos el día de la terminación"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Vulneraciones de seguridad"
+  },
+  {
+   "type": "paragraph",
+   "text": "En caso de vulneración que afecte los derechos patrimoniales o morales de los titulares, el responsable la notificará de forma inmediata a la Secretaría Anticorrupción y Buen Gobierno conforme al artículo 19 de la NLFPDPPP, y a los titulares afectados de manera oportuna."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "X Actualizaciones"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las modificaciones a este aviso se publicarán en treulegal.solutions/privacidad con la versión y fecha de actualización. Ante cambios materiales en finalidades primarias o categorías de datos, se notificará al titular por correo electrónico. Si el responsable requiere tratar sus datos para una finalidad no prevista en el aviso vigente, solicitará nuevamente su consentimiento."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Addendum para Residentes de California"
+  },
+  {
+   "type": "paragraph",
+   "text": "California Consumer Privacy Act (CCPA) · California Privacy Rights Act (CPRA)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "A Ámbito de Aplicabilidad"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Ley aplicable y jurisdicción"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los servicios de Treu Legal & Business se prestan desde Ensenada, Baja California, México, y se rigen por la legislación mexicana, en particular la Nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares (NLFPDPPP, DOF 20 de marzo de 2025). Este Addendum no constituye sumisión voluntaria ni irrestricta a la jurisdicción de las autoridades del estado de California ni a la de ninguna otra autoridad extranjera. Las disposiciones aquí contenidas se adoptan como estándar de mejor práctica y como expresión del compromiso institucional de la firma con sus clientes y prospectos con presencia en California, sin que ello implique reconocimiento de jurisdicción más allá de lo que la ley aplicable exija en cada caso concreto."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Umbrales de sujeción obligatoria"
+  },
+  {
+   "type": "paragraph",
+   "text": "La aplicación formal de la CCPA/CPRA está condicionada a que Treu Legal & Business reúna los umbrales legales que activan la obligación de cumplimiento: ingresos anuales brutos superiores a USD $25 millones; tratamiento de datos personales de 100,000 o más consumidores o unidades domésticas californianas por año calendario; o derivación de más del 50% de los ingresos anuales de la venta de datos personales de consumidores californianos. En la etapa actual de operación del despacho es probable que ninguno de dichos umbrales se alcance. Las protecciones de este Addendum se ofrecen voluntariamente mientras esa condición prevalezca."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Nexo territorial: cuándo se considera que Treu trata datos de un residente de California"
+  },
+  {
+   "type": "paragraph",
+   "text": "El solo hecho de que un residente de California visite el sitio treulegal.solutions o descargue un material informativo no genera por sí mismo un nexo territorial suficiente para activar las obligaciones de la CPRA respecto de Treu, dado que el sitio no está dirigido exclusivamente al mercado californiano y no existe en ese supuesto ninguna relación comercial ni contractual activa."
+  },
+  {
+   "type": "paragraph",
+   "text": "El nexo territorial relevante se considera presente en los siguientes supuestos:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Existe un contrato de prestación de servicios profesionales celebrado con una persona física o moral domiciliada o residente en California, con independencia del canal o modalidad de prestación del servicio; o",
+    "Treu dirige activamente comunicaciones comerciales personalizadas a un residente identificado de California en el contexto de una relación de prospecto activo, más allá del envío automatizado de materiales informativos de descarga libre."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "La prestación de servicios a un residente de California que acude físicamente a las oficinas del despacho en Ensenada, Baja California, se considera una actividad realizada íntegramente en territorio mexicano; en ese supuesto la ley aplicable es exclusivamente la mexicana y la CPRA no genera obligaciones adicionales por la mera nacionalidad o residencia californiana del cliente."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "B Categorías de Información Personal Recopilada"
+  },
+  {
+   "type": "paragraph",
+   "text": "La siguiente tabla describe las categorías de información personal que Treu Legal & Business puede recopilar de residentes de California, en los términos de la CPRA. Para el detalle de finalidades y base legal, ver la Sección III del Aviso principal."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business no vende ni comparte información personal con terceros para fines comerciales o publicitarios propios de esos terceros. No realiza publicidad conductual cruzada (cross-context behavioral advertising). No utiliza sistemas de toma de decisiones automatizada que produzcan efectos jurídicos o equivalentes sobre el titular."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "C Derechos de los Residentes de California"
+  },
+  {
+   "type": "paragraph",
+   "text": "Como residente de California, usted tiene los siguientes derechos conforme a la CCPA/CPRA, todos ellos ejercibles a través del canal indicado, sin costo y sin discriminación por su ejercicio:"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los derechos de la CPRA son independientes de los derechos ARCO de la NLFPDPPP, aunque en la mayoría de los casos son conceptualmente equivalentes y se atienden por el mismo canal. Cuando los plazos difieran entre ambas normativas, se aplicará el plazo más favorable para el titular."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "D Procedimiento para Ejercer Derechos bajo CPRA"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para ejercer cualquiera de los derechos descritos en este Addendum, envíe su solicitud a:"
+  },
+  {
+   "type": "paragraph",
+   "text": "Correo: privacidad@treulegal.solutions"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asunto recomendado: \"Solicitud de privacidad — California\""
+  },
+  {
+   "type": "paragraph",
+   "text": "Incluir: (a) nombre completo; (b) naturaleza del derecho que ejerce; (c) correo electrónico de respuesta; (d) descripción de los datos sobre los que recae su solicitud."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Verificación de identidad"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para proteger su privacidad y la integridad de su información, tomaremos medidas razonables para verificar su identidad antes de atender su solicitud. Según el tipo de relación que usted tenga con el despacho, podríamos solicitarle que confirme información que probablemente ya tengamos registrada. Este proceso de verificación no exige el suministro de información nueva o distinta a la ya proporcionada."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Representación autorizada"
+  },
+  {
+   "type": "paragraph",
+   "text": "Puede designar a un agente autorizado para ejercer sus derechos bajo la CPRA. Para ello, proporcione instrucciones escritas firmadas que acrediten la autorización de dicho agente, o bien un poder notarial (power of attorney) válido conforme a la legislación de California."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Plazos de respuesta"
+  },
+  {
+   "type": "paragraph",
+   "text": "El despacho resolverá las solicitudes recibidas de residentes de California en un plazo de 45 días calendario contados desde la recepción de la solicitud completa. Si la complejidad o el volumen de solicitudes lo justifica, el plazo podrá prorrogarse 45 días adicionales, notificándole por escrito dentro del primer plazo la razón de la prórroga. Las solicitudes son gratuitas, con la misma excepción de reiteración dentro de doce meses prevista en el Aviso principal."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "E No Venta ni Compartición de Información Personal"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business no vende información personal en los términos de la CCPA/CPRA. Tampoco \"comparte\" información personal en los términos de la CPRA, entendiéndose por \"compartir\" la transferencia de información personal a terceros para publicidad conductual cruzada (cross-context behavioral advertising) a cambio o no de una contraprestación."
+  },
+  {
+   "type": "paragraph",
+   "text": "Dado que no se realizan estas actividades, no resulta aplicable en la práctica el mecanismo de opt-out específico de \"Do Not Sell or Share My Personal Information\" que la CPRA establece para quienes sí las realizan. Sin embargo, si en el futuro el modelo operativo del despacho cambiara en este aspecto, este Addendum será actualizado y notificado al titular con anterioridad a cualquier nuevo tratamiento."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "F Información Personal Sensible (Sensitive Personal Information)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conforme a la CPRA, el despacho reconoce la categoría de Sensitive Personal Information (SPI), que incluye, entre otros: números de seguro social o identificadores gubernamentales equivalentes; información financiera de cuentas precisas; datos de salud, vida sexual u orientación sexual; datos de origen racial o étnico; información genética; y contenido de comunicaciones privadas."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business solo trata información personal sensible en los casos en que la naturaleza del asunto jurídico lo requiere, siempre con consentimiento expreso del titular y únicamente para las finalidades necesarias del servicio contratado. Nunca se utiliza información personal sensible para finalidades voluntarias (mercadotecnia, boletines, prospección) sin autorización adicional del titular."
+  },
+  {
+   "type": "paragraph",
+   "text": "Conforme a la CPRA, usted tiene el derecho de limitar el uso y la divulgación de su información personal sensible exclusivamente a las finalidades necesarias para la prestación del servicio. Para ejercer este derecho, envíe solicitud a privacidad@treulegal.solutions con el asunto: \"Limitación Sensitive PI\"."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "G Derecho a la No Discriminación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business no discriminará a ningún residente de California por el ejercicio de sus derechos de privacidad conforme a la CCPA/CPRA. Esto significa que el ejercicio de cualquiera de los derechos descritos en este Addendum no dará lugar a: denegación o degradación del servicio; aplicación de precios o tarifas diferentes; penalización o afectación de la relación profesional; ni ningún otro trato diferenciado basado en el ejercicio de derechos de privacidad."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "H Señales de Privacidad Global (Global Privacy Control)"
+  },
+  {
+   "type": "paragraph",
+   "text": "El sitio treulegal.solutions no realiza rastreo conductual cruzado (cross-site tracking) ni publicidad basada en comportamiento. En consecuencia, las señales de Global Privacy Control (GPC) o Do Not Track (DNT) enviadas por el navegador del usuario no activan supuestos de opt-out adicionales a los ya descritos, dado que las actividades que dichas señales buscan limitar no se llevan a cabo en este sitio. El despacho reconoce estas señales y declara expresamente que no existe rastreo conductual que deba ser opt-out."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "I Períodos de Retención Aplicables a Residentes de California"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los períodos de retención descritos en la Sección VI del Aviso principal aplican igualmente a los datos de residentes de California. Los criterios de retención se basan en: la duración de la relación profesional; las obligaciones legales de conservación bajo la normativa mexicana aplicable; el plazo de prescripción de acciones jurídicas relevantes; y la finalidad específica para la que se recopilaron los datos. Una vez vencidos estos plazos, los datos son eliminados de forma segura conforme al protocolo de disposición final del despacho."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "J Contacto para Asuntos de Privacidad en California"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para cualquier solicitud, consulta o queja relacionada con sus derechos de privacidad como residente de California:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Correo electrónico: privacidad@treulegal.solutions",
+    "Sitio web: treulegal.solutions/privacidad",
+    "Asunto recomendado: \"Solicitud de privacidad — California\""
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "El despacho no cuenta con línea telefónica dedicada a solicitudes de privacidad en esta etapa de operación. El canal de correo electrónico es el principal y garantiza trazabilidad documental completa de su solicitud."
+  },
+  {
+   "type": "paragraph",
+   "text": "Recursos adicionales. Si no está satisfecho con la respuesta recibida del despacho y considera que la CCPA/CPRA le resulta aplicable conforme a los supuestos de nexo territorial descritos en la Sección A de este Addendum, puede explorar los recursos disponibles ante la California Privacy Protection Agency (CPPA: cppa.ca.gov) o ante el Attorney General de California. La posibilidad de acudir a dichas instancias no implica reconocimiento por parte de Treu Legal & Business de estar sujeto a su jurisdicción en todos los casos, sino únicamente en aquellos en que el nexo territorial y los umbrales de sujeción legal se encuentren efectivamente acreditados. En todo caso, la ley principal que rige el tratamiento de datos por parte del responsable es la NLFPDPPP (DOF 20 de marzo de 2025) y la jurisdicción primaria corresponde a las autoridades mexicanas competentes, actualmente la Secretaría Anticorrupción y Buen Gobierno."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "K Actualizaciones de este Addendum"
+  },
+  {
+   "type": "paragraph",
+   "text": "Este Addendum puede modificarse para reflejar cambios en la legislación de California, en los servicios del despacho o en sus prácticas de privacidad. Las modificaciones se publicarán en treulegal.solutions/privacidad con indicación de versión y fecha. En caso de cambios materiales que afecten los derechos de residentes de California, se notificará por correo electrónico a los titulares afectados."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business · Aviso y Política de Privacidad v5.1 · Addendum incorporado en Versión 5.1"
+  },
+  {
+   "type": "paragraph",
+   "text": "Correo: privacidad@treulegal.solutions · Sitio: treulegal.solutions/privacidad"
+  },
+  {
+   "type": "paragraph",
+   "text": "Ensenada, Baja California, México"
+  },
+  {
+   "type": "paragraph",
+   "text": "Primera versión: 6 de julio de 2011 · Versión 5.0: Abril de 2025 — Alineada con NLFPDPPP DOF 20-mar-2025 · Versión 5.1: Abril de 2025 — Incorpora Addendum CCPA/CPRA"
+  }
+ ]
+}

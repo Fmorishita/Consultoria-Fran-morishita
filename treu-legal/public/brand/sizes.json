@@ -1,0 +1,22 @@
+{
+ "wordmark-azul": {
+  "width": 640,
+  "height": 201,
+  "bytes": 17736
+ },
+ "wordmark-blanco": {
+  "width": 640,
+  "height": 305,
+  "bytes": 13900
+ },
+ "isotipo-azul": {
+  "width": 320,
+  "height": 323,
+  "bytes": 16728
+ },
+ "isotipo-blanco": {
+  "width": 320,
+  "height": 323,
+  "bytes": 13622
+ }
+}

@@ -1,0 +1,192 @@
+{
+ "id": 1889,
+ "slug": "areas-de-practica--compliance-risk-prevention",
+ "path": "/areas-de-practica/compliance-risk-prevention/",
+ "source": "https://treulegal.solutions/areas-de-practica/compliance-risk-prevention/",
+ "title": "Compliance & Risk Prevention",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Compliance & Risk Prevention - Cumplimiento Normativo Empresarial | Treu Legal & Business",
+  "description": "Programas de compliance, PLD, protección de datos personales y gestión de riesgos regulatorios para empresas en México. Treu Legal & Business, Ensenada, Baja California.",
+  "ogTitle": "Compliance & Risk Prevention - Cumplimiento Normativo Empresarial | Treu Legal & Business",
+  "ogDescription": "Programas de compliance, PLD, protección de datos personales y gestión de riesgos regulatorios para empresas en México. Treu Legal & Business, Ensenada, Baja California.",
+  "canonical": "https://treulegal.solutions/areas-de-practica/compliance-risk-prevention/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Prevención de Riesgos Regulatorios para Empresas"
+  },
+  {
+   "type": "paragraph",
+   "text": "El entorno normativo en México ha aumentado significativamente en complejidad durante los últimos años. Las obligaciones en materia de prevención de lavado de dinero, protección de datos personales, subcontratación, responsabilidad penal empresarial y estándares de integridad corporativa configuran un marco de exposición real para cualquier empresa que opera sin estructura de cumplimiento."
+  },
+  {
+   "type": "paragraph",
+   "text": "En Treu Legal & Business diseñamos e implementamos programas de compliance corporativo con un enfoque práctico: no documentos que ningún empleado lee, sino sistemas que funcionan en la operación real de la empresa y que pueden acreditarse ante una autoridad el día que sea necesario."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Marco Regulatorio Relevante"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las principales obligaciones de cumplimiento que afectan a empresas en México incluyen:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Prevención de Lavado de Dinero (PLD) • Ley Federal para la Prevención e Identificación de Operaciones con Recursos de Procedencia Ilícita (LFPIORPI). Obligatoria para actividades vulnerables: inmobiliarias, constructoras, ciertos servicios profesionales y al sector financiero."
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Protección de Datos Personales • Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP, actualizada en 2025). Aplicable a toda persona moral o física que trate datos personales de terceros."
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Subcontratación Especializada • Reforma 2021. Régimen de servicios especializados con REPSE, verificaciones cuatrimestrales y responsabilidad solidaria del contratante, así como su impacto fiscal por incumplimiento."
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Normatividad Laboral • NOM-019, NOM-030, NOM-035, NOM-037. Obligaciones de seguridad e higiene, de identificación y prevención de factores de riesgo psicosocial, teletrabajo y violencia laboral."
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Responsabilidad Penal Corporativa • Código Nacional de Procedimientos Penales. Responsabilidad de personas morales en conductas ilícitas cometidas en su nombre o beneficio."
+   ]
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Exposición Binacional • FCPA (Foreign Corrupt Practices Act) y CCPA/CPRA de California para empresas con operaciones en ambos lados de la frontera."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Servicios"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Diagnóstico de Compliance"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis integral de la situación de cumplimiento normativo de la empresa. Identificación de áreas de exposición, evaluación del riesgo regulatorio por obligación aplicable y mapa de contingencias con prioridades de atención."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Programa de Cumplimiento PLD/LFPIORPI"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño e implementación del programa de prevención de lavado de dinero para empresas que realizan actividades vulnerables. Incluye identificación de actividades, diseño de políticas de conocimiento del cliente (KYC), designación del oficial de cumplimiento, elaboración de los lineamientos internos exigidos por la LFPIORPI y capacitación del personal."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Cumplimiento LFPDPPP"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis de flujos de datos personales, elaboración de avisos de privacidad, diseño de políticas internas de tratamiento, procedimientos para ejercicio de derechos ARCO y designación del departamento de datos personales. Actualizado conforme a la nueva LFPDPPP."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Políticas Corporativas y Código de Ética"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseño de políticas corporativas internas, reglamentos de conducta, códigos de ética y sistemas de denuncia (whistleblowing) que establezcan estándares claros de comportamiento para directivos, empleados y colaboradores."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Auditoría Legal Interna"
+  },
+  {
+   "type": "paragraph",
+   "text": "Revisión sistemática del estado de cumplimiento de la empresa: contratos vigentes, obligaciones regulatorias activas, cumplimiento laboral, actos corporativos pendientes y áreas de exposición legal. Produce un mapa de contingencias con recomendaciones de acción prioritaria."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Preparación para Inspecciones Gubernamentales"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesoría para empresas que enfrentan o anticipan inspecciones de la STPS, IMSS, SAT u otras autoridades regulatorias. Revisión de documentación, identificación de áreas de vulnerabilidad y estrategia de respuesta."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Compliance Binacional"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis de exposición regulatoria para empresas con operaciones en México y California: FCPA, CCPA/CPRA, estándares de integridad corporativa aplicables en ambas jurisdicciones y diseño de programas de cumplimiento integrados."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "NUESTRO DIFERENCIADOR EN COMPLIANCE"
+  },
+  {
+   "type": "paragraph",
+   "text": "La combinación de conocimiento jurídico local con comprensión del contexto regulatorio de California posiciona a Treu como interlocutor natural para empresas con operaciones binacionales que necesitan un solo asesor con visión integral del riesgo regulatorio en ambas jurisdicciones."
+  },
+  {
+   "type": "paragraph",
+   "text": "El compliance que diseñamos es un sistema operativo de cumplimiento que la empresa puede implementar, acreditar y mantener con sus propios recursos, con el acompañamiento del despacho en los puntos que lo requieren."
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Conoce el estado de cumplimiento normativo de su empresa?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce otras áreas:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Corporate & Business Law",
+    "Labor & Employment Strategy",
+    "Cross-Border Advisory"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Legal Products relacionados:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "LP-02 Corporate Health Check",
+    "LP-03 HR Legal System",
+    "LP-05 Corporate Risk & Structure System"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,213 @@
+{
+ "id": 1903,
+ "slug": "legal-products--hr-legal-system",
+ "path": "/legal-products/hr-legal-system/",
+ "source": "https://treulegal.solutions/legal-products/hr-legal-system/",
+ "title": "HR Legal System",
+ "extractedVia": "api",
+ "meta": {
+  "title": "HR Legal System™ - Sistema de Arquitectura Laboral Empresarial | Treu Legal & Business",
+  "description": "Sistema integral de contratación laboral, políticas internas, protocolos de terminación y cumplimiento NOM para empresas en México. Elimina la exposición a contingencias laborales.",
+  "ogTitle": "HR Legal System™ — Sistema de Arquitectura Laboral Empresarial | Treu Legal & Business",
+  "ogDescription": "Sistema integral de contratación laboral, políticas internas, protocolos de terminación y cumplimiento NOM para empresas en México. Elimina la exposición a contingencias laborales.",
+  "canonical": "https://treulegal.solutions/legal-products/hr-legal-system/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué obtiene?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una estructura laboral completa, documentada y conforme a la legislación mexicana vigente. La empresa opera con contratos diseñados para sus perfiles de puesto reales, un Reglamento Interior de Trabajo funcional, políticas internas claras y protocolos de terminación que eliminan la exposición a contingencias laborales antes de que se materialicen."
+  },
+  {
+   "type": "paragraph",
+   "text": "El HR Legal System™ no es un set de documentos genéricos. Es un sistema diseñado específicamente para el modelo de negocio, la industria, la estructura de su plantilla de colaboradores y el perfil de riesgo laboral de cada empresa."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "El problema que resuelve"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una empresa con 20 empleados contratados bajo un mismo formato genérico de contrato descargado de internet, sin Reglamento Interior de Trabajo, con tres terminaciones laborales ejecutadas sin protocolo en los últimos dos años, acumula una contingencia laboral pasiva que ninguna cuenta de resultados refleja."
+  },
+  {
+   "type": "paragraph",
+   "text": "Esa contingencia se hace visible en tres momentos: una inspección de la STPS, un due diligence de un banco o inversionista o el día en que el primer empleado presenta una demanda y el despacho contrario tiene más documentación que la empresa."
+  },
+  {
+   "type": "paragraph",
+   "text": "El HR Legal System™ cierra esa brecha antes de que ocurra cualquiera de esos tres escenarios."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Dos modalidades: la adecuada para cada momento"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Modalidad Básica"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Para situaciones de urgencia activa o empresas en etapa temprana con plantilla reducida. Intervención acotada sobre el elemento laboral más urgente: una terminación en curso, un contrato ejecutivo próximo a firmarse o una inspección laboral anunciada. El alcance se define en la consulta inicial. Genera las condiciones para abordar la Modalidad Completa como siguiente paso."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Modalidad Completa"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Implementación integral de la arquitectura laboral de la empresa. Aplica cuando el cliente toma la decisión planificada de profesionalizar sus relaciones laborales, cuando la plantilla ha crecido en tamaño o complejidad o cuando la empresa está próxima a una revisión externa (inversionistas, financiamiento o due diligence). Genera directamente las condiciones para contratar el retainer de HR Legal Advisor."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Componentes | Modalidad Completa"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente a"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contratos laborales por perfil de puesto"
+  },
+  {
+   "type": "paragraph",
+   "text": "Contratos diseñados para cada categoría: operativo, ejecutivo, vendedor o posición de confianza. Cada contrato refleja la modalidad correcta (indefinido, determinado o por obra), la jornada aplicable, el salario y las prestaciones conforme a la LFT y las cláusulas de confidencialidad y no competencia cuando corresponde."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente B"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Reglamento Interior de Trabajo"
+  },
+  {
+   "type": "paragraph",
+   "text": "Elaborado conforme a la LFT y las NOM aplicables. Incluye políticas de conducta, normas de asistencia, uso de tecnología e instalaciones de la empresa, procedimientos disciplinarios y protocolos de queja internos."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente C"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Manual del Empleado"
+  },
+  {
+   "type": "paragraph",
+   "text": "Documento que comunica las políticas de la empresa en lenguaje claro para el empleado: beneficios, canales de comunicación interna, políticas operativas y conducta esperada. Instrumento de gestión interna y respaldo documental en procedimientos disciplinarios."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente D"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Protocolos de terminación laboral"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diseñados por tipo de separación: rescisión justificada, terminación sin causa, renuncia voluntaria y acuerdo mutuo. Incluye formatos de finiquito, cartas de rescisión, constancias y cálculo de liquidación para cada escenario."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente E"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Revisión NOM laboral"
+  },
+  {
+   "type": "paragraph",
+   "text": "Diagnóstico de cumplimiento y diseño de protocolos conforme a NOM-019 (comisiones seguridad e higiene), NOM-030 (seguridad y prevención de accidentes), NOM-035 (factores de riesgo psicosocial) y NOM-037 (teletrabajo)."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Entregables"
+  },
+  {
+   "type": "paragraph",
+   "text": "Set completo de documentación laboral en formato editable, con instructivo de uso, guía de implementación y sesión de transferencia de conocimiento con el equipo del cliente."
+  },
+  {
+   "type": "paragraph",
+   "text": "El HR Legal System™ construye la arquitectura laboral; el HR Legal Advisor (retainer) la mantiene actualizada. El camino correcto es implementar primero el sistema y contratar después el retainer de mantenimiento. Aceptar el retainer sobre una base laboral no construida compromete la calidad del servicio."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué sigue después del HR Legal System™?"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "HR Legal Advisor (retainer)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Mantenimiento continuo del sistema laboral implementado"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Outside General Counsel"
+  },
+  {
+   "type": "paragraph",
+   "text": "Si la empresa requiere presencia legal continua más allá del eje laboral"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Corporate Health Check™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Si la revisión laboral revela otras áreas de exposición que requieren diagnóstico más amplio"
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Cuánto está costando la falta de arquitectura laboral en su empresa?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce también:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Corporate Health Check™",
+    "Contract Architecture™",
+    "Labor & Employment Strategy"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shell: 76rem;
+    --header-h: 4rem;
+  }
+
+  * { min-width: 0; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* El ancla no queda tapada por el header fijo. */
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+
+  body {
+    @apply bg-white text-ink font-sans text-step-0 antialiased;
+    /* Deja sitio a la barra inferior fija en móvil. */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  h1, h2, h3, h4 { @apply font-sans font-semibold text-balance; letter-spacing: -0.015em; }
+
+  /* Foco visible y consistente en todo el sitio. */
+  :focus-visible {
+    outline: 2px solid theme('colors.blue.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Áreas táctiles mínimas de 44x44 px. */
+  a, button, summary, [role='button'] { touch-action: manipulation; }
+
+  ::selection { background: theme('colors.blue.DEFAULT'); color: white; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Contenedor maestro. 16px de margen lateral en móvil. */
+  .shell { @apply mx-auto w-full max-w-shell px-gutter sm:px-6 lg:px-8; }
+
+  /* --- Lenguaje de plano arquitectónico ------------------------------- */
+
+  /* Retícula de construcción: trazos finos, nunca protagonista. */
+  .plan-grid {
+    background-image:
+      linear-gradient(to right, rgb(15 76 129 / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(15 76 129 / 0.07) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+  }
+
+  /* Cota: la línea con remates que mide una distancia en un plano. */
+  .cota {
+    @apply relative inline-flex items-center gap-2 text-step--1 text-blue;
+  }
+  .cota::before,
+  .cota::after {
+    content: '';
+    @apply h-2.5 w-px bg-blue/50;
+  }
+
+  /* Filete de sección: el trazo que abre cada bloque. */
+  .rule-blue { @apply h-px w-12 origin-left bg-blue; }
+
+  /* --- Prosa ---------------------------------------------------------- */
+
+  /*
+   * Prosa justificada y centrada en su contenedor.
+   *
+   * El cliente pidió dos veces que el texto no quedara cargado a la izquierda
+   * con el margen derecho vacío. `mx-auto` centra la columna de lectura y
+   * `text-align: justify` alinea ambos márgenes.
+   *
+   * `hyphens: auto` es obligatorio aquí: justificar sin partir palabras abre
+   * ríos de espacio en blanco entre palabras, y en español, con palabras
+   * largas, el efecto es peor que no justificar. El documento declara
+   * lang="es-MX", así que el navegador parte según las reglas del idioma.
+   *
+   * En pantallas estrechas se vuelve a alinear a la izquierda: con menos
+   * caracteres por línea, justificar deforma el espaciado.
+   */
+  .prose-treu {
+    @apply mx-auto max-w-prose font-serif text-step-1 text-ink/90;
+    text-align: left;
+    hyphens: auto;
+  }
+  @media (min-width: 640px) {
+    .prose-treu { text-align: justify; }
+    .prose-treu h2,
+    .prose-treu h3,
+    .prose-treu h4 { text-align: left; }
+  }
+  .prose-treu > * + * { @apply mt-5; }
+  .prose-treu h2 {
+    @apply mt-12 font-sans text-step-3 font-semibold text-ink;
+  }
+  .prose-treu h3 { @apply mt-9 font-sans text-step-2 font-semibold text-ink; }
+  .prose-treu h4 { @apply mt-7 font-sans text-step-1 font-semibold text-ink; }
+  .prose-treu ul { @apply space-y-2.5 pl-0; }
+  .prose-treu ul > li {
+    @apply relative pl-6;
+  }
+  /* Viñeta: un trazo de cota, no un punto. */
+  .prose-treu ul > li::before {
+    content: '';
+    @apply absolute left-0 top-[0.7em] h-px w-3 bg-blue;
+  }
+  .prose-treu ol { @apply list-decimal space-y-2.5 pl-6; }
+  .prose-treu a { @apply text-blue underline decoration-blue/35 underline-offset-2 hover:decoration-blue; }
+  .prose-treu strong { @apply font-semibold text-ink; }
+  .prose-treu blockquote {
+    @apply border-l-2 border-blue pl-5 italic text-ink;
+  }
+
+  /* --- Botones -------------------------------------------------------- */
+
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 px-5 py-3
+           text-step-0 font-semibold leading-none transition-colors duration-200;
+  }
+  .btn-primary { @apply btn bg-blue text-white hover:bg-blue-deep; }
+  .btn-secondary {
+    @apply btn border border-line bg-white text-ink hover:border-blue hover:text-blue;
+  }
+  .btn-ghost { @apply btn text-blue hover:bg-blue/[0.06]; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  /* Respeta el área segura inferior en iOS. */
+  .pb-safe { padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); }
+}
+
+@layer components {
+  /* Estilos de lectura del artículo: cuerpo de 18px y ritmo vertical amplio. */
+  .prose-article {
+    @apply text-step-1;
+  }
+  .prose-article {
+    @apply mx-auto;
+    hyphens: auto;
+  }
+  @media (min-width: 640px) {
+    .prose-article > p { text-align: justify; }
+  }
+  .prose-article > * + * { @apply mt-6; }
+  .prose-article h2 { @apply mt-14 scroll-mt-24 text-step-3; }
+  .prose-article h3 { @apply mt-10 text-step-2; }
+  .prose-article img,
+  .prose-article figure { @apply my-8 h-auto w-full border border-line; }
+  .prose-article figure img { @apply my-0 border-0; }
+  .prose-article figcaption { @apply mt-2 font-sans text-step--1 text-slate; }
+  .prose-article table {
+    @apply my-8 w-full border-collapse border border-line font-sans text-step--1;
+  }
+  .prose-article th,
+  .prose-article td { @apply border border-line px-3 py-2 text-left align-top; }
+  .prose-article th { @apply bg-paper font-semibold; }
+  .prose-article hr { @apply my-10 border-line; }
+}
+
+/*
+ * Movimiento al hacer scroll.
+ *
+ * Con animaciones dirigidas por scroll de CSS (`animation-timeline: view()`),
+ * no con JavaScript: no añade ni un byte al bundle ni trabajo al hilo
+ * principal. Donde el navegador no las soporta simplemente no ocurren y el
+ * contenido se ve completo desde el primer momento, que es el comportamiento
+ * correcto: la animación es un adorno, nunca un requisito para leer.
+ *
+ * Todo el bloque cuelga de `prefers-reduced-motion: no-preference`, así que
+ * quien pide menos movimiento no recibe ninguno.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /* Sólo desplazamiento, nunca opacidad.
+       Una entrada con fundido deja el texto a opacidad parcial mientras dura,
+       y ahí el contraste real cae por debajo del mínimo: la auditoría lo
+       detectó en /strategic-legal-session/. Animando únicamente la posición,
+       el texto es legible en todo momento y el movimiento se conserva. */
+    @keyframes treu-aparece {
+      from { transform: translateY(1.75rem); }
+      to { transform: none; }
+    }
+
+    /* Bloques que entran al aparecer en pantalla. */
+    .aparece {
+      animation: treu-aparece linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 25%;
+    }
+
+    /* Escalonado dentro de una rejilla: cada pieza entra un poco después que
+       la anterior en lugar de montarse todas a la vez. */
+    .aparece-escalonado > * {
+      animation: treu-aparece linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+
+    @keyframes treu-fondo-lento {
+      from { transform: scale(1.12) translateY(-1.5%); }
+      to { transform: scale(1.12) translateY(1.5%); }
+    }
+
+    /* Paralaje contenido en las imágenes de fondo de las fichas: se mueven algo
+       menos que la página, lo justo para dar profundidad sin marear. El
+       `scale` evita que el desplazamiento descubra un borde vacío. */
+    .fondo-lento {
+      animation: treu-fondo-lento linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    @keyframes treu-progreso { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* Línea de avance de lectura bajo la cabecera. */
+    .barra-progreso {
+      animation: treu-progreso linear both;
+      animation-timeline: scroll(root block);
+      transform-origin: 0 50%;
+    }
+  }
+}

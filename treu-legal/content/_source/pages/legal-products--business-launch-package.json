@@ -1,0 +1,366 @@
+{
+ "id": 1901,
+ "slug": "legal-products--business-launch-package",
+ "path": "/legal-products/business-launch-package/",
+ "source": "https://treulegal.solutions/legal-products/business-launch-package/",
+ "title": "Business Launch Package",
+ "extractedVia": "api",
+ "meta": {
+  "title": "Business Launch Package — Constitución Empresarial con Estructura | Treu Legal & Business",
+  "description": "Constitución de empresa en México con figura societaria correcta, pacto de socios funcional y contratos base. Más que un trámite notarial: arquitectura jurídica desde el inicio.",
+  "ogTitle": "Business Launch Package — Constitución Empresarial con Estructura | Treu Legal & Business",
+  "ogDescription": "Constitución de empresa en México con figura societaria correcta, pacto de socios funcional y contratos base. Más que un trámite notarial: arquitectura jurídica desde el inicio.",
+  "canonical": "https://treulegal.solutions/legal-products/business-launch-package/"
+ },
+ "blocks": [
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué obtiene?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una empresa legalmente constituida con la estructura societaria correcta para su etapa de crecimiento, un pacto de socios con los mecanismos necesarios para prevenir los conflictos más comunes entre socios, y los contratos base para iniciar operaciones con certeza jurídica desde el primer día."
+  },
+  {
+   "type": "paragraph",
+   "text": "El entregable no es solo documentación. Es el criterio aplicado a las decisiones que definen el riesgo jurídico de los próximos años del negocio: qué tipo societario conviene, cómo se distribuyen las partes, qué mecanismos de gobernanza y salida quedan en los estatutos, y qué contratos minimizan la exposición en las primeras relaciones comerciales y laborales."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "La diferencia con el trámite notarial estándar"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "• Tipo Societario:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Trámite notarial estándar"
+  },
+  {
+   "type": "paragraph",
+   "text": "El que el cliente solicita o el más común"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Business Launch Package | Treu"
+  },
+  {
+   "type": "paragraph",
+   "text": "Análisis y recomendación fundada según modelo, etapa y objetivos"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "• Estatutos sociales:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Trámite notarial estándar"
+  },
+  {
+   "type": "paragraph",
+   "text": "Modelo estándar con mínimos legales"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Business Launch Package | Treu"
+  },
+  {
+   "type": "paragraph",
+   "text": "Estatutos con cláusulas de gobernanza adaptadas al negocio"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "• Pacto de socios fundadores:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Trámite notarial estándar"
+  },
+  {
+   "type": "paragraph",
+   "text": "No incluido normalmente en la tramitación notarial"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Business Launch Package | Treu"
+  },
+  {
+   "type": "paragraph",
+   "text": "Incluido con mecanismos de gobernanza y salida"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "• Contratos laborales de inicio:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Trámite notarial estándar"
+  },
+  {
+   "type": "paragraph",
+   "text": "No incluido normalmente en la tramitación notarial"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Business Launch Package | Treu"
+  },
+  {
+   "type": "paragraph",
+   "text": "Contrato base para primeros empleados o socios operativos"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "• Contratos comerciales de inicio:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Trámite notarial estándar"
+  },
+  {
+   "type": "paragraph",
+   "text": "No incluido normalmente en la tramitación notarial"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Business Launch Package | Treu"
+  },
+  {
+   "type": "paragraph",
+   "text": "Contrato base de servicios o compraventa adaptado al giro"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "• NDA (Contrato de confidencialidad):"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Trámite notarial estándar"
+  },
+  {
+   "type": "paragraph",
+   "text": "No incluido normalmente en la tramitación notarial"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Business Launch Package | Treu"
+  },
+  {
+   "type": "paragraph",
+   "text": "NDA para colaboradores y terceros clave"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "• Asesoría pre-constitución:"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Trámite notarial estándar"
+  },
+  {
+   "type": "paragraph",
+   "text": "No incluido normalmente en la tramitación notarial"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Business Launch Package | Treu"
+  },
+  {
+   "type": "paragraph",
+   "text": "Sesión de definición de estructura antes de redactar un solo documento"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Los tres problemas que resuelve"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Problema 1"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "Estructura societaria inadecuada para la etapa del negocio"
+  },
+  {
+   "type": "paragraph",
+   "text": "La mayoría de las empresas en Baja California se constituyen con el tipo societario más común sin analizar si esa estructura es la correcta para el modelo de negocio específico, la distribución de roles entre socios y los objetivos de crecimiento. Este producto resuelve esa decisión con criterio técnico."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Problema 2"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "Ausencia de pacto de socios funcional"
+  },
+  {
+   "type": "paragraph",
+   "text": "La escritura constitutiva que elabora la notaría cumple los requisitos legales mínimos, pero no define los mecanismos de gobernanza real: quién toma qué decisiones, cómo se distribuyen las utilidades más allá de una cláusula genérica, qué ocurre si un socio quiere salir o cómo se resuelven los empates en votación. El pacto de socios incluido en este producto cubre esos mecanismos desde el inicio."
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Problema 3"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "Contratos de arranque inadecuados o inexistentes"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las empresas que inician sin contratos estructurados acumulan pasivos ocultos desde las primeras semanas: empleados sin contratación correcta, proveedores sin acuerdo de confidencialidad o clientes sin condiciones de servicio claras. El set de contratos base de este producto instala la protección mínima necesaria."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Componentes y Entregables"
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente a"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Análisis y definición de estructura societaria"
+  },
+  {
+   "type": "paragraph",
+   "text": "Sesión de trabajo para definir el tipo societario más adecuado, la distribución de partes sociales, los órganos de administración y los derechos que deben quedar en los estatutos. Documentado en minuta de decisiones estructurales."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente B"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Constitución de la sociedad mercantil"
+  },
+  {
+   "type": "paragraph",
+   "text": "Redacción de estatutos para la escritura constitutiva, coordinación con notaría para firma, protocolización e inscripción en el RPPC y guía en la obtención de RFC ante el SAT."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente C"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Pacto de socios"
+  },
+  {
+   "type": "paragraph",
+   "text": "Convenio entre socios con mecanismos de toma de decisiones, distribución de utilidades, restricciones a la transferencia de participaciones, cláusulas de salida y protocolos de resolución de conflictos."
+  },
+  {
+   "type": "heading",
+   "level": 4,
+   "text": "componente D"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Contratos base"
+  },
+  {
+   "type": "paragraph",
+   "text": "Contrato laboral para los primeros empleados o socios operativos, contrato comercial estándar (servicios o compraventa según giro del negocio) y NDA para colaboradores y terceros clave."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Entregables"
+  },
+  {
+   "type": "paragraph",
+   "text": "Expediente completo con versiones definitivas firmadas y versiones editables con instructivo de uso. La escritura de constitución se entrega en testimonio una vez concluido el proceso notarial y registral."
+  },
+  {
+   "type": "paragraph",
+   "text": "Este producto aplica exclusivamente cuando todos los socios son personas físicas o morales mexicanas y la empresa operará íntegramente en México. Si algún socio es extranjero (independientemente del porcentaje de su participación) o si el capital tiene origen extranjero, el producto aplicable es el Cross-Border Entry Package. La distinción activa obligaciones de registro ante el RNIE que deben atenderse desde el inicio."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "¿Qué sigue después del Business Launch Package?"
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "A corto plazo: HR Legal System™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Ya tiene empresa; ahora necesita una estructura laboral correcta para sus primeros empleados."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "A 6–12 meses: Corporate Health Check™"
+  },
+  {
+   "type": "paragraph",
+   "text": "Revisión preventiva del estado jurídico real de la empresa en operación."
+  },
+  {
+   "type": "heading",
+   "level": 6,
+   "text": "Al crecer: Outside General Counsel"
+  },
+  {
+   "type": "paragraph",
+   "text": "Presencia legal continua para acompañar las decisiones del negocio."
+  },
+  {
+   "type": "paragraph",
+   "text": "¿Está constituyendo una empresa o opera sin la estructura jurídica adecuada?"
+  },
+  {
+   "type": "paragraph",
+   "text": "Conoce también:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Cross-Border Entry Package",
+    "HR Legal System™",
+    "Corporate Health Check™"
+   ]
+  }
+ ]
+}

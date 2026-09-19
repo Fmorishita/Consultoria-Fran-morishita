@@ -1,0 +1,193 @@
+{
+ "id": 1211,
+ "slug": "la-firma",
+ "path": "/la-firma/",
+ "source": "https://treulegal.solutions/la-firma/",
+ "title": "La Firma",
+ "extractedVia": "api",
+ "meta": {
+  "title": "La Firma - Treu Legal & Business | Asesoría Jurídica Corporativa",
+  "description": "Treu Legal & Business es una firma boutique de asesoría jurídica corporativa en Ensenada, Baja California. Conoce nuestra filosofía, equipo y enfoque estratégico.",
+  "ogTitle": "La Firma - Treu Legal & Business | Asesoría Jurídica Corporativa",
+  "ogDescription": "Treu Legal & Business es una firma boutique de asesoría jurídica corporativa en Ensenada, Baja California. Conoce nuestra filosofía, equipo y enfoque estratégico.",
+  "ogImage": "https://treulegal.solutions/wp-content/uploads/2026/03/16.png",
+  "canonical": "https://treulegal.solutions/la-firma/"
+ },
+ "blocks": [
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/03/16.png?resize=1920%2C1080&#038;ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Quienes somos"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business es una firma boutique enfocada en asesoría legal estratégica en materia corporativa, contractual, cumplimiento normativo, laboral y de resolución inteligente de controversias, orientada a apoyar a empresas en la estructuración de sus operaciones y la prevención de riesgos legales."
+  },
+  {
+   "type": "paragraph",
+   "text": "Nuestra práctica integra derecho corporativo, laboral y compliance, con una comprensión profunda del entorno empresarial en México, con la visión de consolidarnos como una firma boutique reconocida como aliados estratégicos de las empresas.."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Nuestra Filosofía"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los siguientes principios definen nuestra práctica"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Enfoque y pensamiento estratégico"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las soluciones legales deben alinearse con el contexto empresarial y los objetivos de negocio del cliente"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Colaboraciones multidisciplinarias"
+  },
+  {
+   "type": "paragraph",
+   "text": "Aportar valor a nuestros clientes por medio de la colaboración con especialistas para ofrecer soluciones más completas"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Relaciones profesionales a largo plazo"
+  },
+  {
+   "type": "paragraph",
+   "text": "La firma busca acompañar a sus clientes y aliados en el desarrollo de sus proyectos"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Prevención de riesgos"
+  },
+  {
+   "type": "paragraph",
+   "text": "La asesoría preventiva permite evitar conflictos y litigios costosos"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Rigor técnico"
+  },
+  {
+   "type": "paragraph",
+   "text": "La asesoría legal debe sustentarse en análisis jurídico sólido"
+  },
+  {
+   "type": "heading",
+   "level": 3,
+   "text": "Visión empresarial"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las soluciones jurídicas deben ser prácticas, claras y operativas"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Manifiesto"
+  },
+  {
+   "type": "paragraph",
+   "text": "En un entorno empresarial cada vez más complejo, la asesoría legal no puede limitarse a responder conflictos."
+  },
+  {
+   "type": "paragraph",
+   "text": "Las empresas requieren estructuras jurídicas sólidas que les permitan operar con certeza, crecer con seguridad y tomar decisiones estratégicas con claridad."
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business surge con la convicción de que el derecho debe ser una herramienta de estructura, prevención y estrategia empresarial."
+  },
+  {
+   "type": "paragraph",
+   "text": "Creemos que una adecuada arquitectura jurídica permite anticipar riesgos, fortalecer la organización y evitar conflictos innecesarios."
+  },
+  {
+   "type": "paragraph",
+   "text": "Nuestra práctica se enfoca en acompañar a empresas y organizaciones que valoran el pensamiento estratégico, la claridad contractual y el cumplimiento normativo como pilares para su desarrollo."
+  },
+  {
+   "type": "paragraph",
+   "text": "Al mismo tiempo, reconocemos que el derecho moderno exige colaboración multidisciplinaria."
+  },
+  {
+   "type": "paragraph",
+   "text": "Por ello, Treu Legal & Business busca construir relaciones profesionales con especialistas y profesionistas que compartan una visión estratégica del ejercicio jurídico y empresarial."
+  },
+  {
+   "type": "paragraph",
+   "text": "Nuestro objetivo es contribuir a que las empresas operen con estructuras jurídicas sólidas, decisiones informadas y una visión de largo plazo."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Perfil profesional"
+  },
+  {
+   "type": "paragraph",
+   "text": "Marco Polo Hernández Alvarado es el Fundador y Principal Counsel de Treu Legal & Business. Su práctica se centra en asesoría jurídica corporativa para empresas, son especialización en estructuración corporativa , estrategia laboral empresarial y gestión de riesgos regulatorios en México."
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuenta con más de 18 años de experiencia en práctica jurídica de alto nivel, incluyendo 15 años de formación notarial corporativa en la Notaría Pública No. 1 de Ensenada, donde desarrolló expertise profundo en operaciones corporativas, negocios fiduciarios, inversión extranjera y estructuración de personas morales."
+  },
+  {
+   "type": "paragraph",
+   "text": "Su formación incluye la Licenciatura en Derecho por la Universidad Autónoma de Baja California, especialización en Gestión y Sucesión de Empresa Familiar por ESADE Business and Law School, Propiedad Intelectual y Comercio Electrónico por la Organización Mundial de la Propiedad Intelectual, y FinTech Law and Policy por Duke University."
+  },
+  {
+   "type": "paragraph",
+   "text": "Adicionalmente cuenta con formación en Responsabilidad Social Empresarial por el Tecnológico de Monterrey, protección de datos personales y cumplimiento antilavado para actividades vulnerables."
+  },
+  {
+   "type": "paragraph",
+   "text": "Asesora regularmente a empresas en los sectores de construcción e infraestructura, manufactura, desarrollo inmobiliario y operaciones internacionales, con particular enfoque en el entorno empresarial transfronterizo México–California, acompañando a las empresas en la construcción de estructuras jurídicas sólidas, la prevención de contingencias legales y la gestión estratégica de disputas"
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/03/803F1A51-62E7-416F-BDF5-05AD14AC8E9D.png?resize=1536%2C1024&#038;ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/dotcompatterns.wordpress.com/wp-content/uploads/2024/09/1.jpeg?ssl=1",
+   "alt": null,
+   "caption": null
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "Colaboración multidisciplinaria"
+  },
+  {
+   "type": "paragraph",
+   "text": "Treu Legal & Business promueve activamente la colaboración profesional con especialistas de distintas disciplinas que puedan aportar valor a los clientes de la firma."
+  },
+  {
+   "type": "paragraph",
+   "text": "A través de alianzas estratégicas con corresponsales, consultores, contadores, financieros y otros profesionistas, la firma busca construir una red de colaboración que permita ofrecer soluciones jurídicas más completas e inteligentes."
+  },
+  {
+   "type": "image",
+   "src": "https://i0.wp.com/treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69afb9017fe5c.png?resize=1264%2C848&#038;ssl=1",
+   "alt": null,
+   "caption": null
+  }
+ ]
+}
