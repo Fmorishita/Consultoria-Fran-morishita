@@ -19,6 +19,11 @@ import { ui } from '@/content/microcopy';
  *
  * Separar el texto de la fotografía en paneles garantiza el contraste AA sin
  * tener que apagar la imagen hasta hacerla invisible.
+ *
+ * Sin la ficha de datos (duración, con quién, honorario, respuesta) que
+ * llevaba debajo de los botones: el cliente señaló que no hace falta ahí —
+ * esos mismos datos ya están en la franja de confianza justo debajo y en
+ * /strategic-legal-session/, así que aquí sólo duplicaban.
  */
 export function Hero({ tagline, proposition }: { tagline: string; proposition: string }) {
   return (
@@ -53,21 +58,16 @@ export function Hero({ tagline, proposition }: { tagline: string; proposition: s
                 {ui.writeWhatsapp}
               </TrackedLink>
             </div>
-
-            {/* Los datos que responden las dudas que frenan el clic, como cotas. */}
-            <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/20 pt-6 sm:grid-cols-4">
-              {session.keyFacts.map((f) => (
-                <div key={f.label}>
-                  <dt className="text-[0.6875rem] uppercase tracking-[0.12em] text-white/60">{f.label}</dt>
-                  <dd className="mt-1 text-step--1 font-medium leading-snug text-white">{f.value}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
 
-        {/* Panel fotográfico. Es el LCP: se carga con prioridad. */}
-        <div className="relative h-44 overflow-hidden sm:h-56 lg:h-auto">
+        {/* Panel fotográfico. Es el LCP: se carga con prioridad.
+            Altura más generosa en móvil: la imagen es 3:2 y a h-44/h-56
+            (como iba antes) el recorte vertical era severo y se comía la
+            cabeza y la pantalla del plan de trabajo. object-top para que el
+            recorte, cuando lo hay, se lleve el margen inferior y no la
+            cabeza ni el título de la pantalla. */}
+        <div className="relative h-72 overflow-hidden sm:h-80 lg:h-auto">
           <picture>
             <source
               type="image/avif"
@@ -83,7 +83,7 @@ export function Hero({ tagline, proposition }: { tagline: string; proposition: s
               height={1024}
               fetchPriority="high"
               decoding="async"
-              className="h-full w-full object-cover object-[38%_center] lg:object-[42%_center]"
+              className="h-full w-full object-cover object-[center_top] lg:object-[42%_center]"
             />
           </picture>
           {/* La retícula continúa sobre la fotografía: une los dos paneles. */}
