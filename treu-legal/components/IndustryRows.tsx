@@ -3,40 +3,50 @@ import { industries } from '@/content/site';
 import { SectionImage } from './SectionImage';
 
 /**
- * Industrias. Deliberadamente NO es la misma rejilla de tarjetas que áreas y
- * Legal Products: son sólo cuatro y su texto es largo, así que se presentan
- * como filas editoriales anchas que alternan el lado de la imagen.
+ * Industrias en mosaico de dos alturas.
  *
- * Cada imagen es la que treulegal.solutions publica hoy en esa industria. La
- * versión anterior las presentaba con un icono y ninguna imagen, que es lo que
- * dejaba la sección sin identidad.
+ * La versión anterior alternaba imagen-izquierda / imagen-derecha cuatro veces
+ * seguidas. Dos ya cansan; cuatro es el patrón más banal que existe. Aquí las
+ * dos primeras van grandes y las dos siguientes a media altura, de modo que la
+ * sección tiene un ritmo propio y no repite ni el zigzag ni la rejilla de
+ * tarjetas de las áreas.
+ *
+ * Cada imagen es la que treulegal.solutions publica hoy en esa industria.
  */
 export function IndustryRows({ headingLevel = 3 }: { headingLevel?: 2 | 3 }) {
   const Heading = `h${headingLevel}` as 'h2' | 'h3';
   return (
-    <ul className="mt-12 divide-y divide-line border-y border-line">
-      {industries.map((industry, i) => (
-        <li key={industry.slug}>
-          <Link
-            href={`/industrias/${industry.slug}/`}
-            className="group grid items-center gap-x-10 gap-y-5 py-8 transition-colors hover:bg-paper lg:grid-cols-2 lg:py-10"
-          >
-            <div className={`overflow-hidden bg-ink ${i % 2 === 1 ? 'lg:order-last' : ''}`}>
+    <ul className="mt-12 grid gap-4 sm:grid-cols-2">
+      {industries.map((industry, i) => {
+        // Las dos primeras mandan; las dos últimas son más bajas.
+        const tall = i < 2;
+        return (
+          <li key={industry.slug}>
+            <Link
+              href={`/industrias/${industry.slug}/`}
+              className={`group relative isolate flex flex-col justify-end overflow-hidden bg-ink p-6 text-white transition-[transform,box-shadow] duration-300 ease-plan hover:-translate-y-0.5 hover:shadow-[0_24px_48px_-28px_rgb(11_27_43/0.55)] focus-visible:-translate-y-0.5 active:translate-y-0 sm:p-8 ${
+                tall ? 'min-h-[22rem]' : 'min-h-[16rem]'
+              }`}
+            >
               <SectionImage
                 name={industry.image}
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-plan group-hover:scale-[1.04]"
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 ease-plan group-hover:scale-[1.05]"
               />
-            </div>
-            <div className="flex flex-col gap-4">
-              <Heading className="text-step-4 leading-[1.05] text-ink group-hover:text-blue">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/80 to-ink/10"
+              />
+              <Heading className={`${tall ? 'text-step-4' : 'text-step-3'} leading-[1.05]`}>
                 {industry.name}
               </Heading>
-              <p className="max-w-prose text-step-0 leading-relaxed text-slate">{industry.blurb}</p>
-            </div>
-          </Link>
-        </li>
-      ))}
+              <p className="mt-3 max-w-prose text-step--1 leading-relaxed text-white/75">
+                {industry.blurb}
+              </p>
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }

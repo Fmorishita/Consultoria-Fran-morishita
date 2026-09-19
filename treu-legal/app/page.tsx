@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { Hero } from '@/components/Hero';
 import { Section, SectionLink } from '@/components/Section';
-import { CardGrid } from '@/components/CardGrid';
+import { AreaMosaic } from '@/components/AreaMosaic';
+import { ProductIndex } from '@/components/ProductIndex';
+import { Pillars } from '@/components/Pillars';
+import { SessionTimeline } from '@/components/SessionTimeline';
 import { IndustryRows } from '@/components/IndustryRows';
 import { SessionCta } from '@/components/SessionCta';
 import { PostGrid } from '@/components/PostCard';
@@ -14,9 +17,6 @@ import { sessionOfferSchema } from '@/lib/seo';
 import { JsonLd } from '@/components/JsonLd';
 
 export const revalidate = 900;
-
-/** Un icono con significado por pilar, en el orden en que los publica el sitio. */
-const PILLAR_ICONS = ['building2', 'activity', 'shieldCheck', 'arrowLeftRight'] as const;
 
 /** Textos literales de la home actual. */
 const HOME = {
@@ -68,20 +68,14 @@ export default async function HomePage() {
 
       {/* ¿Por qué Treu? Los cuatro pilares, tal como los publica el sitio. */}
       <Section eyebrow={HOME.whyEyebrow} title={HOME.whyTitle} lead={HOME.whyLead}>
-        {/* Los cuatro pilares no son una secuencia, así que no van numerados:
-            cada uno lleva su icono. El sitio los publica sin texto de apoyo. */}
-        <ul className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((pillar, i) => (
-            <li key={pillar} className="flex flex-col gap-4 bg-white p-6">
-              <Icon name={PILLAR_ICONS[i]} className="h-6 w-6 text-blue" />
-              <h3 className="text-step-1 font-semibold leading-snug text-ink">{pillar}</h3>
-            </li>
-          ))}
-        </ul>
+        {/* Los cuatro pilares no son una secuencia, así que no van numerados.
+            Tampoco llevan icono: el sitio los publica sin texto de apoyo y una
+            caja con icono por pilar es el tic de plantilla. */}
+        <Pillars items={pillars} />
       </Section>
 
       <Section title={ui.practiceAreas} tone="paper">
-        <CardGrid items={practiceAreas} basePath="/areas-de-practica/" />
+        <AreaMosaic items={practiceAreas} />
         <div className="mt-8">
           <SectionLink href="/areas-de-practica/">{ui.viewAllAreas}</SectionLink>
         </div>
@@ -92,31 +86,15 @@ export default async function HomePage() {
       </Section>
 
       <Section title={HOME.productsTitle} lead={HOME.productsLead} tone="paper">
-        <CardGrid items={legalProducts} basePath="/legal-products/" />
+        <ProductIndex items={legalProducts} />
       </Section>
 
       {/* Cómo funciona la sesión: la estructura 15/30/15 es una secuencia real. */}
       <Section
-        eyebrow="Estructura"
         title="Qué ocurre en los 60 minutos"
         lead="La sesión tiene una estructura definida. No improvisa. Cada bloque de tiempo tiene un propósito específico."
       >
-        <ol className="mt-12 grid gap-px border border-line bg-line lg:grid-cols-3">
-          {session.structure.map((step) => (
-            <li key={step.step} className="bg-white p-6 sm:p-7">
-              <p className="flex items-baseline gap-3">
-                <span aria-hidden="true" className="text-step-3 font-semibold text-blue/40">
-                  {step.step}
-                </span>
-                <span className="text-step--1 font-medium uppercase tracking-[0.1em] text-blue">
-                  {step.minutes}
-                </span>
-              </p>
-              <h3 className="mt-3 text-step-2 leading-tight">{step.title}</h3>
-              <p className="mt-3 text-step--1 leading-relaxed text-slate">{step.text}</p>
-            </li>
-          ))}
-        </ol>
+        <SessionTimeline steps={session.structure} />
         <dl className="mt-10 grid gap-x-8 gap-y-5 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-4">
           <TrustFact label="Formato" value={`${session.format} ${session.formatNote}`} />
           <TrustFact label="Inversión" value={`${session.price}. ${session.priceNote}`} />

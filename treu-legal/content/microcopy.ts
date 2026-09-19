@@ -56,6 +56,8 @@ export const ui = {
   search: 'Buscar',
   noResults: 'No hay artículos que coincidan con esa búsqueda.',
   readingTime: 'min de lectura',
+  /** Sólo para lector de pantalla: sitúa cada fase de la sesión en la secuencia. */
+  sessionPhase: (n: number, total: number) => `fase ${n} de ${total}`,
   publishedOn: 'Publicado el',
   page: 'Página',
   previous: 'Anterior',

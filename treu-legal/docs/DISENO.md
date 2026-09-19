@@ -360,3 +360,54 @@ Lo que **no** se hizo, y por qué:
 La lección, para la siguiente pasada: en este proyecto la regla de «cero
 invención» empuja a quitar, y quitar de más también deforma el sitio. No usar
 el material que el cliente sí tiene publicado es tan infiel como inventarlo.
+
+## Cuarta pasada: auditoría con taste-skill
+
+El cliente pidió revisar [taste-skill](https://github.com/Leonxlnx/taste-skill),
+un framework «anti-slop» de diseño frontend, e instalarlo si servía. Sirve: su
+`redesign-existing-projects` es una lista de patrones genéricos de IA, y este
+sitio marcaba varios. Queda instalado en `.claude/skills/`.
+
+Lo que la auditoría mecánica encontró:
+
+| Regla del skill | Estado |
+| --- | --- |
+| «Rejilla de 3 columnas iguales — el layout de IA más genérico» | **6 instancias** |
+| «Máximo 1 eyebrow por cada 3 secciones» | **17** donde caben 4 |
+| «Zigzag imagen/texto: máximo 2 seguidos» | **4 seguidos** |
+| «Iconos Lucide por defecto» + «escudo para seguridad» | Lucide, y un escudo para «prevención de riesgos» |
+| «Tarjeta genérica: borde + fondo blanco» | En las cuatro rejillas |
+| «Rejilla con celdas vacías al final» | Sí, en el primer intento del mosaico |
+
+La home usaba **la misma familia de layout cuatro veces**. Ese era el problema
+real, no la falta de imágenes: aunque cada sección tuviera foto, seguían siendo
+cuatro rejillas idénticas una detrás de otra.
+
+Lo que se cambió, una familia de layout distinta por sección:
+
+1. **Pilares**: de cuatro fichas con icono a cuatro enunciados grandes
+   separados por filete vertical. Sin cajas y sin iconos.
+2. **Áreas de práctica**: de rejilla 3×2 a mosaico asimétrico con anchos
+   2+1 / 1+2 / 2+1, que suman exactamente tres filas llenas. El texto va sobre
+   la imagen con degradado propio, no debajo en una ficha blanca.
+3. **Industrias**: del zigzag de cuatro a mosaico de dos alturas.
+4. **Legal Products**: sin imagen de origen, así que índice tipográfico con
+   filetes. Distinto de todo lo anterior, y sin inventar fotografía.
+5. **Strategic Legal Session**: de tres tarjetas a línea de tiempo cuyo ancho
+   es **proporcional a los minutos** (15/30/15), así que el dibujo informa.
+6. **Eyebrows**: se retiró el de «Estructura».
+
+Se añadió profundidad donde no había ninguna: elevación al pasar el cursor con
+sombra teñida del azul de marca (no negro puro) y retorno al pulsar.
+
+### Lo que del skill NO se aplicó, y por qué
+
+- **«Inventa nombres creíbles», «usa datos orgánicos tipo 47,2 %», «usa
+  picsum.photos como marcador»**: el brief de este proyecto prohíbe inventar
+  cualquier dato o simular cualquier activo. La regla del cliente gana.
+- **Cambiar la tipografía a Geist/Satoshi**: el consejo apunta a huir de Inter.
+  Aquí ya hay Archivo + Source Serif 4, autohospedadas y con carácter propio.
+- **GSAP y scroll cinemático**: costaría el peso de página y el LCP que están
+  medidos. El movimiento se hizo con CSS y respeta `prefers-reduced-motion`.
+- **Modo oscuro obligatorio**: es un despacho corporativo B2B, no un producto
+  de consumo. No lo pide nadie y duplicaría la superficie a verificar.
