@@ -11,7 +11,9 @@
     "extract": "node scripts/extract.mjs && node scripts/redact.mjs",
     "verify:content": "node scripts/verify-content.mjs",
     "redact": "node scripts/redact.mjs",
-    "imagenes:secciones": "node scripts/imagenes-secciones.mjs"
+    "imagenes:secciones": "node scripts/imagenes-secciones.mjs",
+    "imagenes:libres": "node scripts/imagenes-libres.mjs",
+    "imagenes:cliente": "node scripts/imagenes-cliente.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",

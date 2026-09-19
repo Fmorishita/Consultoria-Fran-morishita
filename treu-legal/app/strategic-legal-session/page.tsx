@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/PageHeader';
 import { Section } from '@/components/Section';
+import { PageBand } from '@/components/PageBand';
 import { ContactForm } from '@/components/ContactForm';
 import { Icon } from '@/components/Icon';
 import { JsonLd } from '@/components/JsonLd';
@@ -81,6 +82,15 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* La sesión termina en un plan de acción por etapas, que es justo lo que
+          se ve aquí. Banda alta: una baja recortaría a las personas. */}
+      <PageBand
+        name="plan-de-trabajo"
+        alt={ui.sessionImageAlt}
+        widths={[640, 1024]}
+        tall
+      />
 
       <Section eyebrow="La sesión" title="Claridad jurídica en 60 minutos">
         <div className="prose-treu mt-8">

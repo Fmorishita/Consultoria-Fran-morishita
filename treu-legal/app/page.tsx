@@ -107,7 +107,7 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      <ClientCommitment />
+      <ClientCommitment image="acuerdo-cliente" />
 
       {/* El fundador. Extractos literales de /la-firma/. */}
       <Section tone="paper">

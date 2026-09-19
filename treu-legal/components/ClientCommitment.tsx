@@ -1,6 +1,5 @@
 import { session } from '@/content/facts';
 import { ui } from '@/content/microcopy';
-import { SectionImage } from './SectionImage';
 
 /**
  * «Quien nos contrata, primero».
@@ -67,11 +66,24 @@ export function ClientCommitment({ image }: { image?: string }) {
 
           {image && (
             <div className="aparece overflow-hidden">
-              <SectionImage
-                name={image}
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="aspect-[4/3] w-full object-cover"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcSet={`/img/${image}-640.avif 640w, /img/${image}-1024.avif 1024w`}
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                />
+                <img
+                  src={`/img/${image}-1024.webp`}
+                  srcSet={`/img/${image}-640.webp 640w, /img/${image}-1024.webp 1024w`}
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  alt={ui.commitmentImageAlt}
+                  width={1537}
+                  height={1023}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[3/2] w-full object-cover"
+                />
+              </picture>
             </div>
           )}
         </div>

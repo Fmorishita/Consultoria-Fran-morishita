@@ -157,6 +157,21 @@ acredita igualmente. Se reproduce con `npm run imagenes:libres`.
 | `industria-empresas-binacionales-*` | 33384789 | Empresas Binacionales | Fila de carga esperando en un cruce fronterizo. Sustituye a un puente genérico que además recortaba mal |
 | `industria-comercio-servicios-manufactura-*` | 34221997 | Comercio, Servicios y Manufactura | Línea de producción moderna, en vez de una nave vacía |
 
+## Fotografía aportada por el cliente
+
+Originales en `assets/raw/cliente/`, optimizadas con `npm run imagenes:cliente`.
+
+| Archivo | Uso | Alt |
+| --- | --- | --- |
+| `acuerdo-cliente-*` | Sección «Quien nos contrata, primero» de la home | Describe un apretón de manos en una mesa de juntas. **No afirma** que sean clientes del despacho |
+| `plan-de-trabajo-*` | Banda de `/strategic-legal-session/` | Describe una reunión frente a una pantalla con un plan por etapas. **No afirma** que sea una sesión real del despacho |
+
+**Pendiente de confirmar:** en ambas fotografías aparece una persona que se
+parece al retrato del fundador. Si el despacho confirma que es Marco Polo
+Hernández Alvarado, el texto alternativo puede nombrarlo y las imágenes ganan
+fuerza; mientras tanto describen sólo lo que se ve. Es el mismo criterio que
+se aplicó al retrato de `/la-firma/` antes de que el despacho lo confirmara.
+
 ## Testimonios: por qué no hay
 
 El cliente pidió una sección de testimonios. La sección existe («Quien nos

@@ -62,6 +62,12 @@ export const ui = {
   commitmentWho: 'Con quién habla',
   commitmentResponse: 'Tiempo de respuesta',
   commitmentWhere: 'Dónde',
+  /** Describe lo que se ve, sin afirmar que sean clientes ni reuniones reales
+      del despacho: eso sería una afirmación que nadie ha confirmado. */
+  commitmentImageAlt:
+    'Tres personas de negocios cierran un acuerdo con un apretón de manos alrededor de una mesa de juntas.',
+  sessionImageAlt:
+    'Reunión de trabajo alrededor de una mesa de juntas frente a una pantalla con un plan de trabajo por etapas.',
   /** Sólo para lector de pantalla: sitúa cada fase de la sesión en la secuencia. */
   sessionPhase: (n: number, total: number) => `fase ${n} de ${total}`,
   publishedOn: 'Publicado el',
