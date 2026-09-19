@@ -14,11 +14,39 @@ Descargados de la biblioteca de medios de treulegal.solutions. Originales en
 | `public/brand/wordmark-blanco.webp` | `2026/03/Nuevo-logotipo-reforzador-blanco.png` | Footer, hero en inglés |
 | `public/brand/isotipo-azul.webp` | `2026/07/ISOTIPO-Treu™-Legal-Business-azul-fondo-transparente.png` | Marca de agua, favicon |
 | `public/brand/isotipo-blanco.webp` | `2026/07/ISOTIPO-Treu™-Legal-Business-blanco-fondo-transparente.png` | Marca de agua sobre azul |
-| `public/img/retrato-la-firma-*.{avif,webp}` | `2026/03/803F1A51-62E7-416F-BDF5-05AD14AC8E9D.png` | Sección de perfil profesional de `/la-firma/`, en la misma posición que hoy |
+| `public/img/retrato-la-firma-*.{avif,webp}` | `2026/03/803F1A51-62E7-416F-BDF5-05AD14AC8E9D.png` | Perfil profesional de `/la-firma/`, en la misma posición que hoy, y bloque del fundador en la home |
 
-Nota sobre el retrato: su texto alternativo **no afirma la identidad de la
-persona**. La confirmación del despacho está pendiente (punto 1 de
-[PENDIENTES-CLIENTE.md](./PENDIENTES-CLIENTE.md)).
+Nota sobre el retrato: el despacho **confirmó** que es Marco Polo Hernández
+Alvarado, así que su texto alternativo ya lo dice y puede usarse como retrato
+del fundador. Sigue sin usarse en `/strategic-legal-session/` ni en la imagen
+OG, que necesitan un recorte propio que todavía no existe.
+
+### Imágenes de área de práctica y de industria
+
+Las mismas que treulegal.solutions publica hoy en cada una. La correspondencia
+no está elegida por gusto: cada imagen es la que en el sitio actual precede a
+ese encabezado. Se reproduce con `npm run imagenes:secciones`, y la URL de
+origen de cada una vive en el dato (`imageSource` en `content/site.ts`), no en
+un comentario.
+
+| Archivo | Origen | Uso |
+| --- | --- | --- |
+| `area-corporate-business-law-*` | `2026/03/11.png` | Corporate & Business Law |
+| `area-compliance-risk-prevention-*` | `2026/03/12.png` | Compliance & Risk Prevention |
+| `area-labor-employment-strategy-*` | `2026/03/13.png` | Labor & Employment Strategy |
+| `area-corporate-governance-family-business-*` | `2026/04/Brown-and-White-...-6-1024x576.png` | Corporate Governance & Family Business |
+| `area-cross-border-advisory-*` | `2026/03/14.png` | Cross-Border Advisory |
+| `area-strategic-litigation-*` | `2026/03/15.png` | Strategic Litigation & Dispute Resolution |
+| `industria-desarrollo-inmobiliario-*` | `2026/03/treu-legal-amp-business-69c28ac1979e2.png` | Desarrollo Inmobiliario |
+| `industria-construccion-infraestructura-*` | `2026/03/treu-legal-amp-business-69c287b0efae8.png` | Construcción e Infraestructura |
+| `industria-comercio-servicios-manufactura-*` | `2026/04/Brown-and-White-...-8.png` | Comercio, Servicios y Manufactura |
+| `industria-empresas-binacionales-*` | `2026/03/treu-legal-amp-business-69c2919e44f46.png` | Empresas Binacionales |
+
+El velo azul de varias de ellas **viene de origen**: está horneado en los
+archivos del despacho, no lo aplica este proyecto.
+
+Los **Legal Products no llevan imagen** porque el sitio actual no publica
+ninguna en esa sección. No se les inventa una: conservan su ficha de texto.
 
 Las miniaturas de los 68 artículos siguen sirviéndose desde WordPress y son
 propiedad del despacho.

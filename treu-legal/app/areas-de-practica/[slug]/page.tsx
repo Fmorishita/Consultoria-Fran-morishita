@@ -56,7 +56,9 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 
   return (
     <>
-      <PageHeader title={a.name} lead={lead} trail={trail} />
+      {/* La imagen que el sitio actual publica en esta área pasa a la cabecera:
+          es lo que distingue una página de área de otra. */}
+      <PageHeader title={a.name} lead={lead} trail={trail} image={a.image} />
       {/* La fotografía sólo acompaña donde aporta contexto real. */}
       {slug === 'cross-border-advisory' && (
         <PageBand

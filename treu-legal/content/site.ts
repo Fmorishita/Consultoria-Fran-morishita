@@ -19,6 +19,8 @@ export const practiceAreas = [
     blurb: 'Estructuración corporativa y contratos comerciales',
     icon: 'building2',
     source: 'https://treulegal.solutions/areas-de-practica/corporate-business-law/',
+    image: 'area-corporate-business-law',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/11.png',
   },
   {
     slug: 'compliance-risk-prevention',
@@ -26,6 +28,8 @@ export const practiceAreas = [
     blurb: 'Prevención de riesgos regulatorios y corporativos',
     icon: 'shieldCheck',
     source: 'https://treulegal.solutions/areas-de-practica/compliance-risk-prevention/',
+    image: 'area-compliance-risk-prevention',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/12.png',
   },
   {
     slug: 'labor-employment',
@@ -33,6 +37,8 @@ export const practiceAreas = [
     blurb: 'Cumplimiento laboral y estrategias empresariales',
     icon: 'users',
     source: 'https://treulegal.solutions/areas-de-practica/labor-employment/',
+    image: 'area-labor-employment-strategy',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/13.png',
   },
   {
     slug: 'corporate-governance-family-business',
@@ -40,6 +46,8 @@ export const practiceAreas = [
     blurb: 'Gobierno corporativo e institucionalización de empresas familiares',
     icon: 'network',
     source: 'https://treulegal.solutions/areas-de-practica/corporate-governance-family-business/',
+    image: 'area-corporate-governance-family-business',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/04/Brown-and-White-Modern-Expert-Legal-Services-Presentation-6-1024x576.png',
   },
   {
     slug: 'cross-border-advisory',
@@ -47,6 +55,8 @@ export const practiceAreas = [
     blurb: 'Asesoría para empresas que operan entre México y Estados Unidos',
     icon: 'arrowLeftRight',
     source: 'https://treulegal.solutions/areas-de-practica/cross-border-advisory/',
+    image: 'area-cross-border-advisory',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/14.png',
   },
   {
     // La home actual llama a esta área "Litigation Strategy & Corporate Disputes".
@@ -56,6 +66,8 @@ export const practiceAreas = [
     blurb: 'Estrategias de resolución de controversias',
     icon: 'split',
     source: 'https://treulegal.solutions/areas-de-practica/strategic-litigation-dispute-resolution/',
+    image: 'area-strategic-litigation',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/15.png',
   },
 ] as const;
 
@@ -67,6 +79,8 @@ export const industries = [
       'Estructuración legal de proyectos, due diligence inmobiliario y contratos para desarrollos inmobiliarios, con acompañamiento en operaciones de financiamiento',
     icon: 'landPlot',
     source: 'https://treulegal.solutions/industrias/desarrollo-inmobiliario/',
+    image: 'industria-desarrollo-inmobiliario',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c28ac1979e2.png',
   },
   {
     // La home actual escribe "Construción". Errata corregida.
@@ -76,6 +90,8 @@ export const industries = [
       'Optimización y creación de sistemas profesionales de contratación a nivel de obra alineados a prácticas internacionales, contratos de subcontratación profesionales y gestión de riesgos contractuales',
     icon: 'hardHat',
     source: 'https://treulegal.solutions/industrias/construccion-infraestructura/',
+    image: 'industria-construccion-infraestructura',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c287b0efae8.png',
   },
   {
     slug: 'comercio-servicios-manufactura',
@@ -84,6 +100,8 @@ export const industries = [
       'Cumplimiento laboral a través de la profesionalización de sistemas de contratación laboral, contratos comerciales complejos, cumplimiento normativo para la prevención de riesgos legales y estructura corporativa',
     icon: 'factory',
     source: 'https://treulegal.solutions/industrias/comercio-servicios-manufactura/',
+    image: 'industria-comercio-servicios-manufactura',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/04/Brown-and-White-Modern-Expert-Legal-Services-Presentation-8.png',
   },
   {
     slug: 'empresas-binacionales',
@@ -92,6 +110,8 @@ export const industries = [
       'Asesoría legal para emprendedores y empresas extranjeras que requieren operar en México con estructuras sólidas y simplificando su proceso de constitución y consolidación',
     icon: 'globe',
     source: 'https://treulegal.solutions/industrias/empresas-binacionales/',
+    image: 'industria-empresas-binacionales',
+    imageSource: 'https://treulegal.solutions/wp-content/uploads/2026/03/treu-legal-amp-business-69c2919e44f46.png',
   },
 ] as const;
 

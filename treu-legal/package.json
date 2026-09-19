@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "extract": "node scripts/extract.mjs && node scripts/redact.mjs",
     "verify:content": "node scripts/verify-content.mjs",
-    "redact": "node scripts/redact.mjs"
+    "redact": "node scripts/redact.mjs",
+    "imagenes:secciones": "node scripts/imagenes-secciones.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",

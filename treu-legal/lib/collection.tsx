@@ -126,7 +126,16 @@ export function collectionDetail(c: Collection) {
 
     return (
       <>
-        <PageHeader title={item.name} lead={lead} trail={trail} />
+        {/* La imagen que el sitio actual publica en esta área o industria pasa
+            a la cabecera: es lo que distingue una página de otra. Los Legal
+            Products y las guías no tienen imagen propia en el sitio actual y
+            conservan la cabecera sobria. */}
+        <PageHeader
+          title={item.name}
+          lead={lead}
+          trail={trail}
+          image={'image' in item ? (item.image as string) : undefined}
+        />
         {band && <PageBand {...band} />}
         <div className="shell py-section">
           <Blocks blocks={blocks} />

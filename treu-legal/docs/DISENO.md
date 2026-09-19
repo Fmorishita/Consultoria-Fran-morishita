@@ -316,3 +316,47 @@ que se daría para cualquier despacho. Esto es lo que se cambió, y por qué.
 7. **Se quitó un accesorio a cada página antes de darla por buena**, como pide
    el brief. En la home fue la preclarga del logotipo del header: competía por
    ancho de banda con la fuente, que es la dependencia real del LCP.
+
+## Tercera pasada: el error de fondo
+
+El cliente lo dijo sin rodeos: «se ve muy genérico, no tiene imágenes en
+secciones donde la web actual sí tiene». Tenía razón, y era comprobable.
+
+El sitio actual publica **~100 imágenes propias**. Esta versión usaba **tres**.
+El resto del sistema visual —retícula, trazo fino, cotas, iconos de línea— se
+había sustituido por la imagen en vez de convivir con ella, y el resultado era
+una sucesión de rejillas con borde de 1 px que se parecen a cualquier plantilla
+corporativa. Siete mil píxeles de home sin una sola fotografía.
+
+Conviene precisar de qué error se trata, porque no fue un filtro mal puesto:
+las imágenes **sí estaban** en `content/_source/`. Las plantillas simplemente
+no las leían. Fue una decisión de diseño —resolver cada sección con tipografía
+e icono— y fue la decisión equivocada.
+
+Lo que se corrigió:
+
+1. **Áreas de práctica**: las seis pasan de icono de línea a la imagen que el
+   sitio actual publica en cada una. El icono se conserva sólo donde no hay
+   imagen de origen.
+2. **Industrias**: de lista con icono a filas editoriales anchas con la imagen
+   de cada sector, alternando el lado. Es la sección que más cambia.
+3. **Páginas de detalle de área e industria**: la cabecera pálida, idéntica en
+   las diez, pasa a fondo oscuro con la imagen de esa sección bajo un degradado
+   que sostiene el contraste del texto. Es lo que distingue una de otra.
+4. **Bloque del fundador en la home**: llevaba un isotipo al 15 % de opacidad
+   donde debía ir el retrato. Ahora lleva el retrato, que el despacho ya
+   confirmó.
+
+Lo que **no** se hizo, y por qué:
+
+- **Los Legal Products siguen sin imagen.** El sitio actual no publica ninguna
+  en esa sección. Añadir fotografía de archivo ahí habría sido inventar.
+- **No se retocó el color de ninguna imagen.** El velo azul viene horneado en
+  los archivos del despacho. Se comprobó descargando un original antes de
+  tocar nada.
+- **No se añadió imagen al hero de páginas sin material propio** (Legal
+  Products, guías, legales): conservan la cabecera sobria.
+
+La lección, para la siguiente pasada: en este proyecto la regla de «cero
+invención» empuja a quitar, y quitar de más también deforma el sitio. No usar
+el material que el cliente sí tiene publicado es tan infiel como inventarlo.

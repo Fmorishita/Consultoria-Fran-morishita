@@ -6,7 +6,6 @@ import { IndustryRows } from '@/components/IndustryRows';
 import { SessionCta } from '@/components/SessionCta';
 import { PostGrid } from '@/components/PostCard';
 import { Icon } from '@/components/Icon';
-import { Isotipo } from '@/components/Logo';
 import { legalProducts, practiceAreas } from '@/content/site';
 import { founder, pillars, session } from '@/content/facts';
 import { ui } from '@/content/microcopy';
@@ -136,7 +135,27 @@ export default async function HomePage() {
             <div aria-hidden="true" className="h-px w-12 bg-blue" />
             <h2 className="mt-5 text-step-4">{founder.name}</h2>
             <p className="mt-2 text-step-0 text-slate">{founder.role}</p>
-            <Isotipo className="mt-8 hidden h-24 w-24 opacity-15 lg:block" />
+            {/* El retrato que el sitio actual publica en /la-firma/. El despacho
+                confirmó que es él, así que puede usarse aquí como retrato del
+                fundador (ver docs/PENDIENTES-CLIENTE.md). */}
+            <picture>
+              <source
+                type="image/avif"
+                srcSet="/img/retrato-la-firma-480.avif 480w, /img/retrato-la-firma-800.avif 800w"
+                sizes="(min-width: 1024px) 22rem, 100vw"
+              />
+              <img
+                src="/img/retrato-la-firma-800.webp"
+                srcSet="/img/retrato-la-firma-480.webp 480w, /img/retrato-la-firma-800.webp 800w"
+                sizes="(min-width: 1024px) 22rem, 100vw"
+                alt={`Retrato de ${founder.name}, ${founder.role} de Treu Legal & Business.`}
+                width={800}
+                height={533}
+                loading="lazy"
+                decoding="async"
+                className="mt-8 h-auto w-full border border-line"
+              />
+            </picture>
           </div>
           <div className="prose-treu">
             <p>{founder.focus}</p>
