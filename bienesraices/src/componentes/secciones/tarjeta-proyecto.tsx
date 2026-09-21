@@ -17,7 +17,7 @@ export function TarjetaProyecto({ proyecto, idioma }: { proyecto: Proyecto; idio
 
   return (
     <Link
-      href={r.proyecto(proyecto.slug)}
+      href={r.propiedad(proyecto.slug)}
       className="group flex flex-col border border-borde bg-superficie transition-colors hover:border-acento"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-superficie-alta">

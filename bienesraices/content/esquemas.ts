@@ -47,6 +47,8 @@ export const esquemaProyecto = z.object({
   activo: z.boolean(),
   /** Requiere autorización por escrito del desarrollador antes de publicar. */
   autorizado: z.boolean(),
+  /** La propiedad que encabeza el home. Solo una a la vez. */
+  destacado: z.boolean().default(false),
   nombre: z.string().min(1),
   desarrollador: z.string().optional(),
   ciudad: z.string().min(1),

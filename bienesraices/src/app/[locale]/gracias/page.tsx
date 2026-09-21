@@ -44,7 +44,7 @@ export default async function PaginaGracias({ params, searchParams }: Props) {
             tamano="lg"
           />
           <Boton asChild variante="secundario" tamano="lg">
-            <Link href={r.proyectos}>{t(UI.cta.verProyectos, idioma)}</Link>
+            <Link href={r.propiedades}>{t(UI.cta.verProyectos, idioma)}</Link>
           </Boton>
         </div>
       </div>

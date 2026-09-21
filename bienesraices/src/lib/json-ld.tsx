@@ -44,7 +44,7 @@ export function proyectoJsonLd(proyecto: Proyecto, idioma: Idioma): Datos {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     name: proyecto.nombre,
-    url: `${urlSitio()}${rutas(idioma).proyecto(proyecto.slug)}`,
+    url: `${urlSitio()}${rutas(idioma).propiedad(proyecto.slug)}`,
     description: t(proyecto.seo.description, idioma),
     ...(imagen ? { image: imagen } : {}),
     address: {

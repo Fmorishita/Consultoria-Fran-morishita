@@ -1,16 +1,24 @@
 export const PAGINA_PROYECTOS = {
-  antetitulo: { es: "Proyectos", en: "Properties" },
-  titulo: { es: "Lo que promuevo hoy", en: "What I'm promoting today" },
+  antetitulo: { es: "Propiedades", en: "Properties" },
+  titulo: { es: "Lo que tengo disponible", en: "What I have available" },
   texto: {
-    es: "Desarrollos y propiedades que represento en Baja California. Cada ficha tiene disponibilidad, números y una conversación directa conmigo.",
-    en: "Developments and properties I represent in Baja California. Each listing has availability, numbers and a direct line to me.",
+    es: "Lotes, casas y preventa que represento en Ensenada y Baja California. Los precios y la disponibilidad se actualizan conmigo, no con un portal.",
+    en: "Lots, homes and pre-sale I represent in Ensenada and Baja California. Pricing and availability come from me, not from a listings portal.",
   },
   seo: {
-    title: { es: "Proyectos y propiedades en Baja California", en: "Properties and developments in Baja California" },
+    title: { es: "Propiedades en venta en Ensenada y Baja California", en: "Property for sale in Ensenada and Baja California" },
     description: {
-      es: "Lotes, casas y preventa que promuevo en Ensenada y Baja California, con precios y disponibilidad al día.",
-      en: "Lots, homes and pre-sale I promote in Ensenada and Baja California, with current pricing and availability.",
+      es: "Lotes, casas y preventa en Ensenada y Baja California, con precios y disponibilidad al día y atención directa por WhatsApp.",
+      en: "Lots, homes and pre-sale in Ensenada and Baja California, with current pricing and availability, answered directly over WhatsApp.",
     },
+  },
+} as const;
+
+export const CIERRE_PROYECTO = {
+  titulo: { es: "¿Te aparto un lugar?", en: "Want me to hold one for you?" },
+  texto: {
+    es: "Mándame un mensaje y te paso disponibilidad, precios y el proceso completo. Contesto yo, no un bot.",
+    en: "Message me and I'll send you availability, pricing and the full process. You get me, not a bot.",
   },
 } as const;
 
@@ -30,10 +38,10 @@ export const PAGINA_PORTAFOLIO = {
   },
 } as const;
 
-export const CIERRE_PROYECTO = {
-  titulo: { es: "¿Te aparto un lugar?", en: "Want me to hold one for you?" },
+export const CAPTURA_PROPIEDAD = {
+  titulo: { es: "Pide la lista de precios", en: "Ask for the price list" },
   texto: {
-    es: "Mándame un mensaje y te paso disponibilidad, precios y el proceso completo. Contesto yo, no un bot.",
-    en: "Message me and I'll send you availability, pricing and the full process. You get me, not a bot.",
+    es: "Déjame tus datos y te mando disponibilidad, precios vigentes y formas de pago. Si tienes prisa, WhatsApp es más rápido.",
+    en: "Leave me your details and I'll send availability, current pricing and payment options. In a hurry? WhatsApp is faster.",
   },
 } as const;

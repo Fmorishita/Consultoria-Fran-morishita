@@ -10,6 +10,7 @@ export const altaTierra: Proyecto = esquemaProyecto.parse({
   slug: "alta-tierra",
   activo: true,
   autorizado: false,
+  destacado: true,
   nombre: "Alta Tierra",
   desarrollador: pendiente("nombre del desarrollador de Alta Tierra y autorización por escrito"),
   ciudad: "Ensenada, Baja California",

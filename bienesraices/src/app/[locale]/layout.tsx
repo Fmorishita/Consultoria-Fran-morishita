@@ -7,7 +7,7 @@ import { CtaWhatsAppFlotante } from "@/componentes/cta-whatsapp";
 import { Encabezado } from "@/componentes/layout/encabezado";
 import { PieDePagina } from "@/componentes/layout/pie";
 import { IDIOMAS, esIdioma, localeCompleto, t, type Idioma } from "@/lib/i18n";
-import { enlacesPrincipales, rutas } from "@/lib/navegacion";
+import { enlacesPie, enlacesPrincipales, rutas } from "@/lib/navegacion";
 import { queFalta, texto } from "@/lib/pendiente";
 import { permitirIndexacion, urlSitio } from "@/lib/url-sitio";
 import { enlaceWhatsApp } from "@/lib/whatsapp";
@@ -89,7 +89,7 @@ export default async function LayoutIdioma({
         <Encabezado
           idioma={idioma}
           enlaces={enlacesPrincipales(idioma)}
-          marca={{ linea1: "Fran", linea2: "Morishita" }}
+          marca={{ linea1: "Fran", linea2: "Morishita", giro: t(UI.nav.giro, idioma) }}
           textos={{
             abrirMenu: t(UI.nav.abrirMenu, idioma),
             cerrarMenu: t(UI.nav.cerrarMenu, idioma),
@@ -107,7 +107,7 @@ export default async function LayoutIdioma({
           marca={{ linea1: "Fran", linea2: "Morishita" }}
           rol={t(SITIO.rol, idioma)}
           ciudad={t(SITIO.ciudad, idioma)}
-          enlaces={enlacesPrincipales(idioma)}
+          enlaces={enlacesPie(idioma)}
           contacto={{
             whatsappHref: enlaceWhatsApp({ numero: SITIO.whatsapp.numero, mensaje: whatsapp.mensaje }),
             whatsappTexto: t(UI.cta.whatsapp, idioma),

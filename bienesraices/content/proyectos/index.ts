@@ -17,6 +17,17 @@ export function proyectosListables(): Proyecto[] {
   return PROYECTOS.filter(esPublicable);
 }
 
+/** La propiedad que encabeza el home, si se puede enseñar. */
+export function proyectoDestacado(): Proyecto | undefined {
+  return proyectosListables().find((p) => p.destacado);
+}
+
+/** El resto del inventario, sin la destacada. */
+export function proyectosSecundarios(): Proyecto[] {
+  const destacado = proyectoDestacado();
+  return proyectosListables().filter((p) => p.slug !== destacado?.slug);
+}
+
 export function proyectoPorSlug(slug: string): Proyecto | undefined {
   return PROYECTOS.find((p) => p.slug === slug);
 }

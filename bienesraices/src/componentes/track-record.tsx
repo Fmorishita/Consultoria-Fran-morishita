@@ -59,8 +59,11 @@ function Cifra({ cifra, activo, principal }: { cifra: CifraLista; activo: boolea
   );
 }
 
-/** Composición asimétrica: la cifra que respalda el video manda sobre las otras. */
-export function TrackRecord({ cifras }: { cifras: CifraLista[] }) {
+/**
+ * Composición asimétrica: la cifra que respalda el video manda sobre las otras.
+ * En `columna` se apila, para cuando vive junto al video.
+ */
+export function TrackRecord({ cifras, columna = false }: { cifras: CifraLista[]; columna?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const [activo, setActivo] = useState(false);
 
@@ -84,9 +87,15 @@ export function TrackRecord({ cifras }: { cifras: CifraLista[] }) {
   }, []);
 
   return (
-    <div ref={ref} className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-12">
+    <div
+      ref={ref}
+      className={cn(
+        "grid gap-10",
+        columna ? "w-full grid-cols-1 gap-8" : "sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-12",
+      )}
+    >
       {cifras.map((cifra, indice) => (
-        <Cifra key={indice} cifra={cifra} activo={activo} principal={indice === 0} />
+        <Cifra key={indice} cifra={cifra} activo={activo} principal={!columna && indice === 0} />
       ))}
     </div>
   );

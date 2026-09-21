@@ -15,7 +15,7 @@ export type EnlaceNav = { href: string; texto: string };
 export type PropsEncabezado = {
   idioma: Idioma;
   enlaces: EnlaceNav[];
-  marca: { linea1: string; linea2: string };
+  marca: { linea1: string; linea2: string; giro: string };
   textos: { abrirMenu: string; cerrarMenu: string; cambiarIdioma: string; whatsapp: string };
   whatsapp: { numero: string; mensaje: string };
 };
@@ -49,8 +49,11 @@ export function Encabezado({ idioma, enlaces, marca, textos, whatsapp }: PropsEn
       )}
     >
       <div className="mx-auto flex h-18 w-full max-w-6xl items-center justify-between gap-6 px-5 md:px-8">
-        <Link href={`/${idioma}`} className="titular text-lg leading-none tracking-tight md:text-xl">
-          {marca.linea1} <span className="text-acento-suave">{marca.linea2}</span>
+        <Link href={`/${idioma}`} className="flex flex-col leading-none">
+          <span className="titular text-lg tracking-tight md:text-xl">
+            {marca.linea1} <span className="text-acento-suave">{marca.linea2}</span>
+          </span>
+          <span className="mt-1 text-[0.62rem] uppercase tracking-[0.22em] text-texto-suave">{marca.giro}</span>
         </Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-8 lg:flex">

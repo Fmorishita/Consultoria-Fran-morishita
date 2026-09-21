@@ -8,6 +8,7 @@ import { Acordeon } from "@/componentes/ui/acordeon";
 import { ChipPendiente } from "@/componentes/ui/chip-pendiente";
 import { Revelar } from "@/componentes/ui/revelar";
 import { Seccion } from "@/componentes/ui/seccion";
+import { FormularioLead } from "@/componentes/formulario-lead";
 import { Cierre } from "@/componentes/secciones/cierre";
 import { DatosProyecto } from "@/componentes/secciones/datos-proyecto";
 import { HeroProyecto } from "@/componentes/secciones/hero-proyecto";
@@ -15,8 +16,9 @@ import { normalizaIdioma, t } from "@/lib/i18n";
 import { JsonLd, migasJsonLd, proyectoJsonLd } from "@/lib/json-ld";
 import { rutas } from "@/lib/navegacion";
 import { MOSTRAR_PENDIENTES, numero, queFalta, texto } from "@/lib/pendiente";
+import { interesesFormulario, textosFormulario } from "@/lib/textos";
 import { permitirIndexacion } from "@/lib/url-sitio";
-import { CIERRE_PROYECTO } from "@contenido/paginas/proyectos";
+import { CAPTURA_PROPIEDAD, CIERRE_PROYECTO } from "@contenido/paginas/proyectos";
 import { esPublicable, PROYECTOS, proyectoPorSlug } from "@contenido/proyectos";
 import { SITIO } from "@contenido/sitio";
 import { UI } from "@contenido/ui";
@@ -38,11 +40,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t(proyecto.seo.title, idioma),
     description: t(proyecto.seo.description, idioma),
     alternates: {
-      canonical: rutas(idioma).proyecto(slug),
+      canonical: rutas(idioma).propiedad(slug),
       languages: {
-        es: `/es/proyectos/${slug}`,
-        en: `/en/proyectos/${slug}`,
-        "x-default": `/es/proyectos/${slug}`,
+        es: `/es/propiedades/${slug}`,
+        en: `/en/propiedades/${slug}`,
+        "x-default": `/es/propiedades/${slug}`,
       },
     },
     robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
@@ -74,8 +76,8 @@ export default async function PaginaProyecto({ params }: Props) {
       <JsonLd
         datos={migasJsonLd([
           { nombre: t(UI.nav.inicio, idioma), url: r.inicio },
-          { nombre: t(UI.nav.proyectos, idioma), url: r.proyectos },
-          { nombre: proyecto.nombre, url: r.proyecto(proyecto.slug) },
+          { nombre: t(UI.nav.proyectos, idioma), url: r.propiedades },
+          { nombre: proyecto.nombre, url: r.propiedad(proyecto.slug) },
         ])}
       />
 
@@ -228,6 +230,26 @@ export default async function PaginaProyecto({ params }: Props) {
           <ChipPendiente>preguntas frecuentes del proyecto (con respuestas)</ChipPendiente>
         </Seccion>
       )}
+
+      <Seccion>
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+          <Revelar>
+            <h2 className="titular titular-lg">{t(CAPTURA_PROPIEDAD.titulo, idioma)}</h2>
+            <p className="cuerpo mt-6 max-w-md">{t(CAPTURA_PROPIEDAD.texto, idioma)}</p>
+          </Revelar>
+          <Revelar retraso={90}>
+            <FormularioLead
+              idioma={idioma}
+              hrefPrivacidad={r.privacidad}
+              proyectoSlug={proyecto.slug}
+              tipo="proyecto"
+              interesPorDefecto="comprar"
+              intereses={interesesFormulario(idioma)}
+              textos={textosFormulario(idioma)}
+            />
+          </Revelar>
+        </div>
+      </Seccion>
 
       <Cierre
         idioma={idioma}

@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t(PAGINA_PROYECTOS.seo.title, idioma),
     description: t(PAGINA_PROYECTOS.seo.description, idioma),
     alternates: {
-      canonical: rutas(idioma).proyectos,
-      languages: { es: "/es/proyectos", en: "/en/proyectos", "x-default": "/es/proyectos" },
+      canonical: rutas(idioma).propiedades,
+      languages: { es: "/es/propiedades", en: "/en/propiedades", "x-default": "/es/propiedades" },
     },
   };
 }
@@ -33,7 +33,7 @@ export default async function PaginaProyectos({ params }: { params: Promise<{ lo
       <JsonLd
         datos={migasJsonLd([
           { nombre: t(UI.nav.inicio, idioma), url: r.inicio },
-          { nombre: t(UI.nav.proyectos, idioma), url: r.proyectos },
+          { nombre: t(UI.nav.proyectos, idioma), url: r.propiedades },
         ])}
       />
       <Seccion className="pt-28 md:pt-36">

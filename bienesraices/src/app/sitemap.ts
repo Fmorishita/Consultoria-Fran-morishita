@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const idioma of IDIOMAS) {
     const r = rutas(idioma);
-    const fijas = [r.inicio, r.proyectos, r.portafolio, r.desarrolladores, r.sobreMi, r.contacto, r.privacidad];
+    const fijas = [r.inicio, r.propiedades, r.portafolio, r.desarrolladores, r.sobreMi, r.contacto, r.privacidad];
 
     for (const ruta of fijas) {
       entradas.push({
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     for (const proyecto of proyectosIndexables()) {
-      entradas.push({ url: `${base}${r.proyecto(proyecto.slug)}`, lastModified: new Date(), priority: 0.9 });
+      entradas.push({ url: `${base}${r.propiedad(proyecto.slug)}`, lastModified: new Date(), priority: 0.9 });
     }
 
     for (const caso of casosActivos()) {

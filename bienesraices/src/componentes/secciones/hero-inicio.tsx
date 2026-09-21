@@ -47,7 +47,7 @@ export function HeroInicio({ idioma }: { idioma: Idioma }) {
               tamano="lg"
             />
             <Boton asChild variante="secundario" tamano="lg">
-              <Link href={r.proyectos}>
+              <Link href={r.propiedades}>
                 {t(UI.cta.verProyectos, idioma)}
                 <ArrowDownRight aria-hidden className="size-[1.1em]" />
               </Link>

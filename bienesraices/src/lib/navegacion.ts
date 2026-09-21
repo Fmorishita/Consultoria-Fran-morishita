@@ -6,8 +6,8 @@ export function rutas(idioma: Idioma) {
   const base = `/${idioma}`;
   return {
     inicio: base,
-    proyectos: `${base}/proyectos`,
-    proyecto: (slug: string) => `${base}/proyectos/${slug}`,
+    propiedades: `${base}/propiedades`,
+    propiedad: (slug: string) => `${base}/propiedades/${slug}`,
     portafolio: `${base}/portafolio`,
     caso: (slug: string) => `${base}/portafolio/${slug}`,
     desarrolladores: `${base}/desarrolladores`,
@@ -19,13 +19,22 @@ export function rutas(idioma: Idioma) {
   };
 }
 
+/** Nav principal: corto y enfocado en la venta. */
 export function enlacesPrincipales(idioma: Idioma) {
   const r = rutas(idioma);
   return [
-    { href: r.proyectos, texto: t(UI.nav.proyectos, idioma) },
-    { href: r.portafolio, texto: t(UI.nav.portafolio, idioma) },
-    { href: r.desarrolladores, texto: t(UI.nav.desarrolladores, idioma) },
+    { href: r.propiedades, texto: t(UI.nav.proyectos, idioma) },
     { href: r.sobreMi, texto: t(UI.nav.sobreMi, idioma) },
     { href: r.contacto, texto: t(UI.nav.contacto, idioma) },
+  ];
+}
+
+/** El pie sí lleva las páginas de la parte B2B. */
+export function enlacesPie(idioma: Idioma) {
+  const r = rutas(idioma);
+  return [
+    ...enlacesPrincipales(idioma),
+    { href: r.portafolio, texto: t(UI.nav.portafolio, idioma) },
+    { href: r.desarrolladores, texto: t(UI.nav.desarrolladores, idioma) },
   ];
 }

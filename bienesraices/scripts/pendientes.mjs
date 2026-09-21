@@ -19,6 +19,7 @@ const IGNORAR = ["content/esquemas.ts", "content/proyectos/_plantilla.ts"];
 // Cosas que no se pueden marcar dentro del contenido (listas vacías,
 // autorizaciones, llaves de terceros) pero que también me faltan.
 const EXTRA = [
+  "La lista de propiedades que ya captaste: por cada una, nombre, zona, tipo, superficie, precio, fotos y a quién representas. Con eso lleno content/proyectos/ y el inventario deja de estar vacío.",
   "Autorización por escrito del desarrollador de Alta Tierra para usar marca, renders y precios (mientras no exista, `autorizado: false` y el proyecto no se publica).",
   "Fotos y renders autorizados de Alta Tierra para el hero y la galería.",
   "Amenidades, tiempos clave a destinos y preguntas frecuentes de Alta Tierra.",

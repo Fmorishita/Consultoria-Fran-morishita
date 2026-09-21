@@ -7,6 +7,7 @@ import { Revelar } from "@/componentes/ui/revelar";
 import { Seccion } from "@/componentes/ui/seccion";
 import { normalizaIdioma, t } from "@/lib/i18n";
 import { rutas } from "@/lib/navegacion";
+import { interesesFormulario, textosFormulario } from "@/lib/textos";
 import { CONTACTO } from "@contenido/paginas/contacto";
 import { SITIO } from "@contenido/sitio";
 import { UI } from "@contenido/ui";
@@ -74,29 +75,8 @@ export default async function PaginaContacto({ params }: { params: Promise<{ loc
             <FormularioLead
               idioma={idioma}
               hrefPrivacidad={r.privacidad}
-              intereses={UI.formulario.intereses.map((opcion) => ({
-                valor: opcion.valor,
-                texto: t(opcion.texto, idioma),
-              }))}
-              textos={{
-                nombre: t(UI.formulario.nombre, idioma),
-                telefono: t(UI.formulario.telefono, idioma),
-                email: t(UI.formulario.email, idioma),
-                interes: t(UI.formulario.interes, idioma),
-                mensaje: t(UI.formulario.mensaje, idioma),
-                opcional: t(UI.formulario.opcional, idioma),
-                enviar: t(UI.formulario.enviar, idioma),
-                enviando: t(UI.formulario.enviando, idioma),
-                consentimiento: t(UI.formulario.consentimiento, idioma),
-                privacidad: t(UI.footer.privacidad, idioma),
-                errorGeneral: t(UI.formulario.errorGeneral, idioma),
-                errores: {
-                  nombre: t(UI.formulario.errores.nombre, idioma),
-                  telefono: t(UI.formulario.errores.telefono, idioma),
-                  email: t(UI.formulario.errores.email, idioma),
-                  consentimiento: t(UI.formulario.errores.consentimiento, idioma),
-                },
-              }}
+              intereses={interesesFormulario(idioma)}
+              textos={textosFormulario(idioma)}
             />
           </div>
         </Revelar>

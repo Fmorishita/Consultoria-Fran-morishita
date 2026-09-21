@@ -5,9 +5,15 @@ El brief completo está en `BRIEF.md`; esto es el resumen operativo.
 
 ## El único trabajo del sitio
 
-Convertir tráfico pagado en **conversaciones de WhatsApp calificadas** y, en segundo
-plano, en **llamadas de descubrimiento con desarrolladores**. Si un elemento no acerca
-al visitante a uno de esos dos botones, no va.
+Convertir tráfico pagado en **conversaciones de WhatsApp calificadas sobre propiedades
+concretas**, empezando por la destacada. En segundo plano, llamadas de descubrimiento
+con desarrolladores. Si un elemento no acerca al visitante a uno de esos dos botones,
+no va.
+
+**Arquitectura:** el home es catálogo, no explicación. Va hero, propiedad destacada,
+resto del inventario, prueba social (video + cifras), formulario de captura y cierre.
+Lo que explica cómo trabaja Fran vive en `/desarrolladores` y `/portafolio`, enlazadas
+desde el pie y fuera del nav principal.
 
 ## Stack
 
@@ -26,10 +32,11 @@ content/            Todo el contenido comercial, tipado y validado con Zod
   esquemas.ts       Zod + tipos (Proyecto, Caso, Testimonio, Cifra, Sitio)
   sitio.ts          Datos globales: WhatsApp, dominio, legal, dirección visual
   ui.ts             Microcopy de interfaz (ES/EN)
-  proyectos/        Un archivo por proyecto + `_plantilla.ts` + `index.ts`
+  proyectos/        Una propiedad por archivo + `_plantilla.ts` + `index.ts`
+                    (`destacado: true` = la que encabeza el home)
   casos/            Un archivo por caso de portafolio
   paginas/          Copy de cada página
-src/app/[locale]/   Rutas (es | en). El layout raíz vive aquí.
+src/app/[locale]/   Rutas (es | en); el catálogo es /propiedades. El layout raíz vive aquí.
 src/componentes/    Componentes; `ui/` son primitivas, `secciones/` bloques de página
 src/lib/            i18n, atribución UTM, tracking, CAPI, formato, Supabase
 src/acciones/       Server actions (envío de leads)

@@ -12,7 +12,7 @@ preview aparece como un chip ámbar para que sea fácil verlos.
 
 ## `content/paginas/inicio.ts`
 
-- [ ] fotografía de Fran en Ensenada para el hero (horizontal, alta resolución, con derechos) _(línea 84)_
+- [ ] fotografía de Fran en Ensenada para el hero (horizontal, alta resolución, con derechos) _(línea 53)_
 
 ## `content/paginas/privacidad.ts`
 
@@ -26,21 +26,21 @@ preview aparece como un chip ámbar para que sea fácil verlos.
 
 ## `content/proyectos/alta-tierra.ts`
 
-- [ ] nombre del desarrollador de Alta Tierra y autorización por escrito _(línea 14)_
-- [ ] render o fotografía aérea autorizada para el hero (mínimo 1920×1080) _(línea 19)_
-- [ ] párrafo 1 del pitch: qué es Alta Tierra y para quién es _(línea 30)_
-- [ ] párrafo 2 del pitch: por qué aquí y por qué ahora (plusvalía, entorno, etapa) _(línea 31)_
-- [ ] dirección exacta o punto de referencia de Alta Tierra _(línea 34)_
-- [ ] superficie mínima de lote en m² _(línea 40)_
-- [ ] superficie máxima de lote en m² _(línea 41)_
-- [ ] precio de lista desde, con fecha de vigencia _(línea 42)_
-- [ ] esquema real de financiamiento (enganche mínimo, plazos y tasa). Los valores del archivo son provisionales y solo se ven en preview _(línea 50)_
+- [ ] nombre del desarrollador de Alta Tierra y autorización por escrito _(línea 15)_
+- [ ] render o fotografía aérea autorizada para el hero (mínimo 1920×1080) _(línea 20)_
+- [ ] párrafo 1 del pitch: qué es Alta Tierra y para quién es _(línea 31)_
+- [ ] párrafo 2 del pitch: por qué aquí y por qué ahora (plusvalía, entorno, etapa) _(línea 32)_
+- [ ] dirección exacta o punto de referencia de Alta Tierra _(línea 35)_
+- [ ] superficie mínima de lote en m² _(línea 41)_
+- [ ] superficie máxima de lote en m² _(línea 42)_
+- [ ] precio de lista desde, con fecha de vigencia _(línea 43)_
+- [ ] esquema real de financiamiento (enganche mínimo, plazos y tasa). Los valores del archivo son provisionales y solo se ven en preview _(línea 51)_
 
 ## `content/sitio.ts`
 
-- [ ] número de registro estatal como agente inmobiliario en B.C. _(línea 25)_
-- [ ] razón social o nombre del responsable para el aviso de privacidad _(línea 26)_
-- [ ] domicilio fiscal para el aviso de privacidad _(línea 27)_
+- [ ] número de registro estatal como agente inmobiliario en B.C. _(línea 27)_
+- [ ] razón social o nombre del responsable para el aviso de privacidad _(línea 28)_
+- [ ] domicilio fiscal para el aviso de privacidad _(línea 29)_
 
 ## `content/testimonios.ts`
 
@@ -53,6 +53,7 @@ preview aparece como un chip ámbar para que sea fácil verlos.
 
 ## Fuera del contenido
 
+- [ ] La lista de propiedades que ya captaste: por cada una, nombre, zona, tipo, superficie, precio, fotos y a quién representas. Con eso lleno content/proyectos/ y el inventario deja de estar vacío.
 - [ ] Autorización por escrito del desarrollador de Alta Tierra para usar marca, renders y precios (mientras no exista, `autorizado: false` y el proyecto no se publica).
 - [ ] Fotos y renders autorizados de Alta Tierra para el hero y la galería.
 - [ ] Amenidades, tiempos clave a destinos y preguntas frecuentes de Alta Tierra.

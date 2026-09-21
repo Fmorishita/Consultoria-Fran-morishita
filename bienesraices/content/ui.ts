@@ -3,8 +3,9 @@ import type { I18n } from "@/lib/i18n";
 /** Microcopy de interfaz. El contenido comercial va en sus propios archivos. */
 export const UI = {
   nav: {
+    giro: { es: "Bienes raíces", en: "Real estate" },
     inicio: { es: "Inicio", en: "Home" },
-    proyectos: { es: "Proyectos", en: "Properties" },
+    proyectos: { es: "Propiedades", en: "Properties" },
     portafolio: { es: "Portafolio", en: "Portfolio" },
     desarrolladores: { es: "Desarrolladores", en: "Developers" },
     sobreMi: { es: "Sobre mí", en: "About" },
@@ -17,8 +18,8 @@ export const UI = {
     whatsapp: { es: "Escríbeme por WhatsApp", en: "Message me on WhatsApp" },
     whatsappCorto: { es: "WhatsApp", en: "WhatsApp" },
     agendar: { es: "Agendar llamada", en: "Book a call" },
-    verProyecto: { es: "Ver proyecto", en: "View property" },
-    verProyectos: { es: "Ver proyectos", en: "View properties" },
+    verProyecto: { es: "Ver la propiedad", en: "View the property" },
+    verProyectos: { es: "Ver propiedades", en: "View properties" },
     verCaso: { es: "Ver el caso", en: "Read the case" },
     verPortafolio: { es: "Ver portafolio", en: "View portfolio" },
     volver: { es: "Volver", en: "Back" },
@@ -35,7 +36,7 @@ export const UI = {
     resultados: { es: "Resultados", en: "Results" },
     reto: { es: "El reto", en: "The challenge" },
     sistema: { es: "El sistema que implementé", en: "The system I built" },
-    otrosProyectos: { es: "Otros proyectos", en: "More properties" },
+    otrosProyectos: { es: "Otras propiedades", en: "More properties" },
   },
   etiquetas: {
     desde: { es: "Desde", en: "From" },
@@ -45,8 +46,8 @@ export const UI = {
     desarrollador: { es: "Desarrollador", en: "Developer" },
     minutos: { es: "min", en: "min" },
     sinProyectos: {
-      es: "Estoy preparando el siguiente lanzamiento. Escríbeme y te aviso antes que a nadie.",
-      en: "I'm preparing the next launch. Message me and I'll tell you before anyone else.",
+      es: "Estoy cerrando la siguiente tanda de propiedades. Escríbeme con lo que buscas y te aviso antes de publicarlas.",
+      en: "I'm closing the next batch of listings. Message me with what you're after and I'll tell you before they go public.",
     },
   },
   tipos: {

@@ -1,7 +1,9 @@
 # Fran Morishita · Bienes Raíces
 
-Sitio bilingüe (ES/EN) de captación inmobiliaria: landings de proyecto, portafolio de
-dirección comercial y captura de leads con atribución de pauta punta a punta.
+Sitio bilingüe (ES/EN) de la marca personal inmobiliaria de Fran Morishita. El home
+vende inventario: propiedad destacada, resto del catálogo y captura de leads con
+atribución de pauta punta a punta. Las páginas B2B (portafolio y dirección comercial)
+quedan en segundo plano, accesibles desde el pie.
 
 - **Stack:** Next.js (App Router) + TypeScript + Tailwind v4 + Supabase, desplegado en Vercel.
 - **CTA principal:** WhatsApp con mensaje prellenado y UTMs incrustados.
@@ -15,7 +17,7 @@ cp .env.example .env.local   # y llenarlo
 npm run dev                  # http://localhost:3000 → redirige a /es
 ```
 
-## Publicar un proyecto nuevo
+## Publicar una propiedad nueva
 
 1. Copia `content/proyectos/_plantilla.ts` como `content/proyectos/<slug>.ts`.
 2. Llénalo. Lo que no tengas, márcalo con `pendiente("qué falta")`.
@@ -23,8 +25,9 @@ npm run dev                  # http://localhost:3000 → redirige a /es
 4. Pon `activo: true` y, cuando tengas la autorización del desarrollador por escrito,
    `autorizado: true`. Hasta entonces el proyecto no se lista ni se indexa.
 
-Las rutas `/es/proyectos/<slug>` y `/en/proyectos/<slug>`, el sitemap, la OG y el
-JSON-LD se generan solos.
+Las rutas `/es/propiedades/<slug>` y `/en/propiedades/<slug>`, el sitemap, la OG y el
+JSON-LD se generan solos. `destacado: true` la sube al bloque principal del home
+(solo una a la vez). Las URLs viejas `/proyectos/...` redirigen con 308.
 
 ## Captura de leads y atribución
 
