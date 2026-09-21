@@ -1,0 +1,127 @@
+import type { I18n } from "@/lib/i18n";
+
+/** Microcopy de interfaz. El contenido comercial va en sus propios archivos. */
+export const UI = {
+  nav: {
+    inicio: { es: "Inicio", en: "Home" },
+    proyectos: { es: "Proyectos", en: "Properties" },
+    portafolio: { es: "Portafolio", en: "Portfolio" },
+    desarrolladores: { es: "Desarrolladores", en: "Developers" },
+    sobreMi: { es: "Sobre mí", en: "About" },
+    contacto: { es: "Contacto", en: "Contact" },
+    abrirMenu: { es: "Abrir menú", en: "Open menu" },
+    cerrarMenu: { es: "Cerrar menú", en: "Close menu" },
+    cambiarIdioma: { es: "English", en: "Español" },
+  },
+  cta: {
+    whatsapp: { es: "Hablemos por WhatsApp", en: "Chat on WhatsApp" },
+    whatsappCorto: { es: "WhatsApp", en: "WhatsApp" },
+    agendar: { es: "Agendar llamada", en: "Book a call" },
+    verProyecto: { es: "Ver proyecto", en: "View property" },
+    verProyectos: { es: "Ver proyectos", en: "View properties" },
+    verCaso: { es: "Ver el caso", en: "Read the case" },
+    verPortafolio: { es: "Ver portafolio", en: "View portfolio" },
+    volver: { es: "Volver", en: "Back" },
+    verEnMapa: { es: "Ver en Google Maps", en: "Open in Google Maps" },
+    reproducir: { es: "Reproducir video", en: "Play video" },
+  },
+  secciones: {
+    ubicacion: { es: "Ubicación", en: "Location" },
+    amenidades: { es: "Amenidades", en: "Amenities" },
+    inventario: { es: "Disponibilidad", en: "Availability" },
+    galeria: { es: "Galería", en: "Gallery" },
+    faq: { es: "Preguntas frecuentes", en: "FAQ" },
+    financiamiento: { es: "Financiamiento", en: "Financing" },
+    resultados: { es: "Resultados", en: "Results" },
+    reto: { es: "El reto", en: "The challenge" },
+    sistema: { es: "El sistema que implementé", en: "The system I built" },
+    otrosProyectos: { es: "Otros proyectos", en: "More properties" },
+  },
+  etiquetas: {
+    desde: { es: "Desde", en: "From" },
+    superficie: { es: "Superficie", en: "Lot size" },
+    tipo: { es: "Tipo", en: "Type" },
+    estado: { es: "Estado", en: "Status" },
+    desarrollador: { es: "Desarrollador", en: "Developer" },
+    minutos: { es: "min", en: "min" },
+    sinProyectos: {
+      es: "Estoy preparando el siguiente lanzamiento. Escríbeme y te aviso antes que a nadie.",
+      en: "I'm preparing the next launch. Message me and I'll tell you before anyone else.",
+    },
+  },
+  tipos: {
+    lotes: { es: "Lotes", en: "Lots" },
+    casas: { es: "Casas", en: "Homes" },
+    departamentos: { es: "Departamentos", en: "Condos" },
+    preventa: { es: "Preventa", en: "Pre-sale" },
+    comercial: { es: "Comercial", en: "Commercial" },
+  },
+  estados: {
+    preventa: { es: "Preventa", en: "Pre-sale" },
+    "entrega-inmediata": { es: "Entrega inmediata", en: "Move-in ready" },
+    "en-construccion": { es: "En construcción", en: "Under construction" },
+  },
+  calculadora: {
+    titulo: { es: "Calcula tu mensualidad", en: "Estimate your monthly payment" },
+    precio: { es: "Precio de la propiedad", en: "Property price" },
+    enganche: { es: "Enganche", en: "Down payment" },
+    plazo: { es: "Plazo", en: "Term" },
+    meses: { es: "meses", en: "months" },
+    engancheResultado: { es: "Enganche", en: "Down payment" },
+    mensualidadResultado: { es: "Mensualidad estimada", en: "Estimated monthly payment" },
+    financiar: { es: "Monto a financiar", en: "Amount financed" },
+    sinIntereses: { es: "Sin intereses", en: "Interest free" },
+    tasa: { es: "Tasa anual", en: "Annual rate" },
+    leyenda: {
+      es: "Cálculo estimado con fines informativos. No constituye una oferta de crédito ni una cotización formal.",
+      en: "Estimate for informational purposes only. It is not a credit offer or a formal quote.",
+    },
+    cta: { es: "Quiero esta mensualidad", en: "I want this payment plan" },
+  },
+  formulario: {
+    nombre: { es: "Nombre", en: "Name" },
+    telefono: { es: "Teléfono / WhatsApp", en: "Phone / WhatsApp" },
+    email: { es: "Email", en: "Email" },
+    interes: { es: "¿Qué te interesa?", en: "What are you looking for?" },
+    mensaje: { es: "Mensaje", en: "Message" },
+    opcional: { es: "opcional", en: "optional" },
+    enviar: { es: "Enviar", en: "Send" },
+    enviando: { es: "Enviando…", en: "Sending…" },
+    consentimiento: {
+      es: "Acepto el aviso de privacidad y que Fran Morishita me contacte por WhatsApp, teléfono o email.",
+      en: "I accept the privacy notice and agree to be contacted by Fran Morishita via WhatsApp, phone or email.",
+    },
+    errorGeneral: {
+      es: "No se pudo enviar. Escríbeme por WhatsApp y lo resolvemos al instante.",
+      en: "It couldn't be sent. Message me on WhatsApp and we'll solve it right away.",
+    },
+    errores: {
+      nombre: { es: "Escribe tu nombre.", en: "Please enter your name." },
+      telefono: { es: "Escribe un teléfono de 10 dígitos.", en: "Enter a valid phone number." },
+      email: { es: "Escribe un email válido.", en: "Enter a valid email." },
+      consentimiento: { es: "Necesito tu consentimiento para contactarte.", en: "I need your consent to contact you." },
+    },
+    intereses: [
+      { valor: "comprar", texto: { es: "Comprar una propiedad", en: "Buying a property" } },
+      { valor: "invertir", texto: { es: "Invertir en preventa", en: "Investing in pre-sale" } },
+      { valor: "desarrollador", texto: { es: "Soy desarrollador y quiero vender más", en: "I'm a developer and want to sell more" } },
+      { valor: "otro", texto: { es: "Otro", en: "Other" } },
+    ],
+  },
+  pendiente: {
+    etiqueta: { es: "Falta dato", en: "Missing data" },
+    aviso: {
+      es: "Solo visible en preview: datos que necesito de ti.",
+      en: "Preview only: data still needed.",
+    },
+  },
+  footer: {
+    derechos: { es: "Todos los derechos reservados.", en: "All rights reserved." },
+    privacidad: { es: "Aviso de privacidad", en: "Privacy notice" },
+    registro: { es: "Registro estatal de agente inmobiliario", en: "State real estate agent registry" },
+    navegacion: { es: "Navegación", en: "Navigation" },
+    contacto: { es: "Contacto", en: "Contact" },
+  },
+} satisfies Record<string, unknown>;
+
+export type TextoUI = I18n;

@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Sistema de diseño — Fran Morishita · Bienes Raíces
+   Dos direcciones visuales. Se elige en src/contenido/sitio.ts
+   (`direccionVisual`) y se aplica como data-direccion en <html>.
+   A = Tierra nocturna (default) · B = Crema profundo
+   ============================================================ */
+
+@theme inline {
+  --color-fondo: var(--fondo);
+  --color-superficie: var(--superficie);
+  --color-superficie-alta: var(--superficie-alta);
+  --color-borde: var(--borde);
+  --color-texto: var(--texto);
+  --color-texto-suave: var(--texto-suave);
+  --color-acento: var(--acento);
+  --color-acento-suave: var(--acento-suave);
+  --color-acento-contraste: var(--acento-contraste);
+  --color-pendiente: var(--pendiente);
+
+  --font-serif: var(--fuente-serif);
+  --font-sans: var(--fuente-sans);
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+/* Dirección A — Tierra nocturna */
+:root,
+[data-direccion="a"] {
+  --fondo: #0f0c0a;
+  --superficie: #17120f;
+  --superficie-alta: #211a15;
+  --borde: #2f2720;
+  --texto: #f5eee4;
+  --texto-suave: #a99c8c;
+  --acento: #d8542b;
+  --acento-suave: #f0a882;
+  --acento-contraste: #140b06;
+  --pendiente: #e0b341;
+  --fuente-serif: var(--fuente-fraunces), "Times New Roman", serif;
+  --fuente-sans: var(--fuente-inter), system-ui, sans-serif;
+  --overlay-foto: linear-gradient(180deg, rgb(15 12 10 / 0.25) 0%, rgb(15 12 10 / 0.55) 45%, rgb(15 12 10 / 0.92) 100%);
+  color-scheme: dark;
+}
+
+/* Dirección B — Crema profundo */
+[data-direccion="b"] {
+  --fondo: #ede5d9;
+  --superficie: #f6f0e7;
+  --superficie-alta: #fffaf3;
+  --borde: #d5c9b6;
+  --texto: #1b1712;
+  --texto-suave: #665c4f;
+  --acento: #7b1e2b;
+  --acento-suave: #9c2f3e;
+  --acento-contraste: #fff6ee;
+  --pendiente: #8a6a12;
+  --fuente-serif: var(--fuente-instrument), "Times New Roman", serif;
+  --fuente-sans: var(--fuente-inter), system-ui, sans-serif;
+  --overlay-foto: linear-gradient(180deg, rgb(20 16 12 / 0.15) 0%, rgb(20 16 12 / 0.45) 45%, rgb(20 16 12 / 0.85) 100%);
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--acento);
+  color: var(--acento-contraste);
+}
+
+:focus-visible {
+  outline: 2px solid var(--acento-suave);
+  outline-offset: 3px;
+}
+
+/* --- Tipografía editorial ------------------------------------ */
+.titular {
+  font-family: var(--fuente-serif);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.titular-xl { font-size: clamp(2.75rem, 9.5vw, 6.5rem); }
+.titular-lg { font-size: clamp(2.25rem, 6.5vw, 4.25rem); }
+.titular-md { font-size: clamp(1.75rem, 4.2vw, 2.75rem); }
+.titular-sm { font-size: clamp(1.35rem, 2.6vw, 1.75rem); }
+
+.antetitulo {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--texto-suave);
+}
+
+.cuerpo {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--texto-suave);
+  text-wrap: pretty;
+}
+
+.overlay-foto { background-image: var(--overlay-foto); }
+
+/* --- Movimiento discreto ------------------------------------- */
+.revelar {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.revelar[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .revelar,
+  .revelar[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
