@@ -39,6 +39,6 @@ export function Casilla({ className, ...props }: ComponentProps<"input">) {
   );
 }
 
-export function Error({ children }: { children: React.ReactNode }) {
+export function MensajeError({ children }: { children: React.ReactNode }) {
   return <p className="mt-2 text-sm text-acento-suave">{children}</p>;
 }

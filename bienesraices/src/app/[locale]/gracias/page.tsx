@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function PaginaGracias({ params, searchParams }: Props) {
   const idioma = normalizaIdioma((await params).locale);
   const { tipo } = await searchParams;
-  const variante = (tipo && GRACIAS[tipo]) || GRACIAS.default;
+  const variante = tipo && Object.hasOwn(GRACIAS, tipo) ? GRACIAS[tipo] : GRACIAS.default;
   const r = rutas(idioma);
 
   return (

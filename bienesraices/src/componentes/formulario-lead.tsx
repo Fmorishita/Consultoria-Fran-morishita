@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useActionState, useEffect, useRef } from "react";
 import { ESTADO_INICIAL, enviarLead } from "@/acciones/enviar-lead";
 import { Boton } from "@/componentes/ui/boton";
-import { AreaTexto, Casilla, Entrada, Error as ErrorCampo, Etiqueta, Seleccion } from "@/componentes/ui/campo";
+import { AreaTexto, Casilla, Entrada, Etiqueta, MensajeError, Seleccion } from "@/componentes/ui/campo";
 import { leerAtribucion } from "@/lib/atribucion";
 import type { Idioma } from "@/lib/i18n";
 import { nuevoEventId, rastrear } from "@/lib/tracking";
@@ -80,7 +80,7 @@ export function FormularioLead({
         <div>
           <Etiqueta htmlFor="nombre">{textos.nombre}</Etiqueta>
           <Entrada id="nombre" name="nombre" autoComplete="name" required aria-invalid={errores?.nombre} />
-          {errores?.nombre ? <ErrorCampo>{textos.errores.nombre}</ErrorCampo> : null}
+          {errores?.nombre ? <MensajeError>{textos.errores.nombre}</MensajeError> : null}
         </div>
         <div>
           <Etiqueta htmlFor="telefono">{textos.telefono}</Etiqueta>
@@ -93,14 +93,14 @@ export function FormularioLead({
             required
             aria-invalid={errores?.telefono}
           />
-          {errores?.telefono ? <ErrorCampo>{textos.errores.telefono}</ErrorCampo> : null}
+          {errores?.telefono ? <MensajeError>{textos.errores.telefono}</MensajeError> : null}
         </div>
       </div>
 
       <div>
         <Etiqueta htmlFor="email">{textos.email}</Etiqueta>
         <Entrada id="email" name="email" type="email" autoComplete="email" required aria-invalid={errores?.email} />
-        {errores?.email ? <ErrorCampo>{textos.errores.email}</ErrorCampo> : null}
+        {errores?.email ? <MensajeError>{textos.errores.email}</MensajeError> : null}
       </div>
 
       <div>
@@ -130,8 +130,8 @@ export function FormularioLead({
           </Link>
         </label>
       </div>
-      {errores?.consentimiento ? <ErrorCampo>{textos.errores.consentimiento}</ErrorCampo> : null}
-      {errores?.general ? <ErrorCampo>{textos.errorGeneral}</ErrorCampo> : null}
+      {errores?.consentimiento ? <MensajeError>{textos.errores.consentimiento}</MensajeError> : null}
+      {errores?.general ? <MensajeError>{textos.errorGeneral}</MensajeError> : null}
 
       <div>
         <Boton type="submit" tamano="lg" disabled={enviando}>

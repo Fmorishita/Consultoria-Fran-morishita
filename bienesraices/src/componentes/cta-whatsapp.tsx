@@ -78,6 +78,7 @@ export function CtaWhatsAppFlotante({ numero, mensaje, etiqueta, keyword, contex
       rel="noopener noreferrer"
       aria-label={etiqueta}
       aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
       onClick={() => rastrear("Contact", { content_name: contexto ?? keyword ?? "general", metodo: "whatsapp_flotante" })}
       className={cn(
         estilosBoton({ variante: "primario", tamano: "sm" }),
