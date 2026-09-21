@@ -44,6 +44,12 @@ Crea la tabla con `supabase/leads.sql` (RLS: la llave publicable solo puede inse
 `PENDIENTES.md` se genera con `npm run pendientes` y lista todo lo que falta por
 confirmar. En producción esos datos no se pintan; en preview aparecen como chips ámbar.
 
+## Indexación
+
+Los deploys de preview nunca se indexan. Producción se indexa salvo que
+`PERMITIR_INDEXACION=0`; mientras el sitio viva en el subdominio de Vercel
+conviene dejarla en `0` y quitarla el día que apunte al dominio definitivo.
+
 ## Verificación
 
 ```bash

@@ -9,7 +9,14 @@ export function urlSitio(): string {
   return SITIO.dominio;
 }
 
-/** En preview y en deploys sin dominio definitivo no queremos indexación. */
+/**
+ * Indexación: los preview nunca se indexan. Producción sí, salvo que
+ * `PERMITIR_INDEXACION=0` lo apague (útil mientras el sitio vive en el
+ * subdominio de Vercel y todavía faltan datos y fotos).
+ */
 export function permitirIndexacion(): boolean {
-  return process.env.VERCEL_ENV === "production" || process.env.PERMITIR_INDEXACION === "1";
+  const bandera = process.env.PERMITIR_INDEXACION;
+  if (bandera === "1") return true;
+  if (bandera === "0") return false;
+  return process.env.VERCEL_ENV === "production";
 }
