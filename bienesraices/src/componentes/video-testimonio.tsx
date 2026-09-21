@@ -72,7 +72,7 @@ export function VideoTestimonio({
         ) : (
           <iframe
             src={`${video}${video.includes("?") ? "&" : "?"}autoplay=1`}
-            title={`${nombre} — ${cargo}`}
+            title={`${nombre}, ${cargo}`}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             loading="lazy"

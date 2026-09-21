@@ -50,7 +50,7 @@ function Muestra({ direccion, idioma }: { direccion: "a" | "b"; idioma: Idioma }
       </div>
 
       <div className="border-t border-borde p-8 md:p-12">
-        <p className="titular titular-md">Aa Bb Cc — 0123456789</p>
+        <p className="titular titular-md">Aa Bb Cc 0123456789</p>
         <p className="mt-3 text-sm text-texto-suave">{ficha.tipografia}</p>
         <p className="cuerpo mt-6 max-w-2xl text-base">{t(ficha.descripcion, idioma)}</p>
       </div>

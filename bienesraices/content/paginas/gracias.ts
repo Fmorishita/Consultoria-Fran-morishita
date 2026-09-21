@@ -16,7 +16,7 @@ export const GRACIAS: Record<string, Variante> & { default: Variante } = {
       es: "Recibí tus datos. Si quieres adelantar, escríbeme directo por WhatsApp y lo vemos ahora mismo.",
       en: "I got your details. If you want to move faster, message me on WhatsApp and we'll get into it right now.",
     },
-    cta: { es: "Escribirme por WhatsApp", en: "Message me on WhatsApp" },
+    cta: { es: "Escríbeme por WhatsApp", en: "Message me on WhatsApp" },
   },
   proyecto: {
     titulo: { es: "Gracias por tu interés", en: "Thanks for your interest" },
@@ -24,7 +24,7 @@ export const GRACIAS: Record<string, Variante> & { default: Variante } = {
       es: "Te mando disponibilidad y precios actualizados del proyecto. Si tienes prisa, WhatsApp es más rápido.",
       en: "I'll send you current availability and pricing for the project. If you're in a hurry, WhatsApp is faster.",
     },
-    cta: { es: "Escribirme por WhatsApp", en: "Message me on WhatsApp" },
+    cta: { es: "Escríbeme por WhatsApp", en: "Message me on WhatsApp" },
   },
   desarrollador: {
     titulo: { es: "Gracias. Vamos a los números.", en: "Thank you. Let's get to the numbers." },

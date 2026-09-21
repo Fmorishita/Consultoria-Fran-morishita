@@ -8,10 +8,7 @@ import { INICIO } from "@contenido/paginas/inicio";
 export function Frentes({ idioma }: { idioma: Idioma }) {
   return (
     <Seccion>
-      <EncabezadoSeccion
-        antetitulo={t(INICIO.frentes.antetitulo, idioma)}
-        titulo={t(INICIO.frentes.titulo, idioma)}
-      />
+      <EncabezadoSeccion titulo={t(INICIO.frentes.titulo, idioma)} />
       <div className="mt-14 grid gap-6 md:grid-cols-2">
         {INICIO.frentes.items.map((item, indice) => (
           <Revelar key={item.href} retraso={indice * 90}>

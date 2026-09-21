@@ -49,6 +49,29 @@ supabase/leads.sql  Tabla de leads con RLS
 6. Publicar un proyecto nuevo = copiar `content/proyectos/_plantilla.ts`, llenarlo y
    agregarlo a `content/proyectos/index.ts`. No se toca ningún componente.
 
+## Reglas de diseño
+
+El repo trae la skill **taste-skill** en `.claude/skills/design-taste-frontend/`
+(MIT, de github.com/Leonxlnx/taste-skill). El sitio ya está alineado con ella.
+Lo que hay que respetar al tocar la interfaz:
+
+- **Lectura de diseño:** landing de marca personal inmobiliaria para comprador
+  binacional y desarrollador, lenguaje editorial contenido. Diales:
+  variación 7 / movimiento 4 / densidad 3.
+- **Cero em dashes** (`—` y `–`) en cualquier texto visible: titulares, botones,
+  copy, `alt`, captions. Se usan comas, puntos, paréntesis o guion simple.
+- **Presupuesto de antetítulos:** máximo 1 por cada 3 secciones (el hero cuenta).
+  Si una sección necesita nombre, se lo pone el titular, no un rótulo.
+- **Hero:** subtexto de 20 palabras máximo, titular de 2 o 3 líneas cortas,
+  CTA visible sin scroll, padding superior contenido y una imagen real.
+- **Un rótulo por intención de CTA:** todo lo que abre WhatsApp dice lo mismo.
+- **Nada de tres tarjetas iguales**, ni dos secciones con la misma familia de
+  layout. El home usa siete composiciones distintas.
+- **Serif rotada:** Playfair Display (dirección A) y EB Garamond (dirección B).
+  Fraunces e Instrument Serif están vetadas por ser el default de los LLM, y la
+  sans es Geist, no Inter.
+- **Sin listeners de scroll:** IntersectionObserver (`usePasoElUmbral`) o CSS.
+
 ## Comandos
 
 ```bash

@@ -14,7 +14,7 @@ export function DatosProyecto({ proyecto, idioma }: { proyecto: Proyecto; idioma
 
   const superficie =
     superficieMin && superficieMax
-      ? `${formatoSuperficie(superficieMin, idioma)} – ${formatoSuperficie(superficieMax, idioma)}`
+      ? `${formatoSuperficie(superficieMin, idioma)} a ${formatoSuperficie(superficieMax, idioma)}`
       : superficieMin
         ? `${t(UI.etiquetas.desde, idioma)} ${formatoSuperficie(superficieMin, idioma)}`
         : undefined;

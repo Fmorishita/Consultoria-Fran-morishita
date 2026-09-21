@@ -4,7 +4,7 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 const estilos = cva(
-  "inline-flex items-center justify-center gap-2 font-medium tracking-tight transition-colors duration-200 disabled:opacity-60 disabled:pointer-events-none rounded-xs",
+  "inline-flex items-center justify-center gap-2 font-medium tracking-tight transition-[colors,transform] duration-200 active:translate-y-px disabled:opacity-60 disabled:pointer-events-none rounded-xs",
   {
     variants: {
       variante: {

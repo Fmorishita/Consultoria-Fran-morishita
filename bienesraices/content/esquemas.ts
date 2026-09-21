@@ -149,6 +149,8 @@ export const esquemaSitio = z.object({
     mensajeGeneral: esquemaI18n,
   }),
   email: z.string().optional(),
+  /** Retrato de marca para el hero y la página "sobre mí". */
+  retrato: z.string().optional(),
   calendario: z.string().optional(),
   redes: z.array(z.object({ nombre: z.string(), url: z.string() })).default([]),
   legal: z.object({

@@ -127,7 +127,7 @@ export default async function PaginaCaso({ params }: Props) {
               cargo={t(testimonio.cargo, idioma)}
               empresa={texto(testimonio.empresa, idioma)}
               etiquetaReproducir={t(UI.cta.reproducir, idioma)}
-              altPoster={`${testimonio.nombre} — ${t(testimonio.cargo, idioma)}`}
+              altPoster={`${testimonio.nombre}, ${t(testimonio.cargo, idioma)}`}
             />
           </div>
         </Seccion>

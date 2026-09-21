@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Fraunces, Instrument_Serif, Inter } from "next/font/google";
+import { EB_Garamond, Geist, Playfair_Display } from "next/font/google";
 import "@/app/globals.css";
 import { Analitica } from "@/componentes/analitica";
 import { CtaWhatsAppFlotante } from "@/componentes/cta-whatsapp";
@@ -14,9 +14,13 @@ import { enlaceWhatsApp } from "@/lib/whatsapp";
 import { SITIO } from "@contenido/sitio";
 import { UI } from "@contenido/ui";
 
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--fuente-fraunces", display: "swap" });
-const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--fuente-instrument", display: "swap" });
-const inter = Inter({ subsets: ["latin"], variable: "--fuente-inter", display: "swap" });
+// Serif de titulares por dirección visual, sans única para texto.
+// Solo se precarga la serif de la dirección activa (hoy la "a"); la otra
+// se declara sin preload y el navegador únicamente la baja en /styleguide.
+// Si `direccionVisual` cambia a "b", hay que intercambiar los `preload`.
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--fuente-playfair", display: "swap" });
+const garamond = EB_Garamond({ subsets: ["latin"], variable: "--fuente-garamond", display: "swap", preload: false });
+const geist = Geist({ subsets: ["latin"], variable: "--fuente-geist", display: "swap" });
 
 export function generateStaticParams() {
   return IDIOMAS.map((locale) => ({ locale }));
@@ -66,7 +70,7 @@ export default async function LayoutIdioma({
     <html
       lang={localeCompleto(idioma)}
       data-direccion={SITIO.direccionVisual}
-      className={`${fraunces.variable} ${instrument.variable} ${inter.variable}`}
+      className={`${playfair.variable} ${garamond.variable} ${geist.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-dvh antialiased">

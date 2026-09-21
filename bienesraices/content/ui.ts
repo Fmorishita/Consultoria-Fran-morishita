@@ -14,7 +14,7 @@ export const UI = {
     cambiarIdioma: { es: "English", en: "Español" },
   },
   cta: {
-    whatsapp: { es: "Hablemos por WhatsApp", en: "Chat on WhatsApp" },
+    whatsapp: { es: "Escríbeme por WhatsApp", en: "Message me on WhatsApp" },
     whatsappCorto: { es: "WhatsApp", en: "WhatsApp" },
     agendar: { es: "Agendar llamada", en: "Book a call" },
     verProyecto: { es: "Ver proyecto", en: "View property" },

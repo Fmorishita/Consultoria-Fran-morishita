@@ -47,10 +47,7 @@ export default async function PaginaInicio({ params }: { params: Promise<{ local
       <TestimonioDestacado idioma={idioma} />
 
       <Seccion>
-        <EncabezadoSeccion
-          antetitulo={t(INICIO.trackRecord.antetitulo, idioma)}
-          titulo={t(INICIO.trackRecord.titulo, idioma)}
-        />
+        <EncabezadoSeccion titulo={t(INICIO.trackRecord.titulo, idioma)} />
         <div className="mt-14">
           <TrackRecord cifras={cifras} />
         </div>

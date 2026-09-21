@@ -9,8 +9,8 @@ export const SOBRE_MI = {
       en: "I'm Fran Morishita, a marketing and sales consultant based in Ensenada, Baja California. I work on two fronts: I sell property through my own digital channel, and I direct sales operations for the people who build developments.",
     },
     {
-      es: "Mi diferenciador no es conocer el mercado —eso lo dice todo el mundo—. Es que traigo la demanda: genero leads con Meta Ads, los califico con IA y CRM, y cierro por videollamada.",
-      en: "My edge isn't knowing the market — everybody says that. It's that I bring the demand: I generate leads with Meta Ads, qualify them with AI and CRM, and close over video call.",
+      es: "Mi diferenciador no es conocer el mercado, eso lo dice cualquiera. Es que traigo la demanda: genero leads con Meta Ads, los califico con IA y CRM, y cierro por videollamada.",
+      en: "My edge isn't knowing the market, anyone can say that. It's that I bring the demand: I generate leads with Meta Ads, qualify them with AI and CRM, and close over video call.",
     },
     {
       es: "He dirigido la comercialización de desarrollos completos, desde el primer peso de pauta hasta la conversación que cierra. Ese trabajo está documentado en el portafolio y validado en video por mi socio Gus Marcos.",

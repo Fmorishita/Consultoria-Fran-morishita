@@ -5,8 +5,8 @@ export const INICIO = {
     antetitulo: { es: "Ensenada, Baja California", en: "Ensenada, Baja California" },
     titulo: { es: "Yo no espero\nal comprador.\nLo traigo.", en: "I don't wait\nfor the buyer.\nI bring them." },
     subtitulo: {
-      es: "Soy Fran Morishita. Dirijo la comercialización de desarrollos inmobiliarios y vendo propiedades con canal digital propio: pauta que genera demanda, IA y CRM que la califican, y cierre por videollamada.",
-      en: "I'm Fran Morishita. I direct sales for real estate developments and sell property through my own digital channel: paid media that creates demand, AI and CRM that qualify it, and closing over video call.",
+      es: "Dirijo la comercialización de desarrollos inmobiliarios y vendo propiedades con canal digital propio, desde Ensenada.",
+      en: "I run the sales operation of real estate developments and sell property through my own digital channel, from Ensenada.",
     },
   },
   testimonio: {

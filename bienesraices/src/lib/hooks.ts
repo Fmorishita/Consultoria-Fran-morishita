@@ -1,17 +1,36 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 
-function suscribirScroll(alCambiar: () => void) {
-  window.addEventListener("scroll", alCambiar, { passive: true });
-  return () => window.removeEventListener("scroll", alCambiar);
-}
+/**
+ * ¿Ya se scrolleó más de `umbral` píxeles?
+ * Con IntersectionObserver sobre un centinela, no con un listener de scroll:
+ * el listener corre en cada frame y castiga el móvil.
+ */
+export function usePasoElUmbral(umbral: number): boolean {
+  const [pasado, setPasado] = useState(false);
 
-/** true cuando la página lleva más de `umbral` px de scroll. */
-export function useScrollPasado(umbral: number): boolean {
-  return useSyncExternalStore(
-    suscribirScroll,
-    () => window.scrollY > umbral,
-    () => false,
-  );
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const centinela = document.createElement("div");
+    centinela.setAttribute("aria-hidden", "true");
+    centinela.style.cssText = `position:absolute;top:${umbral}px;left:0;width:1px;height:1px;pointer-events:none;`;
+    document.body.appendChild(centinela);
+
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        for (const entrada of entradas) setPasado(!entrada.isIntersecting);
+      },
+      { threshold: 0 },
+    );
+    observador.observe(centinela);
+
+    return () => {
+      observador.disconnect();
+      centinela.remove();
+    };
+  }, [umbral]);
+
+  return pasado;
 }

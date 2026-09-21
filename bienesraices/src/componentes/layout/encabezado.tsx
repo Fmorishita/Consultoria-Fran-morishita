@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CtaWhatsApp } from "@/componentes/cta-whatsapp";
-import { useScrollPasado } from "@/lib/hooks";
+import { usePasoElUmbral } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import type { Idioma } from "@/lib/i18n";
 import { rutaEnIdioma } from "@/lib/i18n";
@@ -24,7 +24,7 @@ export function Encabezado({ idioma, enlaces, marca, textos, whatsapp }: PropsEn
   const ruta = usePathname();
   const [abierto, setAbierto] = useState(false);
   const [rutaPrevia, setRutaPrevia] = useState(ruta);
-  const condensado = useScrollPasado(24);
+  const condensado = usePasoElUmbral(24);
   const otroIdioma: Idioma = idioma === "es" ? "en" : "es";
 
   // Al cambiar de ruta se cierra el menú (ajuste de estado en render,

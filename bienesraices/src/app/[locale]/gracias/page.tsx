@@ -33,7 +33,6 @@ export default async function PaginaGracias({ params, searchParams }: Props) {
   return (
     <Seccion className="flex min-h-[70svh] items-center pt-28 md:pt-36">
       <div className="max-w-2xl">
-        <p className="antetitulo text-acento-suave">✓</p>
         <h1 className="titular titular-lg mt-6">{t(variante.titulo, idioma)}</h1>
         <p className="cuerpo mt-6">{t(variante.texto, idioma)}</p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">

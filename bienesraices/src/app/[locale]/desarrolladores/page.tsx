@@ -56,10 +56,7 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
       </Seccion>
 
       <Seccion className="bg-superficie">
-        <EncabezadoSeccion
-          antetitulo={t(DESARROLLADORES.problema.antetitulo, idioma)}
-          titulo={t(DESARROLLADORES.problema.titulo, idioma)}
-        />
+        <EncabezadoSeccion titulo={t(DESARROLLADORES.problema.titulo, idioma)} />
         <ul className="mt-14 grid gap-8 md:grid-cols-2">
           {DESARROLLADORES.problema.items.map((item, indice) => (
             <Revelar key={item.es} retraso={indice * 70} como="li" className="border-t border-borde pt-6">
@@ -90,8 +87,7 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
       <Seccion className="bg-superficie">
         <div className="grid gap-12 lg:grid-cols-2">
           <Revelar>
-            <p className="antetitulo">{t(DESARROLLADORES.paraQuien.antetitulo, idioma)}</p>
-            <h2 className="titular titular-md mt-5">{t(DESARROLLADORES.paraQuien.titulo, idioma)}</h2>
+            <h2 className="titular titular-md">{t(DESARROLLADORES.paraQuien.titulo, idioma)}</h2>
             <ul className="mt-8 space-y-5">
               {DESARROLLADORES.paraQuien.items.map((item) => (
                 <li key={item.es} className="flex gap-4 text-texto-suave">
@@ -103,8 +99,7 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
           </Revelar>
 
           <Revelar retraso={90}>
-            <p className="antetitulo">{t(DESARROLLADORES.proceso.antetitulo, idioma)}</p>
-            <h2 className="titular titular-md mt-5">{t(DESARROLLADORES.proceso.titulo, idioma)}</h2>
+            <h2 className="titular titular-md">{t(DESARROLLADORES.proceso.titulo, idioma)}</h2>
             <ol className="mt-8 divide-y divide-borde border-y border-borde">
               {DESARROLLADORES.proceso.pasos.map((paso, indice) => (
                 <li key={paso.titulo.es} className="py-6">

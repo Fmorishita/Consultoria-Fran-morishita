@@ -40,26 +40,26 @@
   --acento-suave: #f0a882;
   --acento-contraste: #140b06;
   --pendiente: #e0b341;
-  --fuente-serif: var(--fuente-fraunces), "Times New Roman", serif;
-  --fuente-sans: var(--fuente-inter), system-ui, sans-serif;
+  --fuente-serif: var(--fuente-playfair), "Times New Roman", serif;
+  --fuente-sans: var(--fuente-geist), system-ui, sans-serif;
   --overlay-foto: linear-gradient(180deg, rgb(15 12 10 / 0.25) 0%, rgb(15 12 10 / 0.55) 45%, rgb(15 12 10 / 0.92) 100%);
   color-scheme: dark;
 }
 
-/* Dirección B — Crema profundo */
+/* Dirección B — Piedra clara */
 [data-direccion="b"] {
-  --fondo: #ede5d9;
-  --superficie: #f6f0e7;
-  --superficie-alta: #fffaf3;
-  --borde: #d5c9b6;
-  --texto: #1b1712;
-  --texto-suave: #665c4f;
-  --acento: #7b1e2b;
-  --acento-suave: #9c2f3e;
-  --acento-contraste: #fff6ee;
-  --pendiente: #8a6a12;
-  --fuente-serif: var(--fuente-instrument), "Times New Roman", serif;
-  --fuente-sans: var(--fuente-inter), system-ui, sans-serif;
+  --fondo: #e8e6e1;
+  --superficie: #f2f1ec;
+  --superficie-alta: #fbfaf7;
+  --borde: #d0cec7;
+  --texto: #15181a;
+  --texto-suave: #575c5e;
+  --acento: #1f4b3f;
+  --acento-suave: #2d6b58;
+  --acento-contraste: #f3f6f4;
+  --pendiente: #6f5410;
+  --fuente-serif: var(--fuente-garamond), "Times New Roman", serif;
+  --fuente-sans: var(--fuente-geist), system-ui, sans-serif;
   --overlay-foto: linear-gradient(180deg, rgb(20 16 12 / 0.15) 0%, rgb(20 16 12 / 0.45) 45%, rgb(20 16 12 / 0.85) 100%);
   color-scheme: light;
 }
@@ -91,13 +91,14 @@ body {
 .titular {
   font-family: var(--fuente-serif);
   font-weight: 600;
-  line-height: 0.98;
+  /* 1.05 deja aire para los descendentes (y, g, j) en titulares grandes. */
+  line-height: 1.05;
   letter-spacing: -0.025em;
   text-wrap: balance;
 }
 
-.titular-xl { font-size: clamp(2.75rem, 9.5vw, 6.5rem); }
-.titular-lg { font-size: clamp(2.25rem, 6.5vw, 4.25rem); }
+.titular-xl { font-size: clamp(2.5rem, 7vw, 4.75rem); }
+.titular-lg { font-size: clamp(2rem, 5vw, 3.5rem); }
 .titular-md { font-size: clamp(1.75rem, 4.2vw, 2.75rem); }
 .titular-sm { font-size: clamp(1.35rem, 2.6vw, 1.75rem); }
 

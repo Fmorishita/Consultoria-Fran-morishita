@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { MessageCircle } from "lucide-react";
 import { Boton, estilosBoton } from "@/componentes/ui/boton";
 import { leerAtribucion } from "@/lib/atribucion";
-import { useScrollPasado } from "@/lib/hooks";
+import { usePasoElUmbral } from "@/lib/hooks";
 import { rastrear } from "@/lib/tracking";
 import { enlaceWhatsApp } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
@@ -68,7 +68,7 @@ export function CtaWhatsApp({
 /** Variante flotante para móvil: pequeña, abajo a la derecha, no tapa el texto. */
 export function CtaWhatsAppFlotante({ numero, mensaje, etiqueta, keyword, contexto }: PropsCtaWhatsApp) {
   const ref = useEnlaceConAtribucion(numero, mensaje, keyword);
-  const visible = useScrollPasado(600);
+  const visible = usePasoElUmbral(600);
 
   return (
     <a

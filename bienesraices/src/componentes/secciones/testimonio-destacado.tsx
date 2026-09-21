@@ -18,10 +18,7 @@ export function TestimonioDestacado({ idioma }: { idioma: Idioma }) {
 
   return (
     <Seccion className="bg-superficie">
-      <EncabezadoSeccion
-        antetitulo={t(INICIO.testimonio.antetitulo, idioma)}
-        titulo={t(INICIO.testimonio.titulo, idioma)}
-      />
+      <EncabezadoSeccion titulo={t(INICIO.testimonio.titulo, idioma)} />
       <Revelar className="mt-12 grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:items-center">
         <VideoTestimonio
           video={testimonio.video}
@@ -30,7 +27,7 @@ export function TestimonioDestacado({ idioma }: { idioma: Idioma }) {
           cargo={t(testimonio.cargo, idioma)}
           empresa={empresa}
           etiquetaReproducir={t(UI.cta.reproducir, idioma)}
-          altPoster={`${testimonio.nombre} — ${t(testimonio.cargo, idioma)}`}
+          altPoster={`${testimonio.nombre}, ${t(testimonio.cargo, idioma)}`}
         />
         <div>
           {cita ? <blockquote className="titular titular-md">“{cita}”</blockquote> : null}

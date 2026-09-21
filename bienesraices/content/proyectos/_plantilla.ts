@@ -2,7 +2,7 @@ import { esquemaProyecto, type Proyecto } from "@contenido/esquemas";
 import { SITIO } from "@contenido/sitio";
 
 /**
- * PLANTILLA — copia este archivo como `<slug>.ts`, llénalo y agrégalo
+ * PLANTILLA: copia este archivo como `<slug>.ts`, llénalo y agrégalo
  * a la lista de `content/proyectos/index.ts`. Eso es todo: la landing
  * `/es/proyectos/<slug>` y `/en/proyectos/<slug>` se generan solas.
  *

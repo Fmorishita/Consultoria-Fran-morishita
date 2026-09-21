@@ -19,6 +19,8 @@ export const SITIO = esquemaSitio.parse({
       en: "Hi Fran, I saw your site and I'd like to talk about a property.",
     },
   },
+  retrato:
+    "https://lpdqksuvccsocntditik.supabase.co/storage/v1/object/public/sitio/imagenes/1781439320844-ChatGPT_Image_Jun_14__2026__02_37_33_AM.jpg",
   calendario: "https://calendly.com/franmorishita/30min",
   redes: [],
   legal: {

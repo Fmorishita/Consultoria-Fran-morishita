@@ -118,19 +118,19 @@ export function CalculadoraFinanciamiento({
         <div>
           <dt className="antetitulo">{textos.engancheResultado}</dt>
           <dd className="titular titular-sm mt-2">
-            {calculo ? formatoMoneda(calculo.enganche, moneda, idioma) : "—"}
+            {calculo ? formatoMoneda(calculo.enganche, moneda, idioma) : "-"}
           </dd>
         </div>
         <div>
           <dt className="antetitulo">{textos.financiar}</dt>
           <dd className="titular titular-sm mt-2">
-            {calculo ? formatoMoneda(calculo.financiado, moneda, idioma) : "—"}
+            {calculo ? formatoMoneda(calculo.financiado, moneda, idioma) : "-"}
           </dd>
         </div>
         <div>
           <dt className="antetitulo text-acento-suave">{textos.mensualidadResultado}</dt>
           <dd className="titular titular-md mt-2 text-acento-suave">
-            {calculo ? formatoMoneda(calculo.pago, moneda, idioma) : "—"}
+            {calculo ? formatoMoneda(calculo.pago, moneda, idioma) : "-"}
           </dd>
         </div>
       </dl>

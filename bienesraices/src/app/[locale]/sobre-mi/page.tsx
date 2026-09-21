@@ -10,9 +10,7 @@ import { JsonLd, personaJsonLd } from "@/lib/json-ld";
 import { rutas } from "@/lib/navegacion";
 import { queFalta, texto } from "@/lib/pendiente";
 import { SOBRE_MI } from "@contenido/paginas/sobre-mi";
-
-const FOTO_FRAN =
-  "https://lpdqksuvccsocntditik.supabase.co/storage/v1/object/public/sitio/imagenes/1781439320844-ChatGPT_Image_Jun_14__2026__02_37_33_AM.jpg";
+import { SITIO } from "@contenido/sitio";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const idioma = normalizaIdioma((await params).locale);
@@ -60,21 +58,23 @@ export default async function PaginaSobreMi({ params }: { params: Promise<{ loca
             </div>
           </Revelar>
 
+          {SITIO.retrato ? (
           <Revelar retraso={120} className="relative aspect-[4/5] w-full overflow-hidden border border-borde">
             <Image
-              src={FOTO_FRAN}
-              alt="Fran Morishita"
+              src={SITIO.retrato ?? ""}
+              alt={SITIO.nombre}
               fill
               sizes="(max-width: 1024px) 100vw, 420px"
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
           </Revelar>
+          ) : null}
         </div>
       </Seccion>
 
       <Seccion className="bg-superficie">
-        <p className="antetitulo">{t(SOBRE_MI.credenciales.antetitulo, idioma)}</p>
+        <h2 className="titular titular-md">{t(SOBRE_MI.credenciales.antetitulo, idioma)}</h2>
         <ul className="mt-8 divide-y divide-borde border-y border-borde">
           {credenciales.map((credencial, indice) => (
             <li key={indice} className="py-5">

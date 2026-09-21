@@ -113,7 +113,7 @@ export default async function PaginaProyecto({ params }: Props) {
                 coords={proyecto.ubicacion.coords}
                 imagen={proyecto.ubicacion.mapaEstatico}
                 etiquetaBoton={t(UI.cta.verEnMapa, idioma)}
-                alt={`${proyecto.nombre} — ${proyecto.ciudad}`}
+                alt={`${proyecto.nombre}, ${proyecto.ciudad}`}
               />
               <ChipPendiente>{queFalta(proyecto.ubicacion.direccion)}</ChipPendiente>
             </Revelar>

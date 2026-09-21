@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export type CifraLista = {
   valor?: number;
@@ -36,22 +37,29 @@ function useConteo(objetivo: number | undefined, activo: boolean): number {
   return valor;
 }
 
-function Cifra({ cifra, activo }: { cifra: CifraLista; activo: boolean }) {
+function Cifra({ cifra, activo, principal }: { cifra: CifraLista; activo: boolean; principal: boolean }) {
   const valor = useConteo(cifra.valor, activo);
   return (
-    <div className="border-t border-borde pt-6">
-      <p className="titular text-[clamp(2.5rem,7vw,4rem)] text-acento-suave">
+    <div className={cn("border-t border-borde pt-6", principal ? "sm:col-span-2 lg:col-span-6" : "lg:col-span-3")}>
+      <p
+        className={cn(
+          "titular text-acento-suave",
+          principal ? "text-[clamp(3.5rem,12vw,7rem)]" : "text-[clamp(2.25rem,6vw,3.25rem)]",
+        )}
+      >
         {cifra.prefijo}
-        {cifra.valor === undefined ? "—" : valor}
+        {cifra.valor === undefined ? "-" : valor}
         {cifra.sufijo}
       </p>
-      <p className="mt-3 max-w-xs text-sm leading-relaxed text-texto-suave">{cifra.etiqueta}</p>
+      <p className={cn("mt-3 text-sm leading-relaxed text-texto-suave", principal ? "max-w-sm text-base" : "max-w-xs")}>
+        {cifra.etiqueta}
+      </p>
       {cifra.respaldo ? <p className="mt-2 max-w-xs text-xs text-texto-suave/70">{cifra.respaldo}</p> : null}
     </div>
   );
 }
 
-/** Tira de cifras con conteo discreto. Los datos vienen de content/track-record.ts */
+/** Composición asimétrica: la cifra que respalda el video manda sobre las otras. */
 export function TrackRecord({ cifras }: { cifras: CifraLista[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const [activo, setActivo] = useState(false);
@@ -76,9 +84,9 @@ export function TrackRecord({ cifras }: { cifras: CifraLista[] }) {
   }, []);
 
   return (
-    <div ref={ref} className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+    <div ref={ref} className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-12">
       {cifras.map((cifra, indice) => (
-        <Cifra key={indice} cifra={cifra} activo={activo} />
+        <Cifra key={indice} cifra={cifra} activo={activo} principal={indice === 0} />
       ))}
     </div>
   );
