@@ -47,6 +47,8 @@ export const UI = {
     faq: { es: "Lo que suelen preguntarme", en: "What buyers usually ask me" },
     financiamiento: { es: "Formas de pago", en: "Payment terms" },
     precios: { es: "Precios y disponibilidad", en: "Pricing and availability" },
+    vocesAntetitulo: { es: "Quienes ya compraron", en: "People who already bought" },
+    voces: { es: "Lo que dicen los que ya firmaron", en: "What the people who signed have to say" },
     fichaTecnica: { es: "Ficha técnica", en: "Fact sheet" },
     resultados: { es: "Resultados", en: "Results" },
     reto: { es: "El reto", en: "The challenge" },

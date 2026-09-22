@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Cierre } from "@/componentes/secciones/cierre";
+import { Equipo } from "@/componentes/secciones/equipo";
 import { TitularMultilinea } from "@/componentes/secciones/titular-multilinea";
 import { Revelar } from "@/componentes/ui/revelar";
 import { Seccion } from "@/componentes/ui/seccion";
@@ -75,6 +76,8 @@ export default async function PaginaSobreMi({ params }: { params: Promise<{ loca
           })}
         </div>
       </Seccion>
+
+      <Equipo idioma={idioma} className="border-t border-borde" />
 
       <Cierre
         idioma={idioma}

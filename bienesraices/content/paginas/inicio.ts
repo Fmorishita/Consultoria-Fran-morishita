@@ -7,12 +7,12 @@ export const INICIO = {
   hero: {
     antetitulo: { es: "Ensenada · Baja California", en: "Ensenada · Baja California" },
     titulo: {
-      es: "Comprar en Baja\nno tiene que\ndar miedo.",
-      en: "Buying in Baja\nshouldn't\nfeel risky.",
+      es: "Comprar en Baja,\ncon todo\na la vista.",
+      en: "Buying in Baja,\nwith everything\nin plain sight.",
     },
     subtitulo: {
-      es: "Represento terreno y residencia en Ensenada. Me hago cargo de lo que quita el sueño: título, fideicomiso, pago y posventa.",
-      en: "I represent land and homes in Ensenada. I handle what keeps buyers up at night: title, bank trust, payment and after-sale.",
+      es: "Represento terreno y residencia en Ensenada. Precios publicados, proceso explicado y la misma persona contigo hasta la escritura.",
+      en: "I represent land and homes in Ensenada. Published prices, an explained process, and the same person with you through closing.",
     },
     pie: {
       es: "Atención personal, en español e inglés, para compradores de México y California.",

@@ -1,12 +1,14 @@
 import type { Proyecto } from "@contenido/esquemas";
 import { MOSTRAR_PENDIENTES } from "@/lib/pendiente";
 import { altaTierra } from "@contenido/proyectos/alta-tierra";
+import { gaiaResidencial } from "@contenido/proyectos/gaia-residencial";
+import { residencialDiamante } from "@contenido/proyectos/residencial-diamante";
 
 /**
  * Publicar un proyecto nuevo = crear su archivo y agregarlo a esta lista.
  * Ningún componente se toca. Ver `_plantilla.ts`.
  */
-export const PROYECTOS: Proyecto[] = [altaTierra];
+export const PROYECTOS: Proyecto[] = [altaTierra, residencialDiamante, gaiaResidencial];
 
 /** Se puede enseñar públicamente: activo y con autorización del desarrollador. */
 export function esPublicable(proyecto: Proyecto): boolean {

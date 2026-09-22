@@ -157,9 +157,26 @@ export const esquemaTestimonio = z.object({
   orientacion: z.enum(["vertical", "horizontal"]).default("horizontal"),
   videoPoster: z.string().optional(),
   cita: esquemaI18n.optional(),
+  /** De dónde es el cliente, para que la voz tenga procedencia. */
+  ciudad: z.string().optional(),
+  /** Qué compró. Da contexto a la cita sin exponer el domicilio. */
+  compro: esquemaI18n.optional(),
 });
 
 export type Testimonio = z.infer<typeof esquemaTestimonio>;
+
+/** Quién atiende. La foto es opcional: sin ella se pinta el monograma. */
+export const esquemaPersona = z.object({
+  nombre: z.string().min(1),
+  /** Iniciales del monograma cuando todavía no hay fotografía. */
+  iniciales: z.string().min(1).max(3),
+  puesto: esquemaI18n,
+  nota: esquemaI18n.optional(),
+  foto: z.string().optional(),
+  whatsapp: z.string().optional(),
+});
+
+export type Persona = z.infer<typeof esquemaPersona>;
 
 export const esquemaCifra = z.object({
   valor: numeroQuiza,

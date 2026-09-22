@@ -14,12 +14,12 @@
 export const OBJECIONES = {
   antetitulo: { es: "Antes de ver propiedades", en: "Before looking at property" },
   titulo: {
-    es: "Lo difícil de comprar aquí\nnunca fue encontrar\nel terreno",
-    en: "The hard part of buying here\nwas never finding\nthe land",
+    es: "Lo que quieres saber\nantes de enamorarte\nde un lote",
+    en: "What you want to know\nbefore you fall for\na piece of land",
   },
   texto: {
-    es: "Inventario hay de sobra. Lo que detiene a la gente es otra cosa, y casi siempre se dice en voz baja. Estas son las seis que más escucho.",
-    en: "There is plenty of inventory. What stops people is something else, and it usually gets said under one's breath. These are the six I hear most.",
+    es: "Encontrar la propiedad es la parte fácil. Estas son las seis preguntas que más me hacen, contestadas completas y por adelantado, para que llegues a la visita con lo importante ya resuelto.",
+    en: "Finding the property is the easy part. These are the six questions I get asked most, answered in full and up front, so you arrive at the visit with the important things already settled.",
   },
   items: [
     {

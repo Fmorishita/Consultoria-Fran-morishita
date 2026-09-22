@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { FormularioLead } from "@/componentes/formulario-lead";
 import { Cierre } from "@/componentes/secciones/cierre";
 import { Compradores } from "@/componentes/secciones/compradores";
+import { Equipo } from "@/componentes/secciones/equipo";
 import { EstiloDeVida } from "@/componentes/secciones/estilo-de-vida";
 import { Objeciones } from "@/componentes/secciones/objeciones";
 import { HeroInicio } from "@/componentes/secciones/hero-inicio";
@@ -10,6 +11,7 @@ import { PorQueEnsenada } from "@/componentes/secciones/por-que-ensenada";
 import { Proceso } from "@/componentes/secciones/proceso";
 import { PropiedadDestacada } from "@/componentes/secciones/propiedad-destacada";
 import { PruebaSocial } from "@/componentes/secciones/prueba-social";
+import { VocesClientes } from "@/componentes/secciones/voces-clientes";
 import { TarjetaProyecto } from "@/componentes/secciones/tarjeta-proyecto";
 import { Boton } from "@/componentes/ui/boton";
 import { Revelar } from "@/componentes/ui/revelar";
@@ -96,7 +98,11 @@ export default async function PaginaInicio({ params }: { params: Promise<{ local
 
       <PruebaSocial idioma={idioma} cifras={cifras} />
 
-      <Compradores idioma={idioma} />
+      <VocesClientes idioma={idioma} className="border-b border-borde" />
+
+      <Equipo idioma={idioma} />
+
+      <Compradores idioma={idioma} className="border-t border-borde bg-superficie" />
 
       <Seccion id="busqueda" className="border-t border-borde bg-superficie">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
