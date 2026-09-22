@@ -9,7 +9,7 @@ export const SITIO = esquemaSitio.parse({
     en: "Real estate representation on the Baja California coast",
   },
   ciudad: { es: "Ensenada, Baja California", en: "Ensenada, Baja California" },
-  dominio: "https://franmorishita-bienesraices.vercel.app",
+  dominio: "https://franmorishita-realestate.vercel.app",
   /** "a" = tierra nocturna · "b" = crema profundo. Ver /styleguide. */
   direccionVisual: "a",
   whatsapp: {

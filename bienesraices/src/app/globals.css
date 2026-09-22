@@ -111,7 +111,7 @@ body {
   text-wrap: balance;
 }
 
-.titular-xl { font-size: clamp(2.9rem, 8vw, 5.75rem); }
+.titular-xl { font-size: clamp(2.5rem, 7.5vw, 5.5rem); }
 .titular-lg { font-size: clamp(2.3rem, 5.6vw, 4rem); }
 .titular-md { font-size: clamp(1.9rem, 4.4vw, 3rem); }
 .titular-sm { font-size: clamp(1.5rem, 2.8vw, 1.9rem); line-height: 1.15; }

@@ -2,7 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { FormularioLead } from "@/componentes/formulario-lead";
 import { Cierre } from "@/componentes/secciones/cierre";
+import { Compradores } from "@/componentes/secciones/compradores";
 import { EstiloDeVida } from "@/componentes/secciones/estilo-de-vida";
+import { Objeciones } from "@/componentes/secciones/objeciones";
 import { HeroInicio } from "@/componentes/secciones/hero-inicio";
 import { PorQueEnsenada } from "@/componentes/secciones/por-que-ensenada";
 import { Proceso } from "@/componentes/secciones/proceso";
@@ -51,9 +53,40 @@ export default async function PaginaInicio({ params }: { params: Promise<{ local
   return (
     <>
       <JsonLd datos={personaJsonLd(idioma)} />
-      <HeroInicio idioma={idioma} destacado={destacado} />
+      <HeroInicio idioma={idioma} />
+
+      <Objeciones idioma={idioma} className="border-t border-borde bg-superficie" />
 
       {destacado ? <PropiedadDestacada proyecto={destacado} idioma={idioma} /> : null}
+
+      <Seccion className="border-t border-borde">
+        <EncabezadoSeccion
+          antetitulo={t(INICIO.propiedades.antetitulo, idioma)}
+          titulo={t(INICIO.propiedades.titulo, idioma)}
+          texto={t(INICIO.propiedades.texto, idioma)}
+        />
+        {secundarios.length > 0 ? (
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {secundarios.slice(0, 6).map((proyecto, indice) => (
+              <Revelar key={proyecto.slug} retraso={indice * 70}>
+                <TarjetaProyecto proyecto={proyecto} idioma={idioma} />
+              </Revelar>
+            ))}
+          </div>
+        ) : (
+          <Revelar retraso={80}>
+            <p className="cuerpo mt-12 max-w-xl">{t(UI.etiquetas.sinProyectos, idioma)}</p>
+          </Revelar>
+        )}
+        <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <Boton asChild variante="secundario">
+            <Link href={r.propiedades}>{t(UI.cta.verProyectos, idioma)}</Link>
+          </Boton>
+          <Boton asChild variante="fantasma">
+            <a href="#busqueda">{t(UI.cta.busquedaPrivada, idioma)}</a>
+          </Boton>
+        </div>
+      </Seccion>
 
       <PorQueEnsenada idioma={idioma} antetitulo={t(INICIO.plaza.antetitulo, idioma)} className="bg-superficie" />
 
@@ -63,29 +96,9 @@ export default async function PaginaInicio({ params }: { params: Promise<{ local
 
       <PruebaSocial idioma={idioma} cifras={cifras} />
 
-      {secundarios.length > 0 ? (
-        <Seccion>
-          <EncabezadoSeccion
-            antetitulo={t(INICIO.propiedades.antetitulo, idioma)}
-            titulo={t(INICIO.propiedades.titulo, idioma)}
-            texto={t(INICIO.propiedades.texto, idioma)}
-          />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {secundarios.slice(0, 6).map((proyecto, indice) => (
-              <Revelar key={proyecto.slug} retraso={indice * 70}>
-                <TarjetaProyecto proyecto={proyecto} idioma={idioma} />
-              </Revelar>
-            ))}
-          </div>
-          <div className="mt-12">
-            <Boton asChild variante="secundario">
-              <Link href={r.propiedades}>{t(UI.cta.verProyectos, idioma)}</Link>
-            </Boton>
-          </div>
-        </Seccion>
-      ) : null}
+      <Compradores idioma={idioma} />
 
-      <Seccion className="border-t border-borde">
+      <Seccion id="busqueda" className="border-t border-borde bg-superficie">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Revelar>
             <p className="antetitulo mb-6">{t(INICIO.captura.antetitulo, idioma)}</p>

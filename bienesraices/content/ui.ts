@@ -32,6 +32,7 @@ export const UI = {
     conocerDesarrollo: { es: "Conocer el desarrollo", en: "Explore the development" },
     verProyecto: { es: "Ver la propiedad", en: "View the property" },
     verProyectos: { es: "Ver el inventario", en: "See the inventory" },
+    busquedaPrivada: { es: "Dime qué buscas", en: "Tell me what you want" },
     verCaso: { es: "Ver el caso", en: "Read the case" },
     verPortafolio: { es: "Ver portafolio", en: "View portfolio" },
     volver: { es: "Volver", en: "Back" },

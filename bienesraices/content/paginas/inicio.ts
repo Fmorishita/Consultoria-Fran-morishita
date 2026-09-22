@@ -7,24 +7,28 @@ export const INICIO = {
   hero: {
     antetitulo: { es: "Ensenada · Baja California", en: "Ensenada · Baja California" },
     titulo: {
-      es: "Comprar la vista\nantes que\nla casa.",
-      en: "Buy the view\nbefore\nthe house.",
+      es: "Comprar en Baja\nno tiene que\ndar miedo.",
+      en: "Buying in Baja\nshouldn't\nfeel risky.",
     },
     subtitulo: {
-      es: "Represento lotes y residencias frente al Pacífico en Ensenada. Te acompaño desde la primera visita hasta la escritura.",
-      en: "I represent oceanfront lots and homes in Ensenada. I walk with you from the first visit to the closing.",
+      es: "Represento terreno y residencia en Ensenada. Me hago cargo de lo que quita el sueño: título, fideicomiso, pago y posventa.",
+      en: "I represent land and homes in Ensenada. I handle what keeps buyers up at night: title, bank trust, payment and after-sale.",
     },
     pie: {
       es: "Atención personal, en español e inglés, para compradores de México y California.",
       en: "Personal representation, in Spanish and English, for buyers from Mexico and California.",
     },
+    firma: {
+      es: "Fran Morishita, representación inmobiliaria en la costa de Baja California",
+      en: "Fran Morishita, real estate representation on the Baja California coast",
+    },
   },
   destacado: {
-    antetitulo: { es: "Desarrollo en representación", en: "Development I represent" },
+    antetitulo: { es: "Del portafolio", en: "From the book" },
     titulo: { es: "Alta Tierra", en: "Alta Tierra" },
     texto: {
-      es: "Un fraccionamiento cerrado sobre la ladera de Playitas, con la franja de lotes que mira al océano ya urbanizada. La primera fila es finita y se coloca antes que el resto.",
-      en: "A gated community on the Playitas hillside, with its ocean-facing row of lots already serviced. The front row is finite, and it sells before everything behind it.",
+      es: "Uno de los desarrollos que represento hoy: fraccionamiento cerrado sobre la ladera de Playitas, con la franja de lotes que mira al océano ya urbanizada. La primera fila es finita y se coloca antes que el resto.",
+      en: "One of the developments I represent today: a gated community on the Playitas hillside, with its ocean-facing row of lots already serviced. The front row is finite, and it sells before everything behind it.",
     },
   },
   plaza: {
@@ -35,10 +39,10 @@ export const INICIO = {
   },
   propiedades: {
     antetitulo: { es: "Inventario", en: "Inventory" },
-    titulo: { es: "Otras propiedades en mi cartera", en: "More property in my book" },
+    titulo: { es: "El resto del portafolio", en: "The rest of the book" },
     texto: {
-      es: "Terreno, residencia y preventa en Ensenada y su corredor costero. Cada ficha lleva medidas, ubicación y condiciones vigentes, revisadas conmigo antes de publicarse.",
-      en: "Land, homes and pre-sale along Ensenada and its coastal corridor. Every listing carries measurements, location and current terms, reviewed with me before it goes up.",
+      es: "Terreno, residencia y preventa en Ensenada y su corredor costero. Cada ficha lleva medidas, ubicación y condiciones vigentes, revisadas conmigo antes de publicarse. Una parte no se publica nunca.",
+      en: "Land, homes and pre-sale along Ensenada and its coastal corridor. Every listing carries measurements, location and current terms, reviewed with me before it goes up. Part of it never gets published at all.",
     },
   },
   prueba: {
