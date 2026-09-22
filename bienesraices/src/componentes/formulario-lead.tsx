@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useActionState, useEffect, useRef } from "react";
-import { ESTADO_INICIAL, enviarLead } from "@/acciones/enviar-lead";
+import { enviarLead } from "@/acciones/enviar-lead";
+import { ESTADO_INICIAL } from "@/acciones/estado-lead";
 import { Boton } from "@/componentes/ui/boton";
 import { AreaTexto, Casilla, Entrada, Etiqueta, MensajeError, Seleccion } from "@/componentes/ui/campo";
 import { leerAtribucion } from "@/lib/atribucion";

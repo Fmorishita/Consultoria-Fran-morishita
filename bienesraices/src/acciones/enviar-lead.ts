@@ -6,14 +6,10 @@ import { alertar } from "@/lib/alertas";
 import { enviarEventoCapi } from "@/lib/capi";
 import { supabase, TABLA_LEADS } from "@/lib/supabase";
 import { CLAVES_ATRIBUCION, type Atribucion } from "@/lib/atribucion";
+import type { EstadoLead } from "@/acciones/estado-lead";
 
-export type EstadoLead = {
-  ok: boolean;
-  errores?: Partial<Record<"nombre" | "telefono" | "email" | "consentimiento" | "general", true>>;
-  destino?: string;
-};
-
-export const ESTADO_INICIAL: EstadoLead = { ok: false };
+// Este archivo solo puede exportar funciones async ("use server"). El tipo y
+// el estado inicial viven en estado-lead.ts.
 
 const esquema = z.object({
   nombre: z.string().trim().min(2).max(120),
