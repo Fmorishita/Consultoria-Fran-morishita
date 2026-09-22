@@ -47,7 +47,6 @@ export const UI = {
     faq: { es: "Lo que suelen preguntarme", en: "What buyers usually ask me" },
     financiamiento: { es: "Formas de pago", en: "Payment terms" },
     precios: { es: "Precios y disponibilidad", en: "Pricing and availability" },
-    vocesAntetitulo: { es: "Quienes ya compraron", en: "People who already bought" },
     voces: { es: "Lo que dicen los que ya firmaron", en: "What the people who signed have to say" },
     fichaTecnica: { es: "Ficha técnica", en: "Fact sheet" },
     resultados: { es: "Resultados", en: "Results" },
@@ -71,6 +70,12 @@ export const UI = {
       es: "Estoy cerrando la siguiente tanda de representaciones. Déjame lo que buscas y te escribo antes de que salga al mercado.",
       en: "I'm closing the next round of representations. Tell me what you're after and I'll write to you before it reaches the market.",
     },
+  },
+  comparador: {
+    desarrollo: { es: "Desarrollo", en: "Development" },
+    zona: { es: "Zona", en: "Area" },
+    pago: { es: "Cómo se paga", en: "How you pay" },
+    aConsultar: { es: "A consultar", en: "On request" },
   },
   tabla: {
     tipo: { es: "Categoría de lote", en: "Lot category" },

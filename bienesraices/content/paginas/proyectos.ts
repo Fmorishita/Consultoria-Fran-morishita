@@ -46,3 +46,12 @@ export const CAPTURA_PROPIEDAD = {
     en: "You get the list of available lots with size and orientation, the current payment terms and the community's site plan. No commitment and nobody chasing you by phone.",
   },
 } as const;
+
+export const COMPARADOR = {
+  antetitulo: { es: "Comparativo", en: "Comparison" },
+  titulo: { es: "El portafolio, lado a lado", en: "The book, side by side" },
+  texto: {
+    es: "Precio de entrada, cómo se paga y en qué etapa está cada desarrollo. Lo que normalmente te piden un formulario para enseñarte.",
+    en: "Entry price, how you pay and what stage each development is in. What you're usually asked to fill in a form to see.",
+  },
+} as const;

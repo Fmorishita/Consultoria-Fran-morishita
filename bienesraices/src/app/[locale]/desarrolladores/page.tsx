@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cierre } from "@/componentes/secciones/cierre";
+import { PruebaSocial } from "@/componentes/secciones/prueba-social";
 import { TitularMultilinea } from "@/componentes/secciones/titular-multilinea";
 import { Revelar } from "@/componentes/ui/revelar";
 import { EncabezadoSeccion, Seccion } from "@/componentes/ui/seccion";
@@ -7,6 +8,7 @@ import { CtaWhatsApp } from "@/componentes/cta-whatsapp";
 import { Boton } from "@/componentes/ui/boton";
 import { normalizaIdioma, t } from "@/lib/i18n";
 import { icono } from "@/lib/iconos";
+import { cifrasTrackRecord } from "@/lib/cifras";
 import { rutas } from "@/lib/navegacion";
 import { DESARROLLADORES } from "@contenido/paginas/desarrolladores";
 import { SITIO } from "@contenido/sitio";
@@ -91,7 +93,9 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
         </ol>
       </Seccion>
 
-      <Seccion className="bg-superficie">
+      <PruebaSocial idioma={idioma} cifras={cifrasTrackRecord(idioma, { paraDesarrolladores: true })} />
+
+      <Seccion>
         <div className="grid gap-12 lg:grid-cols-2">
           <Revelar>
             <h2 className="titular titular-md">{t(DESARROLLADORES.paraQuien.titulo, idioma)}</h2>
@@ -126,7 +130,6 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
         titulo={t(DESARROLLADORES.cierre.titulo, idioma)}
         texto={t(DESARROLLADORES.cierre.texto, idioma)}
         contexto="desarrolladores-cierre"
-       
       />
     </>
   );

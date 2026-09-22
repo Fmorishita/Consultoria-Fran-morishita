@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TarjetaProyecto } from "@/componentes/secciones/tarjeta-proyecto";
 import { Cierre } from "@/componentes/secciones/cierre";
+import { Comparador } from "@/componentes/secciones/comparador";
 import { Revelar } from "@/componentes/ui/revelar";
 import { EncabezadoSeccion, Seccion } from "@/componentes/ui/seccion";
 import { normalizaIdioma, t } from "@/lib/i18n";
@@ -55,6 +56,8 @@ export default async function PaginaProyectos({ params }: { params: Promise<{ lo
           <p className="cuerpo mt-12 max-w-xl">{t(UI.etiquetas.sinProyectos, idioma)}</p>
         )}
       </Seccion>
+
+      <Comparador proyectos={proyectos} idioma={idioma} className="seccion-clara" />
 
       <Cierre
         idioma={idioma}
