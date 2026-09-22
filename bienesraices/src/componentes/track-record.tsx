@@ -36,14 +36,33 @@ function useConteo(objetivo: number | undefined, activo: boolean): number {
   return valor;
 }
 
-function Cifra({ cifra, activo, principal }: { cifra: CifraLista; activo: boolean; principal: boolean }) {
+function Cifra({
+  cifra,
+  activo,
+  principal,
+  columna,
+  compacta,
+}: {
+  cifra: CifraLista;
+  activo: boolean;
+  principal: boolean;
+  columna: boolean;
+  /** Tres cifras en una columna angosta: talla menor y sin partir la cifra. */
+  compacta: boolean;
+}) {
   const valor = useConteo(cifra.valor, activo);
   return (
-    <div className={cn("border-t border-borde pt-6", principal ? "sm:col-span-2 lg:col-span-6" : "lg:col-span-3")}>
+    <div
+      className={cn(
+        "border-t border-borde pt-6",
+        !columna && (principal ? "sm:col-span-2 lg:col-span-6" : "lg:col-span-3"),
+      )}
+    >
       <p
         className={cn(
           "cifra text-acento",
-          principal ? "text-[clamp(3.5rem,12vw,7rem)]" : "text-[clamp(2.5rem,6vw,3.5rem)]",
+          principal && "text-[clamp(3.5rem,12vw,7rem)]",
+          !principal && (compacta ? "text-[clamp(2.2rem,3.2vw,2.5rem)] whitespace-nowrap" : "text-[clamp(2.5rem,6vw,3.5rem)]"),
         )}
       >
         {cifra.prefijo}
@@ -60,7 +79,8 @@ function Cifra({ cifra, activo, principal }: { cifra: CifraLista; activo: boolea
 
 /**
  * Composición asimétrica: la cifra que respalda el video manda sobre las otras.
- * En `columna` van las tres en línea, para cuando viven junto al video.
+ * En `columna` van en línea, tantas columnas como cifras, para cuando viven
+ * junto al video.
  */
 export function TrackRecord({ cifras, columna = false }: { cifras: CifraLista[]; columna?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -90,11 +110,20 @@ export function TrackRecord({ cifras, columna = false }: { cifras: CifraLista[];
       ref={ref}
       className={cn(
         "grid gap-10",
-        columna ? "w-full gap-8 sm:grid-cols-3 sm:gap-x-8" : "sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-12",
+        columna
+          ? cn("w-full gap-8 sm:gap-x-8", cifras.length >= 3 ? "sm:grid-cols-3" : "sm:grid-cols-2")
+          : "sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-12",
       )}
     >
       {cifras.map((cifra, indice) => (
-        <Cifra key={indice} cifra={cifra} activo={activo} principal={!columna && indice === 0} />
+        <Cifra
+          key={indice}
+          cifra={cifra}
+          activo={activo}
+          principal={!columna && indice === 0}
+          columna={columna}
+          compacta={columna && cifras.length >= 3}
+        />
       ))}
     </div>
   );

@@ -23,7 +23,8 @@ export function PropiedadDestacada({ proyecto, idioma }: { proyecto: Proyecto; i
   const precio = numero(proyecto.inventario.precioDesde);
   const superficieMin = numero(proyecto.inventario.superficieMin);
   const superficieMax = numero(proyecto.inventario.superficieMax);
-  const galeria = proyecto.galeria.slice(0, 2);
+  // [1] queda reservada para la banda de cierre del home; aquí van las otras.
+  const galeria = proyecto.galeria.filter((_, indice) => indice !== 1).slice(0, 2);
 
   const datos = [
     { etiqueta: t(UI.etiquetas.tipo, idioma), valor: t(proyecto.inventario.etiqueta, idioma) },

@@ -1,7 +1,8 @@
 /**
- * Home. Registro editorial: la tierra y la vista mandan, el inventario
- * se muestra, y el oficio se demuestra con el proceso, no se explica.
- * Nada de jerga de agencia: el comprador no compra herramientas.
+ * Home. Registro editorial: primero lo que el comprador necesita resolver,
+ * luego el inventario con precios, y al final a quién le toca qué. El paso a
+ * paso de la compra vive en cada ficha. Nada de jerga de agencia: el
+ * comprador no compra herramientas.
  */
 export const INICIO = {
   hero: {
@@ -22,6 +23,12 @@ export const INICIO = {
       es: "Fran Morishita, representación inmobiliaria en la costa de Baja California",
       en: "Fran Morishita, real estate representation on the Baja California coast",
     },
+    /** Las cifras se calculan del inventario publicado; aquí solo van sus rótulos. */
+    franja: {
+      desarrollos: { es: "desarrollos en representación", en: "developments represented" },
+      desde: { es: "precio de entrada en el portafolio", en: "entry price across the book" },
+      sinInteres: { es: "de interés en el pago directo de {nombre}", en: "interest on the {nombre} direct plan" },
+    },
   },
   destacado: {
     antetitulo: { es: "Del portafolio", en: "From the book" },
@@ -31,14 +38,7 @@ export const INICIO = {
       en: "One of the developments I represent today: a gated community on the Playitas hillside, with its ocean-facing row of lots already serviced. The front row is finite, and it sells before everything behind it.",
     },
   },
-  plaza: {
-    antetitulo: { es: "La plaza", en: "The market" },
-  },
-  proceso: {
-    antetitulo: { es: "Cómo se compra", en: "How it works" },
-  },
   propiedades: {
-    antetitulo: { es: "Inventario", en: "Inventory" },
     titulo: { es: "El resto del portafolio", en: "The rest of the book" },
     texto: {
       es: "Terreno, residencia y preventa en Ensenada y su corredor costero. Cada ficha lleva medidas, ubicación y condiciones vigentes, revisadas conmigo antes de publicarse. Una parte no se publica nunca.",
@@ -54,7 +54,6 @@ export const INICIO = {
     },
   },
   captura: {
-    antetitulo: { es: "Búsqueda a la medida", en: "Private search" },
     titulo: { es: "¿Buscas algo que todavía no está en esta página?", en: "Looking for something that isn't on this page yet?" },
     texto: {
       es: "Parte de lo que represento no se publica. Dime zona, superficie y horizonte de inversión, y te escribo cuando entre algo que encaje, antes de que salga al mercado.",

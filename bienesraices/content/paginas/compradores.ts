@@ -12,7 +12,6 @@
  * Nada aquí lleva cifras: son objeciones y motivos, no estadísticas.
  */
 export const OBJECIONES = {
-  antetitulo: { es: "Antes de ver propiedades", en: "Before looking at property" },
   titulo: {
     es: "Lo que quieres saber\nantes de enamorarte\nde un lote",
     en: "What you want to know\nbefore you fall for\na piece of land",
@@ -74,7 +73,8 @@ export const OBJECIONES = {
 } as const;
 
 export const PERSONAS = {
-  antetitulo: { es: "Con quién trabajo", en: "Who I work with" },
+  /** Encabeza la lista de propiedades recomendadas de cada perfil. */
+  recomiendo: { es: "Lo que te enseñaría primero", en: "What I'd show you first" },
   titulo: { es: "¿En cuál de estos\nte reconoces?", en: "Which one of these\nis you?" },
   texto: {
     es: "Cuatro maneras distintas de llegar a esta costa, y cuatro problemas de fondo que no se parecen en nada. Dime cuál es el tuyo y la conversación empieza mucho más adelante.",
@@ -92,6 +92,15 @@ export const PERSONAS = {
         es: "Te explico fideicomiso, impuestos y escrituración en inglés, con tiempo y antes de cualquier depósito.",
         en: "I walk you through the bank trust, taxes and closing in English, unhurried and before any deposit.",
       },
+      recomienda: [
+        {
+          slug: "alta-tierra",
+          razon: {
+            es: "Pago directo con el desarrollo: 20% de enganche y el saldo en 12 o 24 meses sin intereses, sin banco ni historial en México.",
+            en: "Direct payment with the development: 20% down and the balance over 12 or 24 interest-free months, no bank or Mexican credit history.",
+          },
+        },
+      ],
     },
     {
       icono: "numeros",
@@ -104,6 +113,22 @@ export const PERSONAS = {
         es: "Te paso números completos por lote, incluidos gastos de escrituración y mantenimiento, para que compares sin sorpresas.",
         en: "I give you complete numbers per lot, closing costs and dues included, so you can compare without surprises.",
       },
+      recomienda: [
+        {
+          slug: "alta-tierra",
+          razon: {
+            es: "Tierra urbanizada con vista a la bahía. La franja con vista es finita y es la que marca el precio de lo demás.",
+            en: "Serviced land with bay views. View land is finite, and it sets the price for everything behind it.",
+          },
+        },
+        {
+          slug: "residencial-diamante",
+          razon: {
+            es: "Casa dentro de la ciudad, a cuadras del Blvd. Costero, que funciona igual para vivirla que para rentarla.",
+            en: "A home inside the city, blocks from Blvd. Costero, that works as well for living in as for renting out.",
+          },
+        },
+      ],
     },
     {
       icono: "parque",
@@ -116,6 +141,22 @@ export const PERSONAS = {
         es: "Recorremos el lote a la hora que importa y revisamos accesos, orientación y qué queda construido alrededor.",
         en: "We walk the lot at the hour that matters and check access, orientation and what gets built around you.",
       },
+      recomienda: [
+        {
+          slug: "alta-tierra",
+          razon: {
+            es: "Lote urbanizado dentro de un fraccionamiento cerrado, con servicios desde hoy, para construir a su medida.",
+            en: "A serviced lot inside a gated community, with utilities in place today, to build exactly what you want.",
+          },
+        },
+        {
+          slug: "gaia-residencial",
+          razon: {
+            es: "Si prefieren casa lista: modelo de tres recámaras con roof garden, casa club y clusters privados.",
+            en: "If you'd rather move into a finished home: a three-bedroom model with a roof garden, clubhouse and private clusters.",
+          },
+        },
+      ],
     },
     {
       icono: "clima",
@@ -128,6 +169,22 @@ export const PERSONAS = {
         es: "Revisamos esa logística antes que el lote, porque es lo que decide si vas a usar la casa o a rentarla.",
         en: "We go through that logistics before the lot, because it decides whether you'll use the house or rent it out.",
       },
+      recomienda: [
+        {
+          slug: "residencial-diamante",
+          razon: {
+            es: "Todo a minutos: hospitales, farmacias, supermercados y el malecón, sin depender del coche para lo diario.",
+            en: "Everything minutes away: hospitals, pharmacies, supermarkets and the waterfront, without relying on the car for daily life.",
+          },
+        },
+        {
+          slug: "gaia-residencial",
+          razon: {
+            es: "Casa nueva sin obra de por medio, con acceso controlado las 24 horas y casa club.",
+            en: "A new home with no construction to manage, 24-hour controlled access and a clubhouse.",
+          },
+        },
+      ],
     },
   ],
 } as const;

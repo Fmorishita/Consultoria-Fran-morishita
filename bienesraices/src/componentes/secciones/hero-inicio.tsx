@@ -15,7 +15,9 @@ import { UI } from "@contenido/ui";
  * retrato de Fran sostiene la derecha. El retrato va como pieza, nunca de
  * fondo: la marca es una persona con nombre, no una fotografía de paisaje.
  */
-export function HeroInicio({ idioma }: { idioma: Idioma }) {
+export type DatoFranja = { valor: string; etiqueta: string };
+
+export function HeroInicio({ idioma, franja = [] }: { idioma: Idioma; franja?: DatoFranja[] }) {
   const r = rutas(idioma);
 
   return (
@@ -27,7 +29,7 @@ export function HeroInicio({ idioma }: { idioma: Idioma }) {
           </Revelar>
 
           <Revelar retraso={80}>
-            <h1 className="titular titular-xl mt-6">
+            <h1 className="titular titular-hero mt-6">
               <TitularMultilinea texto={t(INICIO.hero.titulo, idioma)} />
             </h1>
           </Revelar>
@@ -78,6 +80,25 @@ export function HeroInicio({ idioma }: { idioma: Idioma }) {
           </Revelar>
         ) : null}
       </div>
+
+      {/* Tres datos duros del inventario publicado, para que la promesa del
+          titular tenga algo que la sostenga antes del primer scroll. */}
+      {franja.length > 0 ? (
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
+          <dl className="grid border-t border-borde md:grid-cols-3">
+            {franja.map((dato) => (
+              <div
+                key={dato.etiqueta}
+                className="flex items-baseline gap-4 border-b border-borde py-5 last:border-b-0 md:flex-col-reverse md:items-start md:justify-end md:gap-3 md:border-b-0 md:border-r md:px-8 md:py-8 md:first:pl-0 md:last:border-r-0"
+              >
+                {/* dt va primero en el DOM (lo pide <dl>); el orden visual lo pone el CSS. */}
+                <dt className="text-sm leading-snug text-texto-suave">{dato.etiqueta}</dt>
+                <dd className="cifra order-first w-36 flex-none text-[clamp(1.9rem,4vw,2.75rem)] text-acento md:order-none md:w-auto">{dato.valor}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ) : null}
     </section>
   );
 }

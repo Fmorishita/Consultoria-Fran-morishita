@@ -18,7 +18,6 @@ export function VocesClientes({ idioma, className }: { idioma: Idioma; className
   return (
     <Seccion className={className}>
       <Revelar className="max-w-3xl">
-        <p className="antetitulo mb-6">{t(UI.secciones.vocesAntetitulo, idioma)}</p>
         <h2 className="titular titular-lg">{t(UI.secciones.voces, idioma)}</h2>
       </Revelar>
 

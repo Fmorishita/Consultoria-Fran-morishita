@@ -14,7 +14,6 @@ export function Objeciones({ idioma, className }: { idioma: Idioma; className?: 
   return (
     <Seccion className={className}>
       <Revelar className="max-w-3xl">
-        <p className="antetitulo mb-6">{t(OBJECIONES.antetitulo, idioma)}</p>
         <h2 className="titular titular-lg">
           <TitularMultilinea texto={t(OBJECIONES.titulo, idioma)} />
         </h2>

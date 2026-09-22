@@ -5,6 +5,7 @@
  */
 export const ENSENADA = {
   inversion: {
+    etiqueta: { es: "Como inversión", en: "As an investment" },
     titulo: { es: "Por qué esta costa\ny no otra", en: "Why this coast\nand no other" },
     texto: {
       es: "Ensenada no es una playa de temporada. Es una ciudad con puerto de altura, valle vinícola a media hora y un comprador que llega de los dos lados de la frontera.",
@@ -46,6 +47,7 @@ export const ENSENADA = {
     ],
   },
   estilo: {
+    etiqueta: { es: "Como lugar para vivir", en: "As a place to live" },
     titulo: { es: "La vida aquí", en: "Life here" },
     texto: {
       es: "Lo que compras no termina en la barda del lote: es a qué hora sales a caminar y qué tienes a veinte minutos de la puerta.",
