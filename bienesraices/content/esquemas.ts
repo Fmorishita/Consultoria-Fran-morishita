@@ -78,10 +78,12 @@ export const esquemaProyecto = z.object({
   }),
   financiamiento: z
     .object({
-      engancheMinPct: z.number().min(0).max(100),
+      engancheMinPct: numeroQuiza.optional(),
       plazosMeses: z.array(z.number().int().positive()).min(1),
-      /** 0 = sin intereses. */
-      tasaAnualPct: z.number().min(0),
+      /** 0 = sin intereses. Sin este dato no se pinta la calculadora. */
+      tasaAnualPct: numeroQuiza.optional(),
+      /** "directo con el desarrollador", "con banco", etc. */
+      esquema: esquemaI18n.optional(),
       nota: esquemaI18n.optional(),
     })
     .optional(),

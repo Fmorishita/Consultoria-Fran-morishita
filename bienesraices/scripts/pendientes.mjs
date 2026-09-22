@@ -20,9 +20,10 @@ const IGNORAR = ["content/esquemas.ts", "content/proyectos/_plantilla.ts"];
 // autorizaciones, llaves de terceros) pero que también me faltan.
 const EXTRA = [
   "La lista de propiedades que ya captaste: por cada una, nombre, zona, tipo, superficie, precio, fotos y a quién representas. Con eso lleno content/proyectos/ y el inventario deja de estar vacío.",
-  "Autorización por escrito del desarrollador de Alta Tierra para usar marca, renders y precios (mientras no exista, `autorizado: false` y el proyecto no se publica).",
-  "Fotos y renders autorizados de Alta Tierra para el hero y la galería.",
-  "Amenidades, tiempos clave a destinos y preguntas frecuentes de Alta Tierra.",
+  "Autorización por escrito del desarrollador de Alta Tierra para usar marca, fotos y precios. Fran confirmó en chat que el sitio vende el proyecto, así que ya está publicado (`autorizado: true`); falta el respaldo por escrito.",
+  "Fotos propias de Alta Tierra en alta resolución. Ahora mismo el hero y la galería usan las del sitio oficial (altatierra.mx), enlazadas en remoto.",
+  "Confirmar el estado del inventario de Alta Tierra: hoy se publica como entrega inmediata porque los lotes están urbanizados.",
+  "Tiempos reales de Alta Tierra a puntos clave (centro de Ensenada, Valle de Guadalupe, garita) para poder publicarlos sin inventar minutos.",
   "Cuáles casos del portafolio puedo nombrar y cuáles van anonimizados.",
   "Nombre completo, cargo y empresa de Gus Marcos tal como quiere aparecer.",
   "Dominio definitivo del sitio (hoy apunta al subdominio de Vercel).",

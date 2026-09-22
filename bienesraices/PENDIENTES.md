@@ -2,7 +2,7 @@
 
 > Generado con `npm run pendientes`. No editar a mano.
 
-Hay **21** datos marcados como `[CONFIRMAR: …]` en el contenido.
+Hay **16** datos marcados como `[CONFIRMAR: …]` en el contenido.
 Mientras lo estén, esa parte **no se pinta en producción**; en los deploys de
 preview aparece como un chip ámbar para que sea fácil verlos.
 
@@ -26,15 +26,10 @@ preview aparece como un chip ámbar para que sea fácil verlos.
 
 ## `content/proyectos/alta-tierra.ts`
 
-- [ ] nombre del desarrollador de Alta Tierra y autorización por escrito _(línea 15)_
-- [ ] render o fotografía aérea autorizada para el hero (mínimo 1920×1080) _(línea 20)_
-- [ ] párrafo 1 del pitch: qué es Alta Tierra y para quién es _(línea 31)_
-- [ ] párrafo 2 del pitch: por qué aquí y por qué ahora (plusvalía, entorno, etapa) _(línea 32)_
-- [ ] dirección exacta o punto de referencia de Alta Tierra _(línea 35)_
-- [ ] superficie mínima de lote en m² _(línea 41)_
-- [ ] superficie máxima de lote en m² _(línea 42)_
-- [ ] precio de lista desde, con fecha de vigencia _(línea 43)_
-- [ ] esquema real de financiamiento (enganche mínimo, plazos y tasa). Los valores del archivo son provisionales y solo se ven en preview _(línea 51)_
+- [ ] razón social del desarrollador de Alta Tierra para el crédito en la ficha _(línea 18)_
+- [ ] precio de lista por categoría de lote (Residencial, Plus y Premium) con fecha de vigencia _(línea 64)_
+- [ ] enganche mínimo que pide el desarrollo _(línea 70)_
+- [ ] tasa anual del financiamiento directo (0 si es sin intereses) _(línea 71)_
 
 ## `content/sitio.ts`
 
@@ -54,9 +49,10 @@ preview aparece como un chip ámbar para que sea fácil verlos.
 ## Fuera del contenido
 
 - [ ] La lista de propiedades que ya captaste: por cada una, nombre, zona, tipo, superficie, precio, fotos y a quién representas. Con eso lleno content/proyectos/ y el inventario deja de estar vacío.
-- [ ] Autorización por escrito del desarrollador de Alta Tierra para usar marca, renders y precios (mientras no exista, `autorizado: false` y el proyecto no se publica).
-- [ ] Fotos y renders autorizados de Alta Tierra para el hero y la galería.
-- [ ] Amenidades, tiempos clave a destinos y preguntas frecuentes de Alta Tierra.
+- [ ] Autorización por escrito del desarrollador de Alta Tierra para usar marca, fotos y precios. Fran confirmó en chat que el sitio vende el proyecto, así que ya está publicado (`autorizado: true`); falta el respaldo por escrito.
+- [ ] Fotos propias de Alta Tierra en alta resolución. Ahora mismo el hero y la galería usan las del sitio oficial (altatierra.mx), enlazadas en remoto.
+- [ ] Confirmar el estado del inventario de Alta Tierra: hoy se publica como entrega inmediata porque los lotes están urbanizados.
+- [ ] Tiempos reales de Alta Tierra a puntos clave (centro de Ensenada, Valle de Guadalupe, garita) para poder publicarlos sin inventar minutos.
 - [ ] Cuáles casos del portafolio puedo nombrar y cuáles van anonimizados.
 - [ ] Nombre completo, cargo y empresa de Gus Marcos tal como quiere aparecer.
 - [ ] Dominio definitivo del sitio (hoy apunta al subdominio de Vercel).

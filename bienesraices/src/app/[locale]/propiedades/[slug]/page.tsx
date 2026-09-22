@@ -11,6 +11,8 @@ import { Seccion } from "@/componentes/ui/seccion";
 import { FormularioLead } from "@/componentes/formulario-lead";
 import { Cierre } from "@/componentes/secciones/cierre";
 import { DatosProyecto } from "@/componentes/secciones/datos-proyecto";
+import { EstiloDeVida } from "@/componentes/secciones/estilo-de-vida";
+import { PorQueEnsenada } from "@/componentes/secciones/por-que-ensenada";
 import { HeroProyecto } from "@/componentes/secciones/hero-proyecto";
 import { normalizaIdioma, t } from "@/lib/i18n";
 import { JsonLd, migasJsonLd, proyectoJsonLd } from "@/lib/json-ld";
@@ -68,6 +70,9 @@ export default async function PaginaProyecto({ params }: Props) {
     .map((item) => ({ p: texto(item.p, idioma), r: texto(item.r, idioma) }))
     .filter((item): item is { p: string; r: string } => Boolean(item.p && item.r));
   const mostrarPrecios = proyecto.autorizado || MOSTRAR_PENDIENTES;
+  const enganchePct = numero(proyecto.financiamiento?.engancheMinPct);
+  const tasaAnual = numero(proyecto.financiamiento?.tasaAnualPct);
+  const esquemaFinanciamiento = texto(proyecto.financiamiento?.esquema, idioma);
 
   return (
     <>
@@ -143,10 +148,11 @@ export default async function PaginaProyecto({ params }: Props) {
         <Seccion>
           <h2 className="titular titular-lg">{t(UI.secciones.amenidades, idioma)}</h2>
           {proyecto.amenidades.length > 0 ? (
-            <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-borde pt-8">
               {proyecto.amenidades.map((amenidad) => (
-                <li key={amenidad.texto.es} className="border-t border-borde pt-5 text-texto-suave">
-                  {t(amenidad.texto, idioma)}
+                <li key={amenidad.texto.es} className="flex items-baseline gap-3 text-texto-suave">
+                  <span aria-hidden className="h-px w-5 shrink-0 translate-y-[-0.3em] bg-acento" />
+                  <span className="max-w-xs">{t(amenidad.texto, idioma)}</span>
                 </li>
               ))}
             </ul>
@@ -157,6 +163,15 @@ export default async function PaginaProyecto({ params }: Props) {
           )}
         </Seccion>
       )}
+
+      <EstiloDeVida
+        idioma={idioma}
+        imagen={proyecto.galeria[0]?.src}
+        altImagen={proyecto.galeria[0] ? t(proyecto.galeria[0].alt, idioma) : undefined}
+        className="bg-superficie"
+      />
+
+      <PorQueEnsenada idioma={idioma} />
 
       {proyecto.galeria.length > 0 && mostrarPrecios ? (
         <Seccion className="bg-superficie">
@@ -184,15 +199,33 @@ export default async function PaginaProyecto({ params }: Props) {
       {proyecto.financiamiento && mostrarPrecios ? (
         <Seccion>
           <h2 className="titular titular-lg">{t(UI.secciones.financiamiento, idioma)}</h2>
+
+          <div className="mt-8 flex flex-col gap-4 border-t border-borde pt-8 sm:flex-row sm:items-baseline sm:gap-12">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-texto-suave">
+                {t(UI.calculadora.plazosDisponibles, idioma)}
+              </p>
+              <p className="titular titular-sm mt-2">
+                {proyecto.financiamiento.plazosMeses.join(" / ")} {t(UI.calculadora.meses, idioma)}
+              </p>
+            </div>
+            {esquemaFinanciamiento ? <p className="cuerpo max-w-md text-base">{esquemaFinanciamiento}</p> : null}
+          </div>
+
           <div className="mt-10">
+            <ChipPendiente>{queFalta(proyecto.financiamiento.engancheMinPct)}</ChipPendiente>
+            <ChipPendiente>{queFalta(proyecto.financiamiento.tasaAnualPct)}</ChipPendiente>
             <ChipPendiente>{queFalta(proyecto.financiamiento.nota)}</ChipPendiente>
-            <div className="mt-4">
+          </div>
+
+          {enganchePct !== undefined && tasaAnual !== undefined ? (
+            <div className="mt-6">
               <CalculadoraFinanciamiento
                 idioma={idioma}
                 moneda={proyecto.inventario.moneda}
-                engancheMinPct={proyecto.financiamiento.engancheMinPct}
+                engancheMinPct={enganchePct}
                 plazosMeses={proyecto.financiamiento.plazosMeses}
-                tasaAnualPct={proyecto.financiamiento.tasaAnualPct}
+                tasaAnualPct={tasaAnual}
                 precioInicial={proyecto.autorizado ? numero(proyecto.inventario.precioDesde) : undefined}
                 contexto={proyecto.slug}
                 textos={{
@@ -216,7 +249,7 @@ export default async function PaginaProyecto({ params }: Props) {
                 }}
               />
             </div>
-          </div>
+          ) : null}
         </Seccion>
       ) : null}
 

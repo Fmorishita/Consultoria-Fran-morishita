@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { FormularioLead } from "@/componentes/formulario-lead";
 import { Cierre } from "@/componentes/secciones/cierre";
 import { HeroInicio } from "@/componentes/secciones/hero-inicio";
+import { PorQueEnsenada } from "@/componentes/secciones/por-que-ensenada";
 import { PropiedadDestacada } from "@/componentes/secciones/propiedad-destacada";
 import { PruebaSocial } from "@/componentes/secciones/prueba-social";
 import { TarjetaProyecto } from "@/componentes/secciones/tarjeta-proyecto";
@@ -47,6 +48,8 @@ export default async function PaginaInicio({ params }: { params: Promise<{ local
       <HeroInicio idioma={idioma} />
 
       {destacado ? <PropiedadDestacada proyecto={destacado} idioma={idioma} /> : null}
+
+      <PorQueEnsenada idioma={idioma} />
 
       <Seccion>
         <EncabezadoSeccion

@@ -73,6 +73,7 @@ export const UI = {
     financiar: { es: "Monto a financiar", en: "Amount financed" },
     sinIntereses: { es: "Sin intereses", en: "Interest free" },
     tasa: { es: "Tasa anual", en: "Annual rate" },
+    plazosDisponibles: { es: "Plazos disponibles", en: "Available terms" },
     leyenda: {
       es: "Cálculo estimado con fines informativos. No constituye una oferta de crédito ni una cotización formal.",
       en: "Estimate for informational purposes only. It is not a credit offer or a formal quote.",
