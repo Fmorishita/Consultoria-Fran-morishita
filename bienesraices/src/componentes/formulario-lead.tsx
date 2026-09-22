@@ -60,7 +60,10 @@ export function FormularioLead({
     if (!estado.ok) return;
     // El servidor ya mandó el evento por CAPI con este mismo id: Meta deduplica.
     rastrear("Lead", { content_name: proyectoSlug ?? tipo }, campoEventId.current?.value || undefined);
-    router.push(`/${idioma}/gracias?tipo=${estado.destino ?? tipo}`);
+    const destino = new URLSearchParams({ tipo: estado.destino ?? tipo });
+    // Con la propiedad en la URL, la página de gracias abre WhatsApp con el mensaje de esa ficha.
+    if (proyectoSlug) destino.set("propiedad", proyectoSlug);
+    router.push(`/${idioma}/gracias?${destino.toString()}`);
   }, [estado, idioma, proyectoSlug, router, tipo]);
 
   const errores = estado.errores;
