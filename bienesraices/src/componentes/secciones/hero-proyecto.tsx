@@ -39,13 +39,12 @@ export function HeroProyecto({ proyecto, idioma }: { proyecto: Proyecto; idioma:
 
       <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-28 md:px-8 md:pb-20 md:pt-36">
         <Revelar>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs uppercase tracking-[0.2em] text-texto/80">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs uppercase tracking-[0.2em] text-texto/85">
             <span>{t(UI.tipos[proyecto.tipo], idioma)}</span>
             <span aria-hidden className="h-px w-6 bg-acento" />
             <span>{t(UI.estados[proyecto.estado], idioma)}</span>
-            <span aria-hidden className="h-px w-6 bg-acento" />
-            <span>{proyecto.ciudad}</span>
           </div>
+          <p className="mt-3 text-xs uppercase tracking-[0.2em] text-texto/60">{proyecto.ciudad}</p>
 
           <h1 className="titular titular-xl mt-7">{t(proyecto.hero.titulo, idioma)}</h1>
           <p className="cuerpo mt-6 max-w-2xl text-texto/85">{t(proyecto.hero.subtitulo, idioma)}</p>
