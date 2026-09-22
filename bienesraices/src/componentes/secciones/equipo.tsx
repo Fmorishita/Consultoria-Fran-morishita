@@ -14,7 +14,6 @@ export function Equipo({ idioma, className }: { idioma: Idioma; className?: stri
   return (
     <Seccion className={className}>
       <Revelar className="max-w-3xl">
-        <p className="antetitulo mb-6">{t(SECCION_EQUIPO.antetitulo, idioma)}</p>
         <h2 className="titular titular-lg">{t(SECCION_EQUIPO.titulo, idioma)}</h2>
         <p className="cuerpo mt-7 max-w-xl">{t(SECCION_EQUIPO.texto, idioma)}</p>
       </Revelar>
@@ -25,7 +24,7 @@ export function Equipo({ idioma, className }: { idioma: Idioma; className?: stri
             <div
               className={cn(
                 "relative aspect-4/5 w-full overflow-hidden border border-borde",
-                persona.foto ? "bg-superficie" : "bg-superficie-alta",
+                persona.foto ? "bg-superficie" : "topografia",
               )}
             >
               {persona.foto ? (

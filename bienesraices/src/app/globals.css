@@ -60,6 +60,7 @@
   --fondo: #f3f0e9;
   --superficie: #faf8f3;
   --superficie-alta: #ffffff;
+  --fondo-topografia: #ebe6db;
   --borde: #dcd6ca;
   --borde-fuerte: #b9b0a0;
   --texto: #111a22;
@@ -112,6 +113,8 @@ body {
 }
 
 .titular-xl { font-size: clamp(2.5rem, 7.5vw, 5.5rem); }
+/* En el hero partido la columna mide la mitad: la talla baja para que el titular quede en tres líneas. */
+.titular-hero { font-size: clamp(2.5rem, 5.4vw, 4.6rem); }
 .titular-lg { font-size: clamp(2.3rem, 5.6vw, 4rem); }
 .titular-md { font-size: clamp(1.9rem, 4.4vw, 3rem); }
 .titular-sm { font-size: clamp(1.5rem, 2.8vw, 1.9rem); line-height: 1.15; }
@@ -169,6 +172,39 @@ body {
 .overlay-foto { background-image: var(--overlay-foto); }
 .overlay-lateral { background-image: var(--overlay-lateral); }
 .overlay-banda { background-image: var(--overlay-banda); }
+
+/* --- Secciones claras ----------------------------------------
+   Doce pantallas en el mismo tono cansan. En la dirección oscura se
+   intercalan secciones de papel: redefinen los tokens en su ámbito, así que
+   todo lo que vive adentro (bordes, cifras, iconos) cambia solo. */
+[data-direccion="a"] .seccion-clara {
+  --fondo: #f3f0e9;
+  --superficie: #ebe6db;
+  --superficie-alta: #ffffff;
+  --borde: #d6cfc1;
+  --borde-fuerte: #b9b0a0;
+  --texto: #111a22;
+  --texto-suave: #4f5b66;
+  --acento: #8a6b32;
+  --acento-suave: #6f5527;
+  --acento-contraste: #fbf9f4;
+  background-color: var(--fondo);
+  color: var(--texto);
+}
+
+[data-direccion="b"] .seccion-clara {
+  background-color: var(--superficie);
+}
+
+/* --- Topografía ----------------------------------------------
+   Curvas de nivel en latón para las fichas que todavía no tienen fotografía:
+   se leen como portada de folleto, no como hueco. */
+.topografia {
+  background-color: var(--fondo-topografia, var(--superficie-alta));
+  background-image:
+    repeating-radial-gradient(ellipse at 18% 115%, transparent 0 21px, color-mix(in srgb, var(--acento) 16%, transparent) 21px 22px),
+    repeating-radial-gradient(ellipse at 95% -15%, transparent 0 29px, color-mix(in srgb, var(--acento) 9%, transparent) 29px 30px);
+}
 
 /* Marca de agua numérica para las secciones del recorrido. */
 .indice-seccion {

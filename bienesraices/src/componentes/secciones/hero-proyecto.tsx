@@ -20,7 +20,8 @@ export function HeroProyecto({ proyecto, idioma }: { proyecto: Proyecto; idioma:
     <section
       className={cn(
         "relative flex items-end overflow-hidden border-b border-borde",
-        imagen ? "min-h-[85svh]" : "min-h-[60svh]",
+        // Sin fotografía, la portada es la lámina topográfica: nunca un fondo vacío.
+        imagen ? "min-h-[85svh]" : "topografia min-h-[70svh]",
       )}
     >
       {imagen ? (

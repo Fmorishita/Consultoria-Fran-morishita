@@ -39,7 +39,6 @@ export const EQUIPO: Persona[] = [
 ].map((persona) => esquemaPersona.parse(persona));
 
 export const SECCION_EQUIPO = {
-  antetitulo: { es: "El equipo", en: "The team" },
   titulo: { es: "Quién te va a atender", en: "Who you'll be dealing with" },
   texto: {
     es: "Somos tres y nos conocemos las propiedades una por una. Eso significa que puedes preguntar por un lote específico y recibir una respuesta específica, no un folleto.",
