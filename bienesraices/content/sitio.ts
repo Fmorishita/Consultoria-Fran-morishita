@@ -5,8 +5,8 @@ import { pendiente } from "@/lib/pendiente";
 export const SITIO = esquemaSitio.parse({
   nombre: "Fran Morishita",
   rol: {
-    es: "Consultor de marketing y dirección comercial en bienes raíces",
-    en: "Real estate marketing and sales director",
+    es: "Representación inmobiliaria en la costa de Baja California",
+    en: "Real estate representation on the Baja California coast",
   },
   ciudad: { es: "Ensenada, Baja California", en: "Ensenada, Baja California" },
   dominio: "https://franmorishita-bienesraices.vercel.app",
@@ -15,8 +15,8 @@ export const SITIO = esquemaSitio.parse({
   whatsapp: {
     numero: "5216462563006",
     mensajeGeneral: {
-      es: "Hola Fran, vi tu sitio y quiero platicar de una propiedad.",
-      en: "Hi Fran, I saw your site and I'd like to talk about a property.",
+      es: "Hola Fran, vi tu sitio y me gustaría platicar de una propiedad en Ensenada.",
+      en: "Hi Fran, I saw your site and I'd like to talk about a property in Ensenada.",
     },
   },
   retrato:

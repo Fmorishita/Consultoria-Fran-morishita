@@ -78,7 +78,7 @@ export default async function PaginaPortafolio({ params }: { params: Promise<{ l
         titulo={t(DESARROLLADORES.cierre.titulo, idioma)}
         texto={t(DESARROLLADORES.cierre.texto, idioma)}
         contexto="portafolio-cierre"
-        conAgenda
+       
       />
     </>
   );

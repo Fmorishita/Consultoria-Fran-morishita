@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { CtaWhatsApp } from "@/componentes/cta-whatsapp";
+import { Boton } from "@/componentes/ui/boton";
 import { usePasoElUmbral } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import type { Idioma } from "@/lib/i18n";
@@ -16,11 +16,12 @@ export type PropsEncabezado = {
   idioma: Idioma;
   enlaces: EnlaceNav[];
   marca: { linea1: string; linea2: string; giro: string };
-  textos: { abrirMenu: string; cerrarMenu: string; cambiarIdioma: string; whatsapp: string };
-  whatsapp: { numero: string; mensaje: string };
+  textos: { abrirMenu: string; cerrarMenu: string; cambiarIdioma: string; agendar: string };
+  /** Agenda pública. Sin ella, el encabezado no pinta CTA. */
+  calendario?: string;
 };
 
-export function Encabezado({ idioma, enlaces, marca, textos, whatsapp }: PropsEncabezado) {
+export function Encabezado({ idioma, enlaces, marca, textos, calendario }: PropsEncabezado) {
   const ruta = usePathname();
   const [abierto, setAbierto] = useState(false);
   const [rutaPrevia, setRutaPrevia] = useState(ruta);
@@ -51,7 +52,7 @@ export function Encabezado({ idioma, enlaces, marca, textos, whatsapp }: PropsEn
       <div className="mx-auto flex h-18 w-full max-w-6xl items-center justify-between gap-6 px-5 md:px-8">
         <Link href={`/${idioma}`} className="flex flex-col leading-none">
           <span className="titular text-lg tracking-tight md:text-xl">
-            {marca.linea1} <span className="text-acento-suave">{marca.linea2}</span>
+            {marca.linea1} <span className="text-acento">{marca.linea2}</span>
           </span>
           <span className="mt-1 text-[0.62rem] uppercase tracking-[0.22em] text-texto-suave">{marca.giro}</span>
         </Link>
@@ -79,16 +80,15 @@ export function Encabezado({ idioma, enlaces, marca, textos, whatsapp }: PropsEn
           >
             {textos.cambiarIdioma}
           </Link>
-          <div className="hidden md:block">
-            <CtaWhatsApp
-              numero={whatsapp.numero}
-              mensaje={whatsapp.mensaje}
-              etiqueta={textos.whatsapp}
-              contexto="nav"
-              tamano="sm"
-              variante="secundario"
-            />
-          </div>
+          {calendario ? (
+            <div className="hidden md:block">
+              <Boton asChild tamano="sm" variante="secundario">
+                <a href={calendario} target="_blank" rel="noopener noreferrer">
+                  {textos.agendar}
+                </a>
+              </Boton>
+            </div>
+          ) : null}
           <button
             type="button"
             onClick={() => setAbierto((v) => !v)}
@@ -112,15 +112,15 @@ export function Encabezado({ idioma, enlaces, marca, textos, whatsapp }: PropsEn
             <Link href={rutaEnIdioma(ruta, otroIdioma)} hrefLang={otroIdioma} className="py-4 text-sm text-texto-suave">
               {textos.cambiarIdioma}
             </Link>
-            <div className="pb-4 pt-2">
-              <CtaWhatsApp
-                numero={whatsapp.numero}
-                mensaje={whatsapp.mensaje}
-                etiqueta={textos.whatsapp}
-                contexto="menu-movil"
-                className="w-full"
-              />
-            </div>
+            {calendario ? (
+              <div className="pb-4 pt-4">
+                <Boton asChild className="w-full">
+                  <a href={calendario} target="_blank" rel="noopener noreferrer">
+                    {textos.agendar}
+                  </a>
+                </Boton>
+              </div>
+            ) : null}
           </nav>
         </div>
       ) : null}

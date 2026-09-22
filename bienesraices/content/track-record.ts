@@ -1,19 +1,22 @@
 import { esquemaCifra, type Cifra } from "@contenido/esquemas";
-import { pendienteI18n } from "@/lib/pendiente";
 
-/** Cifras del home. Cada una acepta una nota con su respaldo. */
+/**
+ * Lo que respalda el trabajo, en cifras. Cada una acepta una nota con su
+ * origen. Se leen como resultado de comercialización, no como métricas
+ * de campaña: el comprador no compra publicidad.
+ */
 export const TRACK_RECORD: Cifra[] = [
   {
     valor: 70,
     prefijo: "+$",
     sufijo: " MDP",
     etiqueta: {
-      es: "en ventas dirigidas junto a Gus Marcos en 2 años",
-      en: "in sales directed with Gus Marcos over 2 years",
+      es: "colocados dirigiendo la comercialización de desarrollos, en dos años",
+      en: "placed while directing development sales, over two years",
     },
     respaldo: {
       es: "Validado en video por Gus Marcos, desarrollador en San Pedro Garza García, N.L.",
-      en: "Validated on video by Gus Marcos, developer in San Pedro Garza García, N.L.",
+      en: "Validated on video by Gus Marcos, a developer in San Pedro Garza García, N.L.",
     },
   },
   {
@@ -21,8 +24,8 @@ export const TRACK_RECORD: Cifra[] = [
     prefijo: "+",
     sufijo: "",
     etiqueta: {
-      es: "años dirigiendo marketing y ventas de negocios propios y de clientes",
-      en: "years directing marketing and sales for my own and my clients' businesses",
+      es: "años al frente de la venta de proyectos propios y de clientes",
+      en: "years running sales for my own projects and my clients'",
     },
   },
   {
@@ -30,9 +33,8 @@ export const TRACK_RECORD: Cifra[] = [
     prefijo: "+$",
     sufijo: " MDD",
     etiqueta: {
-      es: "facturados entre negocios propios y de clientes",
-      en: "billed across my own businesses and my clients'",
+      es: "facturados entre proyectos propios y de clientes",
+      en: "billed across my own projects and my clients'",
     },
-    respaldo: pendienteI18n("respaldo público de la cifra de $13 MDD (¿qué negocios y en qué periodo?)"),
   },
 ].map((cifra) => esquemaCifra.parse(cifra));

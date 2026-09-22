@@ -5,15 +5,22 @@ El brief completo está en `BRIEF.md`; esto es el resumen operativo.
 
 ## El único trabajo del sitio
 
-Convertir tráfico pagado en **conversaciones de WhatsApp calificadas sobre propiedades
-concretas**, empezando por la destacada. En segundo plano, llamadas de descubrimiento
-con desarrolladores. Si un elemento no acerca al visitante a uno de esos dos botones,
-no va.
+Que un comprador de alto patrimonio, de México o de California, llegue a **agendar
+una visita a Alta Tierra o a pedir el expediente de la propiedad**. En segundo plano,
+que un desarrollador vea una operación comercial seria y quiera entregarle su
+inventario a Fran.
 
-**Arquitectura:** el home es catálogo, no explicación. Va hero, propiedad destacada,
-resto del inventario, prueba social (video + cifras), formulario de captura y cierre.
-Lo que explica cómo trabaja Fran vive en `/desarrolladores` y `/portafolio`, enlazadas
-desde el pie y fuera del nav principal.
+**Registro:** inmobiliaria de alto patrimonio, no agencia de marketing. El sitio
+habla de tierra, vista, escasez, proceso y acompañamiento. **Nunca** de Meta Ads,
+IA, CRM, pauta, leads ni embudos: el comprador no compra herramientas, y el
+desarrollador compra ritmo de colocación, no instrumental. Esa jerga solo puede
+aparecer en conversaciones privadas, nunca en el sitio.
+
+**Arquitectura del home:** hero a sangre con la fotografía del producto, desarrollo
+destacado con su ficha, por qué esta costa, la vida aquí, el proceso de compra paso
+a paso, respaldo (video vertical de Gus Marcos + cifras), resto del inventario,
+captura y cierre. Lo que explica cómo trabaja Fran con desarrolladores vive en
+`/desarrolladores` y `/portafolio`, enlazadas desde el pie.
 
 ## Stack
 
@@ -62,21 +69,35 @@ El repo trae la skill **taste-skill** en `.claude/skills/design-taste-frontend/`
 (MIT, de github.com/Leonxlnx/taste-skill). El sitio ya está alineado con ella.
 Lo que hay que respetar al tocar la interfaz:
 
-- **Lectura de diseño:** landing de marca personal inmobiliaria para comprador
-  binacional y desarrollador, lenguaje editorial contenido. Diales:
-  variación 7 / movimiento 4 / densidad 3.
-- **Cero em dashes** (`—` y `–`) en cualquier texto visible: titulares, botones,
-  copy, `alt`, captions. Se usan comas, puntos, paréntesis o guion simple.
+- **Lectura de diseño:** inmobiliaria de alto patrimonio en la costa del Pacífico,
+  registro de casa de subastas. Diales: variación 7 / movimiento 4 / densidad 3.
+- **Paleta:** tinta de mar profundo y latón (dirección A) o alabastro y latón
+  oscuro (dirección B). El latón es el **único** color saturado y se reserva para
+  cifras, CTA primario, iconos y filetes. Nada de naranja ni de acentos de SaaS.
+- **Cero em dashes** (`—` y `–`) en cualquier texto, incluidos comentarios de CSS.
+  Se usan comas, puntos, paréntesis, `·` o guion simple.
 - **Presupuesto de antetítulos:** máximo 1 por cada 3 secciones (el hero cuenta).
   Si una sección necesita nombre, se lo pone el titular, no un rótulo.
 - **Hero:** subtexto de 20 palabras máximo, titular de 2 o 3 líneas cortas,
-  CTA visible sin scroll, padding superior contenido y una imagen real.
-- **Un rótulo por intención de CTA:** todo lo que abre WhatsApp dice lo mismo.
+  CTA visible sin scroll y la fotografía del producto a sangre.
+- **CTA por intención, no por canal.** Cada intención tiene un solo rótulo en todo
+  el sitio (agendar visita / solicitar información / pedir lista de precios /
+  conocer el desarrollo / escribir por WhatsApp) y nunca se repiten dos veces en
+  la misma pantalla. **WhatsApp no va en todos lados:** no hay botón flotante, el
+  encabezado lleva agenda, y WhatsApp aparece como salida secundaria en el cierre
+  y en `/contacto`.
+- **Iconografía:** lucide, `strokeWidth={1.5}`, en color acento. Las claves las
+  escribe el contenido (`icono: "vista"`) y se resuelven en `src/lib/iconos.ts`.
+  Ningún componente elige un icono por su cuenta.
 - **Nada de tres tarjetas iguales**, ni dos secciones con la misma familia de
-  layout. El home usa siete composiciones distintas.
-- **Serif rotada:** Playfair Display (dirección A) y EB Garamond (dirección B).
+  layout. El home alterna foto a sangre, ficha partida, rejilla de filetes, lista
+  dividida, riel numerado y banda con imagen.
+- **Serif:** Cormorant Garamond en ambas direcciones, nunca por debajo de peso 600.
   Fraunces e Instrument Serif están vetadas por ser el default de los LLM, y la
   sans es Geist, no Inter.
+- **Video:** se pinta con la orientación real con la que se grabó
+  (`orientacion: "vertical"` pinta 9:16). Un vertical dentro de un marco 16:9 se
+  ve amateur y tira la percepción de toda la página.
 - **Sin listeners de scroll:** IntersectionObserver (`usePasoElUmbral`) o CSS.
 
 ## Comandos
@@ -89,5 +110,7 @@ npm run pendientes   # regenera PENDIENTES.md
 
 ## Variables de entorno
 
-Ver `.env.example`. En preview se activa `NEXT_PUBLIC_MOSTRAR_PENDIENTES=1` para
-ver los chips ámbar de datos faltantes; en producción va vacío.
+Ver `.env.example`. `NEXT_PUBLIC_MOSTRAR_PENDIENTES=1` pinta chips ámbar con los
+datos que faltan: **solo en local**. En preview y en producción va apagado, porque
+los previews se enseñan a clientes y un recuadro amarillo tira la página.
+La lista de lo que falta se lee en `PENDIENTES.md`, no en la pantalla.

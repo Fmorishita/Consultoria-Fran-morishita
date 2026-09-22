@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Revelar } from "@/componentes/ui/revelar";
 import { Seccion } from "@/componentes/ui/seccion";
 import { t, type Idioma } from "@/lib/i18n";
+import { icono } from "@/lib/iconos";
 import { ENSENADA } from "@contenido/paginas/ensenada";
 
 /** Qué se compra además del lote. Composición partida con foto real. */
@@ -23,7 +24,7 @@ export function EstiloDeVida({
           <h2 className="titular titular-lg">{t(ENSENADA.estilo.titulo, idioma)}</h2>
           <p className="cuerpo mt-6 max-w-md">{t(ENSENADA.estilo.texto, idioma)}</p>
           {imagen ? (
-            <div className="relative mt-10 hidden aspect-[4/3] w-full overflow-hidden border border-borde lg:block">
+            <div className="relative mt-10 hidden aspect-4/3 w-full overflow-hidden border border-borde lg:block">
               <Image src={imagen} alt={altImagen ?? ""} fill sizes="520px" className="object-cover" />
             </div>
           ) : null}
@@ -31,12 +32,18 @@ export function EstiloDeVida({
 
         <Revelar retraso={90}>
           <ul className="divide-y divide-borde border-y border-borde">
-            {ENSENADA.estilo.items.map((item) => (
-              <li key={item.titulo.es} className="py-6">
-                <h3 className="titular titular-sm">{t(item.titulo, idioma)}</h3>
-                <p className="cuerpo mt-2 text-base">{t(item.texto, idioma)}</p>
-              </li>
-            ))}
+            {ENSENADA.estilo.items.map((item) => {
+              const Icono = icono(item.icono);
+              return (
+                <li key={item.titulo.es} className="flex gap-5 py-7">
+                  <Icono aria-hidden className="mt-1 size-5 flex-none text-acento" strokeWidth={1.5} />
+                  <div>
+                    <h3 className="titular titular-sm">{t(item.titulo, idioma)}</h3>
+                    <p className="cuerpo mt-2 text-base">{t(item.texto, idioma)}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </Revelar>
       </div>

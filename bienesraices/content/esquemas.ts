@@ -87,6 +87,34 @@ export const esquemaProyecto = z.object({
       nota: esquemaI18n.optional(),
     })
     .optional(),
+  /**
+   * Lista de precios publicada por el desarrollador, por zona y categoría
+   * de lote. Solo se llena copiando una lista oficial con su vigencia:
+   * ningún precio se deduce ni se redondea.
+   */
+  listaPrecios: z
+    .object({
+      etiqueta: esquemaI18n,
+      nota: esquemaI18n,
+      zonas: z
+        .array(
+          z.object({
+            nombre: esquemaI18n,
+            tipos: z
+              .array(
+                z.object({
+                  nombre: z.string().min(1),
+                  superficieMin: z.number().positive(),
+                  superficieMax: z.number().positive().optional(),
+                  precio: z.number().positive(),
+                }),
+              )
+              .min(1),
+          }),
+        )
+        .min(1),
+    })
+    .optional(),
   galeria: z.array(esquemaImagen).default([]),
   faq: z.array(z.object({ p: esquemaI18n, r: esquemaI18n })).default([]),
   whatsapp: esquemaCtaWhatsApp,
@@ -125,6 +153,8 @@ export const esquemaTestimonio = z.object({
   foto: z.string().optional(),
   /** Archivo mp4 propio o embed. Nunca se carga el player en el primer render. */
   video: z.string().optional(),
+  /** Cómo se grabó: "vertical" pinta 9:16, "horizontal" pinta 16:9. */
+  orientacion: z.enum(["vertical", "horizontal"]).default("horizontal"),
   videoPoster: z.string().optional(),
   cita: esquemaI18n.optional(),
 });

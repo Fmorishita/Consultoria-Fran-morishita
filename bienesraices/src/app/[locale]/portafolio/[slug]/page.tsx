@@ -138,7 +138,7 @@ export default async function PaginaCaso({ params }: Props) {
         titulo={t(DESARROLLADORES.cierre.titulo, idioma)}
         texto={t(DESARROLLADORES.cierre.texto, idioma)}
         contexto={`caso-${caso.slug}`}
-        conAgenda
+       
       />
     </>
   );

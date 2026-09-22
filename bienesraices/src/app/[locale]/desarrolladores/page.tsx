@@ -6,6 +6,7 @@ import { EncabezadoSeccion, Seccion } from "@/componentes/ui/seccion";
 import { CtaWhatsApp } from "@/componentes/cta-whatsapp";
 import { Boton } from "@/componentes/ui/boton";
 import { normalizaIdioma, t } from "@/lib/i18n";
+import { icono } from "@/lib/iconos";
 import { rutas } from "@/lib/navegacion";
 import { DESARROLLADORES } from "@contenido/paginas/desarrolladores";
 import { SITIO } from "@contenido/sitio";
@@ -72,15 +73,21 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
           titulo={t(DESARROLLADORES.entrega.titulo, idioma)}
         />
         <ol className="mt-14 divide-y divide-borde border-y border-borde">
-          {DESARROLLADORES.entrega.items.map((item, indice) => (
-            <Revelar key={item.titulo.es} como="li" className="grid gap-4 py-8 md:grid-cols-[auto_1fr] md:gap-12">
-              <span className="antetitulo text-acento-suave">0{indice + 1}</span>
-              <div>
-                <h3 className="titular titular-sm">{t(item.titulo, idioma)}</h3>
-                <p className="cuerpo mt-3 max-w-2xl text-base">{t(item.texto, idioma)}</p>
-              </div>
-            </Revelar>
-          ))}
+          {DESARROLLADORES.entrega.items.map((item, indice) => {
+            const Icono = icono(item.icono);
+            return (
+              <Revelar key={item.titulo.es} como="li" className="grid gap-4 py-8 md:grid-cols-[auto_1fr] md:gap-12">
+                <span className="flex items-center gap-4">
+                  <Icono aria-hidden className="size-5 text-acento" strokeWidth={1.5} />
+                  <span className="indice-seccion">{String(indice + 1).padStart(2, "0")}</span>
+                </span>
+                <div>
+                  <h3 className="titular titular-sm">{t(item.titulo, idioma)}</h3>
+                  <p className="cuerpo mt-3 max-w-2xl text-base">{t(item.texto, idioma)}</p>
+                </div>
+              </Revelar>
+            );
+          })}
         </ol>
       </Seccion>
 
@@ -104,7 +111,7 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
               {DESARROLLADORES.proceso.pasos.map((paso, indice) => (
                 <li key={paso.titulo.es} className="py-6">
                   <h3 className="titular titular-sm">
-                    <span className="text-acento-suave">0{indice + 1}</span> {t(paso.titulo, idioma)}
+                    <span className="text-acento">{String(indice + 1).padStart(2, "0")}</span> {t(paso.titulo, idioma)}
                   </h3>
                   <p className="cuerpo mt-3 text-base">{t(paso.texto, idioma)}</p>
                 </li>
@@ -119,7 +126,7 @@ export default async function PaginaDesarrolladores({ params }: { params: Promis
         titulo={t(DESARROLLADORES.cierre.titulo, idioma)}
         texto={t(DESARROLLADORES.cierre.texto, idioma)}
         contexto="desarrolladores-cierre"
-        conAgenda
+       
       />
     </>
   );

@@ -9,7 +9,6 @@ export type CifraLista = {
   sufijo: string;
   etiqueta: string;
   respaldo?: string;
-  pendiente?: string;
 };
 
 function useConteo(objetivo: number | undefined, activo: boolean): number {
@@ -43,25 +42,25 @@ function Cifra({ cifra, activo, principal }: { cifra: CifraLista; activo: boolea
     <div className={cn("border-t border-borde pt-6", principal ? "sm:col-span-2 lg:col-span-6" : "lg:col-span-3")}>
       <p
         className={cn(
-          "titular text-acento-suave",
-          principal ? "text-[clamp(3.5rem,12vw,7rem)]" : "text-[clamp(2.25rem,6vw,3.25rem)]",
+          "cifra text-acento",
+          principal ? "text-[clamp(3.5rem,12vw,7rem)]" : "text-[clamp(2.5rem,6vw,3.5rem)]",
         )}
       >
         {cifra.prefijo}
         {cifra.valor === undefined ? "-" : valor}
         {cifra.sufijo}
       </p>
-      <p className={cn("mt-3 text-sm leading-relaxed text-texto-suave", principal ? "max-w-sm text-base" : "max-w-xs")}>
+      <p className={cn("mt-4 text-sm leading-relaxed text-texto-suave", principal && "max-w-sm text-base")}>
         {cifra.etiqueta}
       </p>
-      {cifra.respaldo ? <p className="mt-2 max-w-xs text-xs text-texto-suave/70">{cifra.respaldo}</p> : null}
+      {cifra.respaldo ? <p className="mt-3 text-xs leading-relaxed text-texto-suave/70">{cifra.respaldo}</p> : null}
     </div>
   );
 }
 
 /**
  * Composición asimétrica: la cifra que respalda el video manda sobre las otras.
- * En `columna` se apila, para cuando vive junto al video.
+ * En `columna` van las tres en línea, para cuando viven junto al video.
  */
 export function TrackRecord({ cifras, columna = false }: { cifras: CifraLista[]; columna?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -91,7 +90,7 @@ export function TrackRecord({ cifras, columna = false }: { cifras: CifraLista[];
       ref={ref}
       className={cn(
         "grid gap-10",
-        columna ? "w-full grid-cols-1 gap-8" : "sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-12",
+        columna ? "w-full gap-8 sm:grid-cols-3 sm:gap-x-8" : "sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-12",
       )}
     >
       {cifras.map((cifra, indice) => (

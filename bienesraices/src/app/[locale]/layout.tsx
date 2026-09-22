@@ -1,25 +1,27 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { EB_Garamond, Geist, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Geist } from "next/font/google";
 import "@/app/globals.css";
 import { Analitica } from "@/componentes/analitica";
-import { CtaWhatsAppFlotante } from "@/componentes/cta-whatsapp";
 import { Encabezado } from "@/componentes/layout/encabezado";
 import { PieDePagina } from "@/componentes/layout/pie";
 import { IDIOMAS, esIdioma, localeCompleto, t, type Idioma } from "@/lib/i18n";
 import { enlacesPie, enlacesPrincipales, rutas } from "@/lib/navegacion";
-import { queFalta, texto } from "@/lib/pendiente";
+import { texto } from "@/lib/pendiente";
 import { permitirIndexacion, urlSitio } from "@/lib/url-sitio";
 import { enlaceWhatsApp } from "@/lib/whatsapp";
 import { SITIO } from "@contenido/sitio";
 import { UI } from "@contenido/ui";
 
-// Serif de titulares por dirección visual, sans única para texto.
-// Solo se precarga la serif de la dirección activa (hoy la "a"); la otra
-// se declara sin preload y el navegador únicamente la baja en /styleguide.
-// Si `direccionVisual` cambia a "b", hay que intercambiar los `preload`.
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--fuente-playfair", display: "swap" });
-const garamond = EB_Garamond({ subsets: ["latin"], variable: "--fuente-garamond", display: "swap", preload: false });
+// Una sola serif de alto contraste para los titulares en ambas direcciones
+// visuales, y una sans neutra para lectura e interfaz. Solo los pesos que
+// realmente se usan: la serif nunca se pinta por debajo de 600.
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--fuente-cormorant",
+  display: "swap",
+});
 const geist = Geist({ subsets: ["latin"], variable: "--fuente-geist", display: "swap" });
 
 export function generateStaticParams() {
@@ -70,7 +72,7 @@ export default async function LayoutIdioma({
     <html
       lang={localeCompleto(idioma)}
       data-direccion={SITIO.direccionVisual}
-      className={`${playfair.variable} ${garamond.variable} ${geist.variable}`}
+      className={`${cormorant.variable} ${geist.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-dvh antialiased">
@@ -94,9 +96,9 @@ export default async function LayoutIdioma({
             abrirMenu: t(UI.nav.abrirMenu, idioma),
             cerrarMenu: t(UI.nav.cerrarMenu, idioma),
             cambiarIdioma: t(UI.nav.cambiarIdioma, idioma),
-            whatsapp: t(UI.cta.whatsappCorto, idioma),
+            agendar: t(UI.cta.agendarVisita, idioma),
           }}
-          whatsapp={whatsapp}
+          calendario={SITIO.calendario}
         />
 
         <main id="contenido" className="pt-18">
@@ -119,19 +121,12 @@ export default async function LayoutIdioma({
             privacidadTexto: t(UI.footer.privacidad, idioma),
             registroTexto: t(UI.footer.registro, idioma),
             registro: texto(SITIO.legal.registroEstatal, idioma),
-            registroPendiente: queFalta(SITIO.legal.registroEstatal),
             leyenda: t(SITIO.legal.leyendaProyectos, idioma),
             derechos: t(UI.footer.derechos, idioma),
           }}
           titulos={{ navegacion: t(UI.footer.navegacion, idioma), contacto: t(UI.footer.contacto, idioma) }}
         />
 
-        <CtaWhatsAppFlotante
-          numero={SITIO.whatsapp.numero}
-          mensaje={whatsapp.mensaje}
-          etiqueta={t(UI.cta.whatsappCorto, idioma)}
-          contexto="flotante"
-        />
       </body>
     </html>
   );

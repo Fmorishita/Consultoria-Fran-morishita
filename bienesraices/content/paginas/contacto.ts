@@ -1,18 +1,22 @@
 export const CONTACTO = {
   antetitulo: { es: "Contacto", en: "Contact" },
-  titulo: { es: "Hablemos hoy,\nno la próxima semana", en: "Let's talk today,\nnot next week" },
+  titulo: { es: "Hablemos de lo que\nestás buscando", en: "Let's talk about\nwhat you're after" },
   texto: {
-    es: "La vía más rápida es WhatsApp: contesto yo. Si prefieres agenda, reserva 30 minutos. Y si quieres dejarlo por escrito, aquí está el formulario.",
-    en: "WhatsApp is the fastest way and you get me, not an assistant. Prefer a calendar? Book 30 minutes. Rather write it down? The form is right here.",
+    es: "Tres formas de empezar, según cuánta prisa tengas. En las tres contesto yo.",
+    en: "Three ways to start, depending on how fast you need to move. In all three, you get me.",
   },
   opciones: [
     {
-      titulo: { es: "WhatsApp", en: "WhatsApp" },
-      texto: { es: "Respuesta el mismo día, en horario hábil.", en: "Same-day reply during business hours." },
+      titulo: { es: "Visita o videollamada", en: "Visit or video call" },
+      texto: { es: "Media hora en agenda para recorrer el desarrollo o revisarlo en pantalla si estás fuera.", en: "Half an hour on the calendar to walk the development, or review it on screen if you're away." },
     },
     {
-      titulo: { es: "Videollamada de 30 min", en: "30-minute video call" },
-      texto: { es: "Para desarrolladores y compradores que ya traen números.", en: "For developers and buyers who already have numbers on the table." },
+      titulo: { es: "WhatsApp", en: "WhatsApp" },
+      texto: { es: "Para una pregunta concreta sobre un lote, un precio o una fecha. Respuesta el mismo día en horario hábil.", en: "For a specific question about a lot, a price or a date. Same-day reply during business hours." },
+    },
+    {
+      titulo: { es: "Expediente por correo", en: "File by email" },
+      texto: { es: "Déjame tus datos y te mando disponibilidad, condiciones y plano sin que tengas que hablar con nadie todavía.", en: "Leave me your details and I'll send availability, terms and the site plan without you having to talk to anyone yet." },
     },
   ],
   formulario: {
@@ -22,8 +26,8 @@ export const CONTACTO = {
   seo: {
     title: { es: "Contacto · Fran Morishita", en: "Contact · Fran Morishita" },
     description: {
-      es: "Escríbeme por WhatsApp, agenda una videollamada de 30 minutos o déjame tus datos.",
-      en: "Message me on WhatsApp, book a 30-minute video call, or leave me your details.",
+      es: "Agenda una visita al desarrollo, escríbeme por WhatsApp o pide el expediente completo de la propiedad.",
+      en: "Book a visit to the development, message me on WhatsApp, or request the full property file.",
     },
   },
 } as const;

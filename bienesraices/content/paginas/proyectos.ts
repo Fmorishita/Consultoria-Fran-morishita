@@ -1,24 +1,24 @@
 export const PAGINA_PROYECTOS = {
-  antetitulo: { es: "Propiedades", en: "Properties" },
-  titulo: { es: "Lo que tengo disponible", en: "What I have available" },
+  antetitulo: { es: "Inventario", en: "Inventory" },
+  titulo: { es: "Lo que represento hoy", en: "What I represent today" },
   texto: {
-    es: "Lotes, casas y preventa que represento en Ensenada y Baja California. Los precios y la disponibilidad se actualizan conmigo, no con un portal.",
-    en: "Lots, homes and pre-sale I represent in Ensenada and Baja California. Pricing and availability come from me, not from a listings portal.",
+    es: "Terreno, residencia y preventa en Ensenada y su corredor costero. La disponibilidad y las condiciones se confirman conmigo antes de cada visita, no con un portal que nadie actualiza.",
+    en: "Land, homes and pre-sale along Ensenada and its coastal corridor. Availability and terms are confirmed with me before every visit, not by a listings portal nobody updates.",
   },
   seo: {
     title: { es: "Propiedades en venta en Ensenada y Baja California", en: "Property for sale in Ensenada and Baja California" },
     description: {
-      es: "Lotes, casas y preventa en Ensenada y Baja California, con precios y disponibilidad al día y atención directa por WhatsApp.",
-      en: "Lots, homes and pre-sale in Ensenada and Baja California, with current pricing and availability, answered directly over WhatsApp.",
+      es: "Lotes con vista al Pacífico, residencia y preventa en Ensenada, Baja California, con disponibilidad confirmada y acompañamiento hasta la escritura.",
+      en: "Pacific-view lots, homes and pre-sale in Ensenada, Baja California, with confirmed availability and guidance all the way to closing.",
     },
   },
 } as const;
 
 export const CIERRE_PROYECTO = {
-  titulo: { es: "¿Te aparto un lugar?", en: "Want me to hold one for you?" },
+  titulo: { es: "Ven a verlo antes de decidir", en: "Come see it before you decide" },
   texto: {
-    es: "Mándame un mensaje y te paso disponibilidad, precios y el proceso completo. Contesto yo, no un bot.",
-    en: "Message me and I'll send you availability, pricing and the full process. You get me, not a bot.",
+    es: "Recorremos el desarrollo a la hora en que se aprecia la vista y revisamos qué lotes siguen libres. Si estás fuera del país, lo hacemos en video el mismo día.",
+    en: "We walk the development at the hour the view earns its price and check which lots are still open. If you're out of the country, we do it on video the same day.",
   },
 } as const;
 
@@ -26,22 +26,23 @@ export const PAGINA_PORTAFOLIO = {
   antetitulo: { es: "Portafolio", en: "Portfolio" },
   titulo: { es: "Comercializaciones que he dirigido", en: "Sales operations I've directed" },
   texto: {
-    es: "Casos de dirección comercial y marketing para desarrolladores: qué encontré, qué sistema construí y qué salió de ahí.",
-    en: "Sales direction and marketing cases for developers: what I found, what system I built and what came out of it.",
+    es: "Desarrollos en los que tomé la responsabilidad del ritmo de colocación: qué encontré, qué cambié y cuánto se movió el inventario.",
+    en: "Developments where I took responsibility for the pace of placement: what I found, what I changed and how much inventory moved.",
   },
   seo: {
-    title: { es: "Portafolio de dirección comercial inmobiliaria", en: "Real estate sales direction portfolio" },
+    title: { es: "Portafolio de comercialización inmobiliaria", en: "Real estate sales portfolio" },
     description: {
-      es: "Casos de comercialización de desarrollos: generación de demanda con Meta Ads, calificación con IA y CRM, y cierre por videollamada.",
-      en: "Development sales cases: demand generation with Meta Ads, AI and CRM qualification, and video-call closing.",
+      es: "Desarrollos cuya comercialización he dirigido, con el reto, el sistema de venta implementado y los resultados.",
+      en: "Developments whose sales operation I've directed, with the challenge, the sales system built and the results.",
     },
   },
 } as const;
 
 export const CAPTURA_PROPIEDAD = {
-  titulo: { es: "Pide la lista de precios", en: "Ask for the price list" },
+  antetitulo: { es: "Expediente completo", en: "Full information" },
+  titulo: { es: "Pide el expediente de la propiedad", en: "Request the property file" },
   texto: {
-    es: "Déjame tus datos y te mando disponibilidad, precios vigentes y formas de pago. Si tienes prisa, WhatsApp es más rápido.",
-    en: "Leave me your details and I'll send availability, current pricing and payment options. In a hurry? WhatsApp is faster.",
+    es: "Te llega la lista de lotes disponibles con superficie y orientación, las condiciones de pago vigentes y el plano del fraccionamiento. Sin compromiso y sin que nadie te persiga por teléfono.",
+    en: "You get the list of available lots with size and orientation, the current payment terms and the community's site plan. No commitment and nobody chasing you by phone.",
   },
 } as const;

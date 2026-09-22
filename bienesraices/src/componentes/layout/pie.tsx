@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ChipPendiente } from "@/componentes/ui/chip-pendiente";
 
 export type PropsPie = {
   marca: { linea1: string; linea2: string };
@@ -12,7 +11,6 @@ export type PropsPie = {
     privacidadTexto: string;
     registroTexto: string;
     registro?: string;
-    registroPendiente?: string;
     leyenda: string;
     derechos: string;
   };
@@ -86,9 +84,7 @@ export function PieDePagina({ marca, rol, ciudad, enlaces, contacto, legal, titu
             <p className="text-xs text-texto-suave">
               {legal.registroTexto}: {legal.registro}
             </p>
-          ) : (
-            <ChipPendiente>{legal.registroPendiente}</ChipPendiente>
-          )}
+          ) : null}
           <p className="mt-3 max-w-3xl text-xs leading-relaxed text-texto-suave/80">{legal.leyenda}</p>
           <p className="mt-6 text-xs text-texto-suave/70">
             © {anio} {marca.linea1} {marca.linea2}. {legal.derechos}

@@ -1,55 +1,67 @@
-import { pendienteI18n } from "@/lib/pendiente";
-
 /**
- * Home de captación: la propiedad destacada y el inventario mandan.
- * Lo que explica cómo trabajo vive en /desarrolladores y /portafolio.
+ * Home. Registro editorial: la tierra y la vista mandan, el inventario
+ * se muestra, y el oficio se demuestra con el proceso, no se explica.
+ * Nada de jerga de agencia: el comprador no compra herramientas.
  */
 export const INICIO = {
   hero: {
-    antetitulo: { es: "Bienes raíces en Baja California", en: "Real estate in Baja California" },
-    titulo: { es: "Lotes y casas\nen Ensenada,\nsin vueltas.", en: "Lots and homes\nin Ensenada,\nno runaround." },
+    antetitulo: { es: "Ensenada · Baja California", en: "Ensenada · Baja California" },
+    titulo: {
+      es: "Comprar la vista\nantes que\nla casa.",
+      en: "Buy the view\nbefore\nthe house.",
+    },
     subtitulo: {
-      es: "Soy Fran Morishita. Te paso precios, disponibilidad y el proceso completo por WhatsApp, el mismo día.",
-      en: "I'm Fran Morishita. I send you pricing, availability and the full process over WhatsApp, the same day.",
+      es: "Represento lotes y residencias frente al Pacífico en Ensenada. Te acompaño desde la primera visita hasta la escritura.",
+      en: "I represent oceanfront lots and homes in Ensenada. I walk with you from the first visit to the closing.",
+    },
+    pie: {
+      es: "Atención personal, en español e inglés, para compradores de México y California.",
+      en: "Personal representation, in Spanish and English, for buyers from Mexico and California.",
     },
   },
   destacado: {
-    titulo: { es: "En preventa ahora", en: "In pre-sale now" },
+    antetitulo: { es: "Desarrollo en representación", en: "Development I represent" },
+    titulo: { es: "Alta Tierra", en: "Alta Tierra" },
     texto: {
-      es: "La propiedad en la que estoy trabajando hoy. Pregunta por disponibilidad antes de que se muevan las etapas.",
-      en: "The property I'm working on right now. Ask about availability before the phases move.",
+      es: "Un fraccionamiento cerrado sobre la ladera de Playitas, con la franja de lotes que mira al océano ya urbanizada. La primera fila es finita y se coloca antes que el resto.",
+      en: "A gated community on the Playitas hillside, with its ocean-facing row of lots already serviced. The front row is finite, and it sells before everything behind it.",
     },
   },
+  plaza: {
+    antetitulo: { es: "La plaza", en: "The market" },
+  },
+  proceso: {
+    antetitulo: { es: "Cómo se compra", en: "How it works" },
+  },
   propiedades: {
-    titulo: { es: "Lo que tengo disponible", en: "What I have available" },
+    antetitulo: { es: "Inventario", en: "Inventory" },
+    titulo: { es: "Otras propiedades en mi cartera", en: "More property in my book" },
     texto: {
-      es: "Lotes, casas y preventa que represento en Ensenada y alrededores. Cada ficha trae números, ubicación y una conversación directa conmigo.",
-      en: "Lots, homes and pre-sale I represent in and around Ensenada. Each listing has numbers, location and a direct line to me.",
+      es: "Terreno, residencia y preventa en Ensenada y su corredor costero. Cada ficha lleva medidas, ubicación y condiciones vigentes, revisadas conmigo antes de publicarse.",
+      en: "Land, homes and pre-sale along Ensenada and its coastal corridor. Every listing carries measurements, location and current terms, reviewed with me before it goes up.",
     },
   },
   prueba: {
-    titulo: { es: "Con quién estás tratando", en: "Who you're dealing with" },
+    antetitulo: { es: "Respaldo", en: "Track record" },
+    titulo: { es: "Quien ya me confió su inventario", en: "Who has trusted me with their inventory" },
     texto: {
-      es: "No soy un portal ni un call center. Contesto yo, y estos son los números que respaldan mi trabajo.",
-      en: "I'm not a portal or a call center. You get me, and these are the numbers behind my work.",
+      es: "La comercialización de un desarrollo se juzga por una sola cosa: cuánto se colocó y en cuánto tiempo. Esto es lo que dice quien ya lo vivió.",
+      en: "A development's sales operation is judged on one thing: how much was placed and how fast. Here is what someone who lived it has to say.",
     },
   },
   captura: {
-    titulo: { es: "¿No ves lo que buscas?", en: "Not seeing what you want?" },
+    antetitulo: { es: "Búsqueda a la medida", en: "Private search" },
+    titulo: { es: "¿Buscas algo que todavía no está en esta página?", en: "Looking for something that isn't on this page yet?" },
     texto: {
-      es: "Dime qué buscas y con qué presupuesto. Te aviso en cuanto entre algo que encaje, antes de publicarlo.",
-      en: "Tell me what you're after and your budget. I'll ping you when something fits, before it goes public.",
+      es: "Parte de lo que represento no se publica. Dime zona, superficie y horizonte de inversión, y te escribo cuando entre algo que encaje, antes de que salga al mercado.",
+      en: "Part of what I represent never gets published. Tell me the area, the size and your investment horizon, and I'll write to you when something fits, before it reaches the market.",
     },
   },
   cierre: {
-    titulo: { es: "¿Empezamos por WhatsApp?", en: "Shall we start on WhatsApp?" },
+    titulo: { es: "La visita cambia la decisión", en: "The visit changes the decision" },
     texto: {
-      es: "Escríbeme con la zona, el presupuesto y para cuándo lo quieres. Te contesto yo, normalmente el mismo día.",
-      en: "Message me with the area, the budget and your timeline. You'll get me, usually the same day.",
+      es: "Ninguna fotografía resuelve dónde pega el sol a las seis de la tarde ni cuánto océano se ve desde un segundo nivel. Agenda una visita y lo revisamos lote por lote.",
+      en: "No photograph settles where the light falls at six in the evening or how much ocean you see from a second floor. Book a visit and we'll walk it lot by lot.",
     },
   },
 } as const;
-
-export const NOTA_INICIO = pendienteI18n(
-  "fotografía de Fran en Ensenada para el hero (horizontal, alta resolución, con derechos)",
-);

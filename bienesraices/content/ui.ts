@@ -1,6 +1,10 @@
 import type { I18n } from "@/lib/i18n";
 
-/** Microcopy de interfaz. El contenido comercial va en sus propios archivos. */
+/**
+ * Microcopy de interfaz. El contenido comercial va en sus propios archivos.
+ * Los CTA están agrupados por intención: cada intención tiene un solo rótulo
+ * en todo el sitio, y las intenciones no se mezclan en la misma pantalla.
+ */
 export const UI = {
   nav: {
     giro: { es: "Bienes raíces", en: "Real estate" },
@@ -15,24 +19,34 @@ export const UI = {
     cambiarIdioma: { es: "English", en: "Español" },
   },
   cta: {
+    /** Intención: abrir conversación directa. */
     whatsapp: { es: "Escríbeme por WhatsApp", en: "Message me on WhatsApp" },
     whatsappCorto: { es: "WhatsApp", en: "WhatsApp" },
-    agendar: { es: "Agendar llamada", en: "Book a call" },
+    /** Intención: reservar tiempo en agenda. */
+    agendarVisita: { es: "Agendar una visita", en: "Book a visit" },
+    agendar: { es: "Agendar una llamada", en: "Book a call" },
+    /** Intención: pedir material comercial. */
+    solicitarInformacion: { es: "Solicitar la información completa", en: "Request the full information" },
+    solicitarPrecios: { es: "Pedir lista de precios", en: "Ask for the price list" },
+    /** Intención: navegar dentro del sitio. */
+    conocerDesarrollo: { es: "Conocer el desarrollo", en: "Explore the development" },
     verProyecto: { es: "Ver la propiedad", en: "View the property" },
-    verProyectos: { es: "Ver propiedades", en: "View properties" },
+    verProyectos: { es: "Ver el inventario", en: "See the inventory" },
     verCaso: { es: "Ver el caso", en: "Read the case" },
     verPortafolio: { es: "Ver portafolio", en: "View portfolio" },
     volver: { es: "Volver", en: "Back" },
-    verEnMapa: { es: "Ver en Google Maps", en: "Open in Google Maps" },
+    verEnMapa: { es: "Abrir en Google Maps", en: "Open in Google Maps" },
     reproducir: { es: "Reproducir video", en: "Play video" },
   },
   secciones: {
-    ubicacion: { es: "Ubicación", en: "Location" },
-    amenidades: { es: "Amenidades", en: "Amenities" },
+    ubicacion: { es: "Dónde está", en: "Where it is" },
+    amenidades: { es: "Lo que incluye el fraccionamiento", en: "What the community includes" },
     inventario: { es: "Disponibilidad", en: "Availability" },
-    galeria: { es: "Galería", en: "Gallery" },
-    faq: { es: "Preguntas frecuentes", en: "FAQ" },
-    financiamiento: { es: "Financiamiento", en: "Financing" },
+    galeria: { es: "El lugar", en: "The place" },
+    faq: { es: "Lo que suelen preguntarme", en: "What buyers usually ask me" },
+    financiamiento: { es: "Formas de pago", en: "Payment terms" },
+    precios: { es: "Precios y disponibilidad", en: "Pricing and availability" },
+    fichaTecnica: { es: "Ficha técnica", en: "Fact sheet" },
     resultados: { es: "Resultados", en: "Results" },
     reto: { es: "El reto", en: "The challenge" },
     sistema: { es: "El sistema que implementé", en: "The system I built" },
@@ -40,15 +54,26 @@ export const UI = {
   },
   etiquetas: {
     desde: { es: "Desde", en: "From" },
-    superficie: { es: "Superficie", en: "Lot size" },
+    superficie: { es: "Superficie de lote", en: "Lot size" },
     tipo: { es: "Tipo", en: "Type" },
     estado: { es: "Estado", en: "Status" },
     desarrollador: { es: "Desarrollador", en: "Developer" },
+    direccion: { es: "Dirección", en: "Address" },
+    plazos: { es: "Plazos", en: "Terms" },
+    rango: { es: "a", en: "to" },
+    meses: { es: "meses", en: "months" },
     minutos: { es: "min", en: "min" },
+    consultarPrecio: { es: "Precio a consultar", en: "Price on request" },
     sinProyectos: {
-      es: "Estoy cerrando la siguiente tanda de propiedades. Escríbeme con lo que buscas y te aviso antes de publicarlas.",
-      en: "I'm closing the next batch of listings. Message me with what you're after and I'll tell you before they go public.",
+      es: "Estoy cerrando la siguiente tanda de representaciones. Déjame lo que buscas y te escribo antes de que salga al mercado.",
+      en: "I'm closing the next round of representations. Tell me what you're after and I'll write to you before it reaches the market.",
     },
+  },
+  tabla: {
+    tipo: { es: "Categoría de lote", en: "Lot category" },
+    superficie: { es: "Superficie", en: "Size" },
+    precio: { es: "Precio de lista", en: "List price" },
+    enganche: { es: "Enganche", en: "Down payment" },
   },
   tipos: {
     lotes: { es: "Lotes", en: "Lots" },
@@ -84,10 +109,10 @@ export const UI = {
     nombre: { es: "Nombre", en: "Name" },
     telefono: { es: "Teléfono / WhatsApp", en: "Phone / WhatsApp" },
     email: { es: "Email", en: "Email" },
-    interes: { es: "¿Qué te interesa?", en: "What are you looking for?" },
-    mensaje: { es: "Mensaje", en: "Message" },
+    interes: { es: "¿Qué estás buscando?", en: "What are you looking for?" },
+    mensaje: { es: "Cuéntame un poco más", en: "Tell me a little more" },
     opcional: { es: "opcional", en: "optional" },
-    enviar: { es: "Enviar", en: "Send" },
+    enviar: { es: "Solicitar la información", en: "Request the information" },
     enviando: { es: "Enviando…", en: "Sending…" },
     consentimiento: {
       es: "Acepto el aviso de privacidad y que Fran Morishita me contacte por WhatsApp, teléfono o email.",
@@ -104,10 +129,10 @@ export const UI = {
       consentimiento: { es: "Necesito tu consentimiento para contactarte.", en: "I need your consent to contact you." },
     },
     intereses: [
-      { valor: "comprar", texto: { es: "Comprar una propiedad", en: "Buying a property" } },
-      { valor: "invertir", texto: { es: "Invertir en preventa", en: "Investing in pre-sale" } },
-      { valor: "desarrollador", texto: { es: "Soy desarrollador y quiero vender más", en: "I'm a developer and want to sell more" } },
-      { valor: "otro", texto: { es: "Otro", en: "Other" } },
+      { valor: "comprar", texto: { es: "Comprar para vivirla", en: "Buying to live in it" } },
+      { valor: "invertir", texto: { es: "Invertir en tierra o preventa", en: "Investing in land or pre-sale" } },
+      { valor: "segunda-residencia", texto: { es: "Segunda residencia o retiro", en: "Second home or retirement" } },
+      { valor: "desarrollador", texto: { es: "Soy desarrollador", en: "I'm a developer" } },
     ],
   },
   pendiente: {

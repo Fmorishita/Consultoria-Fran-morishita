@@ -7,31 +7,31 @@ export const STYLEGUIDE = {
   direcciones: [
     {
       clave: "a",
-      nombre: { es: "A · Tierra nocturna", en: "A · Night earth" },
+      nombre: { es: "A · Marea nocturna", en: "A · Night tide" },
       descripcion: {
-        es: "Base oscura cálida, acento terracota, serif Playfair Display. La fotografía manda y el texto flota encima. Se siente caro y nocturno; ideal para renders y tomas de atardecer.",
-        en: "Warm dark base, terracotta accent, Playfair Display serif. Photography leads and type floats over it. Feels expensive and nocturnal; ideal for renders and sunset shots.",
+        es: "Tinta de mar profundo con latón como único color saturado. La fotografía manda y el texto flota encima. Es el registro de las casas de subasta: caro, sobrio y difícil de confundir con una agencia.",
+        en: "Deep sea ink with brass as the only saturated color. Photography leads and type floats over it. This is auction-house register: expensive, sober and hard to mistake for an agency.",
       },
-      tipografia: "Playfair Display + Geist",
+      tipografia: "Cormorant Garamond + Geist",
     },
     {
       clave: "b",
-      nombre: { es: "B · Piedra clara", en: "B · Light stone" },
+      nombre: { es: "B · Luz de sal", en: "B · Salt light" },
       descripcion: {
-        es: "Fondo piedra fría, acento verde profundo, serif EB Garamond. Más editorial y de galería, con mucho aire. Perfecto si la foto es poca y el texto tiene que sostener la página.",
-        en: "Cool stone background, deep green accent, EB Garamond serif. More editorial and gallery-like, with a lot of air. Perfect when photos are scarce and type has to carry the page.",
+        es: "Alabastro cálido, tinta y latón oscuro. Más editorial y de galería, con mucho aire. Funciona mejor si la fotografía es poca y el texto tiene que sostener la página.",
+        en: "Warm alabaster, ink and dark brass. More editorial and gallery-like, with a lot of air. It works better when photography is scarce and type has to carry the page.",
       },
-      tipografia: "EB Garamond + Geist",
+      tipografia: "Cormorant Garamond + Geist",
     },
   ],
   muestra: {
     antetitulo: { es: "Ensenada, Baja California", en: "Ensenada, Baja California" },
-    titular: { es: "Yo no espero al comprador.", en: "I don't wait for the buyer." },
+    titular: { es: "Comprar la vista antes que la casa.", en: "Buy the view before the house." },
     cuerpo: {
-      es: "Genero demanda con Meta Ads, la califico con IA y CRM, y cierro por videollamada.",
-      en: "I generate demand with Meta Ads, qualify it with AI and CRM, and close over video call.",
+      es: "Lotes urbanizados con vista permanente al Pacífico, dentro de un fraccionamiento cerrado.",
+      en: "Urbanized lots with permanent Pacific views, inside a gated community.",
     },
-    boton: { es: "Escríbeme por WhatsApp", en: "Message me on WhatsApp" },
-    secundario: { es: "Ver proyectos", en: "View properties" },
+    boton: { es: "Conocer el desarrollo", en: "Explore the development" },
+    secundario: { es: "Agendar una visita", en: "Book a visit" },
   },
 } as const;

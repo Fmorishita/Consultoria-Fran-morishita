@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { ChipPendiente } from "@/componentes/ui/chip-pendiente";
 import { formatoMoneda, formatoSuperficie } from "@/lib/formato";
 import { t, type Idioma } from "@/lib/i18n";
 import { rutas } from "@/lib/navegacion";
-import { numero, queFalta, texto } from "@/lib/pendiente";
+import { numero, texto } from "@/lib/pendiente";
 import type { Proyecto } from "@contenido/esquemas";
 import { UI } from "@contenido/ui";
 
@@ -20,7 +19,7 @@ export function TarjetaProyecto({ proyecto, idioma }: { proyecto: Proyecto; idio
       href={r.propiedad(proyecto.slug)}
       className="group flex flex-col border border-borde bg-superficie transition-colors hover:border-acento"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-superficie-alta">
+      <div className="relative aspect-4/3 w-full overflow-hidden bg-superficie-alta">
         {imagen ? (
           <Image
             src={imagen}
@@ -43,7 +42,7 @@ export function TarjetaProyecto({ proyecto, idioma }: { proyecto: Proyecto; idio
         <p className="antetitulo">{proyecto.ciudad}</p>
         <h3 className="titular titular-sm mt-3 flex items-center gap-2">
           {proyecto.nombre}
-          <ArrowUpRight aria-hidden className="size-4 text-acento-suave transition-transform group-hover:translate-x-1" />
+          <ArrowUpRight aria-hidden className="size-4 text-acento transition-transform group-hover:translate-x-1" />
         </h3>
         <p className="mt-2 text-sm text-texto-suave">
           {t(UI.tipos[proyecto.tipo], idioma)}
@@ -51,13 +50,11 @@ export function TarjetaProyecto({ proyecto, idioma }: { proyecto: Proyecto; idio
         </p>
 
         <div className="mt-auto pt-6">
-          {precio ? (
-            <p className="titular titular-sm text-acento-suave">
-              {t(UI.etiquetas.desde, idioma)} {formatoMoneda(precio, proyecto.inventario.moneda, idioma)}
-            </p>
-          ) : (
-            <ChipPendiente>{queFalta(proyecto.inventario.precioDesde)}</ChipPendiente>
-          )}
+          <p className="titular titular-sm text-acento">
+            {precio
+              ? `${t(UI.etiquetas.desde, idioma)} ${formatoMoneda(precio, proyecto.inventario.moneda, idioma)}`
+              : t(UI.etiquetas.consultarPrecio, idioma)}
+          </p>
         </div>
       </div>
     </Link>

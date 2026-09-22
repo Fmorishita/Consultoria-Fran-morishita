@@ -5,7 +5,7 @@ import { CalculadoraFinanciamiento } from "@/componentes/calculadora-financiamie
 import { Mapa } from "@/componentes/mapa";
 import { VistaProyecto } from "@/componentes/vista-proyecto";
 import { Acordeon } from "@/componentes/ui/acordeon";
-import { ChipPendiente } from "@/componentes/ui/chip-pendiente";
+import { Boton } from "@/componentes/ui/boton";
 import { Revelar } from "@/componentes/ui/revelar";
 import { Seccion } from "@/componentes/ui/seccion";
 import { FormularioLead } from "@/componentes/formulario-lead";
@@ -13,11 +13,14 @@ import { Cierre } from "@/componentes/secciones/cierre";
 import { DatosProyecto } from "@/componentes/secciones/datos-proyecto";
 import { EstiloDeVida } from "@/componentes/secciones/estilo-de-vida";
 import { PorQueEnsenada } from "@/componentes/secciones/por-que-ensenada";
+import { Proceso } from "@/componentes/secciones/proceso";
+import { TablaPrecios } from "@/componentes/secciones/tabla-precios";
 import { HeroProyecto } from "@/componentes/secciones/hero-proyecto";
 import { normalizaIdioma, t } from "@/lib/i18n";
+import { icono } from "@/lib/iconos";
 import { JsonLd, migasJsonLd, proyectoJsonLd } from "@/lib/json-ld";
 import { rutas } from "@/lib/navegacion";
-import { MOSTRAR_PENDIENTES, numero, queFalta, texto } from "@/lib/pendiente";
+import { numero, texto } from "@/lib/pendiente";
 import { interesesFormulario, textosFormulario } from "@/lib/textos";
 import { permitirIndexacion } from "@/lib/url-sitio";
 import { CAPTURA_PROPIEDAD, CIERRE_PROYECTO } from "@contenido/paginas/proyectos";
@@ -61,7 +64,6 @@ export default async function PaginaProyecto({ params }: Props) {
 
   const r = rutas(idioma);
   const pitch = proyecto.pitch.map((parrafo) => texto(parrafo, idioma)).filter(Boolean) as string[];
-  const pitchPendiente = proyecto.pitch.map(queFalta).filter(Boolean) as string[];
   const direccion = texto(proyecto.ubicacion.direccion, idioma);
   const tiempos = proyecto.ubicacion.tiemposClave
     .map((tiempo) => ({ destino: t(tiempo.destino, idioma), minutos: numero(tiempo.minutos) }))
@@ -69,10 +71,11 @@ export default async function PaginaProyecto({ params }: Props) {
   const faq = proyecto.faq
     .map((item) => ({ p: texto(item.p, idioma), r: texto(item.r, idioma) }))
     .filter((item): item is { p: string; r: string } => Boolean(item.p && item.r));
-  const mostrarPrecios = proyecto.autorizado || MOSTRAR_PENDIENTES;
   const enganchePct = numero(proyecto.financiamiento?.engancheMinPct);
   const tasaAnual = numero(proyecto.financiamiento?.tasaAnualPct);
   const esquemaFinanciamiento = texto(proyecto.financiamiento?.esquema, idioma);
+  const notaFinanciamiento = texto(proyecto.financiamiento?.nota, idioma);
+  const mensajeProyecto = t(proyecto.whatsapp.mensajePrefill, idioma);
 
   return (
     <>
@@ -89,144 +92,142 @@ export default async function PaginaProyecto({ params }: Props) {
       <HeroProyecto proyecto={proyecto} idioma={idioma} />
 
       <Seccion>
-        {pitch.length > 0 ? (
-          <Revelar className="max-w-3xl space-y-6">
-            {pitch.map((parrafo, indice) => (
-              <p key={indice} className="cuerpo text-lg">
-                {parrafo}
-              </p>
-            ))}
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          {pitch.length > 0 ? (
+            <Revelar className="space-y-6">
+              {pitch.map((parrafo) => (
+                <p key={parrafo} className="cuerpo text-lg">
+                  {parrafo}
+                </p>
+              ))}
+            </Revelar>
+          ) : null}
+          <Revelar retraso={80}>
+            <p className="etiqueta-dato">{t(UI.secciones.fichaTecnica, idioma)}</p>
+            <div className="mt-6">
+              <DatosProyecto proyecto={proyecto} idioma={idioma} />
+            </div>
           </Revelar>
-        ) : (
-          <div className="flex flex-col gap-2">
-            {pitchPendiente.map((falta, indice) => (
-              <ChipPendiente key={indice}>{falta}</ChipPendiente>
-            ))}
-          </div>
-        )}
-
-        <div className="mt-16">
-          <DatosProyecto proyecto={proyecto} idioma={idioma} />
         </div>
       </Seccion>
 
-      {(direccion || tiempos.length > 0 || MOSTRAR_PENDIENTES) && (
-        <Seccion className="bg-superficie">
-          <h2 className="titular titular-lg">{t(UI.secciones.ubicacion, idioma)}</h2>
-          <div className="mt-10 grid gap-10 lg:grid-cols-2">
-            <Revelar>
-              <Mapa
-                direccion={direccion}
-                coords={proyecto.ubicacion.coords}
-                imagen={proyecto.ubicacion.mapaEstatico}
-                etiquetaBoton={t(UI.cta.verEnMapa, idioma)}
-                alt={`${proyecto.nombre}, ${proyecto.ciudad}`}
-              />
-              <ChipPendiente>{queFalta(proyecto.ubicacion.direccion)}</ChipPendiente>
-            </Revelar>
-            <Revelar retraso={80}>
-              {tiempos.length > 0 ? (
-                <ul className="divide-y divide-borde border-y border-borde">
-                  {tiempos.map((tiempo) => (
-                    <li key={tiempo.destino} className="flex items-baseline justify-between gap-6 py-5">
-                      <span className="text-texto-suave">{tiempo.destino}</span>
-                      <span className="titular titular-sm text-acento-suave">
-                        {tiempo.minutos} {t(UI.etiquetas.minutos, idioma)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <ChipPendiente>tiempos clave a destinos (ej. minutos al Valle de Guadalupe)</ChipPendiente>
-              )}
-            </Revelar>
-          </div>
-        </Seccion>
-      )}
-
-      {(proyecto.amenidades.length > 0 || MOSTRAR_PENDIENTES) && (
-        <Seccion>
-          <h2 className="titular titular-lg">{t(UI.secciones.amenidades, idioma)}</h2>
-          {proyecto.amenidades.length > 0 ? (
-            <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-borde pt-8">
-              {proyecto.amenidades.map((amenidad) => (
-                <li key={amenidad.texto.es} className="flex items-baseline gap-3 text-texto-suave">
-                  <span aria-hidden className="h-px w-5 shrink-0 translate-y-[-0.3em] bg-acento" />
-                  <span className="max-w-xs">{t(amenidad.texto, idioma)}</span>
+      {proyecto.amenidades.length > 0 ? (
+        <Seccion className="border-y border-borde bg-superficie">
+          <h2 className="titular titular-lg max-w-2xl">{t(UI.secciones.amenidades, idioma)}</h2>
+          <ul className="mt-14 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {proyecto.amenidades.map((amenidad) => {
+              const Icono = icono(amenidad.icono);
+              return (
+                <li key={amenidad.texto.es} className="border-t border-borde pt-6">
+                  <Icono aria-hidden className="size-6 text-acento" strokeWidth={1.5} />
+                  <p className="mt-4 leading-relaxed text-texto">{t(amenidad.texto, idioma)}</p>
                 </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="mt-8">
-              <ChipPendiente>lista de amenidades del desarrollo</ChipPendiente>
-            </div>
-          )}
+              );
+            })}
+          </ul>
         </Seccion>
-      )}
+      ) : null}
 
-      <EstiloDeVida
-        idioma={idioma}
-        imagen={proyecto.galeria[0]?.src}
-        altImagen={proyecto.galeria[0] ? t(proyecto.galeria[0].alt, idioma) : undefined}
-        className="bg-superficie"
-      />
-
-      <PorQueEnsenada idioma={idioma} />
-
-      {proyecto.galeria.length > 0 && mostrarPrecios ? (
-        <Seccion className="bg-superficie">
+      {proyecto.galeria.length > 0 ? (
+        <Seccion>
           <h2 className="titular titular-lg">{t(UI.secciones.galeria, idioma)}</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {proyecto.galeria.map((imagen) => (
-              <div key={imagen.src} className="relative aspect-[4/3] overflow-hidden border border-borde">
+          <div className="mt-12 grid gap-4 md:grid-cols-6">
+            {proyecto.galeria.map((imagen, indice) => (
+              <div
+                key={imagen.src}
+                className={`relative overflow-hidden border border-borde bg-superficie ${
+                  indice === 0
+                    ? "aspect-16/10 md:col-span-4"
+                    : indice === 1
+                      ? "aspect-4/3 md:col-span-2"
+                      : "aspect-16/9 md:col-span-6"
+                }`}
+              >
                 <Image
                   src={imagen.src}
                   alt={t(imagen.alt, idioma)}
                   fill
-                  sizes="(max-width: 768px) 100vw, 420px"
+                  sizes="(max-width: 768px) 100vw, 620px"
                   className="object-cover"
                 />
               </div>
             ))}
           </div>
         </Seccion>
-      ) : (
-        <Seccion className="bg-superficie py-12">
-          <ChipPendiente>fotos y renders autorizados para la galería</ChipPendiente>
-        </Seccion>
-      )}
+      ) : null}
 
-      {proyecto.financiamiento && mostrarPrecios ? (
-        <Seccion>
+      {direccion ? (
+        <Seccion className="border-t border-borde bg-superficie">
+          <h2 className="titular titular-lg">{t(UI.secciones.ubicacion, idioma)}</h2>
+          <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
+            <Revelar>
+              <Mapa
+                direccion={direccion}
+                coords={proyecto.ubicacion.coords}
+                imagen={proyecto.ubicacion.mapaEstatico}
+                etiquetaBoton={t(UI.cta.verEnMapa, idioma)}
+                etiquetaDireccion={t(UI.etiquetas.direccion, idioma)}
+                alt={`${proyecto.nombre}, ${proyecto.ciudad}`}
+              />
+            </Revelar>
+            {tiempos.length > 0 ? (
+              <Revelar retraso={80}>
+                <ul className="divide-y divide-borde border-y border-borde">
+                  {tiempos.map((tiempo) => (
+                    <li key={tiempo.destino} className="flex items-baseline justify-between gap-6 py-5">
+                      <span className="text-texto-suave">{tiempo.destino}</span>
+                      <span className="titular titular-sm text-acento">
+                        {tiempo.minutos} {t(UI.etiquetas.minutos, idioma)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </Revelar>
+            ) : null}
+          </div>
+        </Seccion>
+      ) : null}
+
+      {proyecto.listaPrecios ? (
+        <Seccion id="precios">
+          <h2 className="titular titular-lg max-w-2xl">{t(UI.secciones.precios, idioma)}</h2>
+          <TablaPrecios
+            lista={proyecto.listaPrecios}
+            moneda={proyecto.inventario.moneda}
+            enganchePct={enganchePct}
+            idioma={idioma}
+          />
+        </Seccion>
+      ) : null}
+
+      {proyecto.financiamiento ? (
+        <Seccion className={proyecto.listaPrecios ? "border-t border-borde bg-superficie" : undefined}>
           <h2 className="titular titular-lg">{t(UI.secciones.financiamiento, idioma)}</h2>
 
-          <div className="mt-8 flex flex-col gap-4 border-t border-borde pt-8 sm:flex-row sm:items-baseline sm:gap-12">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-texto-suave">
-                {t(UI.calculadora.plazosDisponibles, idioma)}
+          <div className="mt-10 flex flex-col gap-6 border-t border-borde pt-8 sm:flex-row sm:items-baseline sm:gap-14">
+            <div className="flex-none">
+              <p className="etiqueta-dato">{t(UI.calculadora.plazosDisponibles, idioma)}</p>
+              <p className="cifra mt-3 text-[clamp(2rem,5vw,3rem)] text-acento">
+                {proyecto.financiamiento.plazosMeses.join(" / ")}
               </p>
-              <p className="titular titular-sm mt-2">
-                {proyecto.financiamiento.plazosMeses.join(" / ")} {t(UI.calculadora.meses, idioma)}
-              </p>
+              <p className="mt-2 text-sm text-texto-suave">{t(UI.calculadora.meses, idioma)}</p>
             </div>
             {esquemaFinanciamiento ? <p className="cuerpo max-w-md text-base">{esquemaFinanciamiento}</p> : null}
           </div>
 
-          <div className="mt-10">
-            <ChipPendiente>{queFalta(proyecto.financiamiento.engancheMinPct)}</ChipPendiente>
-            <ChipPendiente>{queFalta(proyecto.financiamiento.tasaAnualPct)}</ChipPendiente>
-            <ChipPendiente>{queFalta(proyecto.financiamiento.nota)}</ChipPendiente>
-          </div>
+          {notaFinanciamiento ? (
+            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-texto-suave">{notaFinanciamiento}</p>
+          ) : null}
 
           {enganchePct !== undefined && tasaAnual !== undefined ? (
-            <div className="mt-6">
+            <div className="mt-12">
               <CalculadoraFinanciamiento
                 idioma={idioma}
                 moneda={proyecto.inventario.moneda}
                 engancheMinPct={enganchePct}
                 plazosMeses={proyecto.financiamiento.plazosMeses}
                 tasaAnualPct={tasaAnual}
-                precioInicial={proyecto.autorizado ? numero(proyecto.inventario.precioDesde) : undefined}
+                precioInicial={numero(proyecto.inventario.precioDesde)}
                 contexto={proyecto.slug}
                 textos={{
                   titulo: t(UI.calculadora.titulo, idioma),
@@ -244,29 +245,46 @@ export default async function PaginaProyecto({ params }: Props) {
                 }}
                 whatsapp={{
                   numero: SITIO.whatsapp.numero,
-                  mensajeBase: t(proyecto.whatsapp.mensajePrefill, idioma),
+                  mensajeBase: mensajeProyecto,
                   keyword: proyecto.whatsapp.keyword,
                 }}
               />
             </div>
-          ) : null}
+          ) : (
+            <Revelar className="mt-10">
+              <Boton asChild variante="secundario" tamano="lg">
+                <a href="#expediente">{t(UI.cta.solicitarPrecios, idioma)}</a>
+              </Boton>
+            </Revelar>
+          )}
         </Seccion>
       ) : null}
 
+      <PorQueEnsenada idioma={idioma} className="border-t border-borde bg-superficie" />
+
+      <EstiloDeVida
+        idioma={idioma}
+        imagen={proyecto.galeria[0]?.src}
+        altImagen={proyecto.galeria[0] ? t(proyecto.galeria[0].alt, idioma) : undefined}
+      />
+
+      <Proceso idioma={idioma}>
+        <Boton asChild variante="secundario" tamano="lg">
+          <a href="#expediente">{t(UI.cta.solicitarInformacion, idioma)}</a>
+        </Boton>
+      </Proceso>
+
       {faq.length > 0 ? (
-        <Seccion className="bg-superficie">
-          <h2 className="titular titular-lg mb-10">{t(UI.secciones.faq, idioma)}</h2>
+        <Seccion>
+          <h2 className="titular titular-lg mb-12 max-w-2xl">{t(UI.secciones.faq, idioma)}</h2>
           <Acordeon items={faq} />
         </Seccion>
-      ) : (
-        <Seccion className="bg-superficie py-12">
-          <ChipPendiente>preguntas frecuentes del proyecto (con respuestas)</ChipPendiente>
-        </Seccion>
-      )}
+      ) : null}
 
-      <Seccion>
+      <Seccion id="expediente" className="border-t border-borde bg-superficie">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Revelar>
+            <p className="antetitulo mb-6">{t(CAPTURA_PROPIEDAD.antetitulo, idioma)}</p>
             <h2 className="titular titular-lg">{t(CAPTURA_PROPIEDAD.titulo, idioma)}</h2>
             <p className="cuerpo mt-6 max-w-md">{t(CAPTURA_PROPIEDAD.texto, idioma)}</p>
           </Revelar>
@@ -289,7 +307,9 @@ export default async function PaginaProyecto({ params }: Props) {
         titulo={t(CIERRE_PROYECTO.titulo, idioma)}
         texto={t(CIERRE_PROYECTO.texto, idioma)}
         contexto={`${proyecto.slug}-cierre`}
-        mensaje={t(proyecto.whatsapp.mensajePrefill, idioma)}
+        mensaje={mensajeProyecto}
+        imagen={proyecto.galeria[1]?.src}
+        altImagen={proyecto.galeria[1] ? t(proyecto.galeria[1].alt, idioma) : undefined}
       />
     </>
   );
