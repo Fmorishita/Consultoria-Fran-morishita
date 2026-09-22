@@ -8,12 +8,6 @@ const nextConfig: NextConfig = {
         hostname: "lpdqksuvccsocntditik.supabase.co",
         pathname: "/storage/v1/object/public/**",
       },
-      {
-        // Fotos oficiales del desarrollo Alta Tierra.
-        protocol: "https",
-        hostname: "altatierra.mx",
-        pathname: "/wp-content/uploads/**",
-      },
     ],
     formats: ["image/avif", "image/webp"],
   },

@@ -2,7 +2,10 @@ import { esquemaProyecto, type Proyecto } from "@contenido/esquemas";
 import { pendiente } from "@/lib/pendiente";
 import { SITIO } from "@contenido/sitio";
 
-const OFICIAL = "https://altatierra.mx/wp-content/uploads";
+// Copias locales de las fotos del sitio oficial (altatierra.mx). Se sirven
+// desde /public para que la ficha no dependa de que el desarrollador
+// mantenga sus URLs.
+const FOTOS = "/imagenes/alta-tierra";
 
 /**
  * Datos tomados del sitio oficial del desarrollo (altatierra.mx).
@@ -28,7 +31,7 @@ export const altaTierra: Proyecto = esquemaProyecto.parse({
   tipo: "lotes",
   estado: "entrega-inmediata",
   hero: {
-    imagen: `${OFICIAL}/2025/11/WhatsApp-Image-2025-11-26-at-13.41.05.jpeg`,
+    imagen: `${FOTOS}/vista-bahia.jpg`,
     titulo: {
       es: "Alta Tierra",
       en: "Alta Tierra",
@@ -54,6 +57,7 @@ export const altaTierra: Proyecto = esquemaProyecto.parse({
   ],
   ubicacion: {
     direccion: "De La Paz 95, Zona Playitas, 22820 Ensenada, Baja California",
+    zona: "Zona Playitas",
     tiemposClave: [],
   },
   amenidades: [
@@ -80,6 +84,10 @@ export const altaTierra: Proyecto = esquemaProyecto.parse({
     esquema: {
       es: "Directo con el desarrollo, sin instituciones bancarias: 20% de enganche y el saldo en 12 o 24 pagos sin intereses.",
       en: "Direct with the development, no banks involved: 20% down and the balance over 12 or 24 interest-free payments.",
+    },
+    resumen: {
+      es: "Directo, sin banco: 20% y 12 o 24 meses sin intereses",
+      en: "Direct, no bank: 20% down, 12 or 24 months interest free",
     },
     nota: {
       es: "El apartado del lote es de 1,000 USD y es reembolsable. El precio de lista no incluye gastos de escrituración. El desarrollo también ofrece plazos más largos de financiamiento directo; esas condiciones se confirman por lote.",
@@ -115,21 +123,21 @@ export const altaTierra: Proyecto = esquemaProyecto.parse({
   },
   galeria: [
     {
-      src: `${OFICIAL}/2026/02/at-20.jpg`,
+      src: `${FOTOS}/familia-calle.jpg`,
       alt: {
         es: "Familia recorriendo las calles urbanizadas de Alta Tierra al atardecer",
         en: "A family walking the urbanized streets of Alta Tierra at sunset",
       },
     },
     {
-      src: `${OFICIAL}/2025/11/WhatsApp-Image-2025-11-26-at-13.41.05.jpeg`,
+      src: `${FOTOS}/vista-bahia.jpg`,
       alt: {
         es: "Vista aérea de la bahía de Ensenada desde la ladera de Alta Tierra",
         en: "Aerial view of Ensenada bay from the Alta Tierra hillside",
       },
     },
     {
-      src: `${OFICIAL}/2025/11/at-26-scaled.jpg`,
+      src: `${FOTOS}/modulo-ventas.jpg`,
       alt: {
         es: "Compradores revisando la planta arquitectónica en el módulo de ventas de Alta Tierra",
         en: "Buyers reviewing the floor plan at the Alta Tierra sales office",

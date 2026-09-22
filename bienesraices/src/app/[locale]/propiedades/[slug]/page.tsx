@@ -75,6 +75,7 @@ export default async function PaginaProyecto({ params }: Props) {
   const tasaAnual = numero(proyecto.financiamiento?.tasaAnualPct);
   const esquemaFinanciamiento = texto(proyecto.financiamiento?.esquema, idioma);
   const notaFinanciamiento = texto(proyecto.financiamiento?.nota, idioma);
+  const plazos = proyecto.financiamiento?.plazosMeses;
   const mensajeProyecto = t(proyecto.whatsapp.mensajePrefill, idioma);
 
   return (
@@ -205,13 +206,13 @@ export default async function PaginaProyecto({ params }: Props) {
           <h2 className="titular titular-lg">{t(UI.secciones.financiamiento, idioma)}</h2>
 
           <div className="mt-10 flex flex-col gap-6 border-t border-borde pt-8 sm:flex-row sm:items-baseline sm:gap-14">
-            <div className="flex-none">
-              <p className="etiqueta-dato">{t(UI.calculadora.plazosDisponibles, idioma)}</p>
-              <p className="cifra mt-3 text-[clamp(2rem,5vw,3rem)] text-acento">
-                {proyecto.financiamiento.plazosMeses.join(" / ")}
-              </p>
-              <p className="mt-2 text-sm text-texto-suave">{t(UI.calculadora.meses, idioma)}</p>
-            </div>
+            {plazos?.length ? (
+              <div className="flex-none">
+                <p className="etiqueta-dato">{t(UI.calculadora.plazosDisponibles, idioma)}</p>
+                <p className="cifra mt-3 text-[clamp(2rem,5vw,3rem)] text-acento">{plazos.join(" / ")}</p>
+                <p className="mt-2 text-sm text-texto-suave">{t(UI.calculadora.meses, idioma)}</p>
+              </div>
+            ) : null}
             {esquemaFinanciamiento ? <p className="cuerpo max-w-md text-base">{esquemaFinanciamiento}</p> : null}
           </div>
 
@@ -219,13 +220,13 @@ export default async function PaginaProyecto({ params }: Props) {
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-texto-suave">{notaFinanciamiento}</p>
           ) : null}
 
-          {enganchePct !== undefined && tasaAnual !== undefined ? (
+          {enganchePct !== undefined && tasaAnual !== undefined && plazos?.length ? (
             <div className="mt-12">
               <CalculadoraFinanciamiento
                 idioma={idioma}
                 moneda={proyecto.inventario.moneda}
                 engancheMinPct={enganchePct}
-                plazosMeses={proyecto.financiamiento.plazosMeses}
+                plazosMeses={plazos}
                 tasaAnualPct={tasaAnual}
                 precioInicial={numero(proyecto.inventario.precioDesde)}
                 contexto={proyecto.slug}

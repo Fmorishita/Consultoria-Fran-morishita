@@ -63,6 +63,8 @@ export const esquemaProyecto = z.object({
   pitch: z.array(esquemaI18n).min(1),
   ubicacion: z.object({
     direccion: z.string().min(1),
+    /** Nombre corto de la zona para tarjetas y comparador: "Zona Playitas". */
+    zona: z.string().optional(),
     coords: z.tuple([z.number(), z.number()]).optional(),
     mapaEstatico: z.string().optional(),
     tiemposClave: z.array(z.object({ destino: esquemaI18n, minutos: numeroQuiza })).default([]),
@@ -79,11 +81,14 @@ export const esquemaProyecto = z.object({
   financiamiento: z
     .object({
       engancheMinPct: numeroQuiza.optional(),
-      plazosMeses: z.array(z.number().int().positive()).min(1),
+      /** Solo plazos publicados por el desarrollo. Sin ellos no se pinta la cifra de plazos. */
+      plazosMeses: z.array(z.number().int().positive()).min(1).optional(),
       /** 0 = sin intereses. Sin este dato no se pinta la calculadora. */
       tasaAnualPct: numeroQuiza.optional(),
       /** "directo con el desarrollador", "con banco", etc. */
       esquema: esquemaI18n.optional(),
+      /** Una línea para el comparador: cómo se paga, sin letra chica. */
+      resumen: esquemaI18n.optional(),
       nota: esquemaI18n.optional(),
     })
     .optional(),
@@ -185,6 +190,11 @@ export const esquemaCifra = z.object({
   etiqueta: esquemaI18n,
   /** De dónde sale la cifra. Si está pendiente, la nota no se pinta. */
   respaldo: esquemaI18n.optional(),
+  /**
+   * Cifras de consultoría (facturación, clientes) que a un comprador no le
+   * dicen nada: solo se pintan en /desarrolladores.
+   */
+  soloDesarrolladores: z.boolean().default(false),
 });
 
 export type Cifra = z.infer<typeof esquemaCifra>;

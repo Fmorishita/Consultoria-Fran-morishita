@@ -43,6 +43,7 @@ export const gaiaResidencial: Proyecto = esquemaProyecto.parse({
   ],
   ubicacion: {
     direccion: "Colinas del Golfo 377, 22760 Ensenada, Baja California",
+    zona: "Colinas del Golfo",
     tiemposClave: [],
   },
   amenidades: [
@@ -62,10 +63,13 @@ export const gaiaResidencial: Proyecto = esquemaProyecto.parse({
     notaLegal: SITIO.legal.leyendaProyectos,
   },
   financiamiento: {
-    plazosMeses: [120, 180, 240],
     esquema: {
       es: "Se aceptan créditos hipotecarios de las instituciones. Los plazos y la mensualidad dependen de tu institución y de tu perfil, así que se cotizan caso por caso.",
       en: "Institutional mortgages are accepted. Terms and monthly payments depend on your lender and your profile, so they are quoted case by case.",
+    },
+    resumen: {
+      es: "Crédito hipotecario aceptado",
+      en: "Mortgages accepted",
     },
     nota: {
       es: "El precio de lista no incluye gastos notariales ni otros gastos de cierre.",

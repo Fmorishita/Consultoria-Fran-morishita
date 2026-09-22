@@ -36,5 +36,6 @@ export const TRACK_RECORD: Cifra[] = [
       es: "facturados entre proyectos propios y de clientes",
       en: "billed across my own projects and my clients'",
     },
+    soloDesarrolladores: true,
   },
 ].map((cifra) => esquemaCifra.parse(cifra));

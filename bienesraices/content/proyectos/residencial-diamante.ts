@@ -45,6 +45,7 @@ export const residencialDiamante: Proyecto = esquemaProyecto.parse({
   ],
   ubicacion: {
     direccion: "Calle Guaymas, entre Bahía Magdalena y San Felipe, Fraccionamiento Acapulco, Ensenada, Baja California",
+    zona: "Fracc. Acapulco",
     tiemposClave: [],
   },
   amenidades: [
