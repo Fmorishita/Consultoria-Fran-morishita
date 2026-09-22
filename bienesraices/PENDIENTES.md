@@ -17,20 +17,20 @@ preview aparece como un chip ámbar para que sea fácil verlos.
 
 ## `content/proyectos/alta-tierra.ts`
 
-- [ ] razón social del desarrollador de Alta Tierra para el crédito en la ficha _(línea 26)_
+- [ ] razón social del desarrollador de Alta Tierra para el crédito en la ficha _(línea 29)_
 
 ## `content/proyectos/gaia-residencial.ts`
 
 - [ ] razón social del desarrollador de Gaia Residencial para el crédito en la ficha _(línea 18)_
 - [ ] fotos o renders autorizados de Gaia Residencial _(línea 23)_
-- [ ] superficie de terreno del modelo Terra Plus _(línea 59)_
+- [ ] superficie de terreno del modelo Terra Plus _(línea 60)_
 
 ## `content/proyectos/residencial-diamante.ts`
 
 - [ ] razón social del desarrollador de Residencial Diamante para el crédito en la ficha _(línea 20)_
 - [ ] fotos autorizadas de Residencial Diamante (fachada, casa muestra y roof garden) _(línea 25)_
-- [ ] superficie de terreno de los modelos Rubí y Zafiro _(línea 61)_
-- [ ] lista de precios vigente de Residencial Diamante por modelo, confirmada con el desarrollo _(línea 62)_
+- [ ] superficie de terreno de los modelos Rubí y Zafiro _(línea 62)_
+- [ ] lista de precios vigente de Residencial Diamante por modelo, confirmada con el desarrollo _(línea 63)_
 
 ## `content/sitio.ts`
 

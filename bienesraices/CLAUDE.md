@@ -16,11 +16,15 @@ IA, CRM, pauta, leads ni embudos: el comprador no compra herramientas, y el
 desarrollador compra ritmo de colocación, no instrumental. Esa jerga solo puede
 aparecer en conversaciones privadas, nunca en el sitio.
 
-**Arquitectura del home:** hero a sangre con la fotografía del producto, desarrollo
-destacado con su ficha, por qué esta costa, la vida aquí, el proceso de compra paso
-a paso, respaldo (video vertical de Gus Marcos + cifras), resto del inventario,
-captura y cierre. Lo que explica cómo trabaja Fran con desarrolladores vive en
-`/desarrolladores` y `/portafolio`, enlazadas desde el pie.
+**Arquitectura del home:** hero partido (problema del comprador + retrato de Fran)
+con una franja de tres datos calculados del inventario, dudas del comprador
+(sección clara), desarrollo destacado, resto del inventario, la plaza (inversión y
+vida en una sola pieza, sección clara), respaldo (video vertical de Gus Marcos +
+cifras de comprador), perfiles de comprador con la ficha que les toca, equipo
+(sección clara), búsqueda a la medida y cierre. El proceso de compra paso a paso
+vive en cada ficha, y el comparativo del portafolio en `/propiedades`. Lo que
+explica cómo trabaja Fran con desarrolladores vive en `/desarrolladores` y
+`/portafolio`, enlazadas desde el pie.
 
 ## Stack
 
@@ -79,7 +83,14 @@ Lo que hay que respetar al tocar la interfaz:
 - **Presupuesto de antetítulos:** máximo 1 por cada 3 secciones (el hero cuenta).
   Si una sección necesita nombre, se lo pone el titular, no un rótulo.
 - **Hero:** subtexto de 20 palabras máximo, titular de 2 o 3 líneas cortas,
-  CTA visible sin scroll y la fotografía del producto a sangre.
+  CTA visible sin scroll. En el home el retrato de Fran va como pieza, no de
+  fondo; en las fichas, la fotografía del producto a sangre.
+- **Secciones claras:** `.seccion-clara` invierte los tokens a alabastro dentro de
+  la dirección A. Máximo una de cada tres secciones, nunca dos seguidas.
+- **Sin fotografía no hay hueco:** tarjeta o portada sin foto usa `.topografia`
+  (lámina de curvas de nivel en latón) con el nombre del desarrollo.
+- **Cifras del hero y del comparador:** se calculan del contenido, nunca se
+  teclean. Una cifra de volumen para desarrolladores lleva `soloDesarrolladores`.
 - **CTA por intención, no por canal.** Cada intención tiene un solo rótulo en todo
   el sitio (agendar visita / solicitar información / pedir lista de precios /
   conocer el desarrollo / escribir por WhatsApp) y nunca se repiten dos veces en
