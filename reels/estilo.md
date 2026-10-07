@@ -1,0 +1,32 @@
+# estilo.md · edición "dopamínica" (creado en inmo-01)
+
+No había `estilo.md` previo ni `referencia/referencia.mp4`: este estilo se definió en el primer reel. Valores medidos del render de `inmo-01`.
+
+## Ritmo
+- Corte o cambio visual cada **1–3 s**; ninguna toma fija más de ~4 s sin un evento (pop, punch-in, sello, contador).
+- Silencios de la voz recortados a ≤ 0.15 s (pausas internas > 0.2 s se comprimen).
+- Gancho: impacto + flash + texto que "cae" (escala 2.4→1 con blur) en el fotograma 1.
+
+## Transiciones
+- Primaria: **whip** lateral/vertical con blur 18 px, 0.24–0.3 s, con whoosh.
+- Acentos: zoom-through en el giro ("SISTEMA"), corte con flash al testimonio, flash blanco + escala al CTA.
+- Glitch + tinte rojo + shake solo en momentos de pérdida.
+
+## Movimiento
+- Fondos siempre vivos: brillo radial que respira, retícula dorada que se desplaza, grano de película (7 %).
+- Impactos: shake de cámara 6 pasos (±16 px) + flash 0.2–0.35 s + punch-in 1.04–1.07.
+- Mockups entran con back.out; checks con back.out(2.4–2.6).
+
+## Subtítulos
+- Palabra por palabra, Sora 800, 76 px, MAYÚSCULAS, centrados en y ≈ 1066–1216 (dentro del área útil).
+- Bloques de ≤ 3 palabras / ≤ 15 caracteres; palabra activa con caja dorada y texto oscuro + pop 1.14→1.
+- Palabras clave del nicho en dorado aunque no estén activas.
+
+## Audio
+- Música original sintetizada (trap oscuro 140 BPM, Fa menor): tensión → breakdown con riser → drop en la palabra "sistema" → cama suave bajo el testimonio → drop en el CTA.
+- Ducking por actividad de voz: música −10 dB bajo la voz, −15 dB bajo el testimonio.
+- SFX en cada evento visual (impact, whoosh, ding, pop, tick, glitch, swipe, coins).
+- Master: −14 LUFS integrados (estéreo), pico real ≤ −1 dBTP (se mezcla a −2 dBTP para margen del AAC).
+
+## Reglas aprendidas
+- (vacío: se llena con las correcciones que Fran apruebe)

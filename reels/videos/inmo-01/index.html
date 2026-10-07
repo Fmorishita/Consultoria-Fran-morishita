@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>inmo-01 · Desarrolladores · Fran Morishita</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+
+      :root {
+        --bg: #07090f;
+        --bg2: #0c1018;
+        --surface: #11161f;
+        --surface2: #161d29;
+        --line: #273041;
+        --text: #f4f6fb;
+        --muted: #9aa3b5;
+        --gold: #e8b34b;
+        --gold-l: #ffd98a;
+        --gold-d: #b8842a;
+        --blue: #4b7bff;
+        --red: #ff4d5e;
+        --green: #34d27b;
+        --chat-bg: #0b141a;
+        --chat-in: #1f2c34;
+        --chat-out: #0b5c4a;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Sora", sans-serif; color: var(--text); background: var(--bg); }
+      #cam { position: absolute; inset: 0; }
+
+      /* ---------- fondo persistente ---------- */
+      #bg-base { position: absolute; inset: 0; background: var(--bg); overflow: hidden; }
+      .glow { position: absolute; border-radius: 50%; }
+      #glow1 { width: 1300px; height: 1300px; left: 180px; top: -380px; background: radial-gradient(circle, rgba(232,179,75,0.30) 0%, rgba(232,179,75,0) 65%); }
+      #glow2 { width: 1200px; height: 1200px; left: -520px; top: 980px; background: radial-gradient(circle, rgba(75,123,255,0.20) 0%, rgba(75,123,255,0) 65%); }
+      #grid { position: absolute; inset: -200px; background-image: linear-gradient(rgba(232,179,75,0.07) 2px, transparent 2px), linear-gradient(90deg, rgba(232,179,75,0.07) 2px, transparent 2px); background-size: 120px 120px; }
+
+      .scene { position: absolute; inset: 0; opacity: 0; overflow: hidden; }
+      #sA { opacity: 1; }
+      .bgimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .shade { position: absolute; inset: 0; }
+
+      /* ---------- tipografía ---------- */
+      .kicker { position: absolute; left: 65px; top: 300px; display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 30px; letter-spacing: 0.14em; color: var(--gold-l); text-transform: uppercase; }
+      .kicker .dot { display: block; width: 14px; height: 14px; border-radius: 50%; background: var(--gold); }
+      .gold { color: var(--gold); }
+      .demo-tag { position: absolute; font-family: "Inter", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.12em; color: #0b0d12; background: var(--gold-l); padding: 6px 14px; border-radius: 8px; }
+
+      /* ---------- A · gancho ---------- */
+      #a-title { position: absolute; left: 0; right: 0; top: 340px; text-align: center; font-weight: 800; font-size: 106px; letter-spacing: -0.035em; color: var(--gold); text-shadow: 0 10px 40px rgba(232,179,75,0.35); }
+      #a-notif { position: absolute; left: 90px; top: 540px; width: 900px; height: 250px; border-radius: 40px; background: rgba(28,34,46,0.94); border: 3px solid rgba(255,255,255,0.10); box-shadow: 0 30px 80px rgba(0,0,0,0.55); padding: 30px 36px; font-family: "Inter", sans-serif; }
+      .notif-top { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 27px; font-weight: 700; letter-spacing: 0.04em; }
+      .notif-ico { color: #fff; display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 14px; background: linear-gradient(135deg, #4b7bff, #8a5cff); font-size: 30px; }
+      .notif-time { margin-left: auto; font-weight: 400; }
+      .notif-title { margin-top: 18px; font-size: 36px; font-weight: 700; color: #fff; }
+      .notif-body { margin-top: 8px; font-size: 33px; color: #d7dce6; }
+      #a-clock { position: absolute; left: 0; right: 0; top: 840px; text-align: center; font-weight: 800; font-size: 150px; letter-spacing: -0.04em; color: #fff; text-shadow: 0 0 60px rgba(75,123,255,0.55); }
+      #a-clock small { font-size: 70px; color: var(--muted); letter-spacing: 0; }
+      #a-stamp { position: absolute; left: 190px; top: 585px; width: 700px; padding: 14px 0 18px; text-align: center; border: 10px solid var(--red); border-radius: 22px; color: var(--red); font-weight: 800; font-size: 104px; letter-spacing: 0.04em; background: rgba(20,6,10,0.55); }
+      #a-stamp span { display: block; font-size: 34px; letter-spacing: 0.08em; font-weight: 700; margin-top: -6px; }
+
+      /* ---------- chat (B, E1) ---------- */
+      .phone { position: absolute; left: 130px; width: 820px; border-radius: 48px; background: var(--chat-bg); border: 4px solid #2a3442; box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 0 0 10px rgba(255,255,255,0.03); overflow: hidden; font-family: "Inter", sans-serif; }
+      .chat-head { display: flex; align-items: center; gap: 20px; height: 120px; padding: 0 30px; background: #1b262e; }
+      .avatar { display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: #3a4a56; font-size: 36px; }
+      .chat-name { font-size: 32px; font-weight: 700; color: #e9edef; }
+      .chat-sub { font-size: 24px; color: #8696a0; margin-top: 2px; }
+      .chat-body { position: relative; padding: 30px 28px; }
+      .msg { position: relative; max-width: 600px; margin-bottom: 22px; padding: 18px 24px 16px; border-radius: 26px; font-size: 32px; line-height: 1.32; color: #e9edef; }
+      .msg .t { display: block; text-align: right; font-size: 21px; color: rgba(233,237,239,0.6); margin-top: 6px; }
+      .msg.in { background: var(--chat-in); border-top-left-radius: 8px; }
+      .msg.out { background: var(--chat-out); margin-left: auto; border-top-right-radius: 8px; }
+      .msg.ai { background: linear-gradient(135deg, #2a2412, #3b2f12); border: 2px solid rgba(232,179,75,0.6); margin-left: auto; border-top-right-radius: 8px; }
+      .msg.ai .who { display: block; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: var(--gold-l); margin-bottom: 6px; }
+      .typing { position: absolute; right: 28px; top: 200px; display: flex; gap: 10px; width: 140px; margin-left: auto; padding: 24px 28px; border-radius: 26px; background: rgba(232,179,75,0.18); border: 2px solid rgba(232,179,75,0.5); }
+      .typing i { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--gold-l); }
+      .skip { display: flex; align-items: center; justify-content: center; gap: 14px; width: 560px; margin: 8px auto 26px; padding: 14px 20px; border-radius: 40px; background: rgba(255,77,94,0.16); border: 3px solid var(--red); color: #ffb3bb; font-size: 32px; font-weight: 700; }
+
+      /* ---------- C · lana ---------- */
+      .money-card { position: absolute; left: 110px; width: 860px; height: 190px; border-radius: 34px; display: flex; align-items: center; gap: 30px; padding: 0 40px; background: rgba(17,22,31,0.92); border: 3px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+      .money-card .ico { font-size: 80px; }
+      .money-card .lbl { font-size: 26px; font-weight: 700; letter-spacing: 0.14em; color: var(--muted); }
+      .money-card .big { font-size: 50px; white-space: nowrap; font-weight: 800; letter-spacing: -0.02em; }
+      .chip { display: inline-block; font-family: "Inter", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.06em; padding: 8px 16px; border-radius: 12px; }
+      .money-card .chip { margin-left: auto; }
+      #c-ad { top: 340px; }
+      #c-comp { top: 840px; border-color: var(--red); }
+      .bill { position: absolute; left: 440px; top: 520px; width: 200px; height: 112px; border-radius: 16px; background: linear-gradient(135deg, #2f8f55, #1f6b3e); border: 4px solid #8fe0ad; color: #d9ffe6; font-weight: 800; font-size: 64px; box-shadow: 0 16px 40px rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; }
+
+      /* ---------- D · giro ---------- */
+      .d-line { position: absolute; left: 0; right: 0; text-align: center; font-weight: 800; letter-spacing: -0.03em; }
+      #d1 { top: 380px; font-size: 86px; color: #fff; }
+      #d2 { top: 485px; font-size: 118px; color: #fff; }
+      #d2 .strike-wrap { position: relative; display: inline-block; }
+      #d-strike { position: absolute; left: -16px; right: -16px; top: 52%; height: 16px; border-radius: 8px; background: var(--red); }
+      #d3 { top: 700px; font-size: 72px; color: var(--muted); }
+      #d4 { top: 780px; font-size: 196px; white-space: nowrap; color: var(--gold); text-shadow: 0 0 80px rgba(232,179,75,0.55); }
+      #d-ring { position: absolute; left: 290px; top: 640px; width: 500px; height: 500px; border-radius: 50%; border: 10px solid var(--gold); opacity: 0; }
+      .ghost { position: absolute; display: block; overflow: visible; }
+
+      /* ---------- E · sistema ---------- */
+      .step { position: absolute; left: 65px; top: 290px; display: flex; align-items: center; gap: 24px; }
+      .step .num { font-weight: 800; font-size: 108px; line-height: 1; color: var(--gold); letter-spacing: -0.04em; }
+      .step .txt { font-weight: 800; font-size: 48px; line-height: 1.05; letter-spacing: -0.02em; }
+      .step .txt small { display: block; font-size: 26px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted); }
+      .dots { position: absolute; right: 65px; top: 330px; display: flex; gap: 12px; }
+      .dots i { display: block; width: 46px; height: 12px; border-radius: 6px; background: rgba(255,255,255,0.18); }
+      .dots i.on { background: var(--gold); }
+      .badge { position: absolute; display: flex; align-items: center; gap: 12px; padding: 16px 26px; border-radius: 24px; font-weight: 800; font-size: 38px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+      #e1-badges { position: absolute; left: 0; right: 0; top: 968px; display: flex; justify-content: center; gap: 22px; }
+      #e1-badges .badge { position: relative; }
+      #e1-fast { background: var(--gold); color: #0b0d12; }
+      #e1-247 { background: #1a2440; color: #fff; border: 3px solid var(--blue); }
+
+      .card { position: absolute; left: 90px; width: 900px; border-radius: 36px; background: rgba(17,22,31,0.95); border: 3px solid var(--line); box-shadow: 0 40px 100px rgba(0,0,0,0.55); font-family: "Inter", sans-serif; }
+      .card-h { display: flex; align-items: center; justify-content: space-between; padding: 26px 34px; border-bottom: 2px solid var(--line); font-family: "Sora", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.1em; color: var(--muted); }
+      .q-row { display: flex; align-items: center; gap: 22px; height: 100px; padding: 0 34px; border-bottom: 2px solid rgba(255,255,255,0.05); }
+      .q-row .qi { font-size: 46px; }
+      .q-row .ql { font-size: 28px; color: var(--muted); font-weight: 700; }
+      .q-row .qv { font-size: 36px; color: #fff; font-weight: 700; }
+      .q-row .ok { margin-left: auto; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 50%; background: var(--green); color: #052012; font-size: 34px; font-weight: 900; }
+      .score { padding: 26px 34px 30px; }
+      .score-top { display: flex; justify-content: space-between; font-size: 28px; font-weight: 700; color: var(--muted); }
+      .score-top b { color: var(--gold-l); font-size: 34px; }
+      .bar { position: relative; height: 22px; margin-top: 14px; border-radius: 11px; background: rgba(255,255,255,0.08); overflow: hidden; }
+      .bar-fill { position: absolute; left: 0; top: 0; width: 92%; height: 100%; border-radius: 11px; background: linear-gradient(90deg, var(--gold-d), var(--gold-l)); }
+      #e2-hot { right: 90px; top: 962px; background: #ff6a3d; color: #fff; }
+
+      #e3-cal { top: 420px; height: 160px; display: flex; align-items: center; gap: 26px; padding: 0 34px; }
+      #e3-cal .ci { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 96px; height: 100px; border-radius: 18px; background: #fff; color: #0b0d12; font-family: "Sora", sans-serif; }
+      #e3-cal .ci b { font-size: 46px; line-height: 1; }
+      #e3-cal .ci small { font-size: 20px; font-weight: 700; color: var(--red); letter-spacing: 0.1em; }
+      #e3-cal .ct { font-size: 33px; font-weight: 700; white-space: nowrap; }
+      #e3-cal .cs { font-size: 27px; color: var(--muted); margin-top: 4px; }
+      #e3-cal .ok { margin-left: auto; white-space: nowrap; padding: 10px 16px; border-radius: 14px; background: rgba(52,210,123,0.16); color: var(--green); font-weight: 800; font-size: 26px; border: 2px solid var(--green); }
+      #e3-crm { top: 612px; height: 336px; padding: 22px 22px; }
+      .crm-h { display: flex; justify-content: space-between; font-family: "Sora", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 14px; }
+      .cols { position: relative; display: flex; gap: 14px; }
+      .col { width: 202px; height: 240px; border-radius: 20px; background: rgba(255,255,255,0.04); border: 2px dashed rgba(255,255,255,0.10); padding: 12px; }
+      .col h4 { font-family: "Sora", sans-serif; font-size: 23px; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; }
+      .col.hot h4 { color: var(--gold-l); }
+      .lead-card { position: absolute; left: 10px; top: 58px; width: 182px; height: 150px; border-radius: 16px; background: #1d2636; border: 3px solid var(--gold); padding: 14px 14px; box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+      .lead-card b { display: block; font-size: 27px; line-height: 1.15; color: #fff; }
+      .lead-card span { display: block; font-size: 26px; color: var(--gold-l); margin-top: 8px; font-weight: 800; }
+      #e3-chips { position: absolute; left: 90px; top: 968px; width: 900px; display: flex; gap: 14px; }
+      #e3-chips .chip { flex: 1; text-align: center; background: rgba(75,123,255,0.16); border: 2px solid var(--blue); color: #dfe7ff; font-size: 26px; padding: 16px 6px; white-space: nowrap; }
+
+      /* ---------- F · prueba ---------- */
+      #f1-q { position: absolute; left: 0; right: 0; top: 300px; text-align: center; font-weight: 800; font-size: 150px; letter-spacing: -0.04em; color: #fff; text-shadow: 0 12px 50px rgba(0,0,0,0.7); }
+      #f1-ig { position: absolute; left: 250px; top: 640px; width: 580px; border-radius: 30px; border: 4px solid rgba(255,255,255,0.18); box-shadow: 0 40px 100px rgba(0,0,0,0.7); overflow: hidden; }
+      #f1-ig img { display: block; width: 100%; }
+      #gus-wrap { position: absolute; inset: 0; }
+      #gus-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #f2-name { position: absolute; left: 65px; top: 300px; padding: 18px 28px 18px 30px; border-radius: 20px; background: rgba(7,9,15,0.82); border-left: 10px solid var(--gold); }
+      #f2-name b { display: block; font-size: 50px; font-weight: 800; letter-spacing: -0.01em; }
+      #f2-name span { display: block; font-size: 28px; color: var(--gold-l); font-weight: 600; margin-top: 2px; }
+      #f2-real { position: absolute; right: 65px; top: 312px; background: var(--red); color: #fff; }
+      #f2-stat { position: absolute; left: 0; right: 0; top: 820px; text-align: center; }
+      #f2-stat .n { display: inline-block; font-weight: 800; font-size: 150px; letter-spacing: -0.04em; color: var(--gold); text-shadow: 0 8px 0 rgba(0,0,0,0.55), 0 0 60px rgba(232,179,75,0.5); }
+      #f2-years { position: absolute; left: 0; right: 0; top: 975px; text-align: center; }
+      #f2-years .chip { font-size: 40px; background: #fff; color: #0b0d12; padding: 10px 24px; border-radius: 16px; font-family: "Sora", sans-serif; font-weight: 800; }
+
+      /* ---------- G · CTA ---------- */
+      #g-fran { position: absolute; left: 400px; top: 430px; width: 760px; height: 760px; }
+      #g-fran img { position: absolute; inset: 0; width: 100%; height: 100%; }
+      #g-rim { position: absolute; left: 470px; top: 520px; width: 680px; height: 680px; border-radius: 50%; background: radial-gradient(circle, rgba(232,179,75,0.45) 0%, rgba(232,179,75,0) 62%); }
+      #g-q1 { position: absolute; left: 65px; top: 300px; font-size: 44px; font-weight: 700; color: #fff; }
+      #g-q2 { position: absolute; left: 65px; top: 356px; font-size: 98px; font-weight: 800; letter-spacing: -0.04em; color: var(--gold); }
+      #g-com { position: absolute; left: 65px; top: 560px; font-size: 62px; font-weight: 800; color: #fff; letter-spacing: 0.02em; text-shadow: 0 6px 30px rgba(0,0,0,0.8); }
+      #g-key { position: absolute; left: 45px; top: 650px; padding: 6px 34px 14px; border-radius: 26px; background: var(--gold); color: #0b0d12; font-size: 136px; font-weight: 800; letter-spacing: -0.03em; box-shadow: 0 0 0 8px rgba(232,179,75,0.25), 0 30px 90px rgba(232,179,75,0.45); }
+      #g-bubble { color: #0b0d12; position: absolute; left: 640px; top: 600px; display: flex; align-items: center; justify-content: center; width: 116px; height: 116px; border-radius: 50%; background: #fff; font-size: 62px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+      #g-sub { position: absolute; left: 65px; top: 880px; width: 560px; font-size: 40px; line-height: 1.22; font-weight: 600; color: #fff; text-shadow: 0 4px 24px rgba(0,0,0,0.9); }
+      #g-sub b { color: var(--gold-l); font-weight: 800; }
+      #g-end { position: absolute; left: 0; right: 0; top: 1040px; padding: 26px 0 30px; text-align: center; background: linear-gradient(180deg, rgba(7,9,15,0) 0%, rgba(7,9,15,0.88) 30%, rgba(7,9,15,0.88) 75%, rgba(7,9,15,0) 100%); }
+      #g-end .wm { font-size: 66px; font-weight: 800; letter-spacing: 0.06em; }
+      #g-end .wm span { color: var(--gold); }
+      #g-end .tl { font-size: 28px; font-weight: 600; letter-spacing: 0.16em; color: var(--muted); margin-top: 4px; }
+      #g-line { width: 360px; height: 6px; margin: 14px auto 0; border-radius: 3px; background: var(--gold); }
+
+      /* ---------- subtítulos ---------- */
+      #captions { position: absolute; left: 65px; right: 65px; top: 1066px; height: 150px; }
+      .cap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 24px; opacity: 0; }
+      .cw { display: inline-block; padding: 2px 12px 8px; border-radius: 14px; font-weight: 800; font-size: 76px; letter-spacing: -0.01em; text-transform: uppercase; color: #fff; text-shadow: 0 5px 0 rgba(0,0,0,0.85), 0 0 24px rgba(0,0,0,0.7); }
+      .cw.key { color: var(--gold); }
+
+      /* ---------- capas finales ---------- */
+      #grain { position: absolute; inset: -200px; background-image: url("assets/img/grain.png"); background-size: 384px 384px; opacity: 0.07; mix-blend-mode: overlay; }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%); }
+      #tint { position: absolute; inset: 0; background: var(--red); opacity: 0; }
+      #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+      #fade { position: absolute; inset: 0; background: var(--bg); opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="42.4" data-width="1080" data-height="1920">
+      <audio id="master" src="assets/audio/master.m4a" data-start="0" data-duration="42.4" data-track-index="10" data-volume="1"></audio>
+
+      <div id="cam">
+        <div id="bg-base">
+          <div id="grid"></div>
+          <div id="glow1" class="glow"></div>
+          <div id="glow2" class="glow"></div>
+        </div>
+
+        <!-- A · GANCHO -->
+        <div id="sA" class="scene">
+          <img class="bgimg" id="a-bg" src="assets/img/realestate.jpg" alt="" />
+          <div class="shade" style="background: linear-gradient(180deg, rgba(7,9,15,0.82) 0%, rgba(7,9,15,0.55) 45%, rgba(7,9,15,0.92) 100%)"></div>
+          <div id="a-title">DESARROLLADOR:</div>
+          <div id="a-notif" data-layout-allow-overlap>
+            <div class="notif-top"><span class="notif-ico">📣</span><span>ANUNCIO · META ADS</span><span class="notif-time">11:07 p.m.</span></div>
+            <div class="notif-title">Nuevo prospecto 🔔</div>
+            <div class="notif-body" data-layout-allow-overlap>“Hola, ¿sigue disponible el depa de 2 recámaras?”</div>
+          </div>
+          <div id="a-clock">🌙 11:07 <small>P.M.</small></div>
+          <div id="a-stamp" data-layout-allow-overlap>PERDIDO<span data-layout-allow-overlap>APARTÓ EN OTRO DESARROLLO</span></div>
+        </div>
+
+        <!-- B · ASESOR TARDE -->
+        <div id="sB" class="scene">
+          <div class="kicker"><span class="dot"></span>ASÍ PASA HOY</div>
+          <div class="phone" id="b-phone" style="top: 380px; height: 640px">
+            <div class="chat-head"><div class="avatar">👤</div><div><div class="chat-name">Prospecto · Depa 2 rec.</div><div class="chat-sub">vía anuncio</div></div></div>
+            <div class="chat-body">
+              <div class="msg in" id="b-m1">Hola, ¿sigue disponible el depa de 2 recámaras?<span class="t">11:07 p.m.</span></div>
+              <div class="skip" id="b-skip">⏱ <span id="b-count">0 h 00 min</span> sin respuesta</div>
+              <div class="msg out" id="b-m2">¡Buen día! Sí, sigue disponible 🙌<span class="t">9:42 a.m.</span></div>
+            </div>
+          </div>
+          <div class="demo-tag" style="left: 160px; top: 990px">DEMO</div>
+        </div>
+
+        <!-- C · LA LANA -->
+        <div id="sC" class="scene">
+          <img class="bgimg" id="c-bg" src="assets/img/ads-sin-roi.jpg" alt="" style="opacity: 0.32" />
+          <div class="shade" style="background: radial-gradient(ellipse at 50% 50%, rgba(7,9,15,0.4), rgba(7,9,15,0.92))"></div>
+          <div class="money-card" id="c-ad"><span class="ico">📣</span><div><div class="lbl">TÚ PAGASTE</div><div class="big">El anuncio</div></div><span class="chip" style="background: rgba(52,210,123,0.18); color: var(--green); border: 2px solid var(--green)">PAGADO ✓</span></div>
+          <div class="bill" id="c-b1">$</div>
+          <div class="bill" id="c-b2">$</div>
+          <div class="bill" id="c-b3">$</div>
+          <div class="bill" id="c-b4">$</div>
+          <div class="bill" id="c-b5">$</div>
+          <div class="money-card" id="c-comp"><span class="ico">🏢</span><div><div class="lbl">SE LO LLEVÓ</div><div class="big">Tu competencia</div></div><span class="chip" style="background: var(--red); color: #fff">APARTADO</span></div>
+        </div>
+
+        <!-- D · GIRO -->
+        <div id="sD" class="scene">
+          <svg class="ghost" id="d-ghost" aria-hidden="true" data-layout-allow-overflow style="top: 1260px; left: -40px" width="3200" height="330" viewBox="0 0 3200 330"><text x="0" y="276" font-family="Sora" font-weight="800" font-size="300" letter-spacing="-12" fill="none" stroke="rgba(232,179,75,0.24)" stroke-width="3">SISTEMA SISTEMA</text></svg>
+          <div class="d-line" id="d1">EL PROBLEMA</div>
+          <div class="d-line" id="d2">NO ES LA <span class="strike-wrap">PAUTA<span id="d-strike"></span></span></div>
+          <div id="d-ring"></div>
+          <div class="d-line" id="d3">ES QUE NO TIENES UN</div>
+          <div class="d-line" id="d4" data-layout-allow-overlap>SISTEMA</div>
+        </div>
+
+        <!-- E1 · RESPONDE -->
+        <div id="sE1" class="scene">
+          <div class="step"><div class="num">01</div><div class="txt"><small>EL SISTEMA</small>Responde al instante</div></div>
+          <div class="dots"><i class="on"></i><i></i><i></i></div>
+          <div class="phone" id="e1-phone" style="top: 430px; height: 520px">
+            <div class="chat-head"><div class="avatar">🤖</div><div><div class="chat-name">Torre Ejemplo · Ventas</div><div class="chat-sub">Agente IA · desarrollo ficticio</div></div><span class="demo-tag" style="position: static; margin-left: auto">DEMO</span></div>
+            <div class="chat-body">
+              <div class="msg in" id="e1-m1">Hola, ¿sigue disponible el depa de 2 recámaras?<span class="t">11:07 p.m.</span></div>
+              <div class="typing" id="e1-typing"><i></i><i></i><i></i></div>
+              <div class="msg ai" id="e1-m2"><span class="who">AGENTE IA</span>¡Hola! 👋 Sí, hay disponibles. ¿Es para vivir o para invertir?<span class="t">11:07 p.m. ✓✓</span></div>
+            </div>
+          </div>
+          <div id="e1-badges"><div class="badge" id="e1-fast">⚡ Respondió en 8 s</div><div class="badge" id="e1-247">🌙 24/7</div></div>
+        </div>
+
+        <!-- E2 · CALIFICA -->
+        <div id="sE2" class="scene">
+          <img class="bgimg" src="assets/img/ia-agente.jpg" alt="" style="opacity: 0.22" />
+          <div class="shade" style="background: linear-gradient(180deg, rgba(7,9,15,0.9), rgba(7,9,15,0.6) 50%, rgba(7,9,15,0.95))"></div>
+          <div class="step"><div class="num">02</div><div class="txt"><small>EL SISTEMA</small>Lo califica</div></div>
+          <div class="dots"><i class="on"></i><i class="on"></i><i></i></div>
+          <div class="card" id="e2-card" style="top: 450px">
+            <div class="card-h"><span>PERFIL DEL PROSPECTO</span><span class="demo-tag" style="position: static">DEMO</span></div>
+            <div class="q-row" id="e2-r1"><span class="qi">💰</span><div><div class="ql">Presupuesto</div><div class="qv">$3.5 – 4 MDP</div></div><span class="ok">✓</span></div>
+            <div class="q-row" id="e2-r2"><span class="qi">🏦</span><div><div class="ql">Forma de pago</div><div class="qv">Crédito hipotecario</div></div><span class="ok">✓</span></div>
+            <div class="q-row" id="e2-r3"><span class="qi">📅</span><div><div class="ql">¿Cuándo compra?</div><div class="qv">En 1 – 2 meses</div></div><span class="ok">✓</span></div>
+            <div class="score"><div class="score-top"><span>CALIFICACIÓN</span><b id="e2-score">0 / 100</b></div><div class="bar"><div class="bar-fill" id="e2-fill"></div></div></div>
+          </div>
+          <div class="badge" id="e2-hot">🔥 PROSPECTO CALIENTE</div>
+        </div>
+
+        <!-- E3 · AGENDA + CRM -->
+        <div id="sE3" class="scene">
+          <div class="step"><div class="num">03</div><div class="txt"><small>EL SISTEMA</small>Agenda y da seguimiento</div></div>
+          <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          <div class="card" id="e3-cal"><div class="ci"><small>SÁB</small><b>11</b></div><div><div class="ct">Visita a sala de ventas</div><div class="cs">11:00 a.m. · la agendó el agente</div></div><span class="ok">CONFIRMADA ✓</span></div>
+          <div class="card" id="e3-crm">
+            <div class="crm-h"><span>CRM · PIPELINE</span><span class="demo-tag" style="position: static">DEMO</span></div>
+            <div class="cols">
+              <div class="col"><h4>NUEVO</h4></div>
+              <div class="col"><h4>CALIFICADO</h4></div>
+              <div class="col hot"><h4>VISITA</h4></div>
+              <div class="col"><h4>APARTADO</h4></div>
+              <div class="lead-card" id="e3-lead"><b>Prospecto #0412</b><span>🔥 92 / 100</span></div>
+            </div>
+          </div>
+          <div id="e3-chips"><span class="chip" id="e3-c1">✓ Recordatorio 24 h</span><span class="chip" id="e3-c2">✓ WhatsApp día 3</span><span class="chip" id="e3-c3">✓ Llamada día 7</span></div>
+        </div>
+
+        <!-- F1 · ¿FUNCIONA? -->
+        <div id="sF1" class="scene">
+          <img class="bgimg" id="f1-bg" src="assets/img/fran-gus.jpg" alt="Fran Morishita con Gus Marcos" style="object-position: 50% 18%" />
+          <div class="shade" style="background: linear-gradient(180deg, rgba(7,9,15,0.75) 0%, rgba(7,9,15,0.25) 30%, rgba(7,9,15,0.55) 60%, rgba(7,9,15,0.95) 100%)"></div>
+          <div id="f1-q">¿FUNCIONA<span class="gold">?</span></div>
+          <div id="f1-ig" data-layout-allow-overlap><img src="assets/img/gus-ig-card.jpg" alt="Perfil de Gus Marcos" /></div>
+        </div>
+
+        <!-- F2 · TESTIMONIO GUS -->
+        <div id="sF2" class="scene">
+          <div id="gus-wrap">
+            <video id="gus-video" class="clip" src="assets/video/gus-testimonio.mp4" muted playsinline data-start="29.6" data-media-start="6.942" data-duration="5.15" data-track-index="2"></video>
+          </div>
+          <div class="shade" style="background: linear-gradient(180deg, rgba(7,9,15,0.55) 0%, rgba(7,9,15,0) 22%, rgba(7,9,15,0) 50%, rgba(7,9,15,0.8) 59%, var(--bg) 65%, var(--bg) 100%)"></div>
+          <div id="f2-name"><b>GUS MARCOS</b><span>Desarrollador inmobiliario · Monterrey</span></div>
+          <span class="chip" id="f2-real">TESTIMONIO REAL</span>
+          <div id="f2-stat"><span class="n" id="f2-n">$60 MDP</span></div>
+          <div id="f2-years"><span class="chip">FACTURADOS EN 2 AÑOS</span></div>
+        </div>
+
+        <!-- G · CTA -->
+        <div id="sG" class="scene">
+          <svg class="ghost" id="g-ghost" aria-hidden="true" data-layout-allow-overflow style="top: 1230px; left: -60px" width="3200" height="363" viewBox="0 0 3200 363"><text x="0" y="303" font-family="Sora" font-weight="800" font-size="330" letter-spacing="-12" fill="none" stroke="rgba(232,179,75,0.24)" stroke-width="3">SISTEMA SISTEMA</text></svg>
+          <div id="g-rim"></div>
+          <div id="g-fran"><img src="assets/img/fran-cutout.png" alt="Fran Morishita" /></div>
+          <div id="g-q1">¿Tu desarrollo tiene</div>
+          <div id="g-q2">+20 UNIDADES?</div>
+          <div id="g-com">COMENTA</div>
+          <div id="g-key" data-layout-allow-overlap>SISTEMA</div>
+          <div id="g-bubble" data-layout-allow-overlap>💬</div>
+          <div id="g-sub">y te mandamos un <b>diagnóstico gratis</b> de tu embudo</div>
+          <div id="g-end"><div class="wm">FRAN<span>MORISHITA</span></div><div id="g-line"></div><div class="tl">SISTEMAS DE VENTA · IA · CRM</div></div>
+        </div>
+      </div>
+
+      <div id="captions"></div>
+      <div id="grain"></div>
+      <div id="vignette"></div>
+      <div id="tint"></div>
+      <div id="flash"></div>
+      <div id="fade"></div>
+    </div>
+
+    <script>
+      const VO = /*VO_DATA_START*/{"total":42.436,"segments":[{"id":"v1","start":0.18,"end":4.987,"words":[{"text":"Desarrollador","start":0.21,"end":0.889},{"text":"ese","start":1.009,"end":1.181},{"text":"prospecto","start":1.192,"end":1.666},{"text":"que","start":1.677,"end":1.785},{"text":"te","start":1.796,"end":1.882},{"text":"escribió","start":1.893,"end":2.302},{"text":"a","start":2.313,"end":2.334},{"text":"las","start":2.345,"end":2.517},{"text":"11","start":2.528,"end":2.755},{"text":"de","start":2.765,"end":2.852},{"text":"la","start":2.862,"end":2.927},{"text":"noche","start":2.938,"end":3.261},{"text":"ya","start":3.381,"end":3.532},{"text":"apartó","start":3.543,"end":3.931},{"text":"en","start":3.941,"end":4.049},{"text":"otro","start":4.06,"end":4.265},{"text":"desarrollo","start":4.275,"end":4.847}]},{"id":"v2","start":5.087,"end":7.078,"words":[{"text":"Tu","start":5.117,"end":5.214},{"text":"asesor","start":5.224,"end":5.602},{"text":"le","start":5.612,"end":5.688},{"text":"contestó","start":5.698,"end":6.151},{"text":"hasta","start":6.162,"end":6.334},{"text":"el","start":6.345,"end":6.42},{"text":"otro","start":6.431,"end":6.625},{"text":"día","start":6.636,"end":6.938}]},{"id":"v3","start":7.178,"end":10.28,"words":[{"text":"Tú","start":7.208,"end":7.315},{"text":"pagaste","start":7.326,"end":7.714},{"text":"el","start":7.725,"end":7.811},{"text":"anuncio","start":7.822,"end":8.264},{"text":"y","start":8.384,"end":8.47},{"text":"la","start":8.481,"end":8.588},{"text":"lana","start":8.599,"end":8.869},{"text":"se","start":8.879,"end":9.009},{"text":"la","start":9.02,"end":9.095},{"text":"llevó","start":9.106,"end":9.354},{"text":"tu","start":9.364,"end":9.483},{"text":"competencia","start":9.494,"end":10.14}]},{"id":"v4","start":10.714,"end":13.569,"words":[{"text":"El","start":10.744,"end":10.906},{"text":"problema","start":10.917,"end":11.272},{"text":"no","start":11.283,"end":11.445},{"text":"es","start":11.455,"end":11.574},{"text":"la","start":11.585,"end":11.649},{"text":"pauta","start":11.66,"end":12.027},{"text":"es","start":12.147,"end":12.276},{"text":"que","start":12.287,"end":12.384},{"text":"no","start":12.394,"end":12.524},{"text":"tienes","start":12.535,"end":12.836},{"text":"un","start":12.847,"end":12.944},{"text":"sistema","start":12.955,"end":13.429}]},{"id":"v5","start":13.929,"end":18.26,"words":[{"text":"Primero","start":13.959,"end":14.368},{"text":"un","start":14.488,"end":14.585},{"text":"agente","start":14.596,"end":14.93},{"text":"de","start":14.941,"end":15.016},{"text":"inteligencia","start":15.027,"end":15.609},{"text":"artificial","start":15.62,"end":16.148},{"text":"le","start":16.158,"end":16.234},{"text":"contesta","start":16.245,"end":16.665},{"text":"en","start":16.676,"end":16.729},{"text":"segundos","start":16.74,"end":17.236},{"text":"a","start":17.419,"end":17.494},{"text":"cualquier","start":17.505,"end":17.872},{"text":"hora","start":17.882,"end":18.12}]},{"id":"v6","start":18.44,"end":21.783,"words":[{"text":"Luego","start":18.47,"end":18.825},{"text":"lo","start":18.945,"end":19.031},{"text":"califica","start":19.042,"end":19.538},{"text":"presupuesto","start":19.658,"end":20.24},{"text":"crédito","start":20.36,"end":20.801},{"text":"y","start":20.921,"end":21.008},{"text":"cuándo","start":21.018,"end":21.266},{"text":"compra","start":21.277,"end":21.643}]},{"id":"v7","start":21.963,"end":26.801,"words":[{"text":"Y","start":21.993,"end":22.123},{"text":"agenda","start":22.134,"end":22.457},{"text":"la","start":22.468,"end":22.543},{"text":"visita","start":22.554,"end":22.942},{"text":"a","start":22.953,"end":22.996},{"text":"tu","start":23.006,"end":23.114},{"text":"sala","start":23.125,"end":23.362},{"text":"de","start":23.373,"end":23.459},{"text":"ventas","start":23.47,"end":23.868},{"text":"directo","start":23.988,"end":24.323},{"text":"en","start":24.333,"end":24.409},{"text":"tu","start":24.42,"end":24.527},{"text":"CRM","start":24.538,"end":25.206},{"text":"con","start":25.389,"end":25.551},{"text":"seguimiento","start":25.562,"end":26.036},{"text":"automático","start":26.047,"end":26.661}]},{"id":"v8","start":27.214,"end":29.538,"words":[{"text":"Funciona","start":27.244,"end":27.869},{"text":"Pregúntale","start":28.169,"end":28.654},{"text":"a","start":28.665,"end":28.686},{"text":"Gus","start":28.697,"end":28.902},{"text":"Marcos","start":28.913,"end":29.398}]},{"id":"GUS","start":29.658,"end":34.608,"words":[{"text":"Y","start":29.68772321428571,"end":29.807723214285716},{"text":"hicimos","start":29.807723214285716,"end":30.25772321428571},{"text":"una","start":30.307723214285716,"end":30.477723214285717},{"text":"empresa","start":30.477723214285717,"end":31.357723214285713},{"text":"que","start":31.357723214285713,"end":31.477723214285717},{"text":"facturó","start":31.477723214285717,"end":31.75772321428571},{"text":"60","start":31.75772321428571,"end":32.127723214285716},{"text":"millones","start":32.127723214285716,"end":32.637723214285714},{"text":"de","start":32.637723214285714,"end":32.82772321428571},{"text":"pesos","start":32.847723214285715,"end":33.29772321428571},{"text":"en","start":33.32772321428571,"end":33.58772321428572},{"text":"dos","start":33.707723214285714,"end":33.947723214285716},{"text":"años","start":33.947723214285716,"end":34.47772321428572}]},{"id":"v9","start":34.929,"end":40.736,"words":[{"text":"Si","start":34.959,"end":35.174},{"text":"tu","start":35.185,"end":35.282},{"text":"desarrollo","start":35.293,"end":35.799},{"text":"tiene","start":35.81,"end":36.058},{"text":"más","start":36.068,"end":36.273},{"text":"de","start":36.284,"end":36.349},{"text":"20","start":36.359,"end":36.618},{"text":"unidades","start":36.629,"end":37.146},{"text":"comenta","start":37.34,"end":37.706},{"text":"SISTEMA","start":37.717,"end":38.202},{"text":"y","start":38.322,"end":38.408},{"text":"te","start":38.419,"end":38.505},{"text":"mandamos","start":38.516,"end":38.947},{"text":"un","start":38.958,"end":39.055},{"text":"diagnóstico","start":39.066,"end":39.658},{"text":"gratis","start":39.669,"end":40.025},{"text":"de","start":40.035,"end":40.122},{"text":"tu","start":40.132,"end":40.197},{"text":"embudo","start":40.208,"end":40.596}]}]}/*VO_DATA_END*/;
+      const DUR = 42.4;
+      const SEG = {};
+      VO.segments.forEach((s) => (SEG[s.id] = s));
+      const W = (seg, txt, which = "start") => {
+        const w = SEG[seg].words.find((x) => x.text.toLowerCase().startsWith(txt.toLowerCase()));
+        if (!w) throw new Error("palabra no encontrada: " + seg + " " + txt);
+        return w[which];
+      };
+      const S = (id) => SEG[id].start;
+      const Wn = (seg, txt, n, which = "start") => SEG[seg].words.filter((x) => x.text.toLowerCase() === txt.toLowerCase())[n][which];
+
+      const tl = gsap.timeline({ paused: true });
+
+      /* ---------- utilidades ---------- */
+      const flash = (t, peak = 0.85, d = 0.22) => {
+        tl.fromTo("#flash", { opacity: peak }, { opacity: 0, duration: d, ease: "power2.out", immediateRender: false }, t);
+      };
+      const tint = (t, peak = 0.22, d = 0.35) => {
+        tl.fromTo("#tint", { opacity: peak }, { opacity: 0, duration: d, ease: "power2.out", immediateRender: false }, t);
+      };
+      const SHAKE = [[-16, 10], [14, -8], [-10, 6], [8, -4], [-4, 2], [0, 0]];
+      const shake = (t, amp = 1) => {
+        SHAKE.forEach(([x, y], i) => tl.to("#cam", { x: x * amp, y: y * amp, duration: 0.035, ease: "none" }, t + i * 0.035));
+      };
+      const punch = (t, s = 1.06) => {
+        tl.to("#cam", { scale: s, duration: 0.06, ease: "power2.out" }, t);
+        tl.to("#cam", { scale: 1, duration: 0.35, ease: "power3.out" }, t + 0.06);
+      };
+      // whip: sale la escena vieja hacia un lado con blur y entra la nueva
+      const whip = (from, to, t, dir = "x", sign = 1) => {
+        const off = dir === "x" ? { x: -260 * sign } : { y: -320 * sign };
+        const on = dir === "x" ? { x: 260 * sign } : { y: 320 * sign };
+        tl.to(from, { ...off, opacity: 0, filter: "blur(18px)", duration: 0.24, ease: "power3.in" }, t);
+        tl.fromTo(to, { ...on, opacity: 0, filter: "blur(18px)" }, { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out", immediateRender: false }, t + 0.06);
+      };
+      const zoomThrough = (from, to, t) => {
+        tl.to(from, { scale: 2.6, opacity: 0, filter: "blur(14px)", duration: 0.3, ease: "power3.in" }, t);
+        tl.fromTo(to, { scale: 0.55, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.38, ease: "power3.out", immediateRender: false }, t + 0.12);
+      };
+      const cut = (from, to, t) => {
+        tl.set(from, { opacity: 0 }, t);
+        tl.set(to, { opacity: 1 }, t);
+      };
+      const pop = (sel, t, from = {}, d = 0.42, ease = "back.out(1.8)", endRot = 0) => {
+        tl.fromTo(sel, { opacity: 0, scale: 0.6, rotation: 0, ...from }, { opacity: 1, scale: 1, x: 0, y: 0, rotation: endRot, duration: d, ease }, t);
+      };
+
+      /* ---------- tiempos de corte (derivados de la voz) ---------- */
+      const T_B = S("v2") - 0.1;
+      const T_C = S("v3") - 0.08;
+      const T_D = S("v4") - 0.12;
+      const T_E1 = S("v5") - 0.1;
+      const T_E2 = S("v6") - 0.1;
+      const T_E3 = S("v7") - 0.1;
+      const T_F1 = S("v8") - 0.25;
+      const T_F2 = 29.6;
+      const T_G = S("v9") - 0.2;
+
+      /* ---------- fondo vivo ---------- */
+      tl.fromTo("#glow1", { x: 0, y: 0, scale: 1 }, { x: -160, y: 120, scale: 1.25, duration: DUR, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow2", { x: 0, y: 0, scale: 1 }, { x: 220, y: -160, scale: 1.2, duration: DUR, ease: "sine.inOut" }, 0);
+      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -120, y: -240, duration: DUR, ease: "none" }, 0);
+      tl.fromTo("#grain", { x: 0, y: 0 }, { x: -180, y: -150, duration: DUR, ease: "steps(420)" }, 0);
+
+      /* ================= A · GANCHO ================= */
+      tl.fromTo("#a-bg", { scale: 1.25 }, { scale: 1.05, duration: T_B + 0.3, ease: "none" }, 0);
+      tl.fromTo("#a-title", { scale: 2.4, opacity: 0, filter: "blur(16px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.32, ease: "power4.out" }, 0.04);
+      flash(0.04, 0.7);
+      shake(0.2, 1.2);
+      tl.fromTo("#a-notif", { y: -140, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, W("v1", "prospecto") - 0.12);
+      pop("#a-clock", W("v1", "11") - 0.05, { scale: 1.6 }, 0.35, "power4.out");
+      tl.fromTo("#a-clock", { textShadow: "0 0 60px rgba(75,123,255,0.55)" }, { textShadow: "0 0 110px rgba(75,123,255,0.95)", duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 1, immediateRender: false }, W("v1", "11") + 0.3);
+      // pérdida: glitch + sello
+      const tLost = W("v1", "apartó") - 0.04;
+      tl.to("#a-notif", { filter: "grayscale(1) brightness(0.55)", duration: 0.2 }, tLost);
+      tl.to("#a-clock", { color: "#ff4d5e", duration: 0.15 }, tLost);
+      tl.fromTo("#a-stamp", { scale: 2.6, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -7, duration: 0.24, ease: "power4.in" }, tLost);
+      tint(tLost + 0.22, 0.28);
+      shake(tLost + 0.24, 1.6);
+      [[-22, 0.02], [18, 0.05], [-10, 0.08], [6, 0.11], [0, 0.14]].forEach(([x, dt]) => tl.to("#a-title", { x, duration: 0.03, ease: "none" }, tLost + dt));
+
+      /* ================= B · ASESOR ================= */
+      whip("#sA", "#sB", T_B);
+      tl.fromTo("#b-phone", { scale: 0.92 }, { scale: 1, duration: 0.5, ease: "power3.out" }, T_B + 0.06);
+      tl.fromTo("#b-skip", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, W("v2", "contestó") - 0.15);
+      const cnt = { v: 0 };
+      const bCount = document.getElementById("b-count");
+      tl.to(cnt, {
+        v: 635, duration: W("v2", "día") - W("v2", "contestó"), ease: "power2.in",
+        onUpdate: () => { const m = Math.round(cnt.v); bCount.textContent = Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0") + " min"; },
+      }, W("v2", "contestó"));
+      pop("#b-m2", W("v2", "día") - 0.08, { y: 40 }, 0.38);
+      tl.fromTo("#b-skip", { boxShadow: "0 0 0 0 rgba(255,77,94,0.0)" }, { boxShadow: "0 0 0 18px rgba(255,77,94,0.0)", duration: 0.6, immediateRender: false }, W("v2", "día"));
+
+      /* ================= C · LA LANA ================= */
+      whip("#sB", "#sC", T_C);
+      tl.fromTo("#c-bg", { scale: 1.2 }, { scale: 1.02, duration: 3.6, ease: "none" }, T_C);
+      pop("#c-ad", W("v3", "pagaste") - 0.1, { x: -120 }, 0.4, "power3.out");
+      pop("#c-comp", W("v3", "llevó") - 0.15, { x: 120 }, 0.4, "power3.out");
+      ["#c-b1", "#c-b2", "#c-b3", "#c-b4", "#c-b5"].forEach((b, i) => {
+        const t0 = W("v3", "lana") - 0.05 + i * 0.1;
+        const xs = [-240, 120, -60, 200, -150][i];
+        tl.fromTo(b, { x: 0, y: -80, opacity: 0, rotation: 0, scale: 0.6 }, { x: xs, y: 300, opacity: 1, rotation: [-25, 18, -8, 30, -20][i], scale: 1, duration: 0.55, ease: "power2.in" }, t0);
+        tl.to(b, { opacity: 0, scale: 0.4, duration: 0.15 }, t0 + 0.55);
+      });
+      tl.fromTo("#c-comp", { boxShadow: "0 0 0 0 rgba(255,77,94,0.7)" }, { boxShadow: "0 0 0 30px rgba(255,77,94,0)", duration: 0.6, ease: "power2.out", immediateRender: false }, W("v3", "competencia"));
+      punch(W("v3", "competencia"), 1.07);
+
+      /* ================= D · GIRO ================= */
+      tl.to("#sC", { opacity: 0, scale: 0.9, filter: "blur(10px)", duration: 0.28, ease: "power3.in" }, T_D);
+      tl.fromTo("#sD", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, T_D + 0.15);
+      tl.fromTo("#d-ghost", { x: 0 }, { x: -500, duration: 3.4, ease: "none" }, T_D);
+      tl.fromTo("#d1", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("v4", "problema") - 0.12);
+      tl.fromTo("#d2", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("v4", "no") - 0.06);
+      tl.fromTo("#d-strike", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.25, ease: "power2.out" }, W("v4", "pauta", "end") - 0.05);
+      tl.to("#d2", { color: "#7b8496", duration: 0.25 }, W("v4", "pauta", "end"));
+      tl.fromTo("#d3", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, Wn("v4", "es", 1) - 0.08);
+      const tSis = W("v4", "sistema") - 0.02;
+      tl.fromTo("#d4", { scale: 3, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power4.in" }, tSis - 0.2);
+      tl.fromTo("#d-ring", { scale: 0.2, opacity: 0 }, { scale: 0.3, opacity: 0.9, duration: 0.04, ease: "none" }, tSis);
+      tl.to("#d-ring", { scale: 2.4, opacity: 0, duration: 0.7, ease: "power2.out" }, tSis + 0.04);
+      flash(tSis, 0.8, 0.3);
+      shake(tSis + 0.02, 1.8);
+      tl.fromTo("#d4", { textShadow: "0 0 80px rgba(232,179,75,0.55)" }, { textShadow: "0 0 140px rgba(232,179,75,0.95)", duration: 0.35, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, tSis + 0.2);
+
+      /* ================= E1 · RESPONDE ================= */
+      zoomThrough("#sD", "#sE1", T_E1);
+      tl.fromTo("#e1-phone", { y: 120 }, { y: 0, duration: 0.5, ease: "power3.out" }, T_E1 + 0.1);
+      tl.fromTo("#e1-typing", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, W("v5", "agente"));
+      [0, 1, 2].forEach((i) => {
+        const dot = `#e1-typing i:nth-child(${i + 1})`;
+        tl.fromTo(dot, { y: 0 }, { y: -10, duration: 0.18, yoyo: true, repeat: 7, ease: "sine.inOut" }, W("v5", "agente") + i * 0.08);
+      });
+      tl.to("#e1-typing", { opacity: 0, scale: 0.6, duration: 0.12 }, W("v5", "contesta") - 0.12);
+      pop("#e1-m2", W("v5", "contesta") - 0.08, { y: 60 }, 0.4);
+      pop("#e1-fast", W("v5", "segundos") - 0.1, { rotation: 8 }, 0.4);
+      punch(W("v5", "segundos"), 1.04);
+      pop("#e1-247", W("v5", "cualquier") - 0.08, { rotation: -8 }, 0.4);
+
+      /* ================= E2 · CALIFICA ================= */
+      whip("#sE1", "#sE2", T_E2, "y", 1);
+      tl.fromTo("#e2-card", { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, T_E2 + 0.1);
+      [["#e2-r1", "presupuesto"], ["#e2-r2", "crédito"], ["#e2-r3", "cuándo"]].forEach(([r, w]) => {
+        tl.fromTo(`${r} .qv`, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, W("v6", w) - 0.08);
+        tl.fromTo(`${r} .ok`, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.6)" }, W("v6", w) + 0.05);
+        tl.fromTo(r, { backgroundColor: "rgba(232,179,75,0.18)" }, { backgroundColor: "rgba(232,179,75,0)", duration: 0.5, immediateRender: false }, W("v6", w));
+      });
+      const sc = { v: 0 };
+      const eScore = document.getElementById("e2-score");
+      tl.fromTo("#e2-fill", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.6, ease: "power2.out" }, W("v6", "presupuesto"));
+      tl.to(sc, { v: 92, duration: 1.6, ease: "power2.out", onUpdate: () => (eScore.textContent = Math.round(sc.v) + " / 100") }, W("v6", "presupuesto"));
+      pop("#e2-hot", W("v6", "compra") + 0.05, { rotation: -14 }, 0.4, "back.out(1.8)", -4);
+      shake(W("v6", "compra") + 0.1, 0.8);
+
+      /* ================= E3 · AGENDA + CRM ================= */
+      whip("#sE2", "#sE3", T_E3, "y", 1);
+      pop("#e3-cal", W("v7", "visita") - 0.1, { y: -60 }, 0.4, "power3.out");
+      tl.fromTo("#e3-cal .ok", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.4)" }, W("v7", "ventas"));
+      tl.fromTo("#e3-crm", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, W("v7", "directo") - 0.15);
+      tl.fromTo("#e3-lead", { x: 0, opacity: 0, scale: 0.7 }, { x: 0, opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, W("v7", "directo") + 0.05);
+      tl.to("#e3-lead", { x: 216, duration: 0.3, ease: "power3.inOut" }, W("v7", "CRM") - 0.02);
+      tl.to("#e3-lead", { x: 432, duration: 0.3, ease: "power3.inOut" }, W("v7", "CRM") + 0.4);
+      tl.fromTo("#e3-lead", { boxShadow: "0 0 0 0 rgba(232,179,75,0.8)" }, { boxShadow: "0 0 0 22px rgba(232,179,75,0)", duration: 0.5, immediateRender: false }, W("v7", "CRM") + 0.7);
+      ["#e3-c1", "#e3-c2", "#e3-c3"].forEach((c, i) => pop(c, W("v7", "seguimiento") - 0.1 + i * 0.16, { y: 40 }, 0.35));
+
+      /* ================= F1 · ¿FUNCIONA? ================= */
+      tl.to("#sE3", { y: 300, opacity: 0, filter: "blur(16px)", duration: 0.25, ease: "power3.in" }, T_F1);
+      tl.fromTo("#sF1", { y: -300, opacity: 0, filter: "blur(16px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.32, ease: "power3.out", immediateRender: false }, T_F1 + 0.05);
+      tl.fromTo("#f1-bg", { scale: 1.3 }, { scale: 1.08, duration: T_F2 - T_F1 + 0.2, ease: "none" }, T_F1);
+      tl.fromTo("#f1-q", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.26, ease: "power4.out" }, W("v8", "Funciona") - 0.04);
+      shake(W("v8", "Funciona") + 0.2, 0.9);
+      tl.fromTo("#f1-ig", { y: 500, opacity: 0, rotation: 6 }, { y: 0, opacity: 1, rotation: -3, duration: 0.5, ease: "back.out(1.4)" }, W("v8", "Pregúntale") - 0.05);
+
+      /* ================= F2 · TESTIMONIO ================= */
+      cut("#sF1", "#sF2", T_F2);
+      flash(T_F2, 0.55, 0.18);
+      tl.fromTo("#gus-wrap", { scale: 1.12, y: 0 }, { scale: 1.16, y: 0, duration: W("GUS", "60") - T_F2, ease: "none" }, T_F2);
+      tl.to("#gus-wrap", { scale: 1.3, y: -160, duration: 0.18, ease: "power3.out" }, W("GUS", "60") - 0.04);
+      tl.to("#gus-wrap", { scale: 1.36, y: -175, duration: 34.72 - W("GUS", "60"), ease: "none" }, W("GUS", "60") + 0.14);
+      tl.to(["#f2-name", "#f2-real"], { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, W("GUS", "60") - 0.25);
+      tl.fromTo("#f2-name", { x: -400, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, T_F2 + 0.15);
+      pop("#f2-real", T_F2 + 0.4, { rotation: 14 }, 0.35, "back.out(1.8)", 4);
+      tl.fromTo("#f2-stat", { scale: 2.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.24, ease: "power4.in" }, W("GUS", "60") - 0.22);
+      shake(W("GUS", "60") + 0.02, 1.3);
+      flash(W("GUS", "60"), 0.45, 0.2);
+      pop("#f2-years", W("GUS", "dos") - 0.1, { y: 30 }, 0.35);
+
+      /* ================= G · CTA ================= */
+      tl.set("#sF2", { opacity: 0 }, T_G + 0.12);
+      tl.fromTo("#sG", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out", immediateRender: false }, T_G + 0.08);
+      flash(T_G + 0.1, 0.95, 0.35);
+      tl.fromTo("#g-ghost", { x: 0 }, { x: -600, duration: DUR - T_G, ease: "none" }, T_G);
+      tl.fromTo("#g-rim", { scale: 0.85, opacity: 0.7 }, { scale: 1.08, opacity: 1, duration: 1.1, yoyo: true, repeat: 6, ease: "sine.inOut" }, T_G);
+      tl.fromTo("#g-fran", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, T_G + 0.15);
+      tl.fromTo("#g-fran", { y: 0 }, { y: -14, duration: 1.4, yoyo: true, repeat: 4, ease: "sine.inOut", immediateRender: false }, T_G + 0.7);
+      tl.fromTo("#g-q1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, W("v9", "desarrollo") - 0.15);
+      tl.fromTo("#g-q2", { scale: 1.8, opacity: 0, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.out" }, W("v9", "20") - 0.06);
+      shake(W("v9", "20") + 0.1, 0.7);
+      tl.fromTo("#g-com", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, W("v9", "comenta") - 0.1);
+      tl.fromTo("#g-key", { scale: 2.8, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.24, ease: "power4.in" }, W("v9", "SISTEMA") - 0.22);
+      flash(W("v9", "SISTEMA"), 0.6, 0.25);
+      shake(W("v9", "SISTEMA") + 0.02, 1.6);
+      tl.fromTo("#g-key", { boxShadow: "0 0 0 8px rgba(232,179,75,0.25), 0 30px 90px rgba(232,179,75,0.45)" }, { boxShadow: "0 0 0 26px rgba(232,179,75,0), 0 30px 120px rgba(232,179,75,0.8)", duration: 0.7, repeat: 4, ease: "power1.out", immediateRender: false }, W("v9", "SISTEMA") + 0.25);
+      tl.fromTo("#g-key", { scale: 1 }, { scale: 1.05, duration: 0.35, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, W("v9", "SISTEMA") + 0.3);
+      pop("#g-bubble", W("v9", "SISTEMA") + 0.15, { rotation: 30 }, 0.4, "back.out(1.8)", 8);
+      tl.fromTo("#g-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("v9", "mandamos") - 0.1);
+      const tEnd = SEG.v9.words[SEG.v9.words.length - 1].end + 0.3;
+      tl.fromTo("#g-end", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, tEnd);
+      tl.fromTo("#g-line", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, tEnd + 0.15);
+      tl.fromTo("#fade", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.in", immediateRender: false }, DUR - 0.3);
+
+      /* ================= SUBTÍTULOS palabra por palabra ================= */
+      const KEY = new Set(["desarrollador", "prospecto", "11", "apartó", "lana", "competencia", "pauta", "sistema", "segundos", "califica", "crm", "automático", "funciona", "60", "millones", "20", "unidades", "gratis", "inteligencia", "artificial", "visita"]);
+      const DISPLAY = { Funciona: "¿Funciona?" };
+      const capRoot = document.getElementById("captions");
+      const chunks = [];
+      VO.segments.forEach((s) => {
+        let cur = null;
+        s.words.forEach((w, i) => {
+          const txt = DISPLAY[w.text] || w.text;
+          const gap = cur ? w.start - cur.words[cur.words.length - 1].end : 0;
+          const len = cur ? cur.words.reduce((a, x) => a + x.txt.length + 1, 0) + txt.length : 0;
+          if (!cur || cur.words.length >= 3 || len > 15 || gap > 0.3) {
+            cur = { words: [] };
+            chunks.push(cur);
+          }
+          cur.words.push({ ...w, txt });
+        });
+      });
+      chunks.forEach((c, ci) => {
+        const el = document.createElement("div");
+        el.className = "cap";
+        c.words.forEach((w) => {
+          const sp = document.createElement("span");
+          sp.className = "cw" + (KEY.has(w.text.toLowerCase()) ? " key" : "");
+          sp.textContent = w.txt;
+          el.appendChild(sp);
+          w.el = sp;
+        });
+        capRoot.appendChild(el);
+        const t0 = c.words[0].start - 0.04;
+        const next = chunks[ci + 1];
+        const lastEnd = c.words[c.words.length - 1].end;
+        const t1 = next ? Math.min(next.words[0].start - 0.04, lastEnd + 0.45) : lastEnd + 0.28;
+        tl.fromTo(el, { opacity: 0, y: 26, scale: 0.88 }, { opacity: 1, y: 0, scale: 1, duration: 0.12, ease: "back.out(2)" }, t0);
+        tl.set(el, { opacity: 0 }, t1);
+        c.words.forEach((w, wi) => {
+          const base = w.el.classList.contains("key") ? "#e8b34b" : "#ffffff";
+          const wEnd = wi < c.words.length - 1 ? c.words[wi + 1].start : Math.min(t1, w.end + 0.2);
+          tl.set(w.el, { backgroundColor: "rgba(232,179,75,1)", color: "#0b0d12", textShadow: "0 0 0 rgba(0,0,0,0)" }, w.start);
+          tl.fromTo(w.el, { scale: 1.14 }, { scale: 1, duration: 0.14, ease: "power2.out", immediateRender: false }, w.start);
+          tl.set(w.el, { backgroundColor: "rgba(232,179,75,0)", color: base, textShadow: "0 5px 0 rgba(0,0,0,0.85), 0 0 24px rgba(0,0,0,0.7)" }, wEnd);
+        });
+      });
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

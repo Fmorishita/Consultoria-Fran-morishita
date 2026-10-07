@@ -1,0 +1,7 @@
+# HyperFrames: temporales de render, capturas y dependencias
+node_modules/
+**/snapshots/
+**/renders/work-*/
+**/renders/.*hf-transaction*/
+**/renders/*-draft.mp4
+**/.hyperframes/
