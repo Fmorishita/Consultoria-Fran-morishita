@@ -1,118 +1,89 @@
-"""Ensambla la voz en off: recorta pausas largas, coloca segmentos cuantizados
-a corcheas del tempo, inserta el clip de Gus y exporta vo.wav + timeline.json."""
+"""inmo-01 v2: ensambla la voz en off (Andrew, pausas naturales: solo recorta > 0.3 s a 0.22 s),
+inserta el clip de Gus cuando el TSV trae una fila "GUS" y genera vo.wav + vo_timeline.json.
+Uso: build_vo.py <dir_voz con vN.mp3/vN.json> <segs.tsv> <reemplazos.json> <salida.wav> <gus.mp4> <gus_words.json>
+(v1 con Jorge y corcheas: build_vo_v1.py)"""
 import json, subprocess, sys, os
 import numpy as np, soundfile as sf
 
 SR = 48000
-VODIR, GUS, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
-BPM = 140.0
-EIGHTH = 60.0 / BPM / 2
-
-# mapeo de tokens TTS -> texto de subtítulo
-CAPMAP = {"lid": "lead", "once": "11", "veinte": "20", "SISTEMA": "SISTEMA"}
+VODIR, SEGS, REPL, OUT, GUS, GUSW = sys.argv[1:7]
+GUS_MS, GUS_MD = 7.0, 4.95
+PRE_DEFAULT = 0.26      # aire entre frases
+LEAD = 0.30             # el primer golpe visual/SFX va antes de la voz
+TAIL = 1.25
 
 def load(path, ss=None, t=None):
-    cmd = ["ffmpeg", "-v", "error"]
-    if ss is not None: cmd += ["-ss", str(ss)]
-    if t is not None: cmd += ["-t", str(t)]
-    cmd += ["-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"]
+    cmd = ["ffmpeg", "-v", "error"] + (["-ss", str(ss)] if ss is not None else []) + (["-t", str(t)] if t is not None else []) + ["-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"]
     return np.frombuffer(subprocess.run(cmd, capture_output=True, check=True).stdout, dtype=np.float32).copy()
 
-def fade(x, n_in, n_out):
-    if n_in: x[:n_in] *= np.linspace(0, 1, n_in)
-    if n_out: x[-n_out:] *= np.linspace(1, 0, n_out)
+def fade(x, n):
+    if n and len(x) > 2 * n:
+        x[:n] *= np.linspace(0, 1, n); x[-n:] *= np.linspace(1, 0, n)
     return x
 
-def tighten(audio, words, maxgap=0.2, keep=0.12, special=None):
-    """Recorta silencios entre palabras > maxgap dejando `keep` s."""
-    special = special or {}
-    segs, out_words, cursor_src, t_out = [], [], 0.0, 0.0
-    # rango útil: desde 30ms antes de la primera palabra
-    start = max(0.0, words[0]["start"] - 0.03)
-    cursor_src = start
-    pieces = []
-    for i, w in enumerate(words):
-        out_words.append(dict(w))
-    cuts = []  # (src_from, src_to) a eliminar
+def tighten(audio, words, maxgap=0.3, keep=0.22):
+    start = max(0.0, words[0]["start"] - 0.04)
+    end = words[-1]["end"] + 0.16
+    pts = [start]
     for i in range(len(words) - 1):
         g = words[i + 1]["start"] - words[i]["end"]
-        k = special.get(words[i]["text"], keep)
-        if g > maxgap or words[i]["text"] in special:
-            if g > k:
-                mid_keep_a = words[i]["end"] + k * 0.5
-                mid_keep_b = words[i + 1]["start"] - k * 0.5
-                cuts.append((mid_keep_a, mid_keep_b))
-    end = words[-1]["end"] + 0.14
-    # construir audio
-    xf = int(0.006 * SR)
-    a, removed_before = [], []
-    src_pts = [start] + [p for c in cuts for p in c] + [end]
-    chunks = [(src_pts[j], src_pts[j + 1]) for j in range(0, len(src_pts), 2)]
-    out = np.zeros(0, dtype=np.float32)
-    mapping = []  # (src_start, src_end, out_start)
-    for (s0, s1) in chunks:
-        seg = audio[int(s0 * SR):int(s1 * SR)].copy()
-        seg = fade(seg, xf, xf)
+        if g > maxgap:
+            pts += [words[i]["end"] + keep / 2, words[i + 1]["start"] - keep / 2]
+    pts.append(end)
+    out, mapping = np.zeros(0, np.float32), []
+    for j in range(0, len(pts), 2):
+        s0, s1 = pts[j], pts[j + 1]
         mapping.append((s0, s1, len(out) / SR))
-        out = np.concatenate([out, seg])
+        out = np.concatenate([out, fade(audio[int(s0 * SR):int(s1 * SR)].copy(), int(0.008 * SR))])
     def remap(t):
         for s0, s1, o in mapping:
-            if t <= s1 + 1e-6:
-                return o + max(0.0, t - s0)
-        s0, s1, o = mapping[-1]
-        return o + (s1 - s0)
-    for w in out_words:
-        w["start"], w["end"] = remap(w["start"]), remap(w["end"])
-    return out, out_words
+            if t <= s1 + 1e-6: return o + max(0.0, t - s0)
+        s0, s1, o = mapping[-1]; return o + (s1 - s0)
+    return out, [{**w, "start": remap(w["start"]), "end": remap(w["end"])} for w in words]
 
-order = ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "GUS", "v9"]
-# pausa mínima ANTES de cada bloque (s)
-pre = {"v1": 0.18, "v2": 0.10, "v3": 0.10, "v4": 0.22, "v5": 0.30, "v6": 0.18, "v7": 0.18, "v8": 0.28, "GUS": 0.12, "v9": 0.30}
-quantize = {"v4", "v5", "v8", "v9"}  # arranques en corchea
-TAIL = 1.7
-
-timeline, cur, track = [], 0.0, []
-for sid in order:
-    t0 = cur + pre[sid]
-    if sid in quantize:
-        t0 = np.ceil(t0 / EIGHTH) * EIGHTH
-    if sid == "GUS":
-        ms, md = 7.0, 4.95
-        a = load(GUS, ms, md)
-        a = fade(a, int(0.04 * SR), int(0.08 * SR))
-        g = json.load(open(os.path.join(os.path.dirname(OUT), "gus_words.json")))
-        words = [{"text": w["text"], "start": t0 + w["start"] - ms, "end": t0 + w["end"] - ms} for w in g if w["start"] >= ms - 0.1 and w["end"] <= ms + md + 0.05]
-        timeline.append({"id": sid, "start": round(t0, 3), "end": round(t0 + md, 3), "media_start": ms, "duration": md, "words": words})
-        track.append((t0, a, 1.0))
-        cur = t0 + md
-        continue
-    audio = load(os.path.join(VODIR, sid + ".mp3"))
-    words = json.load(open(os.path.join(VODIR, sid + ".json")))
-    special = {"Funciona": 0.30}
-    a, w2 = tighten(audio, words, special=special)
-    words_g = []
-    for w in w2:
-        txt = CAPMAP.get(w["text"], w["text"])
-        words_g.append({"text": txt, "start": round(t0 + w["start"], 3), "end": round(t0 + w["end"], 3)})
-    # fusiona "I" "A" -> "IA"
-    merged = []
-    for w in words_g:
-        if merged and merged[-1]["text"] == "I" and w["text"] == "A":
-            merged[-1]["text"] = "IA"; merged[-1]["end"] = w["end"]
+repl = json.load(open(REPL))  # [{"seq": ["doce","mil"], "show": "$12,000"}...] y {"word": "x", "show": "y"}
+def apply_repl(words):
+    out, i = [], 0
+    while i < len(words):
+        hit = None
+        for r in repl:
+            seq = r.get("seq")
+            if seq and [w["text"].lower() for w in words[i:i + len(seq)]] == [s.lower() for s in seq]:
+                hit = r; break
+        if hit:
+            n = len(hit["seq"])
+            out.append({"text": hit["show"], "start": words[i]["start"], "end": words[i + n - 1]["end"]}); i += n
         else:
-            merged.append(w)
-    dur = len(a) / SR
-    timeline.append({"id": sid, "start": round(t0, 3), "end": round(t0 + dur, 3), "words": merged})
-    track.append((t0, a, 1.0))
-    cur = t0 + dur
+            w = dict(words[i]); i += 1
+            for r in repl:
+                if r.get("word") and r["word"].lower() == w["text"].lower(): w["text"] = r["show"]
+            out.append(w)
+    return out
 
+segs = [l.rstrip("\n").split("\t") for l in open(SEGS, encoding="utf-8") if l.strip()]
+timeline, track, cur = [], [], LEAD - PRE_DEFAULT
+for sid, *rest in segs:
+    pre = float(rest[1]) if len(rest) > 1 and rest[1] else PRE_DEFAULT
+    t0 = cur + pre
+    if sid == "GUS":
+        a = load(GUS, GUS_MS, GUS_MD)
+        n_in, n_out = int(0.04 * SR), int(0.08 * SR)
+        a[:n_in] *= np.linspace(0, 1, n_in); a[-n_out:] *= np.linspace(1, 0, n_out)
+        g = json.load(open(GUSW))
+        words = [{"text": w["text"], "start": round(t0 + w["start"] - GUS_MS, 3), "end": round(t0 + w["end"] - GUS_MS, 3)} for w in g if w["start"] >= GUS_MS - 0.1 and w["end"] <= GUS_MS + GUS_MD + 0.05]
+        timeline.append({"id": sid, "start": round(t0, 3), "end": round(t0 + GUS_MD, 3), "media_start": GUS_MS, "duration": GUS_MD, "words": words})
+        track.append((t0, a)); cur = t0 + GUS_MD
+        continue
+    a, w2 = tighten(load(os.path.join(VODIR, sid + ".mp3")), json.load(open(os.path.join(VODIR, sid + ".json"))))
+    words = apply_repl([{"text": w["text"], "start": round(t0 + w["start"], 3), "end": round(t0 + w["end"], 3)} for w in w2])
+    dur = len(a) / SR
+    timeline.append({"id": sid, "start": round(t0, 3), "end": round(t0 + dur, 3), "words": words})
+    track.append((t0, a)); cur = t0 + dur
 total = cur + TAIL
-mix = np.zeros(int(total * SR) + SR, dtype=np.float32)
-for t0, a, g in track:
-    i = int(round(t0 * SR)); mix[i:i + len(a)] += a * g
-mix = mix[:int(total * SR)]
-sf.write(OUT, mix, SR, subtype="PCM_24")
-json.dump({"bpm": BPM, "total": round(total, 3), "segments": timeline}, open(OUT.replace(".wav", "_timeline.json"), "w"), ensure_ascii=False, indent=1)
-for s in timeline:
-    print(s["id"], s["start"], s["end"], " ".join(w["text"] for w in s["words"]))
+mix = np.zeros(int(total * SR) + SR, np.float32)
+for t0, a in track:
+    i = int(round(t0 * SR)); mix[i:i + len(a)] += a
+sf.write(OUT, mix[:int(total * SR)], SR, subtype="PCM_24")
+json.dump({"total": round(total, 3), "segments": timeline}, open(OUT.replace(".wav", "_timeline.json"), "w"), ensure_ascii=False, indent=1)
+for s in timeline: print(s["id"], s["start"], s["end"], " ".join(w["text"] for w in s["words"]))
 print("TOTAL", round(total, 3))
