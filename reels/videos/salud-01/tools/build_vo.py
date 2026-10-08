@@ -8,7 +8,7 @@ SR = 48000
 VODIR, SEGS, REPL, OUT = sys.argv[1:5]
 PRE_DEFAULT = 0.26      # aire entre frases
 LEAD = 0.30             # el primer golpe visual/SFX va antes de la voz
-TAIL = 1.5
+TAIL = 1.25
 
 def load(path):
     cmd = ["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"]

@@ -32,3 +32,5 @@ No había `estilo.md` previo ni `referencia/referencia.mp4`: este estilo se defi
 - (2026-10-08, pedido de Fran tras inmo-01) **Logo FRANMORISHITA + monograma FM desde el fotograma 0**, grande en el primer segundo y luego fijo arriba (y ≈ 278–342) todo el video; se oculta cuando entra el cierre con logo.
 - (2026-10-08) **Voz menos robótica:** usar `en-US-AndrewMultilingualNeural` hablando español a +9 %, recortando solo pausas > 0.3 s (dejar 0.22 s). Jorge (es-MX) sonó robótico.
 - (2026-10-08) Incluir el **costo de oportunidad** con cuenta ilustrativa en pantalla (marcada "ejemplo ilustrativo", casillas para sus números).
+- (2026-10-08, v2 salud-01) Costo de oportunidad **high ticket**: tickets de $10,000–$50,000 por paciente y pérdidas de $100,000–$500,000 al mes; en pantalla "dejas de facturar" (ingreso), nunca "ganancia".
+- (2026-10-08) Gancho con **montaje rápido de fotos del buyer persona** (6 cortes de 0.42 s con flash y etiqueta) para que se reconozca desde el segundo 0. Si son imágenes de IA, leyenda visible "IMÁGENES GENERADAS CON IA · PERSONAS FICTICIAS".

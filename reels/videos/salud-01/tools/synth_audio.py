@@ -67,7 +67,7 @@ def saw(freq, d, detune=(0, -0.11, 0.09)):
 def pad(notes, d, cutoff=1400):
     x = sum(saw(midi(n), d) for n in notes) / len(notes)
     x = lp(x, cutoff, 2)
-    a = int(0.25 * SR); r = int(0.4 * SR)
+    a = min(int(0.25 * SR), len(x) // 3); r = min(int(0.4 * SR), len(x) // 3)
     e = np.ones(len(x)); e[:a] = np.linspace(0, 1, a); e[-r:] = np.linspace(1, 0, r)
     return x * e
 
@@ -135,10 +135,10 @@ T_CTA = W["s9"]["start"]
 section(0.0, T_BRK, "tension")
 place(music, pad(CHORDS[3], T_SIS - T_BRK + 0.2, 700), T_BRK, 0.14)
 section(T_SIS, T_CTA, "drop")
-section(T_CTA, TOTAL - 1.4, "cta", 1)
-place(music, pad(CHORDS[0], 2.0, 1600), TOTAL - 1.4, 0.16)
-place(music, kick(), TOTAL - 1.4, 0.9)
-place(music, sub808(midi(38), 1.3), TOTAL - 1.4, 0.6)
+section(T_CTA, TOTAL - 1.2, "cta", 1)
+place(music, pad(CHORDS[0], 2.0, 1600), TOTAL - 1.2, 0.16)
+place(music, kick(), TOTAL - 1.2, 0.9)
+place(music, sub808(midi(38), 1.3), TOTAL - 1.2, 0.6)
 fo = int(0.45 * SR); end = int(TOTAL * SR)
 music[end - fo:end] *= np.linspace(1, 0, fo); music[end:] = 0
 music = music[:end]
@@ -241,7 +241,7 @@ cues = [
     ("coins", wt("s2", "pagaste") - 0.05, 0.45),
     ("whoosh", W["s3"]["start"] - 0.15, 0.45),
     ("pop", wt("s3", "10"), 0.5), ("pop_hi", wt("s3", "tratamiento"), 0.5), ("impact", wt("s3", "$10,000"), 0.6), ("coins", wt("s3", "$10,000") + 0.05, 0.45),
-    ("riser_cta", wt("s4", "$100,000") - 1.0, 0.3), ("impact", wt("s4", "$100,000"), 0.95), ("coins", wt("s4", "$100,000") + 0.05, 0.6), ("coins", wt("s4", "$100,000") + 0.5, 0.45), ("buzz", wt("s4", "ganar"), 0.3),
+    ("riser_cta", wt("s4", "$100,000") - 1.0, 0.3), ("impact", wt("s4", "$100,000"), 0.95), ("coins", wt("s4", "$100,000") + 0.05, 0.6), ("coins", wt("s4", "$100,000") + 0.5, 0.45), ("buzz", wt("s4", "facturar"), 0.3),
     ("riser", T_BRK, 0.75), ("buzz", wt("s5", "publicidad") + 0.25, 0.35),
     ("impact", T_SIS, 1.0),
     ("whoosh", W["s6"]["start"] - 0.2, 0.45), ("type", wt("s6", "agente"), 0.5), ("ding", wt("s6", "contesta"), 0.55), ("pop_hi", wt("s6", "inglés"), 0.5),

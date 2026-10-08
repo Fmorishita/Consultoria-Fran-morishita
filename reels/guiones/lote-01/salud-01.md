@@ -1,7 +1,7 @@
 # salud-01 · "El paciente de las 10 p.m."
 
 - **Nicho:** salud privada (especialistas, dentistas, clínicas estéticas; Tijuana, Mexicali, Ensenada) · **Tipo:** demostración con costo de oportunidad · **Formato:** A (foto de Fran en el CTA)
-- **Duración real:** 44.4 s · 1080x1920 · 30 fps · −14 LUFS
+- **Duración real:** 45.0 s · 1080x1920 · 30 fps · −14 LUFS
 - **Palabra clave:** AGENDA · **Fuga:** mensajes de pacientes sin contestar fuera de horario + inasistencias
 - **Proyecto:** `videos/salud-01/` · render: `videos/salud-01/renders/salud-01-consultorios.mp4` (copia IG: `-ig.mp4`)
 - **Todo lo de salud es PROPUESTA** (la web no tiene página de salud). Guion hecho con un workflow de 3 ángulos (dolor / la cuenta / demo) → 3 jueces (retención, cumplimiento, dueño de clínica escéptico) → síntesis → 3 verificadores adversariales. Sin bloqueantes; se corrigieron los menores.
@@ -9,7 +9,8 @@
 ## Pedidos de Fran aplicados
 - Logo **FRANMORISHITA** (con monograma FM) desde el fotograma 0 y fijo arriba todo el video.
 - Voz menos robótica: **Andrew Multilingual** (voz conversacional de Microsoft) en vez de Jorge. Medido: 4.2 semitonos de variación de entonación contra 3.0 de Jorge (+38 %). Pausas naturales (solo se recortan las > 0.3 s).
-- **Costo de oportunidad** explícito: tramo de 10 s con la cuenta en pantalla.
+- **Costo de oportunidad** explícito y **high ticket** (v2, pedido de Fran): ticket de $10,000–$50,000 por paciente → $100,000–$500,000 al mes.
+- **Montaje de doctores high ticket** en el gancho (v2): 6 retratos fotorrealistas de doctores FICTICIOS generados con IA local (Realistic Vision 5.1, licencia CreativeML OpenRAIL-M) — cirugía plástica, implantes dentales, cirugía bariátrica, dermatología estética, cirugía láser de ojos, ortodoncia estética — con la leyenda "IMÁGENES GENERADAS CON IA · PERSONAS FICTICIAS". Gamma no se usó: el workspace no tiene créditos.
 
 ## Ganchos alternativos
 1. ✅ "Doctor: ese paciente que te escribió a las diez de la noche… ya agendó con otro."
@@ -21,9 +22,9 @@
 
 | Tramo | Tiempo | Voz | Pantalla | Fuente |
 |---|---|---|---|---|
-| Gancho | 0.0–4.7 | "Doctor: ese paciente que te escribió a las diez de la noche… ya agendó con otro." | Logo · DOCTOR: · notificación DEMO "Paciente nuevo · 10:12 p.m." · sello AGENDÓ CON OTRO | Escenario ilustrativo (PROPUESTA) |
+| Gancho | 0.0–4.7 | "Doctor: ese paciente que te escribió a las diez de la noche… ya agendó con otro." | Logo · montaje de 6 doctores high ticket ficticios (IA) con etiqueta de especialidad cada 0.42 s · leyenda IA · DOCTOR: · notificación DEMO "Paciente nuevo · 10:12 p.m." · sello AGENDÓ CON OTRO | Escenario ilustrativo (PROPUESTA) |
 | Problema | 4.7–8.5 | "Nadie le contestó. Y si llegó por tu anuncio, ya lo pagaste." | Chat DEMO "11 h 40 min sin respuesta" (10:12 p.m. → 9:52 a.m.) · tarjeta "Si llegó por tu anuncio · Ya lo pagaste" | web.md · El problema #3 |
-| Costo | 8.5–18.5 | "Haz la cuenta. Por ejemplo: tres pacientes perdidos a la semana, a mil pesos la consulta: doce mil al mes. Más de ciento cuarenta mil al año, sin contar tratamientos." | **EJEMPLO ILUSTRATIVO · HAZ LA CUENTA CON TUS NÚMEROS** · 3 × $1,000 = $3,000/sem × 4 = **$12,000/mes** · $12,000 × 12 = **$144,000/año** · "Solo primeras consultas · sin contar tratamientos" · casillas vacías "Tú: __ pacientes × $__" | Ejemplo ilustrativo; aritmética verificada (3×1,000=3,000; ×4=12,000; ×12=144,000) |
+| Costo | 8.5–19.3 | "Haz la cuenta. Por ejemplo: si se te van diez pacientes al mes sin respuesta, con un tratamiento de diez a cincuenta mil pesos… son de cien mil a quinientos mil pesos al mes que dejas de facturar." | **EJEMPLO ILUSTRATIVO · HAZ LA CUENTA CON TUS NÚMEROS** · Pacientes sin respuesta / mes: 10 · × Ticket por paciente: $10,000 – $50,000 · DEJAS DE FACTURAR **$100,000 a $500,000 AL MES** · "Cifras de ejemplo · ingreso antes de costos · no es precio de ningún médico" · casillas "Tú: __ pacientes × $__" | Ejemplo ilustrativo pedido por Fran (PROPUESTA). Aritmética: 10×10,000=100,000; 10×50,000=500,000. "Facturar" (ingreso), no utilidad. |
 | Giro | 18.5–22.1 | "El problema no es tu publicidad: es que no tienes un sistema." | EL PROBLEMA NO ES TU ~~PUBLICIDAD~~ · ES QUE NO TIENES UN **SISTEMA** | web.md ("problema de sales system") |
 | Demo 1 | 22.1–28.1 | "Primero: un agente de inteligencia artificial contesta en segundos, a cualquier hora, hasta en inglés." | 01 · Contesta al instante · chat DEMO "Clínica Ejemplo" · "informa horarios, no da diagnósticos" · ⚡ 8 s · 24/7 · ES·EN | web.md · Servicios IA; bilingüe/turismo médico: PROPUESTA; "8 s" es dato del mockup |
 | Demo 2 | 28.1–32.6 | "Con aviso de privacidad y consentimiento, ofrece horarios y agenda la cita." | 02 · Agenda con consentimiento · Aviso de privacidad (Privacy notice, LFPDPPP) "Acepto ✓" → horarios → "Cita agendada · jueves 10:00" | web.md · CRM; cuidado LFPDPPP (CLAUDE.md) |
@@ -36,8 +37,7 @@ Sin tramo de Prueba: no hay hechos verificados de salud (regla de CLAUDE.md: se 
 > Doctor(a): si un paciente te escribe a las 10 p.m. y le contestan hasta el otro día, puede que ya haya agendado con otro.
 >
 > Haz la cuenta (ejemplo ilustrativo, pon tus números):
-> 3 pacientes que se van a la semana × $1,000 de consulta = $12,000 al mes → $144,000 al año. Sin contar tratamientos.
-> ¿Das valoración gratis? Usa el valor de tu tratamiento promedio.
+> 10 pacientes al mes sin respuesta × ticket de $10,000–$50,000 = de $100,000 a $500,000 al mes que dejas de facturar.
 >
 > Muchas veces no falta publicidad: falta un sistema.
 > 1️⃣ Un agente de inteligencia artificial contesta en segundos, a cualquier hora, también en inglés.
@@ -46,7 +46,7 @@ Sin tramo de Prueba: no hay hechos verificados de salud (regla de CLAUDE.md: se 
 >
 > Si tu consultorio o clínica recibe más de 20 mensajes de pacientes a la semana, comenta **AGENDA** y te mando el link para un diagnóstico gratis de tu agenda de pacientes (30 min por videollamada).
 >
-> Ejemplo ilustrativo: las cifras no son resultados de clientes ni una promesa. Mockups DEMO con clínica ficticia; el agente no da diagnósticos ni indicaciones médicas.
+> Cifras de ejemplo para que hagas tu propia cuenta: no son resultados de clientes ni precios de ningún médico. Imágenes de doctores generadas con IA (personas ficticias). Mockups DEMO con clínica ficticia; el agente no da diagnósticos ni indicaciones médicas.
 >
 > #medicostijuana #dentistastijuana #clinicaestetica #turismomedico #mexicali
 
@@ -60,6 +60,7 @@ Comentario "AGENDA" → DM automático (ver `embudo/palabras-clave.md`; si lo ma
 
 ## Checklist
 - [x] Un solo nicho, llamado en el segundo 0 ("Doctor").
+- [x] Retratos de doctores ficticios con leyenda de IA, sin nombres, logos, cédulas, quirófanos con pacientes ni antes/después. Al publicar: activar la etiqueta "Información de IA" de Instagram.
 - [x] Costo de oportunidad con aritmética exacta, marcado "ejemplo ilustrativo" en pantalla y "por ejemplo" en voz.
 - [x] Sin promesas de pacientes, resultados ni curas (COFEPRIS / Ley General de Salud).
 - [x] Aviso de privacidad y consentimiento antes de agendar (LFPDPPP); el agente no da diagnósticos.
