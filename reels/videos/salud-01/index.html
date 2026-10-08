@@ -39,17 +39,25 @@
 
       /* ---------- A · gancho ---------- */
       #a-title { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font-weight: 800; font-size: 150px; letter-spacing: -0.04em; color: var(--gold); text-shadow: 0 10px 40px rgba(232,179,75,0.35); }
-      #a-notif { position: absolute; left: 90px; top: 590px; width: 900px; height: 250px; border-radius: 40px; background: rgba(28,34,46,0.94); border: 3px solid rgba(255,255,255,0.10); box-shadow: 0 30px 80px rgba(0,0,0,0.55); padding: 30px 36px; font-family: "Inter", sans-serif; }
+      #a-notif { position: absolute; left: 90px; top: 640px; width: 900px; height: 250px; border-radius: 40px; background: rgba(28,34,46,0.94); border: 3px solid rgba(255,255,255,0.10); box-shadow: 0 30px 80px rgba(0,0,0,0.55); padding: 30px 36px; font-family: "Inter", sans-serif; }
       .notif-top { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 27px; font-weight: 700; letter-spacing: 0.04em; }
       .notif-ico { color: #fff; display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 14px; background: linear-gradient(135deg, #17806c, #0f5f50); font-size: 30px; }
       .notif-time { margin-left: auto; font-weight: 400; }
       .notif-title { margin-top: 18px; font-size: 36px; font-weight: 700; color: #fff; }
       .notif-body { margin-top: 8px; font-size: 32px; color: #d7dce6; }
-      #a-clock { position: absolute; left: 0; right: 0; top: 875px; text-align: center; font-weight: 800; font-size: 140px; letter-spacing: -0.04em; color: #fff; text-shadow: 0 0 60px rgba(75,123,255,0.55); }
+      #a-clock { position: absolute; left: 0; right: 0; top: 905px; text-align: center; font-weight: 800; font-size: 118px; letter-spacing: -0.04em; color: #fff; text-shadow: 0 0 60px rgba(75,123,255,0.55); }
       #a-clock small { font-size: 66px; color: var(--muted); letter-spacing: 0; }
-      #a-stamp { position: absolute; left: 110px; top: 640px; width: 860px; padding: 14px 0 18px; text-align: center; white-space: nowrap; border: 10px solid var(--red); border-radius: 22px; color: var(--red); font-weight: 800; font-size: 72px; letter-spacing: 0.02em; background: rgba(20,6,10,0.88); }
+      #a-stamp { position: absolute; left: 110px; top: 690px; width: 860px; padding: 14px 0 18px; text-align: center; white-space: nowrap; border: 10px solid var(--red); border-radius: 22px; color: var(--red); font-weight: 800; font-size: 72px; letter-spacing: 0.02em; background: rgba(20,6,10,0.88); }
       #a-stamp span { display: block; font-size: 32px; letter-spacing: 0.08em; font-weight: 700; margin-top: -4px; }
 
+      #a-docs { position: absolute; inset: 0; overflow: hidden; }
+      .doc { position: absolute; inset: 0; opacity: 0; }
+      .doc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+      #a-docs-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,9,15,0.82) 0%, rgba(7,9,15,0.35) 30%, rgba(7,9,15,0.55) 50%, rgba(7,9,15,0.9) 66%, var(--bg) 100%); }
+      #a-spec { position: absolute; left: 0; right: 0; top: 548px; height: 72px; text-align: center; }
+      .spec { position: absolute; left: 0; right: 0; opacity: 0; }
+      .spec span { display: inline-block; padding: 10px 24px; border-radius: 14px; background: var(--gold); color: #0b0d12; font-weight: 800; font-size: 40px; letter-spacing: 0.06em; box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+      #a-ilus { position: absolute; right: 70px; top: 1012px; font-family: "Inter", sans-serif; font-size: 22px; font-weight: 700; color: rgba(244,246,251,0.75); letter-spacing: 0.04em; }
       /* ---------- chat ---------- */
       .phone { position: absolute; left: 130px; width: 820px; border-radius: 48px; background: var(--chat-bg); border: 4px solid #2a3442; box-shadow: 0 40px 120px rgba(0,0,0,0.6); overflow: hidden; font-family: "Inter", sans-serif; }
       .chat-head { display: flex; align-items: center; gap: 20px; height: 116px; padding: 0 30px; background: #1b262e; }
@@ -75,22 +83,20 @@
       /* ---------- C · la cuenta ---------- */
       #c-tag { position: absolute; left: 0; right: 0; top: 362px; text-align: center; }
       #c-tag span { display: inline-block; padding: 10px 22px; border-radius: 14px; background: var(--gold-l); color: #0b0d12; font-family: "Inter", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.08em; }
-      #c-ticket { position: absolute; left: 110px; top: 440px; width: 860px; height: 590px; border-radius: 34px; background: rgba(17,22,31,0.95); border: 3px solid var(--line); box-shadow: 0 40px 100px rgba(0,0,0,0.55); padding: 26px 44px; }
-      .c-line { display: flex; justify-content: space-between; align-items: baseline; height: 74px; font-weight: 700; font-size: 44px; color: #fff; border-bottom: 2px dashed rgba(255,255,255,0.10); }
-      .c-line .op { color: var(--gold); width: 60px; }
+      #c-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; opacity: 0.28; }
+      #c-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,9,15,0.9), rgba(7,9,15,0.55) 45%, rgba(7,9,15,0.96) 68%, var(--bg)); }
+      #c-ticket { position: absolute; left: 90px; top: 440px; width: 900px; height: 600px; border-radius: 34px; background: rgba(17,22,31,0.93); border: 3px solid var(--line); box-shadow: 0 40px 100px rgba(0,0,0,0.55); padding: 24px 40px; }
+      .c-line { display: flex; justify-content: space-between; align-items: center; height: 84px; font-weight: 700; font-size: 38px; color: #fff; border-bottom: 2px dashed rgba(255,255,255,0.10); }
+      .c-line .op { color: var(--gold); width: 52px; font-size: 44px; }
       .c-line .lab { flex: 1; }
-      .c-line .val { font-weight: 800; }
-      #c-month { margin-top: 18px; text-align: center; }
-      #c-month .n { display: block; font-weight: 800; font-size: 110px; letter-spacing: -0.04em; color: var(--gold); line-height: 1.05; text-shadow: 0 0 50px rgba(232,179,75,0.45); }
-      #c-month .u { display: block; font-size: 34px; font-weight: 700; color: var(--muted); letter-spacing: 0.12em; }
-      #c-year { position: absolute; left: 110px; top: 440px; width: 860px; height: 590px; border-radius: 34px; background: rgba(17,22,31,0.97); border: 4px solid var(--gold); box-shadow: 0 0 0 10px rgba(232,179,75,0.15), 0 40px 100px rgba(0,0,0,0.6); padding: 36px 40px; text-align: center; }
-      #c-year .x { font-size: 48px; font-weight: 800; color: var(--muted); }
-      #c-year .n { display: block; margin-top: 10px; font-weight: 800; font-size: 136px; line-height: 1; letter-spacing: -0.05em; color: var(--gold); text-shadow: 0 0 70px rgba(232,179,75,0.55); }
-      #c-year .u { display: block; margin-top: 6px; font-size: 40px; font-weight: 800; letter-spacing: 0.1em; }
-      #c-year .sm { display: inline-block; margin-top: 22px; padding: 8px 18px; border-radius: 12px; background: rgba(255,255,255,0.08); font-family: "Inter", sans-serif; font-size: 26px; font-weight: 700; color: var(--muted); }
-      #c-blank { margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 36px; font-weight: 700; color: #fff; }
-      #c-blank i { display: inline-block; width: 120px; height: 58px; border-radius: 12px; border: 3px dashed var(--gold); }
-
+      .c-line .val { font-weight: 800; font-size: 44px; color: var(--gold-l); white-space: nowrap; }
+      #c-res { margin-top: 16px; text-align: center; }
+      #c-res .k { display: block; font-size: 30px; font-weight: 800; letter-spacing: 0.14em; color: var(--muted); }
+      #c-res .n { display: block; font-weight: 800; font-size: 96px; letter-spacing: -0.04em; color: var(--gold); line-height: 1.02; text-shadow: 0 0 60px rgba(232,179,75,0.5); white-space: nowrap; }
+      #c-res .n2 { font-size: 108px; }
+      #c-res .u { display: block; margin-top: 4px; font-size: 32px; font-weight: 800; letter-spacing: 0.1em; }
+      #c-blank { margin-top: 14px; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 34px; font-weight: 700; color: #fff; }
+      #c-blank i { display: inline-block; width: 110px; height: 50px; border-radius: 12px; border: 3px dashed var(--gold); }
       /* ---------- D · giro ---------- */
       .d-line { position: absolute; left: 0; right: 0; text-align: center; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
       #d1 { top: 400px; font-size: 80px; color: #fff; }
@@ -164,15 +170,18 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="44.4" data-width="1080" data-height="1920">
-      <audio id="master" src="assets/audio/master.m4a" data-start="0" data-duration="44.4" data-track-index="10" data-volume="1"></audio>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="44.37" data-width="1080" data-height="1920">
+      <audio id="master" src="assets/audio/master.m4a" data-start="0" data-duration="44.37" data-track-index="10" data-volume="1"></audio>
 
       <div id="cam">
         <div id="bg-base"><div id="grid"></div><div id="glow1" class="glow"></div><div id="glow2" class="glow"></div></div>
 
         <!-- A · GANCHO -->
         <div id="sA" class="scene">
+          <div id="a-docs"><div class="doc" id="doc0"><img src="assets/img/doctores/cirujano-plastico.jpg" alt="" /></div><div class="doc" id="doc1"><img src="assets/img/doctores/implantologa.jpg" alt="" /></div><div class="doc" id="doc2"><img src="assets/img/doctores/bariatra.jpg" alt="" /></div><div class="doc" id="doc3"><img src="assets/img/doctores/dermatologa.jpg" alt="" /></div><div class="doc" id="doc4"><img src="assets/img/doctores/oftalmologo.jpg" alt="" /></div><div class="doc" id="doc5"><img src="assets/img/doctores/ortodoncista.jpg" alt="" /></div><div id="a-docs-shade"></div></div>
           <div id="a-title">DOCTOR:</div>
+          <div id="a-spec"><div class="spec" id="spec0"><span>CIRUGÍA PLÁSTICA</span></div><div class="spec" id="spec1"><span>IMPLANTES DENTALES</span></div><div class="spec" id="spec2"><span>CIRUGÍA BARIÁTRICA</span></div><div class="spec" id="spec3"><span>DERMATOLOGÍA ESTÉTICA</span></div><div class="spec" id="spec4"><span>CIRUGÍA LÁSER DE OJOS</span></div><div class="spec" id="spec5"><span>ORTODONCIA ESTÉTICA</span></div></div>
+          <div id="a-ilus">Imágenes ilustrativas</div>
           <div id="a-notif" data-layout-allow-overlap>
             <div class="notif-top"><span class="notif-ico">💬</span><span>MENSAJE · CLÍNICA EJEMPLO</span><span class="notif-time">10:12 p.m.</span></div>
             <div class="notif-title">Paciente nuevo 🔔</div>
@@ -180,7 +189,7 @@
           </div>
           <div id="a-clock">🌙 10:12 <small>P.M.</small></div>
           <div id="a-stamp" data-layout-allow-overlap>AGENDÓ CON OTRO<span data-layout-allow-overlap>NADIE LE CONTESTÓ</span></div>
-          <div class="demo-tag" id="a-demo" style="right: 90px; top: 862px">DEMO</div>
+          <div class="demo-tag" id="a-demo" style="right: 90px; top: 905px">DEMO</div>
         </div>
 
         <!-- B · NADIE CONTESTÓ -->
@@ -197,19 +206,13 @@
 
         <!-- C · LA CUENTA -->
         <div id="sC" class="scene">
+          <img id="c-bg" src="assets/img/doctores/bariatra.jpg" alt="" />
+          <div id="c-shade"></div>
           <div id="c-tag"><span>EJEMPLO ILUSTRATIVO · HAZ LA CUENTA CON TUS NÚMEROS</span></div>
           <div id="c-ticket">
-            <div class="c-line" id="c-l1"><span class="op"></span><span class="lab">Pacientes perdidos / semana</span><span class="val">3</span></div>
-            <div class="c-line" id="c-l2"><span class="op">×</span><span class="lab">Consulta</span><span class="val">$1,000</span></div>
-            <div class="c-line" id="c-l3"><span class="op">=</span><span class="lab">Por semana</span><span class="val">$3,000</span></div>
-            <div class="c-line" id="c-l4"><span class="op">×</span><span class="lab">Semanas al mes</span><span class="val">4</span></div>
-            <div id="c-month"><span class="n" id="c-mn">$0</span><span class="u">AL MES · MXN</span></div>
-          </div>
-          <div id="c-year">
-            <div class="x">$12,000 × 12 MESES</div>
-            <span class="n" id="c-yn">$12,000</span>
-            <span class="u">AL AÑO · MXN</span>
-            <span class="sm">Solo primeras consultas · sin contar tratamientos</span>
+            <div class="c-line" id="c-l1"><span class="op"></span><span class="lab">Pacientes que se van / mes</span><span class="val">10</span></div>
+            <div class="c-line" id="c-l2"><span class="op">×</span><span class="lab">Tratamiento promedio</span><span class="val">$10,000 – $50,000</span></div>
+            <div id="c-res"><span class="k">DEJAS DE GANAR</span><span class="n" id="c-n1">$100,000</span><span class="n n2" id="c-n2">a $500,000</span><span class="u">AL MES · MXN</span></div>
             <div id="c-blank">Tú: <i></i> pacientes × $<i></i></div>
           </div>
         </div>
@@ -292,8 +295,8 @@
     </div>
 
     <script>
-      const VO = /*VO_DATA_START*/{"total":44.431,"segments":[{"id":"s1","start":0.3,"end":4.564,"words":[{"text":"Doctor","start":0.34,"end":0.833},{"text":"ese","start":1.053,"end":1.225},{"text":"paciente","start":1.237,"end":1.615},{"text":"que","start":1.626,"end":1.718},{"text":"te","start":1.73,"end":1.799},{"text":"escribió","start":1.799,"end":2.234},{"text":"a","start":2.234,"end":2.257},{"text":"las","start":2.269,"end":2.464},{"text":"10","start":2.464,"end":2.636},{"text":"de","start":2.636,"end":2.693},{"text":"la","start":2.693,"end":2.773},{"text":"noche","start":2.773,"end":3.083},{"text":"ya","start":3.303,"end":3.509},{"text":"agendó","start":3.509,"end":3.899},{"text":"con","start":3.899,"end":4.06},{"text":"otro","start":4.071,"end":4.404}]},{"id":"s2","start":4.844,"end":8.271,"words":[{"text":"Nadie","start":4.884,"end":5.136},{"text":"le","start":5.148,"end":5.228},{"text":"contestó","start":5.228,"end":5.79},{"text":"Y","start":6.01,"end":6.056},{"text":"si","start":6.056,"end":6.182},{"text":"llegó","start":6.182,"end":6.434},{"text":"por","start":6.434,"end":6.572},{"text":"tu","start":6.583,"end":6.663},{"text":"anuncio","start":6.663,"end":7.099},{"text":"ya","start":7.319,"end":7.457},{"text":"lo","start":7.468,"end":7.56},{"text":"pagaste","start":7.571,"end":8.11}]},{"id":"s3","start":8.571,"end":14.887,"words":[{"text":"Haz","start":8.611,"end":8.725},{"text":"la","start":8.725,"end":8.805},{"text":"cuenta","start":8.817,"end":9.264},{"text":"Por","start":9.484,"end":9.587},{"text":"ejemplo","start":9.587,"end":10.046},{"text":"3","start":10.275,"end":10.482},{"text":"pacientes","start":10.493,"end":10.918},{"text":"perdidos","start":10.918,"end":11.353},{"text":"a","start":11.353,"end":11.388},{"text":"la","start":11.388,"end":11.48},{"text":"semana","start":11.491,"end":11.915},{"text":"a","start":12.135,"end":12.204},{"text":"$1,000","start":12.204,"end":12.823},{"text":"la","start":12.823,"end":12.904},{"text":"consulta","start":12.904,"end":13.454},{"text":"$12,000","start":13.729,"end":14.2},{"text":"al","start":14.2,"end":14.314},{"text":"mes","start":14.314,"end":14.727}]},{"id":"s4","start":15.147,"end":18.273,"words":[{"text":"Más","start":15.187,"end":15.428},{"text":"de","start":15.428,"end":15.508},{"text":"$140,000","start":15.508,"end":16.322},{"text":"al","start":16.322,"end":16.437},{"text":"año","start":16.437,"end":16.689},{"text":"sin","start":16.909,"end":17.024},{"text":"contar","start":17.035,"end":17.334},{"text":"tratamientos","start":17.334,"end":18.113}]},{"id":"s5","start":18.653,"end":21.837,"words":[{"text":"El","start":18.693,"end":18.797},{"text":"problema","start":18.797,"end":19.198},{"text":"no","start":19.21,"end":19.45},{"text":"es","start":19.45,"end":19.554},{"text":"tu","start":19.565,"end":19.657},{"text":"publicidad","start":19.668,"end":20.23},{"text":"es","start":20.45,"end":20.519},{"text":"que","start":20.53,"end":20.611},{"text":"no","start":20.611,"end":20.737},{"text":"tienes","start":20.748,"end":21.035},{"text":"un","start":21.046,"end":21.15},{"text":"sistema","start":21.15,"end":21.677}]},{"id":"s6","start":22.217,"end":27.96,"words":[{"text":"Primero","start":22.257,"end":22.659},{"text":"un","start":22.879,"end":22.959},{"text":"agente","start":22.959,"end":23.303},{"text":"de","start":23.303,"end":23.372},{"text":"inteligencia","start":23.383,"end":23.934},{"text":"artificial","start":23.934,"end":24.53},{"text":"contesta","start":24.53,"end":25.035},{"text":"en","start":25.035,"end":25.092},{"text":"segundos","start":25.092,"end":25.654},{"text":"a","start":25.929,"end":25.986},{"text":"cualquier","start":25.986,"end":26.445},{"text":"hora","start":26.445,"end":26.652},{"text":"hasta","start":26.872,"end":27.17},{"text":"en","start":27.17,"end":27.238},{"text":"inglés","start":27.239,"end":27.8}]},{"id":"s7","start":28.22,"end":32.425,"words":[{"text":"Con","start":28.26,"end":28.375},{"text":"aviso","start":28.375,"end":28.65},{"text":"de","start":28.65,"end":28.742},{"text":"privacidad","start":28.742,"end":29.281},{"text":"y","start":29.281,"end":29.315},{"text":"consentimiento","start":29.315,"end":30.084},{"text":"ofrece","start":30.304,"end":30.694},{"text":"horarios","start":30.705,"end":31.21},{"text":"y","start":31.221,"end":31.359},{"text":"agenda","start":31.359,"end":31.749},{"text":"la","start":31.749,"end":31.84},{"text":"cita","start":31.852,"end":32.265}]},{"id":"s8","start":32.665,"end":35.686,"words":[{"text":"Y","start":32.705,"end":32.762},{"text":"1 día","start":32.762,"end":33.152},{"text":"antes","start":33.152,"end":33.553},{"text":"manda","start":33.783,"end":34.046},{"text":"recordatorio","start":34.046,"end":34.666},{"text":"para","start":34.677,"end":34.872},{"text":"que","start":34.872,"end":34.964},{"text":"confirme","start":34.964,"end":35.526}]},{"id":"s9","start":36.066,"end":42.931,"words":[{"text":"Si","start":36.106,"end":36.221},{"text":"tu","start":36.221,"end":36.312},{"text":"consultorio","start":36.324,"end":36.851},{"text":"recibe","start":36.851,"end":37.241},{"text":"más","start":37.241,"end":37.608},{"text":"de","start":37.608,"end":37.677},{"text":"20","start":37.688,"end":37.941},{"text":"mensajes","start":37.952,"end":38.526},{"text":"a","start":38.537,"end":38.571},{"text":"la","start":38.571,"end":38.652},{"text":"semana","start":38.652,"end":39.065},{"text":"comenta","start":39.285,"end":39.663},{"text":"agenda","start":39.663,"end":40.099},{"text":"y","start":40.305,"end":40.362},{"text":"revisamos","start":40.363,"end":40.913},{"text":"gratis","start":40.924,"end":41.303},{"text":"dónde","start":41.303,"end":41.498},{"text":"se","start":41.498,"end":41.624},{"text":"te","start":41.624,"end":41.704},{"text":"van","start":41.716,"end":41.911},{"text":"los","start":41.911,"end":42.037},{"text":"pacientes","start":42.048,"end":42.771}]}]}/*VO_DATA_END*/;
-      const DUR = 44.4;
+      const VO = /*VO_DATA_START*/{"total":44.373,"segments":[{"id":"s1","start":0.3,"end":4.564,"words":[{"text":"Doctor","start":0.34,"end":0.833},{"text":"ese","start":1.053,"end":1.225},{"text":"paciente","start":1.237,"end":1.615},{"text":"que","start":1.626,"end":1.718},{"text":"te","start":1.73,"end":1.799},{"text":"escribió","start":1.799,"end":2.234},{"text":"a","start":2.234,"end":2.257},{"text":"las","start":2.269,"end":2.464},{"text":"10","start":2.464,"end":2.636},{"text":"de","start":2.636,"end":2.693},{"text":"la","start":2.693,"end":2.773},{"text":"noche","start":2.773,"end":3.083},{"text":"ya","start":3.303,"end":3.509},{"text":"agendó","start":3.509,"end":3.899},{"text":"con","start":3.899,"end":4.06},{"text":"otro","start":4.071,"end":4.404}]},{"id":"s2","start":4.844,"end":8.271,"words":[{"text":"Nadie","start":4.884,"end":5.136},{"text":"le","start":5.148,"end":5.228},{"text":"contestó","start":5.228,"end":5.79},{"text":"Y","start":6.01,"end":6.056},{"text":"si","start":6.056,"end":6.182},{"text":"llegó","start":6.182,"end":6.434},{"text":"por","start":6.434,"end":6.572},{"text":"tu","start":6.583,"end":6.663},{"text":"anuncio","start":6.663,"end":7.099},{"text":"ya","start":7.319,"end":7.457},{"text":"lo","start":7.468,"end":7.56},{"text":"pagaste","start":7.571,"end":8.11}]},{"id":"s3","start":8.571,"end":14.66,"words":[{"text":"Haz","start":8.611,"end":8.725},{"text":"la","start":8.725,"end":8.805},{"text":"cuenta","start":8.817,"end":9.276},{"text":"Por","start":9.496,"end":9.61},{"text":"ejemplo","start":9.61,"end":10.069},{"text":"si","start":10.289,"end":10.392},{"text":"se","start":10.392,"end":10.518},{"text":"te","start":10.518,"end":10.622},{"text":"van","start":10.633,"end":10.828},{"text":"10","start":10.828,"end":11.034},{"text":"pacientes","start":11.034,"end":11.482},{"text":"al","start":11.482,"end":11.585},{"text":"mes","start":11.585,"end":11.917},{"text":"con","start":12.137,"end":12.275},{"text":"un","start":12.275,"end":12.344},{"text":"tratamiento","start":12.344,"end":12.78},{"text":"de","start":12.78,"end":12.86},{"text":"$10,000–$50,000","start":12.86,"end":14.5}]},{"id":"s4","start":14.92,"end":18.216,"words":[{"text":"son","start":14.96,"end":15.052},{"text":"de","start":15.052,"end":15.132},{"text":"$100,000–$500,000","start":15.143,"end":16.657},{"text":"al","start":16.668,"end":16.829},{"text":"mes","start":16.841,"end":17.116},{"text":"que","start":17.127,"end":17.23},{"text":"dejas","start":17.242,"end":17.597},{"text":"de","start":17.597,"end":17.666},{"text":"ganar","start":17.666,"end":18.056}]},{"id":"s5","start":18.596,"end":21.78,"words":[{"text":"El","start":18.636,"end":18.739},{"text":"problema","start":18.739,"end":19.141},{"text":"no","start":19.152,"end":19.393},{"text":"es","start":19.393,"end":19.496},{"text":"tu","start":19.508,"end":19.599},{"text":"publicidad","start":19.611,"end":20.173},{"text":"es","start":20.393,"end":20.462},{"text":"que","start":20.473,"end":20.553},{"text":"no","start":20.553,"end":20.679},{"text":"tienes","start":20.691,"end":20.978},{"text":"un","start":20.989,"end":21.092},{"text":"sistema","start":21.092,"end":21.62}]},{"id":"s6","start":22.16,"end":27.903,"words":[{"text":"Primero","start":22.2,"end":22.601},{"text":"un","start":22.821,"end":22.902},{"text":"agente","start":22.902,"end":23.246},{"text":"de","start":23.246,"end":23.314},{"text":"inteligencia","start":23.326,"end":23.876},{"text":"artificial","start":23.876,"end":24.473},{"text":"contesta","start":24.473,"end":24.977},{"text":"en","start":24.977,"end":25.035},{"text":"segundos","start":25.035,"end":25.596},{"text":"a","start":25.872,"end":25.929},{"text":"cualquier","start":25.929,"end":26.388},{"text":"hora","start":26.388,"end":26.594},{"text":"hasta","start":26.814,"end":27.112},{"text":"en","start":27.112,"end":27.181},{"text":"inglés","start":27.181,"end":27.743}]},{"id":"s7","start":28.163,"end":32.367,"words":[{"text":"Con","start":28.203,"end":28.318},{"text":"aviso","start":28.318,"end":28.593},{"text":"de","start":28.593,"end":28.685},{"text":"privacidad","start":28.685,"end":29.224},{"text":"y","start":29.224,"end":29.258},{"text":"consentimiento","start":29.258,"end":30.026},{"text":"ofrece","start":30.246,"end":30.636},{"text":"horarios","start":30.648,"end":31.152},{"text":"y","start":31.164,"end":31.301},{"text":"agenda","start":31.301,"end":31.691},{"text":"la","start":31.691,"end":31.783},{"text":"cita","start":31.795,"end":32.207}]},{"id":"s8","start":32.607,"end":35.629,"words":[{"text":"Y","start":32.647,"end":32.705},{"text":"1 día","start":32.705,"end":33.095},{"text":"antes","start":33.095,"end":33.496},{"text":"manda","start":33.725,"end":33.989},{"text":"recordatorio","start":33.989,"end":34.608},{"text":"para","start":34.62,"end":34.815},{"text":"que","start":34.815,"end":34.907},{"text":"confirme","start":34.907,"end":35.468}]},{"id":"s9","start":36.009,"end":42.873,"words":[{"text":"Si","start":36.049,"end":36.163},{"text":"tu","start":36.163,"end":36.255},{"text":"consultorio","start":36.266,"end":36.794},{"text":"recibe","start":36.794,"end":37.184},{"text":"más","start":37.184,"end":37.551},{"text":"de","start":37.551,"end":37.62},{"text":"20","start":37.631,"end":37.883},{"text":"mensajes","start":37.895,"end":38.468},{"text":"a","start":38.48,"end":38.514},{"text":"la","start":38.514,"end":38.594},{"text":"semana","start":38.594,"end":39.007},{"text":"comenta","start":39.227,"end":39.606},{"text":"agenda","start":39.606,"end":40.041},{"text":"y","start":40.248,"end":40.305},{"text":"revisamos","start":40.305,"end":40.856},{"text":"gratis","start":40.867,"end":41.246},{"text":"dónde","start":41.246,"end":41.44},{"text":"se","start":41.44,"end":41.567},{"text":"te","start":41.567,"end":41.647},{"text":"van","start":41.658,"end":41.853},{"text":"los","start":41.853,"end":41.979},{"text":"pacientes","start":41.991,"end":42.713}]}]}/*VO_DATA_END*/;
+      const DUR = 44.37;
       const SEG = {};
       VO.segments.forEach((s) => (SEG[s.id] = s));
       const W = (seg, txt, which = "start", n = 0) => {
@@ -327,7 +330,7 @@
       };
       const money = (v) => "$" + Math.round(v).toLocaleString("en-US");
 
-      const T_B = S("s2") - 0.1, T_C = S("s3") - 0.1, T_Y = S("s4") - 0.12, T_D = S("s5") - 0.12;
+      const T_B = S("s2") - 0.1, T_C = S("s3") - 0.1, T_D = S("s5") - 0.12;
       const T_E1 = S("s6") - 0.1, T_E2 = S("s7") - 0.1, T_E3 = S("s8") - 0.1, T_G = S("s9") - 0.12;
 
       /* fondo vivo */
@@ -341,6 +344,20 @@
       tl.fromTo("#brand .fm", { rotation: -120 }, { rotation: 0, duration: 0.6, ease: "back.out(1.6)" }, 0);
       tl.to("#brand", { scale: 1, y: 0, duration: 0.45, ease: "power3.inOut" }, 0.85);
       tl.to("#brand", { opacity: 0, y: -20, duration: 0.3, ease: "power2.in" }, SEG.s9.words[SEG.s9.words.length - 1].end + 0.2);
+
+      /* montaje de doctores high ticket */
+      [0, 1, 2, 3, 4, 5].forEach((i) => {
+        const t = 0.5 + i * 0.42;
+        tl.fromTo(`#doc${i}`, { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1.04, duration: 0.42 + (i === 5 ? 1.9 : 0), ease: "power2.out" }, t);
+        if (i < 5) tl.set(`#doc${i}`, { opacity: 0 }, t + 0.44);
+        tl.fromTo(`#spec${i}`, { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.14, ease: "back.out(2)" }, t + 0.02);
+        if (i < 5) tl.set(`#spec${i}`, { opacity: 0 }, t + 0.42);
+        flash(t, 0.35, 0.12);
+      });
+      tl.to("#spec5", { opacity: 0, duration: 0.15 }, W("s1", "paciente") - 0.15);
+      tl.to("#doc5", { opacity: 0.35, filter: "grayscale(0.6)", duration: 0.5 }, W("s1", "paciente") - 0.1);
+      tl.fromTo("#a-ilus", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 0.55);
+      tl.to("#a-ilus", { opacity: 0, duration: 0.2 }, W("s1", "paciente") - 0.1);
 
       /* A · gancho */
       tl.fromTo("#a-title", { scale: 2.4, opacity: 0, filter: "blur(16px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, W("s1", "Doctor") - 0.12);
@@ -365,21 +382,23 @@
 
       /* C · la cuenta (ejemplo ilustrativo) */
       whip("#sB", "#sC", T_C, "y");
+      tl.fromTo("#c-bg", { scale: 1.25 }, { scale: 1.05, duration: 10, ease: "none" }, T_C);
       pop("#c-tag", T_C + 0.15, { y: -30 }, 0.35, "power3.out");
       tl.fromTo("#c-ticket", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, T_C + 0.1);
-      [["#c-l1", W("s3", "3") - 0.1], ["#c-l2", W("s3", "$1,000") - 0.1], ["#c-l3", W("s3", "consulta")], ["#c-l4", W("s3", "consulta") + 0.35]].forEach(([el, t]) =>
-        tl.fromTo(el, { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, t));
-      tl.fromTo("#c-month", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, W("s3", "$12,000") - 0.1);
-      counter("c-mn", 0, 12000, W("s3", "$12,000") - 0.1, 0.5, money);
-      punch(W("s3", "$12,000") + 0.35, 1.05);
-      // año
-      tl.set("#c-ticket", { opacity: 0 }, T_Y + 0.12);
-      tl.fromTo("#c-year", { opacity: 0, scale: 0.85, rotationX: -50 }, { opacity: 1, scale: 1, rotationX: 0, transformPerspective: 1200, duration: 0.35, ease: "power3.out" }, T_Y);
-      counter("c-yn", 12000, 144000, W("s4", "$140,000") - 0.05, 0.75, money);
-      flash(W("s4", "$140,000") + 0.55, 0.5, 0.25); shake(W("s4", "$140,000") + 0.55, 1.5);
-      tl.fromTo("#c-year .sm", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, W("s4", "sin") - 0.05);
-      tl.fromTo("#c-blank", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, W("s4", "tratamientos") + 0.1);
-      tl.fromTo("#c-blank i", { boxShadow: "0 0 0 0 rgba(232,179,75,0.7)" }, { boxShadow: "0 0 0 16px rgba(232,179,75,0)", duration: 0.5, repeat: 1, ease: "power2.out", immediateRender: false }, W("s4", "tratamientos") + 0.35);
+      tl.fromTo("#c-l1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, W("s3", "10") - 0.1);
+      tl.fromTo("#c-l2", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, W("s3", "tratamiento") - 0.1);
+      punch(W("s3", "$10,000") + 0.1, 1.04);
+      const tRes = W("s4", "$100,000") - 0.08;
+      tl.fromTo("#c-res .k", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, tRes - 0.15);
+      tl.fromTo("#c-n1", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.24, ease: "power4.in" }, tRes);
+      counter("c-n1", 0, 100000, tRes, 0.45, money);
+      tl.fromTo("#c-n2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, tRes + 0.6);
+      counter("c-n2", 100000, 500000, tRes + 0.6, 0.7, (v) => "a " + money(v));
+      tl.fromTo("#c-res .u", { opacity: 0 }, { opacity: 1, duration: 0.25 }, tRes + 0.9);
+      flash(tRes + 1.3, 0.55, 0.25); shake(tRes + 1.3, 1.6);
+      tl.fromTo("#c-ticket", { boxShadow: "0 0 0 0 rgba(232,179,75,0.6)" }, { boxShadow: "0 0 0 30px rgba(232,179,75,0)", duration: 0.6, ease: "power2.out", immediateRender: false }, tRes + 1.3);
+      tl.fromTo("#c-blank", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, W("s4", "dejas") - 0.05);
+      tl.fromTo("#c-blank i", { boxShadow: "0 0 0 0 rgba(232,179,75,0.7)" }, { boxShadow: "0 0 0 16px rgba(232,179,75,0)", duration: 0.5, repeat: 1, ease: "power2.out", immediateRender: false }, W("s4", "ganar"));
 
       /* D · giro */
       tl.to("#sC", { opacity: 0, scale: 0.9, filter: "blur(10px)", duration: 0.28, ease: "power3.in" }, T_D);
@@ -447,7 +466,7 @@
       tl.fromTo("#fade", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.in", immediateRender: false }, DUR - 0.3);
 
       /* SUBTÍTULOS palabra por palabra */
-      const KEY = new Set(["doctor", "paciente", "10", "agendó", "anuncio", "pagaste", "3", "$1,000", "$12,000", "$140,000", "tratamientos", "publicidad", "sistema", "segundos", "inteligencia", "artificial", "inglés", "privacidad", "consentimiento", "cita", "recordatorio", "confirme", "20", "mensajes", "agenda", "gratis", "pacientes"]);
+      const KEY = new Set(["doctor", "paciente", "10", "agendó", "anuncio", "pagaste", "$10,000–$50,000", "$100,000–$500,000", "tratamiento", "ganar", "publicidad", "sistema", "segundos", "inteligencia", "artificial", "inglés", "privacidad", "consentimiento", "cita", "recordatorio", "confirme", "20", "mensajes", "agenda", "gratis", "pacientes"]);
       const capRoot = document.getElementById("captions");
       const chunks = [];
       VO.segments.forEach((s) => {

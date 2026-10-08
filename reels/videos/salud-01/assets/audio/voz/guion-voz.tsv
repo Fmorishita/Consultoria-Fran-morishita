@@ -1,7 +1,7 @@
 s1	Doctor: ese paciente que te escribió a las diez de la noche… ya agendó con otro.	
 s2	Nadie le contestó. Y si llegó por tu anuncio, ya lo pagaste.	0.28
-s3	Haz la cuenta. Por ejemplo: tres pacientes perdidos a la semana, a mil pesos la consulta: doce mil al mes.	0.3
-s4	Más de ciento cuarenta mil al año, sin contar tratamientos.	0.26
+s3	Haz la cuenta. Por ejemplo: si se te van diez pacientes al mes, con un tratamiento de diez a cincuenta mil pesos…	0.3
+s4	…son de cien mil a quinientos mil pesos al mes que dejas de ganar.	0.26
 s5	El problema no es tu publicidad: es que no tienes un sistema.	0.38
 s6	Primero: un agente de inteligencia artificial contesta en segundos, a cualquier hora, hasta en inglés.	0.38
 s7	Con aviso de privacidad y consentimiento, ofrece horarios y agenda la cita.	0.26
