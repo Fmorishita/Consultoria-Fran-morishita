@@ -1,7 +1,7 @@
 # salud-01 · "El paciente de las 10 p.m."
 
 - **Nicho:** salud privada (especialistas, dentistas, clínicas estéticas; Tijuana, Mexicali, Ensenada) · **Tipo:** demostración con costo de oportunidad · **Formato:** A (foto de Fran en el CTA)
-- **Duración real:** 45.0 s · 1080x1920 · 30 fps · −14 LUFS
+- **Duración real:** 45.0 s (v2) · 1080x1920 · 30 fps · −14 LUFS
 - **Palabra clave:** AGENDA · **Fuga:** mensajes de pacientes sin contestar fuera de horario + inasistencias
 - **Proyecto:** `videos/salud-01/` · render: `videos/salud-01/renders/salud-01-consultorios.mp4` (copia IG: `-ig.mp4`)
 - **Todo lo de salud es PROPUESTA** (la web no tiene página de salud). Guion hecho con un workflow de 3 ángulos (dolor / la cuenta / demo) → 3 jueces (retención, cumplimiento, dueño de clínica escéptico) → síntesis → 3 verificadores adversariales. Sin bloqueantes; se corrigieron los menores.
@@ -22,7 +22,7 @@
 
 | Tramo | Tiempo | Voz | Pantalla | Fuente |
 |---|---|---|---|---|
-| Gancho | 0.0–4.7 | "Doctor: ese paciente que te escribió a las diez de la noche… ya agendó con otro." | Logo · montaje de 6 doctores high ticket ficticios (IA) con etiqueta de especialidad cada 0.42 s · leyenda IA · DOCTOR: · notificación DEMO "Paciente nuevo · 10:12 p.m." · sello AGENDÓ CON OTRO | Escenario ilustrativo (PROPUESTA) |
+| Gancho | 0.0–4.7 | "Doctor: ese paciente que te escribió a las diez de la noche… ya agendó con otro." | Logo · montaje de 6 doctores high ticket ficticios (IA) con etiqueta de especialidad cada 0.38 s (0.45–2.7 s, caras despejadas) · leyenda IA · DOCTOR: · al terminar el montaje ("de la noche") entra la notificación DEMO "Paciente nuevo · 10:12 p.m." · sello AGENDÓ CON OTRO | Escenario ilustrativo (PROPUESTA) |
 | Problema | 4.7–8.5 | "Nadie le contestó. Y si llegó por tu anuncio, ya lo pagaste." | Chat DEMO "11 h 40 min sin respuesta" (10:12 p.m. → 9:52 a.m.) · tarjeta "Si llegó por tu anuncio · Ya lo pagaste" | web.md · El problema #3 |
 | Costo | 8.5–19.3 | "Haz la cuenta. Por ejemplo: si se te van diez pacientes al mes sin respuesta, con un tratamiento de diez a cincuenta mil pesos… son de cien mil a quinientos mil pesos al mes que dejas de facturar." | **EJEMPLO ILUSTRATIVO · HAZ LA CUENTA CON TUS NÚMEROS** · Pacientes sin respuesta / mes: 10 · × Ticket por paciente: $10,000 – $50,000 · DEJAS DE FACTURAR **$100,000 a $500,000 AL MES** · "Cifras de ejemplo · ingreso antes de costos · no es precio de ningún médico" · casillas "Tú: __ pacientes × $__" | Ejemplo ilustrativo pedido por Fran (PROPUESTA). Aritmética: 10×10,000=100,000; 10×50,000=500,000. "Facturar" (ingreso), no utilidad. |
 | Giro | 18.5–22.1 | "El problema no es tu publicidad: es que no tienes un sistema." | EL PROBLEMA NO ES TU ~~PUBLICIDAD~~ · ES QUE NO TIENES UN **SISTEMA** | web.md ("problema de sales system") |

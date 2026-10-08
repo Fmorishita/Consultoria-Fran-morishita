@@ -22,7 +22,7 @@
 - Contadores animados arrancan en 0 (capturas/robots ven "$0").
 
 ## salud-01 (hecho 2026-10-08)
-- `videos/salud-01/renders/salud-01-consultorios.mp4` (44.4 s). Guion: `guiones/lote-01/salud-01.md`. Pendiente: aprobar umbral y AGENDA, activar automatización, revisión legal ligera.
+- `videos/salud-01/renders/salud-01-consultorios.mp4` (v2, 45.0 s): ticket $10,000–$50,000 → $100,000–$500,000 al mes que dejas de facturar; montaje de 6 doctores high ticket ficticios generados con IA local (leyenda en pantalla; activar "Información de IA" al publicar). Guion: `guiones/lote-01/salud-01.md`. Pendiente: aprobar umbral y AGENDA, activar automatización, revisión legal ligera.
 - Mejora pendiente opcional: aplicar el logo desde el inicio y la voz Andrew también a inmo-01.
 
 ## Siguiente

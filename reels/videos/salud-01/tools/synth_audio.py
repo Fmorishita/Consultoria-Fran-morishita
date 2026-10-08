@@ -233,8 +233,8 @@ for k, v in lib.items():
 
 cues = [
     ("impact", 0.0, 0.85), ("logo", 0.02, 0.55), ("whoosh", 0.05, 0.4),
-    ("ding", wt("s1", "paciente") - 0.05, 0.6),
-    *[("whoosh", 0.55 + k * 0.42, 0.28) for k in range(6)], *[("pop", 0.62 + k * 0.42, 0.25) for k in range(6)],
+    ("ding", wt("s1", "de") - 0.1, 0.6), ("pop_hi", wt("s1", "noche") - 0.05, 0.4),
+    *[("whoosh", 0.47 + k * 0.38, 0.28) for k in range(6)], *[("pop", 0.53 + k * 0.38, 0.25) for k in range(6)],
     ("glitch", wt("s1", "agendó") - 0.05, 0.55), ("buzz", wt("s1", "agendó"), 0.45),
     ("whoosh", W["s2"]["start"] - 0.15, 0.45),
     *[("tick", wt("s2", "contestó") + k * 0.18, 0.5) for k in range(5)],
