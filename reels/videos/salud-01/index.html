@@ -1,55 +1,488 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>salud-01 · Consultorios · Fran Morishita</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Sora"; src: url("assets/fonts/sora-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+      :root {
+        --bg: #07090f; --surface: #11161f; --line: #273041; --text: #f4f6fb; --muted: #9aa3b5;
+        --gold: #e8b34b; --gold-l: #ffd98a; --gold-d: #b8842a; --blue: #4b7bff; --red: #ff4d5e; --green: #34d27b;
+        --chat-bg: #0b141a; --chat-in: #1f2c34; --chat-out: #0b5c4a;
       }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #0a0a0a;
-      }
-      #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Sora", sans-serif; color: var(--text); background: var(--bg); }
+      #cam { position: absolute; inset: 0; }
+      #bg-base { position: absolute; inset: 0; background: var(--bg); overflow: hidden; }
+      .glow { position: absolute; border-radius: 50%; }
+      #glow1 { width: 1300px; height: 1300px; left: 180px; top: -380px; background: radial-gradient(circle, rgba(232,179,75,0.28) 0%, rgba(232,179,75,0) 65%); }
+      #glow2 { width: 1200px; height: 1200px; left: -520px; top: 980px; background: radial-gradient(circle, rgba(75,123,255,0.22) 0%, rgba(75,123,255,0) 65%); }
+      #grid { position: absolute; inset: -200px; background-image: linear-gradient(rgba(232,179,75,0.07) 2px, transparent 2px), linear-gradient(90deg, rgba(232,179,75,0.07) 2px, transparent 2px); background-size: 120px 120px; }
+      .scene { position: absolute; inset: 0; opacity: 0; overflow: hidden; }
+      #sA { opacity: 1; }
+      .gold { color: var(--gold); }
+      .demo-tag { position: absolute; font-family: "Inter", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.12em; color: #0b0d12; background: var(--gold-l); padding: 6px 14px; border-radius: 8px; }
+      .chip { display: inline-block; font-family: "Inter", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.06em; padding: 8px 16px; border-radius: 12px; }
+      .note { position: absolute; left: 65px; right: 65px; text-align: center; font-family: "Inter", sans-serif; font-size: 26px; font-weight: 700; color: var(--muted); letter-spacing: 0.02em; }
+
+      /* ---------- logo ---------- */
+      #brand { position: absolute; left: 0; right: 0; top: 278px; height: 64px; display: flex; align-items: center; justify-content: center; gap: 14px; }
+      #brand .fm { display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 50%; border: 3px solid var(--gold); color: var(--gold); font-weight: 800; font-size: 24px; letter-spacing: 0.02em; }
+      #brand .wm { font-weight: 800; font-size: 40px; letter-spacing: 0.04em; color: var(--text); }
+      #brand .wm span { color: var(--gold); }
+
+      /* ---------- A · gancho ---------- */
+      #a-title { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font-weight: 800; font-size: 150px; letter-spacing: -0.04em; color: var(--gold); text-shadow: 0 10px 40px rgba(232,179,75,0.35); }
+      #a-notif { position: absolute; left: 90px; top: 590px; width: 900px; height: 250px; border-radius: 40px; background: rgba(28,34,46,0.94); border: 3px solid rgba(255,255,255,0.10); box-shadow: 0 30px 80px rgba(0,0,0,0.55); padding: 30px 36px; font-family: "Inter", sans-serif; }
+      .notif-top { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 27px; font-weight: 700; letter-spacing: 0.04em; }
+      .notif-ico { color: #fff; display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 14px; background: linear-gradient(135deg, #17806c, #0f5f50); font-size: 30px; }
+      .notif-time { margin-left: auto; font-weight: 400; }
+      .notif-title { margin-top: 18px; font-size: 36px; font-weight: 700; color: #fff; }
+      .notif-body { margin-top: 8px; font-size: 32px; color: #d7dce6; }
+      #a-clock { position: absolute; left: 0; right: 0; top: 875px; text-align: center; font-weight: 800; font-size: 140px; letter-spacing: -0.04em; color: #fff; text-shadow: 0 0 60px rgba(75,123,255,0.55); }
+      #a-clock small { font-size: 66px; color: var(--muted); letter-spacing: 0; }
+      #a-stamp { position: absolute; left: 110px; top: 640px; width: 860px; padding: 14px 0 18px; text-align: center; white-space: nowrap; border: 10px solid var(--red); border-radius: 22px; color: var(--red); font-weight: 800; font-size: 72px; letter-spacing: 0.02em; background: rgba(20,6,10,0.88); }
+      #a-stamp span { display: block; font-size: 32px; letter-spacing: 0.08em; font-weight: 700; margin-top: -4px; }
+
+      /* ---------- chat ---------- */
+      .phone { position: absolute; left: 130px; width: 820px; border-radius: 48px; background: var(--chat-bg); border: 4px solid #2a3442; box-shadow: 0 40px 120px rgba(0,0,0,0.6); overflow: hidden; font-family: "Inter", sans-serif; }
+      .chat-head { display: flex; align-items: center; gap: 20px; height: 116px; padding: 0 30px; background: #1b262e; }
+      .avatar { display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; border-radius: 50%; background: #3a4a56; font-size: 28px; font-weight: 700; color: #e9edef; }
+      .chat-name { font-size: 31px; font-weight: 700; color: #e9edef; }
+      .chat-sub { font-size: 23px; color: #8696a0; margin-top: 2px; }
+      .chat-body { position: relative; padding: 26px 28px; }
+      .msg { position: relative; max-width: 610px; margin-bottom: 20px; padding: 16px 24px 14px; border-radius: 26px; font-size: 31px; line-height: 1.3; color: #e9edef; }
+      .msg .t { display: block; text-align: right; font-size: 21px; color: rgba(233,237,239,0.6); margin-top: 6px; }
+      .msg.in { background: var(--chat-in); border-top-left-radius: 8px; }
+      .msg.ai { background: linear-gradient(135deg, #2a2412, #3b2f12); border: 2px solid rgba(232,179,75,0.6); margin-left: auto; border-top-right-radius: 8px; }
+      .msg.ai .who { display: block; font-size: 21px; font-weight: 700; letter-spacing: 0.08em; color: var(--gold-l); margin-bottom: 4px; }
+      .sys { width: fit-content; margin: 0 auto 20px; padding: 10px 20px; border-radius: 16px; background: rgba(52,210,123,0.12); border: 2px solid rgba(52,210,123,0.6); color: #b8f5d2; font-size: 23px; font-weight: 700; }
+      .typing { position: absolute; right: 28px; top: 300px; display: flex; gap: 10px; width: 140px; padding: 24px 28px; border-radius: 26px; background: rgba(232,179,75,0.18); border: 2px solid rgba(232,179,75,0.5); }
+      .typing i { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--gold-l); }
+      .skip { display: flex; align-items: center; justify-content: center; gap: 14px; width: 600px; margin: 6px auto 0; padding: 14px 20px; border-radius: 40px; background: rgba(255,77,94,0.16); border: 3px solid var(--red); color: #ffb3bb; font-size: 32px; font-weight: 700; }
+      .money-card { position: absolute; left: 110px; width: 860px; height: 150px; border-radius: 30px; display: flex; align-items: center; gap: 26px; padding: 0 36px; background: rgba(17,22,31,0.95); border: 3px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+      .money-card .ico { font-size: 66px; }
+      .money-card .lbl { font-size: 24px; font-weight: 700; letter-spacing: 0.14em; color: var(--muted); }
+      .money-card .big { font-size: 46px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; }
+      .money-card .chip { margin-left: auto; }
+
+      /* ---------- C · la cuenta ---------- */
+      #c-tag { position: absolute; left: 0; right: 0; top: 362px; text-align: center; }
+      #c-tag span { display: inline-block; padding: 10px 22px; border-radius: 14px; background: var(--gold-l); color: #0b0d12; font-family: "Inter", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.08em; }
+      #c-ticket { position: absolute; left: 110px; top: 440px; width: 860px; height: 590px; border-radius: 34px; background: rgba(17,22,31,0.95); border: 3px solid var(--line); box-shadow: 0 40px 100px rgba(0,0,0,0.55); padding: 26px 44px; }
+      .c-line { display: flex; justify-content: space-between; align-items: baseline; height: 74px; font-weight: 700; font-size: 44px; color: #fff; border-bottom: 2px dashed rgba(255,255,255,0.10); }
+      .c-line .op { color: var(--gold); width: 60px; }
+      .c-line .lab { flex: 1; }
+      .c-line .val { font-weight: 800; }
+      #c-month { margin-top: 18px; text-align: center; }
+      #c-month .n { display: block; font-weight: 800; font-size: 110px; letter-spacing: -0.04em; color: var(--gold); line-height: 1.05; text-shadow: 0 0 50px rgba(232,179,75,0.45); }
+      #c-month .u { display: block; font-size: 34px; font-weight: 700; color: var(--muted); letter-spacing: 0.12em; }
+      #c-year { position: absolute; left: 110px; top: 440px; width: 860px; height: 590px; border-radius: 34px; background: rgba(17,22,31,0.97); border: 4px solid var(--gold); box-shadow: 0 0 0 10px rgba(232,179,75,0.15), 0 40px 100px rgba(0,0,0,0.6); padding: 36px 40px; text-align: center; }
+      #c-year .x { font-size: 48px; font-weight: 800; color: var(--muted); }
+      #c-year .n { display: block; margin-top: 10px; font-weight: 800; font-size: 136px; line-height: 1; letter-spacing: -0.05em; color: var(--gold); text-shadow: 0 0 70px rgba(232,179,75,0.55); }
+      #c-year .u { display: block; margin-top: 6px; font-size: 40px; font-weight: 800; letter-spacing: 0.1em; }
+      #c-year .sm { display: inline-block; margin-top: 22px; padding: 8px 18px; border-radius: 12px; background: rgba(255,255,255,0.08); font-family: "Inter", sans-serif; font-size: 26px; font-weight: 700; color: var(--muted); }
+      #c-blank { margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 36px; font-weight: 700; color: #fff; }
+      #c-blank i { display: inline-block; width: 120px; height: 58px; border-radius: 12px; border: 3px dashed var(--gold); }
+
+      /* ---------- D · giro ---------- */
+      .d-line { position: absolute; left: 0; right: 0; text-align: center; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
+      #d1 { top: 400px; font-size: 80px; color: #fff; }
+      #d2 { top: 500px; font-size: 104px; color: #fff; }
+      #d2 .sw { position: relative; display: inline-block; }
+      #d-strike { position: absolute; left: -14px; right: -14px; top: 52%; height: 15px; border-radius: 8px; background: var(--red); }
+      #d3 { top: 700px; font-size: 68px; color: var(--muted); }
+      #d4 { top: 790px; font-size: 196px; color: var(--gold); text-shadow: 0 0 80px rgba(232,179,75,0.55); }
+      #d-ring { position: absolute; left: 290px; top: 640px; width: 500px; height: 500px; border-radius: 50%; border: 10px solid var(--gold); opacity: 0; }
+      .ghost { position: absolute; display: block; overflow: visible; }
+
+      /* ---------- E · sistema ---------- */
+      .step { position: absolute; left: 65px; top: 360px; display: flex; align-items: center; gap: 24px; }
+      .step .num { font-weight: 800; font-size: 100px; line-height: 1; color: var(--gold); letter-spacing: -0.04em; }
+      .step .txt { font-weight: 800; font-size: 46px; line-height: 1.05; letter-spacing: -0.02em; }
+      .step .txt small { display: block; font-size: 25px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted); }
+      .dots { position: absolute; right: 65px; top: 400px; display: flex; gap: 12px; }
+      .dots i { display: block; width: 46px; height: 12px; border-radius: 6px; background: rgba(255,255,255,0.18); }
+      .dots i.on { background: var(--gold); }
+      .badges { position: absolute; left: 0; right: 0; display: flex; justify-content: center; gap: 18px; }
+      .badge { position: relative; display: flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 22px; font-weight: 800; font-size: 36px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+      .b-gold { background: var(--gold); color: #0b0d12; }
+      .b-blue { background: #1a2440; color: #fff; border: 3px solid var(--blue); }
+      .card { position: absolute; left: 90px; width: 900px; border-radius: 36px; background: rgba(17,22,31,0.95); border: 3px solid var(--line); box-shadow: 0 40px 100px rgba(0,0,0,0.55); font-family: "Inter", sans-serif; }
+      .card-h { display: flex; align-items: center; justify-content: space-between; padding: 24px 34px; border-bottom: 2px solid var(--line); font-family: "Sora", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; color: var(--muted); }
+      #e2-priv { display: flex; align-items: center; gap: 22px; padding: 26px 34px; border-bottom: 2px solid var(--line); }
+      #e2-priv .lock { font-size: 52px; }
+      #e2-priv .pt { font-size: 32px; font-weight: 700; color: #fff; }
+      #e2-priv .ps { font-size: 24px; color: var(--muted); margin-top: 2px; }
+      #e2-priv .acc { margin-left: auto; padding: 12px 20px; border-radius: 14px; background: var(--green); color: #052012; font-weight: 800; font-size: 28px; }
+      #e2-slots { display: flex; gap: 16px; padding: 26px 34px 10px; }
+      #e2-slots .slot { flex: 1; text-align: center; padding: 18px 0; border-radius: 18px; border: 3px solid var(--line); font-size: 30px; font-weight: 700; color: #dfe4ee; }
+      #e2-slots .slot.sel { border-color: var(--gold); background: rgba(232,179,75,0.16); color: var(--gold-l); }
+      #e2-done { margin: 18px 34px 30px; display: flex; align-items: center; gap: 18px; padding: 20px 26px; border-radius: 20px; background: rgba(52,210,123,0.14); border: 3px solid var(--green); font-size: 32px; font-weight: 800; color: #c9f7dc; }
+      #e3-notif { position: absolute; left: 90px; top: 480px; width: 900px; border-radius: 40px; background: rgba(28,34,46,0.96); border: 3px solid rgba(255,255,255,0.12); box-shadow: 0 30px 80px rgba(0,0,0,0.55); padding: 30px 36px; font-family: "Inter", sans-serif; }
+      #e3-btns { display: flex; gap: 16px; margin-top: 22px; }
+      #e3-btns span { flex: 1; text-align: center; padding: 16px 0; border-radius: 16px; font-size: 30px; font-weight: 800; }
+      #e3-reply { position: absolute; right: 90px; top: 830px; max-width: 560px; padding: 18px 26px 14px; border-radius: 26px; border-top-right-radius: 8px; background: var(--chat-out); font-family: "Inter", sans-serif; font-size: 34px; color: #e9edef; }
+      #e3-reply .t { display: block; text-align: right; font-size: 21px; color: rgba(233,237,239,0.6); margin-top: 4px; }
+      #e3-ok { position: absolute; left: 110px; top: 830px; padding: 16px 26px; border-radius: 20px; background: var(--green); color: #052012; font-weight: 800; font-size: 40px; }
+
+      /* ---------- G · CTA ---------- */
+      #g-fran { position: absolute; left: 400px; top: 430px; width: 760px; height: 760px; }
+      #g-fran img { position: absolute; inset: 0; width: 100%; height: 100%; }
+      #g-rim { position: absolute; left: 470px; top: 520px; width: 680px; height: 680px; border-radius: 50%; background: radial-gradient(circle, rgba(232,179,75,0.45) 0%, rgba(232,179,75,0) 62%); }
+      #g-q1 { position: absolute; left: 65px; top: 362px; font-size: 42px; font-weight: 700; color: #fff; }
+      #g-q2 { position: absolute; left: 65px; top: 414px; font-size: 92px; font-weight: 800; letter-spacing: -0.04em; color: var(--gold); line-height: 1; }
+      #g-q3 { position: absolute; left: 65px; top: 512px; font-size: 42px; font-weight: 700; color: #fff; }
+      #g-com { position: absolute; left: 65px; top: 600px; font-size: 62px; font-weight: 800; color: #fff; letter-spacing: 0.02em; text-shadow: 0 6px 30px rgba(0,0,0,0.8); }
+      #g-key { position: absolute; left: 45px; top: 690px; padding: 6px 34px 14px; border-radius: 26px; background: var(--gold); color: #0b0d12; font-size: 136px; font-weight: 800; letter-spacing: -0.03em; box-shadow: 0 0 0 8px rgba(232,179,75,0.25), 0 30px 90px rgba(232,179,75,0.45); }
+      #g-bubble { color: #0b0d12; position: absolute; left: 600px; top: 640px; display: flex; align-items: center; justify-content: center; width: 112px; height: 112px; border-radius: 50%; background: #fff; font-size: 60px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+      #g-sub { position: absolute; left: 65px; top: 912px; width: 560px; font-size: 38px; line-height: 1.22; font-weight: 600; color: #fff; text-shadow: 0 4px 24px rgba(0,0,0,0.9); }
+      #g-sub b { color: var(--gold-l); font-weight: 800; }
+      #g-end { position: absolute; left: 0; right: 0; top: 1040px; padding: 26px 0 30px; text-align: center; background: linear-gradient(180deg, rgba(7,9,15,0) 0%, rgba(7,9,15,0.9) 30%, rgba(7,9,15,0.9) 75%, rgba(7,9,15,0) 100%); }
+      #g-end .wm { font-size: 70px; font-weight: 800; letter-spacing: 0.04em; }
+      #g-end .wm span { color: var(--gold); }
+      #g-end .tl { font-size: 28px; font-weight: 600; letter-spacing: 0.16em; color: var(--muted); margin-top: 4px; }
+      #g-line { width: 360px; height: 6px; margin: 14px auto 0; border-radius: 3px; background: var(--gold); }
+
+      /* ---------- subtítulos ---------- */
+      #captions { position: absolute; left: 65px; right: 65px; top: 1066px; height: 150px; }
+      .cap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 24px; opacity: 0; }
+      .cw { display: inline-block; padding: 2px 12px 8px; border-radius: 14px; font-weight: 800; font-size: 74px; letter-spacing: -0.01em; text-transform: uppercase; color: #fff; white-space: nowrap; text-shadow: 0 5px 0 rgba(0,0,0,0.85), 0 0 24px rgba(0,0,0,0.7); }
+      .cw.key { color: var(--gold); }
+
+      #grain { position: absolute; inset: -200px; background-image: url("assets/img/grain.png"); background-size: 384px 384px; opacity: 0.07; mix-blend-mode: overlay; }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%); }
+      #tint { position: absolute; inset: 0; background: var(--red); opacity: 0; }
+      #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+      #fade { position: absolute; inset: 0; background: var(--bg); opacity: 0; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="44.4" data-width="1080" data-height="1920">
+      <audio id="master" src="assets/audio/master.m4a" data-start="0" data-duration="44.4" data-track-index="10" data-volume="1"></audio>
+
+      <div id="cam">
+        <div id="bg-base"><div id="grid"></div><div id="glow1" class="glow"></div><div id="glow2" class="glow"></div></div>
+
+        <!-- A · GANCHO -->
+        <div id="sA" class="scene">
+          <div id="a-title">DOCTOR:</div>
+          <div id="a-notif" data-layout-allow-overlap>
+            <div class="notif-top"><span class="notif-ico">💬</span><span>MENSAJE · CLÍNICA EJEMPLO</span><span class="notif-time">10:12 p.m.</span></div>
+            <div class="notif-title">Paciente nuevo 🔔</div>
+            <div class="notif-body" data-layout-allow-overlap>“Hola, ¿cuánto cuesta la consulta y tienen espacio mañana?”</div>
+          </div>
+          <div id="a-clock">🌙 10:12 <small>P.M.</small></div>
+          <div id="a-stamp" data-layout-allow-overlap>AGENDÓ CON OTRO<span data-layout-allow-overlap>NADIE LE CONTESTÓ</span></div>
+          <div class="demo-tag" id="a-demo" style="right: 90px; top: 862px">DEMO</div>
+        </div>
+
+        <!-- B · NADIE CONTESTÓ -->
+        <div id="sB" class="scene">
+          <div class="phone" id="b-phone" style="top: 370px; height: 470px">
+            <div class="chat-head"><div class="avatar">MR</div><div><div class="chat-name">Paciente · M. R.</div><div class="chat-sub">Clínica Ejemplo · DEMO</div></div></div>
+            <div class="chat-body">
+              <div class="msg in" id="b-m1">Hola, ¿cuánto cuesta la consulta y tienen espacio mañana?<span class="t">10:12 p.m. ✓✓</span></div>
+              <div class="skip" id="b-skip">⏱ <span id="b-count">0 h 00 min</span> sin respuesta</div>
+            </div>
+          </div>
+          <div class="money-card" id="b-ad" style="top: 870px"><span class="ico">📣</span><div><div class="lbl">SI LLEGÓ POR TU ANUNCIO</div><div class="big">Ya lo pagaste</div></div><span class="chip" style="background: var(--red); color: #fff">$ PAGADO</span></div>
+        </div>
+
+        <!-- C · LA CUENTA -->
+        <div id="sC" class="scene">
+          <div id="c-tag"><span>EJEMPLO ILUSTRATIVO · HAZ LA CUENTA CON TUS NÚMEROS</span></div>
+          <div id="c-ticket">
+            <div class="c-line" id="c-l1"><span class="op"></span><span class="lab">Pacientes perdidos / semana</span><span class="val">3</span></div>
+            <div class="c-line" id="c-l2"><span class="op">×</span><span class="lab">Consulta</span><span class="val">$1,000</span></div>
+            <div class="c-line" id="c-l3"><span class="op">=</span><span class="lab">Por semana</span><span class="val">$3,000</span></div>
+            <div class="c-line" id="c-l4"><span class="op">×</span><span class="lab">Semanas al mes</span><span class="val">4</span></div>
+            <div id="c-month"><span class="n" id="c-mn">$0</span><span class="u">AL MES · MXN</span></div>
+          </div>
+          <div id="c-year">
+            <div class="x">$12,000 × 12 MESES</div>
+            <span class="n" id="c-yn">$12,000</span>
+            <span class="u">AL AÑO · MXN</span>
+            <span class="sm">Solo primeras consultas · sin contar tratamientos</span>
+            <div id="c-blank">Tú: <i></i> pacientes × $<i></i></div>
+          </div>
+        </div>
+
+        <!-- D · GIRO -->
+        <div id="sD" class="scene">
+          <svg class="ghost" id="d-ghost" aria-hidden="true" data-layout-allow-overflow style="top: 1260px; left: -40px" width="3200" height="330" viewBox="0 0 3200 330"><text x="0" y="276" font-family="Sora" font-weight="800" font-size="300" letter-spacing="-12" fill="none" stroke="rgba(232,179,75,0.24)" stroke-width="3">SISTEMA SISTEMA</text></svg>
+          <div class="d-line" id="d1">EL PROBLEMA NO ES</div>
+          <div class="d-line" id="d2">TU <span class="sw">PUBLICIDAD<span id="d-strike"></span></span></div>
+          <div id="d-ring"></div>
+          <div class="d-line" id="d3">ES QUE NO TIENES UN</div>
+          <div class="d-line" id="d4" data-layout-allow-overlap>SISTEMA</div>
+        </div>
+
+        <!-- E1 · CONTESTA -->
+        <div id="sE1" class="scene">
+          <div class="step"><div class="num">01</div><div class="txt"><small>EL SISTEMA</small>Contesta al instante</div></div>
+          <div class="dots"><i class="on"></i><i></i><i></i></div>
+          <div class="phone" id="e1-phone" style="top: 500px; height: 470px">
+            <div class="chat-head"><div class="avatar">🤖</div><div><div class="chat-name">Clínica Ejemplo</div><div class="chat-sub">Agente IA · informa horarios, no da diagnósticos</div></div><span class="demo-tag" style="position: static; margin-left: auto">DEMO</span></div>
+            <div class="chat-body">
+              <div class="msg in" id="e1-m1">Hola, ¿tienen espacio mañana?<span class="t">10:12 p.m.</span></div>
+              <div class="typing" id="e1-typing" style="top: 160px"><i></i><i></i><i></i></div>
+              <div class="msg ai" id="e1-m2"><span class="who">AGENTE IA</span>¡Hola! 👋 Sí, el jueves hay horarios. ¿Te ayudo a agendar?<span class="t">10:12 p.m. ✓✓</span></div>
+            </div>
+          </div>
+          <div class="badges" style="top: 985px"><div class="badge b-gold" id="e1-fast">⚡ 8 s</div><div class="badge b-blue" id="e1-247">🌙 24/7</div><div class="badge b-blue" id="e1-en">ES · EN</div></div>
+        </div>
+
+        <!-- E2 · AGENDA CON CONSENTIMIENTO -->
+        <div id="sE2" class="scene">
+          <div class="step"><div class="num">02</div><div class="txt"><small>EL SISTEMA</small>Agenda con consentimiento</div></div>
+          <div class="dots"><i class="on"></i><i class="on"></i><i></i></div>
+          <div class="card" id="e2-card" style="top: 500px">
+            <div class="card-h"><span>CITA NUEVA</span><span class="demo-tag" style="position: static">DEMO</span></div>
+            <div id="e2-priv"><span class="lock">🔒</span><div><div class="pt">Aviso de privacidad</div><div class="ps">Privacy notice · datos sensibles (LFPDPPP)</div></div><span class="acc" id="e2-acc">Acepto ✓</span></div>
+            <div id="e2-slots"><span class="slot sel" id="e2-s1">Jue 10:00</span><span class="slot" id="e2-s2">Jue 12:30</span><span class="slot" id="e2-s3">Vie 9:00</span></div>
+            <div id="e2-done">📅 Cita agendada · jueves 10:00 ✓</div>
+          </div>
+        </div>
+
+        <!-- E3 · RECORDATORIO -->
+        <div id="sE3" class="scene">
+          <div class="step"><div class="num">03</div><div class="txt"><small>EL SISTEMA</small>Recuerda y confirma</div></div>
+          <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          <div id="e3-notif">
+            <div class="notif-top"><span class="notif-ico">⏰</span><span>RECORDATORIO · 1 DÍA ANTES</span><span class="notif-time">mié 10:00</span></div>
+            <div class="notif-title">Tu cita es mañana, jueves 10:00</div>
+            <div class="notif-body">¿Confirmas tu asistencia?</div>
+            <div id="e3-btns"><span style="background: var(--green); color: #052012">Sí, confirmo</span><span style="background: rgba(255,255,255,0.08); color: #dfe4ee">Reagendar</span></div>
+          </div>
+          <div id="e3-reply">Sí, confirmo ✅<span class="t">mié 10:03</span></div>
+          <div id="e3-ok">✓ CONFIRMADA</div>
+          <div class="demo-tag" style="left: 90px; top: 1000px">DEMO</div>
+        </div>
+
+        <!-- G · CTA -->
+        <div id="sG" class="scene">
+          <svg class="ghost" id="g-ghost" aria-hidden="true" data-layout-allow-overflow style="top: 1230px; left: -60px" width="3200" height="363" viewBox="0 0 3200 363"><text x="0" y="303" font-family="Sora" font-weight="800" font-size="330" letter-spacing="-12" fill="none" stroke="rgba(232,179,75,0.24)" stroke-width="3">AGENDA AGENDA</text></svg>
+          <div id="g-rim"></div>
+          <div id="g-fran" data-layout-allow-overflow><img src="assets/img/fran-cutout.png" alt="Fran Morishita" /></div>
+          <div id="g-q1">¿Tu consultorio recibe</div>
+          <div id="g-q2">+20 MENSAJES</div>
+          <div id="g-q3">a la semana?</div>
+          <div id="g-com">COMENTA</div>
+          <div id="g-key" data-layout-allow-overlap>AGENDA</div>
+          <div id="g-bubble" data-layout-allow-overlap>💬</div>
+          <div id="g-sub">y <b>revisamos gratis</b> dónde se te van los pacientes</div>
+          <div id="g-end"><div class="wm">FRAN<span>MORISHITA</span></div><div id="g-line"></div><div class="tl">SISTEMAS DE VENTA · IA · CRM</div></div>
+        </div>
+      </div>
+
+      <div id="brand"><div class="fm">FM</div><div class="wm">FRAN<span>MORISHITA</span></div></div>
+      <div id="captions"></div>
+      <div id="grain"></div>
+      <div id="vignette"></div>
+      <div id="tint"></div>
+      <div id="flash"></div>
+      <div id="fade"></div>
     </div>
+
     <script>
+      const VO = /*VO_DATA_START*/{"total":44.431,"segments":[{"id":"s1","start":0.3,"end":4.564,"words":[{"text":"Doctor","start":0.34,"end":0.833},{"text":"ese","start":1.053,"end":1.225},{"text":"paciente","start":1.237,"end":1.615},{"text":"que","start":1.626,"end":1.718},{"text":"te","start":1.73,"end":1.799},{"text":"escribió","start":1.799,"end":2.234},{"text":"a","start":2.234,"end":2.257},{"text":"las","start":2.269,"end":2.464},{"text":"10","start":2.464,"end":2.636},{"text":"de","start":2.636,"end":2.693},{"text":"la","start":2.693,"end":2.773},{"text":"noche","start":2.773,"end":3.083},{"text":"ya","start":3.303,"end":3.509},{"text":"agendó","start":3.509,"end":3.899},{"text":"con","start":3.899,"end":4.06},{"text":"otro","start":4.071,"end":4.404}]},{"id":"s2","start":4.844,"end":8.271,"words":[{"text":"Nadie","start":4.884,"end":5.136},{"text":"le","start":5.148,"end":5.228},{"text":"contestó","start":5.228,"end":5.79},{"text":"Y","start":6.01,"end":6.056},{"text":"si","start":6.056,"end":6.182},{"text":"llegó","start":6.182,"end":6.434},{"text":"por","start":6.434,"end":6.572},{"text":"tu","start":6.583,"end":6.663},{"text":"anuncio","start":6.663,"end":7.099},{"text":"ya","start":7.319,"end":7.457},{"text":"lo","start":7.468,"end":7.56},{"text":"pagaste","start":7.571,"end":8.11}]},{"id":"s3","start":8.571,"end":14.887,"words":[{"text":"Haz","start":8.611,"end":8.725},{"text":"la","start":8.725,"end":8.805},{"text":"cuenta","start":8.817,"end":9.264},{"text":"Por","start":9.484,"end":9.587},{"text":"ejemplo","start":9.587,"end":10.046},{"text":"3","start":10.275,"end":10.482},{"text":"pacientes","start":10.493,"end":10.918},{"text":"perdidos","start":10.918,"end":11.353},{"text":"a","start":11.353,"end":11.388},{"text":"la","start":11.388,"end":11.48},{"text":"semana","start":11.491,"end":11.915},{"text":"a","start":12.135,"end":12.204},{"text":"$1,000","start":12.204,"end":12.823},{"text":"la","start":12.823,"end":12.904},{"text":"consulta","start":12.904,"end":13.454},{"text":"$12,000","start":13.729,"end":14.2},{"text":"al","start":14.2,"end":14.314},{"text":"mes","start":14.314,"end":14.727}]},{"id":"s4","start":15.147,"end":18.273,"words":[{"text":"Más","start":15.187,"end":15.428},{"text":"de","start":15.428,"end":15.508},{"text":"$140,000","start":15.508,"end":16.322},{"text":"al","start":16.322,"end":16.437},{"text":"año","start":16.437,"end":16.689},{"text":"sin","start":16.909,"end":17.024},{"text":"contar","start":17.035,"end":17.334},{"text":"tratamientos","start":17.334,"end":18.113}]},{"id":"s5","start":18.653,"end":21.837,"words":[{"text":"El","start":18.693,"end":18.797},{"text":"problema","start":18.797,"end":19.198},{"text":"no","start":19.21,"end":19.45},{"text":"es","start":19.45,"end":19.554},{"text":"tu","start":19.565,"end":19.657},{"text":"publicidad","start":19.668,"end":20.23},{"text":"es","start":20.45,"end":20.519},{"text":"que","start":20.53,"end":20.611},{"text":"no","start":20.611,"end":20.737},{"text":"tienes","start":20.748,"end":21.035},{"text":"un","start":21.046,"end":21.15},{"text":"sistema","start":21.15,"end":21.677}]},{"id":"s6","start":22.217,"end":27.96,"words":[{"text":"Primero","start":22.257,"end":22.659},{"text":"un","start":22.879,"end":22.959},{"text":"agente","start":22.959,"end":23.303},{"text":"de","start":23.303,"end":23.372},{"text":"inteligencia","start":23.383,"end":23.934},{"text":"artificial","start":23.934,"end":24.53},{"text":"contesta","start":24.53,"end":25.035},{"text":"en","start":25.035,"end":25.092},{"text":"segundos","start":25.092,"end":25.654},{"text":"a","start":25.929,"end":25.986},{"text":"cualquier","start":25.986,"end":26.445},{"text":"hora","start":26.445,"end":26.652},{"text":"hasta","start":26.872,"end":27.17},{"text":"en","start":27.17,"end":27.238},{"text":"inglés","start":27.239,"end":27.8}]},{"id":"s7","start":28.22,"end":32.425,"words":[{"text":"Con","start":28.26,"end":28.375},{"text":"aviso","start":28.375,"end":28.65},{"text":"de","start":28.65,"end":28.742},{"text":"privacidad","start":28.742,"end":29.281},{"text":"y","start":29.281,"end":29.315},{"text":"consentimiento","start":29.315,"end":30.084},{"text":"ofrece","start":30.304,"end":30.694},{"text":"horarios","start":30.705,"end":31.21},{"text":"y","start":31.221,"end":31.359},{"text":"agenda","start":31.359,"end":31.749},{"text":"la","start":31.749,"end":31.84},{"text":"cita","start":31.852,"end":32.265}]},{"id":"s8","start":32.665,"end":35.686,"words":[{"text":"Y","start":32.705,"end":32.762},{"text":"1 día","start":32.762,"end":33.152},{"text":"antes","start":33.152,"end":33.553},{"text":"manda","start":33.783,"end":34.046},{"text":"recordatorio","start":34.046,"end":34.666},{"text":"para","start":34.677,"end":34.872},{"text":"que","start":34.872,"end":34.964},{"text":"confirme","start":34.964,"end":35.526}]},{"id":"s9","start":36.066,"end":42.931,"words":[{"text":"Si","start":36.106,"end":36.221},{"text":"tu","start":36.221,"end":36.312},{"text":"consultorio","start":36.324,"end":36.851},{"text":"recibe","start":36.851,"end":37.241},{"text":"más","start":37.241,"end":37.608},{"text":"de","start":37.608,"end":37.677},{"text":"20","start":37.688,"end":37.941},{"text":"mensajes","start":37.952,"end":38.526},{"text":"a","start":38.537,"end":38.571},{"text":"la","start":38.571,"end":38.652},{"text":"semana","start":38.652,"end":39.065},{"text":"comenta","start":39.285,"end":39.663},{"text":"agenda","start":39.663,"end":40.099},{"text":"y","start":40.305,"end":40.362},{"text":"revisamos","start":40.363,"end":40.913},{"text":"gratis","start":40.924,"end":41.303},{"text":"dónde","start":41.303,"end":41.498},{"text":"se","start":41.498,"end":41.624},{"text":"te","start":41.624,"end":41.704},{"text":"van","start":41.716,"end":41.911},{"text":"los","start":41.911,"end":42.037},{"text":"pacientes","start":42.048,"end":42.771}]}]}/*VO_DATA_END*/;
+      const DUR = 44.4;
+      const SEG = {};
+      VO.segments.forEach((s) => (SEG[s.id] = s));
+      const W = (seg, txt, which = "start", n = 0) => {
+        const hits = SEG[seg].words.filter((x) => x.text.toLowerCase().startsWith(txt.toLowerCase()));
+        if (!hits[n]) throw new Error("palabra no encontrada: " + seg + " " + txt);
+        return hits[n][which];
+      };
+      const S = (id) => SEG[id].start;
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
+
+      const flash = (t, peak = 0.85, d = 0.22) => tl.fromTo("#flash", { opacity: peak }, { opacity: 0, duration: d, ease: "power2.out", immediateRender: false }, t);
+      const tint = (t, peak = 0.22, d = 0.35) => tl.fromTo("#tint", { opacity: peak }, { opacity: 0, duration: d, ease: "power2.out", immediateRender: false }, t);
+      const SHAKE = [[-16, 10], [14, -8], [-10, 6], [8, -4], [-4, 2], [0, 0]];
+      const shake = (t, amp = 1) => SHAKE.forEach(([x, y], i) => tl.to("#cam", { x: x * amp, y: y * amp, duration: 0.035, ease: "none" }, t + i * 0.035));
+      const punch = (t, s = 1.06) => { tl.to("#cam", { scale: s, duration: 0.06, ease: "power2.out" }, t); tl.to("#cam", { scale: 1, duration: 0.35, ease: "power3.out" }, t + 0.06); };
+      const whip = (from, to, t, dir = "x") => {
+        const off = dir === "x" ? { x: -260 } : { y: -320 };
+        const on = dir === "x" ? { x: 260 } : { y: 320 };
+        tl.to(from, { ...off, opacity: 0, filter: "blur(18px)", duration: 0.24, ease: "power3.in" }, t);
+        tl.fromTo(to, { ...on, opacity: 0, filter: "blur(18px)" }, { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out", immediateRender: false }, t + 0.06);
+      };
+      const zoomThrough = (from, to, t) => {
+        tl.to(from, { scale: 2.6, opacity: 0, filter: "blur(14px)", duration: 0.3, ease: "power3.in" }, t);
+        tl.fromTo(to, { scale: 0.55, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.38, ease: "power3.out", immediateRender: false }, t + 0.12);
+      };
+      const pop = (sel, t, from = {}, d = 0.42, ease = "back.out(1.8)", endRot = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.6, rotation: 0, ...from }, { opacity: 1, scale: 1, x: 0, y: 0, rotation: endRot, duration: d, ease }, t);
+      const counter = (el, from, to, t, d, fmt) => {
+        const o = { v: from }; const node = document.getElementById(el);
+        tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => (node.textContent = fmt(o.v)) }, t);
+      };
+      const money = (v) => "$" + Math.round(v).toLocaleString("en-US");
+
+      const T_B = S("s2") - 0.1, T_C = S("s3") - 0.1, T_Y = S("s4") - 0.12, T_D = S("s5") - 0.12;
+      const T_E1 = S("s6") - 0.1, T_E2 = S("s7") - 0.1, T_E3 = S("s8") - 0.1, T_G = S("s9") - 0.12;
+
+      /* fondo vivo */
+      tl.fromTo("#glow1", { x: 0, y: 0, scale: 1 }, { x: -160, y: 120, scale: 1.25, duration: DUR, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow2", { x: 0, y: 0, scale: 1 }, { x: 220, y: -160, scale: 1.2, duration: DUR, ease: "sine.inOut" }, 0);
+      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -120, y: -240, duration: DUR, ease: "none" }, 0);
+      tl.fromTo("#grain", { x: 0, y: 0 }, { x: -180, y: -150, duration: DUR, ease: "steps(440)" }, 0);
+
+      /* LOGO desde el fotograma 0: entra grande y se asienta como marca fija */
+      tl.fromTo("#brand", { scale: 1.55, y: 40, opacity: 0.0, filter: "blur(10px)" }, { scale: 1.55, y: 40, opacity: 1, filter: "blur(0px)", duration: 0.12, ease: "power2.out" }, 0);
+      tl.fromTo("#brand .fm", { rotation: -120 }, { rotation: 0, duration: 0.6, ease: "back.out(1.6)" }, 0);
+      tl.to("#brand", { scale: 1, y: 0, duration: 0.45, ease: "power3.inOut" }, 0.85);
+      tl.to("#brand", { opacity: 0, y: -20, duration: 0.3, ease: "power2.in" }, SEG.s9.words[SEG.s9.words.length - 1].end + 0.2);
+
+      /* A · gancho */
+      tl.fromTo("#a-title", { scale: 2.4, opacity: 0, filter: "blur(16px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, W("s1", "Doctor") - 0.12);
+      flash(0.02, 0.7); shake(W("s1", "Doctor") + 0.15, 1.1);
+      tl.fromTo("#a-notif", { y: -140, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, W("s1", "paciente") - 0.12);
+      pop("#a-demo", W("s1", "paciente") + 0.1, { y: -20 }, 0.3);
+      pop("#a-clock", W("s1", "10") - 0.05, { scale: 1.6 }, 0.35, "power4.out");
+      const tLost = W("s1", "agendó") - 0.04;
+      tl.to("#a-notif", { filter: "grayscale(1) brightness(0.55)", duration: 0.2 }, tLost);
+      tl.to("#a-clock", { color: "#ff4d5e", duration: 0.15 }, tLost);
+      tl.fromTo("#a-stamp", { scale: 2.6, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -6, duration: 0.24, ease: "power4.in" }, tLost);
+      tint(tLost + 0.22, 0.28); shake(tLost + 0.24, 1.6);
+
+      /* B · nadie contestó + anuncio pagado */
+      whip("#sA", "#sB", T_B);
+      tl.fromTo("#b-skip", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, W("s2", "contestó") - 0.12);
+      const cnt = { v: 0 }, bCount = document.getElementById("b-count");
+      tl.to(cnt, { v: 700, duration: 0.95, ease: "power2.in", onUpdate: () => { const m = Math.round(cnt.v); bCount.textContent = Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0") + " min"; } }, W("s2", "contestó"));
+      pop("#b-ad", W("s2", "anuncio") - 0.2, { x: 140 }, 0.4, "power3.out");
+      tl.fromTo("#b-ad .chip", { scale: 1 }, { scale: 1.25, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, W("s2", "pagaste"));
+      punch(W("s2", "pagaste"), 1.05);
+
+      /* C · la cuenta (ejemplo ilustrativo) */
+      whip("#sB", "#sC", T_C, "y");
+      pop("#c-tag", T_C + 0.15, { y: -30 }, 0.35, "power3.out");
+      tl.fromTo("#c-ticket", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, T_C + 0.1);
+      [["#c-l1", W("s3", "3") - 0.1], ["#c-l2", W("s3", "$1,000") - 0.1], ["#c-l3", W("s3", "consulta")], ["#c-l4", W("s3", "consulta") + 0.35]].forEach(([el, t]) =>
+        tl.fromTo(el, { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, t));
+      tl.fromTo("#c-month", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, W("s3", "$12,000") - 0.1);
+      counter("c-mn", 0, 12000, W("s3", "$12,000") - 0.1, 0.5, money);
+      punch(W("s3", "$12,000") + 0.35, 1.05);
+      // año
+      tl.set("#c-ticket", { opacity: 0 }, T_Y + 0.12);
+      tl.fromTo("#c-year", { opacity: 0, scale: 0.85, rotationX: -50 }, { opacity: 1, scale: 1, rotationX: 0, transformPerspective: 1200, duration: 0.35, ease: "power3.out" }, T_Y);
+      counter("c-yn", 12000, 144000, W("s4", "$140,000") - 0.05, 0.75, money);
+      flash(W("s4", "$140,000") + 0.55, 0.5, 0.25); shake(W("s4", "$140,000") + 0.55, 1.5);
+      tl.fromTo("#c-year .sm", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, W("s4", "sin") - 0.05);
+      tl.fromTo("#c-blank", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, W("s4", "tratamientos") + 0.1);
+      tl.fromTo("#c-blank i", { boxShadow: "0 0 0 0 rgba(232,179,75,0.7)" }, { boxShadow: "0 0 0 16px rgba(232,179,75,0)", duration: 0.5, repeat: 1, ease: "power2.out", immediateRender: false }, W("s4", "tratamientos") + 0.35);
+
+      /* D · giro */
+      tl.to("#sC", { opacity: 0, scale: 0.9, filter: "blur(10px)", duration: 0.28, ease: "power3.in" }, T_D);
+      tl.fromTo("#sD", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, T_D + 0.15);
+      tl.fromTo("#d-ghost", { x: 0 }, { x: -500, duration: 3.6, ease: "none" }, T_D);
+      tl.fromTo("#d1", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("s5", "problema") - 0.12);
+      tl.fromTo("#d2", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("s5", "tu") - 0.06);
+      tl.fromTo("#d-strike", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.25, ease: "power2.out" }, W("s5", "publicidad", "end") - 0.05);
+      tl.to("#d2", { color: "#7b8496", duration: 0.25 }, W("s5", "publicidad", "end"));
+      tl.fromTo("#d3", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, W("s5", "es", "start", 1) - 0.08);
+      const tSis = W("s5", "sistema") - 0.02;
+      tl.fromTo("#d4", { scale: 3, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power4.in" }, tSis - 0.2);
+      tl.fromTo("#d-ring", { scale: 0.2, opacity: 0 }, { scale: 0.3, opacity: 0.9, duration: 0.04, ease: "none" }, tSis);
+      tl.to("#d-ring", { scale: 2.4, opacity: 0, duration: 0.7, ease: "power2.out" }, tSis + 0.04);
+      flash(tSis, 0.8, 0.3); shake(tSis + 0.02, 1.8);
+
+      /* E1 · contesta al instante */
+      zoomThrough("#sD", "#sE1", T_E1);
+      tl.fromTo("#e1-phone", { y: 120 }, { y: 0, duration: 0.5, ease: "power3.out" }, T_E1 + 0.1);
+      tl.fromTo("#e1-typing", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, W("s6", "agente"));
+      [0, 1, 2].forEach((i) => tl.fromTo(`#e1-typing i:nth-child(${i + 1})`, { y: 0 }, { y: -10, duration: 0.18, yoyo: true, repeat: 3, ease: "sine.inOut" }, W("s6", "agente") + i * 0.08));
+      tl.to("#e1-typing", { opacity: 0, scale: 0.6, duration: 0.12 }, W("s6", "contesta") - 0.12);
+      pop("#e1-m2", W("s6", "contesta") - 0.08, { y: 60 }, 0.4);
+      pop("#e1-fast", W("s6", "segundos") - 0.1, { y: 40 }, 0.4); punch(W("s6", "segundos"), 1.04);
+      pop("#e1-247", W("s6", "cualquier") - 0.08, { y: 40 }, 0.4);
+      pop("#e1-en", W("s6", "inglés") - 0.12, { y: 40 }, 0.4);
+
+      /* E2 · agenda con consentimiento */
+      whip("#sE1", "#sE2", T_E2, "y");
+      tl.fromTo("#e2-card", { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, T_E2 + 0.1);
+      tl.fromTo("#e2-acc", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.6)" }, W("s7", "consentimiento"));
+      ["#e2-s1", "#e2-s2", "#e2-s3"].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, W("s7", "horarios") - 0.1 + i * 0.1));
+      tl.fromTo("#e2-done", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, W("s7", "cita") - 0.1);
+      shake(W("s7", "cita") + 0.05, 0.7);
+
+      /* E3 · recordatorio */
+      whip("#sE2", "#sE3", T_E3, "y");
+      tl.fromTo("#e3-notif", { y: -140, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, W("s8", "antes") - 0.15);
+      pop("#e3-reply", W("s8", "confirme") - 0.25, { y: 50 }, 0.35);
+      pop("#e3-ok", W("s8", "confirme") + 0.05, { rotation: -10 }, 0.4, "back.out(1.8)", -3);
+      punch(W("s8", "confirme") + 0.1, 1.05);
+
+      /* G · CTA */
+      tl.set("#sE3", { opacity: 0 }, T_G + 0.12);
+      tl.fromTo("#sG", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out", immediateRender: false }, T_G + 0.08);
+      flash(T_G + 0.1, 0.95, 0.35);
+      tl.fromTo("#g-ghost", { x: 0 }, { x: -600, duration: DUR - T_G, ease: "none" }, T_G);
+      tl.fromTo("#g-rim", { scale: 0.85, opacity: 0.7 }, { scale: 1.08, opacity: 1, duration: 1.1, yoyo: true, repeat: 6, ease: "sine.inOut" }, T_G);
+      tl.fromTo("#g-fran", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, T_G + 0.15);
+      tl.fromTo("#g-fran", { y: 0 }, { y: -14, duration: 1.4, yoyo: true, repeat: 4, ease: "sine.inOut", immediateRender: false }, T_G + 0.7);
+      tl.fromTo("#g-q1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, W("s9", "consultorio") - 0.15);
+      tl.fromTo("#g-q2", { scale: 1.8, opacity: 0, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.out" }, W("s9", "20") - 0.06);
+      tl.fromTo("#g-q3", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, W("s9", "semana") - 0.1);
+      shake(W("s9", "20") + 0.1, 0.7);
+      tl.fromTo("#g-com", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, W("s9", "comenta") - 0.1);
+      tl.fromTo("#g-key", { scale: 2.8, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.24, ease: "power4.in" }, W("s9", "agenda") - 0.22);
+      flash(W("s9", "agenda"), 0.6, 0.25); shake(W("s9", "agenda") + 0.02, 1.6);
+      tl.fromTo("#g-key", { boxShadow: "0 0 0 8px rgba(232,179,75,0.25), 0 30px 90px rgba(232,179,75,0.45)" }, { boxShadow: "0 0 0 26px rgba(232,179,75,0), 0 30px 120px rgba(232,179,75,0.8)", duration: 0.7, repeat: 5, ease: "power1.out", immediateRender: false }, W("s9", "agenda") + 0.25);
+      tl.fromTo("#g-key", { scale: 1 }, { scale: 1.05, duration: 0.35, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, W("s9", "agenda") + 0.3);
+      pop("#g-bubble", W("s9", "agenda") + 0.15, { rotation: 30 }, 0.4, "back.out(1.8)", 8);
+      tl.fromTo("#g-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("s9", "revisamos") - 0.1);
+      const tEnd = SEG.s9.words[SEG.s9.words.length - 1].end + 0.3;
+      tl.fromTo("#g-end", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, tEnd);
+      tl.fromTo("#g-line", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, tEnd + 0.15);
+      tl.fromTo("#fade", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.in", immediateRender: false }, DUR - 0.3);
+
+      /* SUBTÍTULOS palabra por palabra */
+      const KEY = new Set(["doctor", "paciente", "10", "agendó", "anuncio", "pagaste", "3", "$1,000", "$12,000", "$140,000", "tratamientos", "publicidad", "sistema", "segundos", "inteligencia", "artificial", "inglés", "privacidad", "consentimiento", "cita", "recordatorio", "confirme", "20", "mensajes", "agenda", "gratis", "pacientes"]);
+      const capRoot = document.getElementById("captions");
+      const chunks = [];
+      VO.segments.forEach((s) => {
+        let cur = null;
+        s.words.forEach((w) => {
+          const txt = w.text;
+          const gap = cur ? w.start - cur.words[cur.words.length - 1].end : 0;
+          const len = cur ? cur.words.reduce((a, x) => a + x.txt.length + 1, 0) + txt.length : 0;
+          if (!cur || cur.words.length >= 3 || len > 15 || gap > 0.3) { cur = { words: [] }; chunks.push(cur); }
+          cur.words.push({ ...w, txt });
+        });
+      });
+      chunks.forEach((c, ci) => {
+        const el = document.createElement("div");
+        el.className = "cap";
+        c.words.forEach((w) => {
+          const sp = document.createElement("span");
+          sp.className = "cw" + (KEY.has(w.text.toLowerCase()) ? " key" : "");
+          sp.textContent = w.txt; el.appendChild(sp); w.el = sp;
+        });
+        capRoot.appendChild(el);
+        const t0 = c.words[0].start - 0.04, next = chunks[ci + 1], lastEnd = c.words[c.words.length - 1].end;
+        const t1 = next ? Math.min(next.words[0].start - 0.04, lastEnd + 0.45) : lastEnd + 0.28;
+        tl.fromTo(el, { opacity: 0, y: 26, scale: 0.88 }, { opacity: 1, y: 0, scale: 1, duration: 0.12, ease: "back.out(2)" }, t0);
+        tl.set(el, { opacity: 0 }, t1);
+        c.words.forEach((w, wi) => {
+          const base = w.el.classList.contains("key") ? "#e8b34b" : "#ffffff";
+          const wEnd = wi < c.words.length - 1 ? c.words[wi + 1].start : Math.min(t1, w.end + 0.2);
+          tl.set(w.el, { backgroundColor: "rgba(232,179,75,1)", color: "#0b0d12", textShadow: "0 0 0 rgba(0,0,0,0)" }, w.start);
+          tl.fromTo(w.el, { scale: 1.14 }, { scale: 1, duration: 0.14, ease: "power2.out", immediateRender: false }, w.start);
+          tl.set(w.el, { backgroundColor: "rgba(232,179,75,0)", color: base, textShadow: "0 5px 0 rgba(0,0,0,0.85), 0 0 24px rgba(0,0,0,0.7)" }, wEnd);
+        });
+      });
+
       window.__timelines["main"] = tl;
-      tl.seek(0);
     </script>
   </body>
 </html>

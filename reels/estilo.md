@@ -29,4 +29,6 @@ No había `estilo.md` previo ni `referencia/referencia.mp4`: este estilo se defi
 - Master: −14 LUFS integrados (estéreo), pico real ≤ −1 dBTP (se mezcla a −2 dBTP para margen del AAC).
 
 ## Reglas aprendidas
-- (vacío: se llena con las correcciones que Fran apruebe)
+- (2026-10-08, pedido de Fran tras inmo-01) **Logo FRANMORISHITA + monograma FM desde el fotograma 0**, grande en el primer segundo y luego fijo arriba (y ≈ 278–342) todo el video; se oculta cuando entra el cierre con logo.
+- (2026-10-08) **Voz menos robótica:** usar `en-US-AndrewMultilingualNeural` hablando español a +9 %, recortando solo pausas > 0.3 s (dejar 0.22 s). Jorge (es-MX) sonó robótico.
+- (2026-10-08) Incluir el **costo de oportunidad** con cuenta ilustrativa en pantalla (marcada "ejemplo ilustrativo", casillas para sus números).

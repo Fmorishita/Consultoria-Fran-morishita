@@ -21,5 +21,9 @@
 - Comparativa: "si tú inviertes $1 Dólar yo debo multiplicar mínimo el doble" se lee como garantía.
 - Contadores animados arrancan en 0 (capturas/robots ven "$0").
 
+## salud-01 (hecho 2026-10-08)
+- `videos/salud-01/renders/salud-01-consultorios.mp4` (44.4 s). Guion: `guiones/lote-01/salud-01.md`. Pendiente: aprobar umbral y AGENDA, activar automatización, revisión legal ligera.
+- Mejora pendiente opcional: aplicar el logo desde el inicio y la voz Andrew también a inmo-01.
+
 ## Siguiente
-- Reel de salud (nicho 2) y resto del lote 01 con `prompts/prompt-nuevo-lote.md`; reutilizar `videos/inmo-01` como receta (`tools/README.md`).
+- Resto del lote 01 con `prompts/prompt-nuevo-lote.md`; reutilizar `videos/inmo-01` como receta (`tools/README.md`).

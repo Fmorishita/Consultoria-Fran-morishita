@@ -18,6 +18,10 @@ Sesión de diagnóstico de **30 min por videollamada, gratis** → Calendly: htt
 - Umbral de calificación **PROPUESTA:** desarrollos con **más de 20 unidades** (o preventa activa). Usado en `inmo-01`. Confirmar o cambiar.
 - Lead magnet **PROPUESTA** de `inmo-01`: palabra **SISTEMA** → "diagnóstico gratis de tu embudo" (= la sesión de 30 min, enfocada en el embudo de prospectos del desarrollo).
 
+## Salud (todo PROPUESTA)
+- Umbral: consultorio o clínica con **más de 20 mensajes de pacientes a la semana**. Usado en `salud-01`.
+- Lead magnet: palabra **AGENDA** → "diagnóstico gratis de tu agenda de pacientes" (= sesión de 30 min enfocada en respuesta, agenda, confirmaciones y costo de oportunidad).
+
 ## Lo que falta para que el CTA funcione
 - [ ] **Usuario de Instagram** donde se publica (no aparece en la web).
 - [ ] **Automatización comentario → DM** para la palabra SISTEMA (ManyChat o la automatización de Meta). Hoy no existe: ver `embudo/palabras-clave.md`.

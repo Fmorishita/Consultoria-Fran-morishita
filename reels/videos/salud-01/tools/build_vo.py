@@ -8,7 +8,7 @@ SR = 48000
 VODIR, SEGS, REPL, OUT = sys.argv[1:5]
 PRE_DEFAULT = 0.26      # aire entre frases
 LEAD = 0.30             # el primer golpe visual/SFX va antes de la voz
-TAIL = 1.9
+TAIL = 1.5
 
 def load(path):
     cmd = ["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"]
@@ -19,7 +19,7 @@ def fade(x, n):
         x[:n] *= np.linspace(0, 1, n); x[-n:] *= np.linspace(1, 0, n)
     return x
 
-def tighten(audio, words, maxgap=0.38, keep=0.26):
+def tighten(audio, words, maxgap=0.3, keep=0.22):
     start = max(0.0, words[0]["start"] - 0.04)
     end = words[-1]["end"] + 0.16
     pts = [start]
