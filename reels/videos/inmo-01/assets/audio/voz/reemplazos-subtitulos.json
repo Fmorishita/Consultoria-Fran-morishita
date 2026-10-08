@@ -1,0 +1,82 @@
+[
+ {
+  "seq": [
+   "once"
+  ],
+  "show": "11"
+ },
+ {
+  "seq": [
+   "dos",
+   "ventas"
+  ],
+  "show": "2 ventas"
+ },
+ {
+  "seq": [
+   "tres",
+   "millones"
+  ],
+  "show": "$3,000,000"
+ },
+ {
+  "seq": [
+   "seis",
+   "millones"
+  ],
+  "show": "$6,000,000"
+ },
+ {
+  "seq": [
+   "cinco",
+   "por",
+   "ciento"
+  ],
+  "show": "5 %"
+ },
+ {
+  "seq": [
+   "trescientos",
+   "mil",
+   "pesos"
+  ],
+  "show": "$300,000"
+ },
+ {
+  "seq": [
+   "veinte"
+  ],
+  "show": "20"
+ },
+ {
+  "seq": [
+   "cinco",
+   "asesores"
+  ],
+  "show": "5 asesores"
+ },
+ {
+  "word": "Funciona",
+  "show": "¿Funciona?"
+ },
+ {
+  "word": "sistema",
+  "show": "SISTEMA"
+ },
+ {
+  "seq": [
+   "C",
+   "R",
+   "M"
+  ],
+  "show": "CRM"
+ },
+ {
+  "word": "Gús",
+  "show": "Gus"
+ },
+ {
+  "word": "Márcos",
+  "show": "Marcos"
+ }
+]

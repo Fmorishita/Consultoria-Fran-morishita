@@ -131,10 +131,10 @@ def wt(seg, txt):
         if w["text"].lower().startswith(txt.lower()): return w["start"]
     raise KeyError(txt)
 
-T_SISTEMA = wt("v4", "sistema")
-T_PROOF = W["v8"]["start"] - 0.25
-T_CTA = W["v9"]["start"]
-T_PAUTA = W["v4"]["start"]
+T_SISTEMA = wt("v5", "sistema")
+T_PROOF = W["v9"]["start"] - 0.25
+T_CTA = W["v10"]["start"]
+T_PAUTA = W["v5"]["start"]
 
 section(0.0, T_PAUTA, "tension")
 # breakdown: solo pad filtrado + riser hasta el drop
@@ -230,31 +230,39 @@ lib = {"impact": sfx_impact(), "whoosh": sfx_whoosh(), "whoosh_dn": sfx_whoosh(0
 for k, v in lib.items():
     sf.write(os.path.join(OUT, f"sfx_{k}.wav"), v.astype(np.float32), SR, subtype="PCM_24")
 
-# ---------- hoja de cues (tiempos globales) ----------
+# ---------- hoja de cues (tiempos globales) · v2 ----------
 cues = [
     ("impact", 0.0, 0.9), ("whoosh", 0.05, 0.5),
-    ("ding", wt("v1", "prospecto"), 0.6),
+    *[("whoosh", 0.47 + k * 0.38, 0.28) for k in range(6)], *[("pop", 0.53 + k * 0.38, 0.25) for k in range(6)],
+    ("impact", wt("v1", "inmobiliaria") - 0.02, 0.45),
+    ("ding", wt("v1", "escribió") - 0.12, 0.6), ("pop_hi", wt("v1", "11") - 0.05, 0.4),
     ("glitch", wt("v1", "apartó") - 0.05, 0.55), ("buzz", wt("v1", "apartó"), 0.45),
     ("whoosh", W["v2"]["start"] - 0.15, 0.45),
-    ("tick", wt("v2", "contestó"), 0.5), ("tick", wt("v2", "contestó") + 0.2, 0.5), ("tick", wt("v2", "contestó") + 0.4, 0.5), ("tick", wt("v2", "contestó") + 0.6, 0.5),
-    ("pop", wt("v2", "día"), 0.5),
+    ("tick", wt("v2", "activos") - 0.05, 0.55), ("tick", wt("v2", "escriben") - 0.05, 0.55),
+    *[("tick", wt("v2", "escriben") + 0.25 + k * 0.18, 0.35) for k in range(5)],
+    ("pop", wt("v2", "unidades") - 0.2, 0.4), ("pop", wt("v2", "unidades") - 0.1, 0.4), ("pop", wt("v2", "unidades"), 0.4),
+    ("impact", wt("v2", "mueven") - 0.1, 0.55), ("buzz", wt("v2", "mueven"), 0.35),
     ("whoosh", W["v3"]["start"] - 0.15, 0.45),
-    ("coins", wt("v3", "anuncio") - 0.1, 0.45),
-    ("whoosh_dn", wt("v3", "lana"), 0.5), ("impact", wt("v3", "competencia"), 0.45),
+    ("pop", wt("v3", "2 ventas"), 0.5), ("pop_hi", wt("v3", "$3,000,000"), 0.5),
+    ("riser_cta", wt("v3", "$6,000,000") - 1.0, 0.3), ("impact", wt("v3", "$6,000,000"), 0.95), ("coins", wt("v3", "$6,000,000") + 0.05, 0.6), ("coins", wt("v3", "$6,000,000") + 0.5, 0.45),
+    ("buzz", wt("v3", "facturar"), 0.3),
+    ("whoosh", wt("v4", "inmobiliaria") - 0.15, 0.4), ("pop", wt("v4", "5 %"), 0.5),
+    ("impact", wt("v4", "$300,000"), 0.8), ("coins", wt("v4", "$300,000") + 0.05, 0.55), ("ding", wt("v4", "mes"), 0.4),
     ("scratch", T_PAUTA - 0.12, 0.5),
-    ("riser", T_PAUTA, 0.75), ("buzz", wt("v4", "pauta") + 0.1, 0.35),
+    ("riser", T_PAUTA, 0.75), ("buzz", wt("v5", "producto") + 0.3, 0.35),
     ("impact", T_SISTEMA, 1.0),
-    ("whoosh", W["v5"]["start"] - 0.2, 0.45), ("type", wt("v5", "agente"), 0.5), ("ding", wt("v5", "contesta"), 0.55),
-    ("pop", wt("v5", "cualquier"), 0.4),
-    ("whoosh", W["v6"]["start"] - 0.2, 0.45), ("pop", wt("v6", "presupuesto"), 0.5), ("pop_hi", wt("v6", "crédito"), 0.5), ("pop", wt("v6", "cuándo"), 0.5),
-    ("ding", wt("v6", "compra") + 0.2, 0.45),
-    ("whoosh", W["v7"]["start"] - 0.2, 0.45), ("pop_hi", wt("v7", "visita"), 0.5), ("swipe", wt("v7", "CRM"), 0.6), ("swipe", wt("v7", "seguimiento"), 0.5),
-    ("whoosh_dn", W["v8"]["start"] - 0.25, 0.5), ("pop", wt("v8", "Gus"), 0.45),
+    ("whoosh", W["v6"]["start"] - 0.2, 0.45), ("ding", wt("v6", "Meta") - 0.05, 0.5), ("pop_hi", wt("v6", "compradores"), 0.5), ("swipe", wt("v6", "curiosos"), 0.5),
+    ("whoosh", W["v7"]["start"] - 0.2, 0.45), ("type", wt("v7", "agente"), 0.5), ("ding", wt("v7", "contesta"), 0.55),
+    ("whoosh_dn", wt("v7", "contesta") + 0.05, 0.4), ("pop", wt("v7", "cualquier"), 0.4),
+    ("whoosh", wt("v7", "califica") - 0.2, 0.4), ("pop", wt("v7", "califica") + 0.05, 0.45), ("pop_hi", wt("v7", "califica") + 0.2, 0.45), ("pop", wt("v7", "califica") + 0.35, 0.45),
+    ("ding", wt("v7", "califica") + 0.7, 0.45),
+    ("whoosh", W["v8"]["start"] - 0.2, 0.45), ("pop_hi", wt("v8", "visita"), 0.5), ("swipe", wt("v8", "CRM") + 0.1, 0.6), ("swipe", wt("v8", "seguimiento"), 0.5),
+    ("whoosh_dn", W["v9"]["start"] - 0.25, 0.5), ("pop", wt("v9", "Gus"), 0.45),
     ("whoosh", W["GUS"]["start"] - 0.15, 0.35), ("impact", wt("GUS", "60"), 0.45), ("coins", wt("GUS", "60") + 0.05, 0.3),
-    ("riser_cta", W["v9"]["start"] - 1.15, 0.35),
-    ("impact", W["v9"]["start"], 0.6), ("pop_hi", wt("v9", "20"), 0.5),
-    ("impact", wt("v9", "comenta"), 0.85), ("ding", wt("v9", "SISTEMA") + 0.1, 0.5),
-    ("pop", wt("v9", "diagnóstico"), 0.4),
+    ("riser_cta", W["v10"]["start"] - 1.15, 0.35),
+    ("impact", W["v10"]["start"], 0.6), ("pop_hi", wt("v10", "20"), 0.5), ("pop_hi", wt("v10", "5 asesores"), 0.5),
+    ("impact", wt("v10", "comenta"), 0.85), ("ding", wt("v10", "SISTEMA") + 0.1, 0.5),
+    ("pop", wt("v10", "diagnóstico"), 0.4),
 ]
 json.dump([{"sfx": c, "t": round(t, 3), "gain": g} for c, t, g in cues], open(os.path.join(OUT, "cues.json"), "w"), indent=1)
 json.dump({"T_SISTEMA": T_SISTEMA, "T_PROOF": T_PROOF, "T_CTA": T_CTA, "T_PAUTA": T_PAUTA}, open(os.path.join(OUT, "marks.json"), "w"), indent=1)
