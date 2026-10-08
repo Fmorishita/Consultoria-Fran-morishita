@@ -1,0 +1,76 @@
+[
+ {
+  "seq": [
+   "once"
+  ],
+  "show": "11"
+ },
+ {
+  "seq": [
+   "cuatro",
+   "a",
+   "siete",
+   "ventas"
+  ],
+  "show": "4–7 ventas"
+ },
+ {
+  "seq": [
+   "tres",
+   "a",
+   "seis",
+   "millones"
+  ],
+  "show": "$3–$6 MDP"
+ },
+ {
+  "seq": [
+   "tres",
+   "al",
+   "seis",
+   "por",
+   "ciento"
+  ],
+  "show": "3–6 %"
+ },
+ {
+  "seq": [
+   "trescientos",
+   "sesenta",
+   "mil"
+  ],
+  "show": "$360,000"
+ },
+ {
+  "seq": [
+   "C",
+   "R",
+   "M"
+  ],
+  "show": "CRM"
+ },
+ {
+  "word": "Funciona",
+  "show": "¿Funciona?"
+ },
+ {
+  "seq": [
+   "doce",
+   "a",
+   "cuarenta",
+   "y",
+   "dos",
+   "millones"
+  ],
+  "show": "$12–$42 MDP"
+ },
+ {
+  "seq": [
+   "dos",
+   "millones",
+   "y",
+   "medio"
+  ],
+  "show": "$2.5 MDP"
+ }
+]

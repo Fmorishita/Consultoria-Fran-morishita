@@ -1,0 +1,698 @@
+{
+ "total": 44.972,
+ "segments": [
+  {
+   "id": "s1",
+   "start": 0.3,
+   "end": 4.564,
+   "words": [
+    {
+     "text": "Doctor",
+     "start": 0.34,
+     "end": 0.833
+    },
+    {
+     "text": "ese",
+     "start": 1.053,
+     "end": 1.225
+    },
+    {
+     "text": "paciente",
+     "start": 1.237,
+     "end": 1.615
+    },
+    {
+     "text": "que",
+     "start": 1.626,
+     "end": 1.718
+    },
+    {
+     "text": "te",
+     "start": 1.73,
+     "end": 1.799
+    },
+    {
+     "text": "escribió",
+     "start": 1.799,
+     "end": 2.234
+    },
+    {
+     "text": "a",
+     "start": 2.234,
+     "end": 2.257
+    },
+    {
+     "text": "las",
+     "start": 2.269,
+     "end": 2.464
+    },
+    {
+     "text": "10",
+     "start": 2.464,
+     "end": 2.636
+    },
+    {
+     "text": "de",
+     "start": 2.636,
+     "end": 2.693
+    },
+    {
+     "text": "la",
+     "start": 2.693,
+     "end": 2.773
+    },
+    {
+     "text": "noche",
+     "start": 2.773,
+     "end": 3.083
+    },
+    {
+     "text": "ya",
+     "start": 3.303,
+     "end": 3.509
+    },
+    {
+     "text": "agendó",
+     "start": 3.509,
+     "end": 3.899
+    },
+    {
+     "text": "con",
+     "start": 3.899,
+     "end": 4.06
+    },
+    {
+     "text": "otro",
+     "start": 4.071,
+     "end": 4.404
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "start": 4.844,
+   "end": 8.271,
+   "words": [
+    {
+     "text": "Nadie",
+     "start": 4.884,
+     "end": 5.136
+    },
+    {
+     "text": "le",
+     "start": 5.148,
+     "end": 5.228
+    },
+    {
+     "text": "contestó",
+     "start": 5.228,
+     "end": 5.79
+    },
+    {
+     "text": "Y",
+     "start": 6.01,
+     "end": 6.056
+    },
+    {
+     "text": "si",
+     "start": 6.056,
+     "end": 6.182
+    },
+    {
+     "text": "llegó",
+     "start": 6.182,
+     "end": 6.434
+    },
+    {
+     "text": "por",
+     "start": 6.434,
+     "end": 6.572
+    },
+    {
+     "text": "tu",
+     "start": 6.583,
+     "end": 6.663
+    },
+    {
+     "text": "anuncio",
+     "start": 6.663,
+     "end": 7.099
+    },
+    {
+     "text": "ya",
+     "start": 7.319,
+     "end": 7.457
+    },
+    {
+     "text": "lo",
+     "start": 7.468,
+     "end": 7.56
+    },
+    {
+     "text": "pagaste",
+     "start": 7.571,
+     "end": 8.11
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "start": 8.571,
+   "end": 15.394,
+   "words": [
+    {
+     "text": "Haz",
+     "start": 8.611,
+     "end": 8.725
+    },
+    {
+     "text": "la",
+     "start": 8.725,
+     "end": 8.805
+    },
+    {
+     "text": "cuenta",
+     "start": 8.817,
+     "end": 9.299
+    },
+    {
+     "text": "Por",
+     "start": 9.519,
+     "end": 9.622
+    },
+    {
+     "text": "ejemplo",
+     "start": 9.633,
+     "end": 10.103
+    },
+    {
+     "text": "si",
+     "start": 10.323,
+     "end": 10.415
+    },
+    {
+     "text": "se",
+     "start": 10.427,
+     "end": 10.541
+    },
+    {
+     "text": "te",
+     "start": 10.553,
+     "end": 10.644
+    },
+    {
+     "text": "van",
+     "start": 10.644,
+     "end": 10.839
+    },
+    {
+     "text": "10",
+     "start": 10.839,
+     "end": 11.034
+    },
+    {
+     "text": "pacientes",
+     "start": 11.046,
+     "end": 11.55
+    },
+    {
+     "text": "al",
+     "start": 11.55,
+     "end": 11.642
+    },
+    {
+     "text": "mes",
+     "start": 11.642,
+     "end": 11.86
+    },
+    {
+     "text": "sin",
+     "start": 11.86,
+     "end": 11.986
+    },
+    {
+     "text": "respuesta",
+     "start": 11.986,
+     "end": 12.651
+    },
+    {
+     "text": "con",
+     "start": 12.871,
+     "end": 12.998
+    },
+    {
+     "text": "un",
+     "start": 12.998,
+     "end": 13.066
+    },
+    {
+     "text": "tratamiento",
+     "start": 13.078,
+     "end": 13.537
+    },
+    {
+     "text": "de",
+     "start": 13.537,
+     "end": 13.605
+    },
+    {
+     "text": "$10,000–$50,000",
+     "start": 13.605,
+     "end": 15.234
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "start": 15.654,
+   "end": 19.065,
+   "words": [
+    {
+     "text": "son",
+     "start": 15.694,
+     "end": 15.74
+    },
+    {
+     "text": "de",
+     "start": 15.808,
+     "end": 15.889
+    },
+    {
+     "text": "$100,000–$500,000",
+     "start": 15.9,
+     "end": 17.311
+    },
+    {
+     "text": "al",
+     "start": 17.322,
+     "end": 17.483
+    },
+    {
+     "text": "mes",
+     "start": 17.483,
+     "end": 17.769
+    },
+    {
+     "text": "que",
+     "start": 17.781,
+     "end": 17.896
+    },
+    {
+     "text": "dejas",
+     "start": 17.907,
+     "end": 18.251
+    },
+    {
+     "text": "de",
+     "start": 18.251,
+     "end": 18.32
+    },
+    {
+     "text": "facturar",
+     "start": 18.331,
+     "end": 18.905
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "start": 19.445,
+   "end": 22.628,
+   "words": [
+    {
+     "text": "El",
+     "start": 19.485,
+     "end": 19.588
+    },
+    {
+     "text": "problema",
+     "start": 19.588,
+     "end": 19.989
+    },
+    {
+     "text": "no",
+     "start": 20.001,
+     "end": 20.242
+    },
+    {
+     "text": "es",
+     "start": 20.242,
+     "end": 20.345
+    },
+    {
+     "text": "tu",
+     "start": 20.356,
+     "end": 20.448
+    },
+    {
+     "text": "publicidad",
+     "start": 20.46,
+     "end": 21.021
+    },
+    {
+     "text": "es",
+     "start": 21.241,
+     "end": 21.31
+    },
+    {
+     "text": "que",
+     "start": 21.322,
+     "end": 21.402
+    },
+    {
+     "text": "no",
+     "start": 21.402,
+     "end": 21.528
+    },
+    {
+     "text": "tienes",
+     "start": 21.54,
+     "end": 21.826
+    },
+    {
+     "text": "un",
+     "start": 21.838,
+     "end": 21.941
+    },
+    {
+     "text": "sistema",
+     "start": 21.941,
+     "end": 22.469
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "start": 23.008,
+   "end": 28.752,
+   "words": [
+    {
+     "text": "Primero",
+     "start": 23.048,
+     "end": 23.45
+    },
+    {
+     "text": "un",
+     "start": 23.67,
+     "end": 23.75
+    },
+    {
+     "text": "agente",
+     "start": 23.75,
+     "end": 24.094
+    },
+    {
+     "text": "de",
+     "start": 24.094,
+     "end": 24.163
+    },
+    {
+     "text": "inteligencia",
+     "start": 24.174,
+     "end": 24.725
+    },
+    {
+     "text": "artificial",
+     "start": 24.725,
+     "end": 25.321
+    },
+    {
+     "text": "contesta",
+     "start": 25.321,
+     "end": 25.826
+    },
+    {
+     "text": "en",
+     "start": 25.826,
+     "end": 25.883
+    },
+    {
+     "text": "segundos",
+     "start": 25.883,
+     "end": 26.445
+    },
+    {
+     "text": "a",
+     "start": 26.72,
+     "end": 26.778
+    },
+    {
+     "text": "cualquier",
+     "start": 26.778,
+     "end": 27.236
+    },
+    {
+     "text": "hora",
+     "start": 27.236,
+     "end": 27.443
+    },
+    {
+     "text": "hasta",
+     "start": 27.663,
+     "end": 27.961
+    },
+    {
+     "text": "en",
+     "start": 27.961,
+     "end": 28.03
+    },
+    {
+     "text": "inglés",
+     "start": 28.03,
+     "end": 28.592
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "start": 29.012,
+   "end": 33.216,
+   "words": [
+    {
+     "text": "Con",
+     "start": 29.052,
+     "end": 29.166
+    },
+    {
+     "text": "aviso",
+     "start": 29.166,
+     "end": 29.442
+    },
+    {
+     "text": "de",
+     "start": 29.442,
+     "end": 29.533
+    },
+    {
+     "text": "privacidad",
+     "start": 29.533,
+     "end": 30.072
+    },
+    {
+     "text": "y",
+     "start": 30.072,
+     "end": 30.107
+    },
+    {
+     "text": "consentimiento",
+     "start": 30.107,
+     "end": 30.875
+    },
+    {
+     "text": "ofrece",
+     "start": 31.095,
+     "end": 31.485
+    },
+    {
+     "text": "horarios",
+     "start": 31.496,
+     "end": 32.001
+    },
+    {
+     "text": "y",
+     "start": 32.012,
+     "end": 32.15
+    },
+    {
+     "text": "agenda",
+     "start": 32.15,
+     "end": 32.54
+    },
+    {
+     "text": "la",
+     "start": 32.54,
+     "end": 32.632
+    },
+    {
+     "text": "cita",
+     "start": 32.643,
+     "end": 33.056
+    }
+   ]
+  },
+  {
+   "id": "s8",
+   "start": 33.456,
+   "end": 36.477,
+   "words": [
+    {
+     "text": "Y",
+     "start": 33.496,
+     "end": 33.553
+    },
+    {
+     "text": "1 día",
+     "start": 33.553,
+     "end": 33.943
+    },
+    {
+     "text": "antes",
+     "start": 33.943,
+     "end": 34.345
+    },
+    {
+     "text": "manda",
+     "start": 34.574,
+     "end": 34.838
+    },
+    {
+     "text": "recordatorio",
+     "start": 34.838,
+     "end": 35.457
+    },
+    {
+     "text": "para",
+     "start": 35.469,
+     "end": 35.663
+    },
+    {
+     "text": "que",
+     "start": 35.663,
+     "end": 35.755
+    },
+    {
+     "text": "confirme",
+     "start": 35.755,
+     "end": 36.317
+    }
+   ]
+  },
+  {
+   "id": "s9",
+   "start": 36.857,
+   "end": 43.722,
+   "words": [
+    {
+     "text": "Si",
+     "start": 36.897,
+     "end": 37.012
+    },
+    {
+     "text": "tu",
+     "start": 37.012,
+     "end": 37.104
+    },
+    {
+     "text": "consultorio",
+     "start": 37.115,
+     "end": 37.643
+    },
+    {
+     "text": "recibe",
+     "start": 37.643,
+     "end": 38.032
+    },
+    {
+     "text": "más",
+     "start": 38.032,
+     "end": 38.399
+    },
+    {
+     "text": "de",
+     "start": 38.399,
+     "end": 38.468
+    },
+    {
+     "text": "20",
+     "start": 38.48,
+     "end": 38.732
+    },
+    {
+     "text": "mensajes",
+     "start": 38.743,
+     "end": 39.317
+    },
+    {
+     "text": "a",
+     "start": 39.328,
+     "end": 39.363
+    },
+    {
+     "text": "la",
+     "start": 39.363,
+     "end": 39.443
+    },
+    {
+     "text": "semana",
+     "start": 39.443,
+     "end": 39.856
+    },
+    {
+     "text": "comenta",
+     "start": 40.076,
+     "end": 40.454
+    },
+    {
+     "text": "agenda",
+     "start": 40.454,
+     "end": 40.89
+    },
+    {
+     "text": "y",
+     "start": 41.096,
+     "end": 41.154
+    },
+    {
+     "text": "revisamos",
+     "start": 41.154,
+     "end": 41.704
+    },
+    {
+     "text": "gratis",
+     "start": 41.716,
+     "end": 42.094
+    },
+    {
+     "text": "dónde",
+     "start": 42.094,
+     "end": 42.289
+    },
+    {
+     "text": "se",
+     "start": 42.289,
+     "end": 42.415
+    },
+    {
+     "text": "te",
+     "start": 42.415,
+     "end": 42.496
+    },
+    {
+     "text": "van",
+     "start": 42.507,
+     "end": 42.702
+    },
+    {
+     "text": "los",
+     "start": 42.702,
+     "end": 42.828
+    },
+    {
+     "text": "pacientes",
+     "start": 42.84,
+     "end": 43.562
+    }
+   ]
+  }
+ ]
+}
