@@ -17,7 +17,8 @@ Sesión de diagnóstico de **30 min por videollamada, gratis** → Calendly: htt
 ## Inmobiliario
 - Umbral de calificación **PROPUESTA:** desarrollos con **más de 20 unidades** (o preventa activa). Usado en `inmo-01`. Confirmar o cambiar.
 - Umbral para **inmobiliarias / brokers** (PROPUESTA nueva, inmo-01 v2): **más de 5 asesores**. Confirmar o cambiar.
-- Cifras de ejemplo del costo de oportunidad (PROPUESTA, inmo-01 v2): 2 ventas/mes × $3,000,000 = $6,000,000; comisión de ejemplo del 5 % = $300,000/mes.
+- Cifras de ejemplo del costo de oportunidad (**dadas por Fran**, inmo-01 v3): 4–7 ventas/mes × ticket $3–$6 MDP = $12–$42 MDP/mes; comisión de inmobiliarias del 3 al 6 % = $360,000–$2,520,000/mes. Siempre como ejemplo ilustrativo.
+- CTA inmobiliario v3 (pedido de Fran): "Si te sientes estancado en tus ventas o quieres multiplicarlas, comenta VENTAS". El umbral (+20 unidades / +5 asesores) pasa al DM y al texto del post.
 - Lead magnet **PROPUESTA** de `inmo-01`: palabra **SISTEMA** → "diagnóstico gratis de tu embudo" (= la sesión de 30 min, enfocada en el embudo de prospectos del desarrollo).
 
 ## Salud (todo PROPUESTA)

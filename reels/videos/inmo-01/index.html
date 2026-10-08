@@ -79,7 +79,7 @@
       #c-tag span { display: inline-block; padding: 10px 22px; border-radius: 14px; background: var(--gold-l); color: #0b0d12; font-family: "Inter", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.08em; }
       #c-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; opacity: 0.26; }
       #c-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,9,15,0.9), rgba(7,9,15,0.55) 45%, rgba(7,9,15,0.96) 68%, var(--bg)); }
-      #c-ticket { position: absolute; left: 90px; top: 430px; width: 900px; height: 616px; border-radius: 34px; background: rgba(17,22,31,0.94); border: 3px solid var(--line); box-shadow: 0 40px 100px rgba(0,0,0,0.55); padding: 16px 40px; }
+      #c-ticket { position: absolute; left: 90px; top: 422px; width: 900px; height: 630px; border-radius: 34px; background: rgba(17,22,31,0.94); border: 3px solid var(--line); box-shadow: 0 40px 100px rgba(0,0,0,0.55); padding: 16px 40px; }
       .c-line { display: flex; justify-content: space-between; align-items: center; height: 74px; font-weight: 700; font-size: 34px; color: #fff; border-bottom: 2px dashed rgba(255,255,255,0.10); }
       .c-line .op { color: var(--gold); width: 46px; font-size: 40px; }
       .c-line .lab { flex: 1; }
@@ -87,8 +87,9 @@
       .c-res { margin-top: 12px; text-align: center; }
       .c-res .k { display: block; font-size: 25px; font-weight: 800; letter-spacing: 0.12em; color: var(--muted); }
       .c-res .k b { color: var(--gold-l); }
-      .c-res .n { display: block; font-weight: 800; font-size: 92px; letter-spacing: -0.04em; color: var(--gold); line-height: 1.04; text-shadow: 0 0 60px rgba(232,179,75,0.5); white-space: nowrap; }
+      .c-res .n { display: block; font-weight: 800; font-size: 84px; letter-spacing: -0.04em; color: var(--gold); line-height: 1.04; text-shadow: 0 0 60px rgba(232,179,75,0.5); white-space: nowrap; }
       .c-res .n small { font-size: 34px; letter-spacing: 0.04em; color: #fff; }
+      .c-res .n-s { font-size: 60px; }
       #c-res2 { margin-top: 10px; padding-top: 10px; border-top: 2px dashed rgba(255,255,255,0.12); }
       #c-sm { display: block; margin-top: 10px; text-align: center; font-family: "Inter", sans-serif; font-size: 21px; font-weight: 700; color: var(--muted); }
       #c-blank { margin-top: 10px; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 30px; font-weight: 700; color: #fff; }
@@ -121,15 +122,25 @@
       .b-red .sw { position: relative; }
       #e0-x { position: absolute; left: -8px; right: -8px; top: 52%; height: 6px; border-radius: 3px; background: var(--red); }
 
-      #e0-ad { top: 500px; overflow: hidden; }
-      #e0-ad .ad-img { position: relative; height: 200px; overflow: hidden; }
-      #e0-ad .ad-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-      #e0-ad .ad-body { padding: 16px 34px 20px; }
-      #e0-ad .ad-t { font-size: 34px; font-weight: 800; color: #fff; }
-      #e0-ad .ad-s { font-size: 25px; color: var(--muted); margin-top: 4px; }
-      #e0-ad .ad-cta { display: inline-block; margin-top: 12px; padding: 12px 22px; border-radius: 14px; background: var(--blue); color: #fff; font-size: 26px; font-weight: 800; }
-      #e0-live { display: flex; align-items: center; gap: 10px; font-family: "Inter", sans-serif; font-size: 24px; letter-spacing: 0.06em; }
-      #e0-dot { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--red); }
+      #e0-ad { top: 470px; overflow: hidden; }
+      #e0-ad .ad-h { display: flex; align-items: center; gap: 16px; padding: 16px 24px; }
+      #e0-ad .ad-av { display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-d), var(--gold-l)); color: #0b0d12; font-family: "Sora", sans-serif; font-weight: 800; font-size: 24px; }
+      #e0-ad .ad-n { font-size: 28px; font-weight: 800; color: #fff; }
+      #e0-ad .ad-p { font-size: 21px; color: var(--muted); margin-top: 2px; }
+      #e0-ad .plat { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+      #e0-ad .plat i { display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 12px; font-style: normal; font-family: "Sora", sans-serif; font-weight: 800; font-size: 26px; color: #fff; }
+      #e0-ad .fb { background: #1877f2; }
+      #e0-ad .ig { background: linear-gradient(135deg, #feda75, #fa7e1e 30%, #d62976 60%, #962fbf 85%, #4f5bd5); font-size: 20px; }
+      #e0-ad .ad-img { position: relative; height: 340px; overflow: hidden; }
+      #e0-ad .ad-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+      #e0-ad .ad-ov { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.78) 100%); }
+      #e0-ad .ad-tag { position: absolute; left: 22px; top: 18px; padding: 8px 16px; border-radius: 10px; background: var(--gold); color: #0b0d12; font-family: "Sora", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.08em; }
+      #e0-ad .ad-copy { position: absolute; left: 24px; right: 24px; bottom: 18px; }
+      #e0-ad .ad-t { font-family: "Sora", sans-serif; font-size: 40px; font-weight: 800; line-height: 1.08; color: #fff; text-shadow: 0 4px 18px rgba(0,0,0,0.6); }
+      #e0-ad .ad-s { font-size: 24px; font-weight: 700; color: #f1e3c2; margin-top: 6px; }
+      #e0-ad .ad-cta { display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 26px; background: #0b5c4a; color: #e6fff3; font-size: 28px; font-weight: 800; }
+      #e0-live { display: flex; align-items: center; gap: 8px; font-family: "Inter", sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; color: var(--muted); margin-right: 6px; }
+      #e0-dot { display: block; width: 16px; height: 16px; border-radius: 50%; background: var(--red); }
 
       .phone { position: absolute; left: 130px; width: 820px; border-radius: 48px; background: var(--chat-bg); border: 4px solid #2a3442; box-shadow: 0 40px 120px rgba(0,0,0,0.6); overflow: hidden; font-family: "Inter", sans-serif; }
       .chat-head { display: flex; align-items: center; gap: 20px; height: 116px; padding: 0 30px; background: #1b262e; }
@@ -186,15 +197,16 @@
       #f2-real { position: absolute; right: 65px; top: 392px; background: var(--red); color: #fff; }
       #f2-stat { position: absolute; left: 0; right: 0; top: 820px; text-align: center; }
       #f2-stat .n { display: inline-block; font-weight: 800; font-size: 150px; letter-spacing: -0.04em; color: var(--gold); text-shadow: 0 8px 0 rgba(0,0,0,0.55), 0 0 60px rgba(232,179,75,0.5); }
+      #f2-note { position: absolute; left: 65px; right: 65px; top: 1220px; text-align: center; font-family: "Inter", sans-serif; font-size: 23px; font-weight: 700; color: rgba(244,246,251,0.8); }
       #f2-years { position: absolute; left: 0; right: 0; top: 975px; text-align: center; }
       #f2-years .chip { font-size: 40px; background: #fff; color: #0b0d12; padding: 10px 24px; border-radius: 16px; font-family: "Sora", sans-serif; font-weight: 800; }
 
       /* ---------- G · CTA ---------- */
-      #g-fran { position: absolute; left: 400px; top: 430px; width: 760px; height: 760px; }
+      #g-fran { position: absolute; left: 470px; top: 500px; width: 720px; height: 720px; }
       #g-fran img { position: absolute; inset: 0; width: 100%; height: 100%; }
-      #g-rim { position: absolute; left: 470px; top: 520px; width: 680px; height: 680px; border-radius: 50%; background: radial-gradient(circle, rgba(232,179,75,0.45) 0%, rgba(232,179,75,0) 62%); }
+      #g-rim { position: absolute; left: 520px; top: 560px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, rgba(232,179,75,0.45) 0%, rgba(232,179,75,0) 62%); }
       .g-q { position: absolute; left: 65px; font-size: 40px; font-weight: 700; color: #fff; text-shadow: 0 4px 24px rgba(0,0,0,0.9); white-space: nowrap; }
-      .g-big { position: absolute; left: 65px; font-size: 80px; font-weight: 800; letter-spacing: -0.04em; color: var(--gold); line-height: 1; white-space: nowrap; text-shadow: 0 6px 30px rgba(0,0,0,0.8); }
+      .g-big { position: absolute; left: 65px; font-size: 76px; font-weight: 800; letter-spacing: -0.04em; color: var(--gold); line-height: 1; white-space: nowrap; text-shadow: 0 6px 30px rgba(0,0,0,0.8); }
       #g-q1 { top: 362px; } #g-q2 { top: 410px; } #g-q3 { top: 504px; } #g-q4 { top: 552px; }
       #g-com { position: absolute; left: 65px; top: 652px; font-size: 56px; font-weight: 800; color: #fff; letter-spacing: 0.02em; text-shadow: 0 6px 30px rgba(0,0,0,0.8); }
       #g-key { position: absolute; left: 45px; top: 726px; padding: 4px 30px 12px; border-radius: 24px; background: var(--gold); color: #0b0d12; font-size: 118px; font-weight: 800; letter-spacing: -0.03em; box-shadow: 0 0 0 8px rgba(232,179,75,0.25), 0 30px 90px rgba(232,179,75,0.45); }
@@ -221,18 +233,18 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="57.35" data-width="1080" data-height="1920">
-      <audio id="master" src="assets/audio/master.m4a" data-start="0" data-duration="57.35" data-track-index="10" data-volume="1"></audio>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="59.5" data-width="1080" data-height="1920">
+      <audio id="master" src="assets/audio/master.m4a" data-start="0" data-duration="59.5" data-track-index="10" data-volume="1"></audio>
 
       <div id="cam">
         <div id="bg-base"><div id="grid"></div><div id="glow1" class="glow"></div><div id="glow2" class="glow"></div></div>
 
         <!-- A · GANCHO: dos buyer personas + prospecto de noche -->
         <div id="sA" class="scene">
-          <div id="a-people"><div class="per" id="per0"><img src="assets/img/personas/desarrollador.jpg" alt="" /></div><div class="per" id="per1"><img src="assets/img/personas/duena-inmobiliaria.jpg" alt="" /></div><div class="per" id="per2"><img src="assets/img/personas/directora-comercial.jpg" alt="" /></div><div class="per" id="per3"><img src="assets/img/personas/broker.jpg" alt="" /></div><div class="per" id="per4"><img src="assets/img/personas/asesora.jpg" alt="" /></div><div class="per" id="per5"><img src="assets/img/personas/inversionista.jpg" alt="" /></div><div id="a-people-shade"></div></div>
+          <div id="a-people"><div class="per" id="per0"><img src="assets/img/personas/desarrollador.jpg" alt="" /></div><div class="per" id="per1"><img src="assets/img/personas/duena-inmobiliaria.jpg" alt="" /></div><div id="a-people-shade"></div></div>
           <div id="a-t1">DESARROLLADOR</div>
           <div id="a-t2">O INMOBILIARIA:</div>
-          <div id="a-role"><div class="role" id="role0"><span>DESARROLLADOR</span></div><div class="role" id="role1"><span>INMOBILIARIA</span></div><div class="role" id="role2"><span>DESARROLLADORA</span></div><div class="role" id="role3"><span>BROKER</span></div><div class="role" id="role4"><span>ASESORA INMOBILIARIA</span></div><div class="role" id="role5"><span>PREVENTA</span></div></div>
+          <div id="a-role"><div class="role" id="role0"><span>DESARROLLADOR</span></div><div class="role" id="role1"><span>INMOBILIARIA</span></div></div>
           <div id="a-ilus">IMÁGENES GENERADAS CON IA · PERSONAS FICTICIAS</div>
           <div id="a-notif" data-layout-allow-overlap>
             <div class="notif-top"><span class="notif-ico">📣</span><span>ANUNCIO · TORRE EJEMPLO</span><span class="notif-time">11:07 p.m.</span></div>
@@ -265,10 +277,10 @@
           <div id="c-shade"></div>
           <div id="c-tag"><span>EJEMPLO ILUSTRATIVO · HAZ LA CUENTA CON TUS NÚMEROS</span></div>
           <div id="c-ticket">
-            <div class="c-line" id="c-l1"><span class="op"></span><span class="lab">Ventas que se te van / mes</span><span class="val">2</span></div>
-            <div class="c-line" id="c-l2"><span class="op">×</span><span class="lab">Precio por unidad</span><span class="val">$3,000,000</span></div>
-            <div class="c-res" id="c-res1"><span class="k"><b>DESARROLLADOR</b> · DEJAS DE FACTURAR</span><span class="n"><span id="c-n1">$6,000,000</span> <small>AL MES</small></span></div>
-            <div class="c-res" id="c-res2"><span class="k"><b>INMOBILIARIA</b> · 5 % DE COMISIÓN</span><span class="n"><span id="c-n2">$300,000</span> <small>AL MES</small></span></div>
+            <div class="c-line" id="c-l1"><span class="op"></span><span class="lab">Ventas que se te van / mes</span><span class="val">4 – 7</span></div>
+            <div class="c-line" id="c-l2"><span class="op">×</span><span class="lab">Ticket por unidad</span><span class="val">$3 – $6 MDP</span></div>
+            <div class="c-res" id="c-res1"><span class="k"><b>DESARROLLADOR</b> · DEJAS DE FACTURAR AL MES</span><span class="n" id="c-n1">$12,000,000</span><span class="n" id="c-n1b">a $42,000,000</span></div>
+            <div class="c-res" id="c-res2"><span class="k"><b>INMOBILIARIA</b> · COMISIÓN DEL 3 AL 6 % · AL MES</span><span class="n n-s" id="c-n2">$360,000 a $2,520,000</span></div>
             <span id="c-sm">Cifras de ejemplo en MXN · ingreso antes de costos · no es precio de ningún desarrollo</span>
             <div id="c-blank">Tú: <i></i> ventas × $<i></i></div>
           </div>
@@ -289,11 +301,11 @@
           <div class="step"><div class="num">01</div><div class="txt"><small>EL SISTEMA</small>Anuncios a compradores</div></div>
           <div class="dots"><i class="on"></i><i></i><i></i></div>
           <div class="card" id="e0-ad">
-            <div class="card-h"><span>ANUNCIO · META</span><span id="e0-live"><span id="e0-dot"></span><span id="e0-state">PAUSADO</span></span></div>
-            <div class="ad-img"><img src="assets/img/realestate.jpg" alt="" /><span class="demo-tag" style="left: 24px; top: 20px">DEMO</span></div>
-            <div class="ad-body"><div class="ad-t">Torre Ejemplo · Preventa</div><div class="ad-s">Desarrollo ficticio · sin precios · para compradores con presupuesto</div><span class="ad-cta">Enviar mensaje</span></div>
+            <div class="ad-h"><div class="ad-av">TE</div><div><div class="ad-n">Torre Ejemplo</div><div class="ad-p">Publicidad · Ensenada, B.C.</div></div><div class="plat"><span id="e0-live"><span id="e0-dot"></span><span id="e0-state">PAUSADO</span></span><i class="fb">f</i><i class="ig">IG</i></div></div>
+            <div class="ad-img"><img src="assets/img/anuncio/torre.jpg" alt="" /><div class="ad-ov"></div><span class="ad-tag">PREVENTA</span><span class="demo-tag" style="right: 22px; top: 20px">DEMO · RENDER IA · FICTICIO</span><div class="ad-copy"><div class="ad-t">Depas de 2 y 3 recámaras<br />con vista al mar</div><div class="ad-s">Roof garden · Alberca · Seguridad 24/7</div></div></div>
+            <div class="ad-cta"><span>💬 Enviar mensaje por WhatsApp</span><span>›</span></div>
           </div>
-          <div class="badges" style="top: 975px"><div class="badge b-gold" id="e0-b1">🎯 COMPRADORES</div><div class="badge b-red" id="e0-b2"><span class="sw">CURIOSOS<span id="e0-x"></span></span></div></div>
+          <div class="badges" style="top: 982px"><div class="badge b-gold" id="e0-b1">🎯 COMPRADORES</div><div class="badge b-red" id="e0-b2"><span class="sw">CURIOSOS<span id="e0-x"></span></span></div></div>
         </div>
 
         <!-- E1 · CONTESTA AL INSTANTE (cierra el dolor de las 11 p.m.) -->
@@ -354,28 +366,29 @@
         <!-- F2 · TESTIMONIO GUS -->
         <div id="sF2" class="scene">
           <div id="gus-wrap">
-            <video id="gus-video" class="clip" src="assets/video/gus-testimonio.mp4" muted playsinline data-start="42.66" data-media-start="6.943" data-duration="5.15" data-track-index="2"></video>
+            <video id="gus-video" class="clip" src="assets/video/gus-testimonio.mp4" muted playsinline data-start="46.215" data-media-start="6.943" data-duration="5.15" data-track-index="2"></video>
           </div>
           <div class="shade" style="background: linear-gradient(180deg, rgba(7,9,15,0.55) 0%, rgba(7,9,15,0) 22%, rgba(7,9,15,0) 50%, rgba(7,9,15,0.8) 59%, var(--bg) 65%, var(--bg) 100%)"></div>
           <div id="f2-name"><b>GUS MARCOS</b><span>Desarrollador inmobiliario · Monterrey</span></div>
           <span class="chip" id="f2-real">TESTIMONIO REAL</span>
           <div id="f2-stat"><span class="n" id="f2-n">$60 MDP</span></div>
           <div id="f2-years"><span class="chip">FACTURADOS EN 2 AÑOS</span></div>
+          <div id="f2-note">Testimonio de un caso real · no es garantía de resultados</div>
         </div>
 
         <!-- G · CTA -->
         <div id="sG" class="scene">
-          <svg class="ghost" id="g-ghost" aria-hidden="true" data-layout-allow-overflow style="top: 1230px; left: -60px" width="3200" height="363" viewBox="0 0 3200 363"><text x="0" y="303" font-family="Sora" font-weight="800" font-size="330" letter-spacing="-12" fill="none" stroke="rgba(232,179,75,0.24)" stroke-width="3">SISTEMA SISTEMA</text></svg>
+          <svg class="ghost" id="g-ghost" aria-hidden="true" data-layout-allow-overflow style="top: 1230px; left: -60px" width="3200" height="363" viewBox="0 0 3200 363"><text x="0" y="303" font-family="Sora" font-weight="800" font-size="330" letter-spacing="-12" fill="none" stroke="rgba(232,179,75,0.24)" stroke-width="3">VENTAS VENTAS VENTAS</text></svg>
           <div id="g-rim"></div>
           <div id="g-fran" data-layout-allow-overflow><img src="assets/img/fran-cutout.png" alt="Fran Morishita" /></div>
-          <div class="g-q" id="g-q1">¿Tu desarrollo tiene</div>
-          <div class="g-big" id="g-q2">+20 UNIDADES?</div>
-          <div class="g-q" id="g-q3">¿O tu inmobiliaria</div>
-          <div class="g-big" id="g-q4">+5 ASESORES?</div>
+          <div class="g-q" id="g-q1">¿Te sientes estancado</div>
+          <div class="g-big" id="g-q2">EN TUS VENTAS?</div>
+          <div class="g-q" id="g-q3">¿O quieres</div>
+          <div class="g-big" id="g-q4">MULTIPLICARLAS?</div>
           <div id="g-com">COMENTA</div>
-          <div id="g-key" data-layout-allow-overlap>SISTEMA</div>
+          <div id="g-key" data-layout-allow-overlap>VENTAS</div>
           <div id="g-bubble" data-layout-allow-overlap>💬</div>
-          <div id="g-sub">y te mandamos un <b>diagnóstico gratis</b> de tu embudo</div>
+          <div id="g-sub">y te mando el link de tu <b>diagnóstico gratis</b></div>
           <div id="g-end"><div class="wm">FRAN<span>MORISHITA</span></div><div id="g-line"></div><div class="tl">SISTEMAS DE VENTA · IA · CRM</div></div>
         </div>
       </div>
@@ -390,8 +403,8 @@
     </div>
 
     <script>
-      const VO = /*VO_DATA_START*/{"total":57.388,"segments":[{"id":"v1","start":0.3,"end":5.527,"words":[{"text":"Desarrollador","start":0.34,"end":1.04},{"text":"o","start":1.04,"end":1.085},{"text":"inmobiliaria","start":1.085,"end":1.774},{"text":"ese","start":1.994,"end":2.177},{"text":"prospecto","start":2.177,"end":2.624},{"text":"que","start":2.624,"end":2.727},{"text":"te","start":2.727,"end":2.808},{"text":"escribió","start":2.808,"end":3.221},{"text":"a","start":3.221,"end":3.243},{"text":"las","start":3.244,"end":3.415},{"text":"11","start":3.415,"end":3.599},{"text":"de","start":3.599,"end":3.668},{"text":"la","start":3.679,"end":3.748},{"text":"noche","start":3.76,"end":4.069},{"text":"ya","start":4.289,"end":4.473},{"text":"apartó","start":4.473,"end":4.885},{"text":"con","start":4.885,"end":5.035},{"text":"otro","start":5.035,"end":5.367}]},{"id":"v2","start":5.787,"end":9.845,"words":[{"text":"Y","start":5.827,"end":5.884},{"text":"sin","start":5.896,"end":6.068},{"text":"anuncios","start":6.068,"end":6.446},{"text":"activos","start":6.458,"end":7.008},{"text":"ni","start":7.228,"end":7.343},{"text":"te","start":7.343,"end":7.458},{"text":"escriben","start":7.458,"end":7.974},{"text":"y","start":8.194,"end":8.24},{"text":"tus","start":8.251,"end":8.423},{"text":"unidades","start":8.423,"end":8.939},{"text":"no","start":8.939,"end":9.134},{"text":"se","start":9.146,"end":9.272},{"text":"mueven","start":9.272,"end":9.685}]},{"id":"v3","start":10.105,"end":16.309,"words":[{"text":"Haz","start":10.145,"end":10.248},{"text":"la","start":10.248,"end":10.328},{"text":"cuenta","start":10.328,"end":10.764},{"text":"Por","start":10.984,"end":11.087},{"text":"ejemplo","start":11.087,"end":11.511},{"text":"si","start":11.731,"end":11.834},{"text":"se","start":11.846,"end":11.961},{"text":"te","start":11.961,"end":12.041},{"text":"van","start":12.041,"end":12.259},{"text":"2 ventas","start":12.259,"end":12.844},{"text":"al","start":12.844,"end":12.935},{"text":"mes","start":12.947,"end":13.119},{"text":"de","start":13.119,"end":13.199},{"text":"$3,000,000","start":13.199,"end":13.841},{"text":"son","start":14.061,"end":14.291},{"text":"$6,000,000","start":14.291,"end":14.979},{"text":"que","start":14.99,"end":15.094},{"text":"dejas","start":15.094,"end":15.472},{"text":"de","start":15.483,"end":15.552},{"text":"facturar","start":15.564,"end":16.149}]},{"id":"v4","start":16.569,"end":21.543,"words":[{"text":"Si","start":16.609,"end":16.758},{"text":"eres","start":16.758,"end":16.998},{"text":"inmobiliaria","start":17.01,"end":17.732},{"text":"a","start":17.952,"end":18.033},{"text":"5 %","start":18.033,"end":18.812},{"text":"de","start":18.812,"end":18.893},{"text":"comisión","start":18.893,"end":19.409},{"text":"son","start":19.629,"end":19.801},{"text":"$300,000","start":19.801,"end":20.821},{"text":"al","start":20.821,"end":20.948},{"text":"mes","start":20.948,"end":21.383}]},{"id":"v5","start":21.803,"end":24.884,"words":[{"text":"El","start":21.843,"end":21.935},{"text":"problema","start":21.947,"end":22.336},{"text":"no","start":22.348,"end":22.589},{"text":"es","start":22.589,"end":22.669},{"text":"tu","start":22.68,"end":22.772},{"text":"producto","start":22.784,"end":23.254},{"text":"es","start":23.474,"end":23.577},{"text":"que","start":23.577,"end":23.646},{"text":"no","start":23.646,"end":23.806},{"text":"tienes","start":23.818,"end":24.104},{"text":"un","start":24.104,"end":24.219},{"text":"SISTEMA","start":24.219,"end":24.724}]},{"id":"v6","start":25.144,"end":29.658,"words":[{"text":"Primero","start":25.184,"end":25.608},{"text":"anuncios","start":25.828,"end":26.356},{"text":"en","start":26.367,"end":26.447},{"text":"Meta","start":26.447,"end":26.711},{"text":"pensados","start":26.723,"end":27.239},{"text":"para","start":27.25,"end":27.445},{"text":"atraer","start":27.445,"end":27.755},{"text":"compradores","start":27.755,"end":28.385},{"text":"no","start":28.615,"end":28.798},{"text":"curiosos","start":28.798,"end":29.498}]},{"id":"v7","start":29.918,"end":35.523,"words":[{"text":"Luego","start":29.958,"end":30.371},{"text":"un","start":30.591,"end":30.659},{"text":"agente","start":30.659,"end":31.015},{"text":"de","start":31.015,"end":31.084},{"text":"inteligencia","start":31.084,"end":31.646},{"text":"artificial","start":31.657,"end":32.219},{"text":"contesta","start":32.219,"end":32.701},{"text":"en","start":32.701,"end":32.769},{"text":"segundos","start":32.781,"end":33.354},{"text":"a","start":33.653,"end":33.71},{"text":"cualquier","start":33.71,"end":34.123},{"text":"hora","start":34.123,"end":34.364},{"text":"y","start":34.584,"end":34.629},{"text":"lo","start":34.629,"end":34.744},{"text":"califica","start":34.744,"end":35.363}]},{"id":"v8","start":35.783,"end":39.587,"words":[{"text":"Y","start":35.823,"end":35.881},{"text":"agenda","start":35.892,"end":36.236},{"text":"la","start":36.236,"end":36.305},{"text":"visita","start":36.317,"end":36.833},{"text":"en","start":36.833,"end":37.016},{"text":"tu","start":37.028,"end":37.165},{"text":"CRM","start":37.177,"end":37.968},{"text":"con","start":38.188,"end":38.326},{"text":"seguimiento","start":38.326,"end":38.796},{"text":"automático","start":38.796,"end":39.427}]},{"id":"v9","start":39.847,"end":42.457,"words":[{"text":"¿Funciona?","start":39.887,"end":40.345},{"text":"Pregúntale","start":40.565,"end":41.196},{"text":"a","start":41.288,"end":41.345},{"text":"Gus","start":41.357,"end":41.632},{"text":"Marcos","start":41.632,"end":42.297}]},{"id":"GUS","start":42.717,"end":47.667,"words":[{"text":"Y","start":42.747,"end":42.867},{"text":"hicimos","start":42.867,"end":43.317},{"text":"una","start":43.367,"end":43.537},{"text":"empresa","start":43.537,"end":44.417},{"text":"que","start":44.417,"end":44.537},{"text":"facturó","start":44.537,"end":44.817},{"text":"60","start":44.817,"end":45.187},{"text":"millones","start":45.187,"end":45.697},{"text":"de","start":45.697,"end":45.887},{"text":"pesos","start":45.907,"end":46.357},{"text":"en","start":46.387,"end":46.647},{"text":"dos","start":46.767,"end":47.007},{"text":"años","start":47.007,"end":47.537}]},{"id":"v10","start":47.927,"end":56.138,"words":[{"text":"Si","start":47.967,"end":48.093},{"text":"tu","start":48.093,"end":48.185},{"text":"desarrollo","start":48.185,"end":48.701},{"text":"tiene","start":48.701,"end":48.919},{"text":"más","start":48.919,"end":49.205},{"text":"de","start":49.205,"end":49.274},{"text":"20","start":49.274,"end":49.561},{"text":"unidades","start":49.561,"end":50.192},{"text":"o","start":50.412,"end":50.457},{"text":"tu","start":50.457,"end":50.549},{"text":"inmobiliaria","start":50.549,"end":51.134},{"text":"más","start":51.146,"end":51.478},{"text":"de","start":51.478,"end":51.558},{"text":"5 asesores","start":51.57,"end":52.464},{"text":"comenta","start":52.684,"end":53.028},{"text":"SISTEMA","start":53.028,"end":53.51},{"text":"y","start":53.73,"end":53.787},{"text":"te","start":53.799,"end":53.879},{"text":"mandamos","start":53.879,"end":54.269},{"text":"un","start":54.269,"end":54.361},{"text":"diagnóstico","start":54.361,"end":54.911},{"text":"gratis","start":54.911,"end":55.313},{"text":"de","start":55.324,"end":55.404},{"text":"tu","start":55.404,"end":55.519},{"text":"embudo","start":55.531,"end":55.978}]}]}/*VO_DATA_END*/;
-      const DUR = 57.35;
+      const VO = /*VO_DATA_START*/{"total":59.54,"segments":[{"id":"v1","start":0.3,"end":5.527,"words":[{"text":"Desarrollador","start":0.34,"end":1.04},{"text":"o","start":1.04,"end":1.085},{"text":"inmobiliaria","start":1.085,"end":1.774},{"text":"ese","start":1.994,"end":2.177},{"text":"prospecto","start":2.177,"end":2.624},{"text":"que","start":2.624,"end":2.727},{"text":"te","start":2.727,"end":2.808},{"text":"escribió","start":2.808,"end":3.221},{"text":"a","start":3.221,"end":3.243},{"text":"las","start":3.244,"end":3.415},{"text":"11","start":3.415,"end":3.599},{"text":"de","start":3.599,"end":3.668},{"text":"la","start":3.679,"end":3.748},{"text":"noche","start":3.76,"end":4.069},{"text":"ya","start":4.289,"end":4.473},{"text":"apartó","start":4.473,"end":4.885},{"text":"con","start":4.885,"end":5.035},{"text":"otro","start":5.035,"end":5.367}]},{"id":"v2","start":5.787,"end":9.845,"words":[{"text":"Y","start":5.827,"end":5.884},{"text":"sin","start":5.896,"end":6.068},{"text":"anuncios","start":6.068,"end":6.446},{"text":"activos","start":6.458,"end":7.008},{"text":"ni","start":7.228,"end":7.343},{"text":"te","start":7.343,"end":7.458},{"text":"escriben","start":7.458,"end":7.974},{"text":"y","start":8.194,"end":8.24},{"text":"tus","start":8.251,"end":8.423},{"text":"unidades","start":8.423,"end":8.939},{"text":"no","start":8.939,"end":9.134},{"text":"se","start":9.146,"end":9.272},{"text":"mueven","start":9.272,"end":9.685}]},{"id":"v3","start":10.105,"end":17.719,"words":[{"text":"Por","start":10.145,"end":10.248},{"text":"ejemplo","start":10.248,"end":10.695},{"text":"si","start":10.915,"end":11.018},{"text":"se","start":11.018,"end":11.133},{"text":"te","start":11.133,"end":11.213},{"text":"van","start":11.225,"end":11.374},{"text":"de","start":11.374,"end":11.454},{"text":"4–7 ventas","start":11.454,"end":12.486},{"text":"al","start":12.486,"end":12.589},{"text":"mes","start":12.589,"end":12.876},{"text":"de","start":13.096,"end":13.234},{"text":"$3–$6 MDP","start":13.245,"end":14.185},{"text":"cada","start":14.197,"end":14.449},{"text":"una","start":14.449,"end":14.724},{"text":"son","start":14.944,"end":15.093},{"text":"de","start":15.093,"end":15.174},{"text":"$12–$42 MDP","start":15.174,"end":16.458},{"text":"que","start":16.458,"end":16.55},{"text":"dejas","start":16.561,"end":16.882},{"text":"de","start":16.882,"end":16.951},{"text":"facturar","start":16.963,"end":17.559}]},{"id":"v4","start":17.979,"end":25.007,"words":[{"text":"Si","start":18.019,"end":18.18},{"text":"eres","start":18.18,"end":18.409},{"text":"inmobiliaria","start":18.409,"end":19.074},{"text":"con","start":19.294,"end":19.432},{"text":"comisiones","start":19.432,"end":19.925},{"text":"del","start":19.925,"end":20.051},{"text":"3–6 %","start":20.051,"end":21.255},{"text":"son","start":21.475,"end":21.601},{"text":"de","start":21.601,"end":21.693},{"text":"$360,000","start":21.693,"end":22.794},{"text":"a","start":22.805,"end":22.863},{"text":"más","start":22.863,"end":23.092},{"text":"de","start":23.092,"end":23.149},{"text":"$2.5 MDP","start":23.161,"end":24.319},{"text":"al","start":24.319,"end":24.399},{"text":"mes","start":24.411,"end":24.847}]},{"id":"v5","start":25.267,"end":28.347,"words":[{"text":"El","start":25.307,"end":25.399},{"text":"problema","start":25.41,"end":25.8},{"text":"no","start":25.811,"end":26.052},{"text":"es","start":26.052,"end":26.132},{"text":"tu","start":26.144,"end":26.236},{"text":"producto","start":26.247,"end":26.717},{"text":"es","start":26.937,"end":27.04},{"text":"que","start":27.04,"end":27.109},{"text":"no","start":27.109,"end":27.27},{"text":"tienes","start":27.281,"end":27.568},{"text":"un","start":27.568,"end":27.683},{"text":"sistema","start":27.683,"end":28.187}]},{"id":"v6","start":28.607,"end":33.408,"words":[{"text":"Primero","start":28.647,"end":29.06},{"text":"anuncios","start":29.28,"end":29.773},{"text":"en","start":29.773,"end":29.876},{"text":"Facebook","start":29.876,"end":30.392},{"text":"e","start":30.392,"end":30.438},{"text":"Instagram","start":30.438,"end":31.035},{"text":"para","start":31.035,"end":31.207},{"text":"atraer","start":31.207,"end":31.505},{"text":"compradores","start":31.505,"end":32.147},{"text":"no","start":32.376,"end":32.548},{"text":"curiosos","start":32.56,"end":33.248}]},{"id":"v7","start":33.668,"end":39.274,"words":[{"text":"Luego","start":33.708,"end":34.121},{"text":"un","start":34.341,"end":34.41},{"text":"agente","start":34.41,"end":34.765},{"text":"de","start":34.765,"end":34.834},{"text":"inteligencia","start":34.834,"end":35.396},{"text":"artificial","start":35.407,"end":35.969},{"text":"contesta","start":35.969,"end":36.451},{"text":"en","start":36.451,"end":36.52},{"text":"segundos","start":36.531,"end":37.105},{"text":"a","start":37.403,"end":37.46},{"text":"cualquier","start":37.46,"end":37.873},{"text":"hora","start":37.873,"end":38.114},{"text":"y","start":38.334,"end":38.38},{"text":"lo","start":38.38,"end":38.494},{"text":"califica","start":38.494,"end":39.114}]},{"id":"v8","start":39.534,"end":43.337,"words":[{"text":"Y","start":39.574,"end":39.631},{"text":"agenda","start":39.642,"end":39.986},{"text":"la","start":39.986,"end":40.055},{"text":"visita","start":40.067,"end":40.583},{"text":"en","start":40.583,"end":40.766},{"text":"tu","start":40.778,"end":40.915},{"text":"CRM","start":40.927,"end":41.718},{"text":"con","start":41.938,"end":42.076},{"text":"seguimiento","start":42.076,"end":42.546},{"text":"automático","start":42.546,"end":43.177}]},{"id":"v9","start":43.597,"end":46.012,"words":[{"text":"¿Funciona?","start":43.637,"end":44.153},{"text":"Escucha","start":44.373,"end":44.797},{"text":"a","start":44.809,"end":44.969},{"text":"este","start":44.969,"end":45.153},{"text":"desarrollador","start":45.153,"end":45.852}]},{"id":"GUS","start":46.272,"end":51.222,"words":[{"text":"Y","start":46.302,"end":46.422},{"text":"hicimos","start":46.422,"end":46.872},{"text":"una","start":46.922,"end":47.092},{"text":"empresa","start":47.092,"end":47.972},{"text":"que","start":47.972,"end":48.092},{"text":"facturó","start":48.092,"end":48.372},{"text":"60","start":48.372,"end":48.742},{"text":"millones","start":48.742,"end":49.252},{"text":"de","start":49.252,"end":49.442},{"text":"pesos","start":49.462,"end":49.912},{"text":"en","start":49.942,"end":50.202},{"text":"dos","start":50.322,"end":50.562},{"text":"años","start":50.562,"end":51.092}]},{"id":"v10","start":51.482,"end":58.29,"words":[{"text":"Si","start":51.522,"end":51.637},{"text":"te","start":51.637,"end":51.729},{"text":"sientes","start":51.74,"end":52.095},{"text":"estancado","start":52.095,"end":52.634},{"text":"en","start":52.646,"end":52.726},{"text":"tus","start":52.726,"end":52.91},{"text":"ventas","start":52.921,"end":53.368},{"text":"o","start":53.38,"end":53.437},{"text":"quieres","start":53.437,"end":53.758},{"text":"multiplicarlas","start":53.758,"end":54.596},{"text":"comenta","start":54.815,"end":55.125},{"text":"la","start":55.137,"end":55.24},{"text":"palabra","start":55.251,"end":55.63},{"text":"ventas","start":55.641,"end":56.1},{"text":"y","start":56.111,"end":56.169},{"text":"te","start":56.18,"end":56.272},{"text":"mando","start":56.283,"end":56.547},{"text":"el","start":56.547,"end":56.616},{"text":"link","start":56.627,"end":56.811},{"text":"de","start":56.811,"end":56.914},{"text":"tu","start":56.926,"end":57.017},{"text":"diagnóstico","start":57.017,"end":57.568},{"text":"gratis","start":57.579,"end":58.13}]}]}/*VO_DATA_END*/;
+      const DUR = 59.5;
       const SEG = {};
       VO.segments.forEach((s) => (SEG[s.id] = s));
       const W = (seg, txt, which = "start", n = 0) => {
@@ -443,18 +456,19 @@
       tl.to("#brand", { scale: 1, y: 0, duration: 0.45, ease: "power3.inOut" }, 0.85);
       tl.to("#brand", { opacity: 0, y: -20, duration: 0.3, ease: "power2.in" }, E("v10") + 0.2);
 
-      /* A · montaje de buyer personas (nada encima de las caras) */
-      [0, 1, 2, 3, 4, 5].forEach((i) => {
-        const t = 0.45 + i * 0.38;
-        tl.fromTo(`#per${i}`, { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1.04, duration: 0.38, ease: "power2.out" }, t);
-        if (i < 5) tl.set(`#per${i}`, { opacity: 0 }, t + 0.4);
-        tl.fromTo(`#role${i}`, { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.14, ease: "back.out(2)" }, t + 0.02);
-        if (i < 5) tl.set(`#role${i}`, { opacity: 0 }, t + 0.38);
-        flash(t, 0.35, 0.12);
-      });
+      /* A · dos buyer personas: desarrollador e inmobiliaria (nada encima de las caras) */
+      const T_P1 = W("v1", "inmobiliaria") - 0.1;
       const T_N = W("v1", "escribió") - 0.12;
-      tl.to("#role5", { opacity: 0, duration: 0.15 }, T_N - 0.05);
-      tl.to("#per5", { opacity: 0.4, filter: "grayscale(0.6)", duration: 0.35 }, T_N);
+      tl.fromTo("#per0", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1.04, duration: 0.4, ease: "power2.out" }, 0.25);
+      tl.fromTo("#per0", { scale: 1.04 }, { scale: 1.0, duration: T_P1 - 0.65, ease: "none", immediateRender: false }, 0.65);
+      tl.fromTo("#role0", { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.16, ease: "back.out(2)" }, 0.3);
+      tl.set(["#per0", "#role0"], { opacity: 0 }, T_P1);
+      tl.fromTo("#per1", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1.04, duration: 0.4, ease: "power2.out" }, T_P1);
+      tl.fromTo("#per1", { scale: 1.04 }, { scale: 1.0, duration: T_N - T_P1 - 0.4, ease: "none", immediateRender: false }, T_P1 + 0.4);
+      tl.fromTo("#role1", { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.16, ease: "back.out(2)" }, T_P1 + 0.05);
+      flash(0.25, 0.35, 0.12); flash(T_P1, 0.45, 0.14); punch(T_P1 + 0.02, 1.04);
+      tl.to("#role1", { opacity: 0, duration: 0.15 }, T_N - 0.05);
+      tl.to("#per1", { opacity: 0.4, filter: "grayscale(0.6)", duration: 0.35 }, T_N);
       tl.fromTo("#a-ilus", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 0.55);
       tl.to("#a-ilus", { opacity: 0, duration: 0.2 }, T_B);
 
@@ -488,21 +502,24 @@
       pop("#c-tag", T_C + 0.15, { y: -30 }, 0.35, "power3.out");
       tl.fromTo("#c-ticket", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, T_C + 0.1);
       tl.set(["#c-res1", "#c-res2", "#c-sm", "#c-blank", "#c-l1", "#c-l2"], { opacity: 0 }, T_C);
-      tl.fromTo("#c-l1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, W("v3", "2 ventas") - 0.1);
-      tl.fromTo("#c-l2", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, W("v3", "$3,000,000") - 0.1);
-      punch(W("v3", "$3,000,000") + 0.1, 1.04);
-      const tR1 = W("v3", "$6,000,000") - 0.08;
+      tl.fromTo("#c-l1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, W("v3", "4–7") - 0.1);
+      tl.fromTo("#c-l2", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.28, ease: "back.out(1.6)" }, W("v3", "$3–$6") - 0.1);
+      punch(W("v3", "$3–$6") + 0.1, 1.04);
+      const tR1 = W("v3", "$12–$42") - 0.08;
+      tl.set("#c-n1b", { opacity: 0 }, T_C);
       tl.fromTo("#c-res1", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.24, ease: "power4.in" }, tR1);
-      counter("c-n1", 0, 6000000, tR1, 0.6, money);
-      flash(tR1 + 0.6, 0.55, 0.25); shake(tR1 + 0.6, 1.6);
-      tl.fromTo("#c-ticket", { boxShadow: "0 0 0 0 rgba(232,179,75,0.6)" }, { boxShadow: "0 0 0 30px rgba(232,179,75,0)", duration: 0.6, ease: "power2.out", immediateRender: false }, tR1 + 0.6);
+      counter("c-n1", 0, 12000000, tR1, 0.45, money);
+      tl.fromTo("#c-n1b", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, tR1 + 0.5);
+      counter("c-n1b", 12000000, 42000000, tR1 + 0.5, 0.7, (v) => "a " + money(v));
+      flash(tR1 + 1.2, 0.55, 0.25); shake(tR1 + 1.2, 1.6);
+      tl.fromTo("#c-ticket", { boxShadow: "0 0 0 0 rgba(232,179,75,0.6)" }, { boxShadow: "0 0 0 30px rgba(232,179,75,0)", duration: 0.6, ease: "power2.out", immediateRender: false }, tR1 + 1.2);
       tl.fromTo("#c-sm", { opacity: 0 }, { opacity: 1, duration: 0.3 }, W("v3", "dejas") - 0.1);
       tl.fromTo("#c-res2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.8)" }, W("v4", "inmobiliaria") - 0.1);
-      tl.set("#c-n2", { textContent: "$0" }, W("v4", "inmobiliaria") - 0.1);
-      const tR2 = W("v4", "$300,000") - 0.06;
-      counter("c-n2", 0, 300000, tR2, 0.5, money);
-      tl.fromTo("#c-res2 .n", { scale: 1.14 }, { scale: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, tR2 + 0.5);
-      flash(tR2 + 0.5, 0.45, 0.22); shake(tR2 + 0.5, 1.2);
+      tl.set("#c-n2", { textContent: "$0 a $0" }, W("v4", "inmobiliaria") - 0.1);
+      const tR2 = W("v4", "$360,000") - 0.06;
+      counter("c-n2", 0, 1, tR2, 0.9, (v) => money(360000 * Math.min(1, v * 1.6)) + " a " + money(2520000 * v));
+      tl.fromTo("#c-res2 .n", { scale: 1.14 }, { scale: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, tR2 + 0.9);
+      flash(tR2 + 0.9, 0.45, 0.22); shake(tR2 + 0.9, 1.2);
       tl.fromTo("#c-blank", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, W("v4", "al") - 0.05);
       tl.fromTo("#c-blank i", { boxShadow: "0 0 0 0 rgba(232,179,75,0.7)" }, { boxShadow: "0 0 0 16px rgba(232,179,75,0)", duration: 0.5, repeat: 1, ease: "power2.out", immediateRender: false }, W("v4", "mes"));
 
@@ -524,8 +541,9 @@
       /* E0 · anuncios (cierra el dolor "sin anuncios") */
       zoomThrough("#sD", "#sE0", T_E0);
       tl.fromTo("#e0-ad", { y: 120 }, { y: 0, duration: 0.5, ease: "power3.out" }, T_E0 + 0.1);
-      const tLive = W("v6", "Meta") - 0.05;
+      const tLive = W("v6", "Facebook") - 0.05;
       tl.set("#e0-state", { textContent: "ACTIVO" }, tLive);
+      tl.to("#e0-state", { color: "#34d27b", duration: 0.1 }, tLive);
       tl.to("#e0-dot", { backgroundColor: "#34d27b", duration: 0.1 }, tLive);
       tl.fromTo("#e0-dot", { boxShadow: "0 0 0 0 rgba(52,210,123,0.8)" }, { boxShadow: "0 0 0 16px rgba(52,210,123,0)", duration: 0.6, repeat: 3, ease: "power2.out", immediateRender: false }, tLive);
       tl.fromTo("#e0-ad .ad-img img", { scale: 1.25 }, { scale: 1.05, duration: 4.6, ease: "none" }, T_E0);
@@ -574,7 +592,7 @@
       tl.fromTo("#f1-bg", { scale: 1.3 }, { scale: 1.08, duration: T_F2 - T_F1 + 0.2, ease: "none" }, T_F1);
       tl.fromTo("#f1-q", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.26, ease: "power4.out" }, W("v9", "¿Funciona") - 0.04);
       shake(W("v9", "¿Funciona") + 0.2, 0.9);
-      tl.fromTo("#f1-ig", { y: 500, opacity: 0, rotation: 6 }, { y: 0, opacity: 1, rotation: -3, duration: 0.5, ease: "back.out(1.4)" }, W("v9", "Pregúntale") - 0.05);
+      tl.fromTo("#f1-ig", { y: 500, opacity: 0, rotation: 6 }, { y: 0, opacity: 1, rotation: -3, duration: 0.5, ease: "back.out(1.4)" }, W("v9", "Escucha") - 0.05);
 
       /* F2 · testimonio de Gus */
       cut("#sF1", "#sF2", T_F2);
@@ -589,6 +607,7 @@
       tl.fromTo("#f2-stat", { scale: 2.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.24, ease: "power4.in" }, t60 - 0.22);
       shake(t60 + 0.02, 1.3); flash(t60, 0.45, 0.2);
       pop("#f2-years", W("GUS", "dos") - 0.1, { y: 30 }, 0.35);
+      tl.fromTo("#f2-note", { opacity: 0 }, { opacity: 1, duration: 0.25 }, T_F2 + 0.3);
 
       /* G · CTA con doble umbral */
       tl.set("#sF2", { opacity: 0 }, T_G + 0.12);
@@ -598,26 +617,27 @@
       tl.fromTo("#g-rim", { scale: 0.85, opacity: 0.7 }, { scale: 1.08, opacity: 1, duration: 1.1, yoyo: true, repeat: 7, ease: "sine.inOut" }, T_G);
       tl.fromTo("#g-fran", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, T_G + 0.15);
       tl.fromTo("#g-fran", { y: 0 }, { y: -14, duration: 1.4, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, T_G + 0.7);
-      tl.fromTo("#g-q1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, W("v10", "desarrollo") - 0.15);
-      tl.fromTo("#g-q2", { scale: 1.8, opacity: 0, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.out" }, W("v10", "20") - 0.06);
-      shake(W("v10", "20") + 0.1, 0.7);
-      tl.fromTo("#g-q3", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, W("v10", "o") - 0.1);
-      tl.fromTo("#g-q4", { scale: 1.8, opacity: 0, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.out" }, W("v10", "5 asesores") - 0.06);
-      shake(W("v10", "5 asesores") + 0.1, 0.7);
+      tl.fromTo("#g-q1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, W("v10", "sientes") - 0.15);
+      tl.fromTo("#g-q2", { scale: 1.8, opacity: 0, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.out" }, W("v10", "ventas") - 0.06);
+      shake(W("v10", "ventas") + 0.1, 0.7);
+      tl.fromTo("#g-q3", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, W("v10", "quieres") - 0.1);
+      tl.fromTo("#g-q4", { scale: 1.8, opacity: 0, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.out" }, W("v10", "multiplicarlas") - 0.06);
+      shake(W("v10", "multiplicarlas") + 0.1, 0.9);
       tl.fromTo("#g-com", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, W("v10", "comenta") - 0.1);
-      tl.fromTo("#g-key", { scale: 2.8, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.24, ease: "power4.in" }, W("v10", "SISTEMA") - 0.22);
-      flash(W("v10", "SISTEMA"), 0.6, 0.25); shake(W("v10", "SISTEMA") + 0.02, 1.6);
-      tl.fromTo("#g-key", { boxShadow: "0 0 0 8px rgba(232,179,75,0.25), 0 30px 90px rgba(232,179,75,0.45)" }, { boxShadow: "0 0 0 26px rgba(232,179,75,0), 0 30px 120px rgba(232,179,75,0.8)", duration: 0.7, repeat: 4, ease: "power1.out", immediateRender: false }, W("v10", "SISTEMA") + 0.25);
-      tl.fromTo("#g-key", { scale: 1 }, { scale: 1.05, duration: 0.35, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, W("v10", "SISTEMA") + 0.3);
-      pop("#g-bubble", W("v10", "SISTEMA") + 0.15, { rotation: 30 }, 0.4, "back.out(1.8)", 8);
-      tl.fromTo("#g-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("v10", "mandamos") - 0.1);
+      const tKey = W("v10", "ventas", "start", 1);
+      tl.fromTo("#g-key", { scale: 2.8, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.24, ease: "power4.in" }, tKey - 0.22);
+      flash(tKey, 0.6, 0.25); shake(tKey + 0.02, 1.6);
+      tl.fromTo("#g-key", { boxShadow: "0 0 0 8px rgba(232,179,75,0.25), 0 30px 90px rgba(232,179,75,0.45)" }, { boxShadow: "0 0 0 26px rgba(232,179,75,0), 0 30px 120px rgba(232,179,75,0.8)", duration: 0.7, repeat: 4, ease: "power1.out", immediateRender: false }, tKey + 0.25);
+      tl.fromTo("#g-key", { scale: 1 }, { scale: 1.05, duration: 0.35, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, tKey + 0.3);
+      pop("#g-bubble", tKey + 0.15, { rotation: 30 }, 0.4, "back.out(1.8)", 8);
+      tl.fromTo("#g-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, W("v10", "mando") - 0.1);
       const tEnd = E("v10") + 0.15;
       tl.fromTo("#g-end", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, tEnd);
       tl.fromTo("#g-line", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, tEnd + 0.15);
       tl.fromTo("#fade", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.in", immediateRender: false }, DUR - 0.3);
 
       /* SUBTÍTULOS palabra por palabra */
-      const KEY = new Set(["desarrollador", "inmobiliaria", "prospecto", "11", "apartó", "anuncios", "activos", "unidades", "mueven", "2 ventas", "$3,000,000", "$6,000,000", "facturar", "5 %", "comisión", "$300,000", "producto", "sistema", "meta", "compradores", "inteligencia", "artificial", "segundos", "califica", "visita", "crm", "automático", "¿funciona?", "60", "millones", "20", "5 asesores", "gratis"]);
+      const KEY = new Set(["desarrollador", "inmobiliaria", "prospecto", "11", "apartó", "anuncios", "activos", "unidades", "mueven", "4–7 ventas", "$3–$6 mdp", "$12–$42 mdp", "facturar", "3–6 %", "comisiones", "$360,000", "$2.5 mdp", "producto", "sistema", "facebook", "instagram", "compradores", "inteligencia", "artificial", "segundos", "califica", "visita", "crm", "automático", "¿funciona?", "monterrey", "60", "millones", "estancado", "ventas", "multiplicarlas", "gratis"]);
       const capRoot = document.getElementById("captions");
       const chunks = [];
       VO.segments.forEach((s) => {

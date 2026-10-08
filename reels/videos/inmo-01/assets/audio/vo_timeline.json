@@ -1,5 +1,5 @@
 {
- "total": 57.388,
+ "total": 59.54,
  "segments": [
   {
    "id": "v1",
@@ -173,670 +173,695 @@
   {
    "id": "v3",
    "start": 10.105,
-   "end": 16.309,
+   "end": 17.719,
    "words": [
     {
-     "text": "Haz",
+     "text": "Por",
      "start": 10.145,
      "end": 10.248
     },
     {
-     "text": "la",
-     "start": 10.248,
-     "end": 10.328
-    },
-    {
-     "text": "cuenta",
-     "start": 10.328,
-     "end": 10.764
-    },
-    {
-     "text": "Por",
-     "start": 10.984,
-     "end": 11.087
-    },
-    {
      "text": "ejemplo",
-     "start": 11.087,
-     "end": 11.511
+     "start": 10.248,
+     "end": 10.695
     },
     {
      "text": "si",
-     "start": 11.731,
-     "end": 11.834
+     "start": 10.915,
+     "end": 11.018
     },
     {
      "text": "se",
-     "start": 11.846,
-     "end": 11.961
+     "start": 11.018,
+     "end": 11.133
     },
     {
      "text": "te",
-     "start": 11.961,
-     "end": 12.041
+     "start": 11.133,
+     "end": 11.213
     },
     {
      "text": "van",
-     "start": 12.041,
-     "end": 12.259
+     "start": 11.225,
+     "end": 11.374
     },
     {
-     "text": "2 ventas",
-     "start": 12.259,
-     "end": 12.844
+     "text": "de",
+     "start": 11.374,
+     "end": 11.454
+    },
+    {
+     "text": "4–7 ventas",
+     "start": 11.454,
+     "end": 12.486
     },
     {
      "text": "al",
-     "start": 12.844,
-     "end": 12.935
+     "start": 12.486,
+     "end": 12.589
     },
     {
      "text": "mes",
-     "start": 12.947,
-     "end": 13.119
+     "start": 12.589,
+     "end": 12.876
     },
     {
      "text": "de",
-     "start": 13.119,
-     "end": 13.199
+     "start": 13.096,
+     "end": 13.234
     },
     {
-     "text": "$3,000,000",
-     "start": 13.199,
-     "end": 13.841
+     "text": "$3–$6 MDP",
+     "start": 13.245,
+     "end": 14.185
+    },
+    {
+     "text": "cada",
+     "start": 14.197,
+     "end": 14.449
+    },
+    {
+     "text": "una",
+     "start": 14.449,
+     "end": 14.724
     },
     {
      "text": "son",
-     "start": 14.061,
-     "end": 14.291
-    },
-    {
-     "text": "$6,000,000",
-     "start": 14.291,
-     "end": 14.979
-    },
-    {
-     "text": "que",
-     "start": 14.99,
-     "end": 15.094
-    },
-    {
-     "text": "dejas",
-     "start": 15.094,
-     "end": 15.472
+     "start": 14.944,
+     "end": 15.093
     },
     {
      "text": "de",
-     "start": 15.483,
-     "end": 15.552
+     "start": 15.093,
+     "end": 15.174
+    },
+    {
+     "text": "$12–$42 MDP",
+     "start": 15.174,
+     "end": 16.458
+    },
+    {
+     "text": "que",
+     "start": 16.458,
+     "end": 16.55
+    },
+    {
+     "text": "dejas",
+     "start": 16.561,
+     "end": 16.882
+    },
+    {
+     "text": "de",
+     "start": 16.882,
+     "end": 16.951
     },
     {
      "text": "facturar",
-     "start": 15.564,
-     "end": 16.149
+     "start": 16.963,
+     "end": 17.559
     }
    ]
   },
   {
    "id": "v4",
-   "start": 16.569,
-   "end": 21.543,
+   "start": 17.979,
+   "end": 25.007,
    "words": [
     {
      "text": "Si",
-     "start": 16.609,
-     "end": 16.758
+     "start": 18.019,
+     "end": 18.18
     },
     {
      "text": "eres",
-     "start": 16.758,
-     "end": 16.998
+     "start": 18.18,
+     "end": 18.409
     },
     {
      "text": "inmobiliaria",
-     "start": 17.01,
-     "end": 17.732
+     "start": 18.409,
+     "end": 19.074
     },
     {
-     "text": "a",
-     "start": 17.952,
-     "end": 18.033
+     "text": "con",
+     "start": 19.294,
+     "end": 19.432
     },
     {
-     "text": "5 %",
-     "start": 18.033,
-     "end": 18.812
+     "text": "comisiones",
+     "start": 19.432,
+     "end": 19.925
     },
     {
-     "text": "de",
-     "start": 18.812,
-     "end": 18.893
+     "text": "del",
+     "start": 19.925,
+     "end": 20.051
     },
     {
-     "text": "comisión",
-     "start": 18.893,
-     "end": 19.409
+     "text": "3–6 %",
+     "start": 20.051,
+     "end": 21.255
     },
     {
      "text": "son",
-     "start": 19.629,
-     "end": 19.801
+     "start": 21.475,
+     "end": 21.601
     },
     {
-     "text": "$300,000",
-     "start": 19.801,
-     "end": 20.821
+     "text": "de",
+     "start": 21.601,
+     "end": 21.693
+    },
+    {
+     "text": "$360,000",
+     "start": 21.693,
+     "end": 22.794
+    },
+    {
+     "text": "a",
+     "start": 22.805,
+     "end": 22.863
+    },
+    {
+     "text": "más",
+     "start": 22.863,
+     "end": 23.092
+    },
+    {
+     "text": "de",
+     "start": 23.092,
+     "end": 23.149
+    },
+    {
+     "text": "$2.5 MDP",
+     "start": 23.161,
+     "end": 24.319
     },
     {
      "text": "al",
-     "start": 20.821,
-     "end": 20.948
+     "start": 24.319,
+     "end": 24.399
     },
     {
      "text": "mes",
-     "start": 20.948,
-     "end": 21.383
+     "start": 24.411,
+     "end": 24.847
     }
    ]
   },
   {
    "id": "v5",
-   "start": 21.803,
-   "end": 24.884,
+   "start": 25.267,
+   "end": 28.347,
    "words": [
     {
      "text": "El",
-     "start": 21.843,
-     "end": 21.935
+     "start": 25.307,
+     "end": 25.399
     },
     {
      "text": "problema",
-     "start": 21.947,
-     "end": 22.336
+     "start": 25.41,
+     "end": 25.8
     },
     {
      "text": "no",
-     "start": 22.348,
-     "end": 22.589
+     "start": 25.811,
+     "end": 26.052
     },
     {
      "text": "es",
-     "start": 22.589,
-     "end": 22.669
+     "start": 26.052,
+     "end": 26.132
     },
     {
      "text": "tu",
-     "start": 22.68,
-     "end": 22.772
+     "start": 26.144,
+     "end": 26.236
     },
     {
      "text": "producto",
-     "start": 22.784,
-     "end": 23.254
+     "start": 26.247,
+     "end": 26.717
     },
     {
      "text": "es",
-     "start": 23.474,
-     "end": 23.577
+     "start": 26.937,
+     "end": 27.04
     },
     {
      "text": "que",
-     "start": 23.577,
-     "end": 23.646
+     "start": 27.04,
+     "end": 27.109
     },
     {
      "text": "no",
-     "start": 23.646,
-     "end": 23.806
+     "start": 27.109,
+     "end": 27.27
     },
     {
      "text": "tienes",
-     "start": 23.818,
-     "end": 24.104
+     "start": 27.281,
+     "end": 27.568
     },
     {
      "text": "un",
-     "start": 24.104,
-     "end": 24.219
+     "start": 27.568,
+     "end": 27.683
     },
     {
-     "text": "SISTEMA",
-     "start": 24.219,
-     "end": 24.724
+     "text": "sistema",
+     "start": 27.683,
+     "end": 28.187
     }
    ]
   },
   {
    "id": "v6",
-   "start": 25.144,
-   "end": 29.658,
+   "start": 28.607,
+   "end": 33.408,
    "words": [
     {
      "text": "Primero",
-     "start": 25.184,
-     "end": 25.608
+     "start": 28.647,
+     "end": 29.06
     },
     {
      "text": "anuncios",
-     "start": 25.828,
-     "end": 26.356
+     "start": 29.28,
+     "end": 29.773
     },
     {
      "text": "en",
-     "start": 26.367,
-     "end": 26.447
+     "start": 29.773,
+     "end": 29.876
     },
     {
-     "text": "Meta",
-     "start": 26.447,
-     "end": 26.711
+     "text": "Facebook",
+     "start": 29.876,
+     "end": 30.392
     },
     {
-     "text": "pensados",
-     "start": 26.723,
-     "end": 27.239
+     "text": "e",
+     "start": 30.392,
+     "end": 30.438
+    },
+    {
+     "text": "Instagram",
+     "start": 30.438,
+     "end": 31.035
     },
     {
      "text": "para",
-     "start": 27.25,
-     "end": 27.445
+     "start": 31.035,
+     "end": 31.207
     },
     {
      "text": "atraer",
-     "start": 27.445,
-     "end": 27.755
+     "start": 31.207,
+     "end": 31.505
     },
     {
      "text": "compradores",
-     "start": 27.755,
-     "end": 28.385
+     "start": 31.505,
+     "end": 32.147
     },
     {
      "text": "no",
-     "start": 28.615,
-     "end": 28.798
+     "start": 32.376,
+     "end": 32.548
     },
     {
      "text": "curiosos",
-     "start": 28.798,
-     "end": 29.498
+     "start": 32.56,
+     "end": 33.248
     }
    ]
   },
   {
    "id": "v7",
-   "start": 29.918,
-   "end": 35.523,
+   "start": 33.668,
+   "end": 39.274,
    "words": [
     {
      "text": "Luego",
-     "start": 29.958,
-     "end": 30.371
+     "start": 33.708,
+     "end": 34.121
     },
     {
      "text": "un",
-     "start": 30.591,
-     "end": 30.659
+     "start": 34.341,
+     "end": 34.41
     },
     {
      "text": "agente",
-     "start": 30.659,
-     "end": 31.015
+     "start": 34.41,
+     "end": 34.765
     },
     {
      "text": "de",
-     "start": 31.015,
-     "end": 31.084
+     "start": 34.765,
+     "end": 34.834
     },
     {
      "text": "inteligencia",
-     "start": 31.084,
-     "end": 31.646
+     "start": 34.834,
+     "end": 35.396
     },
     {
      "text": "artificial",
-     "start": 31.657,
-     "end": 32.219
+     "start": 35.407,
+     "end": 35.969
     },
     {
      "text": "contesta",
-     "start": 32.219,
-     "end": 32.701
+     "start": 35.969,
+     "end": 36.451
     },
     {
      "text": "en",
-     "start": 32.701,
-     "end": 32.769
+     "start": 36.451,
+     "end": 36.52
     },
     {
      "text": "segundos",
-     "start": 32.781,
-     "end": 33.354
+     "start": 36.531,
+     "end": 37.105
     },
     {
      "text": "a",
-     "start": 33.653,
-     "end": 33.71
+     "start": 37.403,
+     "end": 37.46
     },
     {
      "text": "cualquier",
-     "start": 33.71,
-     "end": 34.123
+     "start": 37.46,
+     "end": 37.873
     },
     {
      "text": "hora",
-     "start": 34.123,
-     "end": 34.364
+     "start": 37.873,
+     "end": 38.114
     },
     {
      "text": "y",
-     "start": 34.584,
-     "end": 34.629
+     "start": 38.334,
+     "end": 38.38
     },
     {
      "text": "lo",
-     "start": 34.629,
-     "end": 34.744
+     "start": 38.38,
+     "end": 38.494
     },
     {
      "text": "califica",
-     "start": 34.744,
-     "end": 35.363
+     "start": 38.494,
+     "end": 39.114
     }
    ]
   },
   {
    "id": "v8",
-   "start": 35.783,
-   "end": 39.587,
+   "start": 39.534,
+   "end": 43.337,
    "words": [
     {
      "text": "Y",
-     "start": 35.823,
-     "end": 35.881
+     "start": 39.574,
+     "end": 39.631
     },
     {
      "text": "agenda",
-     "start": 35.892,
-     "end": 36.236
+     "start": 39.642,
+     "end": 39.986
     },
     {
      "text": "la",
-     "start": 36.236,
-     "end": 36.305
+     "start": 39.986,
+     "end": 40.055
     },
     {
      "text": "visita",
-     "start": 36.317,
-     "end": 36.833
+     "start": 40.067,
+     "end": 40.583
     },
     {
      "text": "en",
-     "start": 36.833,
-     "end": 37.016
+     "start": 40.583,
+     "end": 40.766
     },
     {
      "text": "tu",
-     "start": 37.028,
-     "end": 37.165
+     "start": 40.778,
+     "end": 40.915
     },
     {
      "text": "CRM",
-     "start": 37.177,
-     "end": 37.968
+     "start": 40.927,
+     "end": 41.718
     },
     {
      "text": "con",
-     "start": 38.188,
-     "end": 38.326
+     "start": 41.938,
+     "end": 42.076
     },
     {
      "text": "seguimiento",
-     "start": 38.326,
-     "end": 38.796
+     "start": 42.076,
+     "end": 42.546
     },
     {
      "text": "automático",
-     "start": 38.796,
-     "end": 39.427
+     "start": 42.546,
+     "end": 43.177
     }
    ]
   },
   {
    "id": "v9",
-   "start": 39.847,
-   "end": 42.457,
+   "start": 43.597,
+   "end": 46.012,
    "words": [
     {
      "text": "¿Funciona?",
-     "start": 39.887,
-     "end": 40.345
+     "start": 43.637,
+     "end": 44.153
     },
     {
-     "text": "Pregúntale",
-     "start": 40.565,
-     "end": 41.196
+     "text": "Escucha",
+     "start": 44.373,
+     "end": 44.797
     },
     {
      "text": "a",
-     "start": 41.288,
-     "end": 41.345
+     "start": 44.809,
+     "end": 44.969
     },
     {
-     "text": "Gus",
-     "start": 41.357,
-     "end": 41.632
+     "text": "este",
+     "start": 44.969,
+     "end": 45.153
     },
     {
-     "text": "Marcos",
-     "start": 41.632,
-     "end": 42.297
+     "text": "desarrollador",
+     "start": 45.153,
+     "end": 45.852
     }
    ]
   },
   {
    "id": "GUS",
-   "start": 42.717,
-   "end": 47.667,
+   "start": 46.272,
+   "end": 51.222,
    "media_start": 7.0,
    "duration": 4.95,
    "words": [
     {
      "text": "Y",
-     "start": 42.747,
-     "end": 42.867
+     "start": 46.302,
+     "end": 46.422
     },
     {
      "text": "hicimos",
-     "start": 42.867,
-     "end": 43.317
+     "start": 46.422,
+     "end": 46.872
     },
     {
      "text": "una",
-     "start": 43.367,
-     "end": 43.537
+     "start": 46.922,
+     "end": 47.092
     },
     {
      "text": "empresa",
-     "start": 43.537,
-     "end": 44.417
+     "start": 47.092,
+     "end": 47.972
     },
     {
      "text": "que",
-     "start": 44.417,
-     "end": 44.537
+     "start": 47.972,
+     "end": 48.092
     },
     {
      "text": "facturó",
-     "start": 44.537,
-     "end": 44.817
+     "start": 48.092,
+     "end": 48.372
     },
     {
      "text": "60",
-     "start": 44.817,
-     "end": 45.187
+     "start": 48.372,
+     "end": 48.742
     },
     {
      "text": "millones",
-     "start": 45.187,
-     "end": 45.697
+     "start": 48.742,
+     "end": 49.252
     },
     {
      "text": "de",
-     "start": 45.697,
-     "end": 45.887
+     "start": 49.252,
+     "end": 49.442
     },
     {
      "text": "pesos",
-     "start": 45.907,
-     "end": 46.357
+     "start": 49.462,
+     "end": 49.912
     },
     {
      "text": "en",
-     "start": 46.387,
-     "end": 46.647
+     "start": 49.942,
+     "end": 50.202
     },
     {
      "text": "dos",
-     "start": 46.767,
-     "end": 47.007
+     "start": 50.322,
+     "end": 50.562
     },
     {
      "text": "años",
-     "start": 47.007,
-     "end": 47.537
+     "start": 50.562,
+     "end": 51.092
     }
    ]
   },
   {
    "id": "v10",
-   "start": 47.927,
-   "end": 56.138,
+   "start": 51.482,
+   "end": 58.29,
    "words": [
     {
      "text": "Si",
-     "start": 47.967,
-     "end": 48.093
-    },
-    {
-     "text": "tu",
-     "start": 48.093,
-     "end": 48.185
-    },
-    {
-     "text": "desarrollo",
-     "start": 48.185,
-     "end": 48.701
-    },
-    {
-     "text": "tiene",
-     "start": 48.701,
-     "end": 48.919
-    },
-    {
-     "text": "más",
-     "start": 48.919,
-     "end": 49.205
-    },
-    {
-     "text": "de",
-     "start": 49.205,
-     "end": 49.274
-    },
-    {
-     "text": "20",
-     "start": 49.274,
-     "end": 49.561
-    },
-    {
-     "text": "unidades",
-     "start": 49.561,
-     "end": 50.192
-    },
-    {
-     "text": "o",
-     "start": 50.412,
-     "end": 50.457
-    },
-    {
-     "text": "tu",
-     "start": 50.457,
-     "end": 50.549
-    },
-    {
-     "text": "inmobiliaria",
-     "start": 50.549,
-     "end": 51.134
-    },
-    {
-     "text": "más",
-     "start": 51.146,
-     "end": 51.478
-    },
-    {
-     "text": "de",
-     "start": 51.478,
-     "end": 51.558
-    },
-    {
-     "text": "5 asesores",
-     "start": 51.57,
-     "end": 52.464
-    },
-    {
-     "text": "comenta",
-     "start": 52.684,
-     "end": 53.028
-    },
-    {
-     "text": "SISTEMA",
-     "start": 53.028,
-     "end": 53.51
-    },
-    {
-     "text": "y",
-     "start": 53.73,
-     "end": 53.787
+     "start": 51.522,
+     "end": 51.637
     },
     {
      "text": "te",
-     "start": 53.799,
-     "end": 53.879
+     "start": 51.637,
+     "end": 51.729
     },
     {
-     "text": "mandamos",
-     "start": 53.879,
-     "end": 54.269
+     "text": "sientes",
+     "start": 51.74,
+     "end": 52.095
     },
     {
-     "text": "un",
-     "start": 54.269,
-     "end": 54.361
+     "text": "estancado",
+     "start": 52.095,
+     "end": 52.634
     },
     {
-     "text": "diagnóstico",
-     "start": 54.361,
-     "end": 54.911
+     "text": "en",
+     "start": 52.646,
+     "end": 52.726
     },
     {
-     "text": "gratis",
-     "start": 54.911,
-     "end": 55.313
+     "text": "tus",
+     "start": 52.726,
+     "end": 52.91
+    },
+    {
+     "text": "ventas",
+     "start": 52.921,
+     "end": 53.368
+    },
+    {
+     "text": "o",
+     "start": 53.38,
+     "end": 53.437
+    },
+    {
+     "text": "quieres",
+     "start": 53.437,
+     "end": 53.758
+    },
+    {
+     "text": "multiplicarlas",
+     "start": 53.758,
+     "end": 54.596
+    },
+    {
+     "text": "comenta",
+     "start": 54.815,
+     "end": 55.125
+    },
+    {
+     "text": "la",
+     "start": 55.137,
+     "end": 55.24
+    },
+    {
+     "text": "palabra",
+     "start": 55.251,
+     "end": 55.63
+    },
+    {
+     "text": "ventas",
+     "start": 55.641,
+     "end": 56.1
+    },
+    {
+     "text": "y",
+     "start": 56.111,
+     "end": 56.169
+    },
+    {
+     "text": "te",
+     "start": 56.18,
+     "end": 56.272
+    },
+    {
+     "text": "mando",
+     "start": 56.283,
+     "end": 56.547
+    },
+    {
+     "text": "el",
+     "start": 56.547,
+     "end": 56.616
+    },
+    {
+     "text": "link",
+     "start": 56.627,
+     "end": 56.811
     },
     {
      "text": "de",
-     "start": 55.324,
-     "end": 55.404
+     "start": 56.811,
+     "end": 56.914
     },
     {
      "text": "tu",
-     "start": 55.404,
-     "end": 55.519
+     "start": 56.926,
+     "end": 57.017
     },
     {
-     "text": "embudo",
-     "start": 55.531,
-     "end": 55.978
+     "text": "diagnóstico",
+     "start": 57.017,
+     "end": 57.568
+    },
+    {
+     "text": "gratis",
+     "start": 57.579,
+     "end": 58.13
     }
    ]
   }

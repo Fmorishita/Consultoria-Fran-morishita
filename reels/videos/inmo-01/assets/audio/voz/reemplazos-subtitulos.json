@@ -7,61 +7,39 @@
  },
  {
   "seq": [
-   "dos",
+   "cuatro",
+   "a",
+   "siete",
    "ventas"
   ],
-  "show": "2 ventas"
+  "show": "4–7 ventas"
  },
  {
   "seq": [
    "tres",
-   "millones"
-  ],
-  "show": "$3,000,000"
- },
- {
-  "seq": [
+   "a",
    "seis",
    "millones"
   ],
-  "show": "$6,000,000"
+  "show": "$3–$6 MDP"
  },
  {
   "seq": [
-   "cinco",
+   "tres",
+   "al",
+   "seis",
    "por",
    "ciento"
   ],
-  "show": "5 %"
+  "show": "3–6 %"
  },
  {
   "seq": [
    "trescientos",
-   "mil",
-   "pesos"
+   "sesenta",
+   "mil"
   ],
-  "show": "$300,000"
- },
- {
-  "seq": [
-   "veinte"
-  ],
-  "show": "20"
- },
- {
-  "seq": [
-   "cinco",
-   "asesores"
-  ],
-  "show": "5 asesores"
- },
- {
-  "word": "Funciona",
-  "show": "¿Funciona?"
- },
- {
-  "word": "sistema",
-  "show": "SISTEMA"
+  "show": "$360,000"
  },
  {
   "seq": [
@@ -72,11 +50,27 @@
   "show": "CRM"
  },
  {
-  "word": "Gús",
-  "show": "Gus"
+  "word": "Funciona",
+  "show": "¿Funciona?"
  },
  {
-  "word": "Márcos",
-  "show": "Marcos"
+  "seq": [
+   "doce",
+   "a",
+   "cuarenta",
+   "y",
+   "dos",
+   "millones"
+  ],
+  "show": "$12–$42 MDP"
+ },
+ {
+  "seq": [
+   "dos",
+   "millones",
+   "y",
+   "medio"
+  ],
+  "show": "$2.5 MDP"
  }
 ]
